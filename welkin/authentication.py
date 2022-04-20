@@ -12,7 +12,10 @@ logger = logging.getLogger(__name__)
 
 
 class WelkinAuth(HTTPBasicAuth):
-    """Attaches API Key Authentication to the given Request object."""
+    """Attaches API Key Authentication to the given Request object.
+
+    https://developers.welkinhealth.com/#authentication
+    """
 
     def __init__(self, tenant, api_client, secret_key):
         self.tenant = tenant
