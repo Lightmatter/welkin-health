@@ -6,28 +6,14 @@ import logging
 
 from requests import HTTPError, Session
 from requests.adapters import HTTPAdapter
-from requests.auth import HTTPBasicAuth
 from requests.compat import urljoin
 from requests.packages.urllib3.util.retry import Retry  # type: ignore
 
 from welkin.api import *
+from welkin.authentication import WelkinAuth
+from welkin.exceptions import WelkinHTTPError
 
 logger = logging.getLogger(__name__)
-
-
-class WelkinAuth(HTTPBasicAuth):
-    """Attaches API Key Authentication to the given Request object."""
-
-    def __init__(self, api_key):
-        self.api_key = api_key
-
-    def __eq__(self, other):
-        return self.api_key == getattr(other, "api_key", None)
-
-    def __call__(self, r):
-        logger.info(f"{r.method} {r.url}")
-        r.headers["Authorization"] = self.api_key
-        return r
 
 
 class Client(Session):
@@ -156,7 +142,10 @@ class Client(Session):
         response = super().request(
             method=method, url=urljoin(self.host, path), *args, **kwargs
         )
-        response.raise_for_status()
+        try:
+            response.raise_for_status()
+        except HTTPError as exc:
+            raise WelkinHTTPError(exc.request, exc.response) from exc
 
         json = response.json()
         meta = json.pop("meta", None)
