@@ -1,6 +1,5 @@
 import logging
 import shelve
-from functools import cached_property
 
 import requests
 from requests import HTTPError
@@ -36,12 +35,13 @@ class WelkinAuth(HTTPBasicAuth):
         r.headers["Authorization"] = f"Bearer {self.token}"
         return r
 
-    def obtain_token(self):
+    def obtain_token(self, refresh=False):
         with shelve.open("welkin") as db:
-            try:
-                return db[self.tenant]["token"]
-            except KeyError:
-                pass
+            if not refresh:
+                try:
+                    return db[self.tenant]["token"]
+                except KeyError:
+                    pass
 
             response = requests.post(
                 f"https://api.live.welkincloud.io/{self.tenant}/admin/api_clients/{self.api_client}",
