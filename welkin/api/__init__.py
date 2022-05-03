@@ -1,3 +1,5 @@
-from welkin.api.calendar import Calendar
+from welkin.api.patient import Patients
 
-__all__ = ["Calendar"]
+__all__ = [
+    "Patients",
+]
