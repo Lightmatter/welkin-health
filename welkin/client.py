@@ -139,13 +139,23 @@ class Client(Session):
             path = "/".join((str(s) for s in path if s))
         path = path.rstrip("/")
 
-        response = super().request(
-            method=method, url=urljoin(self.host, path), *args, **kwargs
-        )
-        try:
-            response.raise_for_status()
-        except HTTPError as exc:
-            raise WelkinHTTPError(exc.request, exc.response) from exc
+        for _ in range(2):
+            response = super().request(
+                method=method, url=urljoin(self.host, path), *args, **kwargs
+            )
+
+            try:
+                response.raise_for_status()
+            except HTTPError as exc:
+                code = exc.response.status_code
+
+                if code in [401]:
+                    msg = response.json()
+                    if any(i.get("errorCode") == "TOKEN_EXPIRED" for i in msg):
+                        self.auth.token = self.auth.obtain_token(refresh=True)
+                        continue
+
+                raise WelkinHTTPError(exc.request, exc.response) from exc
 
         json = response.json()
         meta = json.pop("meta", None)
