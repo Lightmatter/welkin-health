@@ -9,9 +9,9 @@ from requests.adapters import HTTPAdapter
 from requests.compat import urljoin
 from requests.packages.urllib3.util.retry import Retry  # type: ignore
 
-from welkin.api import *
 from welkin.authentication import WelkinAuth
 from welkin.exceptions import WelkinHTTPError
+from welkin.models import *
 
 logger = logging.getLogger(__name__)
 
@@ -96,7 +96,7 @@ class Client(Session):
         self.auth = WelkinAuth(
             tenant=tenant, api_client=api_client, secret_key=secret_key
         )
-        self.host = f"https://api.live.welkincloud.io/{tenant}/{instance}/"
+        self.host = f"https://api.live.welkincloud.io/{tenant}/"
 
         adapter = TimeoutHTTPAdapter(
             timeout=timeout,
@@ -109,9 +109,9 @@ class Client(Session):
         self.mount("https://", adapter)
         self.mount("http://", adapter)
 
-        self.__build_resources()
+        self.__build_resources(instance)
 
-    def __build_resources(self):
+    def __build_resources(self, instance):
         """Add each resource with a reference to this instance."""
         for k, v in globals().items():
             try:
@@ -120,6 +120,7 @@ class Client(Session):
                         continue
 
                     v._client = self
+                    v._instance = instance
                     setattr(self, k, v)
 
             except AttributeError:
@@ -158,11 +159,11 @@ class Client(Session):
                 raise WelkinHTTPError(exc.request, exc.response) from exc
 
         json = response.json()
-        meta = json.pop("meta", None)
-        resource, *_ = json.values()
+        pageable = json.get("pageable", None)
+        resource = json.pop("content", None)
 
-        if meta:
-            return resource, meta
+        if pageable:
+            return resource, json
         return resource
 
 

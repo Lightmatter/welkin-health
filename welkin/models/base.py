@@ -1,5 +1,6 @@
 class SchemaBase:
     _client = None
+    _instance = None
 
 
 class Resource(dict, SchemaBase):
@@ -73,8 +74,14 @@ class Collection(list, SchemaBase):
     def __repr__(self):
         return object.__repr__(self)
 
-    def get(self, resource, paginate=False, *args, **kwargs):
-        paginator = PageIterator(self, resource, *args, **kwargs)
+    def get(self, *args, **kwargs):
+        return self.request(self._client.get, *args, **kwargs)
+
+    def post(self, *args, **kwargs):
+        return self.request(self._client.post, *args, **kwargs)
+
+    def request(self, method, resource, paginate=False, *args, **kwargs):
+        paginator = PageIterator(self, resource, method, *args, **kwargs)
 
         if paginate:
             return paginator
@@ -88,9 +95,10 @@ class Collection(list, SchemaBase):
 
 
 class PageIterator:
-    def __init__(self, collection, resource, limit=25, *args, **kwargs):
+    def __init__(self, collection, resource, method, limit=25, *args, **kwargs):
         self.collection = collection
         self.resource = resource
+        self.method = method
         self.limit = limit
 
         if limit != 25:
@@ -100,8 +108,8 @@ class PageIterator:
         self.kwargs = kwargs
 
     def __iter__(self):
-        self.page = 1
-        self.total_pages = 1
+        self.page = 0
+        self.total_pages = 0
         self._resources = []
 
         return self
@@ -112,11 +120,9 @@ class PageIterator:
 
         if self.page <= self.total_pages:
             self.kwargs.setdefault("params", {}).update(page=self.page)
-            self.resources, meta = self.collection._client.get(
-                self.resource, *self.args, **self.kwargs
-            )
-            self.total_pages = meta["total_pages"]
-            self.page = meta["current"] + 1
+            self.resources, meta = self.method(self.resource, *self.args, **self.kwargs)
+            self.total_pages = meta["totalPages"]
+            self.page = meta["number"] + 1
 
             return next(self)
 
