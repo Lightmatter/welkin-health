@@ -11,6 +11,9 @@ class Patient(Resource):
     def update(self, **kwargs):
         return super().patch(f"{self._instance}/patients", kwargs)
 
+    def delete(self):
+        raise NotImplementedError("This operation is not supported yet")
+
     def __str__(self):
         return f"{self.firstName} {self.lastName}"
 
