@@ -147,6 +147,7 @@ class Client(Session):
 
             try:
                 response.raise_for_status()
+                break
             except HTTPError as exc:
                 code = exc.response.status_code
 
