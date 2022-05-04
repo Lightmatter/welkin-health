@@ -28,7 +28,19 @@ class Resource(dict, SchemaBase):
         response = self._client.get(
             [resource, subresource, getattr(self, "id", None)], *args, **kwargs
         )
-        self.update(response)
+        super().update(response)
+
+        return self
+
+    def patch(self, resource, data, *args, **kwargs):
+        response = self._client.patch(
+            [resource, getattr(self, "id", None)],
+            json=data,
+            *args,
+            **kwargs,
+        )
+
+        super().update(response)
 
         return self
 
@@ -39,19 +51,19 @@ class Resource(dict, SchemaBase):
             *args,
             **kwargs,
         )
-        self.update(response)
+        super().update(response)
 
         return self
 
     def put(self, resource, *args, **kwargs):
         response = self._client.put(
             [resource, getattr(self, "id", None)],
-            json={self.__class__.__name__.lower(): self},
+            json=self,
             *args,
             **kwargs,
         )
 
-        self.update(response)
+        super().update(response)
 
         return self
 
@@ -59,7 +71,7 @@ class Resource(dict, SchemaBase):
         response = self._client.delete(
             [resource, getattr(self, "id", None)], *args, **kwargs
         )
-        self.update(response)
+        super().update(response)
 
         return self
 

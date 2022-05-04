@@ -2,11 +2,14 @@ from welkin.models.base import Collection, Resource
 
 
 class Patient(Resource):
+    def create(self):
+        return super().post(f"{self._instance}/patients")
+
     def get(self):
         return super().get(f"{self._instance}/patients")
 
-    def create(self):
-        return super().post(f"{self._instance}/patients")
+    def update(self, **kwargs):
+        return super().patch(f"{self._instance}/patients", kwargs)
 
     def __str__(self):
         return f"{self.firstName} {self.lastName}"
