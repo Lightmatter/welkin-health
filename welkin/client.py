@@ -164,7 +164,7 @@ class Client(Session):
 
         if pageable:
             return resource, json
-        return resource
+        return resource or json
 
 
 class TimeoutHTTPAdapter(HTTPAdapter):
