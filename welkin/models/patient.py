@@ -5,6 +5,9 @@ class Patient(Resource):
     def get(self):
         return super().get(f"{self._instance}/patients")
 
+    def create(self):
+        return super().post(f"{self._instance}/patients")
+
     def __str__(self):
         return f"{self.firstName} {self.lastName}"
 

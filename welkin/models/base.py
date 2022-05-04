@@ -35,7 +35,7 @@ class Resource(dict, SchemaBase):
     def post(self, resource, *args, **kwargs):
         response = self._client.post(
             resource,
-            json={self.__class__.__name__.lower(): self},
+            json=self,
             *args,
             **kwargs,
         )
