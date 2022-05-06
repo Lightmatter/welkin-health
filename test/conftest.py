@@ -1,12 +1,20 @@
 import json
 import os
+import uuid
 
 import pytest
 
 from welkin import Client
 
-HEADER_BLACKLIST = [("Authorization", "API_TOKEN")]
-POST_DATA_BLACKLIST = [("secret", "API_TOKEN")]
+
+def redact(field_name, extra=""):
+    parts = [field_name, extra, str(uuid.uuid4())]
+
+    return "_".join(i for i in parts if i)
+
+
+HEADER_BLACKLIST = [("Authorization", redact("API_TOKEN"))]
+POST_DATA_BLACKLIST = [("secret", redact("API_TOKEN"))]
 REQUEST_BLACKLIST = ["secret"]
 RESPONSE_BLACKLIST = [
     "token",
@@ -71,7 +79,7 @@ def body_hook(blacklist, replacement):
     def hook(dct):
         for k in dct:
             if k in blacklist:
-                dct[k] = f"{k}_{replacement}"
+                dct[k] = redact(k, replacement)
 
         return dct
 
