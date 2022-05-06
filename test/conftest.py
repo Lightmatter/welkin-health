@@ -8,7 +8,13 @@ from welkin import Client
 HEADER_BLACKLIST = [("Authorization", "API_TOKEN")]
 POST_DATA_BLACKLIST = [("secret", "API_TOKEN")]
 REQUEST_BLACKLIST = ["secret"]
-RESPONSE_BLACKLIST = ["token"]
+RESPONSE_BLACKLIST = [
+    "token",
+    "createdBy",
+    "createdByName",
+    "updatedBy",
+    "updatedByName",
+]
 CLIENT_INIT = dict(
     tenant=os.environ["WELKIN_TENANT"],
     instance=os.environ["WELKIN_INSTANCE"],
@@ -55,6 +61,7 @@ def scrub_response(blacklist, replacement="REDACTED"):
 
 
 def filter_body(body, blacklist, replacement):
+    # TODO: write an object_hook that handles nested JSON !!!CRITICAL!!!
     body_json = json.loads(body.decode())
 
     for k in body_json:
