@@ -118,7 +118,7 @@ class Client(Session):
         self.instance = instance
         self.__build_resources()
 
-    def __build_resources(self):
+    def __build_resources(self) -> None:
         """Add each resource with a reference to this instance."""
         for k, v in globals().items():
             try:
@@ -132,7 +132,7 @@ class Client(Session):
             except AttributeError:
                 continue
 
-    def request(self, method, path, *args, **kwargs):
+    def request(self, method: str, path: str, *args, **kwargs):
         """Override :obj:`Session` request method to add retries and output JSON.
 
         Args:
@@ -173,7 +173,7 @@ class Client(Session):
             return resource, json
         return resource or json
 
-    def get_token(self):
+    def get_token(self) -> dict:
         data = {"secret": self.auth.secret_key}
         response = self.post(f"admin/api_clients/{self.auth.api_client}", json=data)
 
