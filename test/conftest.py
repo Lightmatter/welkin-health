@@ -61,11 +61,18 @@ def scrub_response(blacklist, replacement="REDACTED"):
 
 
 def filter_body(body, blacklist, replacement):
-    # TODO: write an object_hook that handles nested JSON !!!CRITICAL!!!
-    body_json = json.loads(body.decode())
-
-    for k in body_json:
-        if k in blacklist:
-            body_json[k] = replacement
+    object_hook = body_hook(blacklist, replacement)
+    body_json = json.loads(body.decode(), object_hook=object_hook)
 
     return json.dumps(body_json).encode()
+
+
+def body_hook(blacklist, replacement):
+    def hook(dct):
+        for k in dct:
+            if k in blacklist:
+                dct[k] = f"{k}_{replacement}"
+
+        return dct
+
+    return hook
