@@ -3,13 +3,13 @@ from welkin.models.base import Collection, Resource
 
 class Patient(Resource):
     def create(self):
-        return super().post(f"{self._instance}/patients")
+        return super().post(f"{self._client.instance}/patients")
 
     def get(self):
-        return super().get(f"{self._instance}/patients")
+        return super().get(f"{self._client.instance}/patients")
 
     def update(self, **kwargs):
-        return super().patch(f"{self._instance}/patients", kwargs)
+        return super().patch(f"{self._client.instance}/patients", kwargs)
 
     def delete(self):
         raise NotImplementedError("This operation is not supported yet")
@@ -23,4 +23,4 @@ class Patients(Collection):
 
     def get(self):
         data = {}
-        return super().post(f"{self._instance}/by-filter/patients", json=data)
+        return super().post(f"{self._client.instance}/by-filter/patients", json=data)

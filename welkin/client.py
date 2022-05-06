@@ -9,6 +9,7 @@ from requests.adapters import HTTPAdapter
 from requests.compat import urljoin
 from requests.packages.urllib3.util.retry import Retry  # type: ignore
 
+from welkin import __version__
 from welkin.authentication import WelkinAuth
 from welkin.exceptions import WelkinHTTPError
 from welkin.models import *
@@ -93,10 +94,8 @@ class Client(Session):
         """
         super().__init__()
 
-        self.auth = WelkinAuth(
-            tenant=tenant, api_client=api_client, secret_key=secret_key
-        )
         self.host = f"https://api.live.welkincloud.io/{tenant}/"
+        self.headers.update({"User-Agent": f"python-welkin/{__version__}"})
 
         adapter = TimeoutHTTPAdapter(
             timeout=timeout,
@@ -109,9 +108,17 @@ class Client(Session):
         self.mount("https://", adapter)
         self.mount("http://", adapter)
 
-        self.__build_resources(instance)
+        self.auth = WelkinAuth(
+            tenant=tenant,
+            api_client=api_client,
+            secret_key=secret_key,
+            token_method=self.get_token,
+        )
 
-    def __build_resources(self, instance):
+        self.instance = instance
+        self.__build_resources()
+
+    def __build_resources(self) -> None:
         """Add each resource with a reference to this instance."""
         for k, v in globals().items():
             try:
@@ -120,13 +127,12 @@ class Client(Session):
                         continue
 
                     v._client = self
-                    v._instance = instance
                     setattr(self, k, v)
 
             except AttributeError:
                 continue
 
-    def request(self, method, path, *args, **kwargs):
+    def request(self, method: str, path: str, *args, **kwargs):
         """Override :obj:`Session` request method to add retries and output JSON.
 
         Args:
@@ -154,7 +160,7 @@ class Client(Session):
                 if code in [401]:
                     msg = response.json()
                     if any(i.get("errorCode") == "TOKEN_EXPIRED" for i in msg):
-                        self.auth.token = self.auth.obtain_token(refresh=True)
+                        self.auth.refresh_token()
                         continue
 
                 raise WelkinHTTPError(exc.request, exc.response) from exc
@@ -166,6 +172,12 @@ class Client(Session):
         if pageable:
             return resource, json
         return resource or json
+
+    def get_token(self) -> dict:
+        data = {"secret": self.auth.secret_key}
+        response = self.post(f"admin/api_clients/{self.auth.api_client}", json=data)
+
+        return response
 
 
 class TimeoutHTTPAdapter(HTTPAdapter):
