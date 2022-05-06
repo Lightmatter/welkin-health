@@ -1,0 +1,269 @@
+interactions:
+- request:
+    body: '{}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - API_TOKEN_c7007d28-1dd0-4576-8737-5c9c73df997f
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '2'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-welkin/0.0.1
+    method: POST
+    uri: https://api.live.welkincloud.io/tenant_REDACTED/instance_REDACTED/by-filter/patients?page=0
+  response:
+    body:
+      string: '{"content": [{"id": "f0a6594c-f414-4b64-bc0b-1ff40fb904dd", "externalGuid":
+        null, "externalId": null, "mrn": null, "createdAt": "2022-05-04T02:00:33.474Z",
+        "updatedAt": "2022-05-04T02:00:33.474Z", "createdBy": "createdBy_REDACTED_4e9ebcbe-ba1b-45bd-8e50-afae7c3ce11a",
+        "updatedBy": "updatedBy_REDACTED_08939e58-a67f-4dac-b449-3f4b61595852", "createdByName":
+        "createdByName_REDACTED_dbced102-4eee-4010-a4c4-b8459777e638", "updatedByName":
+        "updatedByName_REDACTED_e930017c-7df0-4d5a-af6b-27b7d64d072f", "firstName":
+        "Foo", "lastName": "Bar", "middleName": null, "birthDate": null, "gender":
+        "UNKNOWN", "maritalStatus": "UKN", "primaryLanguage": "ENGLISH", "secondaryLanguage":
+        null, "email": null, "secondaryEmail": null, "phone": null, "secondaryPhone":
+        null, "country": null, "state": null, "city": null, "zip": null, "addressLine1":
+        null, "addressLine2": null, "timezone": null, "patientTerritories": [], "careTeamMembers":
+        [], "patientPrograms": [{"id": "30171551-6a1f-45ba-b087-0ed4efd41be2", "createdByName":
+        "createdByName_REDACTED_66f65578-8872-4deb-b4a2-bf0d675e7e79", "createdAt":
+        "2022-05-04T02:00:33.513Z", "updatedByName": "updatedByName_REDACTED_8cfd52f4-fec3-4cd8-bf3f-e1dd3a05afac",
+        "updatedAt": "2022-05-04T02:00:33.513Z", "programName": "diabetes-treatment",
+        "programTitle": "Diabetes Treatment", "programDescription": "Diabetes Treatment
+        Program", "assigned": true, "patientId": "f0a6594c-f414-4b64-bc0b-1ff40fb904dd",
+        "currentPhase": {"timestamp": "2022-05-04T02:00:33.513Z", "createdBy": "createdBy_REDACTED_7e356fbd-3fb3-48fd-bef4-a51a55b7c444",
+        "createdByName": "createdByName_REDACTED_bb95068c-f670-4447-bceb-e296bbd15b03",
+        "name": "start", "title": "Intake", "description": "Diagnose and begin treatment",
+        "currentVersion": "2", "deleted": false}, "status": "IN_PROGRESS", "compatibleWithCurrentVersion":
+        true, "pathHistory": [{"timestamp": "2022-05-04T02:00:33.513Z", "createdBy":
+        "createdBy_REDACTED_e1a9a6f7-4e60-4f77-9bb4-774df81b8b2b", "createdByName":
+        "createdByName_REDACTED_b54a130f-5b4d-4ee8-ae53-010e8347d61c", "name": "start",
+        "title": "Intake", "description": "Diagnose and begin treatment", "currentVersion":
+        "2", "deleted": false}]}], "careTeam": [], "cadence": [], "patientRegion":
+        null, "patientRegionTitle": null, "patientTerritory": null, "pointOfContact":
+        null}, {"id": "ec2f7614-bbd2-48a5-be6b-54b7ffb5a467", "externalGuid": null,
+        "externalId": null, "mrn": null, "createdAt": "2022-05-03T22:22:29.982Z",
+        "updatedAt": "2022-05-03T22:22:29.982Z", "createdBy": "createdBy_REDACTED_c8428ac4-8ad4-4630-964b-0b06a5146787",
+        "updatedBy": "updatedBy_REDACTED_59053d64-1dc6-454d-b152-cac18576e4a2", "createdByName":
+        "createdByName_REDACTED_65e77a80-3b02-40b1-9d84-ef87b58eeeed", "updatedByName":
+        "updatedByName_REDACTED_b1332f38-eca6-44af-9850-93f294bc81fd", "firstName":
+        "Test", "lastName": "Patient", "middleName": "", "birthDate": null, "gender":
+        "OTHER", "maritalStatus": "UKN", "primaryLanguage": "ENGLISH", "secondaryLanguage":
+        null, "email": "", "secondaryEmail": "", "phone": null, "secondaryPhone":
+        null, "country": "", "state": null, "city": "", "zip": "", "addressLine1":
+        "", "addressLine2": "", "timezone": null, "patientTerritories": [], "careTeamMembers":
+        [], "patientPrograms": [{"id": "4f308ddf-0119-4ea0-b5bc-dda8a7d551d5", "createdByName":
+        "createdByName_REDACTED_a81c65ef-2629-4bd7-bb05-f4606b862251", "createdAt":
+        "2022-05-03T22:22:30.017Z", "updatedByName": "updatedByName_REDACTED_83c722fa-e4aa-4166-81fa-eaf18ddd667b",
+        "updatedAt": "2022-05-03T22:22:30.017Z", "programName": "diabetes-treatment",
+        "programTitle": "Diabetes Treatment", "programDescription": "Diabetes Treatment
+        Program", "assigned": true, "patientId": "ec2f7614-bbd2-48a5-be6b-54b7ffb5a467",
+        "currentPhase": {"timestamp": "2022-05-03T22:22:30.017Z", "createdBy": "createdBy_REDACTED_e0aaee77-4830-4edd-904d-f3c85ebf61e3",
+        "createdByName": "createdByName_REDACTED_747a685c-479b-4e46-8b1a-7028d4874019",
+        "name": "start", "title": "Intake", "description": "Diagnose and begin treatment",
+        "currentVersion": "2", "deleted": false}, "status": "IN_PROGRESS", "compatibleWithCurrentVersion":
+        true, "pathHistory": [{"timestamp": "2022-05-03T22:22:30.017Z", "createdBy":
+        "createdBy_REDACTED_149d6dc9-e990-473f-8d4e-336c9a5b04f2", "createdByName":
+        "createdByName_REDACTED_eb77a9af-a54b-4758-b917-10f188c39684", "name": "start",
+        "title": "Intake", "description": "Diagnose and begin treatment", "currentVersion":
+        "2", "deleted": false}]}], "careTeam": [], "cadence": [], "patientRegion":
+        null, "patientRegionTitle": null, "patientTerritory": null, "pointOfContact":
+        null}, {"id": "333a9a8d-a3fb-4b61-a1db-62e54bb94eb7", "externalGuid": null,
+        "externalId": null, "mrn": null, "createdAt": "2022-05-03T22:21:25.041Z",
+        "updatedAt": "2022-05-03T22:21:25.041Z", "createdBy": "createdBy_REDACTED_8f46f7be-ac27-4c58-b9a5-21d94231ddb7",
+        "updatedBy": "updatedBy_REDACTED_461896ec-343a-40c3-9969-af19ff048c11", "createdByName":
+        "createdByName_REDACTED_7c6c388a-8866-4998-a928-bfcf326650d3", "updatedByName":
+        "updatedByName_REDACTED_0f7b3afa-613d-4359-a76c-1da5eca3eddd", "firstName":
+        "Test", "lastName": "Patient", "middleName": "", "birthDate": null, "gender":
+        "OTHER", "maritalStatus": "UKN", "primaryLanguage": "ENGLISH", "secondaryLanguage":
+        null, "email": "", "secondaryEmail": "", "phone": null, "secondaryPhone":
+        null, "country": "", "state": null, "city": "", "zip": "", "addressLine1":
+        "", "addressLine2": "", "timezone": null, "patientTerritories": [], "careTeamMembers":
+        [], "patientPrograms": [{"id": "4287c171-89ba-4f77-b6ab-a0e8a3e3cf4a", "createdByName":
+        "createdByName_REDACTED_03aab53e-9ff4-45fd-8ac0-0aa170398cc3", "createdAt":
+        "2022-05-03T22:21:25.092Z", "updatedByName": "updatedByName_REDACTED_51104706-0e47-4358-b7d4-720b91e6e3e1",
+        "updatedAt": "2022-05-03T22:21:25.093Z", "programName": "diabetes-treatment",
+        "programTitle": "Diabetes Treatment", "programDescription": "Diabetes Treatment
+        Program", "assigned": true, "patientId": "333a9a8d-a3fb-4b61-a1db-62e54bb94eb7",
+        "currentPhase": {"timestamp": "2022-05-03T22:21:25.092Z", "createdBy": "createdBy_REDACTED_2fc9dbc6-17d4-463c-9c9d-fe380bdc225e",
+        "createdByName": "createdByName_REDACTED_47df2499-28bf-4df5-b3e3-055aeb791ecc",
+        "name": "start", "title": "Intake", "description": "Diagnose and begin treatment",
+        "currentVersion": "2", "deleted": false}, "status": "IN_PROGRESS", "compatibleWithCurrentVersion":
+        true, "pathHistory": [{"timestamp": "2022-05-03T22:21:25.092Z", "createdBy":
+        "createdBy_REDACTED_14bb26f6-2f86-40ff-9b09-59218f804895", "createdByName":
+        "createdByName_REDACTED_6fd1f29a-3cc3-4e85-b917-817e233d9956", "name": "start",
+        "title": "Intake", "description": "Diagnose and begin treatment", "currentVersion":
+        "2", "deleted": false}]}], "careTeam": [], "cadence": [], "patientRegion":
+        null, "patientRegionTitle": null, "patientTerritory": null, "pointOfContact":
+        null}, {"id": "6003e76b-e4cb-434f-a6f9-5871937bb14c", "externalGuid": null,
+        "externalId": null, "mrn": null, "createdAt": "2022-04-27T15:54:45.840Z",
+        "updatedAt": "2022-04-27T15:56:50.478Z", "createdBy": "createdBy_REDACTED_03ce471e-0042-47f0-bb36-2d191567a3a4",
+        "updatedBy": "updatedBy_REDACTED_96f2c73e-2aad-41f4-9f49-0661d8e1b76e", "createdByName":
+        "createdByName_REDACTED_e0ee606d-89fc-4348-b579-821b4e628655", "updatedByName":
+        "updatedByName_REDACTED_78e6a4c8-9a06-46ec-a30e-8fe056fa2942", "firstName":
+        "Sample", "lastName": "Patient", "middleName": "", "birthDate": null, "gender":
+        "MALE", "maritalStatus": "UKN", "primaryLanguage": "ENGLISH", "secondaryLanguage":
+        null, "email": "", "secondaryEmail": "", "phone": null, "secondaryPhone":
+        null, "country": "", "state": null, "city": "", "zip": "", "addressLine1":
+        "", "addressLine2": "", "timezone": null, "patientTerritories": [{"name":
+        "east-coast", "territories": ["Connecticut"]}], "careTeamMembers": [{"id":
+        "8c9abb35-ec92-4e6b-82a0-d4246537e12a", "pointOfContact": true}, {"id": "5d6addf9-e07c-499e-bc80-5995c84b67c1",
+        "pointOfContact": false}], "patientPrograms": [{"id": "e76120d4-1071-4e9c-a0b9-f6639f80bd8e",
+        "createdByName": "createdByName_REDACTED_0dcbedae-82eb-4b03-b52d-47289ec20ef7",
+        "createdAt": "2022-04-27T15:54:45.949Z", "updatedByName": "updatedByName_REDACTED_9f34f706-a845-4b6b-9ca2-1eb1c45ac1de",
+        "updatedAt": "2022-04-27T15:54:45.950Z", "programName": "diabetes-treatment",
+        "programTitle": "Diabetes Treatment", "programDescription": "Diabetes Treatment
+        Program", "assigned": true, "patientId": "6003e76b-e4cb-434f-a6f9-5871937bb14c",
+        "currentPhase": {"timestamp": "2022-04-27T15:54:45.950Z", "createdBy": "createdBy_REDACTED_f90eb1a8-b6a4-49e0-bcde-e1efa656dfba",
+        "createdByName": "createdByName_REDACTED_b698dc90-3d68-4ebe-8c46-f498d079aa1e",
+        "name": "start", "title": "Intake", "description": "Diagnose and begin treatment",
+        "currentVersion": "2", "deleted": false}, "status": "IN_PROGRESS", "compatibleWithCurrentVersion":
+        true, "pathHistory": [{"timestamp": "2022-04-27T15:54:45.950Z", "createdBy":
+        "createdBy_REDACTED_be4aaef2-f7ac-4e24-b0fc-b99cbd766c8a", "createdByName":
+        "createdByName_REDACTED_66d3e460-ac20-4b25-a2d2-bfcae0d2bd23", "name": "start",
+        "title": "Intake", "description": "Diagnose and begin treatment", "currentVersion":
+        "2", "deleted": false}]}], "careTeam": [], "cadence": [], "patientRegion":
+        "east-coast", "patientRegionTitle": null, "patientTerritory": "Connecticut",
+        "pointOfContact": {"id": "8c9abb35-ec92-4e6b-82a0-d4246537e12a", "pointOfContact":
+        true}}, {"id": "092ae416-1c0d-4e14-be22-9cc8dafacdbd", "externalGuid": null,
+        "externalId": null, "mrn": null, "createdAt": "2022-05-04T02:00:33.714Z",
+        "updatedAt": "2022-05-06T22:16:43.601Z", "createdBy": "createdBy_REDACTED_bcbd032a-5461-4b09-af0d-9a80f95fc629",
+        "updatedBy": "updatedBy_REDACTED_c66b8593-1009-4074-bab2-22e2e7dbe6bc", "createdByName":
+        "createdByName_REDACTED_0567992c-b796-4fea-9188-9c2627c34791", "updatedByName":
+        "updatedByName_REDACTED_829860d8-ee9f-4ecb-9748-0de772782533", "firstName":
+        "Baz", "lastName": "Bar", "middleName": null, "birthDate": null, "gender":
+        "UNKNOWN", "maritalStatus": "UKN", "primaryLanguage": "ENGLISH", "secondaryLanguage":
+        null, "email": null, "secondaryEmail": null, "phone": null, "secondaryPhone":
+        null, "country": null, "state": null, "city": null, "zip": null, "addressLine1":
+        null, "addressLine2": null, "timezone": null, "patientTerritories": [], "careTeamMembers":
+        [], "patientPrograms": [{"id": "de9dcd5d-aaff-4a90-a4ec-5fe74c231a14", "createdByName":
+        "createdByName_REDACTED_b4efb7d1-2dea-45a7-9344-83be0f0fed35", "createdAt":
+        "2022-05-04T02:00:33.754Z", "updatedByName": "updatedByName_REDACTED_f490dda2-4314-4a79-be27-04025f4e163b",
+        "updatedAt": "2022-05-04T02:00:33.754Z", "programName": "diabetes-treatment",
+        "programTitle": "Diabetes Treatment", "programDescription": "Diabetes Treatment
+        Program", "assigned": true, "patientId": "092ae416-1c0d-4e14-be22-9cc8dafacdbd",
+        "currentPhase": {"timestamp": "2022-05-04T02:00:33.754Z", "createdBy": "createdBy_REDACTED_2667cc86-e1f4-45de-b627-a01b3daacc2b",
+        "createdByName": "createdByName_REDACTED_2fa84efd-12ce-4f9c-bdaa-a5ba87e5cb63",
+        "name": "start", "title": "Intake", "description": "Diagnose and begin treatment",
+        "currentVersion": "2", "deleted": false}, "status": "IN_PROGRESS", "compatibleWithCurrentVersion":
+        true, "pathHistory": [{"timestamp": "2022-05-04T02:00:33.754Z", "createdBy":
+        "createdBy_REDACTED_b55a7721-ca82-4756-8850-2015785681eb", "createdByName":
+        "createdByName_REDACTED_556b20b0-128b-4368-a97d-a5854eb4be91", "name": "start",
+        "title": "Intake", "description": "Diagnose and begin treatment", "currentVersion":
+        "2", "deleted": false}]}], "careTeam": [], "cadence": [], "patientRegion":
+        null, "patientRegionTitle": null, "patientTerritory": null, "pointOfContact":
+        null}], "pageable": {"sort": {"sorted": false, "unsorted": true, "empty":
+        true}, "pageNumber": 0, "pageSize": 20, "offset": 0, "paged": true, "unpaged":
+        false}, "last": true, "totalElements": 5, "totalPages": 1, "sort": {"sorted":
+        false, "unsorted": true, "empty": true}, "first": true, "number": 0, "numberOfElements":
+        5, "size": 20, "empty": false}'
+    headers:
+      Access-Control-Allow-Headers:
+      - authorization, content-type, xsrf-token, security-role
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, PATCH, OPTIONS
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - xsrf-token
+      Access-Control-Max-Age:
+      - '3600'
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 06 May 2022 23:30:47 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Set-Cookie:
+      - AWSALB=oVut4593+DsWgs7gQikgbuCzkcagqr2O1DLLo1cnCoMWKJY4bMhNhMZNs9YnxqExjkht9KE1vxBdxvXolW6yAl5OJUDb8zfDwmNjYgmZ/YEW8dPnUWBzRwSh0MfM;
+        Expires=Fri, 13 May 2022 23:30:47 GMT; Path=/
+      - AWSALBCORS=oVut4593+DsWgs7gQikgbuCzkcagqr2O1DLLo1cnCoMWKJY4bMhNhMZNs9YnxqExjkht9KE1vxBdxvXolW6yAl5OJUDb8zfDwmNjYgmZ/YEW8dPnUWBzRwSh0MfM;
+        Expires=Fri, 13 May 2022 23:30:47 GMT; Path=/; SameSite=None; Secure
+      Transfer-Encoding:
+      - chunked
+      X-Content-Type-Options:
+      - nosniff
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: ''
+- request:
+    body: '{}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - API_TOKEN_c7007d28-1dd0-4576-8737-5c9c73df997f
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '2'
+      Content-Type:
+      - application/json
+      Cookie:
+      - AWSALB=oVut4593+DsWgs7gQikgbuCzkcagqr2O1DLLo1cnCoMWKJY4bMhNhMZNs9YnxqExjkht9KE1vxBdxvXolW6yAl5OJUDb8zfDwmNjYgmZ/YEW8dPnUWBzRwSh0MfM;
+        AWSALBCORS=oVut4593+DsWgs7gQikgbuCzkcagqr2O1DLLo1cnCoMWKJY4bMhNhMZNs9YnxqExjkht9KE1vxBdxvXolW6yAl5OJUDb8zfDwmNjYgmZ/YEW8dPnUWBzRwSh0MfM
+      User-Agent:
+      - python-welkin/0.0.1
+    method: POST
+    uri: https://api.live.welkincloud.io/tenant_REDACTED/instance_REDACTED/by-filter/patients?page=1
+  response:
+    body:
+      string: '{"content": [], "pageable": {"sort": {"sorted": false, "unsorted":
+        true, "empty": true}, "pageNumber": 1, "pageSize": 20, "offset": 20, "paged":
+        true, "unpaged": false}, "last": true, "totalElements": 5, "totalPages": 1,
+        "sort": {"sorted": false, "unsorted": true, "empty": true}, "first": false,
+        "number": 1, "numberOfElements": 0, "size": 20, "empty": true}'
+    headers:
+      Access-Control-Allow-Headers:
+      - authorization, content-type, xsrf-token, security-role
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, PATCH, OPTIONS
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - xsrf-token
+      Access-Control-Max-Age:
+      - '3600'
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 06 May 2022 23:30:47 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Set-Cookie:
+      - AWSALB=ZLVutZqJEK1UE6QPBN0ULNu5hdNOCAEttx65tEnOCMGSiO4RQh8sOLs0b8P00R3RqT6JANCwgJUzguI5ZUuQOZaQ/ppKRNJ8VA8RxC1uqUc6xJ22hcmo09vcma0/;
+        Expires=Fri, 13 May 2022 23:30:47 GMT; Path=/
+      - AWSALBCORS=ZLVutZqJEK1UE6QPBN0ULNu5hdNOCAEttx65tEnOCMGSiO4RQh8sOLs0b8P00R3RqT6JANCwgJUzguI5ZUuQOZaQ/ppKRNJ8VA8RxC1uqUc6xJ22hcmo09vcma0/;
+        Expires=Fri, 13 May 2022 23:30:47 GMT; Path=/; SameSite=None; Secure
+      Transfer-Encoding:
+      - chunked
+      X-Content-Type-Options:
+      - nosniff
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: ''
+version: 1

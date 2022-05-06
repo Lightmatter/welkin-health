@@ -15,10 +15,15 @@ def test_patient_read(client, vcr_cassette):
 
 @pytest.mark.vcr()
 def test_patient_read_all(client, vcr_cassette):
-    # patients = client.Patients().get()
+    patients = client.Patients().get()
 
-    # assert isinstance(patients, Patients)
-    assert True
+    assert isinstance(patients, Patients)
+    assert isinstance(patients[0], Patient)
+
+    if len(patients) > 20:
+        assert len(vcr_cassette) > 1, "Pagination was expected"
+    else:
+        assert len(vcr_cassette) == 1, "Unexpected pagination"
 
 
 @pytest.mark.vcr()
