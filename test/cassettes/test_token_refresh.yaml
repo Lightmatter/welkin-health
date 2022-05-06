@@ -1,0 +1,119 @@
+interactions:
+- request:
+    body: '{"secret": "API_TOKEN"}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '34'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-welkin/0.0.1
+    method: POST
+    uri: https://api.live.welkincloud.io/tenant_REDACTED/admin/api_clients/api_client_REDACTED
+  response:
+    body:
+      string: '{"token": "REDACTED"}'
+    headers:
+      Access-Control-Allow-Headers:
+      - authorization, content-type, xsrf-token, security-role
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, PATCH, OPTIONS
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - xsrf-token
+      Access-Control-Max-Age:
+      - '3600'
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 06 May 2022 21:40:49 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Set-Cookie:
+      - AWSALB=BVliB9DZwaBXkSvQhpIMuQCYsEXuy5QKr2Dkh/NnYgZZoBFiZ4WzmRJpzq1qDCU1fbrcH21p5ZFHHyK+WQjbYMGdN2v6nblc88fZTSNSZelGLdVF6PZQQto7fT1E;
+        Expires=Fri, 13 May 2022 21:40:48 GMT; Path=/
+      - AWSALBCORS=BVliB9DZwaBXkSvQhpIMuQCYsEXuy5QKr2Dkh/NnYgZZoBFiZ4WzmRJpzq1qDCU1fbrcH21p5ZFHHyK+WQjbYMGdN2v6nblc88fZTSNSZelGLdVF6PZQQto7fT1E;
+        Expires=Fri, 13 May 2022 21:40:48 GMT; Path=/; SameSite=None; Secure
+      Transfer-Encoding:
+      - chunked
+      X-Content-Type-Options:
+      - nosniff
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: ''
+- request:
+    body: '{"secret": "API_TOKEN"}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '34'
+      Content-Type:
+      - application/json
+      Cookie:
+      - AWSALB=BVliB9DZwaBXkSvQhpIMuQCYsEXuy5QKr2Dkh/NnYgZZoBFiZ4WzmRJpzq1qDCU1fbrcH21p5ZFHHyK+WQjbYMGdN2v6nblc88fZTSNSZelGLdVF6PZQQto7fT1E;
+        AWSALBCORS=BVliB9DZwaBXkSvQhpIMuQCYsEXuy5QKr2Dkh/NnYgZZoBFiZ4WzmRJpzq1qDCU1fbrcH21p5ZFHHyK+WQjbYMGdN2v6nblc88fZTSNSZelGLdVF6PZQQto7fT1E
+      User-Agent:
+      - python-welkin/0.0.1
+    method: POST
+    uri: https://api.live.welkincloud.io/tenant_REDACTED/admin/api_clients/api_client_REDACTED
+  response:
+    body:
+      string: '{"token": "REDACTED"}'
+    headers:
+      Access-Control-Allow-Headers:
+      - authorization, content-type, xsrf-token, security-role
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, PATCH, OPTIONS
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - xsrf-token
+      Access-Control-Max-Age:
+      - '3600'
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 06 May 2022 21:40:49 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Set-Cookie:
+      - AWSALB=n5gwp86sX63d5YBUF+1aNlqoXuR/COkUsKG3HLsTt6EZ9KyMAHWNHwKnt3CeNPheuH1NjZyA3WmeqJwvCo/vBc4vIaKRRqc7/ZlTxRk73uU2v1Z87k4zoNx20ouX;
+        Expires=Fri, 13 May 2022 21:40:49 GMT; Path=/
+      - AWSALBCORS=n5gwp86sX63d5YBUF+1aNlqoXuR/COkUsKG3HLsTt6EZ9KyMAHWNHwKnt3CeNPheuH1NjZyA3WmeqJwvCo/vBc4vIaKRRqc7/ZlTxRk73uU2v1Z87k4zoNx20ouX;
+        Expires=Fri, 13 May 2022 21:40:49 GMT; Path=/; SameSite=None; Secure
+      Transfer-Encoding:
+      - chunked
+      X-Content-Type-Options:
+      - nosniff
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: ''
+version: 1
