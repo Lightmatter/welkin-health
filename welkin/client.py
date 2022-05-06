@@ -94,9 +94,6 @@ class Client(Session):
         """
         super().__init__()
 
-        self.auth = WelkinAuth(
-            tenant=tenant, api_client=api_client, secret_key=secret_key
-        )
         self.host = f"https://api.live.welkincloud.io/{tenant}/"
         self.headers.update({"User-Agent": f"python-welkin/{__version__}"})
 
@@ -111,7 +108,13 @@ class Client(Session):
         self.mount("https://", adapter)
         self.mount("http://", adapter)
 
-        self.__build_resources(instance)
+        self.auth = WelkinAuth(
+            tenant=tenant,
+            api_client=api_client,
+            secret_key=secret_key,
+            token_method=self.get_token,
+        )
+
         self.instance = instance
         self.__build_resources()
 
@@ -157,7 +160,7 @@ class Client(Session):
                 if code in [401]:
                     msg = response.json()
                     if any(i.get("errorCode") == "TOKEN_EXPIRED" for i in msg):
-                        self.auth.token = self.auth.obtain_token(refresh=True)
+                        self.auth.refresh_token()
                         continue
 
                 raise WelkinHTTPError(exc.request, exc.response) from exc
@@ -169,6 +172,12 @@ class Client(Session):
         if pageable:
             return resource, json
         return resource or json
+
+    def get_token(self):
+        data = {"secret": self.auth.secret_key}
+        response = self.post(f"admin/api_clients/{self.auth.api_client}", json=data)
+
+        return response
 
 
 class TimeoutHTTPAdapter(HTTPAdapter):

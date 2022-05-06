@@ -16,12 +16,11 @@ class WelkinAuth(HTTPBasicAuth):
     https://developers.welkinhealth.com/#authentication
     """
 
-    def __init__(self, tenant, api_client, secret_key):
+    def __init__(self, tenant, api_client, secret_key, token_method):
         self.tenant = tenant
         self.api_client = api_client
         self.secret_key = secret_key
-
-        self.token = self.obtain_token()
+        self.token_method = token_method
 
     def __eq__(self, other):
         return (self.tenant, self.api_client, self.secret_key) == (
@@ -32,26 +31,25 @@ class WelkinAuth(HTTPBasicAuth):
 
     def __call__(self, r):
         logger.info(f"{r.method} {r.url}")
-        r.headers["Authorization"] = f"Bearer {self.token}"
+
+        if "api_clients" not in r.path_url:
+            r.headers["Authorization"] = f"Bearer {self.token}"
+
         return r
 
-    def obtain_token(self, refresh=False):
+    @property
+    def token(self):
         with shelve.open("welkin") as db:
-            if not refresh:
-                try:
-                    return db[self.tenant]["token"]
-                except KeyError:
-                    pass
-
-            response = requests.post(
-                f"https://api.live.welkincloud.io/{self.tenant}/admin/api_clients/{self.api_client}",
-                json={"secret": self.secret_key},
-            )
             try:
-                response.raise_for_status()
-            except HTTPError as exc:
-                raise WelkinHTTPError(exc.request, exc.response) from exc
+                return db[self.tenant]["token"]
+            except KeyError:
+                self.refresh_token()
+                return self.token
 
-            db[self.tenant] = response.json()
+    @token.setter
+    def token(self, value):
+        with shelve.open("welkin") as db:
+            db[self.tenant] = value
 
-            return db[self.tenant]["token"]
+    def refresh_token(self):
+        self.token = self.token_method()
