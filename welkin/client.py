@@ -9,6 +9,7 @@ from requests.adapters import HTTPAdapter
 from requests.compat import urljoin
 from requests.packages.urllib3.util.retry import Retry  # type: ignore
 
+from welkin import __version__
 from welkin.authentication import WelkinAuth
 from welkin.exceptions import WelkinHTTPError
 from welkin.models import *
@@ -97,6 +98,7 @@ class Client(Session):
             tenant=tenant, api_client=api_client, secret_key=secret_key
         )
         self.host = f"https://api.live.welkincloud.io/{tenant}/"
+        self.headers.update({"User-Agent": f"python-welkin/{__version__}"})
 
         adapter = TimeoutHTTPAdapter(
             timeout=timeout,
