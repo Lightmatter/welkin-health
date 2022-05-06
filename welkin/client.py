@@ -112,8 +112,10 @@ class Client(Session):
         self.mount("http://", adapter)
 
         self.__build_resources(instance)
+        self.instance = instance
+        self.__build_resources()
 
-    def __build_resources(self, instance):
+    def __build_resources(self):
         """Add each resource with a reference to this instance."""
         for k, v in globals().items():
             try:
@@ -122,7 +124,6 @@ class Client(Session):
                         continue
 
                     v._client = self
-                    v._instance = instance
                     setattr(self, k, v)
 
             except AttributeError:
