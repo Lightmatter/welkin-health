@@ -100,29 +100,29 @@ class Collection(list, SchemaBase):
 
         self.clear()
         for n, _ in enumerate(paginator):
-            if n == paginator.limit - 1:
+            if n == paginator.size - 1:
                 break
 
         return self
 
 
 class PageIterator:
-    def __init__(self, collection, resource, method, limit=25, *args, **kwargs):
+    def __init__(self, collection, resource, method, size=20, *args, **kwargs):
         self.collection = collection
         self.resource = resource
         self.method = method
-        self.limit = limit
+        self.size = size
 
-        if limit != 25:
-            kwargs.setdefault("params", {}).update(limit=limit)
+        if size != 20:
+            kwargs.setdefault("params", {}).update(size=size)
 
         self.args = args
         self.kwargs = kwargs
 
     def __iter__(self):
         self.page = 0
-        self.total_pages = 0
         self._resources = []
+        self.last = False
 
         return self
 
@@ -130,11 +130,11 @@ class PageIterator:
         if self.resources:
             return self.resources.pop(0)
 
-        if self.page <= self.total_pages:
+        if not self.last:
             self.kwargs.setdefault("params", {}).update(page=self.page)
             self.resources, meta = self.method(self.resource, *self.args, **self.kwargs)
-            self.total_pages = meta["totalPages"]
             self.page = meta["number"] + 1
+            self.last = meta["last"]
 
             return next(self)
 

@@ -21,6 +21,8 @@ class Patient(Resource):
 class Patients(Collection):
     resource = Patient
 
-    def get(self):
-        data = {}
-        return super().post(f"{self._client.instance}/by-filter/patients", json=data)
+    def get(self, filter={}, *args, **kwargs):
+        # TODO: Add sort and query arguments.
+        return super().post(
+            f"{self._client.instance}/by-filter/patients", json=filter, *args, **kwargs
+        )
