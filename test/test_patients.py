@@ -31,7 +31,7 @@ def test_patient_update(client, vcr_cassette):
     patient = client.Patient(id="092ae416-1c0d-4e14-be22-9cc8dafacdbd").get()
     name = patient.firstName
 
-    patient.update(firstName=f"Baz")
+    patient.update(firstName="Baz")
 
     assert patient.firstName != name
     assert len(vcr_cassette) == 2
