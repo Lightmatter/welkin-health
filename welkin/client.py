@@ -163,7 +163,7 @@ class Client(Session):
                         self.auth.refresh_token()
                         continue
 
-                raise WelkinHTTPError(exc.request, exc.response) from exc
+                raise WelkinHTTPError(exc) from exc
 
         json = response.json()
         pageable = json.get("pageable", None)
