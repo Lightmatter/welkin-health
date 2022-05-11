@@ -37,4 +37,4 @@ jobs:
 
       - name: Test with pytest
         run: |
-          pytest --envfile .env.example --vcr-record=none
+          pytest --vcr-record=none
