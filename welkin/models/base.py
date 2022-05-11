@@ -1,6 +1,5 @@
 class SchemaBase:
     _client = None
-    _instance = None
 
 
 class Resource(dict, SchemaBase):
@@ -133,8 +132,15 @@ class PageIterator:
         if not self.last:
             self.kwargs.setdefault("params", {}).update(page=self.page)
             self.resources, meta = self.method(self.resource, *self.args, **self.kwargs)
-            self.page = meta["number"] + 1
-            self.last = meta["last"]
+
+            # Different endpoints return pagination data differently
+            try:
+                page = meta["number"]
+            except KeyError:
+                page = meta["page"]
+            self.page = page + 1
+
+            self.last = meta.get("last") or meta.get("lastPage")
 
             return next(self)
 
