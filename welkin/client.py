@@ -163,14 +163,19 @@ class Client(Session):
                         self.auth.refresh_token()
                         continue
 
-                raise WelkinHTTPError(exc.request, exc.response) from exc
+                raise WelkinHTTPError(exc) from exc
 
         json = response.json()
-        pageable = json.get("pageable", None)
-        resource = json.pop("content", None)
 
-        if pageable:
-            return resource, json
+        # Pull out the resource
+        resource = json.pop("content", None) or json.pop("data", None)
+
+        # Response metadata for pagination
+        meta = json.pop("pageable", {}) or json.pop("metaInfo", {})
+        meta.update(json)
+
+        if "totalPages" in meta:
+            return resource, meta
         return resource or json
 
     def get_token(self) -> dict:

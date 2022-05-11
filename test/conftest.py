@@ -1,14 +1,28 @@
 import json
 import os
+import uuid
 
 import pytest
 
 from welkin import Client
 
-HEADER_BLACKLIST = [("Authorization", "API_TOKEN")]
-POST_DATA_BLACKLIST = [("secret", "API_TOKEN")]
+
+def redact(field_name, extra=""):
+    parts = [field_name, extra, str(uuid.uuid4())]
+
+    return "_".join(i for i in parts if i)
+
+
+HEADER_BLACKLIST = [("Authorization", redact("API_TOKEN"))]
+POST_DATA_BLACKLIST = [("secret", redact("API_TOKEN"))]
 REQUEST_BLACKLIST = ["secret"]
-RESPONSE_BLACKLIST = ["token"]
+RESPONSE_BLACKLIST = [
+    "token",
+    "createdBy",
+    "createdByName",
+    "updatedBy",
+    "updatedByName",
+]
 CLIENT_INIT = dict(
     tenant=os.environ["WELKIN_TENANT"],
     instance=os.environ["WELKIN_INSTANCE"],
@@ -55,10 +69,18 @@ def scrub_response(blacklist, replacement="REDACTED"):
 
 
 def filter_body(body, blacklist, replacement):
-    body_json = json.loads(body.decode())
-
-    for k in body_json:
-        if k in blacklist:
-            body_json[k] = replacement
+    object_hook = body_hook(blacklist, replacement)
+    body_json = json.loads(body.decode(), object_hook=object_hook)
 
     return json.dumps(body_json).encode()
+
+
+def body_hook(blacklist, replacement):
+    def hook(dct):
+        for k in dct:
+            if k in blacklist:
+                dct[k] = redact(k, replacement)
+
+        return dct
+
+    return hook

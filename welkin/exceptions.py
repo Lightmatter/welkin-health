@@ -9,7 +9,7 @@ class WelkinHTTPError(HTTPError):
     https://developers.welkinhealth.com/#errors
     """
 
-    def __init__(self, request, response):
+    def __init__(self, exc):
         """WelkinHTTPError constructor.
 
         Parses out error information from the error object and passes on to the
@@ -18,5 +18,13 @@ class WelkinHTTPError(HTTPError):
         Args:
             exc (:obj:`HTTPError`): Original exception.
         """
-        msg = json.dumps(response.json())
+        request = exc.request
+        response = exc.response
+        msg = exc.args[0]
+
+        try:
+            msg = f"{msg}\n{json.dumps(response.json(), indent=2)}"
+        except json.JSONDecodeError:
+            pass
+
         super(HTTPError, self).__init__(msg, request=request, response=response)
