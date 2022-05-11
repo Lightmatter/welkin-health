@@ -1,0 +1,74 @@
+interactions:
+- request:
+    body: '{"firstName": "Foo", "lastName": "Bar"}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - API_TOKEN_fb056e43-d3fa-4bd1-8346-49f10b91597d
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '39'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-welkin/0.0.1
+    method: POST
+    uri: https://api.live.welkincloud.io/tenant_REDACTED/instance_REDACTED/patients
+  response:
+    body:
+      string: '{"id": "93231441-991f-4763-8eed-625670f4bfec", "externalGuid": null,
+        "externalId": null, "mrn": null, "createdAt": "2022-05-11T18:37:06.700Z",
+        "updatedAt": "2022-05-11T18:37:06.700Z", "createdBy": "createdBy_REDACTED_f2ffc598-6937-4326-b7d2-7f531baa876f",
+        "updatedBy": "updatedBy_REDACTED_32a66aae-c9f9-4325-9b39-2f72563a7b42", "createdByName":
+        "createdByName_REDACTED_4892d82c-16b8-46dd-93ee-da2aea3ba5a6", "updatedByName":
+        "updatedByName_REDACTED_961f6988-c31e-4cd6-b9e2-6b7d016c0425", "firstName":
+        "Foo", "lastName": "Bar", "middleName": null, "birthDate": null, "gender":
+        "UNKNOWN", "maritalStatus": "UKN", "primaryLanguage": "ENGLISH", "secondaryLanguage":
+        null, "email": null, "secondaryEmail": null, "phone": null, "secondaryPhone":
+        null, "country": null, "state": null, "city": null, "zip": null, "addressLine1":
+        null, "addressLine2": null, "timezone": null, "patientTerritories": [], "careTeamMembers":
+        [], "patientPrograms": [], "careTeam": [], "cadence": [], "patientRegion":
+        null, "patientRegionTitle": null, "patientTerritory": null, "pointOfContact":
+        null}'
+    headers:
+      Access-Control-Allow-Headers:
+      - authorization, content-type, xsrf-token, security-role
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, PATCH, OPTIONS
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - xsrf-token
+      Access-Control-Max-Age:
+      - '3600'
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 11 May 2022 18:37:06 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Set-Cookie:
+      - AWSALB=4FGnb4ROtLHJS0hZbKxY6QrnPDdDlOKG8+G68JG6DysUubJ2sF3XdNsLj2nzdN8p6VfzeNZsSRw9ItxuuFcI38kbMZK0cZagjk+34HV7QaDFHNm3DlfpieuFvydL;
+        Expires=Wed, 18 May 2022 18:37:06 GMT; Path=/
+      - AWSALBCORS=4FGnb4ROtLHJS0hZbKxY6QrnPDdDlOKG8+G68JG6DysUubJ2sF3XdNsLj2nzdN8p6VfzeNZsSRw9ItxuuFcI38kbMZK0cZagjk+34HV7QaDFHNm3DlfpieuFvydL;
+        Expires=Wed, 18 May 2022 18:37:06 GMT; Path=/; SameSite=None; Secure
+      Transfer-Encoding:
+      - chunked
+      X-Content-Type-Options:
+      - nosniff
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 201
+      message: ''
+version: 1
