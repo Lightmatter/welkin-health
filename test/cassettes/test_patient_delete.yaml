@@ -1,0 +1,63 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - API_TOKEN_ad96694c-ae18-4c26-aad6-d54965c0c1a2
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      User-Agent:
+      - python-welkin/0.0.1
+    method: DELETE
+    uri: https://api.live.welkincloud.io/tenant_REDACTED/instance_REDACTED/patients/092ae416-1c0d-4e14-be22-9cc8dafacdbd
+  response:
+    body:
+      string: '[{"errorCode": "ACCESS_FOR_API_CLIENT_RESTRICTED", "componentType":
+        "AUTH", "message": "Access to this API is restricted for the APIClient", "details":
+        {"clientId": "8857ecf5-1d28-4160-8d83-54b948032ac8", "clientName": "BQSCQORFHLKN",
+        "clientType": "API_CLIENT", "organizationName": "roi-sandbox", "requestURI":
+        "/roi-sandbox/demo/patients/092ae416-1c0d-4e14-be22-9cc8dafacdbd"}}]'
+    headers:
+      Access-Control-Allow-Headers:
+      - authorization, content-type, xsrf-token, security-role
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, PATCH, OPTIONS
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - xsrf-token
+      Access-Control-Max-Age:
+      - '3600'
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 16 May 2022 19:58:04 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Set-Cookie:
+      - AWSALB=tJr56MSjKORzHJ3yu6zfXCO5PQWNjjyoFzOCjIgBo9dijfqD56tQzXe/FGv8XajvPFpfu7r/3QyCAHD+iVbn6fqt6NjGZI9rgaVVpchxisf0KpxEAXWS6V0qhNXM;
+        Expires=Mon, 23 May 2022 19:58:04 GMT; Path=/
+      - AWSALBCORS=tJr56MSjKORzHJ3yu6zfXCO5PQWNjjyoFzOCjIgBo9dijfqD56tQzXe/FGv8XajvPFpfu7r/3QyCAHD+iVbn6fqt6NjGZI9rgaVVpchxisf0KpxEAXWS6V0qhNXM;
+        Expires=Mon, 23 May 2022 19:58:04 GMT; Path=/; SameSite=None; Secure
+      Transfer-Encoding:
+      - chunked
+      X-Content-Type-Options:
+      - nosniff
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 403
+      message: ''
+version: 1

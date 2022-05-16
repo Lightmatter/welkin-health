@@ -24,41 +24,49 @@ class Resource(dict, SchemaBase):
         return object.__repr__(self)
 
     def get(self, resource, subresource=None, *args, **kwargs):
-        response = self._client.get(
-            [resource, subresource, getattr(self, "id", None)], *args, **kwargs
+        response = self._client.get([resource, subresource], *args, **kwargs)
+        super().update(response)
+
+        return self
+
+    def patch(self, resource, data, *args, **kwargs):
+        response = self._client.patch(
+            resource,
+            json=data,
+            *args,
+            **kwargs,
         )
-        self.update(response)
+
+        super().update(response)
 
         return self
 
     def post(self, resource, *args, **kwargs):
         response = self._client.post(
             resource,
-            json={self.__class__.__name__.lower(): self},
+            json=self,
             *args,
             **kwargs,
         )
-        self.update(response)
+        super().update(response)
 
         return self
 
     def put(self, resource, *args, **kwargs):
         response = self._client.put(
-            [resource, getattr(self, "id", None)],
-            json={self.__class__.__name__.lower(): self},
+            resource,
+            json=self,
             *args,
             **kwargs,
         )
 
-        self.update(response)
+        super().update(response)
 
         return self
 
     def delete(self, resource, *args, **kwargs):
-        response = self._client.delete(
-            [resource, getattr(self, "id", None)], *args, **kwargs
-        )
-        self.update(response)
+        response = self._client.delete(resource, *args, **kwargs)
+        super().update(response)
 
         return self
 
@@ -73,36 +81,43 @@ class Collection(list, SchemaBase):
     def __repr__(self):
         return object.__repr__(self)
 
-    def get(self, resource, paginate=False, *args, **kwargs):
-        paginator = PageIterator(self, resource, *args, **kwargs)
+    def get(self, *args, **kwargs):
+        return self.request(self._client.get, *args, **kwargs)
+
+    def post(self, *args, **kwargs):
+        return self.request(self._client.post, *args, **kwargs)
+
+    def request(self, method, resource, paginate=False, *args, **kwargs):
+        paginator = PageIterator(self, resource, method, *args, **kwargs)
 
         if paginate:
             return paginator
 
         self.clear()
         for n, _ in enumerate(paginator):
-            if n == paginator.limit - 1:
+            if n == paginator.size - 1:
                 break
 
         return self
 
 
 class PageIterator:
-    def __init__(self, collection, resource, limit=25, *args, **kwargs):
+    def __init__(self, collection, resource, method, size=20, *args, **kwargs):
         self.collection = collection
         self.resource = resource
-        self.limit = limit
+        self.method = method
+        self.size = size
 
-        if limit != 25:
-            kwargs.setdefault("params", {}).update(limit=limit)
+        if size != 20:
+            kwargs.setdefault("params", {}).update(size=size)
 
         self.args = args
         self.kwargs = kwargs
 
     def __iter__(self):
-        self.page = 1
-        self.total_pages = 1
+        self.page = 0
         self._resources = []
+        self.last = False
 
         return self
 
@@ -110,13 +125,18 @@ class PageIterator:
         if self.resources:
             return self.resources.pop(0)
 
-        if self.page <= self.total_pages:
+        if not self.last:
             self.kwargs.setdefault("params", {}).update(page=self.page)
-            self.resources, meta = self.collection._client.get(
-                self.resource, *self.args, **self.kwargs
-            )
-            self.total_pages = meta["total_pages"]
-            self.page = meta["current"] + 1
+            self.resources, meta = self.method(self.resource, *self.args, **self.kwargs)
+
+            # Different endpoints return pagination data differently
+            try:
+                page = meta["number"]
+            except KeyError:
+                page = meta["page"]
+            self.page = page + 1
+
+            self.last = meta.get("last") or meta.get("lastPage")
 
             return next(self)
 

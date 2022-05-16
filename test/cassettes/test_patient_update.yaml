@@ -1,0 +1,144 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - API_TOKEN
+      Connection:
+      - keep-alive
+      Cookie:
+      - AWSALB=p5HBQlaAy3G13R36EMCKji30J+g/m9YocGk2gVL1FMVc81tfF6U1SHrIpEmex9c8a2Rk+vXSdvBt44t20O9pqo690lDPJe8DYXMig2r38ySnSNqZTynvougrEs9L;
+        AWSALBCORS=p5HBQlaAy3G13R36EMCKji30J+g/m9YocGk2gVL1FMVc81tfF6U1SHrIpEmex9c8a2Rk+vXSdvBt44t20O9pqo690lDPJe8DYXMig2r38ySnSNqZTynvougrEs9L
+      User-Agent:
+      - python-welkin/0.0.1
+    method: GET
+    uri: https://api.live.welkincloud.io/tenant_REDACTED/instance_REDACTED/patients/092ae416-1c0d-4e14-be22-9cc8dafacdbd
+  response:
+    body:
+      string: '{"id": "092ae416-1c0d-4e14-be22-9cc8dafacdbd", "externalGuid": null,
+        "externalId": null, "mrn": null, "createdAt": "2022-05-04T02:00:33.714Z",
+        "updatedAt": "2022-05-06T22:08:56.467Z", "createdBy": "REDACTED", "updatedBy":
+        "REDACTED", "createdByName": "REDACTED", "updatedByName": "REDACTED", "firstName":
+        "Bar", "lastName": "Bar", "middleName": null, "birthDate": null, "gender":
+        "UNKNOWN", "maritalStatus": "UKN", "primaryLanguage": "ENGLISH", "secondaryLanguage":
+        null, "email": null, "secondaryEmail": null, "phone": null, "secondaryPhone":
+        null, "country": null, "state": null, "city": null, "zip": null, "addressLine1":
+        null, "addressLine2": null, "timezone": null, "patientTerritories": [], "careTeamMembers":
+        [], "patientPrograms": [], "careTeam": [], "cadence": [], "patientRegion":
+        null, "patientRegionTitle": null, "patientTerritory": null, "pointOfContact":
+        null}'
+    headers:
+      Access-Control-Allow-Headers:
+      - authorization, content-type, xsrf-token, security-role
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, PATCH, OPTIONS
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - xsrf-token
+      Access-Control-Max-Age:
+      - '3600'
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 06 May 2022 22:16:43 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Set-Cookie:
+      - AWSALB=FlgIJcIA691nrzwPiQW+wuIiFiN8kTvC19mNhbkKOKNECkh5M4M28PY74oDzABzsMPB0v67J2s8tj2h7cwywFixNc9tduyuJ2JIpROGiMp0ZmT4R+zwlPQ5LAHVQ;
+        Expires=Fri, 13 May 2022 22:16:43 GMT; Path=/
+      - AWSALBCORS=FlgIJcIA691nrzwPiQW+wuIiFiN8kTvC19mNhbkKOKNECkh5M4M28PY74oDzABzsMPB0v67J2s8tj2h7cwywFixNc9tduyuJ2JIpROGiMp0ZmT4R+zwlPQ5LAHVQ;
+        Expires=Fri, 13 May 2022 22:16:43 GMT; Path=/; SameSite=None; Secure
+      Transfer-Encoding:
+      - chunked
+      X-Content-Type-Options:
+      - nosniff
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: ''
+- request:
+    body: '{"firstName": "Baz"}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - API_TOKEN
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '20'
+      Content-Type:
+      - application/json
+      Cookie:
+      - AWSALB=FlgIJcIA691nrzwPiQW+wuIiFiN8kTvC19mNhbkKOKNECkh5M4M28PY74oDzABzsMPB0v67J2s8tj2h7cwywFixNc9tduyuJ2JIpROGiMp0ZmT4R+zwlPQ5LAHVQ;
+        AWSALBCORS=FlgIJcIA691nrzwPiQW+wuIiFiN8kTvC19mNhbkKOKNECkh5M4M28PY74oDzABzsMPB0v67J2s8tj2h7cwywFixNc9tduyuJ2JIpROGiMp0ZmT4R+zwlPQ5LAHVQ
+      User-Agent:
+      - python-welkin/0.0.1
+    method: PATCH
+    uri: https://api.live.welkincloud.io/tenant_REDACTED/instance_REDACTED/patients/092ae416-1c0d-4e14-be22-9cc8dafacdbd
+  response:
+    body:
+      string: '{"id": "092ae416-1c0d-4e14-be22-9cc8dafacdbd", "externalGuid": null,
+        "externalId": null, "mrn": null, "createdAt": "2022-05-04T02:00:33.714Z",
+        "updatedAt": "2022-05-06T22:16:43.601Z", "createdBy": "REDACTED", "updatedBy":
+        "REDACTED", "createdByName": "REDACTED", "updatedByName": "REDACTED", "firstName":
+        "Baz", "lastName": "Bar", "middleName": null, "birthDate": null, "gender":
+        "UNKNOWN", "maritalStatus": "UKN", "primaryLanguage": "ENGLISH", "secondaryLanguage":
+        null, "email": null, "secondaryEmail": null, "phone": null, "secondaryPhone":
+        null, "country": null, "state": null, "city": null, "zip": null, "addressLine1":
+        null, "addressLine2": null, "timezone": null, "patientTerritories": [], "careTeamMembers":
+        [], "patientPrograms": [], "careTeam": [], "cadence": [], "patientRegion":
+        null, "patientRegionTitle": null, "patientTerritory": null, "pointOfContact":
+        null}'
+    headers:
+      Access-Control-Allow-Headers:
+      - authorization, content-type, xsrf-token, security-role
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, PATCH, OPTIONS
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - xsrf-token
+      Access-Control-Max-Age:
+      - '3600'
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 06 May 2022 22:16:43 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Set-Cookie:
+      - AWSALB=ix9VazAI4e/tWdp+8JvsQK/VXxgHHytHBidHWRhZALzkfQWzDp7MXMB+OD0cyCmBz8q2tHIzY4/RJzfZuCN/kRN15Mv8Ju/PdiSh8KR9R4VJOgF8nv79d0ZTh3gs;
+        Expires=Fri, 13 May 2022 22:16:43 GMT; Path=/
+      - AWSALBCORS=ix9VazAI4e/tWdp+8JvsQK/VXxgHHytHBidHWRhZALzkfQWzDp7MXMB+OD0cyCmBz8q2tHIzY4/RJzfZuCN/kRN15Mv8Ju/PdiSh8KR9R4VJOgF8nv79d0ZTh3gs;
+        Expires=Fri, 13 May 2022 22:16:43 GMT; Path=/; SameSite=None; Secure
+      Transfer-Encoding:
+      - chunked
+      X-Content-Type-Options:
+      - nosniff
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: ''
+version: 1

@@ -9,9 +9,10 @@ from requests.adapters import HTTPAdapter
 from requests.compat import urljoin
 from requests.packages.urllib3.util.retry import Retry  # type: ignore
 
-from welkin.api import *
+from welkin import __version__
 from welkin.authentication import WelkinAuth
 from welkin.exceptions import WelkinHTTPError
+from welkin.models import *
 
 logger = logging.getLogger(__name__)
 
@@ -93,10 +94,8 @@ class Client(Session):
         """
         super().__init__()
 
-        self.auth = WelkinAuth(
-            tenant=tenant, api_client=api_client, secret_key=secret_key
-        )
-        self.host = f"https://api.live.welkincloud.io/{tenant}/{instance}/"
+        self.host = f"https://api.live.welkincloud.io/{tenant}/"
+        self.headers.update({"User-Agent": f"python-welkin/{__version__}"})
 
         adapter = TimeoutHTTPAdapter(
             timeout=timeout,
@@ -109,9 +108,17 @@ class Client(Session):
         self.mount("https://", adapter)
         self.mount("http://", adapter)
 
+        self.auth = WelkinAuth(
+            tenant=tenant,
+            api_client=api_client,
+            secret_key=secret_key,
+            token_method=self.get_token,
+        )
+
+        self.instance = instance
         self.__build_resources()
 
-    def __build_resources(self):
+    def __build_resources(self) -> None:
         """Add each resource with a reference to this instance."""
         for k, v in globals().items():
             try:
@@ -125,7 +132,7 @@ class Client(Session):
             except AttributeError:
                 continue
 
-    def request(self, method, path, *args, **kwargs):
+    def request(self, method: str, path: str, *args, **kwargs):
         """Override :obj:`Session` request method to add retries and output JSON.
 
         Args:
@@ -139,21 +146,44 @@ class Client(Session):
             path = "/".join((str(s) for s in path if s))
         path = path.rstrip("/")
 
-        response = super().request(
-            method=method, url=urljoin(self.host, path), *args, **kwargs
-        )
-        try:
-            response.raise_for_status()
-        except HTTPError as exc:
-            raise WelkinHTTPError(exc.request, exc.response) from exc
+        for _ in range(2):
+            response = super().request(
+                method=method, url=urljoin(self.host, path), *args, **kwargs
+            )
+
+            try:
+                response.raise_for_status()
+                break
+            except HTTPError as exc:
+                code = exc.response.status_code
+
+                if code in [401]:
+                    msg = response.json()
+                    codes = ["NOT_VALID_JSON_WEB_TOKEN", "TOKEN_EXPIRED"]
+                    if any(i.get("errorCode") in codes for i in msg):
+                        self.auth.refresh_token()
+                        continue
+
+                raise WelkinHTTPError(exc) from exc
 
         json = response.json()
-        meta = json.pop("meta", None)
-        resource, *_ = json.values()
 
-        if meta:
+        # Pull out the resource
+        resource = json.pop("content", None) or json.pop("data", None)
+
+        # Response metadata for pagination
+        meta = json.pop("pageable", {}) or json.pop("metaInfo", {})
+        meta.update(json)
+
+        if "totalPages" in meta:
             return resource, meta
-        return resource
+        return resource or json
+
+    def get_token(self) -> dict:
+        data = {"secret": self.auth.secret_key}
+        response = self.post(f"admin/api_clients/{self.auth.api_client}", json=data)
+
+        return response
 
 
 class TimeoutHTTPAdapter(HTTPAdapter):
