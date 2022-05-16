@@ -7,30 +7,22 @@ interactions:
       Accept-Encoding:
       - gzip, deflate
       Authorization:
-      - API_TOKEN
+      - API_TOKEN_ad96694c-ae18-4c26-aad6-d54965c0c1a2
       Connection:
       - keep-alive
-      Cookie:
-      - AWSALB=ix9VazAI4e/tWdp+8JvsQK/VXxgHHytHBidHWRhZALzkfQWzDp7MXMB+OD0cyCmBz8q2tHIzY4/RJzfZuCN/kRN15Mv8Ju/PdiSh8KR9R4VJOgF8nv79d0ZTh3gs;
-        AWSALBCORS=ix9VazAI4e/tWdp+8JvsQK/VXxgHHytHBidHWRhZALzkfQWzDp7MXMB+OD0cyCmBz8q2tHIzY4/RJzfZuCN/kRN15Mv8Ju/PdiSh8KR9R4VJOgF8nv79d0ZTh3gs
+      Content-Length:
+      - '0'
       User-Agent:
       - python-welkin/0.0.1
-    method: GET
+    method: DELETE
     uri: https://api.live.welkincloud.io/tenant_REDACTED/instance_REDACTED/patients/092ae416-1c0d-4e14-be22-9cc8dafacdbd
   response:
     body:
-      string: '{"id": "092ae416-1c0d-4e14-be22-9cc8dafacdbd", "externalGuid": null,
-        "externalId": null, "mrn": null, "createdAt": "2022-05-04T02:00:33.714Z",
-        "updatedAt": "2022-05-06T22:16:43.601Z", "createdBy": "REDACTED", "updatedBy":
-        "REDACTED", "createdByName": "REDACTED", "updatedByName": "REDACTED", "firstName":
-        "Baz", "lastName": "Bar", "middleName": null, "birthDate": null, "gender":
-        "UNKNOWN", "maritalStatus": "UKN", "primaryLanguage": "ENGLISH", "secondaryLanguage":
-        null, "email": null, "secondaryEmail": null, "phone": null, "secondaryPhone":
-        null, "country": null, "state": null, "city": null, "zip": null, "addressLine1":
-        null, "addressLine2": null, "timezone": null, "patientTerritories": [], "careTeamMembers":
-        [], "patientPrograms": [], "careTeam": [], "cadence": [], "patientRegion":
-        null, "patientRegionTitle": null, "patientTerritory": null, "pointOfContact":
-        null}'
+      string: '[{"errorCode": "ACCESS_FOR_API_CLIENT_RESTRICTED", "componentType":
+        "AUTH", "message": "Access to this API is restricted for the APIClient", "details":
+        {"clientId": "8857ecf5-1d28-4160-8d83-54b948032ac8", "clientName": "BQSCQORFHLKN",
+        "clientType": "API_CLIENT", "organizationName": "roi-sandbox", "requestURI":
+        "/roi-sandbox/demo/patients/092ae416-1c0d-4e14-be22-9cc8dafacdbd"}}]'
     headers:
       Access-Control-Allow-Headers:
       - authorization, content-type, xsrf-token, security-role
@@ -49,16 +41,16 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 06 May 2022 22:16:44 GMT
+      - Mon, 16 May 2022 19:58:04 GMT
       Expires:
       - '0'
       Pragma:
       - no-cache
       Set-Cookie:
-      - AWSALB=K3oxqCjdKBg+t+WXb282U8aODGSa4FEPvl1jF5IOb505gppXvRX6HjtVFFfu8hPd/pKuoswvAkqo4aS1hRHJf4Iy20rFY25U2aX4nVrVWuD5KwS2vBw9peaVFxV/;
-        Expires=Fri, 13 May 2022 22:16:43 GMT; Path=/
-      - AWSALBCORS=K3oxqCjdKBg+t+WXb282U8aODGSa4FEPvl1jF5IOb505gppXvRX6HjtVFFfu8hPd/pKuoswvAkqo4aS1hRHJf4Iy20rFY25U2aX4nVrVWuD5KwS2vBw9peaVFxV/;
-        Expires=Fri, 13 May 2022 22:16:43 GMT; Path=/; SameSite=None; Secure
+      - AWSALB=tJr56MSjKORzHJ3yu6zfXCO5PQWNjjyoFzOCjIgBo9dijfqD56tQzXe/FGv8XajvPFpfu7r/3QyCAHD+iVbn6fqt6NjGZI9rgaVVpchxisf0KpxEAXWS6V0qhNXM;
+        Expires=Mon, 23 May 2022 19:58:04 GMT; Path=/
+      - AWSALBCORS=tJr56MSjKORzHJ3yu6zfXCO5PQWNjjyoFzOCjIgBo9dijfqD56tQzXe/FGv8XajvPFpfu7r/3QyCAHD+iVbn6fqt6NjGZI9rgaVVpchxisf0KpxEAXWS6V0qhNXM;
+        Expires=Mon, 23 May 2022 19:58:04 GMT; Path=/; SameSite=None; Secure
       Transfer-Encoding:
       - chunked
       X-Content-Type-Options:
@@ -66,6 +58,6 @@ interactions:
       X-XSS-Protection:
       - 1; mode=block
     status:
-      code: 200
+      code: 403
       message: ''
 version: 1

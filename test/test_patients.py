@@ -1,5 +1,6 @@
 import pytest
 
+from welkin.exceptions import WelkinHTTPError
 from welkin.models.patient import Patient, Patients
 
 
@@ -48,9 +49,11 @@ def test_patient_update(client, vcr_cassette):
 
 @pytest.mark.vcr()
 def test_patient_delete(client, vcr_cassette):
-    patient = client.Patient(id="092ae416-1c0d-4e14-be22-9cc8dafacdbd").get()
+    patient = client.Patient(id="092ae416-1c0d-4e14-be22-9cc8dafacdbd")
 
-    with pytest.raises(NotImplementedError):
+    with pytest.raises(WelkinHTTPError) as excinfo:
         patient.delete()
+
+    assert excinfo.value.response.status_code == 403
 
     assert len(vcr_cassette) == 1
