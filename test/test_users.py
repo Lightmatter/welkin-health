@@ -15,8 +15,7 @@ def test_user_create(client, vcr_cassette):
 
 @pytest.mark.vcr()
 def test_user_read(client, vcr_cassette):
-    user_id = "658f3b36-a12a-4bce-aad6-1e4930948b7d"
-    user = client.User(userId=user_id)
+    user = client.User(id="658f3b36-a12a-4bce-aad6-1e4930948b7d")
 
     assert isinstance(user, User)
     assert len(user) == 1
@@ -55,19 +54,18 @@ def test_user_search(client, vcr_cassette):
 
 @pytest.mark.vcr()
 def test_user_update(client, vcr_cassette):
-    user = client.User(userId="658f3b36-a12a-4bce-aad6-1e4930948b7d").get()
-    user.firstName = "Foo"
+    user = client.User(id="92cc5811-ff71-4101-915d-a419383db168").get()
+    name = user.firstName
 
-    with pytest.raises(WelkinHTTPError) as excinfo:
-        user.update()
+    user.update(firstName="Baz")
 
-    assert excinfo.value.response.status_code == 404
+    assert user.firstName != name
     assert len(vcr_cassette) == 2
 
 
 @pytest.mark.vcr()
 def test_user_delete(client, vcr_cassette):
-    user = client.User(userId="658f3b36-a12a-4bce-aad6-1e4930948b7d")
+    user = client.User(id="658f3b36-a12a-4bce-aad6-1e4930948b7d")
 
     with pytest.raises(WelkinHTTPError) as excinfo:
         user.delete()

@@ -9,13 +9,13 @@ class User(Resource):
         return super().post("admin/users")
 
     def get(self):
-        return super().get(f"admin/users/{self.userId}", params=dict(type="ID"))
+        return super().get(f"admin/users/{self.id}", params=dict(type="ID"))
 
-    def update(self):
-        return super().patch(f"admin/users/{self.userId}", params=dict(type="ID"))
+    def update(self, **kwargs):
+        return super().patch(f"admin/users/{self.username}", kwargs)
 
     def delete(self):
-        return super().delete(f"admin/users/{self.userId}", params=dict(type="ID"))
+        return super().delete(f"admin/users/{self.id}", params=dict(type="ID"))
 
 
 class Users(Collection):

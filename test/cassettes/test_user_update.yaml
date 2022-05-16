@@ -1,137 +1,141 @@
 interactions:
-- request:
-    body: null
-    headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
-      Authorization:
-      - API_TOKEN_762633a8-94ef-4eae-90be-08a000bf878e
-      Connection:
-      - keep-alive
-      User-Agent:
-      - python-welkin/0.0.1
-    method: GET
-    uri: https://api.live.welkincloud.io/tenant_REDACTED/admin/users/658f3b36-a12a-4bce-aad6-1e4930948b7d?type=ID
-  response:
-    body:
-      string: '{"territories": [], "roles": [], "policies": [], "seats": [], "seatAssignAllowed":
-        true, "applicationAccess": {"id": "6c143233-fd0a-4ede-8630-685315322b0c",
-        "createdAt": "2022-05-13T02:04:37.414Z", "updatedAt": "2022-05-13T15:28:03.991Z",
-        "userId": "658f3b36-a12a-4bce-aad6-1e4930948b7d", "adminAccessEnabled": false,
-        "auditSecurityAccessEnabled": false, "instanceAccesses": []}, "updatedByName":
-        "updatedByName_REDACTED_6f407f76-887d-4673-92bf-3d450f95b9b8", "id": "658f3b36-a12a-4bce-aad6-1e4930948b7d",
-        "username": "Foo", "email": "foo@bar.com", "enabled": false, "mfaEnabled":
-        false, "statusType": null, "createdAt": "2022-05-13T02:04:37.395Z", "updatedAt":
-        "2022-05-13T22:24:35.644Z", "ssoAccess": false, "passwordAccess": true, "terminologyName":
-        "english", "userState": "INACTIVE", "customUserAttributes": {}, "allowedToReceiveCalls":
-        true, "userAttributes": {}, "_root_user": false}'
-    headers:
-      Access-Control-Allow-Headers:
-      - authorization, content-type, xsrf-token, security-role
-      Access-Control-Allow-Methods:
-      - GET, POST, PUT, DELETE, PATCH, OPTIONS
-      Access-Control-Allow-Origin:
-      - '*'
-      Access-Control-Expose-Headers:
-      - xsrf-token
-      Access-Control-Max-Age:
-      - '3600'
-      Cache-Control:
-      - no-cache, no-store, max-age=0, must-revalidate
-      Connection:
-      - keep-alive
-      Content-Type:
-      - application/json
-      Date:
-      - Mon, 16 May 2022 18:56:34 GMT
-      Expires:
-      - '0'
-      Pragma:
-      - no-cache
-      Set-Cookie:
-      - AWSALB=BsOn91UdpupN9IDNlbe40zL++RzA+rwY1CvDNNtVjmvRvf8+ByeP2z0Rt1St2YfaOfKNXWI8v1b6BfdFKV8Z40e+tqN9i3enJoXHumjoE8PZgnotpS565WAK1szk;
-        Expires=Mon, 23 May 2022 18:56:34 GMT; Path=/
-      - AWSALBCORS=BsOn91UdpupN9IDNlbe40zL++RzA+rwY1CvDNNtVjmvRvf8+ByeP2z0Rt1St2YfaOfKNXWI8v1b6BfdFKV8Z40e+tqN9i3enJoXHumjoE8PZgnotpS565WAK1szk;
-        Expires=Mon, 23 May 2022 18:56:34 GMT; Path=/; SameSite=None; Secure
-      Transfer-Encoding:
-      - chunked
-      X-Content-Type-Options:
-      - nosniff
-      X-XSS-Protection:
-      - 1; mode=block
-    status:
-      code: 200
-      message: ''
-- request:
-    body: '{"userId": "658f3b36-a12a-4bce-aad6-1e4930948b7d", "territories": [], "roles":
-      [], "policies": [], "seats": [], "seatAssignAllowed": true, "applicationAccess":
-      {"id": "6c143233-fd0a-4ede-8630-685315322b0c", "createdAt": "2022-05-13T02:04:37.414Z",
-      "updatedAt": "2022-05-13T15:28:03.991Z", "userId": "658f3b36-a12a-4bce-aad6-1e4930948b7d",
-      "adminAccessEnabled": false, "auditSecurityAccessEnabled": false, "instanceAccesses":
-      []}, "updatedByName": "Sam Morgan", "username": "Foo", "email": "foo@bar.com",
-      "enabled": false, "mfaEnabled": false, "statusType": null, "createdAt": "2022-05-13T02:04:37.395Z",
-      "updatedAt": "2022-05-13T22:24:35.644Z", "ssoAccess": false, "passwordAccess":
-      true, "terminologyName": "english", "userState": "INACTIVE", "customUserAttributes":
-      {}, "allowedToReceiveCalls": true, "userAttributes": {}, "_root_user": false,
-      "firstName": "Foo"}'
-    headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
-      Authorization:
-      - API_TOKEN_762633a8-94ef-4eae-90be-08a000bf878e
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '865'
-      Content-Type:
-      - application/json
-      Cookie:
-      - AWSALB=BsOn91UdpupN9IDNlbe40zL++RzA+rwY1CvDNNtVjmvRvf8+ByeP2z0Rt1St2YfaOfKNXWI8v1b6BfdFKV8Z40e+tqN9i3enJoXHumjoE8PZgnotpS565WAK1szk;
-        AWSALBCORS=BsOn91UdpupN9IDNlbe40zL++RzA+rwY1CvDNNtVjmvRvf8+ByeP2z0Rt1St2YfaOfKNXWI8v1b6BfdFKV8Z40e+tqN9i3enJoXHumjoE8PZgnotpS565WAK1szk
-      User-Agent:
-      - python-welkin/0.0.1
-    method: PATCH
-    uri: https://api.live.welkincloud.io/tenant_REDACTED/admin/users/658f3b36-a12a-4bce-aad6-1e4930948b7d/658f3b36-a12a-4bce-aad6-1e4930948b7d?type=ID
-  response:
-    body:
-      string: ''
-    headers:
-      Access-Control-Allow-Headers:
-      - authorization, content-type, xsrf-token, security-role
-      Access-Control-Allow-Methods:
-      - GET, POST, PUT, DELETE, PATCH, OPTIONS
-      Access-Control-Allow-Origin:
-      - '*'
-      Access-Control-Expose-Headers:
-      - xsrf-token
-      Access-Control-Max-Age:
-      - '3600'
-      Cache-Control:
-      - no-cache, no-store, max-age=0, must-revalidate
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '0'
-      Date:
-      - Mon, 16 May 2022 18:56:40 GMT
-      Expires:
-      - '0'
-      Pragma:
-      - no-cache
-      Set-Cookie:
-      - AWSALB=t+S+6B+B0cHUHlh4rZzNnOL8cKmPu8J/WWpNn8CQxdZYper6HkKgrF/bGbjZbP0WvuqIy9ddakbQQ+KXH7fnWb0xGtPIVr6pS2GNap8p48HR+vUOTCdnhFT961M4;
-        Expires=Mon, 23 May 2022 18:56:40 GMT; Path=/
-      - AWSALBCORS=t+S+6B+B0cHUHlh4rZzNnOL8cKmPu8J/WWpNn8CQxdZYper6HkKgrF/bGbjZbP0WvuqIy9ddakbQQ+KXH7fnWb0xGtPIVr6pS2GNap8p48HR+vUOTCdnhFT961M4;
-        Expires=Mon, 23 May 2022 18:56:40 GMT; Path=/; SameSite=None; Secure
-      X-Content-Type-Options:
-      - nosniff
-      X-XSS-Protection:
-      - 1; mode=block
-    status:
-      code: 404
-      message: ''
+  - request:
+      body: null
+      headers:
+        Accept:
+          - "*/*"
+        Accept-Encoding:
+          - gzip, deflate
+        Authorization:
+          - API_TOKEN_517300ba-1a30-4c6a-9a69-05c2306c8743
+        Connection:
+          - keep-alive
+        User-Agent:
+          - python-welkin/0.0.1
+      method: GET
+      uri: https://api.live.welkincloud.io/tenant_REDACTED/admin/users/92cc5811-ff71-4101-915d-a419383db168?type=ID
+    response:
+      body:
+        string:
+          '{"territories": [], "roles": [], "policies": [], "seats": [], "seatAssignAllowed":
+          true, "applicationAccess": {"id": "ca2e8c7e-0477-4ef4-aab9-a254d49a9a6f",
+          "createdAt": "2022-05-16T19:02:56.499Z", "updatedAt": "2022-05-16T19:02:56.499Z",
+          "userId": "92cc5811-ff71-4101-915d-a419383db168", "adminAccessEnabled": false,
+          "auditSecurityAccessEnabled": false, "instanceAccesses": []}, "id": "92cc5811-ff71-4101-915d-a419383db168",
+          "username": "bar", "email": "bar@foo.com", "firstName": "Bar", "lastName":
+          "Foo", "enabled": false, "mfaEnabled": false, "statusType": null, "createdAt":
+          "2022-05-16T19:02:56.490Z", "updatedAt": "2022-05-16T19:46:02.021Z", "ssoAccess":
+          false, "passwordAccess": true, "terminologyName": "english", "userState":
+          "PROVISIONED", "customUserAttributes": {}, "allowedToReceiveCalls": false,
+          "userAttributes": {}, "_root_user": false}'
+      headers:
+        Access-Control-Allow-Headers:
+          - authorization, content-type, xsrf-token, security-role
+        Access-Control-Allow-Methods:
+          - GET, POST, PUT, DELETE, PATCH, OPTIONS
+        Access-Control-Allow-Origin:
+          - "*"
+        Access-Control-Expose-Headers:
+          - xsrf-token
+        Access-Control-Max-Age:
+          - "3600"
+        Cache-Control:
+          - no-cache, no-store, max-age=0, must-revalidate
+        Connection:
+          - keep-alive
+        Content-Type:
+          - application/json
+        Date:
+          - Mon, 16 May 2022 19:47:23 GMT
+        Expires:
+          - "0"
+        Pragma:
+          - no-cache
+        Set-Cookie:
+          - AWSALB=MiG4677STG8r+FIEiQ6Hyh/x13DIrJhKESeU8BDxX6+QtkykVMJCKGTQHxOpxFO7Jh32hyqQzfgPGOYeHBktGbFpvqpGrXGZdSPEPqPtOa/aj1CfpCYlgZyfeAXu;
+            Expires=Mon, 23 May 2022 19:47:23 GMT; Path=/
+          - AWSALBCORS=MiG4677STG8r+FIEiQ6Hyh/x13DIrJhKESeU8BDxX6+QtkykVMJCKGTQHxOpxFO7Jh32hyqQzfgPGOYeHBktGbFpvqpGrXGZdSPEPqPtOa/aj1CfpCYlgZyfeAXu;
+            Expires=Mon, 23 May 2022 19:47:23 GMT; Path=/; SameSite=None; Secure
+        Transfer-Encoding:
+          - chunked
+        X-Content-Type-Options:
+          - nosniff
+        X-XSS-Protection:
+          - 1; mode=block
+      status:
+        code: 200
+        message: ""
+  - request:
+      body: '{"firstName": "Baz"}'
+      headers:
+        Accept:
+          - "*/*"
+        Accept-Encoding:
+          - gzip, deflate
+        Authorization:
+          - API_TOKEN_517300ba-1a30-4c6a-9a69-05c2306c8743
+        Connection:
+          - keep-alive
+        Content-Length:
+          - "20"
+        Content-Type:
+          - application/json
+        Cookie:
+          - AWSALB=MiG4677STG8r+FIEiQ6Hyh/x13DIrJhKESeU8BDxX6+QtkykVMJCKGTQHxOpxFO7Jh32hyqQzfgPGOYeHBktGbFpvqpGrXGZdSPEPqPtOa/aj1CfpCYlgZyfeAXu;
+            AWSALBCORS=MiG4677STG8r+FIEiQ6Hyh/x13DIrJhKESeU8BDxX6+QtkykVMJCKGTQHxOpxFO7Jh32hyqQzfgPGOYeHBktGbFpvqpGrXGZdSPEPqPtOa/aj1CfpCYlgZyfeAXu
+        User-Agent:
+          - python-welkin/0.0.1
+      method: PATCH
+      uri: https://api.live.welkincloud.io/tenant_REDACTED/admin/users/bar
+    response:
+      body:
+        string:
+          '{"territories": [], "roles": [], "policies": [], "seats": [], "seatAssignAllowed":
+          true, "applicationAccess": {"id": "ca2e8c7e-0477-4ef4-aab9-a254d49a9a6f",
+          "createdAt": "2022-05-16T19:02:56.499Z", "updatedAt": "2022-05-16T19:02:56.499Z",
+          "userId": "92cc5811-ff71-4101-915d-a419383db168", "adminAccessEnabled": false,
+          "auditSecurityAccessEnabled": false, "instanceAccesses": []}, "id": "92cc5811-ff71-4101-915d-a419383db168",
+          "username": "bar", "email": "bar@foo.com", "firstName": "Baz", "lastName":
+          "Foo", "enabled": false, "mfaEnabled": false, "statusType": null, "createdAt":
+          "2022-05-16T19:02:56.490Z", "updatedAt": "2022-05-16T19:46:02.021Z", "ssoAccess":
+          false, "passwordAccess": true, "terminologyName": "english", "userState":
+          "PROVISIONED", "customUserAttributes": {}, "allowedToReceiveCalls": false,
+          "userAttributes": {}, "_root_user": false}'
+      headers:
+        Access-Control-Allow-Headers:
+          - authorization, content-type, xsrf-token, security-role
+        Access-Control-Allow-Methods:
+          - GET, POST, PUT, DELETE, PATCH, OPTIONS
+        Access-Control-Allow-Origin:
+          - "*"
+        Access-Control-Expose-Headers:
+          - xsrf-token
+        Access-Control-Max-Age:
+          - "3600"
+        Cache-Control:
+          - no-cache, no-store, max-age=0, must-revalidate
+        Connection:
+          - keep-alive
+        Content-Type:
+          - application/json
+        Date:
+          - Mon, 16 May 2022 19:47:35 GMT
+        Expires:
+          - "0"
+        Pragma:
+          - no-cache
+        Set-Cookie:
+          - AWSALB=J27KOUu1A1qQ5bREhhPcAWhSfL3dqI3ePaVKxsgQc/WIoniUuLDYVF/VMwele9ZtcEyr8+eT1bYSkzmvNNW0alGuXJFjcLzT+AthHABHTOLksOJ9jFyw+BYi55IJ;
+            Expires=Mon, 23 May 2022 19:47:35 GMT; Path=/
+          - AWSALBCORS=J27KOUu1A1qQ5bREhhPcAWhSfL3dqI3ePaVKxsgQc/WIoniUuLDYVF/VMwele9ZtcEyr8+eT1bYSkzmvNNW0alGuXJFjcLzT+AthHABHTOLksOJ9jFyw+BYi55IJ;
+            Expires=Mon, 23 May 2022 19:47:35 GMT; Path=/; SameSite=None; Secure
+        Transfer-Encoding:
+          - chunked
+        X-Content-Type-Options:
+          - nosniff
+        X-XSS-Protection:
+          - 1; mode=block
+      status:
+        code: 200
+        message: ""
 version: 1

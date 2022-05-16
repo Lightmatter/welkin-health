@@ -24,17 +24,15 @@ class Resource(dict, SchemaBase):
         return object.__repr__(self)
 
     def get(self, resource, subresource=None, *args, **kwargs):
-        response = self._client.get(
-            [resource, subresource, getattr(self, "id", None)], *args, **kwargs
-        )
+        response = self._client.get([resource, subresource], *args, **kwargs)
         super().update(response)
 
         return self
 
-    def patch(self, resource, *args, **kwargs):
+    def patch(self, resource, data, *args, **kwargs):
         response = self._client.patch(
-            [resource, self.pop("id", None)],
-            json=self,
+            resource,
+            json=data,
             *args,
             **kwargs,
         )
@@ -56,7 +54,7 @@ class Resource(dict, SchemaBase):
 
     def put(self, resource, *args, **kwargs):
         response = self._client.put(
-            [resource, getattr(self, "id", None)],
+            resource,
             json=self,
             *args,
             **kwargs,
@@ -67,9 +65,7 @@ class Resource(dict, SchemaBase):
         return self
 
     def delete(self, resource, *args, **kwargs):
-        response = self._client.delete(
-            [resource, getattr(self, "id", None)], *args, **kwargs
-        )
+        response = self._client.delete(resource, *args, **kwargs)
         super().update(response)
 
         return self

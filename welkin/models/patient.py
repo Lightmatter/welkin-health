@@ -6,10 +6,10 @@ class Patient(Resource):
         return super().post(f"{self._client.instance}/patients")
 
     def get(self):
-        return super().get(f"{self._client.instance}/patients")
+        return super().get(f"{self._client.instance}/patients/{self.id}")
 
     def update(self, **kwargs):
-        return super().patch(f"{self._client.instance}/patients", kwargs)
+        return super().patch(f"{self._client.instance}/patients/{self.id}", kwargs)
 
     def delete(self):
         raise NotImplementedError("This operation is not supported yet")
