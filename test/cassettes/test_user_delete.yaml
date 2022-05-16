@@ -7,22 +7,25 @@ interactions:
       Accept-Encoding:
       - gzip, deflate
       Authorization:
-      - API_TOKEN_ad96694c-ae18-4c26-aad6-d54965c0c1a2
+      - API_TOKEN_da623803-3ba7-462b-815e-346016b56322
       Connection:
       - keep-alive
       Content-Length:
       - '0'
+      Cookie:
+      - AWSALB=hQQ3rI2uSyhWEQD0N/JuwGHeFaXxbevsrHvu7C33xOXVG01XG5AU2XEvs1SyaYSJHihXWGO0s78VT2nZr8gmfMVZ+UD6dysnYGsqqT2W2CgTupaa0BTV4NTzMsJ2;
+        AWSALBCORS=hQQ3rI2uSyhWEQD0N/JuwGHeFaXxbevsrHvu7C33xOXVG01XG5AU2XEvs1SyaYSJHihXWGO0s78VT2nZr8gmfMVZ+UD6dysnYGsqqT2W2CgTupaa0BTV4NTzMsJ2
       User-Agent:
       - python-welkin/0.0.1
     method: DELETE
-    uri: https://api.live.welkincloud.io/tenant_REDACTED/instance_REDACTED/patients/092ae416-1c0d-4e14-be22-9cc8dafacdbd
+    uri: https://api.live.welkincloud.io/tenant_REDACTED/admin/users/658f3b36-a12a-4bce-aad6-1e4930948b7d?type=ID
   response:
     body:
       string: '[{"errorCode": "ACCESS_FOR_API_CLIENT_RESTRICTED", "componentType":
         "AUTH", "message": "Access to this API is restricted for the APIClient", "details":
         {"clientId": "8857ecf5-1d28-4160-8d83-54b948032ac8", "clientName": "BQSCQORFHLKN",
         "clientType": "API_CLIENT", "organizationName": "roi-sandbox", "requestURI":
-        "/roi-sandbox/demo/patients/092ae416-1c0d-4e14-be22-9cc8dafacdbd"}}]'
+        "/roi-sandbox/admin/users/658f3b36-a12a-4bce-aad6-1e4930948b7d"}}]'
     headers:
       Access-Control-Allow-Headers:
       - authorization, content-type, xsrf-token, security-role
@@ -41,16 +44,16 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Mon, 16 May 2022 19:58:04 GMT
+      - Mon, 16 May 2022 18:48:12 GMT
       Expires:
       - '0'
       Pragma:
       - no-cache
       Set-Cookie:
-      - AWSALB=tJr56MSjKORzHJ3yu6zfXCO5PQWNjjyoFzOCjIgBo9dijfqD56tQzXe/FGv8XajvPFpfu7r/3QyCAHD+iVbn6fqt6NjGZI9rgaVVpchxisf0KpxEAXWS6V0qhNXM;
-        Expires=Mon, 23 May 2022 19:58:04 GMT; Path=/
-      - AWSALBCORS=tJr56MSjKORzHJ3yu6zfXCO5PQWNjjyoFzOCjIgBo9dijfqD56tQzXe/FGv8XajvPFpfu7r/3QyCAHD+iVbn6fqt6NjGZI9rgaVVpchxisf0KpxEAXWS6V0qhNXM;
-        Expires=Mon, 23 May 2022 19:58:04 GMT; Path=/; SameSite=None; Secure
+      - AWSALB=LiJNYxxSazB93CBERnY6fr2CDys3bMEUZyCXxlUViftHynL6TspsPinsg7oFcJINX8xfi3+MMINAtmKMK0GksKIVYVD/HehvDD3wnBNrcM0Si3+GssXVe9RS5Pxg;
+        Expires=Mon, 23 May 2022 18:48:12 GMT; Path=/
+      - AWSALBCORS=LiJNYxxSazB93CBERnY6fr2CDys3bMEUZyCXxlUViftHynL6TspsPinsg7oFcJINX8xfi3+MMINAtmKMK0GksKIVYVD/HehvDD3wnBNrcM0Si3+GssXVe9RS5Pxg;
+        Expires=Mon, 23 May 2022 18:48:12 GMT; Path=/; SameSite=None; Secure
       Transfer-Encoding:
       - chunked
       X-Content-Type-Options:

@@ -1,0 +1,70 @@
+interactions:
+- request:
+    body: '{"username": "bar", "email": "bar@foo.com"}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - API_TOKEN_f204c992-0664-4714-a534-1930bb2de758
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '43'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-welkin/0.0.1
+    method: POST
+    uri: https://api.live.welkincloud.io/tenant_REDACTED/admin/users
+  response:
+    body:
+      string: '{"territories": [], "roles": [], "policies": [], "seats": [], "seatAssignAllowed":
+        false, "applicationAccess": {"id": "ca2e8c7e-0477-4ef4-aab9-a254d49a9a6f",
+        "createdAt": "2022-05-16T19:02:56.499Z", "updatedAt": "2022-05-16T19:02:56.499Z",
+        "userId": "92cc5811-ff71-4101-915d-a419383db168", "adminAccessEnabled": false,
+        "auditSecurityAccessEnabled": false, "instanceAccesses": []}, "id": "92cc5811-ff71-4101-915d-a419383db168",
+        "username": "bar", "email": "bar@foo.com", "enabled": false, "mfaEnabled":
+        false, "statusType": null, "createdAt": "2022-05-16T19:02:56.490Z", "updatedAt":
+        "2022-05-16T19:02:56.490Z", "ssoAccess": false, "passwordAccess": true, "terminologyName":
+        "english", "userState": "PROVISIONED", "customUserAttributes": {}, "allowedToReceiveCalls":
+        false, "userAttributes": {}, "_root_user": false}'
+    headers:
+      Access-Control-Allow-Headers:
+      - authorization, content-type, xsrf-token, security-role
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, PATCH, OPTIONS
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - xsrf-token
+      Access-Control-Max-Age:
+      - '3600'
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 16 May 2022 19:02:56 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Set-Cookie:
+      - AWSALB=VLA9DGmYBzWAU88uzIU3/MQvAT3Qkp+lj0pe4xSt6SA/HRv6ZthDh7O+RrLKO3CvTMGHC7JHwbXWkGuNnViA0X+KmjhijJZcR2NoL2wk0WRCvN7wB0T7xPku+0/9;
+        Expires=Mon, 23 May 2022 19:02:56 GMT; Path=/
+      - AWSALBCORS=VLA9DGmYBzWAU88uzIU3/MQvAT3Qkp+lj0pe4xSt6SA/HRv6ZthDh7O+RrLKO3CvTMGHC7JHwbXWkGuNnViA0X+KmjhijJZcR2NoL2wk0WRCvN7wB0T7xPku+0/9;
+        Expires=Mon, 23 May 2022 19:02:56 GMT; Path=/; SameSite=None; Secure
+      Transfer-Encoding:
+      - chunked
+      X-Content-Type-Options:
+      - nosniff
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 201
+      message: ''
+version: 1

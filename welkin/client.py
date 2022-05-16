@@ -159,7 +159,8 @@ class Client(Session):
 
                 if code in [401]:
                     msg = response.json()
-                    if any(i.get("errorCode") == "TOKEN_EXPIRED" for i in msg):
+                    codes = ["NOT_VALID_JSON_WEB_TOKEN", "TOKEN_EXPIRED"]
+                    if any(i.get("errorCode") in codes for i in msg):
                         self.auth.refresh_token()
                         continue
 
