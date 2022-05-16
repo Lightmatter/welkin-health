@@ -47,8 +47,11 @@ class WelkinAuth(AuthBase):
             try:
                 return db[self.tenant]["token"]
             except KeyError:
-                self.refresh_token()
-                return self.token
+                pass
+
+        self.refresh_token()
+
+        return self.token
 
     @token.setter
     def token(self, value: dict) -> None:
