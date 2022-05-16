@@ -31,10 +31,10 @@ class Resource(dict, SchemaBase):
 
         return self
 
-    def patch(self, resource, data, *args, **kwargs):
+    def patch(self, resource, *args, **kwargs):
         response = self._client.patch(
-            [resource, getattr(self, "id", None)],
-            json=data,
+            [resource, self.pop("id", None)],
+            json=self,
             *args,
             **kwargs,
         )

@@ -73,6 +73,8 @@ def scrub_response(blacklist, replacement="REDACTED"):
 
 
 def filter_body(body, blacklist, replacement):
+    if not body:
+        return body
     object_hook = body_hook(blacklist, replacement)
     body_json = json.loads(body.decode(), object_hook=object_hook)
 

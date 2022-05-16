@@ -1,0 +1,424 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - API_TOKEN_da623803-3ba7-462b-815e-346016b56322
+      Connection:
+      - keep-alive
+      Cookie:
+      - AWSALB=de+7329M4/FKOZe5jLUOKiF5x8gYPwmDvWYsp5g2d4YgyMaX6pmx59vb++UCSXjzIh+5uu9iB0nybeoEViLMoxj+5oYZhYhHiTwDsJQ44n5LhJm2hajRF/BK2ZSm;
+        AWSALBCORS=de+7329M4/FKOZe5jLUOKiF5x8gYPwmDvWYsp5g2d4YgyMaX6pmx59vb++UCSXjzIh+5uu9iB0nybeoEViLMoxj+5oYZhYhHiTwDsJQ44n5LhJm2hajRF/BK2ZSm
+      User-Agent:
+      - python-welkin/0.0.1
+    method: GET
+    uri: https://api.live.welkincloud.io/tenant_REDACTED/admin/users?page=0
+  response:
+    body:
+      string: '{"data": [{"territories": [{"createdAt": "2022-04-27T15:54:02.363Z",
+        "updatedAt": "2022-04-27T15:54:02.363Z", "createdBy": "createdBy_REDACTED_0234860c-362a-4bee-94a0-47ecd180e319",
+        "updatedBy": "updatedBy_REDACTED_07f8afdc-0a5b-44a2-92b6-53905876e1f7", "name":
+        "east-coast", "territories": ["New York", "Massachusetts", "Connecticut",
+        "Maryland"], "instanceName": "demo"}, {"createdAt": "2022-04-27T15:54:02.363Z",
+        "updatedAt": "2022-04-27T15:54:02.363Z", "createdBy": "createdBy_REDACTED_40a1a7ba-92e4-45dd-bfc8-9890973f762f",
+        "updatedBy": "updatedBy_REDACTED_e7b7af61-eedd-469c-8da5-4b766f5bd805", "name":
+        "west-coast", "territories": ["Oregon", "California", "Washington"], "instanceName":
+        "demo"}, {"createdAt": "2022-04-27T15:54:02.363Z", "updatedAt": "2022-04-27T15:54:02.363Z",
+        "createdBy": "createdBy_REDACTED_b5a920be-72b5-4b9a-a2d0-6137a78c1b83", "updatedBy":
+        "updatedBy_REDACTED_c2d04fbe-14da-4b0f-ae64-dcecf05f9dab", "name": "southwest",
+        "territories": ["New Mexico", "Texas", "Arizona"], "instanceName": "demo"}],
+        "roles": [{"createdAt": "2022-04-27T15:54:02.439Z", "updatedAt": "2022-04-27T15:54:02.439Z",
+        "permissionName": "physician", "instanceName": "demo", "type": "SECURITY_ROLE",
+        "primaryRole": true}, {"createdAt": "2022-04-27T15:54:02.439Z", "updatedAt":
+        "2022-04-27T15:54:02.439Z", "permissionName": "health-coach", "instanceName":
+        "demo", "type": "SECURITY_ROLE", "primaryRole": false}, {"createdAt": "2022-04-27T15:54:02.439Z",
+        "updatedAt": "2022-04-27T15:54:02.439Z", "permissionName": "super-admin",
+        "instanceName": "demo", "type": "SECURITY_ROLE", "primaryRole": false}], "policies":
+        [], "seats": ["GENERAL"], "seatAssignAllowed": true, "applicationAccess":
+        {"id": "4260aa05-1154-4832-b770-f20f4d8c67df", "createdAt": "2022-04-27T15:26:51.892Z",
+        "updatedAt": "2022-04-27T15:48:10.844Z", "userId": "8c9abb35-ec92-4e6b-82a0-d4246537e12a",
+        "adminAccessEnabled": true, "auditSecurityAccessEnabled": false, "instanceAccesses":
+        [{"instanceId": "719f5e45-8122-4049-bf76-013f0f7f22be", "instanceName": "demo",
+        "instanceDescription": "Prebuilt demo environment", "userEmailWithInstanceDomain":
+        null, "workshopAccessEnabled": true, "auditDataAccessEnabled": false}, {"instanceId":
+        "3d648d72-7883-4e49-ad4c-ef1fd586afcf", "instanceName": "sandbox", "instanceDescription":
+        "Empty Sandbox", "userEmailWithInstanceDomain": null, "workshopAccessEnabled":
+        true, "auditDataAccessEnabled": false}]}, "id": "8c9abb35-ec92-4e6b-82a0-d4246537e12a",
+        "username": "superadmin", "email": "zachary.douglas+roi-sand@welkinhealth.com",
+        "enabled": true, "mfaEnabled": false, "statusType": null, "createdAt": "2022-04-27T15:26:51.885Z",
+        "updatedAt": "2022-04-27T15:26:51.885Z", "ssoAccess": false, "passwordAccess":
+        true, "terminologyName": "english", "userState": "ACTIVE", "customUserAttributes":
+        {}, "allowedToReceiveCalls": true, "userAttributes": {}, "_root_user": true},
+        {"territories": [{"createdAt": "2022-04-27T15:55:49.595Z", "updatedAt": "2022-04-27T15:55:49.595Z",
+        "createdBy": "createdBy_REDACTED_8af6567c-d295-4d97-b2e1-7781880457d0", "updatedBy":
+        "updatedBy_REDACTED_e09d85fa-8042-4bb0-9c0b-772b915e1f4d", "name": "east-coast",
+        "territories": ["New York", "Massachusetts", "Connecticut", "Maryland"], "instanceName":
+        "demo"}, {"createdAt": "2022-04-27T15:55:49.595Z", "updatedAt": "2022-04-27T15:55:49.595Z",
+        "createdBy": "createdBy_REDACTED_7a4736cf-fb8c-418f-99ed-3996e17e77c0", "updatedBy":
+        "updatedBy_REDACTED_75e6559e-ebb4-402f-b828-8391bb447f47", "name": "west-coast",
+        "territories": ["Oregon", "California", "Washington"], "instanceName": "demo"},
+        {"createdAt": "2022-04-27T15:55:49.595Z", "updatedAt": "2022-04-27T15:55:49.595Z",
+        "createdBy": "createdBy_REDACTED_0fca6fe9-7f4b-4d4c-b21f-ebb0b5c7ddea", "updatedBy":
+        "updatedBy_REDACTED_7c778b79-dd8b-47dd-a23e-89b12064e9bf", "name": "southwest",
+        "territories": ["New Mexico", "Texas", "Arizona"], "instanceName": "demo"}],
+        "roles": [{"createdAt": "2022-04-27T15:55:49.605Z", "updatedAt": "2022-04-27T15:55:49.605Z",
+        "permissionName": "health-coach", "instanceName": "demo", "type": "SECURITY_ROLE",
+        "primaryRole": false}, {"createdAt": "2022-04-27T15:55:49.605Z", "updatedAt":
+        "2022-04-27T15:55:49.605Z", "permissionName": "physician", "instanceName":
+        "demo", "type": "SECURITY_ROLE", "primaryRole": true}, {"createdAt": "2022-04-27T15:55:49.605Z",
+        "updatedAt": "2022-04-27T15:55:49.605Z", "permissionName": "super-admin",
+        "instanceName": "demo", "type": "SECURITY_ROLE", "primaryRole": false}], "policies":
+        [], "seats": ["GENERAL"], "seatAssignAllowed": true, "applicationAccess":
+        {"id": "59e2d5f3-e00c-410c-8354-e8fb7df775a2", "createdAt": "2022-04-27T15:42:43.691Z",
+        "updatedAt": "2022-04-27T15:55:23.700Z", "userId": "5d6addf9-e07c-499e-bc80-5995c84b67c1",
+        "adminAccessEnabled": true, "auditSecurityAccessEnabled": true, "instanceAccesses":
+        [{"instanceId": "719f5e45-8122-4049-bf76-013f0f7f22be", "instanceName": "demo",
+        "instanceDescription": "Prebuilt demo environment", "userEmailWithInstanceDomain":
+        null, "workshopAccessEnabled": true, "auditDataAccessEnabled": false}, {"instanceId":
+        "3d648d72-7883-4e49-ad4c-ef1fd586afcf", "instanceName": "sandbox", "instanceDescription":
+        "Empty Sandbox", "userEmailWithInstanceDomain": null, "workshopAccessEnabled":
+        true, "auditDataAccessEnabled": false}]}, "id": "5d6addf9-e07c-499e-bc80-5995c84b67c1",
+        "username": "erin", "email": "erin.stanchek+roi-sand@welkinhealth.com", "firstName":
+        "Erin", "lastName": "Stanchek", "enabled": true, "mfaEnabled": false, "statusType":
+        null, "createdAt": "2022-04-27T15:42:43.673Z", "updatedAt": "2022-04-27T15:42:43.673Z",
+        "ssoAccess": false, "passwordAccess": true, "terminologyName": "english",
+        "userState": "ACTIVE", "customUserAttributes": {}, "allowedToReceiveCalls":
+        true, "userAttributes": {}, "_root_user": false}, {"territories": [{"createdAt":
+        "2022-04-27T19:46:16.465Z", "updatedAt": "2022-04-27T19:46:16.465Z", "createdBy":
+        "createdBy_REDACTED_7828d43f-e8c9-419c-94b0-dd2e647a817e", "updatedBy": "updatedBy_REDACTED_b0a3c338-9393-40e6-88ef-95bc0b2fef61",
+        "name": "east-coast", "territories": ["New York", "Massachusetts", "Connecticut",
+        "Maryland"], "instanceName": "demo"}, {"createdAt": "2022-04-27T19:46:16.465Z",
+        "updatedAt": "2022-04-27T19:46:16.465Z", "createdBy": "createdBy_REDACTED_b457f131-0299-454d-bda3-9b4801fa94fc",
+        "updatedBy": "updatedBy_REDACTED_32c463bc-9506-4cde-9beb-95634fdd6b1e", "name":
+        "west-coast", "territories": ["Oregon", "California", "Washington"], "instanceName":
+        "demo"}, {"createdAt": "2022-04-27T19:46:16.465Z", "updatedAt": "2022-04-27T19:46:16.465Z",
+        "createdBy": "createdBy_REDACTED_5c526c1d-f440-4954-9873-e541aa600eb1", "updatedBy":
+        "updatedBy_REDACTED_206d582c-afca-4602-939d-58d1fde813c8", "name": "southwest",
+        "territories": ["New Mexico", "Texas", "Arizona"], "instanceName": "demo"}],
+        "roles": [{"createdAt": "2022-04-27T19:46:16.561Z", "updatedAt": "2022-04-27T19:46:16.561Z",
+        "permissionName": "health-coach", "instanceName": "demo", "type": "SECURITY_ROLE",
+        "primaryRole": false}, {"createdAt": "2022-04-27T19:46:16.561Z", "updatedAt":
+        "2022-04-27T19:46:16.561Z", "permissionName": "physician", "instanceName":
+        "demo", "type": "SECURITY_ROLE", "primaryRole": true}, {"createdAt": "2022-04-27T19:46:16.561Z",
+        "updatedAt": "2022-04-27T19:46:16.561Z", "permissionName": "super-admin",
+        "instanceName": "demo", "type": "SECURITY_ROLE", "primaryRole": false}], "policies":
+        [], "seats": [], "seatAssignAllowed": true, "applicationAccess": {"id": "da4bf8a4-5c21-43d0-bcc1-6168dfe3bca0",
+        "createdAt": "2022-04-27T19:46:15.458Z", "updatedAt": "2022-04-27T19:46:15.458Z",
+        "userId": "f6043f70-73e4-4048-a847-7b20d7fcfc58", "adminAccessEnabled": true,
+        "auditSecurityAccessEnabled": true, "instanceAccesses": [{"instanceId": "719f5e45-8122-4049-bf76-013f0f7f22be",
+        "instanceName": "demo", "instanceDescription": "Prebuilt demo environment",
+        "userEmailWithInstanceDomain": null, "workshopAccessEnabled": true, "auditDataAccessEnabled":
+        false}, {"instanceId": "3d648d72-7883-4e49-ad4c-ef1fd586afcf", "instanceName":
+        "sandbox", "instanceDescription": "Empty Sandbox", "userEmailWithInstanceDomain":
+        null, "workshopAccessEnabled": true, "auditDataAccessEnabled": false}]}, "createdByName":
+        "createdByName_REDACTED_ad2205ef-2399-4cea-9e17-c51d98b08cc9", "updatedByName":
+        "updatedByName_REDACTED_400399da-1bc3-4f69-80aa-34b1704e209e", "id": "f6043f70-73e4-4048-a847-7b20d7fcfc58",
+        "username": "matt.giles", "email": "matt.giles@roivant.com", "firstName":
+        "Matt", "lastName": "Giles", "enabled": true, "mfaEnabled": false, "statusType":
+        null, "createdAt": "2022-04-27T19:46:15.451Z", "updatedAt": "2022-04-27T19:46:15.451Z",
+        "ssoAccess": false, "passwordAccess": true, "terminologyName": "english",
+        "userState": "ACTIVE", "customUserAttributes": {}, "allowedToReceiveCalls":
+        true, "userAttributes": {}, "_root_user": false}, {"territories": [{"createdAt":
+        "2022-04-27T19:47:03.280Z", "updatedAt": "2022-04-27T19:47:03.280Z", "createdBy":
+        "createdBy_REDACTED_fbf0244c-ea75-457d-b2f3-6f760808fda0", "updatedBy": "updatedBy_REDACTED_32fd4d29-e718-482f-a409-54459ef5b7f8",
+        "name": "east-coast", "territories": ["New York", "Massachusetts", "Connecticut",
+        "Maryland"], "instanceName": "demo"}, {"createdAt": "2022-04-27T19:47:03.280Z",
+        "updatedAt": "2022-04-27T19:47:03.280Z", "createdBy": "createdBy_REDACTED_292d08ae-fc42-439c-8c1a-154d5e2f56fa",
+        "updatedBy": "updatedBy_REDACTED_15395190-49f7-43c7-bf63-12c5378d7b81", "name":
+        "west-coast", "territories": ["Oregon", "California", "Washington"], "instanceName":
+        "demo"}, {"createdAt": "2022-04-27T19:47:03.280Z", "updatedAt": "2022-04-27T19:47:03.280Z",
+        "createdBy": "createdBy_REDACTED_d565abdd-d7c1-437f-8b46-5cd08f7b08fc", "updatedBy":
+        "updatedBy_REDACTED_ef5ae56f-c241-4b15-8d87-aaa4fc9e57dd", "name": "southwest",
+        "territories": ["New Mexico", "Texas", "Arizona"], "instanceName": "demo"}],
+        "roles": [{"createdAt": "2022-04-27T19:47:03.291Z", "updatedAt": "2022-04-27T19:47:03.291Z",
+        "permissionName": "health-coach", "instanceName": "demo", "type": "SECURITY_ROLE",
+        "primaryRole": false}, {"createdAt": "2022-04-27T19:47:03.291Z", "updatedAt":
+        "2022-04-27T19:47:03.291Z", "permissionName": "physician", "instanceName":
+        "demo", "type": "SECURITY_ROLE", "primaryRole": true}, {"createdAt": "2022-04-27T19:47:03.291Z",
+        "updatedAt": "2022-04-27T19:47:03.291Z", "permissionName": "super-admin",
+        "instanceName": "demo", "type": "SECURITY_ROLE", "primaryRole": false}], "policies":
+        [], "seats": [], "seatAssignAllowed": true, "applicationAccess": {"id": "259ae9fd-9118-41ec-8c48-1e7a3f3b85e3",
+        "createdAt": "2022-04-27T19:47:02.712Z", "updatedAt": "2022-05-03T17:01:41.727Z",
+        "userId": "14ff8a60-f73a-40ac-9d69-64e642685bbb", "adminAccessEnabled": true,
+        "auditSecurityAccessEnabled": true, "instanceAccesses": [{"instanceId": "719f5e45-8122-4049-bf76-013f0f7f22be",
+        "instanceName": "demo", "instanceDescription": "Prebuilt demo environment",
+        "userEmailWithInstanceDomain": null, "workshopAccessEnabled": true, "auditDataAccessEnabled":
+        true}, {"instanceId": "3d648d72-7883-4e49-ad4c-ef1fd586afcf", "instanceName":
+        "sandbox", "instanceDescription": "Empty Sandbox", "userEmailWithInstanceDomain":
+        null, "workshopAccessEnabled": true, "auditDataAccessEnabled": true}]}, "createdByName":
+        "createdByName_REDACTED_30c0be33-71a6-46d4-93c4-9436bc675ed6", "updatedByName":
+        "updatedByName_REDACTED_7eab373a-cd42-47cc-9caf-f2c43df167e8", "id": "14ff8a60-f73a-40ac-9d69-64e642685bbb",
+        "username": "j", "email": "j@jdiaz.io", "firstName": "Julian", "lastName":
+        "Diaz", "enabled": true, "mfaEnabled": false, "statusType": null, "createdAt":
+        "2022-04-27T19:47:02.703Z", "updatedAt": "2022-04-27T19:47:02.703Z", "ssoAccess":
+        false, "passwordAccess": true, "terminologyName": "english", "userState":
+        "ACTIVE", "customUserAttributes": {}, "allowedToReceiveCalls": true, "userAttributes":
+        {}, "_root_user": false}, {"territories": [{"createdAt": "2022-04-27T19:47:29.906Z",
+        "updatedAt": "2022-04-27T19:47:29.906Z", "createdBy": "createdBy_REDACTED_3fe5f1df-b701-413b-b539-5529dd39b4f2",
+        "updatedBy": "updatedBy_REDACTED_4ff3e11c-cf12-42e0-a7ef-d050340204f4", "name":
+        "east-coast", "territories": ["New York", "Massachusetts", "Connecticut",
+        "Maryland"], "instanceName": "demo"}, {"createdAt": "2022-04-27T19:47:29.906Z",
+        "updatedAt": "2022-04-27T19:47:29.906Z", "createdBy": "createdBy_REDACTED_fde2013e-52a9-4748-8722-3b7c25b67e3b",
+        "updatedBy": "updatedBy_REDACTED_93deb69c-3ecd-471a-8ecb-74a58c4e5a63", "name":
+        "west-coast", "territories": ["Oregon", "California", "Washington"], "instanceName":
+        "demo"}, {"createdAt": "2022-04-27T19:47:29.906Z", "updatedAt": "2022-04-27T19:47:29.906Z",
+        "createdBy": "createdBy_REDACTED_7429b964-6b64-425f-9343-31db1bbc0d2b", "updatedBy":
+        "updatedBy_REDACTED_cf0b739a-4b8d-4be8-b693-48c08fd6c4c4", "name": "southwest",
+        "territories": ["New Mexico", "Texas", "Arizona"], "instanceName": "demo"}],
+        "roles": [{"createdAt": "2022-04-27T19:47:29.913Z", "updatedAt": "2022-04-27T19:47:29.913Z",
+        "permissionName": "health-coach", "instanceName": "demo", "type": "SECURITY_ROLE",
+        "primaryRole": false}, {"createdAt": "2022-04-27T19:47:29.913Z", "updatedAt":
+        "2022-04-27T19:47:29.913Z", "permissionName": "physician", "instanceName":
+        "demo", "type": "SECURITY_ROLE", "primaryRole": true}, {"createdAt": "2022-04-27T19:47:29.913Z",
+        "updatedAt": "2022-04-27T19:47:29.913Z", "permissionName": "super-admin",
+        "instanceName": "demo", "type": "SECURITY_ROLE", "primaryRole": false}], "policies":
+        [], "seats": [], "seatAssignAllowed": true, "applicationAccess": {"id": "89fe0f83-5b61-45cd-a3f1-e7d5be336d60",
+        "createdAt": "2022-04-27T19:47:29.493Z", "updatedAt": "2022-04-27T19:47:29.493Z",
+        "userId": "915c9699-fcbc-4181-94ff-ff4186386c08", "adminAccessEnabled": true,
+        "auditSecurityAccessEnabled": true, "instanceAccesses": [{"instanceId": "719f5e45-8122-4049-bf76-013f0f7f22be",
+        "instanceName": "demo", "instanceDescription": "Prebuilt demo environment",
+        "userEmailWithInstanceDomain": null, "workshopAccessEnabled": true, "auditDataAccessEnabled":
+        false}, {"instanceId": "3d648d72-7883-4e49-ad4c-ef1fd586afcf", "instanceName":
+        "sandbox", "instanceDescription": "Empty Sandbox", "userEmailWithInstanceDomain":
+        null, "workshopAccessEnabled": true, "auditDataAccessEnabled": false}]}, "createdByName":
+        "createdByName_REDACTED_39a49197-9e64-40ad-939e-aff2a918b0f9", "updatedByName":
+        "updatedByName_REDACTED_6c091089-6ad1-423f-9225-b2efa51f9fd8", "id": "915c9699-fcbc-4181-94ff-ff4186386c08",
+        "username": "ben", "email": "ben@lightmatter.com", "firstName": "Ben", "lastName":
+        "Beecher", "enabled": true, "mfaEnabled": false, "statusType": null, "createdAt":
+        "2022-04-27T19:47:29.488Z", "updatedAt": "2022-04-27T19:47:29.488Z", "ssoAccess":
+        false, "passwordAccess": true, "terminologyName": "english", "userState":
+        "ACTIVE", "customUserAttributes": {}, "allowedToReceiveCalls": true, "userAttributes":
+        {}, "_root_user": false}, {"territories": [{"createdAt": "2022-04-27T19:48:07.371Z",
+        "updatedAt": "2022-05-10T22:16:55.347Z", "createdBy": "createdBy_REDACTED_e7755334-a082-4537-93c5-e674137c3eaf",
+        "updatedBy": "updatedBy_REDACTED_c2dcaa41-6b63-4ff4-bdb8-dd04eafa84f7", "name":
+        "east-coast", "territories": ["New York", "Massachusetts", "Connecticut",
+        "Maryland"], "instanceName": "demo"}, {"createdAt": "2022-04-27T19:48:07.371Z",
+        "updatedAt": "2022-05-10T22:16:55.347Z", "createdBy": "createdBy_REDACTED_cb94ef15-b06d-4f08-8ceb-38ede7f97389",
+        "updatedBy": "updatedBy_REDACTED_ed1371fc-301c-4a88-ad4e-eef587a3f491", "name":
+        "west-coast", "territories": ["Oregon", "California", "Washington"], "instanceName":
+        "demo"}, {"createdAt": "2022-04-27T19:48:07.371Z", "updatedAt": "2022-05-10T22:16:55.347Z",
+        "createdBy": "createdBy_REDACTED_71185d53-1548-466a-8d2e-6c0d4d53d43c", "updatedBy":
+        "updatedBy_REDACTED_cee72211-3809-4708-b7ae-33d69257d8d2", "name": "southwest",
+        "territories": ["New Mexico", "Texas", "Arizona"], "instanceName": "demo"}],
+        "roles": [{"createdAt": "2022-04-27T19:48:07.405Z", "updatedAt": "2022-05-10T22:16:55.538Z",
+        "permissionName": "health-coach", "instanceName": "demo", "type": "SECURITY_ROLE",
+        "primaryRole": false}, {"createdAt": "2022-04-27T19:48:07.405Z", "updatedAt":
+        "2022-05-10T22:16:55.538Z", "permissionName": "physician", "instanceName":
+        "demo", "type": "SECURITY_ROLE", "primaryRole": false}, {"createdAt": "2022-04-27T19:48:07.405Z",
+        "updatedAt": "2022-05-10T22:16:55.538Z", "permissionName": "super-admin",
+        "instanceName": "demo", "type": "SECURITY_ROLE", "primaryRole": true}], "policies":
+        [{"createdAt": "2022-04-27T19:48:07.405Z", "updatedAt": "2022-05-10T22:16:55.538Z",
+        "permissionName": "all_access_policy", "instanceName": "demo", "type": "SECURITY_POLICY",
+        "effectiveDate": "2022-05-10T00:00:00.000Z"}], "seats": [], "seatAssignAllowed":
+        true, "applicationAccess": {"id": "909cf963-fc66-4be3-8d36-1bcbef509d5d",
+        "createdAt": "2022-04-27T19:48:06.792Z", "updatedAt": "2022-05-11T15:30:43.569Z",
+        "userId": "d9925247-7505-464a-b42c-25ac71408494", "adminAccessEnabled": true,
+        "auditSecurityAccessEnabled": true, "instanceAccesses": [{"instanceId": "719f5e45-8122-4049-bf76-013f0f7f22be",
+        "instanceName": "demo", "instanceDescription": "Prebuilt demo environment",
+        "userEmailWithInstanceDomain": null, "workshopAccessEnabled": true, "auditDataAccessEnabled":
+        true}, {"instanceId": "3d648d72-7883-4e49-ad4c-ef1fd586afcf", "instanceName":
+        "sandbox", "instanceDescription": "Empty Sandbox", "userEmailWithInstanceDomain":
+        null, "workshopAccessEnabled": true, "auditDataAccessEnabled": true}]}, "createdByName":
+        "createdByName_REDACTED_fe05e7a4-c194-4524-a707-3c7bd69d7e31", "updatedByName":
+        "updatedByName_REDACTED_6a1ea1da-b1de-41a0-a06f-6c050edfa4c7", "id": "d9925247-7505-464a-b42c-25ac71408494",
+        "username": "sam", "email": "sam@lightmatter.com", "firstName": "Sam", "lastName":
+        "Morgan", "enabled": true, "mfaEnabled": false, "statusType": null, "createdAt":
+        "2022-04-27T19:48:06.741Z", "updatedAt": "2022-04-27T19:48:06.741Z", "ssoAccess":
+        false, "passwordAccess": true, "terminologyName": "english", "userState":
+        "ACTIVE", "customUserAttributes": {}, "allowedToReceiveCalls": true, "userAttributes":
+        {}, "_root_user": false}, {"territories": [{"createdAt": "2022-04-27T19:48:31.410Z",
+        "updatedAt": "2022-04-27T19:48:31.410Z", "createdBy": "createdBy_REDACTED_929bf252-2c9f-4942-b7ca-515824934805",
+        "updatedBy": "updatedBy_REDACTED_533f5b26-d22d-4b36-a87e-75b031d0ea52", "name":
+        "east-coast", "territories": ["New York", "Massachusetts", "Connecticut",
+        "Maryland"], "instanceName": "demo"}, {"createdAt": "2022-04-27T19:48:31.410Z",
+        "updatedAt": "2022-04-27T19:48:31.410Z", "createdBy": "createdBy_REDACTED_ce444e72-a311-4776-a6ff-0e39d74d8ca1",
+        "updatedBy": "updatedBy_REDACTED_4d1ae9ec-e416-4803-b2a8-6adc362da5d4", "name":
+        "west-coast", "territories": ["Oregon", "California", "Washington"], "instanceName":
+        "demo"}, {"createdAt": "2022-04-27T19:48:31.410Z", "updatedAt": "2022-04-27T19:48:31.410Z",
+        "createdBy": "createdBy_REDACTED_be1bbf01-170c-4621-93dc-aed150d001e1", "updatedBy":
+        "updatedBy_REDACTED_ba9d93f1-87de-4c87-a337-5a7897ac50ac", "name": "southwest",
+        "territories": ["New Mexico", "Texas", "Arizona"], "instanceName": "demo"}],
+        "roles": [{"createdAt": "2022-04-27T19:48:31.547Z", "updatedAt": "2022-04-27T19:48:31.547Z",
+        "permissionName": "health-coach", "instanceName": "demo", "type": "SECURITY_ROLE",
+        "primaryRole": false}, {"createdAt": "2022-04-27T19:48:31.547Z", "updatedAt":
+        "2022-04-27T19:48:31.547Z", "permissionName": "physician", "instanceName":
+        "demo", "type": "SECURITY_ROLE", "primaryRole": true}, {"createdAt": "2022-04-27T19:48:31.547Z",
+        "updatedAt": "2022-04-27T19:48:31.547Z", "permissionName": "super-admin",
+        "instanceName": "demo", "type": "SECURITY_ROLE", "primaryRole": false}], "policies":
+        [], "seats": [], "seatAssignAllowed": true, "applicationAccess": {"id": "b1da7378-2ecb-4c13-aa64-75399e0477b7",
+        "createdAt": "2022-04-27T19:48:30.969Z", "updatedAt": "2022-04-27T19:48:30.969Z",
+        "userId": "f4b2092d-d219-4ada-acd2-d290d386e9b9", "adminAccessEnabled": true,
+        "auditSecurityAccessEnabled": true, "instanceAccesses": [{"instanceId": "719f5e45-8122-4049-bf76-013f0f7f22be",
+        "instanceName": "demo", "instanceDescription": "Prebuilt demo environment",
+        "userEmailWithInstanceDomain": null, "workshopAccessEnabled": true, "auditDataAccessEnabled":
+        false}, {"instanceId": "3d648d72-7883-4e49-ad4c-ef1fd586afcf", "instanceName":
+        "sandbox", "instanceDescription": "Empty Sandbox", "userEmailWithInstanceDomain":
+        null, "workshopAccessEnabled": true, "auditDataAccessEnabled": false}]}, "createdByName":
+        "createdByName_REDACTED_35321802-29b9-4d6f-8c44-e6480cda37a9", "updatedByName":
+        "updatedByName_REDACTED_4c28ff24-73e1-4e9f-b378-94cddd61e05a", "id": "f4b2092d-d219-4ada-acd2-d290d386e9b9",
+        "username": "will.w", "email": "will.w@lightmatter.com", "firstName": "Will",
+        "lastName": "Wernert", "enabled": true, "mfaEnabled": false, "statusType":
+        null, "createdAt": "2022-04-27T19:48:30.962Z", "updatedAt": "2022-04-27T19:48:30.962Z",
+        "ssoAccess": false, "passwordAccess": true, "terminologyName": "english",
+        "userState": "ACTIVE", "customUserAttributes": {}, "allowedToReceiveCalls":
+        true, "userAttributes": {}, "_root_user": false}, {"territories": [{"createdAt":
+        "2022-04-27T19:48:50.066Z", "updatedAt": "2022-04-27T19:48:50.066Z", "createdBy":
+        "createdBy_REDACTED_acd5132b-0b27-43ec-8f39-a627cc00942c", "updatedBy": "updatedBy_REDACTED_beb525e3-08c2-4f37-9763-2d5a4b578971",
+        "name": "east-coast", "territories": ["New York", "Massachusetts", "Connecticut",
+        "Maryland"], "instanceName": "demo"}, {"createdAt": "2022-04-27T19:48:50.066Z",
+        "updatedAt": "2022-04-27T19:48:50.066Z", "createdBy": "createdBy_REDACTED_e46e9507-4f8b-4d75-b535-d60bf40f5d34",
+        "updatedBy": "updatedBy_REDACTED_49ae36e7-0186-4796-ab44-945befb73a36", "name":
+        "west-coast", "territories": ["Oregon", "California", "Washington"], "instanceName":
+        "demo"}, {"createdAt": "2022-04-27T19:48:50.066Z", "updatedAt": "2022-04-27T19:48:50.066Z",
+        "createdBy": "createdBy_REDACTED_02161f21-4346-460e-8cee-8fe5b1e03e20", "updatedBy":
+        "updatedBy_REDACTED_21bb7ca1-354e-4abf-ae7f-85e400a63134", "name": "southwest",
+        "territories": ["New Mexico", "Texas", "Arizona"], "instanceName": "demo"}],
+        "roles": [{"createdAt": "2022-04-27T19:48:50.073Z", "updatedAt": "2022-04-27T19:48:50.073Z",
+        "permissionName": "health-coach", "instanceName": "demo", "type": "SECURITY_ROLE",
+        "primaryRole": false}, {"createdAt": "2022-04-27T19:48:50.073Z", "updatedAt":
+        "2022-04-27T19:48:50.073Z", "permissionName": "physician", "instanceName":
+        "demo", "type": "SECURITY_ROLE", "primaryRole": true}, {"createdAt": "2022-04-27T19:48:50.073Z",
+        "updatedAt": "2022-04-27T19:48:50.073Z", "permissionName": "super-admin",
+        "instanceName": "demo", "type": "SECURITY_ROLE", "primaryRole": false}], "policies":
+        [], "seats": [], "seatAssignAllowed": true, "applicationAccess": {"id": "b0e4211f-1c9f-4cfc-acd5-f3f20b3ddd74",
+        "createdAt": "2022-04-27T19:48:49.542Z", "updatedAt": "2022-04-27T19:48:49.542Z",
+        "userId": "3a780717-9137-4225-b7ff-b0a78c1dadec", "adminAccessEnabled": true,
+        "auditSecurityAccessEnabled": true, "instanceAccesses": [{"instanceId": "719f5e45-8122-4049-bf76-013f0f7f22be",
+        "instanceName": "demo", "instanceDescription": "Prebuilt demo environment",
+        "userEmailWithInstanceDomain": null, "workshopAccessEnabled": true, "auditDataAccessEnabled":
+        false}, {"instanceId": "3d648d72-7883-4e49-ad4c-ef1fd586afcf", "instanceName":
+        "sandbox", "instanceDescription": "Empty Sandbox", "userEmailWithInstanceDomain":
+        null, "workshopAccessEnabled": true, "auditDataAccessEnabled": false}]}, "createdByName":
+        "createdByName_REDACTED_90f5d373-10df-4a66-8947-c7d472e9a3f3", "updatedByName":
+        "updatedByName_REDACTED_348baa5c-0782-4a3c-a0da-eb184184df9f", "id": "3a780717-9137-4225-b7ff-b0a78c1dadec",
+        "username": "rob", "email": "rob@lightmatter.com", "firstName": "Rob", "lastName":
+        "Alford", "enabled": true, "mfaEnabled": false, "statusType": null, "createdAt":
+        "2022-04-27T19:48:49.537Z", "updatedAt": "2022-04-27T19:48:49.537Z", "ssoAccess":
+        false, "passwordAccess": true, "terminologyName": "english", "userState":
+        "ACTIVE", "customUserAttributes": {}, "allowedToReceiveCalls": true, "userAttributes":
+        {}, "_root_user": false}, {"territories": [{"createdAt": "2022-04-27T19:51:08.816Z",
+        "updatedAt": "2022-04-27T19:51:08.816Z", "createdBy": "createdBy_REDACTED_7d13cfa5-a5ed-43be-baea-9ea934f83eda",
+        "updatedBy": "updatedBy_REDACTED_bbfe59e6-8e0a-431a-8368-577afd8b98df", "name":
+        "east-coast", "territories": ["New York", "Massachusetts", "Connecticut",
+        "Maryland"], "instanceName": "demo"}, {"createdAt": "2022-04-27T19:51:08.816Z",
+        "updatedAt": "2022-04-27T19:51:08.816Z", "createdBy": "createdBy_REDACTED_1b057bdf-25e9-4869-9f94-beaca80b9bcd",
+        "updatedBy": "updatedBy_REDACTED_e67d7c8d-df40-41b0-b327-6fabc2672b5d", "name":
+        "west-coast", "territories": ["Oregon", "California", "Washington"], "instanceName":
+        "demo"}, {"createdAt": "2022-04-27T19:51:08.816Z", "updatedAt": "2022-04-27T19:51:08.816Z",
+        "createdBy": "createdBy_REDACTED_dc74c09c-6bcf-487a-a6c8-def39d13efd9", "updatedBy":
+        "updatedBy_REDACTED_6c03edbe-bf27-45a5-baf0-25b77d62aa0a", "name": "southwest",
+        "territories": ["New Mexico", "Texas", "Arizona"], "instanceName": "demo"}],
+        "roles": [{"createdAt": "2022-04-27T19:51:08.831Z", "updatedAt": "2022-04-27T19:51:08.831Z",
+        "permissionName": "physician", "instanceName": "demo", "type": "SECURITY_ROLE",
+        "primaryRole": false}, {"createdAt": "2022-04-27T19:51:08.831Z", "updatedAt":
+        "2022-04-27T19:51:08.831Z", "permissionName": "health-coach", "instanceName":
+        "demo", "type": "SECURITY_ROLE", "primaryRole": false}, {"createdAt": "2022-04-27T19:51:08.831Z",
+        "updatedAt": "2022-04-27T19:51:08.831Z", "permissionName": "super-admin",
+        "instanceName": "demo", "type": "SECURITY_ROLE", "primaryRole": true}], "policies":
+        [], "seats": [], "seatAssignAllowed": true, "applicationAccess": {"id": "062b2422-db5a-433f-89f1-f99a4231aecd",
+        "createdAt": "2022-04-27T19:49:35.094Z", "updatedAt": "2022-04-27T19:50:16.278Z",
+        "userId": "ec6a28e7-08f3-4a11-9550-dc9bb7873080", "adminAccessEnabled": true,
+        "auditSecurityAccessEnabled": true, "instanceAccesses": [{"instanceId": "719f5e45-8122-4049-bf76-013f0f7f22be",
+        "instanceName": "demo", "instanceDescription": "Prebuilt demo environment",
+        "userEmailWithInstanceDomain": null, "workshopAccessEnabled": true, "auditDataAccessEnabled":
+        false}, {"instanceId": "3d648d72-7883-4e49-ad4c-ef1fd586afcf", "instanceName":
+        "sandbox", "instanceDescription": "Empty Sandbox", "userEmailWithInstanceDomain":
+        null, "workshopAccessEnabled": true, "auditDataAccessEnabled": false}]}, "createdByName":
+        "createdByName_REDACTED_76e3d3a6-8dfd-47c3-b14a-d1c0c65bb614", "updatedByName":
+        "updatedByName_REDACTED_1f314fd6-0feb-4f2d-ac1e-74e34d457073", "id": "ec6a28e7-08f3-4a11-9550-dc9bb7873080",
+        "username": "will", "email": "will@lightmatter.com", "firstName": "Will",
+        "lastName": "Hoback", "enabled": true, "mfaEnabled": false, "statusType":
+        null, "createdAt": "2022-04-27T19:49:35.088Z", "updatedAt": "2022-04-27T19:49:35.088Z",
+        "ssoAccess": false, "passwordAccess": true, "terminologyName": "english",
+        "userState": "ACTIVE", "customUserAttributes": {}, "allowedToReceiveCalls":
+        true, "userAttributes": {}, "_root_user": false}, {"territories": [{"createdAt":
+        "2022-04-27T19:52:36.455Z", "updatedAt": "2022-04-27T19:52:36.455Z", "createdBy":
+        "createdBy_REDACTED_361f14cc-31b8-46f7-a428-356c0a372394", "updatedBy": "updatedBy_REDACTED_cb57b653-2998-42d8-b1fa-d1d878882099",
+        "name": "east-coast", "territories": ["New York", "Massachusetts", "Connecticut",
+        "Maryland"], "instanceName": "demo"}, {"createdAt": "2022-04-27T19:52:36.455Z",
+        "updatedAt": "2022-04-27T19:52:36.455Z", "createdBy": "createdBy_REDACTED_41413d9c-55c5-4048-a8df-9bddbec2e211",
+        "updatedBy": "updatedBy_REDACTED_533e7dd1-c2b2-40ba-b624-d625a6aed639", "name":
+        "west-coast", "territories": ["Oregon", "California", "Washington"], "instanceName":
+        "demo"}, {"createdAt": "2022-04-27T19:52:36.455Z", "updatedAt": "2022-04-27T19:52:36.455Z",
+        "createdBy": "createdBy_REDACTED_60ee49d6-5aaa-4136-84fb-834300af999d", "updatedBy":
+        "updatedBy_REDACTED_8cac0534-50bd-4239-8467-4837762d1726", "name": "southwest",
+        "territories": ["New Mexico", "Texas", "Arizona"], "instanceName": "demo"}],
+        "roles": [{"createdAt": "2022-04-27T19:52:36.467Z", "updatedAt": "2022-04-27T19:52:36.467Z",
+        "permissionName": "physician", "instanceName": "demo", "type": "SECURITY_ROLE",
+        "primaryRole": false}, {"createdAt": "2022-04-27T19:52:36.467Z", "updatedAt":
+        "2022-04-27T19:52:36.467Z", "permissionName": "health-coach", "instanceName":
+        "demo", "type": "SECURITY_ROLE", "primaryRole": false}, {"createdAt": "2022-04-27T19:52:36.467Z",
+        "updatedAt": "2022-04-27T19:52:36.467Z", "permissionName": "super-admin",
+        "instanceName": "demo", "type": "SECURITY_ROLE", "primaryRole": true}], "policies":
+        [], "seats": [], "seatAssignAllowed": true, "applicationAccess": {"id": "5db46b4b-8eaa-4056-9b2d-938d9dd94fad",
+        "createdAt": "2022-04-27T19:51:41.619Z", "updatedAt": "2022-04-27T19:51:51.888Z",
+        "userId": "ae313201-064c-4a57-9c34-f95e3e7d2777", "adminAccessEnabled": true,
+        "auditSecurityAccessEnabled": true, "instanceAccesses": [{"instanceId": "719f5e45-8122-4049-bf76-013f0f7f22be",
+        "instanceName": "demo", "instanceDescription": "Prebuilt demo environment",
+        "userEmailWithInstanceDomain": null, "workshopAccessEnabled": true, "auditDataAccessEnabled":
+        false}, {"instanceId": "3d648d72-7883-4e49-ad4c-ef1fd586afcf", "instanceName":
+        "sandbox", "instanceDescription": "Empty Sandbox", "userEmailWithInstanceDomain":
+        null, "workshopAccessEnabled": true, "auditDataAccessEnabled": false}]}, "createdByName":
+        "createdByName_REDACTED_50b25e98-7426-4b41-acc5-ca7490827b01", "updatedByName":
+        "updatedByName_REDACTED_d032b0dc-34cf-4db1-baea-1e7434815324", "id": "ae313201-064c-4a57-9c34-f95e3e7d2777",
+        "username": "mattl", "email": "matt@lightmatter.com", "firstName": "Matt",
+        "lastName": "LeGrice", "enabled": true, "mfaEnabled": false, "statusType":
+        null, "createdAt": "2022-04-27T19:51:41.611Z", "updatedAt": "2022-04-27T19:51:41.611Z",
+        "ssoAccess": false, "passwordAccess": true, "terminologyName": "english",
+        "userState": "ACTIVE", "customUserAttributes": {}, "allowedToReceiveCalls":
+        true, "userAttributes": {}, "_root_user": false}, {"territories": [], "roles":
+        [], "policies": [], "seats": [], "seatAssignAllowed": true, "applicationAccess":
+        {"id": "6c143233-fd0a-4ede-8630-685315322b0c", "createdAt": "2022-05-13T02:04:37.414Z",
+        "updatedAt": "2022-05-13T15:28:03.991Z", "userId": "658f3b36-a12a-4bce-aad6-1e4930948b7d",
+        "adminAccessEnabled": false, "auditSecurityAccessEnabled": false, "instanceAccesses":
+        []}, "updatedByName": "updatedByName_REDACTED_49791079-ee3e-462b-84d0-c87d12a0c313",
+        "id": "658f3b36-a12a-4bce-aad6-1e4930948b7d", "username": "Foo", "email":
+        "foo@bar.com", "enabled": false, "mfaEnabled": false, "statusType": null,
+        "createdAt": "2022-05-13T02:04:37.395Z", "updatedAt": "2022-05-13T22:24:35.644Z",
+        "ssoAccess": false, "passwordAccess": true, "terminologyName": "english",
+        "userState": "INACTIVE", "customUserAttributes": {}, "allowedToReceiveCalls":
+        true, "userAttributes": {}, "_root_user": false}], "metaInfo": {"page": 0,
+        "pageSize": 20, "totalElements": 11, "numberOfElements": 11, "lastPage": true,
+        "firstPage": true, "totalPages": 1}}'
+    headers:
+      Access-Control-Allow-Headers:
+      - authorization, content-type, xsrf-token, security-role
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, PATCH, OPTIONS
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - xsrf-token
+      Access-Control-Max-Age:
+      - '3600'
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 16 May 2022 18:48:11 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Set-Cookie:
+      - AWSALB=AvFEP6H3APTJQuqM7zLV6kF29VBpENT9BnfqYvl1K1MbZoGmST47cOjaSfUMBkEIxiUh1hY9n+Fza6T0cfniLcje9NIchkgHsmTe6CjjTv4FOXfCBNEVTCzgL7sw;
+        Expires=Mon, 23 May 2022 18:48:10 GMT; Path=/
+      - AWSALBCORS=AvFEP6H3APTJQuqM7zLV6kF29VBpENT9BnfqYvl1K1MbZoGmST47cOjaSfUMBkEIxiUh1hY9n+Fza6T0cfniLcje9NIchkgHsmTe6CjjTv4FOXfCBNEVTCzgL7sw;
+        Expires=Mon, 23 May 2022 18:48:10 GMT; Path=/; SameSite=None; Secure
+      Transfer-Encoding:
+      - chunked
+      X-Content-Type-Options:
+      - nosniff
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: ''
+version: 1
