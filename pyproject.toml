@@ -1,0 +1,5 @@
+[tool.isort]
+profile = "black"
+
+[tool.pytest.ini_options]
+env_files = [".env", ".env.example"]

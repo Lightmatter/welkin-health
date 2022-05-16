@@ -43,16 +43,19 @@ class WelkinAuth(AuthBase):
 
     @property
     def token(self) -> str:
-        with shelve.open("welkin") as db:
+        with shelve.open(".welkin.db") as db:
             try:
                 return db[self.tenant]["token"]
             except KeyError:
-                self.refresh_token()
-                return self.token
+                pass
+
+        self.refresh_token()
+
+        return self.token
 
     @token.setter
     def token(self, value: dict) -> None:
-        with shelve.open("welkin") as db:
+        with shelve.open(".welkin.db") as db:
             db[self.tenant] = value
 
     def refresh_token(self) -> None:
