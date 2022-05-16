@@ -2,31 +2,34 @@ import pytest
 from requests import Request
 
 
-@pytest.mark.vcr()
-def test_token_get(client, vcr_cassette):
+def auth_class(client):
     auth = client.auth
+    auth.token_method = lambda: {"token": "API_TOKEN"}
+
+    return auth
+
+
+def test_token_get(client):
+    auth = auth_class(client)
     token = auth.token
 
     assert token is not None
-    assert len(vcr_cassette) == 1
 
 
-@pytest.mark.vcr()
-def test_token_refresh(client, vcr_cassette):
-    auth = client.auth
+def test_token_refresh(client):
+    auth = auth_class(client)
 
     token = f"{auth.token}_1"
     auth.refresh_token()
 
     assert token != auth.token
-    assert len(vcr_cassette) == 2
 
 
 def test_auth_call(client):
     req = Request("GET", "https://foo.com/bar")
     prepped = req.prepare()
 
-    auth = client.auth
+    auth = auth_class(client)
     auth(prepped)
 
     assert "Authorization" in prepped.headers
@@ -36,7 +39,7 @@ def test_auth_token_call(client):
     req = Request("GET", "https://foo.com/bar/api_clients")
     prepped = req.prepare()
 
-    auth = client.auth
+    auth = auth_class(client)
     auth(prepped)
 
     assert "Authorization" not in prepped.headers

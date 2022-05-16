@@ -43,12 +43,16 @@ def vcr(vcr):
     vcr.filter_post_data_parameters = POST_DATA_BLACKLIST
     vcr.before_record_request = scrub_request(CLIENT_INIT)
     vcr.before_record_response = scrub_response(RESPONSE_BLACKLIST)
+
     return vcr
 
 
 def scrub_request(blacklist, replacement="REDACTED"):
     def before_record_request(request):
         # request.body = filter_body(request.body, blacklist, replacement)
+        if "api_clients" in request.path:
+            return None
+
         for k, v in blacklist.items():
             request.uri = request.uri.replace(v, f"{k}_{replacement}")
 
