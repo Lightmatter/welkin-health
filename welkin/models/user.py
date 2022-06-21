@@ -56,6 +56,3 @@ class Users(Collection):
             params["region"] = region
 
         return super().get(path, params=params)
-
-    def search(self, search):
-        return self.get(search=search)
