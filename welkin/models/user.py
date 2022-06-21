@@ -3,7 +3,10 @@ from welkin.models.base import Collection, Resource
 
 class User(Resource):
     def __str__(self):
-        return f"{self.firstName} {self.lastName}"
+        try:
+            return f"{self.firstName} {self.lastName}"
+        except AttributeError:
+            return self.username
 
     def create(self):
         return super().post("admin/users")
