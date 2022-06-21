@@ -45,7 +45,7 @@ class Client(Session):
         )
 
 
-        # Patient methods
+        ### Patient methods
         patient = welkin.Patient(firstName="Foo", lastName="Bar").create()  # Create
 
         patient = welkin.Patient(id="6801d498-26f4-4aee-961b-5daffcf193c8").get()  # Read
@@ -54,11 +54,14 @@ class Client(Session):
         patient.update(firstName="Baz")  # Update
         patient.delete()  # Delete
 
-        # User methods
+        ### User methods
         user = client.User(username="bar", email="bar@foo.com").create()  # Create
 
         user = welkin.User(id="301b2895-cbf0-4cac-b4cf-1d082faee95c").get()  # Read
         users = welkin.Users().get()  # Read all/list
+        uasers = welkin.Users().get(
+            search="lightmatter", region="east-coast", seat_assigned=True, user_state="ACTIVE"
+        )  # Filtered read all/list
 
         user.update(firstName="Baz")  # Update
         user.delete()  # Delete
