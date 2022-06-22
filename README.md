@@ -2,7 +2,12 @@
 
 ## A Python wrapper of the Welkin Health API
 
-[![Version](https://img.shields.io/pypi/v/welkin-health)](https://pypi.org/project/welkin-health/)
+[![Version](https://img.shields.io/pypi/v/welkin)](https://pypi.org/project/welkin/)
+[![Python](https://img.shields.io/pypi/pyversions/welkin)](https://pypi.org/project/welkin/)
+
+[![Build](https://img.shields.io/github/workflow/status/lightmatter/welkin-health/Python%20%F0%9F%90%8D%20package%20%F0%9F%93%A6%20test)](https://github.com/Lightmatter/welkin-health/actions)
+
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
 This package allows Python developers to write software that makes use of the Welkin Health API. Functions available in the API are mirrored in this package as closely as possible, translating JSON responses to Python objects. You can find the current documentation for the Welkin Health API here:
 
