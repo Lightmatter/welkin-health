@@ -2,6 +2,7 @@
 black
 isort
 pytest
+pytest-cov
 pytest-dotenv
 pytest-vcr
 vcrpy
