@@ -1,4 +1,4 @@
-from pathlib import Path
+import dbm
 
 from requests import Request
 
@@ -17,10 +17,7 @@ def test_token_get(client):
     token = auth.token
 
     assert token is not None
-
-    path = Path(DB_PATH)
-    for ext in [".bak", ".dat", ".dir"]:
-        assert path.with_suffix(path.suffix + ext).exists()
+    assert dbm.whichdb(DB_PATH) is not None
 
 
 def test_token_refresh(client):
