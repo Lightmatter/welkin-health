@@ -1,4 +1,8 @@
+import dbm
+
 from requests import Request
+
+from welkin.authentication import DB_PATH
 
 
 def auth_class(client):
@@ -13,6 +17,7 @@ def test_token_get(client):
     token = auth.token
 
     assert token is not None
+    assert dbm.whichdb(DB_PATH) is not None
 
 
 def test_token_refresh(client):
