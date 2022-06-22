@@ -1,5 +1,8 @@
-import pytest
+from pathlib import Path
+
 from requests import Request
+
+from welkin.authentication import DB_PATH
 
 
 def auth_class(client):
@@ -14,6 +17,10 @@ def test_token_get(client):
     token = auth.token
 
     assert token is not None
+
+    path = Path(DB_PATH)
+    for ext in [".bak", ".dat", ".dir"]:
+        assert path.with_suffix(path.suffix + ext).exists()
 
 
 def test_token_refresh(client):
