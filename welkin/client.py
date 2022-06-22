@@ -169,7 +169,10 @@ class Client(Session):
         json = response.json()
 
         # Pull out the resource
-        resource = json.pop("content", None) or json.pop("data", None)
+        if "content" in json:
+            resource = json.pop("content", None)
+        else:
+            resource = json.pop("data", None)
 
         # Response metadata for pagination
         meta = json.pop("pageable", {}) or json.pop("metaInfo", {})
