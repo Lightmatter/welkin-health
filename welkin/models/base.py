@@ -78,6 +78,9 @@ class Collection(list, SchemaBase):
 
         return super().__getitem__(index)
 
+    def __str__(self):
+        return str([str(i) for i in self])
+
     def __repr__(self):
         return object.__repr__(self)
 

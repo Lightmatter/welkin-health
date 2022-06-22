@@ -2,7 +2,11 @@
 
 ## A Python wrapper of the Welkin Health API
 
-[![Version](https://img.shields.io/pypi/v/welkin-health)](https://pypi.org/project/welkin-health/)
+[![Version](https://img.shields.io/pypi/v/welkin?style=for-the-badge&logo=pypi&logoColor=fff)](https://pypi.org/project/welkin/)
+[![Python](https://img.shields.io/pypi/pyversions/welkin?style=for-the-badge&logo=python&logoColor=fff)](https://pypi.org/project/welkin/)
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg?style=for-the-badge&logo=gnu&logoColor=fff)](https://www.gnu.org/licenses/gpl-3.0)
+[![Tests](https://img.shields.io/github/workflow/status/lightmatter/welkin-health/Python%20%F0%9F%90%8D%20package%20%F0%9F%93%A6%20test?style=for-the-badge&logo=githubactions&logoColor=fff&label=Tests)](https://github.com/Lightmatter/welkin-health/actions)
+[![codecov](https://img.shields.io/codecov/c/gh/Lightmatter/welkin-health?logo=codecov&logoColor=fff&style=for-the-badge)](https://codecov.io/gh/Lightmatter/welkin-health)
 
 This package allows Python developers to write software that makes use of the Welkin Health API. Functions available in the API are mirrored in this package as closely as possible, translating JSON responses to Python objects. You can find the current documentation for the Welkin Health API here:
 
@@ -20,31 +24,31 @@ pip install welkin
 from welkin import Client
 
 welkin = Client(
-    tenant="gh", api_client="VBOPNRYRWJIP", secret_key="+}B{KGTG6#zG%P;tQm0C"
+    tenant="gh",
+    instance="sb-demo",
+    api_client="VBOPNRYRWJIP",
+    secret_key="+}B{KGTG6#zG%P;tQm0C",
 )
 
-# Create a calendar event
-patient = welkin.Patient(id="6801d498-26f4-4aee-961b-5daffcf193c8")
-user = welkin.User(username="johndoe")
-event = welkin.Calendar(
-    start="2020-01-01T00:00:00.000Z",
-    end="2020-01-31T23:59:59.000Z",
-    patient=patient,
-    host=user,
-).post()
 
-# Get a calendar event by ID
-event = welkin.Calendar(id="313c2029-493b-4114-8b86-788d631a1851").get()
+### Patient methods
+patient = welkin.Patient(firstName="Foo", lastName="Bar").create()  # Create
 
-# Get a single calendar event
-event = welkin.Calendar().get(id="313c2029-493b-4114-8b86-788d631a1851")
+patient = welkin.Patient(id="6801d498-26f4-4aee-961b-5daffcf193c8").get()  # Read
+patients = welkin.Patients().get()  # Read all/list
 
-# Search for calendar events with pagination
-events = welkin.Calendar().get(
-    from_date="2020-01-15T14:00:00.000Z",
-    to_date="2020-02-11T00:00:00.000Z",
-    paginate=True,
-)
-for event in events:
-    print(event)
+patient.update(firstName="Baz")  # Update
+patient.delete()  # Delete
+
+### User methods
+user = client.User(username="bar", email="bar@foo.com").create()  # Create
+
+user = welkin.User(id="301b2895-cbf0-4cac-b4cf-1d082faee95c").get()  # Read
+users = welkin.Users().get()  # Read all/list
+uasers = welkin.Users().get(
+    search="lightmatter", region="east-coast", seat_assigned=True, user_state="ACTIVE"
+)  # Filtered read all/list
+
+user.update(firstName="Baz")  # Update
+user.delete()  # Delete
 ```
