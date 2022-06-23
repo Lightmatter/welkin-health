@@ -1,11 +1,15 @@
 import logging
 import shelve
+from pathlib import Path
 from typing import Callable
 
 from requests import PreparedRequest
 from requests.auth import AuthBase
 
 logger = logging.getLogger(__name__)
+
+
+DB_PATH = str(Path(__file__).parent / ".welkin.db")
 
 
 class WelkinAuth(AuthBase):
@@ -43,7 +47,7 @@ class WelkinAuth(AuthBase):
 
     @property
     def token(self) -> str:
-        with shelve.open(".welkin.db") as db:
+        with shelve.open(DB_PATH) as db:
             try:
                 return db[self.tenant]["token"]
             except KeyError:
@@ -55,7 +59,7 @@ class WelkinAuth(AuthBase):
 
     @token.setter
     def token(self, value: dict) -> None:
-        with shelve.open(".welkin.db") as db:
+        with shelve.open(DB_PATH) as db:
             db[self.tenant] = value
 
     def refresh_token(self) -> None:

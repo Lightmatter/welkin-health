@@ -40,19 +40,6 @@ def test_user_read_all(client, vcr_cassette):
 
 
 @pytest.mark.vcr()
-def test_user_search(client, vcr_cassette):
-    users = client.Users().search("lightmatter")
-
-    assert isinstance(users, Users)
-    assert isinstance(users[0], User)
-
-    if len(users) > 20:
-        assert len(vcr_cassette) > 1, "Pagination was expected"
-    else:
-        assert len(vcr_cassette) == 1, "Unexpected pagination"
-
-
-@pytest.mark.vcr()
 def test_user_update(client, vcr_cassette):
     user = client.User(id="92cc5811-ff71-4101-915d-a419383db168").get()
     name = user.firstName
