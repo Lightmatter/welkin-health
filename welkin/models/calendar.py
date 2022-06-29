@@ -15,19 +15,8 @@ class CalendarEvent(Resource):
     def create(self):
         return super().post("admin/users")
 
-    def get(
-        self,
-        from_date,
-        to_date,
-        participant_ids,
-        event_type,
-        sort,
-        include_cancelled=False,
-        include_encounter_info=False,
-        exclude_assigned_to_encounter_events=False,
-        viewer_timezone="",
-    ):
-        return super().get("calendar/events")
+    def get(self):
+        return super().get(f"{self._client.instance}/calendar/events/{self.id}")
 
     def update(self, **kwargs):
         return super().patch(f"admin/users/{self.username}", kwargs)
