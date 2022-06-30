@@ -4,23 +4,6 @@ from enum import Enum
 from welkin.models.base import Collection, Resource
 
 
-class CalendarEvent(Resource):
-    def create(self):
-        # TODO: Accept User and Patient instances as participants
-        return super().post(f"{self._client.instance}/calendar/events")
-
-    def get(self):
-        return super().get(f"{self._client.instance}/calendar/events/{self.id}")
-
-    def update(self, **kwargs):
-        return super().patch(
-            f"{self._client.instance}/calendar/events/{self.id}", kwargs
-        )
-
-    def delete(self):
-        return super().delete(f"{self._client.instance}/calendar/events/{self.id}")
-
-
 class EventType(Enum):
     GROUP_THERAPY = "GROUP_THERAPY"
     APPOINTMENT = "APPOINTMENT"
@@ -41,6 +24,23 @@ class EventMode(Enum):
     VIDEO = "VIDEO"
 
 
+class CalendarEvent(Resource):
+    def create(self):
+        # TODO: Accept User and Patient instances as participants
+        return super().post(f"{self._client.instance}/calendar/events")
+
+    def get(self):
+        return super().get(f"{self._client.instance}/calendar/events/{self.id}")
+
+    def update(self, **kwargs):
+        return super().patch(
+            f"{self._client.instance}/calendar/events/{self.id}", kwargs
+        )
+
+    def delete(self):
+        return super().delete(f"{self._client.instance}/calendar/events/{self.id}")
+
+
 class CalendarEvents(Collection):
     resource = CalendarEvent
 
@@ -56,6 +56,10 @@ class CalendarEvents(Collection):
         exclude_assigned_to_encounter_events: bool = None,
         viewer_timezone: str = None,
     ):
+        # Validation
+        if event_type:
+            EventType(event_type)
+
         # IDEA: Consider inferring params from instance properties
         params = {
             "from": from_date,
