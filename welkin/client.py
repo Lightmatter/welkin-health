@@ -180,7 +180,7 @@ class Client(Session):
             json = response.json()
         except JSONDecodeError:
             if not response.content:
-                return dict()
+                return {}
 
             raise
 
