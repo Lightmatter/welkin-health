@@ -1,0 +1,146 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - API_TOKEN_3681810f-7c1d-4529-90c3-058579370f34
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-welkin/0.0.3
+    method: GET
+    uri: https://api.live.welkincloud.io/tenant_REDACTED/instance_REDACTED/calendar/events/f7fc881d-28af-4fe1-b2ff-20e1ca33982f
+  response:
+    body:
+      string: '{"id": "f7fc881d-28af-4fe1-b2ff-20e1ca33982f", "createdBy": "createdBy_REDACTED_fca64981-f453-4885-af8f-565c4b034be9",
+        "createdAt": "2022-06-30T18:21:06.323Z", "updatedBy": "updatedBy_REDACTED_d639da55-62dc-4bbf-b061-e487ba0389ce",
+        "updatedAt": "2022-06-30T18:32:25.714Z", "externalId": null, "externalIdUpdatedAt":
+        "2022-06-30T18:21:06.323Z", "eventTitle": "Test create past event update",
+        "eventDescription": "", "startDateTime": "2022-06-28T14:00:00.000Z", "localStartDateTime":
+        "2022-06-28T07:00:00.000-07:00", "endDateTime": "2022-06-28T15:00:00.000Z",
+        "localEndDateTime": "2022-06-28T08:00:00.000-07:00", "allDayEvent": false,
+        "duration": 3600, "eventType": "APPOINTMENT", "eventStatus": "Scheduled",
+        "eventMode": "IN-PERSON", "eventColor": "green", "hostId": "d9925247-7505-464a-b42c-25ac71408494",
+        "timezone": "US/Pacific", "additionalInfo": null, "participants": [{"id":
+        "0ccc41b8-82d3-4ddf-a750-25775427496d", "participantId": "d9925247-7505-464a-b42c-25ac71408494",
+        "participantRole": "psm", "participationStatus": "", "attended": false, "timezone":
+        "US/Pacific", "firstName": "Sam", "lastName": "Morgan", "deleted": false,
+        "hasAccess": false, "email": "sam@lightmatter.com", "phone": "+13605605686",
+        "gender": null, "birthDate": null, "enabled": true}]}'
+    headers:
+      Access-Control-Allow-Headers:
+      - authorization, content-type, xsrf-token, security-role
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, PATCH, OPTIONS
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - xsrf-token
+      Access-Control-Max-Age:
+      - '3600'
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Thu, 30 Jun 2022 18:32:48 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Set-Cookie:
+      - AWSALB=4wD1gtmLdi+WRRmRaAklnAf1ecuK3okXf52IOyL/Cr5CXsAMl8zdcO/WTK8M+19CG4l/IzjFL5N2y7zo2WZDnDToYhxpo1sWuawg9EO+Vz+NtvCeF24meAMC61dF;
+        Expires=Thu, 07 Jul 2022 18:32:48 GMT; Path=/
+      - AWSALBCORS=4wD1gtmLdi+WRRmRaAklnAf1ecuK3okXf52IOyL/Cr5CXsAMl8zdcO/WTK8M+19CG4l/IzjFL5N2y7zo2WZDnDToYhxpo1sWuawg9EO+Vz+NtvCeF24meAMC61dF;
+        Expires=Thu, 07 Jul 2022 18:32:48 GMT; Path=/; SameSite=None; Secure
+      Transfer-Encoding:
+      - chunked
+      X-Content-Type-Options:
+      - nosniff
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: ''
+- request:
+    body: '{"eventTitle": "New event title"}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - API_TOKEN_3681810f-7c1d-4529-90c3-058579370f34
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '33'
+      Content-Type:
+      - application/json
+      Cookie:
+      - AWSALB=4wD1gtmLdi+WRRmRaAklnAf1ecuK3okXf52IOyL/Cr5CXsAMl8zdcO/WTK8M+19CG4l/IzjFL5N2y7zo2WZDnDToYhxpo1sWuawg9EO+Vz+NtvCeF24meAMC61dF;
+        AWSALBCORS=4wD1gtmLdi+WRRmRaAklnAf1ecuK3okXf52IOyL/Cr5CXsAMl8zdcO/WTK8M+19CG4l/IzjFL5N2y7zo2WZDnDToYhxpo1sWuawg9EO+Vz+NtvCeF24meAMC61dF
+      User-Agent:
+      - python-welkin/0.0.3
+    method: PATCH
+    uri: https://api.live.welkincloud.io/tenant_REDACTED/instance_REDACTED/calendar/events/f7fc881d-28af-4fe1-b2ff-20e1ca33982f
+  response:
+    body:
+      string: '{"id": "f7fc881d-28af-4fe1-b2ff-20e1ca33982f", "createdBy": "createdBy_REDACTED_a3ec3300-8862-4105-9150-586795c0d521",
+        "createdAt": "2022-06-30T18:21:06.323Z", "updatedBy": "updatedBy_REDACTED_b533fc26-8f2e-47ad-b980-e3c77e5ca0e3",
+        "updatedAt": "2022-06-30T18:33:03.921Z", "externalId": null, "externalIdUpdatedAt":
+        "2022-06-30T18:21:06.323Z", "eventTitle": "New event title", "eventDescription":
+        "", "startDateTime": "2022-06-28T14:00:00.000Z", "localStartDateTime": "2022-06-28T07:00:00.000-07:00",
+        "endDateTime": "2022-06-28T15:00:00.000Z", "localEndDateTime": "2022-06-28T08:00:00.000-07:00",
+        "allDayEvent": false, "duration": 3600, "eventType": "APPOINTMENT", "eventStatus":
+        "Scheduled", "eventMode": "IN-PERSON", "eventColor": "green", "hostId": "d9925247-7505-464a-b42c-25ac71408494",
+        "timezone": "US/Pacific", "additionalInfo": null, "participants": [{"id":
+        "0ccc41b8-82d3-4ddf-a750-25775427496d", "participantId": "d9925247-7505-464a-b42c-25ac71408494",
+        "participantRole": "psm", "participationStatus": "", "attended": false, "timezone":
+        "US/Pacific", "firstName": "Sam", "lastName": "Morgan", "deleted": false,
+        "hasAccess": false, "email": "sam@lightmatter.com", "phone": "+13605605686",
+        "gender": null, "birthDate": null, "enabled": true}]}'
+    headers:
+      Access-Control-Allow-Headers:
+      - authorization, content-type, xsrf-token, security-role
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, PATCH, OPTIONS
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - xsrf-token
+      Access-Control-Max-Age:
+      - '3600'
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Thu, 30 Jun 2022 18:33:03 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Set-Cookie:
+      - AWSALB=p80qDVOx+/5g7HfWQDSX2+q3FoKDgr+6jTwwWlv15RN5v06Iwxlsc/kH+EjIBYzOILyzgHJXun/w9otphB6rLx+VZ/dICsHf5UFj2qYyN9iV52QDHuQf29bU4Imu;
+        Expires=Thu, 07 Jul 2022 18:33:03 GMT; Path=/
+      - AWSALBCORS=p80qDVOx+/5g7HfWQDSX2+q3FoKDgr+6jTwwWlv15RN5v06Iwxlsc/kH+EjIBYzOILyzgHJXun/w9otphB6rLx+VZ/dICsHf5UFj2qYyN9iV52QDHuQf29bU4Imu;
+        Expires=Thu, 07 Jul 2022 18:33:03 GMT; Path=/; SameSite=None; Secure
+      Transfer-Encoding:
+      - chunked
+      X-Content-Type-Options:
+      - nosniff
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: ''
+version: 1
