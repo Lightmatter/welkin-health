@@ -3,6 +3,7 @@
 This module provides a Client object to interface with the Welkin Health API.
 """
 import logging
+from json import JSONDecodeError
 
 from requests import HTTPError, Session
 from requests.adapters import HTTPAdapter
@@ -13,7 +14,7 @@ from welkin import __version__
 from welkin.authentication import WelkinAuth
 from welkin.exceptions import WelkinHTTPError
 from welkin.models import *
-from welkin.util import clean_request_payload
+from welkin.util import clean_request_params, clean_request_payload
 
 logger = logging.getLogger(__name__)
 
@@ -136,6 +137,8 @@ class Client(Session):
     def prepare_request(self, request):
         if request.json:
             request.json = clean_request_payload(request.json)
+        if request.params:
+            request.params = clean_request_params(request.params)
 
         return super().prepare_request(request)
 
@@ -173,7 +176,13 @@ class Client(Session):
 
                 raise WelkinHTTPError(exc) from exc
 
-        json = response.json()
+        try:
+            json = response.json()
+        except JSONDecodeError:
+            if not response.content:
+                return dict()
+
+            raise
 
         # Pull out the resource
         if "content" in json:
