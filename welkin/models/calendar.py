@@ -13,7 +13,7 @@ class CalendarEvent(Resource):
             return self.username
 
     def create(self):
-        return super().post("admin/users")
+        return super().post(f"{self._client.instance}/calendar/events")
 
     def get(self):
         return super().get(f"{self._client.instance}/calendar/events/{self.id}")
