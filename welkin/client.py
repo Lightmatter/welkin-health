@@ -3,6 +3,7 @@
 This module provides a Client object to interface with the Welkin Health API.
 """
 import logging
+from json import JSONDecodeError
 
 from requests import HTTPError, Session
 from requests.adapters import HTTPAdapter
@@ -13,6 +14,7 @@ from welkin import __version__
 from welkin.authentication import WelkinAuth
 from welkin.exceptions import WelkinHTTPError
 from welkin.models import *
+from welkin.util import clean_request_params, clean_request_payload
 
 logger = logging.getLogger(__name__)
 
@@ -132,6 +134,14 @@ class Client(Session):
             except AttributeError:
                 continue
 
+    def prepare_request(self, request):
+        if request.json:
+            request.json = clean_request_payload(request.json)
+        if request.params:
+            request.params = clean_request_params(request.params)
+
+        return super().prepare_request(request)
+
     def request(self, method: str, path: str, *args, **kwargs):
         """Override :obj:`Session` request method to add retries and output JSON.
 
@@ -166,10 +176,19 @@ class Client(Session):
 
                 raise WelkinHTTPError(exc) from exc
 
-        json = response.json()
+        try:
+            json = response.json()
+        except JSONDecodeError:
+            if not response.content:
+                return {}
+
+            raise
 
         # Pull out the resource
-        resource = json.pop("content", None) or json.pop("data", None)
+        if "content" in json:
+            resource = json.pop("content", None)
+        else:
+            resource = json.pop("data", None)
 
         # Response metadata for pagination
         meta = json.pop("pageable", {}) or json.pop("metaInfo", {})
