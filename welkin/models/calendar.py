@@ -61,8 +61,8 @@ class CalendarEvents(Collection):
         viewer_timezone: str = None,
     ):
         params = {
-            "from": clean_datetime(from_date),
-            "to": clean_datetime(to_date),
+            "from": from_date,
+            "to": to_date,
             "participantIds": participant_ids,
             "eventType": event_type,
             "sort": sort,

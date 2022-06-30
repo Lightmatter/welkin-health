@@ -13,6 +13,7 @@ from welkin import __version__
 from welkin.authentication import WelkinAuth
 from welkin.exceptions import WelkinHTTPError
 from welkin.models import *
+from welkin.util import clean_request_payload
 
 logger = logging.getLogger(__name__)
 
@@ -131,6 +132,12 @@ class Client(Session):
 
             except AttributeError:
                 continue
+
+    def prepare_request(self, request):
+        if request.json:
+            request.json = clean_request_payload(request.json)
+
+        return super().prepare_request(request)
 
     def request(self, method: str, path: str, *args, **kwargs):
         """Override :obj:`Session` request method to add retries and output JSON.
