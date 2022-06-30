@@ -42,8 +42,8 @@ def test_calendar_event_read(client, vcr_cassette):
 
 @pytest.mark.vcr()
 def test_calendar_event_read_all(client, vcr_cassette):
-    to_date = datetime.now(tz=UTC)
-    from_date = to_date - timedelta(days=90)
+    from_date = datetime(2022, 4, 1, 16, 38, 20, 641000, tzinfo=UTC)
+    to_date = datetime(2022, 6, 30, 16, 38, 20, 641000, tzinfo=UTC)
 
     events = client.CalendarEvents().get(from_date, to_date, include_cancelled=True)
 
