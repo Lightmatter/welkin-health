@@ -1,28 +1,24 @@
-from datetime import datetime, timezone
+from datetime import datetime
 from enum import Enum
 
 from welkin.models.base import Collection, Resource
-from welkin.util import clean_datetime
 
 
 class CalendarEvent(Resource):
-    def __str__(self):
-        try:
-            return f"{self.firstName} {self.lastName}"
-        except AttributeError:
-            return self.username
-
     def create(self):
+        # TODO: Accept User and Patient instances as participants
         return super().post(f"{self._client.instance}/calendar/events")
 
     def get(self):
         return super().get(f"{self._client.instance}/calendar/events/{self.id}")
 
     def update(self, **kwargs):
-        return super().patch(f"admin/users/{self.username}", kwargs)
+        return super().patch(
+            f"{self._client.instance}/calendar/events/{self.id}", kwargs
+        )
 
     def delete(self):
-        return super().delete(f"admin/users/{self.id}", params=dict(type="ID"))
+        return super().delete(f"{self._client.instance}/calendar/events/{self.id}")
 
 
 class EventType(Enum):
@@ -60,6 +56,7 @@ class CalendarEvents(Collection):
         exclude_assigned_to_encounter_events: bool = None,
         viewer_timezone: str = None,
     ):
+        # IDEA: Consider inferring params from instance properties
         params = {
             "from": from_date,
             "to": to_date,
