@@ -5,6 +5,7 @@
     }
   },
   "editor.formatOnSave": true,
+  "editor.rulers": [88],
   "python.formatting.provider": "black",
   "python.terminal.activateEnvironment": true,
   "python.testing.pytestArgs": ["test"],

@@ -1,0 +1,89 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - API_TOKEN_e112a052-3dd2-4d80-868a-74d755edab4a
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-welkin/0.0.3
+    method: GET
+    uri: https://api.live.welkincloud.io/tenant_REDACTED/instance_REDACTED/calendar/events?from=2022-04-01T16%3A38%3A20.641Z&to=2022-06-30T16%3A38%3A20.641Z&includeCancelled=True&page=0
+  response:
+    body:
+      string: '{"content": [{"id": "82136411-1433-4bc6-a042-e58ad6022393", "createdBy":
+        "createdBy_REDACTED_23e8a33b-1651-4f4b-9ae5-fb4260cb31bc", "createdAt": "2022-06-28T22:55:17.518Z",
+        "updatedBy": "updatedBy_REDACTED_0b840a66-944b-4e61-9713-9fde6e3513bc", "updatedAt":
+        "2022-06-30T01:41:05.014Z", "externalId": null, "externalIdUpdatedAt": "2022-06-28T22:55:17.518Z",
+        "eventTitle": "Test title update", "eventDescription": "", "startDateTime":
+        "2022-06-28T23:00:00.000Z", "localStartDateTime": "2022-06-28T16:00:00.000-07:00",
+        "endDateTime": "2022-06-29T00:00:00.000Z", "localEndDateTime": "2022-06-28T17:00:00.000-07:00",
+        "allDayEvent": false, "duration": 3600, "eventType": "APPOINTMENT", "eventStatus":
+        "CANCELLED", "eventMode": "IN-PERSON", "eventColor": "green", "hostId": "d9925247-7505-464a-b42c-25ac71408494",
+        "timezone": "US/Pacific", "additionalInfo": null, "participants": [{"id":
+        "1e01f814-757c-49c9-98e8-9318fec17888", "participantId": "d9925247-7505-464a-b42c-25ac71408494",
+        "participantRole": "psm", "participationStatus": "", "attended": false, "timezone":
+        "US/Pacific", "firstName": "Sam", "lastName": "Morgan", "deleted": false,
+        "hasAccess": false, "email": "sam@lightmatter.com", "phone": "+13605605686",
+        "gender": null, "birthDate": null, "enabled": true}]}, {"id": "56a339be-c54d-4b9b-b834-74227398e2d6",
+        "createdBy": "createdBy_REDACTED_52a3a86b-329a-4b70-a3e8-aaf86842d3ce", "createdAt":
+        "2022-06-29T22:42:46.596Z", "updatedBy": "updatedBy_REDACTED_a231e98e-1921-4e9b-a872-722ffb8154c8",
+        "updatedAt": "2022-06-30T02:35:54.857Z", "externalId": null, "externalIdUpdatedAt":
+        "2022-06-29T22:42:46.595Z", "eventTitle": null, "eventDescription": null,
+        "startDateTime": "2022-06-29T23:42:30.799Z", "localStartDateTime": "2022-06-29T16:42:30.799-07:00",
+        "endDateTime": "2022-06-30T00:42:30.799Z", "localEndDateTime": "2022-06-29T17:42:30.799-07:00",
+        "allDayEvent": false, "duration": 3600, "eventType": null, "eventStatus":
+        "CANCELLED", "eventMode": null, "eventColor": null, "hostId": "d9925247-7505-464a-b42c-25ac71408494",
+        "timezone": null, "additionalInfo": null, "participants": [{"id": "9fd27f3c-c6a1-4be0-89fc-c3164aa86378",
+        "participantId": "d9925247-7505-464a-b42c-25ac71408494", "participantRole":
+        "psm", "participationStatus": "", "attended": false, "timezone": "US/Pacific",
+        "firstName": "Sam", "lastName": "Morgan", "deleted": false, "hasAccess": false,
+        "email": "sam@lightmatter.com", "phone": "+13605605686", "gender": null, "birthDate":
+        null, "enabled": true}]}], "pageable": {"sort": {"sorted": true, "unsorted":
+        false, "empty": false}, "pageSize": 20, "pageNumber": 0, "offset": 0, "unpaged":
+        false, "paged": true}, "last": true, "totalElements": 2, "totalPages": 1,
+        "first": true, "sort": {"sorted": true, "unsorted": false, "empty": false},
+        "number": 0, "numberOfElements": 2, "size": 20, "empty": false}'
+    headers:
+      Access-Control-Allow-Headers:
+      - authorization, content-type, xsrf-token, security-role
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, PATCH, OPTIONS
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - xsrf-token
+      Access-Control-Max-Age:
+      - '3600'
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Thu, 30 Jun 2022 16:38:23 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Set-Cookie:
+      - AWSALB=ur7ZgUJ9n9dZsVbmmXtCqnFoV0xDL5bsD21VCyw4QuuvwXh0nMatVW1DAz3FqWTMMNtiioOvM+6aAxfUTLULazkAWfaMZ6DaXuTwYBfc+/QHmSFTfYz7xVwibECD;
+        Expires=Thu, 07 Jul 2022 16:38:23 GMT; Path=/
+      - AWSALBCORS=ur7ZgUJ9n9dZsVbmmXtCqnFoV0xDL5bsD21VCyw4QuuvwXh0nMatVW1DAz3FqWTMMNtiioOvM+6aAxfUTLULazkAWfaMZ6DaXuTwYBfc+/QHmSFTfYz7xVwibECD;
+        Expires=Thu, 07 Jul 2022 16:38:23 GMT; Path=/; SameSite=None; Secure
+      Transfer-Encoding:
+      - chunked
+      X-Content-Type-Options:
+      - nosniff
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: ''
+version: 1
