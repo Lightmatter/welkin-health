@@ -74,3 +74,35 @@ class CalendarEvents(Collection):
         }
 
         return super().get(f"{self._client.instance}/calendar/events", params=params)
+
+
+class Schedule(Resource):
+    pass
+
+
+class Schedules(Collection):
+    resource = Schedule
+
+    def get(
+        self,
+        ids: list,
+        from_date: datetime,
+        to_date: datetime,
+        include_cancelled: bool = None,
+        available: bool = False,
+        full: bool = False,
+    ):
+        route = "psm-schedules"
+        if available:
+            route = "available-psm-schedules"
+        if full:
+            route = "full-psm-schedules"
+
+        params = {
+            "psmIds": ids,
+            "from": from_date,
+            "to": to_date,
+            "includeCancelled": include_cancelled,
+        }
+
+        return super().get(f"{self._client.instance}/calendar/{route}", params=params)

@@ -184,6 +184,12 @@ class Client(Session):
 
             raise
 
+        if isinstance(json, list):
+            json = {
+                "content": json,
+                "metaInfo": {"totalPages": 1, "page": 0, "last": True},
+            }
+
         # Pull out the resource
         if "content" in json:
             resource = json.pop("content", None)
