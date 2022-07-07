@@ -72,6 +72,8 @@ class Resource(dict, SchemaBase):
 
 
 class Collection(list, SchemaBase):
+    resource = Resource
+
     def __getitem__(self, index):
         if isinstance(index, slice):
             return self.__class__(*super().__getitem__(index))
