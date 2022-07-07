@@ -107,9 +107,9 @@ class Collection(list, SchemaBase):
 
 
 class PageIterator:
-    def __init__(self, collection, resource, method, size=20, *args, **kwargs):
+    def __init__(self, collection, path, method, size=20, *args, **kwargs):
         self.collection = collection
-        self.resource = resource
+        self.path = path
         self.method = method
         self.size = size
 
@@ -132,7 +132,7 @@ class PageIterator:
 
         if not self.last:
             self.kwargs.setdefault("params", {}).update(page=self.page)
-            self.resources, meta = self.method(self.resource, *self.args, **self.kwargs)
+            self.resources, meta = self.method(self.path, *self.args, **self.kwargs)
 
             # Different endpoints return pagination data differently
             try:
