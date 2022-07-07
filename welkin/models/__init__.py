@@ -1,4 +1,10 @@
-from welkin.models.calendar import CalendarEvent, CalendarEvents, Schedules
+from welkin.models.calendar import (
+    CalendarEvent,
+    CalendarEvents,
+    Schedules,
+    WorkerHours,
+    WorkHours,
+)
 from welkin.models.patient import Patient, Patients
 from welkin.models.user import User, Users
 
@@ -10,4 +16,6 @@ __all__ = [
     "Schedules",
     "User",
     "Users",
+    "WorkerHours",
+    "WorkHours",
 ]

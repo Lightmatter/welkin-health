@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import datetime, timezone
 from enum import Enum
 
 from welkin.models.base import Collection, Resource
@@ -116,3 +116,55 @@ class Schedules(Collection):
         }
 
         return super().get(f"{self._client.instance}/calendar/{route}", params=params)
+
+
+class WorkHours(Resource):
+    @property
+    def id(self):
+        return self.details[0]["workHoursId"]
+
+    @id.setter
+    def id(self, value):
+        if not hasattr(self, "details"):
+            self.details = [{}]
+
+        self.details[0]["workHoursId"] = value
+
+    def create(self, repeating=True):
+        self.startDateTime = datetime.now(tz=timezone.utc)
+        if repeating:
+            self.endDateTime = self.startDateTime.replace(
+                year=self.startDateTime.year + 50
+            )
+
+        return super().post(f"{self._client.instance}/calendar/work-hours")
+
+    def get(self):
+        return super().get(f"{self._client.instance}/calendar/work-hours/{self.id}")
+
+    def update(self, **kwargs):
+        return super().put(
+            f"{self._client.instance}/calendar/work-hours/{self.id}", kwargs
+        )
+
+
+class WorkerHours(Collection):
+    resource = WorkHours
+
+    def get(
+        self,
+        from_date: datetime,
+        to_date: datetime,
+        ids: list = None,
+        timezone: str = None,
+    ):
+        params = {
+            "psmIds": ids,
+            "from": from_date,
+            "to": to_date,
+            "timezone": timezone,
+        }
+
+        return super().get(
+            f"{self._client.instance}/calendar/work-hours", params=params
+        )
