@@ -1,10 +1,24 @@
+from attr import Attribute
+
 from welkin.models.base import Collection, Resource
+from welkin.models.patient import Patient
 
 
 class Encounter(Resource):
+    def __getattr__(self, name):
+        try:
+            return super().__getattr__(name)
+        except AttributeError as e:
+            try:
+                sub_resource = self._client.__getattribute__(name)
+                sub_resource.encounter_id = self.id
+                return sub_resource
+            except AttributeError:
+                raise AttributeError(e) from None
+
     def create(self):
         return super().post(
-            f"{self._client.instance}/patients/{self.patientId}/encounters"
+            f"{self._client.instance}/patients/{self.patient_id}/encounters"
         )
 
     def get(self, related_data: bool = False):
@@ -13,17 +27,17 @@ class Encounter(Resource):
             encounters = "full-encounters"
 
         return super().get(
-            f"{self._client.instance}/patients/{self.patientId}/{encounters}/{self.id}"
+            f"{self._client.instance}/patients/{self.patient_id}/{encounters}/{self.id}"
         )
 
     def update(self, **kwargs):
         return super().patch(
-            f"{self._client.instance}/patients/{self.patientId}/encounters", kwargs
+            f"{self._client.instance}/patients/{self.patient_id}/encounters", kwargs
         )
 
     def delete(self):
         return super().delete(
-            f"{self._client.instance}/patients/{self.patientId}/encounters/{self.id}"
+            f"{self._client.instance}/patients/{self.patient_id}/encounters/{self.id}"
         )
 
 
@@ -32,17 +46,15 @@ class Encounters(Collection):
 
     def get(
         self,
-        patient_id: str = None,
-        user_id: str = None,
         related_data: bool = False,
         *args,
         **kwargs,
     ):
         root = ""
-        if patient_id:
-            root = f"patients/{patient_id}"
-        elif user_id:
-            root = f"users/{user_id}"
+        if self.patient_id:
+            root = f"patients/{self.patient_id}"
+        elif self.user_id:
+            root = f"users/{self.user_id}"
 
         encounters = "encounters"
         if related_data:
@@ -52,24 +64,24 @@ class Encounters(Collection):
         if root:
             path = f"{self._client.instance}/{root}/{encounters}"
 
-        return super().post(path, *args, **kwargs)
+        return super().get(path, *args, **kwargs)
 
 
 class Comment(Resource):
     def create(self):
         return super().post(
-            f"{self._client.instance}/patients/{self.patientId}/encounters"
+            f"{self._client.instance}/patients/{self.patient_id}/encounters"
         )
 
     def get(self):
 
         return super().get(
-            f"{self._client.instance}/patients/{self.patientId}/encounters/{self.encounterId}/comments/{self.id}"
+            f"{self._client.instance}/patients/{self.patient_id}/encounters/{self.encounter_id}/comments/{self.id}"
         )
 
     def update(self, **kwargs):
         return super().put(
-            f"{self._client.instance}/patients/{self.patientId}/encounters/{self.encounterId}/comments/{self.id}",
+            f"{self._client.instance}/patients/{self.patient_id}/encounters/{self.encounter_id}/comments/{self.id}",
             kwargs,
         )
 

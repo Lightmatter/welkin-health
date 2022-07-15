@@ -2,6 +2,17 @@ from welkin.models.base import Collection, Resource
 
 
 class Patient(Resource):
+    def __getattr__(self, name):
+        try:
+            return super().__getattr__(name)
+        except AttributeError as e:
+            try:
+                sub_resource = self._client.__getattribute__(name)
+                sub_resource.patient_id = self.id
+                return sub_resource
+            except AttributeError:
+                raise AttributeError(e) from None
+
     def create(self):
         return super().post(f"{self._client.instance}/patients")
 

@@ -4,6 +4,17 @@ from welkin.models.base import Collection, Resource
 
 
 class User(Resource):
+    def __getattr__(self, name):
+        try:
+            return super().__getattr__(name)
+        except AttributeError as e:
+            try:
+                sub_resource = self._client.__getattribute__(name)
+                sub_resource.user_id = self.id
+                return sub_resource
+            except AttributeError:
+                raise AttributeError(e) from None
+
     def __str__(self):
         try:
             return f"{self.firstName} {self.lastName}"
