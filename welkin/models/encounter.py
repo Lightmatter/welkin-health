@@ -5,17 +5,6 @@ from welkin.models.patient import Patient
 
 
 class Encounter(Resource):
-    def __getattr__(self, name):
-        try:
-            return super().__getattr__(name)
-        except AttributeError as e:
-            try:
-                sub_resource = self._client.__getattribute__(name)
-                sub_resource.encounter_id = self.id
-                return sub_resource
-            except AttributeError:
-                raise AttributeError(e) from None
-
     def create(self):
         return super().post(
             f"{self._client.instance}/patients/{self.patient_id}/encounters"
@@ -106,4 +95,11 @@ class Comments(Collection):
             f"{self._client.instance}/patients/{patient_id}/encounters/{encounter_id}/comments",
             *args,
             **kwargs,
+        )
+
+
+class Disposition(Encounter, Resource):
+    def get(self):
+        return super().get(
+            f"{self._client.instance}/patients/{self.patient_id}/encounters/{self.encounter_id}/disposition"
         )
