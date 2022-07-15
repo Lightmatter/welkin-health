@@ -56,8 +56,42 @@ class Encounters(Collection):
 
 
 class Comment(Resource):
-    pass
+    def create(self):
+        return super().post(
+            f"{self._client.instance}/patients/{self.patientId}/encounters"
+        )
+
+    def get(self):
+
+        return super().get(
+            f"{self._client.instance}/patients/{self.patientId}/encounters/{self.encounterId}/comments/{self.id}"
+        )
+
+    def update(self, **kwargs):
+        return super().put(
+            f"{self._client.instance}/patients/{self.patientId}/encounters/{self.encounterId}/comments/{self.id}",
+            kwargs,
+        )
+
+    def delete(self):
+        return super().delete(
+            f"{self._client.instance}/patients/{self.patientId}/encounters/{self.encounterId}/comments/{self.id}"
+        )
 
 
 class Comments(Collection):
     resource = Comment
+
+    def get(
+        self,
+        patient_id: str,
+        encounter_id: str,
+        *args,
+        **kwargs,
+    ):
+
+        return super().get(
+            f"{self._client.instance}/patients/{patient_id}/encounters/{encounter_id}/comments",
+            *args,
+            **kwargs,
+        )
