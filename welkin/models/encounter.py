@@ -101,7 +101,7 @@ class Disposition(Resource):
 
 
 class Encounter(Resource):
-    sub_resources = [Comments, Disposition]
+    sub_resources = [Comment, Comments, Disposition]
 
     def create(self):
         return super().post(
@@ -119,7 +119,8 @@ class Encounter(Resource):
 
     def update(self, **kwargs):
         return super().patch(
-            f"{self._client.instance}/patients/{self.patient_id}/encounters", kwargs
+            f"{self._client.instance}/patients/{self.patient_id}/encounters/{self.id}",
+            kwargs,
         )
 
     def delete(self):
@@ -128,14 +129,16 @@ class Encounter(Resource):
         )
 
     @property
+    def Comment(self):
+        return self._client.Comment(encounter_id=self.id, patient_id=self.patientId)
+
+    @property
     def Comments(self):
-        return self._client.Comments(encounter_id=self.id, patient_id=self.patient_id)
+        return self._client.Comments(encounter_id=self.id, patient_id=self.patientId)
 
     @property
     def Disposition(self):
-        return self._client.Disposition(
-            encounter_id=self.id, patient_id=self.patient_id
-        )
+        return self._client.Disposition(encounter_id=self.id, patient_id=self.patientId)
 
 
 class Encounters(Collection):

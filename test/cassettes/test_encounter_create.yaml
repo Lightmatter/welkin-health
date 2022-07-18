@@ -1,0 +1,122 @@
+interactions:
+- request:
+    body: '{"patient_id": "0056c34b-9a83-41bd-bf4d-e4710d7a77f9", "title": "new enc",
+      "description": "new encounter", "templateName": "etmp-encounter1", "currentScheduledAppointment":
+      {"eventType": "ENCOUNTER", "eventTitle": "NEW ENC", "startDateTime": "2022-07-19T00:57:03.371Z",
+      "endDateTime": "2022-07-19T01:57:03.371Z", "hostId": "a9618392-799d-4664-a896-5f1756f8d336",
+      "participants": [{"participantId": "a9618392-799d-4664-a896-5f1756f8d336", "participantRole":
+      "psm"}, {"participantId": "0056c34b-9a83-41bd-bf4d-e4710d7a77f9", "participantRole":
+      "patient"}]}}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - API_TOKEN_1ac19089-e9aa-4096-9473-5d5041a58017
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '555'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-welkin/0.0.4
+    method: POST
+    uri: https://api.live.welkincloud.io/tenant_REDACTED/instance_REDACTED/patients/0056c34b-9a83-41bd-bf4d-e4710d7a77f9/encounters
+  response:
+    body:
+      string: '{"id": "e8dd02e7-4c73-4965-bde0-36feb6d870c2", "patientId": "0056c34b-9a83-41bd-bf4d-e4710d7a77f9",
+        "cdtId": "a281e493-423a-4fce-b3e3-908316399e44", "version": 3, "jsonBody":
+        {"startDatetime": null, "local_updated_at": "2022-07-18T18:57:13.692+00:00",
+        "external_guid": null, "notes": null, "description": "new encounter", "created_at":
+        "2022-07-18T18:57:13.718Z", "external_id": null, "type": "etmp-encounter1",
+        "title": "new enc", "activeUserName": null, "created_by_name": "API_CLIENT:YZSHZAZDPNQV",
+        "currentScheduledAppointment": {"id": "90c11912-a50e-4456-ad48-7f4460862268",
+        "createdBy": "createdBy_REDACTED_689c5a88-ac84-47e3-84a9-16699893ee41", "createdAt":
+        "2022-07-18T18:57:13.692Z", "updatedBy": "updatedBy_REDACTED_2935e8af-8a4b-43b0-b388-e61e1bf193eb",
+        "updatedAt": "2022-07-18T18:57:13.692Z", "externalId": null, "externalIdUpdatedAt":
+        "2022-07-18T18:57:13.691Z", "eventTitle": "NEW ENC", "eventDescription": null,
+        "startDateTime": "2022-07-19T00:57:03.371Z", "localStartDateTime": "2022-07-19T00:57:03.371+00:00",
+        "endDateTime": "2022-07-19T01:57:03.371Z", "localEndDateTime": "2022-07-19T01:57:03.371+00:00",
+        "allDayEvent": false, "duration": 3600, "eventType": "ENCOUNTER", "eventStatus":
+        "SCHEDULED", "eventMode": "VIDEO", "eventColor": null, "hostId": "a9618392-799d-4664-a896-5f1756f8d336",
+        "timezone": null, "additionalInfo": null, "participants": [{"id": "b44571d4-69b9-4dab-9292-bcf3595c636f",
+        "participantId": "a9618392-799d-4664-a896-5f1756f8d336", "participantRole":
+        "psm", "participationStatus": "", "attended": false, "timezone": null, "firstName":
+        "Ben", "lastName": "Lightmatter", "deleted": false, "hasAccess": false, "email":
+        "ben@lightmatter.com", "phone": null, "gender": null, "birthDate": null, "enabled":
+        true}, {"id": "e8539307-1d39-407a-9efb-f8fb756c78ec", "participantId": "0056c34b-9a83-41bd-bf4d-e4710d7a77f9",
+        "participantRole": "patient", "participationStatus": "", "attended": false,
+        "timezone": null, "firstName": "Abby", "lastName": "Henninger", "deleted":
+        false, "hasAccess": false, "email": "abby+1@lightmatter.com", "phone": "",
+        "gender": "UNKNOWN", "birthDate": "1984-11-03T00:00:00.000Z", "enabled": null}]},
+        "updated_by_name": "API_CLIENT:YZSHZAZDPNQV", "localCalendarEventStartDatetime":
+        "2022-07-19T00:57:03.371+00:00", "updated_at": "2022-07-18T18:57:13.873Z",
+        "ownerUserName": "Ben Lightmatter", "templateTitle": null, "id": "e8dd02e7-4c73-4965-bde0-36feb6d870c2",
+        "source_name": null, "calendarEventId": "90c11912-a50e-4456-ad48-7f4460862268",
+        "activeUserId": null, "calendarEvent": {"id": "90c11912-a50e-4456-ad48-7f4460862268",
+        "createdBy": "createdBy_REDACTED_6ee209c1-2c30-43a0-83d2-18fc973a6546", "createdAt":
+        "2022-07-18T18:57:13.692Z", "updatedBy": "updatedBy_REDACTED_3b8689cd-9a9c-4378-8a2d-3bcbc2ca9649",
+        "updatedAt": "2022-07-18T18:57:13.692Z", "externalId": null, "externalIdUpdatedAt":
+        "2022-07-18T18:57:13.691Z", "eventTitle": "NEW ENC", "eventDescription": null,
+        "startDateTime": "2022-07-19T00:57:03.371Z", "localStartDateTime": "2022-07-19T00:57:03.371+00:00",
+        "endDateTime": "2022-07-19T01:57:03.371Z", "localEndDateTime": "2022-07-19T01:57:03.371+00:00",
+        "allDayEvent": false, "duration": 3600, "eventType": "ENCOUNTER", "eventStatus":
+        "SCHEDULED", "eventMode": "VIDEO", "eventColor": null, "hostId": "a9618392-799d-4664-a896-5f1756f8d336",
+        "timezone": null, "additionalInfo": null, "participants": [{"id": "b44571d4-69b9-4dab-9292-bcf3595c636f",
+        "participantId": "a9618392-799d-4664-a896-5f1756f8d336", "participantRole":
+        "psm", "participationStatus": "", "attended": false, "timezone": null, "firstName":
+        "Ben", "lastName": "Lightmatter", "deleted": false, "hasAccess": false, "email":
+        "ben@lightmatter.com", "phone": null, "gender": null, "birthDate": null, "enabled":
+        true}, {"id": "e8539307-1d39-407a-9efb-f8fb756c78ec", "participantId": "0056c34b-9a83-41bd-bf4d-e4710d7a77f9",
+        "participantRole": "patient", "participationStatus": "", "attended": false,
+        "timezone": null, "firstName": "Abby", "lastName": "Henninger", "deleted":
+        false, "hasAccess": false, "email": "abby+1@lightmatter.com", "phone": "",
+        "gender": "UNKNOWN", "birthDate": "1984-11-03T00:00:00.000Z", "enabled": null}]},
+        "calendarEventStartDatetime": "2022-07-19T00:57:03.371Z", "dispositionId":
+        "7c2acdab-a2b8-45da-9302-69fce19cb3e7", "source_type": null, "created_by":
+        "d2db8a2d-8225-43b4-b1eb-651ffbdb7926", "localEndDatetime": "2022-07-19T01:57:03.371+00:00",
+        "local_created_at": "2022-07-18T18:57:13.692+00:00", "templateName": "etmp-encounter1",
+        "instruction": "", "ownerUserId": "a9618392-799d-4664-a896-5f1756f8d336",
+        "updated_by": "d2db8a2d-8225-43b4-b1eb-651ffbdb7926", "source_id": null, "endDatetime":
+        null, "localStartDatetime": "2022-07-19T00:57:03.371+00:00", "status": "DRAFT"},
+        "cdtName": "__encounter__"}'
+    headers:
+      Access-Control-Allow-Headers:
+      - authorization, content-type, xsrf-token, security-role
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, PATCH, OPTIONS
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - xsrf-token
+      Access-Control-Max-Age:
+      - '3600'
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 18 Jul 2022 18:57:13 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Set-Cookie:
+      - AWSALB=qJQtx30TnOdN9qXENbxaZxST8hLEqcl8+NgwWBsdZCHqkFTJXZaIzjwz9o9iounaUPRI/c9MolMPqse8BWP6S+dnmav+kB4KhNnsmMIBCQ663/6n+bIYGkB7ELw+;
+        Expires=Mon, 25 Jul 2022 18:57:13 GMT; Path=/
+      - AWSALBCORS=qJQtx30TnOdN9qXENbxaZxST8hLEqcl8+NgwWBsdZCHqkFTJXZaIzjwz9o9iounaUPRI/c9MolMPqse8BWP6S+dnmav+kB4KhNnsmMIBCQ663/6n+bIYGkB7ELw+;
+        Expires=Mon, 25 Jul 2022 18:57:13 GMT; Path=/; SameSite=None; Secure
+      Transfer-Encoding:
+      - chunked
+      X-Content-Type-Options:
+      - nosniff
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 201
+      message: ''
+version: 1
