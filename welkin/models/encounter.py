@@ -1,72 +1,13 @@
 from welkin.models.base import Collection, Resource
 
 
-class Encounter(Resource):
-    def create(self):
-        return super().post(
-            f"{self._client.instance}/patients/{self.patient_id}/encounters"
-        )
-
-    def get(self, related_data: bool = False):
-        encounters = "encounters"
-        if related_data:
-            encounters = "full-encounters"
-
-        return super().get(
-            f"{self._client.instance}/patients/{self.patient_id}/{encounters}/{self.id}"
-        )
-
-    def update(self, **kwargs):
-        return super().patch(
-            f"{self._client.instance}/patients/{self.patient_id}/encounters", kwargs
-        )
-
-    def delete(self):
-        return super().delete(
-            f"{self._client.instance}/patients/{self.patient_id}/encounters/{self.id}"
-        )
-
-
-class Encounters(Collection):
-    resource = Encounter
-    patient_id: str = None
-    user_id: str = None
-
-    def __init__(self, patient_id=None, user_id=None):
-        self.patient_id = patient_id
-        self.user_id = user_id
-
-    def get(
-        self,
-        related_data: bool = False,
-        *args,
-        **kwargs,
-    ):
-        root = ""
-        if self.patient_id:
-            root = f"patients/{self.patient_id}"
-        elif self.user_id:
-            root = f"users/{self.user_id}"
-
-        encounters = "encounters"
-        if related_data:
-            encounters = "full-encounters"
-
-        path = f"{self._client.instance}/{encounters}"
-        if root:
-            path = f"{self._client.instance}/{root}/{encounters}"
-
-        return super().get(path, *args, **kwargs)
-
-
 class Comment(Resource):
     def create(self):
         return super().post(
-            f"{self._client.instance}/patients/{self.patient_id}/encounters"
+            f"{self._client.instance}/patients/{self.patient_id}/encounters/{self.encounter_id}/comments"
         )
 
     def get(self):
-
         return super().get(
             f"{self._client.instance}/patients/{self.patient_id}/encounters/{self.encounter_id}/comments/{self.id}"
         )
@@ -101,8 +42,78 @@ class Comments(Collection):
         )
 
 
-class Disposition(Encounter, Resource):
+class Disposition(Resource):
     def get(self):
         return super().get(
             f"{self._client.instance}/patients/{self.patient_id}/encounters/{self.encounter_id}/disposition"
         )
+
+
+class Encounter(Resource):
+    sub_resources = [Comments, Disposition]
+
+    def create(self):
+        return super().post(
+            f"{self._client.instance}/patients/{self.patient_id}/encounters"
+        )
+
+    def get(self, related_data: bool = False):
+        encounters = "encounters"
+        if related_data:
+            encounters = "full-encounters"
+
+        return super().get(
+            f"{self._client.instance}/patients/{self.patient_id}/{encounters}/{self.id}"
+        )
+
+    def update(self, **kwargs):
+        return super().patch(
+            f"{self._client.instance}/patients/{self.patient_id}/encounters", kwargs
+        )
+
+    def delete(self):
+        return super().delete(
+            f"{self._client.instance}/patients/{self.patient_id}/encounters/{self.id}"
+        )
+
+    @property
+    def Comments(self):
+        return self._client.Comments(encounter_id=self.id, patient_id=self.patient_id)
+
+    @property
+    def Disposition(self):
+        return self._client.Disposition(
+            encounter_id=self.id, patient_id=self.patient_id
+        )
+
+
+class Encounters(Collection):
+    resource = Encounter
+    patient_id: str = None
+    user_id: str = None
+
+    def __init__(self, patient_id=None, user_id=None):
+        self.patient_id = patient_id
+        self.user_id = user_id
+
+    def get(
+        self,
+        related_data: bool = False,
+        *args,
+        **kwargs,
+    ):
+        root = ""
+        if self.patient_id:
+            root = f"patients/{self.patient_id}"
+        elif self.user_id:
+            root = f"users/{self.user_id}"
+
+        encounters = "encounters"
+        if related_data:
+            encounters = "full-encounters"
+
+        path = f"{self._client.instance}/{encounters}"
+        if root:
+            path = f"{self._client.instance}/{root}/{encounters}"
+
+        return super().get(path, *args, **kwargs)
