@@ -1,4 +1,5 @@
 from datetime import datetime, timedelta, timezone
+from xml.etree.ElementTree import Comment
 
 import pytest
 
@@ -114,3 +115,21 @@ def test_encounter_delete(client, vcr_cassette):
         assert excinfo.value.response.status_code == 404
 
     assert len(vcr_cassette) == 3
+
+
+@pytest.mark.skip(reason="invalid access to comments")
+@pytest.mark.vcr()
+def test_encounter_comment_create(client, vcr_cassette):
+    patient = client.Patient(id="0056c34b-9a83-41bd-bf4d-e4710d7a77f9")
+
+    encounter = patient.Encounter
+    encounter["id"] = "72822eb2-8034-4822-bbc2-58caa0517eea"
+
+    comment = encounter.Comment
+    comment["text"] = "hello there"
+
+    comm = comment.create()
+
+    assert isinstance(comm, Comment)
+    assert hasattr(comm, "id")
+    assert len(vcr_cassette) == 1
