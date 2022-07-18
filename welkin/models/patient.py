@@ -1,7 +1,10 @@
 from welkin.models.base import Collection, Resource
+from welkin.models.encounter import Encounters
 
 
 class Patient(Resource):
+    sub_resources = [Encounters]
+
     def create(self):
         return super().post(f"{self._client.instance}/patients")
 
@@ -16,6 +19,10 @@ class Patient(Resource):
 
     def __str__(self):
         return f"{self.firstName} {self.lastName}"
+
+    @property
+    def Encounters(self):
+        return self._client.Encounters(patient_id=self.id)
 
 
 class Patients(Collection):
