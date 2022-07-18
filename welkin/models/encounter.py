@@ -1,7 +1,4 @@
-from attr import Attribute
-
 from welkin.models.base import Collection, Resource
-from welkin.models.patient import Patient
 
 
 class Encounter(Resource):
@@ -32,6 +29,12 @@ class Encounter(Resource):
 
 class Encounters(Collection):
     resource = Encounter
+    patient_id: str = None
+    user_id: str = None
+
+    def __init__(self, patient_id=None, user_id=None):
+        self.patient_id = patient_id
+        self.user_id = user_id
 
     def get(
         self,
