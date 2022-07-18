@@ -1,0 +1,69 @@
+interactions:
+- request:
+    body: '{"encounter_id": "72822eb2-8034-4822-bbc2-58caa0517eea", "patient_id":
+      "0056c34b-9a83-41bd-bf4d-e4710d7a77f9", "text": "hello there"}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - API_TOKEN_1b4a949e-e3e6-4277-8ecb-a5cec833fcdc
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '133'
+      Content-Type:
+      - application/json
+      Cookie:
+      - AWSALB=0XJR1+X8E4hCVjTrUYNzsUJvrjDRdjyWynbWtc9jT17IUV4gQUVxIzm+AbxRh0PQJRErSqUFYI9C+lGGMuXe2ApzVPv1bzzs/qhkNAzgZ6YhGkBPZxiq/giMePoT;
+        AWSALBCORS=0XJR1+X8E4hCVjTrUYNzsUJvrjDRdjyWynbWtc9jT17IUV4gQUVxIzm+AbxRh0PQJRErSqUFYI9C+lGGMuXe2ApzVPv1bzzs/qhkNAzgZ6YhGkBPZxiq/giMePoT
+      User-Agent:
+      - python-welkin/0.0.4
+    method: POST
+    uri: https://api.live.welkincloud.io/tenant_REDACTED/instance_REDACTED/patients/0056c34b-9a83-41bd-bf4d-e4710d7a77f9/encounters/72822eb2-8034-4822-bbc2-58caa0517eea/comments
+  response:
+    body:
+      string: '[{"errorCode": "ACCESS_FOR_API_CLIENT_RESTRICTED", "componentType":
+        "AUTH", "message": "Access to this API is restricted for the APIClient", "details":
+        {"clientId": "d2db8a2d-8225-43b4-b1eb-651ffbdb7926", "clientName": "YZSHZAZDPNQV",
+        "clientType": "API_CLIENT", "organizationName": "aegis-poc", "requestURI":
+        "/aegis-poc/sandbox/patients/0056c34b-9a83-41bd-bf4d-e4710d7a77f9/encounters/72822eb2-8034-4822-bbc2-58caa0517eea/comments"}}]'
+    headers:
+      Access-Control-Allow-Headers:
+      - authorization, content-type, xsrf-token, security-role
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, PATCH, OPTIONS
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - xsrf-token
+      Access-Control-Max-Age:
+      - '3600'
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 18 Jul 2022 19:03:41 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Set-Cookie:
+      - AWSALB=FxFfVunHiwcKYjRP/9+UQf9wCSgdqE472BhC18ZssNuV+I/OxXPNivaN3hRQDgH8sYFewXNNdyVIWaHmv0kgaRMGbgNsQ49DTppRJ07/7VBb2IQNuJ5uTGs7lJfg;
+        Expires=Mon, 25 Jul 2022 19:03:41 GMT; Path=/
+      - AWSALBCORS=FxFfVunHiwcKYjRP/9+UQf9wCSgdqE472BhC18ZssNuV+I/OxXPNivaN3hRQDgH8sYFewXNNdyVIWaHmv0kgaRMGbgNsQ49DTppRJ07/7VBb2IQNuJ5uTGs7lJfg;
+        Expires=Mon, 25 Jul 2022 19:03:41 GMT; Path=/; SameSite=None; Secure
+      Transfer-Encoding:
+      - chunked
+      X-Content-Type-Options:
+      - nosniff
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 403
+      message: ''
+version: 1

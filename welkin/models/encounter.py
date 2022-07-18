@@ -130,15 +130,27 @@ class Encounter(Resource):
 
     @property
     def Comment(self):
-        return self._client.Comment(encounter_id=self.id, patient_id=self.patientId)
+        if getattr(self, "patient_id"):
+            patient_id = self.patient_id
+        else:
+            patient_id = self.patientId
+        return self._client.Comment(encounter_id=self.id, patient_id=patient_id)
 
     @property
     def Comments(self):
-        return self._client.Comments(encounter_id=self.id, patient_id=self.patientId)
+        if getattr(self, "patient_id"):
+            patient_id = self.patient_id
+        else:
+            patient_id = self.patientId
+        return self._client.Comments(encounter_id=self.id, patient_id=patient_id)
 
     @property
     def Disposition(self):
-        return self._client.Disposition(encounter_id=self.id, patient_id=self.patientId)
+        if getattr(self, "patient_id"):
+            patient_id = self.patient_id
+        else:
+            patient_id = self.patientId
+        return self._client.Disposition(encounter_id=self.id, patient_id=patient_id)
 
 
 class Encounters(Collection):
