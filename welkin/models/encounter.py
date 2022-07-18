@@ -1,6 +1,53 @@
 from welkin.models.base import Collection, Resource
 
 
+class Assessment(Resource):
+    def create(self):
+        return super().post(
+            f"{self._client.instance}/patients/{self.patient_id}/encounters/{self.encounter_id}/assessments"
+        )
+
+    def get(self):
+        return super().get(
+            f"{self._client.instance}/patients/{self.patient_id}/encounters/{self.encounter_id}/assessments/{self.id}"
+        )
+
+    def update(self, **kwargs):
+        return super().patch(
+            f"{self._client.instance}/patients/{self.patient_id}/encounters/{self.encounter_id}/assessments/{self.id}",
+            kwargs,
+        )
+
+    def delete(self):
+        return super().delete(
+            f"{self._client.instance}/patients/{self.patientId}/encounters/{self.encounterId}/assessments/{self.id}"
+        )
+
+
+class Assessments(Collection):
+    resource = Assessment
+    encounter_id: str = None
+    patient_id: str = None
+
+    def __init__(self, encounter_id=None, patient_id=None):
+        self.encounter_id = encounter_id
+        self.patient_id = patient_id
+
+    def get(
+        self,
+        patient_id: str,
+        encounter_id: str,
+        *args,
+        **kwargs,
+    ):
+
+        return super().get(
+            f"{self._client.instance}/patients/{patient_id}/encounters/{encounter_id}/assessments",
+            *args,
+            **kwargs,
+        )
+
+
 class Comment(Resource):
     def create(self):
         return super().post(
@@ -26,17 +73,21 @@ class Comment(Resource):
 
 class Comments(Collection):
     resource = Comment
+    encounter_id: str = None
+    patient_id: str = None
+
+    def __init__(self, encounter_id=None, patient_id=None):
+        self.encounter_id = encounter_id
+        self.patient_id = patient_id
 
     def get(
         self,
-        patient_id: str,
-        encounter_id: str,
         *args,
         **kwargs,
     ):
 
         return super().get(
-            f"{self._client.instance}/patients/{patient_id}/encounters/{encounter_id}/comments",
+            f"{self._client.instance}/patients/{self.patient_id}/encounters/{self.encounter_id}/comments",
             *args,
             **kwargs,
         )
