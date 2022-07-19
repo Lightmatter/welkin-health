@@ -22,11 +22,13 @@ class Patient(Resource):
 
     @property
     def Encounter(self):
-        return self._client.Encounter(patient_id=self.id)
+        return self._client.Encounter(patientId=self.id)
 
     @property
     def Encounters(self):
-        return self._client.Encounters(patient_id=self.id)
+        encounter = self._client.Encounters()
+        encounter.patientId = self.id
+        return encounter
 
 
 class Patients(Collection):
