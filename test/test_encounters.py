@@ -36,9 +36,7 @@ def test_encounter_create(client, vcr_cassette):
         },
     }
 
-    encounter = patient.Encounter
-    for k, v in data.items():
-        encounter[k] = v
+    encounter = patient.Encounter(**data)
 
     created_enc = encounter.create()
 
@@ -50,7 +48,7 @@ def test_encounter_create(client, vcr_cassette):
 @pytest.mark.vcr()
 def test_all_encounters_patient_read(client, vcr_cassette):
     patient = client.Patient(id="0056c34b-9a83-41bd-bf4d-e4710d7a77f9")
-    encounters = patient.Encounters.get()
+    encounters = patient.Encounters().get()
 
     assert isinstance(encounters, Encounters)
     assert len(encounters) == 8
@@ -61,7 +59,7 @@ def test_all_encounters_patient_read(client, vcr_cassette):
 @pytest.mark.vcr()
 def test_all_encounters_user_read(client, vcr_cassette):
     user = client.User(id="a9618392-799d-4664-a896-5f1756f8d336")
-    encounters = user.Encounters.get(params={"withCareTeam": "false"})
+    encounters = user.Encounters().get(params={"withCareTeam": "false"})
 
     assert isinstance(encounters, Encounters)
     assert len(encounters) == 8
@@ -73,13 +71,10 @@ def test_all_encounters_user_read(client, vcr_cassette):
 def test_encounter_patient_read(client, vcr_cassette):
     patient = client.Patient(id="0056c34b-9a83-41bd-bf4d-e4710d7a77f9")
 
-    encounter = patient.Encounter
-    encounter["id"] = "72822eb2-8034-4822-bbc2-58caa0517eea"
+    encounter = patient.Encounter(id="72822eb2-8034-4822-bbc2-58caa0517eea").get()
 
-    enc = encounter.get()
-
-    assert isinstance(enc, Encounter)
-    assert enc.id == "72822eb2-8034-4822-bbc2-58caa0517eea"
+    assert isinstance(encounter, Encounter)
+    assert encounter.id == "72822eb2-8034-4822-bbc2-58caa0517eea"
     assert len(vcr_cassette) == 1
 
 
@@ -88,14 +83,12 @@ def test_encounter_patient_read(client, vcr_cassette):
 def test_encounter_update(client, vcr_cassette):
     patient = client.Patient(id="0056c34b-9a83-41bd-bf4d-e4710d7a77f9")
 
-    encounter = patient.Encounter
-    encounter["id"] = "72822eb2-8034-4822-bbc2-58caa0517eea"
-    enc = encounter.get()
-    notes = enc.notes
+    encounter = patient.Encounter(id="72822eb2-8034-4822-bbc2-58caa0517eea").get()
+    notes = encounter.notes
 
-    enc.update(notes="a new note")
+    encounter.update(notes="a new note")
 
-    assert enc.notes != notes
+    assert encounter.notes != notes
     assert len(vcr_cassette) == 2
 
 
@@ -103,33 +96,13 @@ def test_encounter_update(client, vcr_cassette):
 def test_encounter_delete(client, vcr_cassette):
     patient = client.Patient(id="0056c34b-9a83-41bd-bf4d-e4710d7a77f9")
 
-    encounter = patient.Encounter
-    encounter["id"] = "72822eb2-8034-4822-bbc2-58caa0517eea"
+    encounter = patient.Encounter(id="72822eb2-8034-4822-bbc2-58caa0517eea").get()
 
-    enc = encounter.get()
-    enc.delete()
+    encounter.delete()
 
     with pytest.raises(WelkinHTTPError) as excinfo:
-        enc.get()
+        encounter.get()
 
         assert excinfo.value.response.status_code == 404
 
     assert len(vcr_cassette) == 3
-
-
-@pytest.mark.skip(reason="invalid access to comments")
-@pytest.mark.vcr()
-def test_encounter_comment_create(client, vcr_cassette):
-    patient = client.Patient(id="0056c34b-9a83-41bd-bf4d-e4710d7a77f9")
-
-    encounter = patient.Encounter
-    encounter["id"] = "72822eb2-8034-4822-bbc2-58caa0517eea"
-
-    comment = encounter.Comment
-    comment["text"] = "hello there"
-
-    comm = comment.create()
-
-    assert isinstance(comm, Comment)
-    assert hasattr(comm, "id")
-    assert len(vcr_cassette) == 1
