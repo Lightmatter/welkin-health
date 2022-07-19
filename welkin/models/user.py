@@ -22,9 +22,10 @@ class User(Resource):
     def delete(self):
         return super().delete(f"admin/users/{self.id}", params=dict(type="ID"))
 
-    @property
     def Encounters(self):
-        return self._client.Encounters(user_id=self.id)
+        encounters = self._client.Encounters()
+        encounters.userId = self.id
+        return encounters
 
 
 class UserState(Enum):
