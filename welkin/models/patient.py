@@ -20,15 +20,13 @@ class Patient(Resource):
     def __str__(self):
         return f"{self.firstName} {self.lastName}"
 
-    @property
-    def Encounter(self):
-        return self._client.Encounter(patientId=self.id)
-
-    @property
     def Encounters(self):
-        encounter = self._client.Encounters()
-        encounter.patientId = self.id
-        return encounter
+        encounters = self._client.Encounters()
+        encounters.patientId = self.id
+        return encounters
+
+    def Encounter(self, **kwargs):
+        return self._client.Encounter(patientId=self.id, **kwargs)
 
 
 class Patients(Collection):
