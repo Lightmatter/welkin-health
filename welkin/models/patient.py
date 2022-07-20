@@ -3,7 +3,7 @@ from welkin.models.encounter import Encounter, Encounters
 
 
 class Patient(Resource):
-    sub_resources = [Encounter, Encounters]
+    subresources = [Encounter, Encounters]
 
     def create(self):
         return super().post(f"{self._client.instance}/patients")
@@ -20,13 +20,13 @@ class Patient(Resource):
     def __str__(self):
         return f"{self.firstName} {self.lastName}"
 
-    def Encounters(self):
-        encounters = self._client.Encounters()
-        encounters.patientId = self.id
-        return encounters
+    # def Encounters(self):
+    #     encounters = self._client.Encounters()
+    #     encounters.patientId = self.id
+    #     return encounters
 
-    def Encounter(self, **kwargs):
-        return self._client.Encounter(patientId=self.id, **kwargs)
+    # def Encounter(self, **kwargs):
+    #     return self._client.Encounter(patientId=self.id, **kwargs)
 
 
 class Patients(Collection):
