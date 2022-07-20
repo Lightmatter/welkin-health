@@ -1,5 +1,22 @@
 class SchemaBase:
     _client = None
+    _parent = None
+    subresources = []
+
+    def __getattr__(self, name):
+        try:
+            for r in self.subresources:
+                if r.__name__ == name:
+                    r._parent = self
+                    return r
+
+        except AttributeError:
+            pass
+
+        try:
+            return super().__getattribute__(name)
+        except AttributeError as e:
+            raise AttributeError(e) from None
 
 
 class Resource(dict, SchemaBase):
@@ -7,10 +24,7 @@ class Resource(dict, SchemaBase):
         try:
             return super().__getitem__(name)
         except KeyError:
-            try:
-                return super().__getattribute__(name)
-            except AttributeError as e:
-                raise AttributeError(e) from None
+            return super().__getattr__(name)
 
     def __setattr__(self, name, value):
         super().__setitem__(name, value)
