@@ -1,4 +1,13 @@
+from enum import Enum
+
 from welkin.models.base import Collection, Resource
+
+
+class EncounterStatus(Enum):
+    OPEN = "OPEN"
+    CANCELLED = "CANCELLED"
+    DRAFT = "DRAFT"
+    FINALIZED = "FINALIZED"
 
 
 class Encounter(Resource):
@@ -35,9 +44,11 @@ class Encounters(Collection):
         self,
         patient_id: str = None,
         user_id: str = None,
-        related_data: bool = False,
-        *args,
-        **kwargs,
+        related_data: bool = None,
+        with_care_team: bool = None,
+        only_with_calendar_event: bool = None,
+        statuses: list[EncounterStatus] = None,
+        sort: str = None,
     ):
         root = ""
         if patient_id:
@@ -57,4 +68,11 @@ class Encounters(Collection):
         if root:
             path = f"{self._client.instance}/{root}/{encounters}"
 
-        return super().get(path, *args, **kwargs)
+        params = {
+            "withCareTeam": with_care_team,
+            "statuses": statuses,
+            "sort": sort,
+            "onlyWithCalendarEvent": only_with_calendar_event,
+        }
+
+        return super().get(path, params=params)

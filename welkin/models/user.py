@@ -1,9 +1,12 @@
 from enum import Enum
 
 from welkin.models.base import Collection, Resource
+from welkin.models.encounter import Encounters
 
 
 class User(Resource):
+    subresources = [Encounters]
+
     def __str__(self):
         try:
             return f"{self.firstName} {self.lastName}"
@@ -21,11 +24,6 @@ class User(Resource):
 
     def delete(self):
         return super().delete(f"admin/users/{self.id}", params=dict(type="ID"))
-
-    def Encounters(self):
-        encounters = self._client.Encounters()
-        encounters.userId = self.id
-        return encounters
 
 
 class UserState(Enum):
