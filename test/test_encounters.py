@@ -59,7 +59,7 @@ def test_all_encounters_patient_read(client, vcr_cassette):
 @pytest.mark.vcr()
 def test_all_encounters_user_read(client, vcr_cassette):
     user = client.User(id="a9618392-799d-4664-a896-5f1756f8d336")
-    encounters = user.Encounters().get(params={"withCareTeam": "false"})
+    encounters = user.Encounters().get(with_care_team=False)
 
     assert isinstance(encounters, Encounters)
     assert len(encounters) == 8
