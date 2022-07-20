@@ -20,14 +20,6 @@ class Patient(Resource):
     def __str__(self):
         return f"{self.firstName} {self.lastName}"
 
-    # def Encounters(self):
-    #     encounters = self._client.Encounters()
-    #     encounters.patientId = self.id
-    #     return encounters
-
-    # def Encounter(self, **kwargs):
-    #     return self._client.Encounter(patientId=self.id, **kwargs)
-
 
 class Patients(Collection):
     resource = Patient

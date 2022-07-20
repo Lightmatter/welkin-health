@@ -1,6 +1,4 @@
 from welkin.models.base import Collection, Resource
-from welkin.models.patient import Patient
-from welkin.models.user import User
 
 
 class Encounter(Resource):
@@ -47,11 +45,10 @@ class Encounters(Collection):
         elif user_id:
             root = f"users/{user_id}"
         elif self._parent:
-            if isinstance(self._parent, Patient):
+            if self._parent.__class__.__name__ == "Patient":
                 f"patients/{self._parent.id}"
-            elif isinstance(self._parent, User):
+            elif self._parent.__class__.__name__ == "User":
                 f"users/{self._parent.id}"
-
         encounters = "encounters"
         if related_data:
             encounters = "full-encounters"
