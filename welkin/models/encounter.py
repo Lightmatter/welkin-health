@@ -1,4 +1,6 @@
 from welkin.models.base import Collection, Resource
+from welkin.models.patient import Patient
+from welkin.models.user import User
 
 
 class Encounter(Resource):
@@ -30,20 +32,25 @@ class Encounter(Resource):
 
 class Encounters(Collection):
     resource = Encounter
-    patientId: str = None
-    userId: str = None
 
     def get(
         self,
+        patient_id: str = None,
+        user_id: str = None,
         related_data: bool = False,
         *args,
         **kwargs,
     ):
         root = ""
-        if self.patientId:
-            root = f"patients/{self.patientId}"
-        elif self.userId:
-            root = f"users/{self.userId}"
+        if patient_id:
+            root = f"patients/{patient_id}"
+        elif user_id:
+            root = f"users/{user_id}"
+        elif self._parent:
+            if isinstance(self._parent, Patient):
+                f"patients/{self._parent.id}"
+            elif isinstance(self._parent, User):
+                f"users/{self._parent.id}"
 
         encounters = "encounters"
         if related_data:
