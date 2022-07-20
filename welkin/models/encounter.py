@@ -47,7 +47,7 @@ class Encounters(Collection):
         related_data: bool = None,
         with_care_team: bool = None,
         only_with_calendar_event: bool = None,
-        statuses: list[EncounterStatus] = None,
+        statuses: list = None,
         sort: str = None,
     ):
         root = ""
