@@ -1,0 +1,61 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - API_TOKEN_92b1cbcd-8218-424c-a90b-dfd8a701047e
+      Connection:
+      - keep-alive
+      Cookie:
+      - AWSALB=bIuaqk0Gp6K79nLEeVOn6w2tcc5tj+4SrO90/+WRgSGtdpNR7H45Q4e5djivnieey5aiL7rKO4m8vLebNCR93zckubtwsetq6HGELCu+AZ4uut1vanQBmS+5P43/;
+        AWSALBCORS=bIuaqk0Gp6K79nLEeVOn6w2tcc5tj+4SrO90/+WRgSGtdpNR7H45Q4e5djivnieey5aiL7rKO4m8vLebNCR93zckubtwsetq6HGELCu+AZ4uut1vanQBmS+5P43/
+      User-Agent:
+      - python-welkin/0.0.4
+    method: GET
+    uri: https://api.live.welkincloud.io/tenant_REDACTED/instance_REDACTED/patients/0056c34b-9a83-41bd-bf4d-e4710d7a77f9/encounters/72822eb2-8034-4822-bbc2-58caa0517eea
+  response:
+    body:
+      string: '[{"errorCode": "DT_RECORD_NOT_FOUND", "componentType": "CDT", "message":
+        "DT record not found", "details": {}}]'
+    headers:
+      Access-Control-Allow-Headers:
+      - authorization, content-type, xsrf-token, security-role
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, PATCH, OPTIONS
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - xsrf-token
+      Access-Control-Max-Age:
+      - '3600'
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 18 Jul 2022 18:55:06 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Set-Cookie:
+      - AWSALB=AQvtwo/ndakVZ0gOtM2v1U0JxPQrqTTj/BDdVinGko5fBeDHLI1GN+sAEMDb4+GUQmsF1d7IhvpSG3Ig05/zj/zvrrkvgaS5eDb5qHGXEze5HdBEmrw58VAxO3dK;
+        Expires=Mon, 25 Jul 2022 18:55:05 GMT; Path=/
+      - AWSALBCORS=AQvtwo/ndakVZ0gOtM2v1U0JxPQrqTTj/BDdVinGko5fBeDHLI1GN+sAEMDb4+GUQmsF1d7IhvpSG3Ig05/zj/zvrrkvgaS5eDb5qHGXEze5HdBEmrw58VAxO3dK;
+        Expires=Mon, 25 Jul 2022 18:55:05 GMT; Path=/; SameSite=None; Secure
+      Transfer-Encoding:
+      - chunked
+      X-Content-Type-Options:
+      - nosniff
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 404
+      message: ''
+version: 1
