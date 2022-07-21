@@ -1,11 +1,9 @@
 from datetime import datetime, timedelta, timezone
-from xml.etree.ElementTree import Comment
 
 import pytest
 
 from welkin.exceptions import WelkinHTTPError
 from welkin.models.encounter import Encounter, Encounters
-from welkin.util import clean_datetime
 
 UTC = timezone.utc
 
@@ -23,8 +21,8 @@ def test_encounter_create(client, vcr_cassette):
         "currentScheduledAppointment": {
             "eventType": "ENCOUNTER",
             "eventTitle": "NEW ENC",
-            "startDateTime": clean_datetime(start),
-            "endDateTime": clean_datetime(end),
+            "startDateTime": start,
+            "endDateTime": end,
             "hostId": "a9618392-799d-4664-a896-5f1756f8d336",
             "participants": [
                 {
