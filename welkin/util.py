@@ -35,8 +35,6 @@ def clean_request_params(params: dict) -> dict:
             params[k] = clean_datetime(v)
         elif isinstance(v, list):
             params[k] = ",".join(v)
-        elif isinstance(v, dict):
-            params[k] = clean_request_params(v)
 
     return params
 
