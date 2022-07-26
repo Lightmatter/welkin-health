@@ -82,7 +82,6 @@ def test_encounter_patient_read(client, vcr_cassette):
     assert len(vcr_cassette) == 1
 
 
-# @pytest.mark.skip(reason="getting an error about cdts")
 @pytest.mark.vcr()
 def test_encounter_update(client, vcr_cassette):
     patient = client.Patient(id="371dd15c-cedc-4425-a394-d666c8d3fc01")
