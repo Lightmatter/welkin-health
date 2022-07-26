@@ -1,232 +1,234 @@
 interactions:
-- request:
-    body: null
-    headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
-      Authorization:
-      - API_TOKEN_191058c4-e6dd-4f98-a637-c770766e8ff4
-      Connection:
-      - keep-alive
-      Cookie:
-      - AWSALB=xur0eG8UaQvzA9DcZJdRvKcm5ne3O3Z5SAa8gqKiWtU1q1HaGECxzdiGYjO9zI3rELEoitqv7/PaB51rnTilr1XB3lL+zsGm96FZ6TKyIgXGZ7BMHYw0yZoaLA7h;
-        AWSALBCORS=xur0eG8UaQvzA9DcZJdRvKcm5ne3O3Z5SAa8gqKiWtU1q1HaGECxzdiGYjO9zI3rELEoitqv7/PaB51rnTilr1XB3lL+zsGm96FZ6TKyIgXGZ7BMHYw0yZoaLA7h
-      User-Agent:
-      - python-welkin/0.0.4
-    method: GET
-    uri: https://api.live.welkincloud.io/tenant_REDACTED/tenant_REDACTED-aegis-sb/patients/371dd15c-cedc-4425-a394-d666c8d3fc01/encounters/2a8ac491-19bf-4812-9197-dffc2d42cfcf
-  response:
-    body:
-      string: '{"id": "2a8ac491-19bf-4812-9197-dffc2d42cfcf", "patientId": "371dd15c-cedc-4425-a394-d666c8d3fc01",
-        "cdtId": "f6e6c481-60d7-4466-8074-7fbc8e6e3cd7", "version": 4, "jsonBody":
-        {"startDatetime": null, "local_updated_at": "2022-07-26T14:06:34.024+00:00",
-        "external_guid": null, "notes": null, "description": "new encounter", "created_at":
-        "2022-07-26T14:06:34.049Z", "external_id": null, "type": "etmp-initial-consultation",
-        "title": "new enc", "activeUserName": null, "created_by_name": "API_CLIENT:YYZBMHHWDAIT",
-        "currentScheduledAppointment": {"id": "488585b9-0380-4425-a980-6c8cb9a7f113",
-        "createdBy": "createdBy_REDACTED_b69b9106-3606-4d1c-961e-35ab266ef79e", "createdAt":
-        "2022-07-26T14:06:34.024Z", "updatedBy": "updatedBy_REDACTED_4b24e3d2-897c-43a1-a967-0344bf56fa14",
-        "updatedAt": "2022-07-26T14:06:34.024Z", "externalId": null, "externalIdUpdatedAt":
-        "2022-07-26T14:06:34.023Z", "eventTitle": "NEW ENC", "eventDescription": null,
-        "startDateTime": "2022-07-26T20:06:33.744Z", "localStartDateTime": "2022-07-26T20:06:33.744+00:00",
-        "endDateTime": "2022-07-26T21:06:33.744Z", "localEndDateTime": "2022-07-26T21:06:33.744+00:00",
-        "allDayEvent": false, "duration": 3600, "eventType": "ENCOUNTER", "eventStatus":
-        "SCHEDULED", "eventMode": "VIDEO", "eventColor": null, "hostId": "c08af975-8afc-49cb-84ac-7189b727148c",
-        "timezone": null, "additionalInfo": null, "participants": [{"id": "a83c32cd-d197-41ab-bb64-da9feb7183fb",
-        "participantId": "c08af975-8afc-49cb-84ac-7189b727148c", "participantRole":
-        "psm", "participationStatus": "", "attended": false, "timezone": null, "firstName":
-        "Eddit ", "lastName": "Cohen", "deleted": false, "hasAccess": false, "email":
-        "eddie@lightmatter.com", "phone": null, "gender": null, "birthDate": null,
-        "enabled": true}, {"id": "8362b2a6-c65e-45e0-922e-c7a23acac770", "participantId":
-        "371dd15c-cedc-4425-a394-d666c8d3fc01", "participantRole": "patient", "participationStatus":
-        "", "attended": false, "timezone": null, "firstName": "Demo", "lastName":
-        "Er", "deleted": false, "hasAccess": false, "email": "eddiehcohen@gmail.com",
-        "phone": "+19142176687", "gender": "UNKNOWN", "birthDate": "1998-08-08T00:00:00.000Z",
-        "enabled": null}]}, "updated_by_name": "API_CLIENT:YYZBMHHWDAIT", "localCalendarEventStartDatetime":
-        "2022-07-26T20:06:33.744+00:00", "updated_at": "2022-07-26T14:06:34.168Z",
-        "ownerUserName": "Eddit  Cohen", "templateTitle": null, "id": "2a8ac491-19bf-4812-9197-dffc2d42cfcf",
-        "source_name": null, "calendarEventId": "488585b9-0380-4425-a980-6c8cb9a7f113",
-        "activeUserId": null, "calendarEvent": {"id": "488585b9-0380-4425-a980-6c8cb9a7f113",
-        "createdBy": "createdBy_REDACTED_a6874da1-8471-4840-b295-4c9d31d61654", "createdAt":
-        "2022-07-26T14:06:34.024Z", "updatedBy": "updatedBy_REDACTED_007c9118-2700-4cb0-a3b9-1c4a20e55003",
-        "updatedAt": "2022-07-26T14:06:34.024Z", "externalId": null, "externalIdUpdatedAt":
-        "2022-07-26T14:06:34.023Z", "eventTitle": "NEW ENC", "eventDescription": null,
-        "startDateTime": "2022-07-26T20:06:33.744Z", "localStartDateTime": "2022-07-26T20:06:33.744+00:00",
-        "endDateTime": "2022-07-26T21:06:33.744Z", "localEndDateTime": "2022-07-26T21:06:33.744+00:00",
-        "allDayEvent": false, "duration": 3600, "eventType": "ENCOUNTER", "eventStatus":
-        "SCHEDULED", "eventMode": "VIDEO", "eventColor": null, "hostId": "c08af975-8afc-49cb-84ac-7189b727148c",
-        "timezone": null, "additionalInfo": null, "participants": [{"id": "a83c32cd-d197-41ab-bb64-da9feb7183fb",
-        "participantId": "c08af975-8afc-49cb-84ac-7189b727148c", "participantRole":
-        "psm", "participationStatus": "", "attended": false, "timezone": null, "firstName":
-        "Eddit ", "lastName": "Cohen", "deleted": false, "hasAccess": false, "email":
-        "eddie@lightmatter.com", "phone": null, "gender": null, "birthDate": null,
-        "enabled": true}, {"id": "8362b2a6-c65e-45e0-922e-c7a23acac770", "participantId":
-        "371dd15c-cedc-4425-a394-d666c8d3fc01", "participantRole": "patient", "participationStatus":
-        "", "attended": false, "timezone": null, "firstName": "Demo", "lastName":
-        "Er", "deleted": false, "hasAccess": false, "email": "eddiehcohen@gmail.com",
-        "phone": "+19142176687", "gender": "UNKNOWN", "birthDate": "1998-08-08T00:00:00.000Z",
-        "enabled": null}]}, "calendarEventStartDatetime": "2022-07-26T20:06:33.744Z",
-        "dispositionId": "1e81b734-6a4b-40e6-858c-def723d0c993", "source_type": null,
-        "created_by": "4927d187-3fb3-4a9b-a42d-0c740f189412", "localEndDatetime":
-        "2022-07-26T21:06:33.744+00:00", "local_created_at": "2022-07-26T14:06:34.024+00:00",
-        "templateName": "etmp-initial-consultation", "instruction": "", "ownerUserId":
-        "c08af975-8afc-49cb-84ac-7189b727148c", "updated_by": "4927d187-3fb3-4a9b-a42d-0c740f189412",
-        "source_id": null, "endDatetime": null, "localStartDatetime": "2022-07-26T20:06:33.744+00:00",
-        "status": "DRAFT"}, "cdtName": "__encounter__"}'
-    headers:
-      Access-Control-Allow-Headers:
-      - authorization, content-type, xsrf-token, security-role
-      Access-Control-Allow-Methods:
-      - GET, POST, PUT, DELETE, PATCH, OPTIONS
-      Access-Control-Allow-Origin:
-      - '*'
-      Access-Control-Expose-Headers:
-      - xsrf-token
-      Access-Control-Max-Age:
-      - '3600'
-      Cache-Control:
-      - no-cache, no-store, max-age=0, must-revalidate
-      Connection:
-      - keep-alive
-      Content-Type:
-      - application/json
-      Date:
-      - Tue, 26 Jul 2022 14:12:36 GMT
-      Expires:
-      - '0'
-      Pragma:
-      - no-cache
-      Set-Cookie:
-      - AWSALB=zihVoyZVetYy6Ql0ZHPm60b2RoUZYaHd2j/M9LGPw9q1Z/BSVydo9Hp0tdN289xEpCWA1E6IeQ7pmnYM/7nJg6woN1i5mh9YUgvt4n5fqS0ShsIZ36fGlP5sWupm;
-        Expires=Tue, 02 Aug 2022 14:12:36 GMT; Path=/
-      - AWSALBCORS=zihVoyZVetYy6Ql0ZHPm60b2RoUZYaHd2j/M9LGPw9q1Z/BSVydo9Hp0tdN289xEpCWA1E6IeQ7pmnYM/7nJg6woN1i5mh9YUgvt4n5fqS0ShsIZ36fGlP5sWupm;
-        Expires=Tue, 02 Aug 2022 14:12:36 GMT; Path=/; SameSite=None; Secure
-      Transfer-Encoding:
-      - chunked
-      X-Content-Type-Options:
-      - nosniff
-      X-XSS-Protection:
-      - 1; mode=block
-    status:
-      code: 200
-      message: ''
-- request:
-    body: null
-    headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
-      Authorization:
-      - API_TOKEN_191058c4-e6dd-4f98-a637-c770766e8ff4
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '0'
-      Cookie:
-      - AWSALB=zihVoyZVetYy6Ql0ZHPm60b2RoUZYaHd2j/M9LGPw9q1Z/BSVydo9Hp0tdN289xEpCWA1E6IeQ7pmnYM/7nJg6woN1i5mh9YUgvt4n5fqS0ShsIZ36fGlP5sWupm;
-        AWSALBCORS=zihVoyZVetYy6Ql0ZHPm60b2RoUZYaHd2j/M9LGPw9q1Z/BSVydo9Hp0tdN289xEpCWA1E6IeQ7pmnYM/7nJg6woN1i5mh9YUgvt4n5fqS0ShsIZ36fGlP5sWupm
-      User-Agent:
-      - python-welkin/0.0.4
-    method: DELETE
-    uri: https://api.live.welkincloud.io/tenant_REDACTED/tenant_REDACTED-aegis-sb/patients/371dd15c-cedc-4425-a394-d666c8d3fc01/encounters/2a8ac491-19bf-4812-9197-dffc2d42cfcf
-  response:
-    body:
-      string: ''
-    headers:
-      Access-Control-Allow-Headers:
-      - authorization, content-type, xsrf-token, security-role
-      Access-Control-Allow-Methods:
-      - GET, POST, PUT, DELETE, PATCH, OPTIONS
-      Access-Control-Allow-Origin:
-      - '*'
-      Access-Control-Expose-Headers:
-      - xsrf-token
-      Access-Control-Max-Age:
-      - '3600'
-      Cache-Control:
-      - no-cache, no-store, max-age=0, must-revalidate
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '0'
-      Date:
-      - Tue, 26 Jul 2022 14:12:37 GMT
-      Expires:
-      - '0'
-      Pragma:
-      - no-cache
-      Set-Cookie:
-      - AWSALB=cPbzQH3ZaBGN8j89urxx0Y7Ze7sG2kH5dTc+mgSlSH2t0xlCbw1dUDVwYqCA4AqlcI7LvJ+TpnvWtXCT+mrSGiDMOYPdBfY+bKAYlzxs2XlsawHVfgmrlMkmmEB7;
-        Expires=Tue, 02 Aug 2022 14:12:37 GMT; Path=/
-      - AWSALBCORS=cPbzQH3ZaBGN8j89urxx0Y7Ze7sG2kH5dTc+mgSlSH2t0xlCbw1dUDVwYqCA4AqlcI7LvJ+TpnvWtXCT+mrSGiDMOYPdBfY+bKAYlzxs2XlsawHVfgmrlMkmmEB7;
-        Expires=Tue, 02 Aug 2022 14:12:37 GMT; Path=/; SameSite=None; Secure
-      X-Content-Type-Options:
-      - nosniff
-      X-XSS-Protection:
-      - 1; mode=block
-    status:
-      code: 200
-      message: ''
-- request:
-    body: null
-    headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
-      Authorization:
-      - API_TOKEN_191058c4-e6dd-4f98-a637-c770766e8ff4
-      Connection:
-      - keep-alive
-      Cookie:
-      - AWSALB=cPbzQH3ZaBGN8j89urxx0Y7Ze7sG2kH5dTc+mgSlSH2t0xlCbw1dUDVwYqCA4AqlcI7LvJ+TpnvWtXCT+mrSGiDMOYPdBfY+bKAYlzxs2XlsawHVfgmrlMkmmEB7;
-        AWSALBCORS=cPbzQH3ZaBGN8j89urxx0Y7Ze7sG2kH5dTc+mgSlSH2t0xlCbw1dUDVwYqCA4AqlcI7LvJ+TpnvWtXCT+mrSGiDMOYPdBfY+bKAYlzxs2XlsawHVfgmrlMkmmEB7
-      User-Agent:
-      - python-welkin/0.0.4
-    method: GET
-    uri: https://api.live.welkincloud.io/tenant_REDACTED/tenant_REDACTED-aegis-sb/patients/371dd15c-cedc-4425-a394-d666c8d3fc01/encounters/2a8ac491-19bf-4812-9197-dffc2d42cfcf
-  response:
-    body:
-      string: '[{"errorCode": "DT_RECORD_NOT_FOUND", "componentType": "CDT", "message":
-        "DT record not found", "details": {}, "date": "2022-07-26T14:12:37.250Z"}]'
-    headers:
-      Access-Control-Allow-Headers:
-      - authorization, content-type, xsrf-token, security-role
-      Access-Control-Allow-Methods:
-      - GET, POST, PUT, DELETE, PATCH, OPTIONS
-      Access-Control-Allow-Origin:
-      - '*'
-      Access-Control-Expose-Headers:
-      - xsrf-token
-      Access-Control-Max-Age:
-      - '3600'
-      Cache-Control:
-      - no-cache, no-store, max-age=0, must-revalidate
-      Connection:
-      - keep-alive
-      Content-Type:
-      - application/json
-      Date:
-      - Tue, 26 Jul 2022 14:12:37 GMT
-      Expires:
-      - '0'
-      Pragma:
-      - no-cache
-      Set-Cookie:
-      - AWSALB=cKg1JfFEwmST0f3orVlInBeNHjnZX1P/DU0MFgZdQL7KQUxkeNURb+fExjvotWSF9n23KkxNjnokxvyJ7SGD/7Wn0vkI016FWk6xP4Ne24m6+JIdaU8qraVvhzYo;
-        Expires=Tue, 02 Aug 2022 14:12:37 GMT; Path=/
-      - AWSALBCORS=cKg1JfFEwmST0f3orVlInBeNHjnZX1P/DU0MFgZdQL7KQUxkeNURb+fExjvotWSF9n23KkxNjnokxvyJ7SGD/7Wn0vkI016FWk6xP4Ne24m6+JIdaU8qraVvhzYo;
-        Expires=Tue, 02 Aug 2022 14:12:37 GMT; Path=/; SameSite=None; Secure
-      Transfer-Encoding:
-      - chunked
-      X-Content-Type-Options:
-      - nosniff
-      X-XSS-Protection:
-      - 1; mode=block
-    status:
-      code: 404
-      message: ''
+  - request:
+      body: null
+      headers:
+        Accept:
+          - "*/*"
+        Accept-Encoding:
+          - gzip, deflate
+        Authorization:
+          - API_TOKEN_191058c4-e6dd-4f98-a637-c770766e8ff4
+        Connection:
+          - keep-alive
+        Cookie:
+          - AWSALB=xur0eG8UaQvzA9DcZJdRvKcm5ne3O3Z5SAa8gqKiWtU1q1HaGECxzdiGYjO9zI3rELEoitqv7/PaB51rnTilr1XB3lL+zsGm96FZ6TKyIgXGZ7BMHYw0yZoaLA7h;
+            AWSALBCORS=xur0eG8UaQvzA9DcZJdRvKcm5ne3O3Z5SAa8gqKiWtU1q1HaGECxzdiGYjO9zI3rELEoitqv7/PaB51rnTilr1XB3lL+zsGm96FZ6TKyIgXGZ7BMHYw0yZoaLA7h
+        User-Agent:
+          - python-welkin/0.0.4
+      method: GET
+      uri: https://api.live.welkincloud.io/tenant_REDACTED/instance_REDACTED/patients/371dd15c-cedc-4425-a394-d666c8d3fc01/encounters/2a8ac491-19bf-4812-9197-dffc2d42cfcf
+    response:
+      body:
+        string:
+          '{"id": "2a8ac491-19bf-4812-9197-dffc2d42cfcf", "patientId": "371dd15c-cedc-4425-a394-d666c8d3fc01",
+          "cdtId": "f6e6c481-60d7-4466-8074-7fbc8e6e3cd7", "version": 4, "jsonBody":
+          {"startDatetime": null, "local_updated_at": "2022-07-26T14:06:34.024+00:00",
+          "external_guid": null, "notes": null, "description": "new encounter", "created_at":
+          "2022-07-26T14:06:34.049Z", "external_id": null, "type": "etmp-initial-consultation",
+          "title": "new enc", "activeUserName": null, "created_by_name": "API_CLIENT:YYZBMHHWDAIT",
+          "currentScheduledAppointment": {"id": "488585b9-0380-4425-a980-6c8cb9a7f113",
+          "createdBy": "createdBy_REDACTED_b69b9106-3606-4d1c-961e-35ab266ef79e", "createdAt":
+          "2022-07-26T14:06:34.024Z", "updatedBy": "updatedBy_REDACTED_4b24e3d2-897c-43a1-a967-0344bf56fa14",
+          "updatedAt": "2022-07-26T14:06:34.024Z", "externalId": null, "externalIdUpdatedAt":
+          "2022-07-26T14:06:34.023Z", "eventTitle": "NEW ENC", "eventDescription": null,
+          "startDateTime": "2022-07-26T20:06:33.744Z", "localStartDateTime": "2022-07-26T20:06:33.744+00:00",
+          "endDateTime": "2022-07-26T21:06:33.744Z", "localEndDateTime": "2022-07-26T21:06:33.744+00:00",
+          "allDayEvent": false, "duration": 3600, "eventType": "ENCOUNTER", "eventStatus":
+          "SCHEDULED", "eventMode": "VIDEO", "eventColor": null, "hostId": "c08af975-8afc-49cb-84ac-7189b727148c",
+          "timezone": null, "additionalInfo": null, "participants": [{"id": "a83c32cd-d197-41ab-bb64-da9feb7183fb",
+          "participantId": "c08af975-8afc-49cb-84ac-7189b727148c", "participantRole":
+          "psm", "participationStatus": "", "attended": false, "timezone": null, "firstName":
+          "Eddit ", "lastName": "Cohen", "deleted": false, "hasAccess": false, "email":
+          "eddie@lightmatter.com", "phone": null, "gender": null, "birthDate": null,
+          "enabled": true}, {"id": "8362b2a6-c65e-45e0-922e-c7a23acac770", "participantId":
+          "371dd15c-cedc-4425-a394-d666c8d3fc01", "participantRole": "patient", "participationStatus":
+          "", "attended": false, "timezone": null, "firstName": "Demo", "lastName":
+          "Er", "deleted": false, "hasAccess": false, "email": "eddiehcohen@gmail.com",
+          "phone": "+19142176687", "gender": "UNKNOWN", "birthDate": "1998-08-08T00:00:00.000Z",
+          "enabled": null}]}, "updated_by_name": "API_CLIENT:YYZBMHHWDAIT", "localCalendarEventStartDatetime":
+          "2022-07-26T20:06:33.744+00:00", "updated_at": "2022-07-26T14:06:34.168Z",
+          "ownerUserName": "Eddit  Cohen", "templateTitle": null, "id": "2a8ac491-19bf-4812-9197-dffc2d42cfcf",
+          "source_name": null, "calendarEventId": "488585b9-0380-4425-a980-6c8cb9a7f113",
+          "activeUserId": null, "calendarEvent": {"id": "488585b9-0380-4425-a980-6c8cb9a7f113",
+          "createdBy": "createdBy_REDACTED_a6874da1-8471-4840-b295-4c9d31d61654", "createdAt":
+          "2022-07-26T14:06:34.024Z", "updatedBy": "updatedBy_REDACTED_007c9118-2700-4cb0-a3b9-1c4a20e55003",
+          "updatedAt": "2022-07-26T14:06:34.024Z", "externalId": null, "externalIdUpdatedAt":
+          "2022-07-26T14:06:34.023Z", "eventTitle": "NEW ENC", "eventDescription": null,
+          "startDateTime": "2022-07-26T20:06:33.744Z", "localStartDateTime": "2022-07-26T20:06:33.744+00:00",
+          "endDateTime": "2022-07-26T21:06:33.744Z", "localEndDateTime": "2022-07-26T21:06:33.744+00:00",
+          "allDayEvent": false, "duration": 3600, "eventType": "ENCOUNTER", "eventStatus":
+          "SCHEDULED", "eventMode": "VIDEO", "eventColor": null, "hostId": "c08af975-8afc-49cb-84ac-7189b727148c",
+          "timezone": null, "additionalInfo": null, "participants": [{"id": "a83c32cd-d197-41ab-bb64-da9feb7183fb",
+          "participantId": "c08af975-8afc-49cb-84ac-7189b727148c", "participantRole":
+          "psm", "participationStatus": "", "attended": false, "timezone": null, "firstName":
+          "Eddit ", "lastName": "Cohen", "deleted": false, "hasAccess": false, "email":
+          "eddie@lightmatter.com", "phone": null, "gender": null, "birthDate": null,
+          "enabled": true}, {"id": "8362b2a6-c65e-45e0-922e-c7a23acac770", "participantId":
+          "371dd15c-cedc-4425-a394-d666c8d3fc01", "participantRole": "patient", "participationStatus":
+          "", "attended": false, "timezone": null, "firstName": "Demo", "lastName":
+          "Er", "deleted": false, "hasAccess": false, "email": "eddiehcohen@gmail.com",
+          "phone": "+19142176687", "gender": "UNKNOWN", "birthDate": "1998-08-08T00:00:00.000Z",
+          "enabled": null}]}, "calendarEventStartDatetime": "2022-07-26T20:06:33.744Z",
+          "dispositionId": "1e81b734-6a4b-40e6-858c-def723d0c993", "source_type": null,
+          "created_by": "4927d187-3fb3-4a9b-a42d-0c740f189412", "localEndDatetime":
+          "2022-07-26T21:06:33.744+00:00", "local_created_at": "2022-07-26T14:06:34.024+00:00",
+          "templateName": "etmp-initial-consultation", "instruction": "", "ownerUserId":
+          "c08af975-8afc-49cb-84ac-7189b727148c", "updated_by": "4927d187-3fb3-4a9b-a42d-0c740f189412",
+          "source_id": null, "endDatetime": null, "localStartDatetime": "2022-07-26T20:06:33.744+00:00",
+          "status": "DRAFT"}, "cdtName": "__encounter__"}'
+      headers:
+        Access-Control-Allow-Headers:
+          - authorization, content-type, xsrf-token, security-role
+        Access-Control-Allow-Methods:
+          - GET, POST, PUT, DELETE, PATCH, OPTIONS
+        Access-Control-Allow-Origin:
+          - "*"
+        Access-Control-Expose-Headers:
+          - xsrf-token
+        Access-Control-Max-Age:
+          - "3600"
+        Cache-Control:
+          - no-cache, no-store, max-age=0, must-revalidate
+        Connection:
+          - keep-alive
+        Content-Type:
+          - application/json
+        Date:
+          - Tue, 26 Jul 2022 14:12:36 GMT
+        Expires:
+          - "0"
+        Pragma:
+          - no-cache
+        Set-Cookie:
+          - AWSALB=zihVoyZVetYy6Ql0ZHPm60b2RoUZYaHd2j/M9LGPw9q1Z/BSVydo9Hp0tdN289xEpCWA1E6IeQ7pmnYM/7nJg6woN1i5mh9YUgvt4n5fqS0ShsIZ36fGlP5sWupm;
+            Expires=Tue, 02 Aug 2022 14:12:36 GMT; Path=/
+          - AWSALBCORS=zihVoyZVetYy6Ql0ZHPm60b2RoUZYaHd2j/M9LGPw9q1Z/BSVydo9Hp0tdN289xEpCWA1E6IeQ7pmnYM/7nJg6woN1i5mh9YUgvt4n5fqS0ShsIZ36fGlP5sWupm;
+            Expires=Tue, 02 Aug 2022 14:12:36 GMT; Path=/; SameSite=None; Secure
+        Transfer-Encoding:
+          - chunked
+        X-Content-Type-Options:
+          - nosniff
+        X-XSS-Protection:
+          - 1; mode=block
+      status:
+        code: 200
+        message: ""
+  - request:
+      body: null
+      headers:
+        Accept:
+          - "*/*"
+        Accept-Encoding:
+          - gzip, deflate
+        Authorization:
+          - API_TOKEN_191058c4-e6dd-4f98-a637-c770766e8ff4
+        Connection:
+          - keep-alive
+        Content-Length:
+          - "0"
+        Cookie:
+          - AWSALB=zihVoyZVetYy6Ql0ZHPm60b2RoUZYaHd2j/M9LGPw9q1Z/BSVydo9Hp0tdN289xEpCWA1E6IeQ7pmnYM/7nJg6woN1i5mh9YUgvt4n5fqS0ShsIZ36fGlP5sWupm;
+            AWSALBCORS=zihVoyZVetYy6Ql0ZHPm60b2RoUZYaHd2j/M9LGPw9q1Z/BSVydo9Hp0tdN289xEpCWA1E6IeQ7pmnYM/7nJg6woN1i5mh9YUgvt4n5fqS0ShsIZ36fGlP5sWupm
+        User-Agent:
+          - python-welkin/0.0.4
+      method: DELETE
+      uri: https://api.live.welkincloud.io/tenant_REDACTED/instance_REDACTED/patients/371dd15c-cedc-4425-a394-d666c8d3fc01/encounters/2a8ac491-19bf-4812-9197-dffc2d42cfcf
+    response:
+      body:
+        string: ""
+      headers:
+        Access-Control-Allow-Headers:
+          - authorization, content-type, xsrf-token, security-role
+        Access-Control-Allow-Methods:
+          - GET, POST, PUT, DELETE, PATCH, OPTIONS
+        Access-Control-Allow-Origin:
+          - "*"
+        Access-Control-Expose-Headers:
+          - xsrf-token
+        Access-Control-Max-Age:
+          - "3600"
+        Cache-Control:
+          - no-cache, no-store, max-age=0, must-revalidate
+        Connection:
+          - keep-alive
+        Content-Length:
+          - "0"
+        Date:
+          - Tue, 26 Jul 2022 14:12:37 GMT
+        Expires:
+          - "0"
+        Pragma:
+          - no-cache
+        Set-Cookie:
+          - AWSALB=cPbzQH3ZaBGN8j89urxx0Y7Ze7sG2kH5dTc+mgSlSH2t0xlCbw1dUDVwYqCA4AqlcI7LvJ+TpnvWtXCT+mrSGiDMOYPdBfY+bKAYlzxs2XlsawHVfgmrlMkmmEB7;
+            Expires=Tue, 02 Aug 2022 14:12:37 GMT; Path=/
+          - AWSALBCORS=cPbzQH3ZaBGN8j89urxx0Y7Ze7sG2kH5dTc+mgSlSH2t0xlCbw1dUDVwYqCA4AqlcI7LvJ+TpnvWtXCT+mrSGiDMOYPdBfY+bKAYlzxs2XlsawHVfgmrlMkmmEB7;
+            Expires=Tue, 02 Aug 2022 14:12:37 GMT; Path=/; SameSite=None; Secure
+        X-Content-Type-Options:
+          - nosniff
+        X-XSS-Protection:
+          - 1; mode=block
+      status:
+        code: 200
+        message: ""
+  - request:
+      body: null
+      headers:
+        Accept:
+          - "*/*"
+        Accept-Encoding:
+          - gzip, deflate
+        Authorization:
+          - API_TOKEN_191058c4-e6dd-4f98-a637-c770766e8ff4
+        Connection:
+          - keep-alive
+        Cookie:
+          - AWSALB=cPbzQH3ZaBGN8j89urxx0Y7Ze7sG2kH5dTc+mgSlSH2t0xlCbw1dUDVwYqCA4AqlcI7LvJ+TpnvWtXCT+mrSGiDMOYPdBfY+bKAYlzxs2XlsawHVfgmrlMkmmEB7;
+            AWSALBCORS=cPbzQH3ZaBGN8j89urxx0Y7Ze7sG2kH5dTc+mgSlSH2t0xlCbw1dUDVwYqCA4AqlcI7LvJ+TpnvWtXCT+mrSGiDMOYPdBfY+bKAYlzxs2XlsawHVfgmrlMkmmEB7
+        User-Agent:
+          - python-welkin/0.0.4
+      method: GET
+      uri: https://api.live.welkincloud.io/tenant_REDACTED/instance_REDACTED/patients/371dd15c-cedc-4425-a394-d666c8d3fc01/encounters/2a8ac491-19bf-4812-9197-dffc2d42cfcf
+    response:
+      body:
+        string:
+          '[{"errorCode": "DT_RECORD_NOT_FOUND", "componentType": "CDT", "message":
+          "DT record not found", "details": {}, "date": "2022-07-26T14:12:37.250Z"}]'
+      headers:
+        Access-Control-Allow-Headers:
+          - authorization, content-type, xsrf-token, security-role
+        Access-Control-Allow-Methods:
+          - GET, POST, PUT, DELETE, PATCH, OPTIONS
+        Access-Control-Allow-Origin:
+          - "*"
+        Access-Control-Expose-Headers:
+          - xsrf-token
+        Access-Control-Max-Age:
+          - "3600"
+        Cache-Control:
+          - no-cache, no-store, max-age=0, must-revalidate
+        Connection:
+          - keep-alive
+        Content-Type:
+          - application/json
+        Date:
+          - Tue, 26 Jul 2022 14:12:37 GMT
+        Expires:
+          - "0"
+        Pragma:
+          - no-cache
+        Set-Cookie:
+          - AWSALB=cKg1JfFEwmST0f3orVlInBeNHjnZX1P/DU0MFgZdQL7KQUxkeNURb+fExjvotWSF9n23KkxNjnokxvyJ7SGD/7Wn0vkI016FWk6xP4Ne24m6+JIdaU8qraVvhzYo;
+            Expires=Tue, 02 Aug 2022 14:12:37 GMT; Path=/
+          - AWSALBCORS=cKg1JfFEwmST0f3orVlInBeNHjnZX1P/DU0MFgZdQL7KQUxkeNURb+fExjvotWSF9n23KkxNjnokxvyJ7SGD/7Wn0vkI016FWk6xP4Ne24m6+JIdaU8qraVvhzYo;
+            Expires=Tue, 02 Aug 2022 14:12:37 GMT; Path=/; SameSite=None; Secure
+        Transfer-Encoding:
+          - chunked
+        X-Content-Type-Options:
+          - nosniff
+        X-XSS-Protection:
+          - 1; mode=block
+      status:
+        code: 404
+        message: ""
 version: 1
