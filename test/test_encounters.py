@@ -10,23 +10,23 @@ UTC = timezone.utc
 
 @pytest.mark.vcr()
 def test_encounter_create(client, vcr_cassette):
-    patient = client.Patient(id="0056c34b-9a83-41bd-bf4d-e4710d7a77f9")
+    patient = client.Patient(id="371dd15c-cedc-4425-a394-d666c8d3fc01")
     start = datetime.now(tz=UTC) + timedelta(hours=6)
     end = start + timedelta(hours=1)
 
     data = {
         "title": "new enc",
         "description": "new encounter",
-        "templateName": "etmp-encounter1",
+        "templateName": "etmp-initial-consultation",
         "currentScheduledAppointment": {
             "eventType": "ENCOUNTER",
             "eventTitle": "NEW ENC",
             "startDateTime": start,
             "endDateTime": end,
-            "hostId": "a9618392-799d-4664-a896-5f1756f8d336",
+            "hostId": "c08af975-8afc-49cb-84ac-7189b727148c",
             "participants": [
                 {
-                    "participantId": "a9618392-799d-4664-a896-5f1756f8d336",
+                    "participantId": "c08af975-8afc-49cb-84ac-7189b727148c",
                     "participantRole": "psm",
                 },
                 {"participantId": patient.id, "participantRole": "patient"},
@@ -45,56 +45,62 @@ def test_encounter_create(client, vcr_cassette):
 
 @pytest.mark.vcr()
 def test_all_encounters_patient_read(client, vcr_cassette):
-    patient = client.Patient(id="0056c34b-9a83-41bd-bf4d-e4710d7a77f9")
+    patient = client.Patient(id="371dd15c-cedc-4425-a394-d666c8d3fc01")
     encounters = patient.Encounters().get()
 
     assert isinstance(encounters, Encounters)
-    assert len(encounters) == 8
     assert isinstance(encounters[0], Encounter)
-    assert len(vcr_cassette) == 1
+
+    if len(encounters) > 20:
+        assert len(vcr_cassette) > 1, "Pagination was expected"
+    else:
+        assert len(vcr_cassette) == 1, "Unexpected pagination"
 
 
 @pytest.mark.vcr()
 def test_all_encounters_user_read(client, vcr_cassette):
-    user = client.User(id="a9618392-799d-4664-a896-5f1756f8d336")
+    user = client.User(id="c08af975-8afc-49cb-84ac-7189b727148c")
     encounters = user.Encounters().get(with_care_team=False)
 
     assert isinstance(encounters, Encounters)
-    assert len(encounters) == 8
     assert isinstance(encounters[0], Encounter)
-    assert len(vcr_cassette) == 1
+
+    if len(encounters) > 20:
+        assert len(vcr_cassette) > 1, "Pagination was expected"
+    else:
+        assert len(vcr_cassette) == 1, "Unexpected pagination"
 
 
 @pytest.mark.vcr()
 def test_encounter_patient_read(client, vcr_cassette):
-    patient = client.Patient(id="0056c34b-9a83-41bd-bf4d-e4710d7a77f9")
+    patient = client.Patient(id="371dd15c-cedc-4425-a394-d666c8d3fc01")
 
-    encounter = patient.Encounter(id="72822eb2-8034-4822-bbc2-58caa0517eea").get()
+    encounter = patient.Encounter(id="2a8ac491-19bf-4812-9197-dffc2d42cfcf").get()
 
     assert isinstance(encounter, Encounter)
-    assert encounter.id == "72822eb2-8034-4822-bbc2-58caa0517eea"
+    assert encounter.id == "2a8ac491-19bf-4812-9197-dffc2d42cfcf"
     assert len(vcr_cassette) == 1
 
 
-@pytest.mark.skip(reason="getting an error about cdts")
+# @pytest.mark.skip(reason="getting an error about cdts")
 @pytest.mark.vcr()
 def test_encounter_update(client, vcr_cassette):
-    patient = client.Patient(id="0056c34b-9a83-41bd-bf4d-e4710d7a77f9")
+    patient = client.Patient(id="371dd15c-cedc-4425-a394-d666c8d3fc01")
 
-    encounter = patient.Encounter(id="72822eb2-8034-4822-bbc2-58caa0517eea").get()
-    notes = encounter.notes
+    encounter = patient.Encounter(id="22c26a65-161f-42c3-bb0f-a976dac8afe6").get()
+    notes = encounter.jsonBody["notes"]
 
-    encounter.update(notes="a new note")
+    encounter.update(notes="a newer note")
 
-    assert encounter.notes != notes
+    assert encounter.jsonBody["notes"] != notes
     assert len(vcr_cassette) == 2
 
 
 @pytest.mark.vcr()
 def test_encounter_delete(client, vcr_cassette):
-    patient = client.Patient(id="0056c34b-9a83-41bd-bf4d-e4710d7a77f9")
+    patient = client.Patient(id="371dd15c-cedc-4425-a394-d666c8d3fc01")
 
-    encounter = patient.Encounter(id="72822eb2-8034-4822-bbc2-58caa0517eea").get()
+    encounter = patient.Encounter(id="2a8ac491-19bf-4812-9197-dffc2d42cfcf").get()
 
     encounter.delete()
 

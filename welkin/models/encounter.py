@@ -57,9 +57,9 @@ class Encounters(Collection):
             root = f"users/{user_id}"
         elif self._parent:
             if self._parent.__class__.__name__ == "Patient":
-                f"patients/{self._parent.id}"
+                root = f"patients/{self._parent.id}"
             elif self._parent.__class__.__name__ == "User":
-                f"users/{self._parent.id}"
+                root = f"users/{self._parent.id}"
         encounters = "encounters"
         if related_data:
             encounters = "full-encounters"
