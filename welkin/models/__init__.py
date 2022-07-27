@@ -1,4 +1,5 @@
 from welkin.models.calendar import CalendarEvent, CalendarEvents, Schedules
+from welkin.models.cdt import CDT, CDTs
 from welkin.models.encounter import Encounter, Encounters
 from welkin.models.patient import Patient, Patients
 from welkin.models.user import User, Users
@@ -8,6 +9,8 @@ from welkin.models.user import User, Users
 __all__ = [
     "CalendarEvent",
     "CalendarEvents",
+    "CDT",
+    "CDTs",
     "Encounter",
     "Encounters",
     "Patient",

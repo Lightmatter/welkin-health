@@ -1,9 +1,10 @@
 from welkin.models.base import Collection, Resource
+from welkin.models.cdt import CDT, CDTs
 from welkin.models.encounter import Encounter, Encounters
 
 
 class Patient(Resource):
-    subresources = [Encounter, Encounters]
+    subresources = [CDT, CDTs, Encounter, Encounters]
 
     def create(self):
         return super().post(f"{self._client.instance}/patients")

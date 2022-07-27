@@ -106,6 +106,9 @@ class Collection(list, SchemaBase):
     def post(self, *args, **kwargs):
         return self.request(self._client.post, *args, **kwargs)
 
+    def patch(self, *args, **kwargs):
+        return self.request(self._client.patch, *args, **kwargs)
+
     def request(self, method, resource, paginate=False, *args, **kwargs):
         paginator = PageIterator(self, resource, method, *args, **kwargs)
 
@@ -152,7 +155,10 @@ class PageIterator:
             try:
                 page = meta["number"]
             except KeyError:
-                page = meta["page"]
+                try:
+                    page = meta["page"]
+                except KeyError:
+                    page = meta["pageNumber"]
             self.page = page + 1
 
             self.last = meta.get("last") or meta.get("lastPage")
