@@ -38,6 +38,7 @@ class CDTs(Collection):
         date_start: datetime = None,
         date_end: datetime = None,
         sort: str = None,
+        **kwargs,
     ):
 
         root = ""
@@ -60,9 +61,11 @@ class CDTs(Collection):
             "dateEnd": date_end,
         }
 
-        return super().get(path, params=params)
+        return super().get(path, params=params, **kwargs)
 
-    def update(self, patient_id: str = None, cdt_name: str = None, body: dict = None):
+    def update(
+        self, patient_id: str = None, cdt_name: str = None, body: dict = None, **kwargs
+    ):
         root = ""
         if patient_id:
             root = f"patients/{patient_id}"
@@ -75,4 +78,4 @@ class CDTs(Collection):
 
         path = f"{self._client.instance}/{root}/{cdt_path}"
 
-        return super().patch(path, json=body)
+        return super().patch(path, json=body, **kwargs)
