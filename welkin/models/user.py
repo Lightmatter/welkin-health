@@ -1,9 +1,12 @@
 from enum import Enum
 
 from welkin.models.base import Collection, Resource
+from welkin.models.encounter import Encounters
 
 
 class User(Resource):
+    subresources = [Encounters]
+
     def __str__(self):
         try:
             return f"{self.firstName} {self.lastName}"
