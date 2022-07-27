@@ -189,13 +189,17 @@ class Client(Session):
                 "content": json,
                 "metaInfo": {"totalPages": 1, "page": 0, "last": True},
             }
+        elif "rows" in json:
+            json = {
+                "content": json.pop("rows"),
+                "metaInfo": {"totalPages": 1, "page": 0, "last": True},
+            }
 
         # Pull out the resource
         if "content" in json:
             resource = json.pop("content", None)
         else:
             resource = json.pop("data", None)
-
         # specifically with cdts the resource and metadata are both in the data dict
         if isinstance(resource, dict) and "content" in resource:
             new_resource = resource.pop("content", None)
