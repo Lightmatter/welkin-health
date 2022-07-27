@@ -106,6 +106,9 @@ class Collection(list, SchemaBase):
     def post(self, *args, **kwargs):
         return self.request(self._client.post, *args, **kwargs)
 
+    def patch(self, *args, **kwargs):
+        return self.request(self._client.patch, *args, **kwargs)
+
     def request(self, method, resource, paginate=False, *args, **kwargs):
         paginator = PageIterator(self, resource, method, *args, **kwargs)
 
@@ -146,6 +149,7 @@ class PageIterator:
 
         if not self.last:
             self.kwargs.setdefault("params", {}).update(page=self.page)
+            print(self.method(self.resource, *self.args, **self.kwargs))
             self.resources, meta = self.method(self.resource, *self.args, **self.kwargs)
 
             # Different endpoints return pagination data differently
