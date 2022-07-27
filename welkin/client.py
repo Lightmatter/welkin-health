@@ -191,14 +191,24 @@ class Client(Session):
             }
 
         # Pull out the resource
+        print("json at start is", json)
         if "content" in json:
             resource = json.pop("content", None)
         else:
             resource = json.pop("data", None)
 
-        # Response metadata for pagination
-        meta = json.pop("pageable", {}) or json.pop("metaInfo", {})
-        meta.update(json)
+        # specifically with cdts the resource and metadata are both in the data dict
+        if isinstance(resource, dict) and "content" in resource:
+            new_resource = resource.pop("content", None)
+            meta = resource.pop("pageable", {}) or resource.pop("metaInfo", {})
+            meta.update(json)
+            meta.update(resource)
+            resource = new_resource
+
+        else:
+            # Response metadata for pagination
+            meta = json.pop("pageable", {}) or json.pop("metaInfo", {})
+            meta.update(json)
 
         if "totalPages" in meta:
             return resource, meta
