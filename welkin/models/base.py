@@ -149,7 +149,6 @@ class PageIterator:
 
         if not self.last:
             self.kwargs.setdefault("params", {}).update(page=self.page)
-            print(self.method(self.resource, *self.args, **self.kwargs))
             self.resources, meta = self.method(self.resource, *self.args, **self.kwargs)
 
             # Different endpoints return pagination data differently

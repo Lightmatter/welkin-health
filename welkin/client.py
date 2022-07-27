@@ -191,7 +191,6 @@ class Client(Session):
             }
 
         # Pull out the resource
-        print("json at start is", json)
         if "content" in json:
             resource = json.pop("content", None)
         else:
