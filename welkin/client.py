@@ -142,7 +142,15 @@ class Client(Session):
 
         return super().prepare_request(request)
 
-    def request(self, method: str, path: str, *args, **kwargs):
+    def request(
+        self,
+        method: str,
+        path: str,
+        meta_key: str = None,
+        meta_dict: dict = {},
+        *args,
+        **kwargs,
+    ):
         """Override :obj:`Session` request method to add retries and output JSON.
 
         Args:
@@ -187,7 +195,7 @@ class Client(Session):
         if isinstance(json, list):
             json = {
                 "content": json,
-                "metaInfo": {"totalPages": 1, "page": 0, "last": True},
+                "metaInfo": meta_dict,
             }
         elif "rows" in json:
             json = {
@@ -208,13 +216,12 @@ class Client(Session):
             meta.update(resource)
             resource = new_resource
 
-        else:
-            # Response metadata for pagination
-            meta = json.pop("pageable", {}) or json.pop("metaInfo", {})
+        # Response metadata for pagination
+        if meta_key:
+            meta = json.pop(meta_key, {})
             meta.update(json)
-
-        if "totalPages" in meta:
             return resource, meta
+
         return resource or json
 
     def get_token(self) -> dict:

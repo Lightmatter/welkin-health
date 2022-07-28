@@ -1,7 +1,7 @@
 from datetime import datetime
 from enum import Enum
 
-from welkin.models.base import Collection, Resource
+from welkin.models.base import Collection, PageableIterator, Resource
 
 
 class EventType(Enum):
@@ -43,6 +43,7 @@ class CalendarEvent(Resource):
 
 class CalendarEvents(Collection):
     resource = CalendarEvent
+    page_iterator_class = PageableIterator
 
     def get(
         self,
