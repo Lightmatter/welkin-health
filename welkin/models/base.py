@@ -20,7 +20,15 @@ class SchemaBase:
 
 
 class Resource(dict, SchemaBase):
+    nested_objects = {}
+
     def __getattr__(self, name):
+        if name in self.nested_objects:
+            cls = self.nested_objects[name]
+            try:
+                return cls(super().__getitem__(name))
+            except KeyError:
+                return cls(super().__getattr__(name))
         try:
             return super().__getitem__(name)
         except KeyError:
