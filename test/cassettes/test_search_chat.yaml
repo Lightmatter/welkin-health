@@ -7,71 +7,9 @@ interactions:
       Accept-Encoding:
       - gzip, deflate
       Authorization:
-      - API_TOKEN_cc3180a3-5ccb-4e26-a0bb-001c9e72d39e
+      - API_TOKEN_ec05108e-ada0-4efa-919c-3dfaebe57ae5
       Connection:
       - keep-alive
-      Cookie:
-      - AWSALB=840zrDMMQKMPE1ajaIGPiMoBoG64uy8tm2ZHwDMl22aPu7QS9nTZ4p/PhjTy3MncO8W/akYevbQcpvd0gOESz162rPI5pe8qkUxolosixZswyapmpYepOBgxt17f;
-        AWSALBCORS=840zrDMMQKMPE1ajaIGPiMoBoG64uy8tm2ZHwDMl22aPu7QS9nTZ4p/PhjTy3MncO8W/akYevbQcpvd0gOESz162rPI5pe8qkUxolosixZswyapmpYepOBgxt17f
-      User-Agent:
-      - python-welkin/0.0.4
-    method: GET
-    uri: https://api.live.welkincloud.io/tenant_REDACTED/instance_REDACTED/patients/17450e44-c2c8-46c4-9486-0d9bfa16d3aa/chat/search?pageSize=20&contentPageSize=20&includeArchived=False&query=Test
-  response:
-    body:
-      string: '[{"errorCode": "NOT_VALID_JSON_WEB_TOKEN", "componentType": "AUTH",
-        "message": "Not valid JWT", "details": {}, "date": "2022-08-02T20:55:56.874Z"}]'
-    headers:
-      Access-Control-Allow-Headers:
-      - authorization, content-type, xsrf-token, security-role
-      Access-Control-Allow-Methods:
-      - GET, POST, PUT, DELETE, PATCH, OPTIONS
-      Access-Control-Allow-Origin:
-      - '*'
-      Access-Control-Expose-Headers:
-      - xsrf-token
-      Access-Control-Max-Age:
-      - '3600'
-      Cache-Control:
-      - no-cache, no-store, max-age=0, must-revalidate
-      Connection:
-      - keep-alive
-      Content-Type:
-      - application/json
-      Date:
-      - Tue, 02 Aug 2022 20:55:56 GMT
-      Expires:
-      - '0'
-      Pragma:
-      - no-cache
-      Set-Cookie:
-      - AWSALB=rrk/eBRx1a5yjzGm69FjJl1UmwSCbMLC+Y5fYl8CXRWh+ACtNOzcRMjVXgfYDRrBitJpPt7LV5ocEfbJ73xmsRNQss7l+C3uNTCczAWy7Bnoql/13Y1NRppryj32;
-        Expires=Tue, 09 Aug 2022 20:55:56 GMT; Path=/
-      - AWSALBCORS=rrk/eBRx1a5yjzGm69FjJl1UmwSCbMLC+Y5fYl8CXRWh+ACtNOzcRMjVXgfYDRrBitJpPt7LV5ocEfbJ73xmsRNQss7l+C3uNTCczAWy7Bnoql/13Y1NRppryj32;
-        Expires=Tue, 09 Aug 2022 20:55:56 GMT; Path=/; SameSite=None; Secure
-      Transfer-Encoding:
-      - chunked
-      X-Content-Type-Options:
-      - nosniff
-      X-XSS-Protection:
-      - 1; mode=block
-    status:
-      code: 401
-      message: ''
-- request:
-    body: null
-    headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
-      Authorization:
-      - API_TOKEN_cc3180a3-5ccb-4e26-a0bb-001c9e72d39e
-      Connection:
-      - keep-alive
-      Cookie:
-      - AWSALB=IFq8neU0/YWIG//xvILSw/Q36tiXVW64lvVg3MCP1Log0+F7xMJTfIATgKRAWxadDEGQUeHm+rE1ZSbaseftZbolgmyzrI91xhGWQEHvOEG0OC4uIvBCv5FwgVZV;
-        AWSALBCORS=IFq8neU0/YWIG//xvILSw/Q36tiXVW64lvVg3MCP1Log0+F7xMJTfIATgKRAWxadDEGQUeHm+rE1ZSbaseftZbolgmyzrI91xhGWQEHvOEG0OC4uIvBCv5FwgVZV
       User-Agent:
       - python-welkin/0.0.4
     method: GET
@@ -114,16 +52,16 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Tue, 02 Aug 2022 20:55:58 GMT
+      - Tue, 02 Aug 2022 21:10:11 GMT
       Expires:
       - '0'
       Pragma:
       - no-cache
       Set-Cookie:
-      - AWSALB=APnU/2r8TC65QiEcNs6DsoprvOpn/01Zy//6XH9RBNjRfGkSlA/hvPeuX7PxPpqEgm+v2ZbdD9bpZHYylNRbIl205mH5wuzJXtFT6z1cMHOEr+7ltk1LLMB2ORn9;
-        Expires=Tue, 09 Aug 2022 20:55:57 GMT; Path=/
-      - AWSALBCORS=APnU/2r8TC65QiEcNs6DsoprvOpn/01Zy//6XH9RBNjRfGkSlA/hvPeuX7PxPpqEgm+v2ZbdD9bpZHYylNRbIl205mH5wuzJXtFT6z1cMHOEr+7ltk1LLMB2ORn9;
-        Expires=Tue, 09 Aug 2022 20:55:57 GMT; Path=/; SameSite=None; Secure
+      - AWSALB=JxkqlgAXWPpVVq94o0xunu2RDJuyU0cGfAPnqDsa611GoNpaWvixZ37d3SDdZZgPgxFlImSl5JweOyyaNfYg1Q2KXm5eT3pzkC0owrHCoZyOEQfzcwq5Q/C/VcYf;
+        Expires=Tue, 09 Aug 2022 21:10:11 GMT; Path=/
+      - AWSALBCORS=JxkqlgAXWPpVVq94o0xunu2RDJuyU0cGfAPnqDsa611GoNpaWvixZ37d3SDdZZgPgxFlImSl5JweOyyaNfYg1Q2KXm5eT3pzkC0owrHCoZyOEQfzcwq5Q/C/VcYf;
+        Expires=Tue, 09 Aug 2022 21:10:11 GMT; Path=/; SameSite=None; Secure
       Transfer-Encoding:
       - chunked
       X-Content-Type-Options:

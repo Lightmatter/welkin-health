@@ -41,4 +41,4 @@ def test_search_chat(client, vcr_cassette):
     if len(chats) > 20:
         assert len(vcr_cassette) > 1, "Pagination was expected"
     else:
-        assert len(vcr_cassette) == 2, "Unexpected pagination"
+        assert len(vcr_cassette) == 1, "Unexpected pagination"
