@@ -7,17 +7,20 @@ interactions:
       Accept-Encoding:
       - gzip, deflate
       Authorization:
-      - API_TOKEN_2a6d1af4-1a1b-4bd6-9c15-bf18c6ef5560
+      - API_TOKEN_cc3180a3-5ccb-4e26-a0bb-001c9e72d39e
       Connection:
       - keep-alive
+      Cookie:
+      - AWSALB=840zrDMMQKMPE1ajaIGPiMoBoG64uy8tm2ZHwDMl22aPu7QS9nTZ4p/PhjTy3MncO8W/akYevbQcpvd0gOESz162rPI5pe8qkUxolosixZswyapmpYepOBgxt17f;
+        AWSALBCORS=840zrDMMQKMPE1ajaIGPiMoBoG64uy8tm2ZHwDMl22aPu7QS9nTZ4p/PhjTy3MncO8W/akYevbQcpvd0gOESz162rPI5pe8qkUxolosixZswyapmpYepOBgxt17f
       User-Agent:
       - python-welkin/0.0.4
     method: GET
     uri: https://api.live.welkincloud.io/tenant_REDACTED/instance_REDACTED/patients/17450e44-c2c8-46c4-9486-0d9bfa16d3aa/chat/search?pageSize=20&contentPageSize=20&includeArchived=False&query=Test
   response:
     body:
-      string: '[{"errorCode": "TOKEN_EXPIRED", "componentType": "AUTH", "message":
-        "Aws Jwt Token has expired", "details": {}, "date": "2022-08-02T19:01:04.575Z"}]'
+      string: '[{"errorCode": "NOT_VALID_JSON_WEB_TOKEN", "componentType": "AUTH",
+        "message": "Not valid JWT", "details": {}, "date": "2022-08-02T20:55:56.874Z"}]'
     headers:
       Access-Control-Allow-Headers:
       - authorization, content-type, xsrf-token, security-role
@@ -36,16 +39,16 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Tue, 02 Aug 2022 19:01:04 GMT
+      - Tue, 02 Aug 2022 20:55:56 GMT
       Expires:
       - '0'
       Pragma:
       - no-cache
       Set-Cookie:
-      - AWSALB=bqGiOXdfXQCL/PUh21eKoiyPhj6TXrKsBmBaKC2JJH6QxWFJnRox0hj59ZeUjo8dKPHwv/SDbv6WcP6zK+qFqnl0IXeli2sy0UJ3mAPaXAwggUAwfCsSgE3yJ9e5;
-        Expires=Tue, 09 Aug 2022 19:01:04 GMT; Path=/
-      - AWSALBCORS=bqGiOXdfXQCL/PUh21eKoiyPhj6TXrKsBmBaKC2JJH6QxWFJnRox0hj59ZeUjo8dKPHwv/SDbv6WcP6zK+qFqnl0IXeli2sy0UJ3mAPaXAwggUAwfCsSgE3yJ9e5;
-        Expires=Tue, 09 Aug 2022 19:01:04 GMT; Path=/; SameSite=None; Secure
+      - AWSALB=rrk/eBRx1a5yjzGm69FjJl1UmwSCbMLC+Y5fYl8CXRWh+ACtNOzcRMjVXgfYDRrBitJpPt7LV5ocEfbJ73xmsRNQss7l+C3uNTCczAWy7Bnoql/13Y1NRppryj32;
+        Expires=Tue, 09 Aug 2022 20:55:56 GMT; Path=/
+      - AWSALBCORS=rrk/eBRx1a5yjzGm69FjJl1UmwSCbMLC+Y5fYl8CXRWh+ACtNOzcRMjVXgfYDRrBitJpPt7LV5ocEfbJ73xmsRNQss7l+C3uNTCczAWy7Bnoql/13Y1NRppryj32;
+        Expires=Tue, 09 Aug 2022 20:55:56 GMT; Path=/; SameSite=None; Secure
       Transfer-Encoding:
       - chunked
       X-Content-Type-Options:
@@ -63,12 +66,12 @@ interactions:
       Accept-Encoding:
       - gzip, deflate
       Authorization:
-      - API_TOKEN_2a6d1af4-1a1b-4bd6-9c15-bf18c6ef5560
+      - API_TOKEN_cc3180a3-5ccb-4e26-a0bb-001c9e72d39e
       Connection:
       - keep-alive
       Cookie:
-      - AWSALB=cyRyxOOAZTEYa47xfkIPeg/SxjgEw23ssz/7Wlx4hQWNPi90QKdmyTAh35ZHFE/PdrCRUuEZV1Agt9ZofHmiEPWKoY55ykF2QLE15THIE7f3l0+D2HRjuABAe+x+;
-        AWSALBCORS=cyRyxOOAZTEYa47xfkIPeg/SxjgEw23ssz/7Wlx4hQWNPi90QKdmyTAh35ZHFE/PdrCRUuEZV1Agt9ZofHmiEPWKoY55ykF2QLE15THIE7f3l0+D2HRjuABAe+x+
+      - AWSALB=IFq8neU0/YWIG//xvILSw/Q36tiXVW64lvVg3MCP1Log0+F7xMJTfIATgKRAWxadDEGQUeHm+rE1ZSbaseftZbolgmyzrI91xhGWQEHvOEG0OC4uIvBCv5FwgVZV;
+        AWSALBCORS=IFq8neU0/YWIG//xvILSw/Q36tiXVW64lvVg3MCP1Log0+F7xMJTfIATgKRAWxadDEGQUeHm+rE1ZSbaseftZbolgmyzrI91xhGWQEHvOEG0OC4uIvBCv5FwgVZV
       User-Agent:
       - python-welkin/0.0.4
     method: GET
@@ -111,16 +114,16 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Tue, 02 Aug 2022 19:01:05 GMT
+      - Tue, 02 Aug 2022 20:55:58 GMT
       Expires:
       - '0'
       Pragma:
       - no-cache
       Set-Cookie:
-      - AWSALB=iudraW9+f9WyqOqc/tTAZgZRmucNk5WpBaqwlRsPsI7BS3keNWRwLio69f2rRYwCzXyZD5EA2KTMDsi3HnWzHsT2u+efbGjfEngUYYimha3mbB+IFiX2wVv+ecNw;
-        Expires=Tue, 09 Aug 2022 19:01:05 GMT; Path=/
-      - AWSALBCORS=iudraW9+f9WyqOqc/tTAZgZRmucNk5WpBaqwlRsPsI7BS3keNWRwLio69f2rRYwCzXyZD5EA2KTMDsi3HnWzHsT2u+efbGjfEngUYYimha3mbB+IFiX2wVv+ecNw;
-        Expires=Tue, 09 Aug 2022 19:01:05 GMT; Path=/; SameSite=None; Secure
+      - AWSALB=APnU/2r8TC65QiEcNs6DsoprvOpn/01Zy//6XH9RBNjRfGkSlA/hvPeuX7PxPpqEgm+v2ZbdD9bpZHYylNRbIl205mH5wuzJXtFT6z1cMHOEr+7ltk1LLMB2ORn9;
+        Expires=Tue, 09 Aug 2022 20:55:57 GMT; Path=/
+      - AWSALBCORS=APnU/2r8TC65QiEcNs6DsoprvOpn/01Zy//6XH9RBNjRfGkSlA/hvPeuX7PxPpqEgm+v2ZbdD9bpZHYylNRbIl205mH5wuzJXtFT6z1cMHOEr+7ltk1LLMB2ORn9;
+        Expires=Tue, 09 Aug 2022 20:55:57 GMT; Path=/; SameSite=None; Secure
       Transfer-Encoding:
       - chunked
       X-Content-Type-Options:
