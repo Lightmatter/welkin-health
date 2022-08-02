@@ -1,7 +1,8 @@
 from enum import Enum
 
-from welkin.models.base import Collection, MetaInfoIterator, Resource
+from welkin.models.base import Collection, Resource
 from welkin.models.encounter import Encounters
+from welkin.models.pagination import MetaInfoIterator
 
 
 class User(Resource):

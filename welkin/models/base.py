@@ -105,6 +105,8 @@ class PageIterator:
         self.resource = resource
         self.method = method
         self.size = size
+        self.meta_key = None
+        self.meta_dict = {"totalPages": 1, "page": 0, "last": True}
 
         if size != 20:
             kwargs.setdefault("params", {}).update(size=size)
@@ -123,38 +125,32 @@ class PageIterator:
             return self.resources.pop(0)
 
         if not self.last:
-            self.kwargs.setdefault("params", {}).update(page=self.page)
-            results = self.method(
+            self._pre_request()
+
+            self.resources, meta = self.method(
                 self.resource,
-                meta_key=self._get_meta_key(),
-                meta_dict=self._get_meta_dict(),
+                meta_key=self.meta_key,
+                meta_dict=self.meta_dict,
                 *self.args,
                 **self.kwargs,
             )
-            self.resources, meta = results
 
-            self._set_page(meta)
-
-            self._set_last(meta)
+            self._post_request(meta)
 
             return next(self)
 
         raise StopIteration
 
-    def _get_meta_key(self):
+    def _pre_request(self):
         """
-        json.pop("pageable", {}) or json.pop("metaInfo", {}) or json.pop("meta", {})
+        Function to execute before making the next request, e.g. update paging params
         """
-        return None
+        self.kwargs.setdefault("params", {})
 
-    def _get_meta_dict(self):
-        return {"totalPages": 1, "page": 0, "last": True}
-
-    def _set_page(self, meta):
-        self.page = 1
-
-    def _set_last(self, meta):
-        # meta.get("last") or meta.get("lastPage") or not meta.get("nextPageToken")
+    def _post_request(self, meta):
+        """
+        Function to execute after making the next request, e.g. updating page tracking
+        """
         self.last = True
 
     @property
@@ -204,55 +200,3 @@ class Collection(list, SchemaBase):
                 break
 
         return self
-
-
-class PageableIterator(PageIterator):
-    def __iter__(self):
-        self.page = 0
-        return super().__iter__()
-
-    def _get_meta_key(self):
-        return "pageable"
-
-    def _set_page(self, meta):
-        self.page = meta["number"] + 1
-
-    def _set_last(self, meta):
-        self.last = meta.get("last")
-
-
-class MetaInfoIterator(PageIterator):
-    def __iter__(self):
-        self.page = 0
-        return super().__iter__()
-
-    def _get_meta_key(self):
-        return "metaInfo"
-
-    def _set_page(self, meta):
-        self.page = meta["page"] + 1
-
-    def _set_last(self, meta):
-        self.last = meta.get("lastPage")
-
-
-class MetaIterator(PageIterator):
-    def _get_meta_key(self):
-        return "meta"
-
-    def _get_meta_dict(self):
-        return {
-            "nextPageToken": None,
-            "prevPageToken": None,
-            "pageSize": 20,
-            "found": False,
-        }
-
-    def _set_page(self, meta):
-        """
-        As this pagniation style is token based, page will not be included
-        """
-        return
-
-    def _set_last(self, meta):
-        self.last = not meta.get("nextPageToken")

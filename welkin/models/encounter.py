@@ -1,6 +1,7 @@
 from enum import Enum
 
 from welkin.models.base import Collection, Resource
+from welkin.models.pagination import MetaInfoIterator
 
 
 class EncounterStatus(Enum):
@@ -43,6 +44,7 @@ class Encounter(Resource):
 
 class Encounters(Collection):
     resource = Encounter
+    page_iterator_class = MetaInfoIterator
 
     def get(
         self,

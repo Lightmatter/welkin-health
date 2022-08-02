@@ -1,6 +1,7 @@
-from welkin.models.base import Collection, PageableIterator, Resource
+from welkin.models.base import Collection, Resource
 from welkin.models.cdt import CDT, CDTs
 from welkin.models.encounter import Encounter, Encounters
+from welkin.models.pagination import PageableIterator
 
 
 class Patient(Resource):
