@@ -32,9 +32,13 @@ class Resource(dict, SchemaBase):
             value = super().__getattr__(name)
 
         if name in self.nested_objects:
-            return getattr(sys.modules["welkin.models"], self.nested_objects[name])(
-                value
-            )
+            cls = getattr(sys.modules["welkin.models"], self.nested_objects[name])
+            if issubclass(cls, Collection):
+                obj = cls()
+                obj.extend([cls.resource(item) for item in value])
+                value = obj
+            else:
+                value = cls(value)
         return value
 
     def __setattr__(self, name, value):
