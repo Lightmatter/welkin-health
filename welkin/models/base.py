@@ -1,3 +1,6 @@
+import sys
+
+
 class SchemaBase:
     _client = None
     _parent = None
@@ -23,16 +26,16 @@ class Resource(dict, SchemaBase):
     nested_objects = {}
 
     def __getattr__(self, name):
-        if name in self.nested_objects:
-            cls = self.nested_objects[name]
-            try:
-                return cls(super().__getitem__(name))
-            except KeyError:
-                return cls(super().__getattr__(name))
         try:
-            return super().__getitem__(name)
+            value = super().__getitem__(name)
         except KeyError:
-            return super().__getattr__(name)
+            value = super().__getattr__(name)
+
+        if name in self.nested_objects:
+            return getattr(sys.modules["welkin.models"], self.nested_objects[name])(
+                value
+            )
+        return value
 
     def __setattr__(self, name, value):
         super().__setitem__(name, value)
