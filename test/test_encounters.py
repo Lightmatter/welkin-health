@@ -4,6 +4,7 @@ import pytest
 
 from welkin.exceptions import WelkinHTTPError
 from welkin.models.encounter import Encounter, Encounters
+from welkin.models.user import User
 
 UTC = timezone.utc
 
@@ -79,6 +80,19 @@ def test_encounter_patient_read(client, vcr_cassette):
 
     assert isinstance(encounter, Encounter)
     assert encounter.id == "2a8ac491-19bf-4812-9197-dffc2d42cfcf"
+    assert len(vcr_cassette) == 1
+
+
+@pytest.mark.vcr()
+def test_encounter_patient_read_related_data(client, vcr_cassette):
+    patient = client.Patient(id="371dd15c-cedc-4425-a394-d666c8d3fc01")
+
+    encounter = patient.Encounter(id="22c26a65-161f-42c3-bb0f-a976dac8afe6").get(
+        related_data=True
+    )
+
+    assert isinstance(encounter, Encounter)
+    assert isinstance(encounter.userRelatedToCalendarEvent, User)
     assert len(vcr_cassette) == 1
 
 

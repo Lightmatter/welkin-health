@@ -11,6 +11,10 @@ class EncounterStatus(Enum):
 
 
 class Encounter(Resource):
+    nested_objects = {
+        "userRelatedToCalendarEvent": "User",
+    }
+
     def create(self):
         return super().post(
             f"{self._client.instance}/patients/{self._parent.id}/encounters"
