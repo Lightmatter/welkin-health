@@ -3,6 +3,40 @@ from enum import Enum
 from welkin.models.base import Collection, Resource
 
 
+class Assessment(Resource):
+    def create(self):
+        return super().post(
+            f"{self._client.instance}/patients/{self._parent.patientId}/encounters/{self._parent.id}/assessments"
+        )
+
+    def get(self):
+        return super().get(
+            f"{self._client.instance}/patients/{self._parent.patientId}/encounters/{self._parent.id}/assessments/{self.id}"
+        )
+
+    def update(self, **kwargs):
+        return super().patch(
+            f"{self._client.instance}/patients/{self._parent.patientId}/encounters/{self._parent.id}/assessments/{self.id}",
+            kwargs,
+        )
+
+    def delete(self):
+        return super().delete(
+            f"{self._client.instance}/patients/{self._parent.patientId}/encounters/{self._parent.id}/assessments/{self.id}"
+        )
+
+
+class Assessments(Collection):
+    resource = Assessment
+
+    def get(
+        self,
+    ):
+        path = f"{self._client.instance}/patients/{self._parent.patientId}/encounters/{self._parent.id}/assessments"
+
+        return super().get(path)
+
+
 class EncounterStatus(Enum):
     OPEN = "OPEN"
     CANCELLED = "CANCELLED"
@@ -11,7 +45,9 @@ class EncounterStatus(Enum):
 
 
 class Encounter(Resource):
+    subresources = [Assessment, Assessments]
     nested_objects = {
+        "assessmentLinks": "Assessments",
         "userRelatedToCalendarEvent": "User",
     }
 
