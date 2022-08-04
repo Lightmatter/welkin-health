@@ -1,12 +1,17 @@
+from welkin.models.assessment import AssessmentRecord, AssessmentRecords
 from welkin.models.calendar import CalendarEvent, CalendarEvents, Schedules
 from welkin.models.cdt import CDT, CDTs
-from welkin.models.encounter import Encounter, Encounters
+from welkin.models.encounter import Assessment, Assessments, Encounter, Encounters
 from welkin.models.patient import Patient, Patients
 from welkin.models.user import User, Users
 
 # NOTE: If a class isn't imported here and added to __all__, it will not be callable
 # from a `Client` instance. Also, for legibility, keep this list alphabetical.
 __all__ = [
+    "Assessment",
+    "AssessmentRecord",
+    "AssessmentRecords",
+    "Assessments",
     "CalendarEvent",
     "CalendarEvents",
     "CDT",

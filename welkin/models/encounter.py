@@ -6,35 +6,53 @@ from welkin.models.base import Collection, Resource
 class Assessment(Resource):
     def create(self):
         return super().post(
-            f"{self._client.instance}/patients/{self._parent.patientId}/encounters/{self._parent.id}/assessments"
+            f"{self._client.instance}/patients/{self.patientId}/encounters/{self._parent.id}/assessments"
         )
 
     def get(self):
         return super().get(
-            f"{self._client.instance}/patients/{self._parent.patientId}/encounters/{self._parent.id}/assessments/{self.id}"
+            f"{self._client.instance}/patients/{self.patientId}/encounters/{self._parent.id}/assessments/{self.id}"
         )
 
     def update(self, **kwargs):
         return super().patch(
-            f"{self._client.instance}/patients/{self._parent.patientId}/encounters/{self._parent.id}/assessments/{self.id}",
+            f"{self._client.instance}/patients/{self.patientId}/encounters/{self._parent.id}/assessments/{self.id}",
             kwargs,
         )
 
     def delete(self):
         return super().delete(
-            f"{self._client.instance}/patients/{self._parent.patientId}/encounters/{self._parent.id}/assessments/{self.id}"
+            f"{self._client.instance}/patients/{self.patientId}/encounters/{self._parent.id}/assessments/{self.id}"
         )
+
+    @property
+    def patientId(self):
+        if self._parent._parent:
+            return self._parent._parent.id
+        elif getattr(self._parent, "patientId", None):
+            return self._parent.patientId
+        else:
+            return self._parent.encounter.patientId
 
 
 class Assessments(Collection):
     resource = Assessment
 
-    def get(
-        self,
-    ):
-        path = f"{self._client.instance}/patients/{self._parent.patientId}/encounters/{self._parent.id}/assessments"
+    def get(self, patient_id: str = None, encounter_id: str = None):
 
-        return super().get(path)
+        root = f"{self._client.instance}/patients/"
+        if self._parent:
+            if getattr(self._parent, "patientId"):
+                path = (
+                    f"{self._parent.patientId}/encounters/{self._parent.id}/assessments"
+                )
+            else:
+                path = f"{self._parent._parent.id}/encounters/{self._parent.id}/assessments"
+
+        else:
+            path = f"{patient_id}/encounters/{encounter_id}/assessments"
+
+        return super().get(f"{root}{path}")
 
 
 class EncounterStatus(Enum):

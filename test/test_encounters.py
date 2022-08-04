@@ -3,7 +3,7 @@ from datetime import datetime, timedelta, timezone
 import pytest
 
 from welkin.exceptions import WelkinHTTPError
-from welkin.models.encounter import Encounter, Encounters
+from welkin.models.encounter import Assessment, Assessments, Encounter, Encounters
 from welkin.models.user import User
 
 UTC = timezone.utc
@@ -123,3 +123,80 @@ def test_encounter_delete(client, vcr_cassette):
         assert excinfo.value.response.status_code == 404
 
     assert len(vcr_cassette) == 3
+
+
+@pytest.mark.vcr()
+def test_encounter_assessments(client, vcr_cassette):
+    patient = client.Patient(id="371dd15c-cedc-4425-a394-d666c8d3fc01")
+
+    encounter = patient.Encounter(id="22c26a65-161f-42c3-bb0f-a976dac8afe6").get(
+        related_data=True
+    )
+
+    assert isinstance(encounter, Encounter)
+    assert isinstance(encounter.assessmentLinks, Assessments)
+    assert isinstance(encounter.assessmentLinks[0], Assessment)
+    assert len(vcr_cassette) == 1
+
+
+@pytest.mark.vcr()
+def test_encounter_assessments_get(client, vcr_cassette):
+    patient = client.Patient(id="371dd15c-cedc-4425-a394-d666c8d3fc01")
+
+    encounter = patient.Encounter(id="22c26a65-161f-42c3-bb0f-a976dac8afe6").get()
+    assessments = encounter.Assessments().get()
+
+    assert isinstance(assessments, Assessments)
+    assert isinstance(assessments[0], Assessment)
+    assert len(vcr_cassette) == 2
+
+
+@pytest.mark.vcr()
+def test_encounter_assessment_get(client, vcr_cassette):
+    patient = client.Patient(id="371dd15c-cedc-4425-a394-d666c8d3fc01")
+
+    encounter = patient.Encounter(id="22c26a65-161f-42c3-bb0f-a976dac8afe6")
+    assessment = encounter.Assessment(id="7cf6baa2-14d5-4d3a-9416-0ddd729644b8").get()
+
+    assert isinstance(assessment, Assessment)
+    assert assessment.id == "7cf6baa2-14d5-4d3a-9416-0ddd729644b8"
+    assert len(vcr_cassette) == 1
+
+
+@pytest.mark.vcr()
+def test_encounter_assessment_create(client, vcr_cassette):
+    patient = client.Patient(id="371dd15c-cedc-4425-a394-d666c8d3fc01")
+
+    encounter = patient.Encounter(id="22c26a65-161f-42c3-bb0f-a976dac8afe6")
+    assessment = encounter.Assessment(assessmentName="asm-hello-form2").create()
+
+    assert isinstance(assessment, Assessment)
+    assert hasattr(assessment, "id")
+    assert len(vcr_cassette) == 1
+
+
+# @pytest.mark.vcr()
+# def test_encounter_assessment_update(client, vcr_cassette):
+#     patient = client.Patient(id="371dd15c-cedc-4425-a394-d666c8d3fc01")
+
+#     encounter = patient.Encounter(id="22c26a65-161f-42c3-bb0f-a976dac8afe6")
+
+#     assessment = encounter.Assessment(id="7cf6baa2-14d5-4d3a-9416-0ddd729644b8").update(
+#         status="IN_PROGRESS"
+#     )
+
+#     assert isinstance(assessment, Assessment)
+#     assert assessment.id == "7cf6baa2-14d5-4d3a-9416-0ddd729644b8"
+#     assert len(vcr_cassette) == 1
+
+
+# @pytest.mark.vcr()
+# def test_encounter_assessment_delete(client, vcr_cassette):
+#     patient = client.Patient(id="371dd15c-cedc-4425-a394-d666c8d3fc01")
+
+#     encounter = patient.Encounter(id="22c26a65-161f-42c3-bb0f-a976dac8afe6")
+#     assessment = encounter.Assessment(id="7cf6baa2-14d5-4d3a-9416-0ddd729644b8").get()
+
+#     assert isinstance(assessment, Assessment)
+#     assert assessment.id == "7cf6baa2-14d5-4d3a-9416-0ddd729644b8"
+#     assert len(vcr_cassette) == 1
