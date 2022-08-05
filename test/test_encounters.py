@@ -219,13 +219,14 @@ def test_encounter_assessment_create(client, vcr_cassette):
 
 #     encounter = patient.Encounter(id="22c26a65-161f-42c3-bb0f-a976dac8afe6")
 
-#     assessment = encounter.Assessment(id="7cf6baa2-14d5-4d3a-9416-0ddd729644b8").update(
-#         status="IN_PROGRESS"
-#     )
+#     assessment = encounter.Assessment(id="10c6481b-f25b-49cf-9761-33aeced25f46").get()
+#     assessment_record_id = assessment.jsonBody["assessmentRecordId"]
+
+#     assessment.update(assessmentRecordId="c8764b19-ffa3-406a-b446-c971036a7a1d")
 
 #     assert isinstance(assessment, Assessment)
-#     assert assessment.id == "7cf6baa2-14d5-4d3a-9416-0ddd729644b8"
-#     assert len(vcr_cassette) == 1
+#     assert assessment.jsonBody["assessmentRecordId"] != assessment_record_id
+#     assert len(vcr_cassette) == 2
 
 
 # @pytest.mark.vcr()

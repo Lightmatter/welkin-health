@@ -21,7 +21,8 @@ class Assessment(Resource):
         patientId, encounterId = self.get_patient_encounter_id(patient_id, encounter_id)
         return super().patch(
             f"{self._client.instance}/patients/{patientId}/encounters/{encounterId}/assessments/{self.id}",
-            kwargs,
+            None,
+            data=kwargs,
         )
 
     def delete(self, patient_id: str = None, encounter_id: str = None):

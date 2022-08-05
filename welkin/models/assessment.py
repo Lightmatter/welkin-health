@@ -1,7 +1,37 @@
 from welkin.models.base import Collection, Resource
 
 
+class AssessmentRecordAnswers(Resource):
+    def update(self, patient_id: str = None, assessment_record_id: str = None):
+        if isinstance(self._parent, AssessmentRecord):
+            assessmentRecordId = self._parent.id
+            patientId = self._parent.get_patient_id(patient_id)
+        else:
+            assessmentRecordId = assessment_record_id
+            patientId = patient_id
+
+        return super().put(
+            f"{self._client.instance}/patients/{patientId}/assessment-records/{assessmentRecordId}/answers"
+        )
+
+
+class AssessmentRecordStatus(Resource):
+    def update(self, patient_id: str = None, assessment_record_id: str = None):
+        if isinstance(self._parent, AssessmentRecord):
+            assessmentRecordId = self._parent.id
+            patientId = self._parent.get_patient_id(patient_id)
+        else:
+            assessmentRecordId = assessment_record_id
+            patientId = patient_id
+
+        return super().put(
+            f"{self._client.instance}/patients/{patientId}/assessment-records/{assessmentRecordId}"
+        )
+
+
 class AssessmentRecord(Resource):
+    subresources = [AssessmentRecordAnswers]
+
     def create(self, patient_id: str = None):
         return super().post(
             f"{self._client.instance}/patients/{self.get_patient_id(patient_id)}/assessment-records"
@@ -12,16 +42,9 @@ class AssessmentRecord(Resource):
             f"{self._client.instance}/patients/{self.get_patient_id(patient_id)}/assessment-records/{self.id}"
         )
 
-    def update_status(self, patient_id: str = None, **kwargs):
-        return super().put(
-            f"{self._client.instance}/patients/{self.get_patient_id(patient_id)}/assessment-records/{self.id}",
-            kwargs,
-        )
-
-    def update_answers(self, patient_id: str = None, **kwargs):
-        return super().put(
-            f"{self._client.instance}/patients/{self.get_patient_id(patient_id)}/assessment-records/{self.id}/answers",
-            **kwargs,
+    def update(self, patient_id: str = None):
+        return super().get(
+            f"{self._client.instance}/patients/{self.get_patient_id(patient_id)}/assessment-records/{self.id}"
         )
 
     def delete(self, patient_id: str = None):

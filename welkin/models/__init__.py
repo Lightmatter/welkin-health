@@ -1,4 +1,8 @@
-from welkin.models.assessment import AssessmentRecord, AssessmentRecords
+from welkin.models.assessment import (
+    AssessmentRecord,
+    AssessmentRecordAnswers,
+    AssessmentRecords,
+)
 from welkin.models.calendar import CalendarEvent, CalendarEvents, Schedules
 from welkin.models.cdt import CDT, CDTs
 from welkin.models.encounter import Assessment, Assessments, Encounter, Encounters
@@ -10,6 +14,7 @@ from welkin.models.user import User, Users
 __all__ = [
     "Assessment",
     "AssessmentRecord",
+    "AssessmentRecordAnswers",
     "AssessmentRecords",
     "Assessments",
     "CalendarEvent",
