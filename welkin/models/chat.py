@@ -1,5 +1,5 @@
 from welkin.models.base import Collection, Resource
-from welkin.models.pagination import MetaIterator
+from welkin.pagination import MetaIterator
 
 
 class Chat(Resource):
@@ -14,7 +14,7 @@ class Chat(Resource):
 
 class Chats(Collection):
     resource = Chat
-    page_iterator_class = MetaIterator
+    iterator = MetaIterator
 
     def get(
         self,
@@ -43,7 +43,7 @@ class ChatSearchResult(Resource):
 
 class SearchChats(Collection):
     resource = ChatSearchResult
-    page_iterator_class = MetaIterator
+    iterator = MetaIterator
 
     def get(
         self,

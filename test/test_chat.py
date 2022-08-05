@@ -1,6 +1,5 @@
 import pytest
 
-from welkin.exceptions import WelkinHTTPError
 from welkin.models.chat import Chat, Chats, ChatSearchResult, SearchChats
 
 
