@@ -151,6 +151,7 @@ def test_encounter_assessments_get(client, vcr_cassette):
     assert len(vcr_cassette) == 2
 
 
+# these tests show all of the ways one could get an Encounter Assessment
 @pytest.mark.vcr()
 def test_encounter_assessment_get(client, vcr_cassette):
     patient = client.Patient(id="371dd15c-cedc-4425-a394-d666c8d3fc01")
@@ -161,6 +162,43 @@ def test_encounter_assessment_get(client, vcr_cassette):
     assert isinstance(assessment, Assessment)
     assert assessment.id == "7cf6baa2-14d5-4d3a-9416-0ddd729644b8"
     assert len(vcr_cassette) == 1
+
+
+@pytest.mark.vcr()
+def test_encounter_get_assessment_get(client, vcr_cassette):
+    patient = client.Patient(id="371dd15c-cedc-4425-a394-d666c8d3fc01")
+
+    encounter = patient.Encounter(id="22c26a65-161f-42c3-bb0f-a976dac8afe6").get()
+    assessment = encounter.Assessment(id="10c6481b-f25b-49cf-9761-33aeced25f46").get()
+
+    assert isinstance(assessment, Assessment)
+    assert assessment.id == "10c6481b-f25b-49cf-9761-33aeced25f46"
+    assert len(vcr_cassette) == 2
+
+
+@pytest.mark.vcr()
+def test_assessment_get(client, vcr_cassette):
+    assessment = client.Assessment(id="10c6481b-f25b-49cf-9761-33aeced25f46").get(
+        patient_id="371dd15c-cedc-4425-a394-d666c8d3fc01",
+        encounter_id="22c26a65-161f-42c3-bb0f-a976dac8afe6",
+    )
+    assert isinstance(assessment, Assessment)
+    assert assessment.id == "10c6481b-f25b-49cf-9761-33aeced25f46"
+    assert len(vcr_cassette) == 1
+
+
+@pytest.mark.vcr()
+def test_encounter_related_data_assessment_get(client, vcr_cassette):
+    patient = client.Patient(id="371dd15c-cedc-4425-a394-d666c8d3fc01")
+
+    encounter = patient.Encounter(id="22c26a65-161f-42c3-bb0f-a976dac8afe6").get(
+        related_data=True
+    )
+    assessment = encounter.assessmentLinks[-1].get()
+
+    assert isinstance(assessment, Assessment)
+    assert assessment.id == "10c6481b-f25b-49cf-9761-33aeced25f46"
+    assert len(vcr_cassette) == 2
 
 
 @pytest.mark.vcr()
