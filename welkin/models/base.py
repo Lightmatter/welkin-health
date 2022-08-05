@@ -1,5 +1,7 @@
 import sys
 
+from welkin.pagination import PageIterator
+
 
 class SchemaBase:
     _client = None
@@ -99,73 +101,9 @@ class Resource(dict, SchemaBase):
         return self
 
 
-class PageIterator:
-    def __init__(self, collection, resource, method, size=20, *args, **kwargs):
-        self.collection = collection
-        self.resource = resource
-        self.method = method
-        self.size = size
-        self.meta_key = None
-        self.meta_dict = {"totalPages": 1, "page": 0, "last": True}
-
-        if size != 20:
-            kwargs.setdefault("params", {}).update(size=size)
-
-        self.args = args
-        self.kwargs = kwargs
-
-    def __iter__(self):
-        self._resources = []
-        self.last = False
-
-        return self
-
-    def __next__(self):
-        if self.resources:
-            return self.resources.pop(0)
-
-        if not self.last:
-            self._pre_request()
-
-            self.resources, meta = self.method(
-                self.resource,
-                meta_key=self.meta_key,
-                meta_dict=self.meta_dict,
-                *self.args,
-                **self.kwargs,
-            )
-
-            self._post_request(meta)
-
-            return next(self)
-
-        raise StopIteration
-
-    def _pre_request(self):
-        """
-        Function to execute before making the next request, e.g. update paging params
-        """
-        self.kwargs.setdefault("params", {})
-
-    def _post_request(self, meta):
-        """
-        Function to execute after making the next request, e.g. updating page tracking
-        """
-        self.last = True
-
-    @property
-    def resources(self):
-        return self._resources
-
-    @resources.setter
-    def resources(self, value):
-        self._resources = [self.collection.resource(v) for v in value]
-        self.collection.extend(self.resources)
-
-
 class Collection(list, SchemaBase):
     resource = Resource
-    page_iterator_class = PageIterator
+    iterator = PageIterator
 
     def __getitem__(self, index):
         if isinstance(index, slice):
@@ -189,7 +127,7 @@ class Collection(list, SchemaBase):
         return self.request(self._client.patch, *args, **kwargs)
 
     def request(self, method, resource, paginate=False, *args, **kwargs):
-        paginator = self.page_iterator_class(self, resource, method, *args, **kwargs)
+        paginator = self.iterator(self, resource, method, *args, **kwargs)
 
         if paginate:
             return paginator

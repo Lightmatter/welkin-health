@@ -1,7 +1,7 @@
 from welkin.models.base import Collection, Resource
 from welkin.models.cdt import CDT, CDTs
 from welkin.models.encounter import Encounter, Encounters
-from welkin.models.pagination import PageableIterator
+from welkin.pagination import PageableIterator
 
 
 class Patient(Resource):
@@ -25,7 +25,7 @@ class Patient(Resource):
 
 class Patients(Collection):
     resource = Patient
-    page_iterator_class = PageableIterator
+    iterator = PageableIterator
 
     def get(self, filter={}, *args, **kwargs):
         # TODO: Add sort and query arguments.
