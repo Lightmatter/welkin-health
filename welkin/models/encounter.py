@@ -1,38 +1,60 @@
 from enum import Enum
+from sys import modules
 
 from welkin.models.base import Collection, Resource
 
 
 class Assessment(Resource):
-    def create(self):
+    def create(self, patient_id: str = None, encounter_id: str = None):
+        patientId, encounterId = self.get_patient_encounter_id(patient_id, encounter_id)
         return super().post(
-            f"{self._client.instance}/patients/{self.patientId}/encounters/{self._parent.id}/assessments"
+            f"{self._client.instance}/patients/{patientId}/encounters/{encounterId}/assessments"
         )
 
-    def get(self):
+    def get(self, patient_id: str = None, encounter_id: str = None):
+        patientId, encounterId = self.get_patient_encounter_id(patient_id, encounter_id)
         return super().get(
-            f"{self._client.instance}/patients/{self.patientId}/encounters/{self._parent.id}/assessments/{self.id}"
+            f"{self._client.instance}/patients/{patientId}/encounters/{encounterId}/assessments/{self.id}"
         )
 
-    def update(self, **kwargs):
+    def update(self, patient_id: str = None, encounter_id: str = None, **kwargs):
+        patientId, encounterId = self.get_patient_encounter_id(patient_id, encounter_id)
         return super().patch(
-            f"{self._client.instance}/patients/{self.patientId}/encounters/{self._parent.id}/assessments/{self.id}",
+            f"{self._client.instance}/patients/{patientId}/encounters/{encounterId}/assessments/{self.id}",
             kwargs,
         )
 
-    def delete(self):
+    def delete(self, patient_id: str = None, encounter_id: str = None):
+        patientId, encounterId = self.get_patient_encounter_id(patient_id, encounter_id)
         return super().delete(
-            f"{self._client.instance}/patients/{self.patientId}/encounters/{self._parent.id}/assessments/{self.id}"
+            f"{self._client.instance}/patients/{patientId}/encounters/{encounterId}/assessments/{self.id}"
         )
 
     @property
     def patientId(self):
-        if self._parent._parent:
+        if isinstance(
+            self._parent._parent, getattr(modules["welkin.models"], "Patient")
+        ):
             return self._parent._parent.id
-        elif getattr(self._parent, "patientId", None):
+        elif hasattr(self._parent, "patientId"):
             return self._parent.patientId
         else:
+            # this is the related_data = True case on encounters
             return self._parent.encounter.patientId
+
+    def get_patient_encounter_id(self, patient_id, encounter_id):
+        """Helper to retrieve the necessary patient and encounter Ids"""
+        if patient_id:
+            patientId = patient_id
+        else:
+            patientId = self.patientId
+
+        if encounter_id:
+            encounterId = encounter_id
+        else:
+            encounterId = self._parent.id
+
+        return patientId, encounterId
 
 
 class Assessments(Collection):
@@ -42,15 +64,18 @@ class Assessments(Collection):
 
         root = f"{self._client.instance}/patients/"
         if self._parent:
-            if getattr(self._parent, "patientId"):
-                path = (
-                    f"{self._parent.patientId}/encounters/{self._parent.id}/assessments"
-                )
+            encounter_id = self._parent.id
+            if isinstance(
+                self._parent._parent, getattr(modules["welkin.models"], "Patient")
+            ):
+                patient_id = self._parent._parent.id
+            elif hasattr(self._parent, "patientId"):
+                patient_id = self._parent.patientId
             else:
-                path = f"{self._parent._parent.id}/encounters/{self._parent.id}/assessments"
+                # this is the related_data = True case on encounters
+                patient_id = self._parent.encounter.patientId
 
-        else:
-            path = f"{patient_id}/encounters/{encounter_id}/assessments"
+        path = f"{patient_id}/encounters/{encounter_id}/assessments"
 
         return super().get(f"{root}{path}")
 

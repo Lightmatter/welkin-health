@@ -19,7 +19,6 @@ class AssessmentRecord(Resource):
         )
 
     def update_answers(self, **kwargs):
-        print(kwargs)
         return super().put(
             f"{self._client.instance}/patients/{self._parent.id}/assessment-records/{self.id}/answers",
             **kwargs,
