@@ -1,0 +1,168 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - API_TOKEN_5d165f2b-492d-4fd5-932c-ead6d770c881
+      Connection:
+      - keep-alive
+      Cookie:
+      - AWSALB=D+UdH4ftAP1spKTLRGhBKbyB7610lF/eL+4PpPf7HUS3BU1UavIHmnLFB1Hw3dAzhRbJAd5a/2/zNVoVvRYIikrE4ceG3Se1MacOyqTfXwA1AY9LPB8QJo9CK3MT;
+        AWSALBCORS=D+UdH4ftAP1spKTLRGhBKbyB7610lF/eL+4PpPf7HUS3BU1UavIHmnLFB1Hw3dAzhRbJAd5a/2/zNVoVvRYIikrE4ceG3Se1MacOyqTfXwA1AY9LPB8QJo9CK3MT
+      User-Agent:
+      - python-welkin/0.0.4
+    method: GET
+    uri: https://api.live.welkincloud.io/tenant_REDACTED/instance_REDACTED/patients/371dd15c-cedc-4425-a394-d666c8d3fc01/assessment-records/e18a2759-5089-44e7-9d31-cf942476ffab
+  response:
+    body:
+      string: '{"id": "e18a2759-5089-44e7-9d31-cf942476ffab", "createdAt": "2022-08-06T14:51:42.624Z",
+        "updatedAt": "2022-08-06T14:58:49.130Z", "createdBy": "createdBy_REDACTED_276a6f4d-3604-458a-837a-69d0014c6545",
+        "updatedBy": "updatedBy_REDACTED_f27d3043-05c8-45d6-a307-ac0ed5e56e0b", "createdByName":
+        "createdByName_REDACTED_969ff306-0e67-476a-a488-a9eb768c87fb", "updatedByName":
+        "updatedByName_REDACTED_280d83d5-6e0d-4c1d-a005-e87f4529a143", "finalizedDate":
+        null, "localFinalizedDate": null, "localCreatedDate": "2022-08-06T14:51:42.624+00:00",
+        "localUpdatedDate": "2022-08-06T14:58:49.130+00:00", "assessmentName": "asm-hello-form2",
+        "assessmentTitle": "hello-form2", "assessmentCdtName": "_asm-hello-form2",
+        "version": 8, "patientId": "371dd15c-cedc-4425-a394-d666c8d3fc01", "status":
+        "IN_PROGRESS", "answers": {"external_guid": null, "created_at": "2022-08-06T14:51:42.626Z",
+        "external_id": null, "source_type": "ASSESSMENT", "created_by_name": "API_CLIENT:YYZBMHHWDAIT",
+        "created_by": "4927d187-3fb3-4a9b-a42d-0c740f189412", "updated_by_name": "API_CLIENT:YYZBMHHWDAIT",
+        "updated_at": "2022-08-06T14:58:49.130Z", "cdt-hello__cdtf-hi": "abc", "updated_by":
+        "4927d187-3fb3-4a9b-a42d-0c740f189412", "id": "89ae7c2d-3cd4-4359-9a42-155e8c61630d",
+        "source_id": "e18a2759-5089-44e7-9d31-cf942476ffab", "source_name": "asm-hello-form2"},
+        "scoring": {}, "folderId": null, "expirationDate": null, "questions": {},
+        "resolvedCdtValues": {}, "pfa": false}'
+    headers:
+      Access-Control-Allow-Headers:
+      - authorization, content-type, xsrf-token, security-role
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, PATCH, OPTIONS
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - xsrf-token
+      Access-Control-Max-Age:
+      - '3600'
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Sat, 06 Aug 2022 15:00:23 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Set-Cookie:
+      - AWSALB=z08cfwQFoMW3BVg2NeURtwGD2QTgkZX+LG1e/BKrtea6jSWkUgqGB2tyqHCnwUWMR1WGQKzhjHwGRS2vahrTINykO5TgpF1EA9QagWeg8gv2AdnwcapJIhAlkDU6;
+        Expires=Sat, 13 Aug 2022 15:00:23 GMT; Path=/
+      - AWSALBCORS=z08cfwQFoMW3BVg2NeURtwGD2QTgkZX+LG1e/BKrtea6jSWkUgqGB2tyqHCnwUWMR1WGQKzhjHwGRS2vahrTINykO5TgpF1EA9QagWeg8gv2AdnwcapJIhAlkDU6;
+        Expires=Sat, 13 Aug 2022 15:00:23 GMT; Path=/; SameSite=None; Secure
+      Transfer-Encoding:
+      - chunked
+      X-Content-Type-Options:
+      - nosniff
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: ''
+- request:
+    body: '{"id": "e18a2759-5089-44e7-9d31-cf942476ffab", "createdAt": "2022-08-06T14:51:42.624Z",
+      "updatedAt": "2022-08-06T14:58:49.130Z", "createdBy": "4927d187-3fb3-4a9b-a42d-0c740f189412",
+      "updatedBy": "4927d187-3fb3-4a9b-a42d-0c740f189412", "createdByName": "API_CLIENT:YYZBMHHWDAIT",
+      "updatedByName": "API_CLIENT:YYZBMHHWDAIT", "finalizedDate": null, "localFinalizedDate":
+      null, "localCreatedDate": "2022-08-06T14:51:42.624+00:00", "localUpdatedDate":
+      "2022-08-06T14:58:49.130+00:00", "assessmentName": "asm-hello-form2", "assessmentTitle":
+      "hello-form2", "assessmentCdtName": "_asm-hello-form2", "version": 8, "patientId":
+      "371dd15c-cedc-4425-a394-d666c8d3fc01", "status": "COMPLETED", "answers": {"external_guid":
+      null, "created_at": "2022-08-06T14:51:42.626Z", "external_id": null, "source_type":
+      "ASSESSMENT", "created_by_name": "API_CLIENT:YYZBMHHWDAIT", "created_by": "4927d187-3fb3-4a9b-a42d-0c740f189412",
+      "updated_by_name": "API_CLIENT:YYZBMHHWDAIT", "updated_at": "2022-08-06T14:58:49.130Z",
+      "cdt-hello__cdtf-hi": "abc", "updated_by": "4927d187-3fb3-4a9b-a42d-0c740f189412",
+      "id": "89ae7c2d-3cd4-4359-9a42-155e8c61630d", "source_id": "e18a2759-5089-44e7-9d31-cf942476ffab",
+      "source_name": "asm-hello-form2"}, "scoring": {}, "folderId": null, "expirationDate":
+      null, "questions": {}, "resolvedCdtValues": {}, "pfa": false}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - API_TOKEN_5d165f2b-492d-4fd5-932c-ead6d770c881
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1326'
+      Content-Type:
+      - application/json
+      Cookie:
+      - AWSALB=z08cfwQFoMW3BVg2NeURtwGD2QTgkZX+LG1e/BKrtea6jSWkUgqGB2tyqHCnwUWMR1WGQKzhjHwGRS2vahrTINykO5TgpF1EA9QagWeg8gv2AdnwcapJIhAlkDU6;
+        AWSALBCORS=z08cfwQFoMW3BVg2NeURtwGD2QTgkZX+LG1e/BKrtea6jSWkUgqGB2tyqHCnwUWMR1WGQKzhjHwGRS2vahrTINykO5TgpF1EA9QagWeg8gv2AdnwcapJIhAlkDU6
+      User-Agent:
+      - python-welkin/0.0.4
+    method: PUT
+    uri: https://api.live.welkincloud.io/tenant_REDACTED/instance_REDACTED/patients/371dd15c-cedc-4425-a394-d666c8d3fc01/assessment-records/e18a2759-5089-44e7-9d31-cf942476ffab
+  response:
+    body:
+      string: '{"id": "e18a2759-5089-44e7-9d31-cf942476ffab", "createdAt": "2022-08-06T14:51:42.624Z",
+        "updatedAt": "2022-08-06T15:00:23.660Z", "createdBy": "createdBy_REDACTED_8bf44cb9-3714-4c41-b3b0-4e4a386f6e5b",
+        "updatedBy": "updatedBy_REDACTED_111fb1de-58cd-4e4d-9f20-0818b8adb5fc", "createdByName":
+        "createdByName_REDACTED_7d45167c-637d-4ed8-8068-a8349920ab95", "updatedByName":
+        "updatedByName_REDACTED_909b5a42-8dad-4eb6-9b7b-a9e943646da7", "finalizedDate":
+        "2022-08-06T15:00:23.660Z", "localFinalizedDate": "2022-08-06T15:00:23.660+00:00",
+        "localCreatedDate": "2022-08-06T14:51:42.624+00:00", "localUpdatedDate": "2022-08-06T15:00:23.660+00:00",
+        "assessmentName": "asm-hello-form2", "assessmentTitle": "hello-form2", "assessmentCdtName":
+        "_asm-hello-form2", "version": 8, "patientId": "371dd15c-cedc-4425-a394-d666c8d3fc01",
+        "status": "COMPLETED", "answers": {"external_guid": null, "created_at": "2022-08-06T14:51:42.626Z",
+        "external_id": null, "source_type": "ASSESSMENT", "created_by_name": "API_CLIENT:YYZBMHHWDAIT",
+        "created_by": "4927d187-3fb3-4a9b-a42d-0c740f189412", "updated_by_name": "API_CLIENT:YYZBMHHWDAIT",
+        "updated_at": "2022-08-06T14:58:49.130Z", "cdt-hello__cdtf-hi": "abc", "updated_by":
+        "4927d187-3fb3-4a9b-a42d-0c740f189412", "id": "89ae7c2d-3cd4-4359-9a42-155e8c61630d",
+        "source_id": "e18a2759-5089-44e7-9d31-cf942476ffab", "source_name": "asm-hello-form2"},
+        "scoring": {}, "folderId": null, "expirationDate": null, "questions": {"cdt-hello__cdtf-hi":
+        "hi there"}, "resolvedCdtValues": {}, "pfa": false}'
+    headers:
+      Access-Control-Allow-Headers:
+      - authorization, content-type, xsrf-token, security-role
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, PATCH, OPTIONS
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - xsrf-token
+      Access-Control-Max-Age:
+      - '3600'
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Sat, 06 Aug 2022 15:00:23 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Set-Cookie:
+      - AWSALB=8QpiaZZJp2N6fDn6isnzCXx5wG3rhQZ5QWhu9XGiM19qrTdBoCFDclL2jkJwMfEmcCJh9U+WmraGVtkM2Fs99DCm/P1XnL9rLGptrBjmGbgTy4QkCyndiLZJOVB7;
+        Expires=Sat, 13 Aug 2022 15:00:23 GMT; Path=/
+      - AWSALBCORS=8QpiaZZJp2N6fDn6isnzCXx5wG3rhQZ5QWhu9XGiM19qrTdBoCFDclL2jkJwMfEmcCJh9U+WmraGVtkM2Fs99DCm/P1XnL9rLGptrBjmGbgTy4QkCyndiLZJOVB7;
+        Expires=Sat, 13 Aug 2022 15:00:23 GMT; Path=/; SameSite=None; Secure
+      Transfer-Encoding:
+      - chunked
+      X-Content-Type-Options:
+      - nosniff
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: ''
+version: 1

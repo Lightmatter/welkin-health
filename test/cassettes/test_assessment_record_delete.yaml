@@ -1,0 +1,121 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - API_TOKEN_c4b7314f-5df5-4e66-9fe6-a8e1caec5490
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      Cookie:
+      - AWSALB=4zZM1dMx3z7YoQfroo74iTmMBn2MMwHETpVSyRDK7af2cSUFfwpK3+rJErPZRMx4JwhRHCN7Q9xVFd1e0wDpBbHrc/Z7JRREDZPjktH9pBtJvo74DISDErjlY/B5;
+        AWSALBCORS=4zZM1dMx3z7YoQfroo74iTmMBn2MMwHETpVSyRDK7af2cSUFfwpK3+rJErPZRMx4JwhRHCN7Q9xVFd1e0wDpBbHrc/Z7JRREDZPjktH9pBtJvo74DISDErjlY/B5
+      User-Agent:
+      - python-welkin/0.0.4
+    method: DELETE
+    uri: https://api.live.welkincloud.io/tenant_REDACTED/instance_REDACTED/patients/371dd15c-cedc-4425-a394-d666c8d3fc01/assessment-records/4f44ef74-9c82-4174-902b-1f9efebdebb7
+  response:
+    body:
+      string: ''
+    headers:
+      Access-Control-Allow-Headers:
+      - authorization, content-type, xsrf-token, security-role
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, PATCH, OPTIONS
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - xsrf-token
+      Access-Control-Max-Age:
+      - '3600'
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      Date:
+      - Sat, 06 Aug 2022 15:14:47 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Set-Cookie:
+      - AWSALB=5qIeh6S+JlZzK/fQ/qJfDyya7b5LeXAIBv3pHjgpYU2BGNtOY8M0Dqa+LIWczPHA6JMdoVPwXn/PhX+WbTZoSPgoYrx9yJlMSTpZ/KSscyyGO2Cfiha+QnoIBQBr;
+        Expires=Sat, 13 Aug 2022 15:14:47 GMT; Path=/
+      - AWSALBCORS=5qIeh6S+JlZzK/fQ/qJfDyya7b5LeXAIBv3pHjgpYU2BGNtOY8M0Dqa+LIWczPHA6JMdoVPwXn/PhX+WbTZoSPgoYrx9yJlMSTpZ/KSscyyGO2Cfiha+QnoIBQBr;
+        Expires=Sat, 13 Aug 2022 15:14:47 GMT; Path=/; SameSite=None; Secure
+      X-Content-Type-Options:
+      - nosniff
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: ''
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - API_TOKEN_c4b7314f-5df5-4e66-9fe6-a8e1caec5490
+      Connection:
+      - keep-alive
+      Cookie:
+      - AWSALB=5qIeh6S+JlZzK/fQ/qJfDyya7b5LeXAIBv3pHjgpYU2BGNtOY8M0Dqa+LIWczPHA6JMdoVPwXn/PhX+WbTZoSPgoYrx9yJlMSTpZ/KSscyyGO2Cfiha+QnoIBQBr;
+        AWSALBCORS=5qIeh6S+JlZzK/fQ/qJfDyya7b5LeXAIBv3pHjgpYU2BGNtOY8M0Dqa+LIWczPHA6JMdoVPwXn/PhX+WbTZoSPgoYrx9yJlMSTpZ/KSscyyGO2Cfiha+QnoIBQBr
+      User-Agent:
+      - python-welkin/0.0.4
+    method: GET
+    uri: https://api.live.welkincloud.io/tenant_REDACTED/instance_REDACTED/patients/371dd15c-cedc-4425-a394-d666c8d3fc01/assessment-records/4f44ef74-9c82-4174-902b-1f9efebdebb7
+  response:
+    body:
+      string: '[{"errorCode": "ASSESSMENT_RECORD_NOT_FOUND", "componentType": "ASSESSMENT",
+        "message": "Assessment record for patient not found", "details": {"recordId":
+        "4f44ef74-9c82-4174-902b-1f9efebdebb7", "patientId": "371dd15c-cedc-4425-a394-d666c8d3fc01"},
+        "date": "2022-08-06T15:14:47.762Z"}]'
+    headers:
+      Access-Control-Allow-Headers:
+      - authorization, content-type, xsrf-token, security-role
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, PATCH, OPTIONS
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - xsrf-token
+      Access-Control-Max-Age:
+      - '3600'
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Sat, 06 Aug 2022 15:14:47 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Set-Cookie:
+      - AWSALB=EBBHFZraRBChsjf97FSaW7UxiPAS34K6qL6dtfWKqTjaJkAj0FGBdYB1UoA+EdxwuaCXQ/+G9BrpuKFuWn452y9KYRwPcbEm6Dx6jrvoqIlgk4u09whac5QdAOi+;
+        Expires=Sat, 13 Aug 2022 15:14:47 GMT; Path=/
+      - AWSALBCORS=EBBHFZraRBChsjf97FSaW7UxiPAS34K6qL6dtfWKqTjaJkAj0FGBdYB1UoA+EdxwuaCXQ/+G9BrpuKFuWn452y9KYRwPcbEm6Dx6jrvoqIlgk4u09whac5QdAOi+;
+        Expires=Sat, 13 Aug 2022 15:14:47 GMT; Path=/; SameSite=None; Secure
+      Transfer-Encoding:
+      - chunked
+      X-Content-Type-Options:
+      - nosniff
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 404
+      message: ''
+version: 1

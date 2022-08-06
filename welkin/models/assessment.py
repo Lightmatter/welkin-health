@@ -15,20 +15,6 @@ class AssessmentRecordAnswers(Resource):
         )
 
 
-class AssessmentRecordStatus(Resource):
-    def update(self, patient_id: str = None, assessment_record_id: str = None):
-        if isinstance(self._parent, AssessmentRecord):
-            assessmentRecordId = self._parent.id
-            patientId = self._parent.get_patient_id(patient_id)
-        else:
-            assessmentRecordId = assessment_record_id
-            patientId = patient_id
-
-        return super().put(
-            f"{self._client.instance}/patients/{patientId}/assessment-records/{assessmentRecordId}"
-        )
-
-
 class AssessmentRecord(Resource):
     subresources = [AssessmentRecordAnswers]
 
@@ -43,7 +29,7 @@ class AssessmentRecord(Resource):
         )
 
     def update(self, patient_id: str = None):
-        return super().get(
+        return super().put(
             f"{self._client.instance}/patients/{self.get_patient_id(patient_id)}/assessment-records/{self.id}"
         )
 
@@ -57,6 +43,8 @@ class AssessmentRecord(Resource):
 
 
 class AssessmentRecords(Collection):
+    resource = AssessmentRecord
+
     def get(self, patient_id: str = None, **kwargs):
 
         if patient_id:
