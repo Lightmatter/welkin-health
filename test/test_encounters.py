@@ -213,29 +213,33 @@ def test_encounter_assessment_create(client, vcr_cassette):
     assert len(vcr_cassette) == 1
 
 
-# @pytest.mark.vcr()
-# def test_encounter_assessment_update(client, vcr_cassette):
-#     patient = client.Patient(id="371dd15c-cedc-4425-a394-d666c8d3fc01")
+@pytest.mark.vcr()
+def test_encounter_assessment_update(client, vcr_cassette):
+    patient = client.Patient(id="371dd15c-cedc-4425-a394-d666c8d3fc01")
 
-#     encounter = patient.Encounter(id="22c26a65-161f-42c3-bb0f-a976dac8afe6")
+    encounter = patient.Encounter(id="22c26a65-161f-42c3-bb0f-a976dac8afe6")
 
-#     assessment = encounter.Assessment(id="10c6481b-f25b-49cf-9761-33aeced25f46").get()
-#     assessment_record_id = assessment.jsonBody["assessmentRecordId"]
+    assessment = encounter.Assessment(id="4d2be3ba-2be3-4171-a8bf-de68cd8e5a42").get()
+    assessment_record_id = assessment.jsonBody["assessmentRecordId"]
 
-#     assessment.update(assessmentRecordId="c8764b19-ffa3-406a-b446-c971036a7a1d")
+    assessment.update(assessmentRecordId="e18a2759-5089-44e7-9d31-cf942476ffab")
 
-#     assert isinstance(assessment, Assessment)
-#     assert assessment.jsonBody["assessmentRecordId"] != assessment_record_id
-#     assert len(vcr_cassette) == 2
+    assert isinstance(assessment, Assessment)
+    assert assessment.jsonBody["assessmentRecordId"] != assessment_record_id
+    assert len(vcr_cassette) == 2
 
 
-# @pytest.mark.vcr()
-# def test_encounter_assessment_delete(client, vcr_cassette):
-#     patient = client.Patient(id="371dd15c-cedc-4425-a394-d666c8d3fc01")
+@pytest.mark.vcr()
+def test_encounter_assessment_delete(client, vcr_cassette):
+    patient = client.Patient(id="371dd15c-cedc-4425-a394-d666c8d3fc01")
 
-#     encounter = patient.Encounter(id="22c26a65-161f-42c3-bb0f-a976dac8afe6")
-#     assessment = encounter.Assessment(id="7cf6baa2-14d5-4d3a-9416-0ddd729644b8").get()
+    encounter = patient.Encounter(id="22c26a65-161f-42c3-bb0f-a976dac8afe6")
+    assessment = encounter.Assessment(id="4d2be3ba-2be3-4171-a8bf-de68cd8e5a42")
 
-#     assert isinstance(assessment, Assessment)
-#     assert assessment.id == "7cf6baa2-14d5-4d3a-9416-0ddd729644b8"
-#     assert len(vcr_cassette) == 1
+    assessment.delete()
+    with pytest.raises(WelkinHTTPError) as excinfo:
+        assessment.get()
+
+        assert excinfo.value.response.status_code == 404
+
+    assert len(vcr_cassette) == 2

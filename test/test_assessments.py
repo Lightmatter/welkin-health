@@ -75,7 +75,6 @@ def test_assessment_record_create(client, vcr_cassette):
 
     assert isinstance(assmt_record, AssessmentRecord)
     assert hasattr(assmt_record, "id")
-    print(assmt_record.id)
     assert len(vcr_cassette) == 1
 
 
