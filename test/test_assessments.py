@@ -1,12 +1,7 @@
 import pytest
 
 from welkin.exceptions import WelkinHTTPError
-from welkin.models.assessment import (
-    AssessmentRecord,
-    AssessmentRecordAnswers,
-    AssessmentRecords,
-)
-from welkin.models.patient import Patient
+from welkin.models.assessment import AssessmentRecord, AssessmentRecords
 
 
 @pytest.mark.vcr()
