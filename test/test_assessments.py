@@ -103,7 +103,7 @@ def test_assessment_records_get(client, vcr_cassette):
         assert len(vcr_cassette) == 1, "Unexpected pagination"
 
 
-@pytest.mark.vcr()
+@pytest.mark.vcr(vcr_cassette_name="test_assessment_records_get_patient_id.yaml")
 def test_assessment_records_get_patient_id(client, vcr_cassette):
     assmt_records = client.AssessmentRecords().get(
         patient_id="371dd15c-cedc-4425-a394-d666c8d3fc01"
