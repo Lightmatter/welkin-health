@@ -1,6 +1,7 @@
 from sys import modules
 
 from welkin.models.base import Collection, Resource
+from welkin.pagination import PageableIterator
 
 
 class Assessment(Resource):
@@ -67,6 +68,7 @@ class Assessment(Resource):
 
 class Assessments(Collection):
     resource = Assessment
+    iterator = PageableIterator
 
     def get(self, patient_id: str = None, encounter_id: str = None):
 
@@ -154,6 +156,7 @@ class AssessmentRecord(Resource):
 
 class AssessmentRecords(Collection):
     resource = AssessmentRecord
+    iterator = PageableIterator
 
     @patient_id
     def get(self, patient_id: str = None, **kwargs):
