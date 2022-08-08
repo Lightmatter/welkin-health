@@ -1,11 +1,12 @@
 from welkin.models.assessment import (
+    Assessment,
     AssessmentRecord,
     AssessmentRecordAnswers,
     AssessmentRecords,
 )
 from welkin.models.calendar import CalendarEvent, CalendarEvents, Schedules
 from welkin.models.cdt import CDT, CDTs
-from welkin.models.encounter import Assessment, Assessments, Encounter, Encounters
+from welkin.models.encounter import Encounter, Encounters
 from welkin.models.patient import Patient, Patients
 from welkin.models.user import User, Users
 
