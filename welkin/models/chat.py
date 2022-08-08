@@ -3,9 +3,9 @@ from welkin.pagination import MetaIterator
 
 
 class Chat(Resource):
-    def create(self, patient_id: str):
+    def create(self):
         return super().post(
-            f"{self._client.instance}/patients/{patient_id}/chat/inbound"
+            f"{self._client.instance}/patients/{self._parent.id}/chat/inbound"
         )
 
     def __str__(self):
@@ -18,7 +18,6 @@ class Chats(Collection):
 
     def get(
         self,
-        patient_id: str,
         pageSize: int = 20,
         includeArchived: bool = False,
         pageToken: str = None,
@@ -33,7 +32,7 @@ class Chats(Collection):
             params["pageSize"] = pageSize
 
         return super().get(
-            f"{self._client.instance}/patients/{patient_id}/chat", params=params
+            f"{self._client.instance}/patients/{self._parent.id}/chat", params=params
         )
 
 
@@ -47,7 +46,6 @@ class SearchChats(Collection):
 
     def get(
         self,
-        patient_id: str,
         query: str = None,
         pageToken: str = None,
         pageSize: int = 20,
@@ -67,5 +65,6 @@ class SearchChats(Collection):
             params["pageToken"] = pageToken
 
         return super().get(
-            f"{self._client.instance}/patients/{patient_id}/chat/search", params=params
+            f"{self._client.instance}/patients/{self._parent.id}/chat/search",
+            params=params,
         )

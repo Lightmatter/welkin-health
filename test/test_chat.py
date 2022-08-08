@@ -7,7 +7,8 @@ from welkin.models.chat import Chat, Chats, ChatSearchResult, SearchChats
 def test_create_chat(client, vcr_cassette):
     patient_id = "17450e44-c2c8-46c4-9486-0d9bfa16d3aa"
     message = "Foo Baz."
-    chat = client.Chat(message=message).create(patient_id=patient_id)
+    patient = client.Patient(id=patient_id)
+    chat = patient.Chat(message=message).create()
 
     assert isinstance(chat, Chat)
     assert chat.message == message
@@ -17,7 +18,8 @@ def test_create_chat(client, vcr_cassette):
 @pytest.mark.vcr()
 def test_read_chat(client, vcr_cassette):
     patient_id = "17450e44-c2c8-46c4-9486-0d9bfa16d3aa"
-    chats = client.Chats().get(patient_id=patient_id)
+    patient = client.Patient(id=patient_id)
+    chats = patient.Chats().get()
 
     assert isinstance(chats, Chats)
     if len(chats) > 0:
@@ -30,7 +32,8 @@ def test_read_chat(client, vcr_cassette):
 def test_search_chat(client, vcr_cassette):
     patient_id = "17450e44-c2c8-46c4-9486-0d9bfa16d3aa"
     query = "Test"
-    chats = client.SearchChats().get(patient_id=patient_id, query=query)
+    patient = client.Patient(id=patient_id)
+    chats = patient.SearchChats().get(query=query)
 
     assert isinstance(chats, SearchChats)
     if len(chats) > 0:
