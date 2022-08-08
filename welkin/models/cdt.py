@@ -1,6 +1,7 @@
 from datetime import datetime
 
 from welkin.models.base import Collection, Resource
+from welkin.pagination import PageNumberIterator
 
 
 class CDT(Resource):
@@ -28,6 +29,7 @@ class CDT(Resource):
 
 class CDTs(Collection):
     resource = CDT
+    iterator = PageNumberIterator
 
     def get(
         self,

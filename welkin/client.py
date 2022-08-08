@@ -142,7 +142,15 @@ class Client(Session):
 
         return super().prepare_request(request)
 
-    def request(self, method: str, path: str, *args, **kwargs):
+    def request(
+        self,
+        method: str,
+        path: str,
+        meta_key: str = None,
+        meta_dict: dict = {},
+        *args,
+        **kwargs,
+    ):
         """Override :obj:`Session` request method to add retries and output JSON.
 
         Args:
@@ -187,12 +195,12 @@ class Client(Session):
         if isinstance(json, list):
             json = {
                 "content": json,
-                "metaInfo": {"totalPages": 1, "page": 0, "last": True},
+                meta_key: meta_dict,
             }
         elif "rows" in json:
             json = {
                 "content": json.pop("rows"),
-                "metaInfo": {"totalPages": 1, "page": 0, "last": True},
+                meta_key: meta_dict,
             }
 
         # Pull out the resource
@@ -200,21 +208,24 @@ class Client(Session):
             resource = json.pop("content", None)
         else:
             resource = json.pop("data", None)
+
+        meta = None
+
         # specifically with cdts the resource and metadata are both in the data dict
         if isinstance(resource, dict) and "content" in resource:
             new_resource = resource.pop("content", None)
-            meta = resource.pop("pageable", {}) or resource.pop("metaInfo", {})
+            meta = resource.pop(meta_key, {})
             meta.update(json)
             meta.update(resource)
             resource = new_resource
 
-        else:
-            # Response metadata for pagination
-            meta = json.pop("pageable", {}) or json.pop("metaInfo", {})
+        # Response metadata for pagination
+        if meta_key:
+            if not meta:
+                meta = json.pop(meta_key, {})
             meta.update(json)
-
-        if "totalPages" in meta:
             return resource, meta
+
         return resource or json
 
     def get_token(self) -> dict:
