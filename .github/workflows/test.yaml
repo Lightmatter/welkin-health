@@ -32,7 +32,10 @@ jobs:
         python-version: ${{ fromJson(needs.get-python-versions.outputs.python-matrix) }}
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+
       - name: Set up Python ${{ matrix.python-version }}
         uses: actions/setup-python@v2
         with:
