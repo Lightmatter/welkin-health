@@ -3,6 +3,7 @@ from welkin.models.assessment import (
     AssessmentRecord,
     AssessmentRecordAnswers,
     AssessmentRecords,
+    Assessments,
 )
 from welkin.models.calendar import CalendarEvent, CalendarEvents, Schedules
 from welkin.models.cdt import CDT, CDTs
