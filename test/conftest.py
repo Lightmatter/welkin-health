@@ -7,6 +7,11 @@ import pytest
 from welkin import Client
 
 
+def pytest_collection_modifyitems(items):
+    # Ensure auth tests execute first, otherwise all other tests will fail.
+    items.sort(key=lambda x: True if "authentication" not in x.nodeid else False)
+
+
 def redact(field_name, extra=""):
     parts = [field_name, extra, str(uuid.uuid4())]
 
