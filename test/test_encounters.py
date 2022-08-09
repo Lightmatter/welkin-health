@@ -246,17 +246,17 @@ def test_encounter_assessment_delete(client, vcr_cassette):
     assert len(vcr_cassette) == 2
 
 
-# @pytest.mark.vcr()
-# def test_encounter_disposition_get_nested(client, vcr_cassette):
-#     patient = client.Patient(id="173a8adf-92e8-4832-8900-027c71b0d768")
-#     encounter = patient.Encounter(id="d6f4b66e-1be6-403a-ae47-1bbcee264c5e").get(
-#         related_data=True
-#     )
-#     disposition = encounter.disposition
+@pytest.mark.vcr()
+def test_encounter_disposition_get_nested(client, vcr_cassette):
+    patient = client.Patient(id="173a8adf-92e8-4832-8900-027c71b0d768")
+    encounter = patient.Encounter(id="d6f4b66e-1be6-403a-ae47-1bbcee264c5e").get(
+        related_data=True
+    )
+    disposition = encounter.disposition
 
-#     assert isinstance(disposition, Disposition)
-#     assert hasattr(disposition, "id")
-#     assert len(vcr_cassette) == 1
+    assert isinstance(disposition, Disposition)
+    assert hasattr(disposition, "id")
+    assert len(vcr_cassette) == 1
 
 
 @pytest.mark.vcr()
@@ -270,12 +270,15 @@ def test_encounter_disposition_get(client, vcr_cassette):
     assert len(vcr_cassette) == 1
 
 
-# @pytest.mark.vcr()
-# def test_encounter_disposition_get_patient_id_encounter_id(client, vcr_cassette):
-#     disposition = client.Disposition().get(
-#         patient_id="173a8adf-92e8-4832-8900-027c71b0d768",
-#         encounter_id="d6f4b66e-1be6-403a-ae47-1bbcee264c5e",
-#     )
+@pytest.mark.vcr()
+def test_encounter_disposition_get_patient_id_encounter_id(client, vcr_cassette):
+    disposition = client.Disposition().get(
+        patient_id="173a8adf-92e8-4832-8900-027c71b0d768",
+        encounter_id="d6f4b66e-1be6-403a-ae47-1bbcee264c5e",
+    )
+    assert isinstance(disposition, Disposition)
+    assert disposition.id == "8cd87974-b1cb-4a6f-8873-71d5d188c4aa"
+    assert len(vcr_cassette) == 1
 
 
 @pytest.mark.vcr()
@@ -286,7 +289,7 @@ def test_encounter_disposition_update(client, vcr_cassette):
 
     review = disposition.jsonBody["uicedf-review"]
 
-    disposition.update(**{"uicedf-review": "good stuff keep it up"})
+    disposition.update(**{"uicedf-review": "great health"})
 
     assert disposition.jsonBody["uicedf-review"] != review
     assert len(vcr_cassette) == 2
