@@ -135,14 +135,19 @@ class MetaIterator(PageIterator):
             "pageSize": self.size,
             "found": False,
         }
+        self.kwargs.setdefault("params", {}).update(pageSize=self.size)
+
+        if "page_token" in kwargs:
+            self.page_token = kwargs["page_token"]
 
     def __iter__(self):
-        self.pageToken = None
+        self.page_token = None
         return super().__iter__()
 
     def _pre_request(self):
-        self.kwargs.setdefault("params", {}).update(pageToken=self.pageToken)
+        if self.page_token:
+            self.kwargs["params"] = {"pageToken": self.page_token}
 
     def _post_request(self, meta):
-        self.pageToken = meta["nextPageToken"]
+        self.page_token = meta["nextPageToken"]
         self.last = not meta.get("nextPageToken")

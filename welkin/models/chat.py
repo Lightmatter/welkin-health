@@ -16,23 +16,15 @@ class Chats(Collection):
     resource = Chat
     iterator = MetaIterator
 
-    def get(
-        self,
-        pageSize: int = 20,
-        includeArchived: bool = False,
-        pageToken: str = None,
-    ):
+    def get(self, include_archived: bool = False, **kwargs):
         params = {
-            "includeArchived": includeArchived,
+            "includeArchived": include_archived,
         }
-        # pageToken and pageSize are mutually exclusive
-        if pageToken:
-            params["pageToken"] = pageToken
-        else:
-            params["pageSize"] = pageSize
 
         return super().get(
-            f"{self._client.instance}/patients/{self._parent.id}/chat", params=params
+            f"{self._client.instance}/patients/{self._parent.id}/chat",
+            params=params,
+            **kwargs,
         )
 
 
@@ -46,25 +38,19 @@ class SearchChats(Collection):
 
     def get(
         self,
-        query: str = None,
-        pageToken: str = None,
-        pageSize: int = 20,
-        contentPageSize: int = 20,
-        includeArchived: bool = False,
+        query: str,
+        content_page_size: int = 20,
+        include_archived: bool = False,
+        **kwargs,
     ):
-        if not query and not pageToken:
-            raise Exception('"query" or "pageToken" required.')
         params = {
-            "pageSize": pageSize,
-            "contentPageSize": contentPageSize,
-            "includeArchived": includeArchived,
+            "query": query,
+            "contentPageSize": content_page_size,
+            "includeArchived": include_archived,
         }
-        if query:
-            params["query"] = query
-        else:
-            params["pageToken"] = pageToken
 
         return super().get(
             f"{self._client.instance}/patients/{self._parent.id}/chat/search",
             params=params,
+            **kwargs,
         )
