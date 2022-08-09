@@ -179,7 +179,6 @@ class Client(Session):
                     msg = response.json()
                     codes = ["NOT_VALID_JSON_WEB_TOKEN", "TOKEN_EXPIRED"]
                     if any(i.get("errorCode") in codes for i in msg):
-                        breakpoint()
                         self.auth.refresh_token()
                         continue
 
