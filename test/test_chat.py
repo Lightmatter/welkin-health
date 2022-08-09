@@ -25,6 +25,7 @@ def test_read_chat(client, vcr_cassette):
     if len(chats) > 0:
         assert isinstance(chats[0], Chat)
         assert chats[0].message
+        assert str(chats[0]) == "PATIENT Foo Baz."
     assert len(vcr_cassette) == 1
 
 
