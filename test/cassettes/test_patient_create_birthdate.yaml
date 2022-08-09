@@ -1,0 +1,75 @@
+interactions:
+- request:
+    body: '{"firstName": "happy", "lastName": "borf", "birthDate": "2022-08-09T00:00:00.000Z"}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - API_TOKEN_38a40ec6-98bc-4b47-86b9-7d83d0937577
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '83'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-welkin/0.0.4
+    method: POST
+    uri: https://api.live.welkincloud.io/tenant_REDACTED/instance_REDACTED/patients
+  response:
+    body:
+      string: '{"id": "35e28b21-80c2-4563-8961-75c9306b574b", "externalGuid": null,
+        "externalId": null, "mrn": null, "nric": null, "createdAt": "2022-08-09T22:54:13.368Z",
+        "updatedAt": "2022-08-09T22:54:13.368Z", "createdBy": "createdBy_REDACTED_9cf25126-07c2-4a95-8a16-c8610d3156f1",
+        "updatedBy": "updatedBy_REDACTED_6529353c-8792-4072-9a7d-4e94de1e87ea", "createdByName":
+        "createdByName_REDACTED_52a2cc86-b3a2-4f77-bf3f-9a81c79d1f29", "updatedByName":
+        "updatedByName_REDACTED_57d0c04f-c47f-4c28-b1ba-455aa3efff19", "firstName":
+        "happy", "lastName": "borf", "middleName": null, "birthDate": "2022-08-09T00:00:00.000Z",
+        "gender": "UNKNOWN", "maritalStatus": "UKN", "primaryLanguage": "ENGLISH",
+        "secondaryLanguage": null, "email": null, "secondaryEmail": null, "phone":
+        null, "primaryPhoneCapabilities": [], "secondaryPhone": null, "secondaryPhoneCapabilities":
+        [], "country": null, "state": null, "city": null, "zip": null, "addressLine1":
+        null, "addressLine2": null, "timezone": null, "patientTerritories": [], "careTeamMembers":
+        [], "patientPrograms": [], "careTeam": [], "cadence": [], "patientRegion":
+        null, "patientRegionTitle": null, "patientTerritory": null, "pointOfContact":
+        null}'
+    headers:
+      Access-Control-Allow-Headers:
+      - authorization, content-type, xsrf-token, security-role
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, PATCH, OPTIONS
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - xsrf-token
+      Access-Control-Max-Age:
+      - '3600'
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 09 Aug 2022 22:54:13 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Set-Cookie:
+      - AWSALB=yVSMsXnqD6/P3kXSmmxZCvXzVNTvMexIHuZAgjKQjnMvX5UbW2K1QT/zs6Xbzdu96YzvBeBZwWHXrVorArjQCTulYNpH54A9eowDq2cfgIKd9bSRdL12ULF14zD0;
+        Expires=Tue, 16 Aug 2022 22:54:13 GMT; Path=/
+      - AWSALBCORS=yVSMsXnqD6/P3kXSmmxZCvXzVNTvMexIHuZAgjKQjnMvX5UbW2K1QT/zs6Xbzdu96YzvBeBZwWHXrVorArjQCTulYNpH54A9eowDq2cfgIKd9bSRdL12ULF14zD0;
+        Expires=Tue, 16 Aug 2022 22:54:13 GMT; Path=/; SameSite=None; Secure
+      Transfer-Encoding:
+      - chunked
+      X-Content-Type-Options:
+      - nosniff
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 201
+      message: ''
+version: 1
