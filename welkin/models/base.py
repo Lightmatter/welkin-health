@@ -82,7 +82,19 @@ class Resource(dict, SchemaBase):
 
         return self
 
-    def put(self, resource, data, *args, **kwargs):
+    def put(self, resource, *args, **kwargs):
+        response = self._client.put(
+            resource,
+            json=self,
+            *args,
+            **kwargs,
+        )
+
+        super().update(response)
+
+        return self
+
+    def patch_as_put(self, resource, data, *args, **kwargs):
         response = self._client.put(
             resource,
             json=data,

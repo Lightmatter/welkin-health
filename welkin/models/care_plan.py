@@ -14,7 +14,7 @@ class CarePlan(Resource):
         )
 
     def update(self, **kwargs):
-        return super().put(
+        return super().patch_as_put(
             f"{self._client.instance}/patients/{self._parent.id}/care-plan/overview",
             kwargs,
         )
