@@ -1,0 +1,69 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - API_TOKEN_d0a83d67-9b80-4ebe-97bb-2d11db9ec003
+      Connection:
+      - keep-alive
+      Cookie:
+      - AWSALB=FGwpBnPTCyiCOJzaSxGipT/pgUbutUJu1UnkAZboYohSaUaHranMr1xiJi7QYOjBz6RGSSrEoxNBe82//fZ9jzXCU9NEz1XMrmSJrWVJDeUN4zVg8+Hy7VnqLguL;
+        AWSALBCORS=FGwpBnPTCyiCOJzaSxGipT/pgUbutUJu1UnkAZboYohSaUaHranMr1xiJi7QYOjBz6RGSSrEoxNBe82//fZ9jzXCU9NEz1XMrmSJrWVJDeUN4zVg8+Hy7VnqLguL
+      User-Agent:
+      - python-welkin/0.0.4
+    method: GET
+    uri: https://api.live.welkincloud.io/tenant_REDACTED/instance_REDACTED/patients/173a8adf-92e8-4832-8900-027c71b0d768/encounters/d6f4b66e-1be6-403a-ae47-1bbcee264c5e/disposition
+  response:
+    body:
+      string: '{"id": "8cd87974-b1cb-4a6f-8873-71d5d188c4aa", "patientId": "173a8adf-92e8-4832-8900-027c71b0d768",
+        "cdtId": "c4c7f925-8da1-4e88-93b6-9afd4dda9421", "version": 6, "jsonBody":
+        {"external_guid": null, "notes": null, "uicedf-treatment": null, "uicedf-review":
+        "grreeat 10/10", "created_at": "2022-08-09T13:26:18.139Z", "source_type":
+        "ENCOUNTER", "external_id": null, "created_by_name": "Eddie Cohen", "created_by":
+        "379298b5-1b4e-48cb-a60f-e6d9cb9a5e65", "updated_by_name": "API_CLIENT:YJTWKVSGOBFE",
+        "updated_at": "2022-08-09T15:12:23.939Z", "updated_by": "4f576fa5-af07-4473-99ea-6afb4956e243",
+        "id": "8cd87974-b1cb-4a6f-8873-71d5d188c4aa", "source_id": "d6f4b66e-1be6-403a-ae47-1bbcee264c5e",
+        "uicedf-next-steps": "take yer pills", "source_name": "__encounter__"}, "cdtName":
+        "__encounter_disposition__"}'
+    headers:
+      Access-Control-Allow-Headers:
+      - authorization, content-type, xsrf-token, security-role
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, PATCH, OPTIONS
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - xsrf-token
+      Access-Control-Max-Age:
+      - '3600'
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 09 Aug 2022 16:16:04 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Set-Cookie:
+      - AWSALB=EVfd6QPxLdOAMvVjxDD/JhCk2aK1MXpszu38TNccDOMB/vbRBLQfm2k0ig4QQHtOM5MvBI3KWNT4R9bUgCnedBPFAdFGJ2ML64higggc4BWWsA9kRcQx4EOJiJ/S;
+        Expires=Tue, 16 Aug 2022 16:16:04 GMT; Path=/
+      - AWSALBCORS=EVfd6QPxLdOAMvVjxDD/JhCk2aK1MXpszu38TNccDOMB/vbRBLQfm2k0ig4QQHtOM5MvBI3KWNT4R9bUgCnedBPFAdFGJ2ML64higggc4BWWsA9kRcQx4EOJiJ/S;
+        Expires=Tue, 16 Aug 2022 16:16:04 GMT; Path=/; SameSite=None; Secure
+      Transfer-Encoding:
+      - chunked
+      X-Content-Type-Options:
+      - nosniff
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: ''
+version: 1
