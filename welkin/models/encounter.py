@@ -2,7 +2,27 @@ from enum import Enum
 
 from welkin.models.assessment import Assessment, Assessments
 from welkin.models.base import Collection, Resource
+from welkin.models.util import EncounterSubResource, patient_id
 from welkin.pagination import MetaInfoIterator
+
+
+class EncounterDisposition(Resource, EncounterSubResource):
+    def get(self, patient_id: str = None, encounter_id: str = None):
+        patient_id, encounter_id = self.get_patient_encounter_id(
+            patient_id, encounter_id
+        )
+        return super().get(
+            f"{self._client.instance}/patients/{patient_id}/encounters/{encounter_id}/disposition"
+        )
+
+    def update(self, patient_id: str = None, encounter_id: str = None, **kwargs):
+        patient_id, encounter_id = self.get_patient_encounter_id(
+            patient_id, encounter_id
+        )
+        return super().patch(
+            f"{self._client.instance}/patients/{patient_id}/encounters/{encounter_id}/disposition",
+            kwargs,
+        )
 
 
 class EncounterStatus(Enum):
@@ -19,29 +39,31 @@ class Encounter(Resource):
         "userRelatedToCalendarEvent": "User",
     }
 
-    def create(self):
-        return super().post(
-            f"{self._client.instance}/patients/{self._parent.id}/encounters"
-        )
+    @patient_id
+    def create(self, patient_id: str = None):
+        return super().post(f"{self._client.instance}/patients/{patient_id}/encounters")
 
-    def get(self, related_data: bool = False):
+    @patient_id
+    def get(self, patient_id: str = None, related_data: bool = False):
         encounters = "encounters"
         if related_data:
             encounters = "full-encounters"
 
         return super().get(
-            f"{self._client.instance}/patients/{self._parent.id}/{encounters}/{self.id}"
+            f"{self._client.instance}/patients/{patient_id}/{encounters}/{self.id}"
         )
 
-    def update(self, **kwargs):
+    @patient_id
+    def update(self, patient_id: str = None, **kwargs):
         return super().patch(
-            f"{self._client.instance}/patients/{self._parent.id}/encounters/{self.id}",
+            f"{self._client.instance}/patients/{patient_id}/encounters/{self.id}",
             kwargs,
         )
 
-    def delete(self):
+    @patient_id
+    def delete(self, patient_id: str = None):
         return super().delete(
-            f"{self._client.instance}/patients/{self._parent.id}/encounters/{self.id}"
+            f"{self._client.instance}/patients/{patient_id}/encounters/{self.id}"
         )
 
 

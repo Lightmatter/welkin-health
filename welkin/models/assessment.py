@@ -1,10 +1,11 @@
 from sys import modules
 
 from welkin.models.base import Collection, Resource
+from welkin.models.util import EncounterSubResource
 from welkin.pagination import PageableIterator
 
 
-class Assessment(Resource):
+class Assessment(Resource, EncounterSubResource):
     def create(self, patient_id: str = None, encounter_id: str = None):
         patient_id, encounter_id = self.get_patient_encounter_id(
             patient_id, encounter_id
@@ -42,31 +43,10 @@ class Assessment(Resource):
             f"assessments/{self.id}"
         )
 
-    @property
-    def patient_id(self):
-        if isinstance(
-            self._parent._parent, getattr(modules["welkin.models"], "Patient")
-        ):
-            return self._parent._parent.id
 
-        if hasattr(self._parent, "patientId"):
-            return self._parent.patientId
-
-        # this is the related_data = True case on encounters
-        return self._parent.encounter.patientId
-
-    def get_patient_encounter_id(self, patient_id, encounter_id):
-        """Helper to retrieve the necessary patient and encounter Ids"""
-        if not patient_id:
-            patient_id = self.patient_id
-
-        if not encounter_id:
-            encounter_id = self._parent.id
-
-        return patient_id, encounter_id
-
-
-class Assessments(Collection):
+class Assessments(
+    Collection,
+):
     resource = Assessment
     iterator = PageableIterator
 
