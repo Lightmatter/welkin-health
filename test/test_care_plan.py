@@ -1,0 +1,39 @@
+import pytest
+
+from welkin.models import CarePlan
+
+
+@pytest.mark.vcr()
+def test_care_plan_create(client, vcr_cassette):
+    patient = client.Patient(id="173a8adf-92e8-4832-8900-027c71b0d768")
+
+    overview_message = "This is a message for the overview."
+
+    care_plan = patient.CarePlan(overview=overview_message)
+
+    created_cp = care_plan.create()
+
+    assert isinstance(created_cp, CarePlan)
+    assert len(vcr_cassette) == 1
+
+
+@pytest.mark.vcr()
+def test_care_plan_read(client, vcr_cassette):
+    patient = client.Patient(id="173a8adf-92e8-4832-8900-027c71b0d768")
+    care_plan = patient.CarePlan().get()
+
+    assert isinstance(care_plan, CarePlan)
+    assert care_plan.id
+    assert len(vcr_cassette) == 1
+
+
+@pytest.mark.vcr()
+def test_care_plan_update(client, vcr_cassette):
+    patient = client.Patient(id="173a8adf-92e8-4832-8900-027c71b0d768")
+    care_plan = patient.CarePlan().get()
+    overview = care_plan.patientOverview["overview"]
+
+    care_plan.update(overview="New overview message.")
+
+    assert care_plan.overview != overview
+    assert len(vcr_cassette) == 2

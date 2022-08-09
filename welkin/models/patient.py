@@ -1,5 +1,6 @@
 from welkin.models.assessment import AssessmentRecord, AssessmentRecords
 from welkin.models.base import Collection, Resource
+from welkin.models.care_plan import CarePlan
 from welkin.models.cdt import CDT, CDTs
 from welkin.models.chat import Chat, Chats, SearchChats
 from welkin.models.encounter import Encounter, Encounters
@@ -10,6 +11,7 @@ class Patient(Resource):
     subresources = [
         AssessmentRecord,
         AssessmentRecords,
+        CarePlan,
         CDT,
         CDTs,
         Chat,
