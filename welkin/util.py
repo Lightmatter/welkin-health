@@ -46,7 +46,9 @@ def clean_request_params(params: dict) -> dict:
 
 
 def clean_date(date: date) -> str:
-    return date.strftime("%Y-%m-%dT00:00:00.000Z")
+    dt = datetime(date.year, date.month, date.day, 0, 0, 0)
+
+    return clean_datetime(dt)
 
 
 def clean_datetime(dt: datetime) -> str:
