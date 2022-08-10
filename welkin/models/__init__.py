@@ -7,6 +7,7 @@ from welkin.models.assessment import (
 )
 from welkin.models.calendar import CalendarEvent, CalendarEvents, Schedules
 from welkin.models.cdt import CDT, CDTs
+from welkin.models.chat import Chat, Chats, SearchChats
 from welkin.models.encounter import Disposition, Encounter, Encounters
 from welkin.models.patient import Patient, Patients
 from welkin.models.user import User, Users
@@ -23,6 +24,9 @@ __all__ = [
     "CalendarEvents",
     "CDT",
     "CDTs",
+    "Chat",
+    "Chats",
+    "SearchChats",
     "Disposition",
     "Encounter",
     "Encounters",
