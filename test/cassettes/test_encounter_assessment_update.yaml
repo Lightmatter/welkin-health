@@ -1,0 +1,142 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - API_TOKEN_46f9dc9c-93bf-4aeb-8081-2f27660b65d6
+      Connection:
+      - keep-alive
+      Cookie:
+      - AWSALB=RhFSyIHnRkfg54c1gaYn9w2JDzYHiDwOA6mao05Io1SgYnC3B+hyfRxApxkZ740ddkcIlP7OvZ3WH2QxeIohtO7XVFZVyLwTlNzeVetchSVw9JwfaHASGaGrbf7i;
+        AWSALBCORS=RhFSyIHnRkfg54c1gaYn9w2JDzYHiDwOA6mao05Io1SgYnC3B+hyfRxApxkZ740ddkcIlP7OvZ3WH2QxeIohtO7XVFZVyLwTlNzeVetchSVw9JwfaHASGaGrbf7i
+      User-Agent:
+      - python-welkin/0.0.4
+    method: GET
+    uri: https://api.live.welkincloud.io/tenant_REDACTED/instance_REDACTED/patients/371dd15c-cedc-4425-a394-d666c8d3fc01/encounters/22c26a65-161f-42c3-bb0f-a976dac8afe6/assessments/4d2be3ba-2be3-4171-a8bf-de68cd8e5a42
+  response:
+    body:
+      string: '{"id": "4d2be3ba-2be3-4171-a8bf-de68cd8e5a42", "patientId": "371dd15c-cedc-4425-a394-d666c8d3fc01",
+        "cdtId": "e77f470c-d93c-4dcf-8f21-8cebcc5c8f40", "version": 6, "jsonBody":
+        {"external_guid": null, "created_at": "2022-08-04T18:27:59.737Z", "source_type":
+        "ENCOUNTER", "external_id": null, "fromTemplate": false, "created_by_name":
+        "API_CLIENT:YYZBMHHWDAIT", "created_by": "4927d187-3fb3-4a9b-a42d-0c740f189412",
+        "assessmentTitle": "hello-form2", "relation": "ASSESSMENT", "updated_by_name":
+        "API_CLIENT:YYZBMHHWDAIT", "updated_at": "2022-08-06T15:30:25.503Z", "assessmentName":
+        "asm-hello-form2", "updated_by": "4927d187-3fb3-4a9b-a42d-0c740f189412", "id":
+        "4d2be3ba-2be3-4171-a8bf-de68cd8e5a42", "source_id": "22c26a65-161f-42c3-bb0f-a976dac8afe6",
+        "assessmentRecordId": "c8764b19-ffa3-406a-b446-c971036a7a1d", "source_name":
+        "__encounter__"}, "cdtName": "__encounter_assessment__"}'
+    headers:
+      Access-Control-Allow-Headers:
+      - authorization, content-type, xsrf-token, security-role
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, PATCH, OPTIONS
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - xsrf-token
+      Access-Control-Max-Age:
+      - '3600'
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Sat, 06 Aug 2022 15:32:23 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Set-Cookie:
+      - AWSALB=nPbrw1SrbrMBco2sitkiXDlsjGdbiiEw4Yt2aJg1vokJ6sRr2rvTXG/Qmeh+xrgW/m5rePc34v0yAg8CrxF11p1i5dTDsPrYS+H7KuyZVLD+Bmhr7GMXlKHbqKdB;
+        Expires=Sat, 13 Aug 2022 15:32:23 GMT; Path=/
+      - AWSALBCORS=nPbrw1SrbrMBco2sitkiXDlsjGdbiiEw4Yt2aJg1vokJ6sRr2rvTXG/Qmeh+xrgW/m5rePc34v0yAg8CrxF11p1i5dTDsPrYS+H7KuyZVLD+Bmhr7GMXlKHbqKdB;
+        Expires=Sat, 13 Aug 2022 15:32:23 GMT; Path=/; SameSite=None; Secure
+      Transfer-Encoding:
+      - chunked
+      X-Content-Type-Options:
+      - nosniff
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: ''
+- request:
+    body: '{"assessmentRecordId": "e18a2759-5089-44e7-9d31-cf942476ffab"}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - API_TOKEN_46f9dc9c-93bf-4aeb-8081-2f27660b65d6
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '62'
+      Content-Type:
+      - application/json
+      Cookie:
+      - AWSALB=nPbrw1SrbrMBco2sitkiXDlsjGdbiiEw4Yt2aJg1vokJ6sRr2rvTXG/Qmeh+xrgW/m5rePc34v0yAg8CrxF11p1i5dTDsPrYS+H7KuyZVLD+Bmhr7GMXlKHbqKdB;
+        AWSALBCORS=nPbrw1SrbrMBco2sitkiXDlsjGdbiiEw4Yt2aJg1vokJ6sRr2rvTXG/Qmeh+xrgW/m5rePc34v0yAg8CrxF11p1i5dTDsPrYS+H7KuyZVLD+Bmhr7GMXlKHbqKdB
+      User-Agent:
+      - python-welkin/0.0.4
+    method: PATCH
+    uri: https://api.live.welkincloud.io/tenant_REDACTED/instance_REDACTED/patients/371dd15c-cedc-4425-a394-d666c8d3fc01/encounters/22c26a65-161f-42c3-bb0f-a976dac8afe6/assessments/4d2be3ba-2be3-4171-a8bf-de68cd8e5a42
+  response:
+    body:
+      string: '{"id": "4d2be3ba-2be3-4171-a8bf-de68cd8e5a42", "patientId": "371dd15c-cedc-4425-a394-d666c8d3fc01",
+        "cdtId": "e77f470c-d93c-4dcf-8f21-8cebcc5c8f40", "version": 6, "jsonBody":
+        {"external_guid": null, "created_at": "2022-08-04T18:27:59.737Z", "external_id":
+        null, "source_type": "ENCOUNTER", "fromTemplate": false, "created_by_name":
+        "API_CLIENT:YYZBMHHWDAIT", "created_by": "4927d187-3fb3-4a9b-a42d-0c740f189412",
+        "assessmentTitle": "hello-form2", "relation": "ASSESSMENT", "updated_by_name":
+        "API_CLIENT:YYZBMHHWDAIT", "updated_at": "2022-08-06T15:32:24.805Z", "assessmentName":
+        "asm-hello-form2", "updated_by": "4927d187-3fb3-4a9b-a42d-0c740f189412", "id":
+        "4d2be3ba-2be3-4171-a8bf-de68cd8e5a42", "source_id": "22c26a65-161f-42c3-bb0f-a976dac8afe6",
+        "assessmentRecordId": "e18a2759-5089-44e7-9d31-cf942476ffab", "source_name":
+        "__encounter__"}, "cdtName": "__encounter_assessment__"}'
+    headers:
+      Access-Control-Allow-Headers:
+      - authorization, content-type, xsrf-token, security-role
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, PATCH, OPTIONS
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - xsrf-token
+      Access-Control-Max-Age:
+      - '3600'
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Sat, 06 Aug 2022 15:32:24 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Set-Cookie:
+      - AWSALB=ZZFfYWzBaqxDUF1crvjBkeeizgqjbWBapKGZlt4V/US3M+ecswHO+dw/bRswhD8lHPfE134RorUFlX7E1win0H/pZhnaVaH1r36JTcELp2NKIq7hVJaJQy0nbAbB;
+        Expires=Sat, 13 Aug 2022 15:32:23 GMT; Path=/
+      - AWSALBCORS=ZZFfYWzBaqxDUF1crvjBkeeizgqjbWBapKGZlt4V/US3M+ecswHO+dw/bRswhD8lHPfE134RorUFlX7E1win0H/pZhnaVaH1r36JTcELp2NKIq7hVJaJQy0nbAbB;
+        Expires=Sat, 13 Aug 2022 15:32:23 GMT; Path=/; SameSite=None; Secure
+      Transfer-Encoding:
+      - chunked
+      X-Content-Type-Options:
+      - nosniff
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: ''
+version: 1

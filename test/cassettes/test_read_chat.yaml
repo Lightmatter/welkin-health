@@ -1,0 +1,74 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - API_TOKEN_a4cb5658-31df-4d6c-926f-97afcb8457c8
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-welkin/0.0.4
+    method: GET
+    uri: https://api.live.welkincloud.io/tenant_REDACTED/instance_REDACTED/patients/17450e44-c2c8-46c4-9486-0d9bfa16d3aa/chat?includeArchived=False&pageSize=20
+  response:
+    body:
+      string: '{"meta": {"nextPageToken": null, "prevPageToken": null, "pageSize":
+        20, "found": true}, "content": [{"sender": {"clientType": "PATIENT", "id":
+        "17450e44-c2c8-46c4-9486-0d9bfa16d3aa", "titleName": null, "patientFullName":
+        null}, "message": "Foo Baz.", "externalId": "IM51dcee1864d54b9b9a1856e9e12a7555",
+        "createdAt": "2022-08-01T20:59:15.000Z"}, {"sender": {"clientType": "PATIENT",
+        "id": "17450e44-c2c8-46c4-9486-0d9bfa16d3aa", "titleName": null, "patientFullName":
+        null}, "message": "THis is a new test message! 12345", "externalId": "IM7d2af0af444c4440a1f2b0f654ddcb38",
+        "createdAt": "2022-08-01T20:53:58.000Z"}, {"sender": {"clientType": "PATIENT",
+        "id": "17450e44-c2c8-46c4-9486-0d9bfa16d3aa", "titleName": null, "patientFullName":
+        null}, "message": "Test response from patient, sent via API", "externalId":
+        "IMbaf17192228b49eea3e5e6e5f930b61a", "createdAt": "2022-07-29T00:07:07.000Z"},
+        {"sender": {"clientType": "USER", "id": "d2b3d940-01ec-44f3-a2cd-b5298823ec9f",
+        "titleName": "Sam Morgan", "patientFullName": null}, "message": "Where is
+        the user ID??", "externalId": "IM1acb5da34e7c4cbdb828f2a4b3fa851a", "createdAt":
+        "2022-07-28T23:46:29.000Z"}, {"sender": {"clientType": "USER", "id": "d2b3d940-01ec-44f3-a2cd-b5298823ec9f",
+        "titleName": "Sam Morgan", "patientFullName": null}, "message": "This is a
+        test. How does it look?", "externalId": "IM1aae2729c4484d59acb13a7889e12afd",
+        "createdAt": "2022-07-28T23:42:30.000Z"}]}'
+    headers:
+      Access-Control-Allow-Headers:
+      - authorization, content-type, xsrf-token, security-role
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, PATCH, OPTIONS
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - xsrf-token
+      Access-Control-Max-Age:
+      - '3600'
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 02 Aug 2022 19:34:17 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Set-Cookie:
+      - AWSALB=840zrDMMQKMPE1ajaIGPiMoBoG64uy8tm2ZHwDMl22aPu7QS9nTZ4p/PhjTy3MncO8W/akYevbQcpvd0gOESz162rPI5pe8qkUxolosixZswyapmpYepOBgxt17f;
+        Expires=Tue, 09 Aug 2022 19:34:16 GMT; Path=/
+      - AWSALBCORS=840zrDMMQKMPE1ajaIGPiMoBoG64uy8tm2ZHwDMl22aPu7QS9nTZ4p/PhjTy3MncO8W/akYevbQcpvd0gOESz162rPI5pe8qkUxolosixZswyapmpYepOBgxt17f;
+        Expires=Tue, 09 Aug 2022 19:34:16 GMT; Path=/; SameSite=None; Secure
+      Transfer-Encoding:
+      - chunked
+      X-Content-Type-Options:
+      - nosniff
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: ''
+version: 1

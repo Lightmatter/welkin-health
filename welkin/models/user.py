@@ -1,9 +1,13 @@
 from enum import Enum
 
 from welkin.models.base import Collection, Resource
+from welkin.models.encounter import Encounters
+from welkin.pagination import MetaInfoIterator
 
 
 class User(Resource):
+    subresources = [Encounters]
+
     def __str__(self):
         try:
             return f"{self.firstName} {self.lastName}"
@@ -31,6 +35,7 @@ class UserState(Enum):
 
 class Users(Collection):
     resource = User
+    iterator = MetaInfoIterator
 
     def get(
         self,

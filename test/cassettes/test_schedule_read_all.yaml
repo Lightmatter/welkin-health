@@ -1,0 +1,58 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - API_TOKEN_2f9c3bcf-3183-41ee-b84c-8c92547705b0
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-welkin/0.0.4
+    method: GET
+    uri: https://api.live.welkincloud.io/tenant_REDACTED/instance_REDACTED/calendar/psm-schedules?psmIds=d9925247-7505-464a-b42c-25ac71408494&from=2022-04-01T16%3A38%3A20.641Z&to=2022-06-30T16%3A38%3A20.641Z&includeCancelled=True&page=0
+  response:
+    body:
+      string: '[{"psmId": "d9925247-7505-464a-b42c-25ac71408494", "workHours": [],
+        "events": []}]'
+    headers:
+      Access-Control-Allow-Headers:
+      - authorization, content-type, xsrf-token, security-role
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, PATCH, OPTIONS
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - xsrf-token
+      Access-Control-Max-Age:
+      - '3600'
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 01 Jul 2022 03:08:37 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Set-Cookie:
+      - AWSALB=gaGIcGr56qBqLAqy2SM13Q1e5PEYEpxzPUAQhN1nlrq2Jp/E03z0q3J8Uj0g3QexvOJAyNvFDyd98eu9hO4XqAMtF/qOQc6rn5cjx3eXIc6gUl9eUXRr2dlGWvgk;
+        Expires=Fri, 08 Jul 2022 03:08:37 GMT; Path=/
+      - AWSALBCORS=gaGIcGr56qBqLAqy2SM13Q1e5PEYEpxzPUAQhN1nlrq2Jp/E03z0q3J8Uj0g3QexvOJAyNvFDyd98eu9hO4XqAMtF/qOQc6rn5cjx3eXIc6gUl9eUXRr2dlGWvgk;
+        Expires=Fri, 08 Jul 2022 03:08:37 GMT; Path=/; SameSite=None; Secure
+      Transfer-Encoding:
+      - chunked
+      X-Content-Type-Options:
+      - nosniff
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: ''
+version: 1

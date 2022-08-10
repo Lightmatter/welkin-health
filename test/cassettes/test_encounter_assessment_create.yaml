@@ -1,0 +1,73 @@
+interactions:
+- request:
+    body: '{"assessmentName": "asm-hello-form2"}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - API_TOKEN_f08abe49-2b2b-4e7c-8a48-cbe5370c7505
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '37'
+      Content-Type:
+      - application/json
+      Cookie:
+      - AWSALB=I4gCce8f9o7RlO8XHvKKUa+wS+Ko7ErFGVYenszqoqInKQGyOWmgk+kZvPuf6AXXlstQWaetkIUCaO+7++Smfuqvkv/ZYu48is34CEtIXrXfs14lxNH1pEM2A+ru;
+        AWSALBCORS=I4gCce8f9o7RlO8XHvKKUa+wS+Ko7ErFGVYenszqoqInKQGyOWmgk+kZvPuf6AXXlstQWaetkIUCaO+7++Smfuqvkv/ZYu48is34CEtIXrXfs14lxNH1pEM2A+ru
+      User-Agent:
+      - python-welkin/0.0.4
+    method: POST
+    uri: https://api.live.welkincloud.io/tenant_REDACTED/instance_REDACTED/patients/371dd15c-cedc-4425-a394-d666c8d3fc01/encounters/22c26a65-161f-42c3-bb0f-a976dac8afe6/assessments
+  response:
+    body:
+      string: '{"id": "4d2be3ba-2be3-4171-a8bf-de68cd8e5a42", "patientId": "371dd15c-cedc-4425-a394-d666c8d3fc01",
+        "cdtId": "e77f470c-d93c-4dcf-8f21-8cebcc5c8f40", "version": 6, "jsonBody":
+        {"external_guid": null, "created_at": "2022-08-04T18:27:59.737Z", "external_id":
+        null, "source_type": "ENCOUNTER", "fromTemplate": false, "created_by_name":
+        "API_CLIENT:YYZBMHHWDAIT", "created_by": "4927d187-3fb3-4a9b-a42d-0c740f189412",
+        "assessmentTitle": "hello-form2", "relation": "ASSESSMENT", "updated_by_name":
+        "API_CLIENT:YYZBMHHWDAIT", "updated_at": "2022-08-04T18:27:59.737Z", "assessmentName":
+        "asm-hello-form2", "updated_by": "4927d187-3fb3-4a9b-a42d-0c740f189412", "id":
+        "4d2be3ba-2be3-4171-a8bf-de68cd8e5a42", "source_id": "22c26a65-161f-42c3-bb0f-a976dac8afe6",
+        "assessmentRecordId": null, "source_name": "__encounter__"}, "cdtName": "__encounter_assessment__"}'
+    headers:
+      Access-Control-Allow-Headers:
+      - authorization, content-type, xsrf-token, security-role
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, PATCH, OPTIONS
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - xsrf-token
+      Access-Control-Max-Age:
+      - '3600'
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Thu, 04 Aug 2022 18:27:59 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Set-Cookie:
+      - AWSALB=RhFSyIHnRkfg54c1gaYn9w2JDzYHiDwOA6mao05Io1SgYnC3B+hyfRxApxkZ740ddkcIlP7OvZ3WH2QxeIohtO7XVFZVyLwTlNzeVetchSVw9JwfaHASGaGrbf7i;
+        Expires=Thu, 11 Aug 2022 18:27:59 GMT; Path=/
+      - AWSALBCORS=RhFSyIHnRkfg54c1gaYn9w2JDzYHiDwOA6mao05Io1SgYnC3B+hyfRxApxkZ740ddkcIlP7OvZ3WH2QxeIohtO7XVFZVyLwTlNzeVetchSVw9JwfaHASGaGrbf7i;
+        Expires=Thu, 11 Aug 2022 18:27:59 GMT; Path=/; SameSite=None; Secure
+      Transfer-Encoding:
+      - chunked
+      X-Content-Type-Options:
+      - nosniff
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 201
+      message: ''
+version: 1

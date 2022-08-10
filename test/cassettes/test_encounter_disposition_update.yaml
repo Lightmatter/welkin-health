@@ -1,0 +1,140 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - API_TOKEN_bf63c4c2-16af-4e74-9f3a-551c1f35dad2
+      Connection:
+      - keep-alive
+      Cookie:
+      - AWSALB=eJMpWDBtpOPrRWc7yPt92V0V4T2ms76VHo4YKw5TyW1g66+oE57JjOrNOLuUZNe7sdtuUggJDBjipS53IGNQwmpqE43tZV2wD7Eg7EDa71e58ip/I/v5qovp9W7n;
+        AWSALBCORS=eJMpWDBtpOPrRWc7yPt92V0V4T2ms76VHo4YKw5TyW1g66+oE57JjOrNOLuUZNe7sdtuUggJDBjipS53IGNQwmpqE43tZV2wD7Eg7EDa71e58ip/I/v5qovp9W7n
+      User-Agent:
+      - python-welkin/0.0.4
+    method: GET
+    uri: https://api.live.welkincloud.io/tenant_REDACTED/instance_REDACTED/patients/173a8adf-92e8-4832-8900-027c71b0d768/encounters/d6f4b66e-1be6-403a-ae47-1bbcee264c5e/disposition
+  response:
+    body:
+      string: '{"id": "8cd87974-b1cb-4a6f-8873-71d5d188c4aa", "patientId": "173a8adf-92e8-4832-8900-027c71b0d768",
+        "cdtId": "c4c7f925-8da1-4e88-93b6-9afd4dda9421", "version": 6, "jsonBody":
+        {"external_guid": null, "notes": null, "uicedf-treatment": null, "uicedf-review":
+        "good stuff keep it up", "created_at": "2022-08-09T13:26:18.139Z", "source_type":
+        "ENCOUNTER", "external_id": null, "created_by_name": "Eddie Cohen", "created_by":
+        "379298b5-1b4e-48cb-a60f-e6d9cb9a5e65", "updated_by_name": "API_CLIENT:YJTWKVSGOBFE",
+        "updated_at": "2022-08-09T16:16:14.870Z", "updated_by": "4f576fa5-af07-4473-99ea-6afb4956e243",
+        "id": "8cd87974-b1cb-4a6f-8873-71d5d188c4aa", "source_id": "d6f4b66e-1be6-403a-ae47-1bbcee264c5e",
+        "uicedf-next-steps": "take yer pills", "source_name": "__encounter__"}, "cdtName":
+        "__encounter_disposition__"}'
+    headers:
+      Access-Control-Allow-Headers:
+      - authorization, content-type, xsrf-token, security-role
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, PATCH, OPTIONS
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - xsrf-token
+      Access-Control-Max-Age:
+      - '3600'
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 09 Aug 2022 17:24:49 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Set-Cookie:
+      - AWSALB=y/W5844WgrlpJxcE7coBi7A9g/pb0M6WSz8L/2MEQBE+N7AtzJlMqd1BaRc2ja4PmFQkvkbA7ASuFUqzhrFcF+PSLm+CYTcyf4835vX/6QR2ArwTPaICZABXvsaw;
+        Expires=Tue, 16 Aug 2022 17:24:49 GMT; Path=/
+      - AWSALBCORS=y/W5844WgrlpJxcE7coBi7A9g/pb0M6WSz8L/2MEQBE+N7AtzJlMqd1BaRc2ja4PmFQkvkbA7ASuFUqzhrFcF+PSLm+CYTcyf4835vX/6QR2ArwTPaICZABXvsaw;
+        Expires=Tue, 16 Aug 2022 17:24:49 GMT; Path=/; SameSite=None; Secure
+      Transfer-Encoding:
+      - chunked
+      X-Content-Type-Options:
+      - nosniff
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: ''
+- request:
+    body: '{"uicedf-review": "great health"}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - API_TOKEN_bf63c4c2-16af-4e74-9f3a-551c1f35dad2
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '33'
+      Content-Type:
+      - application/json
+      Cookie:
+      - AWSALB=y/W5844WgrlpJxcE7coBi7A9g/pb0M6WSz8L/2MEQBE+N7AtzJlMqd1BaRc2ja4PmFQkvkbA7ASuFUqzhrFcF+PSLm+CYTcyf4835vX/6QR2ArwTPaICZABXvsaw;
+        AWSALBCORS=y/W5844WgrlpJxcE7coBi7A9g/pb0M6WSz8L/2MEQBE+N7AtzJlMqd1BaRc2ja4PmFQkvkbA7ASuFUqzhrFcF+PSLm+CYTcyf4835vX/6QR2ArwTPaICZABXvsaw
+      User-Agent:
+      - python-welkin/0.0.4
+    method: PATCH
+    uri: https://api.live.welkincloud.io/tenant_REDACTED/instance_REDACTED/patients/173a8adf-92e8-4832-8900-027c71b0d768/encounters/d6f4b66e-1be6-403a-ae47-1bbcee264c5e/disposition
+  response:
+    body:
+      string: '{"id": "8cd87974-b1cb-4a6f-8873-71d5d188c4aa", "patientId": "173a8adf-92e8-4832-8900-027c71b0d768",
+        "cdtId": "c4c7f925-8da1-4e88-93b6-9afd4dda9421", "version": 6, "jsonBody":
+        {"external_guid": null, "notes": null, "uicedf-treatment": null, "uicedf-review":
+        "great health", "created_at": "2022-08-09T13:26:18.139Z", "external_id": null,
+        "source_type": "ENCOUNTER", "created_by_name": "Eddie Cohen", "created_by":
+        "379298b5-1b4e-48cb-a60f-e6d9cb9a5e65", "updated_by_name": "API_CLIENT:YJTWKVSGOBFE",
+        "updated_at": "2022-08-09T17:24:49.656Z", "updated_by": "4f576fa5-af07-4473-99ea-6afb4956e243",
+        "id": "8cd87974-b1cb-4a6f-8873-71d5d188c4aa", "source_id": "d6f4b66e-1be6-403a-ae47-1bbcee264c5e",
+        "uicedf-next-steps": "take yer pills", "source_name": "__encounter__"}, "cdtName":
+        "__encounter_disposition__"}'
+    headers:
+      Access-Control-Allow-Headers:
+      - authorization, content-type, xsrf-token, security-role
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, PATCH, OPTIONS
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - xsrf-token
+      Access-Control-Max-Age:
+      - '3600'
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 09 Aug 2022 17:24:49 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Set-Cookie:
+      - AWSALB=kuD4RYa7pVkuCqiL4LhpqW/jiH6dWXkLShX6Iz+795W2lfAUEnQ7RGzz4wxXZ7GOGrmUYLLL7wJ37KDkMqkBVkyGmFeXrd401iN/TTBhUIcz+69hRTnnN6nAqL+Q;
+        Expires=Tue, 16 Aug 2022 17:24:49 GMT; Path=/
+      - AWSALBCORS=kuD4RYa7pVkuCqiL4LhpqW/jiH6dWXkLShX6Iz+795W2lfAUEnQ7RGzz4wxXZ7GOGrmUYLLL7wJ37KDkMqkBVkyGmFeXrd401iN/TTBhUIcz+69hRTnnN6nAqL+Q;
+        Expires=Tue, 16 Aug 2022 17:24:49 GMT; Path=/; SameSite=None; Secure
+      Transfer-Encoding:
+      - chunked
+      X-Content-Type-Options:
+      - nosniff
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: ''
+version: 1

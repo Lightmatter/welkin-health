@@ -1,0 +1,132 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - API_TOKEN_caaa7f4a-f7da-4d7a-b5af-86449f546370
+      Connection:
+      - keep-alive
+      Cookie:
+      - AWSALB=EBBHFZraRBChsjf97FSaW7UxiPAS34K6qL6dtfWKqTjaJkAj0FGBdYB1UoA+EdxwuaCXQ/+G9BrpuKFuWn452y9KYRwPcbEm6Dx6jrvoqIlgk4u09whac5QdAOi+;
+        AWSALBCORS=EBBHFZraRBChsjf97FSaW7UxiPAS34K6qL6dtfWKqTjaJkAj0FGBdYB1UoA+EdxwuaCXQ/+G9BrpuKFuWn452y9KYRwPcbEm6Dx6jrvoqIlgk4u09whac5QdAOi+
+      User-Agent:
+      - python-welkin/0.0.4
+    method: GET
+    uri: https://api.live.welkincloud.io/tenant_REDACTED/instance_REDACTED/patients/371dd15c-cedc-4425-a394-d666c8d3fc01/assessment-records?page=0
+  response:
+    body:
+      string: '{"content": [{"id": "ba80fb10-47c0-4814-8cdc-6fce1d076755", "createdAt":
+        "2022-07-28T21:04:45.123Z", "updatedAt": "2022-07-28T21:05:58.450Z", "createdBy":
+        "createdBy_REDACTED_f1f6d21b-6d60-4626-9e74-e4ea83608731", "updatedBy": "updatedBy_REDACTED_7d0cb1cd-b312-4a23-8f02-eb59fd6a7e6b",
+        "createdByName": "createdByName_REDACTED_38c313e6-75c5-4332-b2ff-6b18b7447112",
+        "updatedByName": "updatedByName_REDACTED_c3fa8065-a917-408b-aea7-975b0dae473e",
+        "finalizedDate": "2022-07-28T21:05:58.450Z", "localFinalizedDate": "2022-07-28T21:05:58.450+00:00",
+        "localCreatedDate": "2022-07-28T21:04:45.123+00:00", "localUpdatedDate": "2022-07-28T21:05:58.450+00:00",
+        "assessmentName": "asm-hello-form", "assessmentTitle": "hello-form", "assessmentCdtName":
+        "_asm-hello-form", "version": 5, "patientId": "371dd15c-cedc-4425-a394-d666c8d3fc01",
+        "status": "COMPLETED", "answers": {"external_guid": null, "created_at": "2022-07-28T21:04:45.125Z",
+        "external_id": null, "source_type": "ASSESSMENT", "created_by_name": "Eddit  Cohen",
+        "created_by": "c08af975-8afc-49cb-84ac-7189b727148c", "updated_by_name": "Eddit  Cohen",
+        "updated_at": "2022-07-28T21:05:57.910Z", "cdt-hello__cdtf-hi": "fda", "updated_by":
+        "c08af975-8afc-49cb-84ac-7189b727148c", "id": "2804cabf-1234-4ad4-8d72-a9bc5b227162",
+        "source_id": "ba80fb10-47c0-4814-8cdc-6fce1d076755", "source_name": "asm-hello-form"},
+        "scoring": {}, "folderId": null, "expirationDate": null, "questions": {"cdt-hello__cdtf-hi":
+        "hi"}, "resolvedCdtValues": {}, "pfa": false}, {"id": "39ab1f94-9b82-49b9-867e-d4b4bb28c417",
+        "createdAt": "2022-07-29T01:18:39.789Z", "updatedAt": "2022-07-29T01:32:46.084Z",
+        "createdBy": "createdBy_REDACTED_3c548c01-5542-4e1e-810a-c282ed6b369d", "updatedBy":
+        "updatedBy_REDACTED_262fc01d-bb34-4f95-bb3b-8523f043a91d", "createdByName":
+        "createdByName_REDACTED_3847a937-ac56-480e-8ae5-c2a87dd28478", "updatedByName":
+        "updatedByName_REDACTED_b206da27-d8f9-4c30-93fa-51865f280148", "finalizedDate":
+        null, "localFinalizedDate": null, "localCreatedDate": "2022-07-29T01:18:39.789+00:00",
+        "localUpdatedDate": "2022-07-29T01:32:46.084+00:00", "assessmentName": "asm-hello-form",
+        "assessmentTitle": "hello-form", "assessmentCdtName": "_asm-hello-form", "version":
+        5, "patientId": "371dd15c-cedc-4425-a394-d666c8d3fc01", "status": "IN_PROGRESS",
+        "answers": {"external_guid": null, "created_at": "2022-07-29T01:18:39.791Z",
+        "external_id": null, "source_type": "ASSESSMENT", "created_by_name": "API_CLIENT:YYZBMHHWDAIT",
+        "created_by": "4927d187-3fb3-4a9b-a42d-0c740f189412", "updated_by_name": "Eddie
+        Cohen", "updated_at": "2022-08-05T20:24:53.763Z", "cdt-hello__cdtf-hi": "hhiihi",
+        "updated_by": "c08af975-8afc-49cb-84ac-7189b727148c", "id": "13856875-a3fa-41d7-b47a-e6402cf0831c",
+        "source_id": "39ab1f94-9b82-49b9-867e-d4b4bb28c417", "source_name": "asm-hello-form"},
+        "scoring": {}, "folderId": null, "expirationDate": null, "questions": {},
+        "resolvedCdtValues": {}, "pfa": false}, {"id": "c8764b19-ffa3-406a-b446-c971036a7a1d",
+        "createdAt": "2022-08-05T19:36:19.329Z", "updatedAt": "2022-08-06T01:30:45.706Z",
+        "createdBy": "createdBy_REDACTED_e7428d3f-dbe2-4dea-945a-9925639f0288", "updatedBy":
+        "updatedBy_REDACTED_f271c037-26ae-4b47-bf1a-74ad0079020f", "createdByName":
+        "createdByName_REDACTED_12c091d1-d5ed-46aa-8588-84b8444c858f", "updatedByName":
+        "updatedByName_REDACTED_5e67b58a-0a5f-4b0e-a173-b2032ba047e7", "finalizedDate":
+        "2022-08-06T01:30:45.705Z", "localFinalizedDate": "2022-08-06T01:30:45.705+00:00",
+        "localCreatedDate": "2022-08-05T19:36:19.329+00:00", "localUpdatedDate": "2022-08-06T01:30:45.706+00:00",
+        "assessmentName": "asm-hello-form2", "assessmentTitle": "hello-form2", "assessmentCdtName":
+        "_asm-hello-form2", "version": 8, "patientId": "371dd15c-cedc-4425-a394-d666c8d3fc01",
+        "status": "COMPLETED", "answers": {"external_guid": null, "created_at": "2022-08-05T19:36:19.331Z",
+        "external_id": null, "source_type": "ASSESSMENT", "created_by_name": "API_CLIENT:YYZBMHHWDAIT",
+        "created_by": "4927d187-3fb3-4a9b-a42d-0c740f189412", "updated_by_name": "API_CLIENT:YYZBMHHWDAIT",
+        "updated_at": "2022-08-05T21:49:17.354Z", "cdt-hello__cdtf-hi": "abc123def",
+        "updated_by": "4927d187-3fb3-4a9b-a42d-0c740f189412", "id": "1920a4d9-167e-4fc2-99d2-2aa0c70baab0",
+        "source_id": "c8764b19-ffa3-406a-b446-c971036a7a1d", "source_name": "asm-hello-form2"},
+        "scoring": {}, "folderId": null, "expirationDate": null, "questions": {"cdt-hello__cdtf-hi":
+        "hi there"}, "resolvedCdtValues": {}, "pfa": false}, {"id": "e18a2759-5089-44e7-9d31-cf942476ffab",
+        "createdAt": "2022-08-06T14:51:42.624Z", "updatedAt": "2022-08-06T15:00:23.660Z",
+        "createdBy": "createdBy_REDACTED_53421b5b-4a2d-4360-833d-f99318b9c4ba", "updatedBy":
+        "updatedBy_REDACTED_0cf88e43-9885-4546-a2c4-6f1c8b691a89", "createdByName":
+        "createdByName_REDACTED_3d613ff9-7514-4f30-b23a-a114c1929442", "updatedByName":
+        "updatedByName_REDACTED_2924576a-d2b4-43c4-b65c-975cc264acec", "finalizedDate":
+        "2022-08-06T15:00:23.660Z", "localFinalizedDate": "2022-08-06T15:00:23.660+00:00",
+        "localCreatedDate": "2022-08-06T14:51:42.624+00:00", "localUpdatedDate": "2022-08-06T15:00:23.660+00:00",
+        "assessmentName": "asm-hello-form2", "assessmentTitle": "hello-form2", "assessmentCdtName":
+        "_asm-hello-form2", "version": 8, "patientId": "371dd15c-cedc-4425-a394-d666c8d3fc01",
+        "status": "COMPLETED", "answers": {"external_guid": null, "created_at": "2022-08-06T14:51:42.626Z",
+        "external_id": null, "source_type": "ASSESSMENT", "created_by_name": "API_CLIENT:YYZBMHHWDAIT",
+        "created_by": "4927d187-3fb3-4a9b-a42d-0c740f189412", "updated_by_name": "API_CLIENT:YYZBMHHWDAIT",
+        "updated_at": "2022-08-06T14:58:49.130Z", "cdt-hello__cdtf-hi": "abc", "updated_by":
+        "4927d187-3fb3-4a9b-a42d-0c740f189412", "id": "89ae7c2d-3cd4-4359-9a42-155e8c61630d",
+        "source_id": "e18a2759-5089-44e7-9d31-cf942476ffab", "source_name": "asm-hello-form2"},
+        "scoring": {}, "folderId": null, "expirationDate": null, "questions": {"cdt-hello__cdtf-hi":
+        "hi there"}, "resolvedCdtValues": {}, "pfa": false}], "pageable": {"sort":
+        {"sorted": false, "unsorted": true, "empty": true}, "pageNumber": 0, "pageSize":
+        20, "offset": 0, "paged": true, "unpaged": false}, "last": true, "totalElements":
+        4, "totalPages": 1, "first": true, "number": 0, "sort": {"sorted": false,
+        "unsorted": true, "empty": true}, "numberOfElements": 4, "size": 20, "empty":
+        false}'
+    headers:
+      Access-Control-Allow-Headers:
+      - authorization, content-type, xsrf-token, security-role
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, PATCH, OPTIONS
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - xsrf-token
+      Access-Control-Max-Age:
+      - '3600'
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Sat, 06 Aug 2022 15:17:25 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Set-Cookie:
+      - AWSALB=97p75ir1POhS10n/5bNDvX0KEmWoHPRJbJHNkzVuJblYVQn+ocKkfs9mdBMrCqdLlu6RU5UJFepa2mevt3Ga9tA7Oz7vlAEudlkKsViCT+6Roo7pk674B43l8QOF;
+        Expires=Sat, 13 Aug 2022 15:17:25 GMT; Path=/
+      - AWSALBCORS=97p75ir1POhS10n/5bNDvX0KEmWoHPRJbJHNkzVuJblYVQn+ocKkfs9mdBMrCqdLlu6RU5UJFepa2mevt3Ga9tA7Oz7vlAEudlkKsViCT+6Roo7pk674B43l8QOF;
+        Expires=Sat, 13 Aug 2022 15:17:25 GMT; Path=/; SameSite=None; Secure
+      Transfer-Encoding:
+      - chunked
+      X-Content-Type-Options:
+      - nosniff
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: ''
+version: 1

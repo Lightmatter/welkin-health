@@ -7,6 +7,11 @@ import pytest
 from welkin import Client
 
 
+def pytest_collection_modifyitems(items):
+    # Ensure auth tests execute first, otherwise all other tests will fail.
+    items.sort(key=lambda x: True if "authentication" not in x.nodeid else False)
+
+
 def redact(field_name, extra=""):
     parts = [field_name, extra, str(uuid.uuid4())]
 
@@ -52,10 +57,15 @@ def scrub_request(blacklist, replacement="REDACTED"):
         # request.body = filter_body(request.body, blacklist, replacement)
         if "api_clients" in request.path:
             return None
-
+        uri_comps = request.uri.split("/")
         for k, v in blacklist.items():
-            request.uri = request.uri.replace(v, f"{k}_{replacement}")
+            try:
+                ind = uri_comps.index(v)
+                uri_comps[ind] = f"{k}_{replacement}"
+            except ValueError:
+                continue
 
+        request.uri = "/".join(uri_comps)
         return request
 
     return before_record_request

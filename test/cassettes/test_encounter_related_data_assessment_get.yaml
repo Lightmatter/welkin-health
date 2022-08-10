@@ -1,0 +1,239 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - API_TOKEN_379e4bb2-a57b-49f4-8e2e-b0f06ce1e0ee
+      Connection:
+      - keep-alive
+      Cookie:
+      - AWSALB=XivINkKic1EtwTgAOW6E8B8iCW9mQVfIpMGR49PoMY4aCYAupW4/kUHld8eRI0DDJ5FAA05vlnyi4t2kMBVTyhvgcK/geFu9zUhYvJABzoT6aZNFnci8+qpJQLrO;
+        AWSALBCORS=XivINkKic1EtwTgAOW6E8B8iCW9mQVfIpMGR49PoMY4aCYAupW4/kUHld8eRI0DDJ5FAA05vlnyi4t2kMBVTyhvgcK/geFu9zUhYvJABzoT6aZNFnci8+qpJQLrO
+      User-Agent:
+      - python-welkin/0.0.4
+    method: GET
+    uri: https://api.live.welkincloud.io/tenant_REDACTED/instance_REDACTED/patients/371dd15c-cedc-4425-a394-d666c8d3fc01/full-encounters/22c26a65-161f-42c3-bb0f-a976dac8afe6
+  response:
+    body:
+      string: '{"encounter": {"id": "22c26a65-161f-42c3-bb0f-a976dac8afe6", "patientId":
+        "371dd15c-cedc-4425-a394-d666c8d3fc01", "cdtId": "f6e6c481-60d7-4466-8074-7fbc8e6e3cd7",
+        "version": 4, "jsonBody": {"startDatetime": "2022-07-29T01:55:24.252Z", "local_updated_at":
+        "2022-07-29T01:55:24.252+00:00", "external_guid": null, "notes": "a newer
+        note", "description": "new encounter", "created_at": "2022-07-26T14:05:53.556Z",
+        "external_id": null, "type": "etmp-initial-consultation", "title": "new enc",
+        "activeUserName": "Eddit  Cohen", "created_by_name": "API_CLIENT:YYZBMHHWDAIT",
+        "currentScheduledAppointment": {"id": "555bd5b3-7d73-4d0a-ac9f-a770fb431ac0",
+        "createdBy": "createdBy_REDACTED_4336b376-56bb-4657-a4da-94456d8fabe1", "createdAt":
+        "2022-07-26T14:05:53.535Z", "updatedBy": "updatedBy_REDACTED_83a116cd-4256-4511-89e6-3a895bfb2026",
+        "updatedAt": "2022-07-29T01:55:24.252Z", "externalId": null, "externalIdUpdatedAt":
+        "2022-07-26T14:05:53.535Z", "eventTitle": "NEW ENC", "eventDescription": null,
+        "startDateTime": "2022-07-26T20:05:53.277Z", "localStartDateTime": "2022-07-26T20:05:53.277+00:00",
+        "endDateTime": "2022-07-26T21:05:53.277Z", "localEndDateTime": "2022-07-26T21:05:53.277+00:00",
+        "allDayEvent": false, "duration": 3600, "eventType": "ENCOUNTER", "eventStatus":
+        "SCHEDULED", "eventMode": "VIDEO", "eventColor": null, "hostId": "c08af975-8afc-49cb-84ac-7189b727148c",
+        "timezone": null, "additionalInfo": null, "participants": [{"id": "fa5c40ee-208f-4d55-ae04-a0086eb42f68",
+        "participantId": "c08af975-8afc-49cb-84ac-7189b727148c", "participantRole":
+        "psm", "participationStatus": "", "attended": false, "timezone": null, "firstName":
+        "Eddie", "lastName": "Cohen", "deleted": false, "hasAccess": false, "email":
+        "eddie@lightmatter.com", "phone": null, "gender": null, "birthDate": null,
+        "enabled": true}, {"id": "bc9f58e1-313c-424b-8f8e-7bc955775283", "participantId":
+        "371dd15c-cedc-4425-a394-d666c8d3fc01", "participantRole": "patient", "participationStatus":
+        "", "attended": false, "timezone": null, "firstName": "Demo", "lastName":
+        "Er", "deleted": false, "hasAccess": false, "email": "eddiehcohen@gmail.com",
+        "phone": "+19142176687", "gender": "UNKNOWN", "birthDate": "1998-08-08T00:00:00.000Z",
+        "enabled": null}]}, "updated_by_name": "Eddit  Cohen", "localCalendarEventStartDatetime":
+        "2022-07-26T20:05:53.277+00:00", "updated_at": "2022-07-29T01:55:24.262Z",
+        "ownerUserName": "Eddit  Cohen", "templateTitle": null, "id": "22c26a65-161f-42c3-bb0f-a976dac8afe6",
+        "source_name": null, "calendarEventId": "555bd5b3-7d73-4d0a-ac9f-a770fb431ac0",
+        "activeUserId": "c08af975-8afc-49cb-84ac-7189b727148c", "calendarEvent": {"id":
+        "555bd5b3-7d73-4d0a-ac9f-a770fb431ac0", "createdBy": "createdBy_REDACTED_9a426f6d-3d0d-41ba-b5c6-368c897f9e00",
+        "createdAt": "2022-07-26T14:05:53.535Z", "updatedBy": "updatedBy_REDACTED_2c9a5847-b0b4-4e2e-8e7a-0845af8a5300",
+        "updatedAt": "2022-07-26T14:05:53.535Z", "externalId": null, "externalIdUpdatedAt":
+        "2022-07-26T14:05:53.535Z", "eventTitle": "NEW ENC", "eventDescription": null,
+        "startDateTime": "2022-07-26T20:05:53.277Z", "localStartDateTime": "2022-07-26T20:05:53.277+00:00",
+        "endDateTime": "2022-07-26T21:05:53.277Z", "localEndDateTime": "2022-07-26T21:05:53.277+00:00",
+        "allDayEvent": false, "duration": 3600, "eventType": "ENCOUNTER", "eventStatus":
+        "SCHEDULED", "eventMode": "VIDEO", "eventColor": null, "hostId": "c08af975-8afc-49cb-84ac-7189b727148c",
+        "timezone": null, "additionalInfo": null, "participants": [{"id": "fa5c40ee-208f-4d55-ae04-a0086eb42f68",
+        "participantId": "c08af975-8afc-49cb-84ac-7189b727148c", "participantRole":
+        "psm", "participationStatus": "", "attended": false, "timezone": null, "firstName":
+        "Eddie", "lastName": "Cohen", "deleted": false, "hasAccess": false, "email":
+        "eddie@lightmatter.com", "phone": null, "gender": null, "birthDate": null,
+        "enabled": true}, {"id": "bc9f58e1-313c-424b-8f8e-7bc955775283", "participantId":
+        "371dd15c-cedc-4425-a394-d666c8d3fc01", "participantRole": "patient", "participationStatus":
+        "", "attended": false, "timezone": null, "firstName": "Demo", "lastName":
+        "Er", "deleted": false, "hasAccess": false, "email": "eddiehcohen@gmail.com",
+        "phone": "+19142176687", "gender": "UNKNOWN", "birthDate": "1998-08-08T00:00:00.000Z",
+        "enabled": null}]}, "calendarEventStartDatetime": "2022-07-26T20:05:53.277Z",
+        "dispositionId": "20e00b7d-22f6-4153-b756-6607b9b5d166", "source_type": null,
+        "created_by": "4927d187-3fb3-4a9b-a42d-0c740f189412", "localEndDatetime":
+        "2022-07-26T21:05:53.277+00:00", "local_created_at": "2022-07-26T14:05:53.535+00:00",
+        "templateName": "etmp-initial-consultation", "instruction": "", "ownerUserId":
+        "c08af975-8afc-49cb-84ac-7189b727148c", "updated_by": "c08af975-8afc-49cb-84ac-7189b727148c",
+        "source_id": null, "endDatetime": null, "localStartDatetime": "2022-07-26T20:05:53.277+00:00",
+        "status": "OPEN"}, "cdtName": "__encounter__"}, "disposition": {"id": "20e00b7d-22f6-4153-b756-6607b9b5d166",
+        "patientId": "371dd15c-cedc-4425-a394-d666c8d3fc01", "cdtId": "80e8cd05-0863-4ed8-9299-c9c4c4e38144",
+        "version": 4, "jsonBody": {"external_guid": null, "notes": null, "created_at":
+        "2022-07-26T14:05:53.631Z", "source_type": "ENCOUNTER", "external_id": null,
+        "created_by_name": "API_CLIENT:YYZBMHHWDAIT", "created_by": "4927d187-3fb3-4a9b-a42d-0c740f189412",
+        "updated_by_name": "API_CLIENT:YYZBMHHWDAIT", "updated_at": "2022-07-26T14:05:53.631Z",
+        "updated_by": "4927d187-3fb3-4a9b-a42d-0c740f189412", "id": "20e00b7d-22f6-4153-b756-6607b9b5d166",
+        "source_id": "22c26a65-161f-42c3-bb0f-a976dac8afe6", "source_name": "__encounter__"},
+        "cdtName": "__encounter_disposition__"}, "calendarEvent": {"id": "555bd5b3-7d73-4d0a-ac9f-a770fb431ac0",
+        "createdBy": "createdBy_REDACTED_cbacb7dc-6661-4ea2-a41d-137d8d2e56ac", "createdAt":
+        "2022-07-26T14:05:53.535Z", "updatedBy": "updatedBy_REDACTED_9e6b310a-5a34-4ea0-bdbf-5413a3edd093",
+        "updatedAt": "2022-07-29T01:55:24.252Z", "externalId": null, "externalIdUpdatedAt":
+        "2022-07-26T14:05:53.535Z", "eventTitle": "NEW ENC", "eventDescription": null,
+        "startDateTime": "2022-07-26T20:05:53.277Z", "localStartDateTime": "2022-07-26T20:05:53.277+00:00",
+        "endDateTime": "2022-07-26T21:05:53.277Z", "localEndDateTime": "2022-07-26T21:05:53.277+00:00",
+        "allDayEvent": false, "duration": 3600, "eventType": "ENCOUNTER", "eventStatus":
+        "SCHEDULED", "eventMode": "VIDEO", "eventColor": null, "hostId": "c08af975-8afc-49cb-84ac-7189b727148c",
+        "timezone": null, "additionalInfo": null, "participants": [{"id": "fa5c40ee-208f-4d55-ae04-a0086eb42f68",
+        "participantId": "c08af975-8afc-49cb-84ac-7189b727148c", "participantRole":
+        "psm", "participationStatus": "", "attended": false, "timezone": null, "firstName":
+        "Eddie", "lastName": "Cohen", "deleted": false, "hasAccess": false, "email":
+        "eddie@lightmatter.com", "phone": null, "gender": null, "birthDate": null,
+        "enabled": true}, {"id": "bc9f58e1-313c-424b-8f8e-7bc955775283", "participantId":
+        "371dd15c-cedc-4425-a394-d666c8d3fc01", "participantRole": "patient", "participationStatus":
+        "", "attended": false, "timezone": null, "firstName": "Demo", "lastName":
+        "Er", "deleted": false, "hasAccess": false, "email": "eddiehcohen@gmail.com",
+        "phone": "+19142176687", "gender": "UNKNOWN", "birthDate": "1998-08-08T00:00:00.000Z",
+        "enabled": null}]}, "userRelatedToCalendarEvent": {"territories": [], "roles":
+        [], "policies": [], "seats": [], "seatAssignAllowed": false, "updatedByName":
+        "updatedByName_REDACTED_5308361b-7d21-4d5a-a315-4864ccfc7d5a", "id": "c08af975-8afc-49cb-84ac-7189b727148c",
+        "username": "eddie", "email": "eddie@lightmatter.com", "locale": "en-US",
+        "firstName": "Eddie", "lastName": "Cohen", "enabled": true, "mfaEnabled":
+        false, "statusType": null, "createdAt": "2022-07-01T14:59:40.122Z", "updatedAt":
+        "2022-08-05T16:02:37.109Z", "ssoAccess": false, "passwordAccess": true, "terminologyName":
+        "english", "userState": "ACTIVE", "customUserAttributes": {"acuitySchedulingId":
+        "6965832"}, "allowedToReceiveCalls": true, "userAttributes": {"acuitySchedulingId":
+        "6965832"}, "_root_user": false}, "assessmentLinks": [{"id": "4d2be3ba-2be3-4171-a8bf-de68cd8e5a42",
+        "patientId": "371dd15c-cedc-4425-a394-d666c8d3fc01", "cdtId": "e77f470c-d93c-4dcf-8f21-8cebcc5c8f40",
+        "version": 6, "jsonBody": {"external_guid": null, "created_at": "2022-08-04T18:27:59.737Z",
+        "source_type": "ENCOUNTER", "external_id": null, "fromTemplate": false, "created_by_name":
+        "API_CLIENT:YYZBMHHWDAIT", "created_by": "4927d187-3fb3-4a9b-a42d-0c740f189412",
+        "assessmentTitle": "hello-form2", "relation": "ASSESSMENT", "updated_by_name":
+        "API_CLIENT:YYZBMHHWDAIT", "updated_at": "2022-08-04T18:27:59.737Z", "assessmentName":
+        "asm-hello-form2", "updated_by": "4927d187-3fb3-4a9b-a42d-0c740f189412", "id":
+        "4d2be3ba-2be3-4171-a8bf-de68cd8e5a42", "source_id": "22c26a65-161f-42c3-bb0f-a976dac8afe6",
+        "assessmentRecordId": null, "source_name": "__encounter__"}, "cdtName": "__encounter_assessment__"},
+        {"id": "10c6481b-f25b-49cf-9761-33aeced25f46", "patientId": "371dd15c-cedc-4425-a394-d666c8d3fc01",
+        "cdtId": "e77f470c-d93c-4dcf-8f21-8cebcc5c8f40", "version": 6, "jsonBody":
+        {"external_guid": null, "created_at": "2022-08-04T18:27:39.678Z", "source_type":
+        "ENCOUNTER", "external_id": null, "fromTemplate": false, "created_by_name":
+        "API_CLIENT:YYZBMHHWDAIT", "created_by": "4927d187-3fb3-4a9b-a42d-0c740f189412",
+        "assessmentTitle": "hello-form", "relation": "ASSESSMENT", "updated_by_name":
+        "API_CLIENT:YYZBMHHWDAIT", "updated_at": "2022-08-04T18:27:39.678Z", "assessmentName":
+        "asm-hello-form", "updated_by": "4927d187-3fb3-4a9b-a42d-0c740f189412", "id":
+        "10c6481b-f25b-49cf-9761-33aeced25f46", "source_id": "22c26a65-161f-42c3-bb0f-a976dac8afe6",
+        "assessmentRecordId": null, "source_name": "__encounter__"}, "cdtName": "__encounter_assessment__"}],
+        "comments": []}'
+    headers:
+      Access-Control-Allow-Headers:
+      - authorization, content-type, xsrf-token, security-role
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, PATCH, OPTIONS
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - xsrf-token
+      Access-Control-Max-Age:
+      - '3600'
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 05 Aug 2022 19:21:31 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Set-Cookie:
+      - AWSALB=tp1DvgkAmZrIOeK0ef11snH3R4Qu/Rd4yx1l2R78If+Z4CNV0m0Yo5sU/jAxkYbp/zLtIdZOMY7ea2ZXmbPTiCRE92L4Kl7ofrWsnx5HpdAowEcX0ZzqWUnjjCOE;
+        Expires=Fri, 12 Aug 2022 19:21:31 GMT; Path=/
+      - AWSALBCORS=tp1DvgkAmZrIOeK0ef11snH3R4Qu/Rd4yx1l2R78If+Z4CNV0m0Yo5sU/jAxkYbp/zLtIdZOMY7ea2ZXmbPTiCRE92L4Kl7ofrWsnx5HpdAowEcX0ZzqWUnjjCOE;
+        Expires=Fri, 12 Aug 2022 19:21:31 GMT; Path=/; SameSite=None; Secure
+      Transfer-Encoding:
+      - chunked
+      X-Content-Type-Options:
+      - nosniff
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: ''
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - API_TOKEN_379e4bb2-a57b-49f4-8e2e-b0f06ce1e0ee
+      Connection:
+      - keep-alive
+      Cookie:
+      - AWSALB=tp1DvgkAmZrIOeK0ef11snH3R4Qu/Rd4yx1l2R78If+Z4CNV0m0Yo5sU/jAxkYbp/zLtIdZOMY7ea2ZXmbPTiCRE92L4Kl7ofrWsnx5HpdAowEcX0ZzqWUnjjCOE;
+        AWSALBCORS=tp1DvgkAmZrIOeK0ef11snH3R4Qu/Rd4yx1l2R78If+Z4CNV0m0Yo5sU/jAxkYbp/zLtIdZOMY7ea2ZXmbPTiCRE92L4Kl7ofrWsnx5HpdAowEcX0ZzqWUnjjCOE
+      User-Agent:
+      - python-welkin/0.0.4
+    method: GET
+    uri: https://api.live.welkincloud.io/tenant_REDACTED/instance_REDACTED/patients/371dd15c-cedc-4425-a394-d666c8d3fc01/encounters/22c26a65-161f-42c3-bb0f-a976dac8afe6/assessments/10c6481b-f25b-49cf-9761-33aeced25f46
+  response:
+    body:
+      string: '{"id": "10c6481b-f25b-49cf-9761-33aeced25f46", "patientId": "371dd15c-cedc-4425-a394-d666c8d3fc01",
+        "cdtId": "e77f470c-d93c-4dcf-8f21-8cebcc5c8f40", "version": 6, "jsonBody":
+        {"external_guid": null, "created_at": "2022-08-04T18:27:39.678Z", "source_type":
+        "ENCOUNTER", "external_id": null, "fromTemplate": false, "created_by_name":
+        "API_CLIENT:YYZBMHHWDAIT", "created_by": "4927d187-3fb3-4a9b-a42d-0c740f189412",
+        "assessmentTitle": "hello-form", "relation": "ASSESSMENT", "updated_by_name":
+        "API_CLIENT:YYZBMHHWDAIT", "updated_at": "2022-08-04T18:27:39.678Z", "assessmentName":
+        "asm-hello-form", "updated_by": "4927d187-3fb3-4a9b-a42d-0c740f189412", "id":
+        "10c6481b-f25b-49cf-9761-33aeced25f46", "source_id": "22c26a65-161f-42c3-bb0f-a976dac8afe6",
+        "assessmentRecordId": null, "source_name": "__encounter__"}, "cdtName": "__encounter_assessment__"}'
+    headers:
+      Access-Control-Allow-Headers:
+      - authorization, content-type, xsrf-token, security-role
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, PATCH, OPTIONS
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - xsrf-token
+      Access-Control-Max-Age:
+      - '3600'
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 05 Aug 2022 19:21:31 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Set-Cookie:
+      - AWSALB=Fok9E3fD7nKI+RNcIkhhYGsBbT+EA8QSLDVXaxNr0hUc2SlrGqJOoOiyIp/8O6KBNCt7ZOHLcnll8PkFHbdyKKsNq5atxDSCu7JAjE/MLNGDRTAs213vNXroQY+b;
+        Expires=Fri, 12 Aug 2022 19:21:31 GMT; Path=/
+      - AWSALBCORS=Fok9E3fD7nKI+RNcIkhhYGsBbT+EA8QSLDVXaxNr0hUc2SlrGqJOoOiyIp/8O6KBNCt7ZOHLcnll8PkFHbdyKKsNq5atxDSCu7JAjE/MLNGDRTAs213vNXroQY+b;
+        Expires=Fri, 12 Aug 2022 19:21:31 GMT; Path=/; SameSite=None; Secure
+      Transfer-Encoding:
+      - chunked
+      X-Content-Type-Options:
+      - nosniff
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: ''
+version: 1

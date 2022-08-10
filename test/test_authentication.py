@@ -7,6 +7,8 @@ from welkin.authentication import DB_PATH
 
 def auth_class(client):
     auth = client.auth
+    if auth.tenant != "gh":
+        auth.tenant = "test_tenant"
     auth.token_method = lambda: {"token": "API_TOKEN"}
 
     return auth

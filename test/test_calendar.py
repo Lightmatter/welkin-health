@@ -3,7 +3,7 @@ from datetime import datetime, timedelta, timezone
 import pytest
 
 from welkin.exceptions import WelkinHTTPError
-from welkin.models.calendar import CalendarEvent, CalendarEvents
+from welkin.models.calendar import CalendarEvent, CalendarEvents, Schedule, Schedules
 
 UTC = timezone.utc
 
@@ -83,3 +83,21 @@ def test_calendar_event_delete(client, vcr_cassette):
         assert excinfo.value.response.status_code == 404
 
     assert len(vcr_cassette) == 3
+
+
+@pytest.mark.vcr()
+def test_schedule_read_all(client, vcr_cassette):
+    from_date = datetime(2022, 4, 1, 16, 38, 20, 641000, tzinfo=UTC)
+    to_date = datetime(2022, 6, 30, 16, 38, 20, 641000, tzinfo=UTC)
+
+    schedules = client.Schedules().get(
+        ids=["d9925247-7505-464a-b42c-25ac71408494"],
+        from_date=from_date,
+        to_date=to_date,
+        include_cancelled=True,
+    )
+
+    assert isinstance(schedules, Schedules)
+    assert isinstance(schedules[0], Schedule)
+
+    assert len(vcr_cassette) == 1

@@ -1,0 +1,63 @@
+interactions:
+- request:
+    body: '{"message": "Foo Baz."}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - API_TOKEN_920ad761-bcce-40b9-b65f-7eb239234aa1
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '23'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-welkin/0.0.4
+    method: POST
+    uri: https://api.live.welkincloud.io/tenant_REDACTED/instance_REDACTED/patients/17450e44-c2c8-46c4-9486-0d9bfa16d3aa/chat/inbound
+  response:
+    body:
+      string: '{"sender": {"clientType": "PATIENT", "id": "17450e44-c2c8-46c4-9486-0d9bfa16d3aa",
+        "titleName": null, "patientFullName": "Testy McTesterson"}, "message": "Foo
+        Baz.", "externalId": "IM51dcee1864d54b9b9a1856e9e12a7555", "createdAt": "2022-08-01T20:59:15.000Z"}'
+    headers:
+      Access-Control-Allow-Headers:
+      - authorization, content-type, xsrf-token, security-role
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, PATCH, OPTIONS
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - xsrf-token
+      Access-Control-Max-Age:
+      - '3600'
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 01 Aug 2022 20:59:16 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Set-Cookie:
+      - AWSALB=C3sWk9wiDwpwQHepFSmShmUFUmPb2MOCFBhl4R8OGW4aINWk1FnvkkccWy7r/8FjMa/zdB5PV4bLoN6DcwOnzszYM12ZAHxlgGRIqXlROI5IpW2TmzoOIS3Zs658;
+        Expires=Mon, 08 Aug 2022 20:59:15 GMT; Path=/
+      - AWSALBCORS=C3sWk9wiDwpwQHepFSmShmUFUmPb2MOCFBhl4R8OGW4aINWk1FnvkkccWy7r/8FjMa/zdB5PV4bLoN6DcwOnzszYM12ZAHxlgGRIqXlROI5IpW2TmzoOIS3Zs658;
+        Expires=Mon, 08 Aug 2022 20:59:15 GMT; Path=/; SameSite=None; Secure
+      Transfer-Encoding:
+      - chunked
+      X-Content-Type-Options:
+      - nosniff
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: ''
+version: 1
