@@ -32,8 +32,10 @@ def test_care_plan_update(client, vcr_cassette):
     patient = client.Patient(id="173a8adf-92e8-4832-8900-027c71b0d768")
     care_plan = patient.CarePlan().get()
     overview = care_plan.patientOverview["overview"]
+    new_overview = "A new overview message 123"
+    care_plan.CarePlanOverview(**{"overview": new_overview}).update()
+    care_plan = patient.CarePlan().get()
 
-    care_plan.update(overview="New overview message.")
-
-    assert care_plan.overview != overview
-    assert len(vcr_cassette) == 2
+    assert care_plan.patientOverview["overview"] != overview
+    assert care_plan.patientOverview["overview"] == new_overview
+    assert len(vcr_cassette) == 3

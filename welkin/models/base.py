@@ -94,18 +94,6 @@ class Resource(dict, SchemaBase):
 
         return self
 
-    def patch_as_put(self, resource, data, *args, **kwargs):
-        response = self._client.put(
-            resource,
-            json=data,
-            *args,
-            **kwargs,
-        )
-
-        super().update(response)
-
-        return self
-
     def delete(self, resource, *args, **kwargs):
         response = self._client.delete(resource, *args, **kwargs)
         super().update(response)
