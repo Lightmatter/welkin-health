@@ -32,8 +32,8 @@ class Client(Session):
         secret_key (str): API client secret key.
         timeout (int, optional): :obj:`TimeoutHTTPAdapter` timeout value. Defaults to 5.
         total (int, optional): :obj:`Retry` total value. Defaults to 5.
-        backoff_factor (int, optional): :obj:`Retry` backoff_factor value.
-            Defaults to 30.
+        backoff_factor (float, optional): :obj:`Retry` backoff_factor value.
+            Defaults to 0.5.
 
     Usage::
 
@@ -77,7 +77,7 @@ class Client(Session):
         secret_key,
         timeout=5,
         total=5,
-        backoff_factor=30,
+        backoff_factor=0.5,
     ):
         """Welkin Health client constructor.
 
@@ -91,8 +91,8 @@ class Client(Session):
             secret_key (str): API client secret key.
             timeout (int, optional): :obj:`TimeoutHTTPAdapter` timeout value. Defaults to 5.
             total (int, optional): :obj:`Retry` total value. Defaults to 5.
-            backoff_factor (int, optional): :obj:`Retry` backoff_factor value.
-                Defaults to 30.
+            backoff_factor (float, optional): :obj:`Retry` backoff_factor value.
+                Defaults to 0.5.
         """
         super().__init__()
 
