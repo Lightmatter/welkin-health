@@ -1,0 +1,192 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - API_TOKEN_c7b4ea24-e9cc-4fc6-adf2-cbbe554868a4
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-welkin/0.0.5
+    method: GET
+    uri: https://api.live.welkincloud.io/tenant_REDACTED/instance_REDACTED/patients/173a8adf-92e8-4832-8900-027c71b0d768/care-plan
+  response:
+    body:
+      string: '{"id": "059846c0-2eae-4126-acfd-57bd27042a95", "createdByName": "createdByName_REDACTED_21855277-0c1e-4a0f-8d33-34afc52de718",
+        "createdAt": "2022-08-08T17:56:36.088Z", "updatedByName": "updatedByName_REDACTED_78dd3bfb-eb49-4863-97ae-0ae12d3f70c0",
+        "updatedAt": "2022-08-12T00:46:01.620Z", "patientId": "173a8adf-92e8-4832-8900-027c71b0d768",
+        "patientOverview": {"createdByName": "createdByName_REDACTED_3d92c900-c75d-4f49-ba02-1184c8d19681",
+        "createdAt": "2022-08-08T19:18:42.623Z", "updatedByName": "updatedByName_REDACTED_9e4cdf2b-d490-4a59-ba71-299bc68147a5",
+        "updatedAt": "2022-08-12T00:46:01.619Z", "overview": "This is a new overview
+        message for a test"}}'
+    headers:
+      Access-Control-Allow-Headers:
+      - authorization, content-type, xsrf-token, security-role
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, PATCH, OPTIONS
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - xsrf-token
+      Access-Control-Max-Age:
+      - '3600'
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 12 Aug 2022 00:47:52 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Set-Cookie:
+      - AWSALB=4JlLO35ybkVokW0xDWXC8GuJ6zmZrn46fGqiIZBvTCLfBcuNLK4owv98GcVn5tE09kS58p+sEvNmE9Ef4SwQsleo615JXg6JIIh0bL1YajSOqpd/kU807HkFuvfb;
+        Expires=Fri, 19 Aug 2022 00:47:52 GMT; Path=/
+      - AWSALBCORS=4JlLO35ybkVokW0xDWXC8GuJ6zmZrn46fGqiIZBvTCLfBcuNLK4owv98GcVn5tE09kS58p+sEvNmE9Ef4SwQsleo615JXg6JIIh0bL1YajSOqpd/kU807HkFuvfb;
+        Expires=Fri, 19 Aug 2022 00:47:52 GMT; Path=/; SameSite=None; Secure
+      Transfer-Encoding:
+      - chunked
+      X-Content-Type-Options:
+      - nosniff
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: ''
+- request:
+    body: '{"overview": "Why not have a new overview message?"}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - API_TOKEN_c7b4ea24-e9cc-4fc6-adf2-cbbe554868a4
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '52'
+      Content-Type:
+      - application/json
+      Cookie:
+      - AWSALB=4JlLO35ybkVokW0xDWXC8GuJ6zmZrn46fGqiIZBvTCLfBcuNLK4owv98GcVn5tE09kS58p+sEvNmE9Ef4SwQsleo615JXg6JIIh0bL1YajSOqpd/kU807HkFuvfb;
+        AWSALBCORS=4JlLO35ybkVokW0xDWXC8GuJ6zmZrn46fGqiIZBvTCLfBcuNLK4owv98GcVn5tE09kS58p+sEvNmE9Ef4SwQsleo615JXg6JIIh0bL1YajSOqpd/kU807HkFuvfb
+      User-Agent:
+      - python-welkin/0.0.5
+    method: PUT
+    uri: https://api.live.welkincloud.io/tenant_REDACTED/instance_REDACTED/patients/173a8adf-92e8-4832-8900-027c71b0d768/care-plan/overview
+  response:
+    body:
+      string: '{"createdByName": "createdByName_REDACTED_f229ea81-3d13-4aea-9c8e-13a69ee6eb12",
+        "createdAt": "2022-08-08T19:18:42.623Z", "updatedByName": "updatedByName_REDACTED_a891b7a0-2a7d-47e0-8bc9-4214b2fba90c",
+        "updatedAt": "2022-08-12T00:47:52.342Z", "overview": "Why not have a new overview
+        message?"}'
+    headers:
+      Access-Control-Allow-Headers:
+      - authorization, content-type, xsrf-token, security-role
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, PATCH, OPTIONS
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - xsrf-token
+      Access-Control-Max-Age:
+      - '3600'
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 12 Aug 2022 00:47:52 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Set-Cookie:
+      - AWSALB=JNfJM/E+1xJQ5DHeK84EwCQPy+wJaYwYdWgjQO8NTdHDV7wEN8NJQFykNpiG1PhIxgk5IbnECWBXzyehogbphOgmHIR57BIdW1r0z4lXez8csWzscuEARuYR5BRS;
+        Expires=Fri, 19 Aug 2022 00:47:52 GMT; Path=/
+      - AWSALBCORS=JNfJM/E+1xJQ5DHeK84EwCQPy+wJaYwYdWgjQO8NTdHDV7wEN8NJQFykNpiG1PhIxgk5IbnECWBXzyehogbphOgmHIR57BIdW1r0z4lXez8csWzscuEARuYR5BRS;
+        Expires=Fri, 19 Aug 2022 00:47:52 GMT; Path=/; SameSite=None; Secure
+      Transfer-Encoding:
+      - chunked
+      X-Content-Type-Options:
+      - nosniff
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: ''
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - API_TOKEN_c7b4ea24-e9cc-4fc6-adf2-cbbe554868a4
+      Connection:
+      - keep-alive
+      Cookie:
+      - AWSALB=JNfJM/E+1xJQ5DHeK84EwCQPy+wJaYwYdWgjQO8NTdHDV7wEN8NJQFykNpiG1PhIxgk5IbnECWBXzyehogbphOgmHIR57BIdW1r0z4lXez8csWzscuEARuYR5BRS;
+        AWSALBCORS=JNfJM/E+1xJQ5DHeK84EwCQPy+wJaYwYdWgjQO8NTdHDV7wEN8NJQFykNpiG1PhIxgk5IbnECWBXzyehogbphOgmHIR57BIdW1r0z4lXez8csWzscuEARuYR5BRS
+      User-Agent:
+      - python-welkin/0.0.5
+    method: GET
+    uri: https://api.live.welkincloud.io/tenant_REDACTED/instance_REDACTED/patients/173a8adf-92e8-4832-8900-027c71b0d768/care-plan
+  response:
+    body:
+      string: '{"id": "059846c0-2eae-4126-acfd-57bd27042a95", "createdByName": "createdByName_REDACTED_68390acb-a307-4e41-959f-59119075ad80",
+        "createdAt": "2022-08-08T17:56:36.088Z", "updatedByName": "updatedByName_REDACTED_61e2939e-56b5-4ab3-8406-7e07969525de",
+        "updatedAt": "2022-08-12T00:47:52.342Z", "patientId": "173a8adf-92e8-4832-8900-027c71b0d768",
+        "patientOverview": {"createdByName": "createdByName_REDACTED_b35068be-9813-434b-9b57-5276d7d06db7",
+        "createdAt": "2022-08-08T19:18:42.623Z", "updatedByName": "updatedByName_REDACTED_21cd3c82-a446-498c-8e1f-e74bff252774",
+        "updatedAt": "2022-08-12T00:47:52.342Z", "overview": "Why not have a new overview
+        message?"}}'
+    headers:
+      Access-Control-Allow-Headers:
+      - authorization, content-type, xsrf-token, security-role
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, PATCH, OPTIONS
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - xsrf-token
+      Access-Control-Max-Age:
+      - '3600'
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 12 Aug 2022 00:47:52 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Set-Cookie:
+      - AWSALB=PLrHLNESmL6DBL0w69UElb00s4T8e3kpeAU+jAJTakmCzyhl0Yf8+M9ByWH1+Eo6isyrQu+Ko5RW8+SYj9fhUFQ2j/erz56f9Q3OqoBLQOAA5sWEH5j48x7ciu4o;
+        Expires=Fri, 19 Aug 2022 00:47:52 GMT; Path=/
+      - AWSALBCORS=PLrHLNESmL6DBL0w69UElb00s4T8e3kpeAU+jAJTakmCzyhl0Yf8+M9ByWH1+Eo6isyrQu+Ko5RW8+SYj9fhUFQ2j/erz56f9Q3OqoBLQOAA5sWEH5j48x7ciu4o;
+        Expires=Fri, 19 Aug 2022 00:47:52 GMT; Path=/; SameSite=None; Secure
+      Transfer-Encoding:
+      - chunked
+      X-Content-Type-Options:
+      - nosniff
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: ''
+version: 1
