@@ -1,6 +1,22 @@
 from sys import modules
 
 
+def find_patient_id_in_parents(model_instance):
+    if isinstance(
+        model_instance,
+        getattr(modules["welkin.models"], "Patient"),
+    ):
+        return model_instance.id
+    elif hasattr(model_instance, "patientId"):
+        return model_instance.patientId
+    elif model_instance._parent:
+        return find_patient_id_in_parents(model_instance._parent)
+    else:
+        raise Exception(
+            f"Cannot find patient id. Model._parent chain ends in {model_instance}"
+        )
+
+
 class EncounterSubResource:
     """Utility class for subresources of Encounters to get patient and encounter ids"""
 

@@ -1,0 +1,64 @@
+interactions:
+- request:
+    body: '{"overview": "This is a message for the overview."}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - API_TOKEN_fa8ed4bb-7a6c-4d6c-ad28-e9fb3edd5a33
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '51'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-welkin/0.0.5
+    method: POST
+    uri: https://api.live.welkincloud.io/tenant_REDACTED/instance_REDACTED/patients/331678c1-0ec9-4e4a-a947-8147a1d067a5/care-plan/overview
+  response:
+    body:
+      string: '{"createdByName": "createdByName_REDACTED_9e8fa9d3-ac4d-41d2-8142-02626878aeb1",
+        "createdAt": "2022-08-11T23:36:09.918Z", "updatedByName": "updatedByName_REDACTED_77eca2b8-e967-4f81-80d4-73b777ccc067",
+        "updatedAt": "2022-08-11T23:36:09.918Z", "overview": "This is a message for
+        the overview."}'
+    headers:
+      Access-Control-Allow-Headers:
+      - authorization, content-type, xsrf-token, security-role
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, PATCH, OPTIONS
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - xsrf-token
+      Access-Control-Max-Age:
+      - '3600'
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Thu, 11 Aug 2022 23:36:09 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Set-Cookie:
+      - AWSALB=DN2rU/BO2m/KTsE7019n1cl/iehPYYFpA4YBzWEzFNIG3kQyOiyzYe4Ft8tj70g/NgTPHwgGkJXk+BI9CnFfWKo3972qZE3MJ8reiTpCBIRW+3D3QDPRkgMz11oW;
+        Expires=Thu, 18 Aug 2022 23:36:09 GMT; Path=/
+      - AWSALBCORS=DN2rU/BO2m/KTsE7019n1cl/iehPYYFpA4YBzWEzFNIG3kQyOiyzYe4Ft8tj70g/NgTPHwgGkJXk+BI9CnFfWKo3972qZE3MJ8reiTpCBIRW+3D3QDPRkgMz11oW;
+        Expires=Thu, 18 Aug 2022 23:36:09 GMT; Path=/; SameSite=None; Secure
+      Transfer-Encoding:
+      - chunked
+      X-Content-Type-Options:
+      - nosniff
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: ''
+version: 1
