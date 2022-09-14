@@ -220,9 +220,8 @@ class Client(Session):
             meta.update(resource)
             resource = new_resource
         # encounter disposition formation comes as just a dictionary
-        elif isinstance(resource, dict):
+        elif isinstance(resource, dict) and "formations" in path:
             resource = [resource]
-            meta = {"number": 0, "last": True}
 
         # Response metadata for pagination
         if meta_key:

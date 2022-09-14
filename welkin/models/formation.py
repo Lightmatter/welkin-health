@@ -1,7 +1,7 @@
 from enum import Enum
 
 from welkin.models.base import Collection
-from welkin.pagination import PageableIterator
+from welkin.pagination import FormationIterator
 
 
 class FormationDataType(Enum):
@@ -13,7 +13,7 @@ class FormationDataType(Enum):
 
 
 class Formations(Collection):
-    iterator = PageableIterator
+    iterator = FormationIterator
 
     def get(self, data_type: FormationDataType, **kwargs):
         return super().get(
