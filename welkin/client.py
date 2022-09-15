@@ -207,7 +207,7 @@ class Client(Session):
         resource = json
         if "content" in json:
             resource = json.pop("content", None)
-        else:
+        elif "data" in json:
             resource = json.pop("data", None)
 
         meta = None
