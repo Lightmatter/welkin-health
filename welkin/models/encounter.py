@@ -81,6 +81,8 @@ class Encounters(Collection):
         only_with_calendar_event: bool = None,
         statuses: list = None,
         sort: str = None,
+        *args,
+        **kwargs,
     ):
         root = ""
         if patient_id:
@@ -107,4 +109,4 @@ class Encounters(Collection):
             "onlyWithCalendarEvent": only_with_calendar_event,
         }
 
-        return super().get(path, params=params)
+        return super().get(path, params=params, *args, **kwargs)
