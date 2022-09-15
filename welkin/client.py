@@ -204,9 +204,10 @@ class Client(Session):
             }
 
         # Pull out the resource
+        resource = json
         if "content" in json:
             resource = json.pop("content", None)
-        else:
+        elif "data" in json:
             resource = json.pop("data", None)
 
         meta = None
@@ -218,6 +219,9 @@ class Client(Session):
             meta.update(json)
             meta.update(resource)
             resource = new_resource
+        # encounter disposition formation comes as just a dictionary
+        elif isinstance(resource, dict) and "formations" in path:
+            resource = [resource]
 
         # Response metadata for pagination
         if meta_key:
