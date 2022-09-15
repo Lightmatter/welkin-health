@@ -16,7 +16,6 @@ class Formations(Collection):
     iterator = FormationIterator
 
     def get(self, data_type: FormationDataType, *args, **kwargs):
-        """Different Formation endpoints accept different query parameters"""
         return super().get(
             f"{self._client.instance}/formations/current/{data_type.value}",
             *args,
