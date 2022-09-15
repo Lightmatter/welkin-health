@@ -15,11 +15,10 @@ class FormationDataType(Enum):
 class Formations(Collection):
     iterator = FormationIterator
 
-    def get(self, data_type: FormationDataType, params: dict = {}, *args, **kwargs):
+    def get(self, data_type: FormationDataType, *args, **kwargs):
         """Different Formation endpoints accept different query parameters"""
         return super().get(
             f"{self._client.instance}/formations/current/{data_type.value}",
-            params=params,
             *args,
             **kwargs,
         )
