@@ -16,7 +16,7 @@ class Chats(Collection):
     resource = Chat
     iterator = MetaIterator
 
-    def get(self, include_archived: bool = False, **kwargs):
+    def get(self, include_archived: bool = False, *args, **kwargs):
         params = {
             "includeArchived": include_archived,
         }
@@ -24,6 +24,7 @@ class Chats(Collection):
         return super().get(
             f"{self._client.instance}/patients/{self._parent.id}/chat",
             params=params,
+            *args,
             **kwargs,
         )
 
@@ -41,6 +42,7 @@ class SearchChats(Collection):
         query: str,
         content_page_size: int = 20,
         include_archived: bool = False,
+        *args,
         **kwargs,
     ):
         params = {
@@ -52,5 +54,6 @@ class SearchChats(Collection):
         return super().get(
             f"{self._client.instance}/patients/{self._parent.id}/chat/search",
             params=params,
+            *args,
             **kwargs,
         )
