@@ -80,7 +80,6 @@ class PageableIterator(PageIterator):
 
     def _post_request(self, meta):
         self.page = meta["number"] + 1
-        print("here")
         self.last = meta.get("last")
 
 
@@ -103,7 +102,6 @@ class FormationIterator(PageIterator):
         self.kwargs.setdefault("params", {}).update(page=self.page)
 
     def _post_request(self, meta):
-        print(self)
         self.page = meta.get("number", 0) + 1
         self.last = meta.get("last", True)
 
