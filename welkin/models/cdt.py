@@ -40,6 +40,7 @@ class CDTs(Collection):
         date_start: datetime = None,
         date_end: datetime = None,
         sort: str = None,
+        *args,
         **kwargs,
     ):
 
@@ -63,7 +64,7 @@ class CDTs(Collection):
             "dateEnd": date_end,
         }
 
-        return super().get(path, params=params, **kwargs)
+        return super().get(path, params=params, *args, **kwargs)
 
     def update(
         self, patient_id: str = None, cdt_name: str = None, body: dict = None, **kwargs

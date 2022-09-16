@@ -1,0 +1,63 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - API_TOKEN_2a3afe22-be26-493c-8c05-4d067cae33a5
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-welkin/0.0.5
+    method: GET
+    uri: https://api.live.welkincloud.io/tenant_REDACTED/instance_REDACTED/patients/331678c1-0ec9-4e4a-a947-8147a1d067a5/care-plan
+  response:
+    body:
+      string: '{"id": "3564e807-779a-412c-8b38-5db4356eafb0", "createdByName": "createdByName_REDACTED_c8593e09-2767-45c5-adff-ee25929d161f",
+        "createdAt": "2022-08-11T23:31:51.510Z", "updatedByName": "updatedByName_REDACTED_245d28af-c8ee-4a26-8705-badb4d6a1c81",
+        "updatedAt": "2022-08-11T23:36:09.918Z", "patientId": "331678c1-0ec9-4e4a-a947-8147a1d067a5",
+        "patientOverview": {"createdByName": "createdByName_REDACTED_8fc55488-d9bc-44ca-8334-38cca312f327",
+        "createdAt": "2022-08-11T23:36:09.918Z", "updatedByName": "updatedByName_REDACTED_bf3df3e3-5a26-4da0-8756-7f7762967192",
+        "updatedAt": "2022-08-11T23:36:09.918Z", "overview": "This is a message for
+        the overview."}}'
+    headers:
+      Access-Control-Allow-Headers:
+      - authorization, content-type, xsrf-token, security-role
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, PATCH, OPTIONS
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - xsrf-token
+      Access-Control-Max-Age:
+      - '3600'
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 12 Aug 2022 01:14:37 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Set-Cookie:
+      - AWSALB=9vUDmnPYEGpcmbEQjXIAyfZOSG7JERwishk4Is1uKiGfd8TT17blFQFc9ZIdYQ7DZVRpqiMPK1E1dFaVRV/PueX3ISoeJIrKLIEdWDxAeXEuQFd5lSkw0ABtroua;
+        Expires=Fri, 19 Aug 2022 01:14:37 GMT; Path=/
+      - AWSALBCORS=9vUDmnPYEGpcmbEQjXIAyfZOSG7JERwishk4Is1uKiGfd8TT17blFQFc9ZIdYQ7DZVRpqiMPK1E1dFaVRV/PueX3ISoeJIrKLIEdWDxAeXEuQFd5lSkw0ABtroua;
+        Expires=Fri, 19 Aug 2022 01:14:37 GMT; Path=/; SameSite=None; Secure
+      Transfer-Encoding:
+      - chunked
+      X-Content-Type-Options:
+      - nosniff
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: ''
+version: 1

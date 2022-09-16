@@ -1,3 +1,5 @@
+from datetime import date
+
 import pytest
 
 from welkin.exceptions import WelkinHTTPError
@@ -7,6 +9,17 @@ from welkin.models.patient import Patient, Patients
 @pytest.mark.vcr()
 def test_patient_create(client, vcr_cassette):
     patient = client.Patient(firstName="Foo", lastName="Bar").create()
+
+    assert isinstance(patient, Patient)
+    assert hasattr(patient, "id")
+    assert len(vcr_cassette) == 1
+
+
+@pytest.mark.vcr()
+def test_patient_create_birthdate(client, vcr_cassette):
+    patient = client.Patient(
+        firstName="happy", lastName="borf", birthDate=date.today()
+    ).create()
 
     assert isinstance(patient, Patient)
     assert hasattr(patient, "id")

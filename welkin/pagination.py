@@ -83,6 +83,29 @@ class PageableIterator(PageIterator):
         self.last = meta.get("last")
 
 
+class FormationIterator(PageIterator):
+    """
+    Specifically for paginating formations responses
+    Similar to PageableIterator but includes special behavior for
+    single item formations, e.g. encounter disposition
+    """
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.meta_key = "pageable"
+
+    def __iter__(self):
+        self.page = 0
+        return super().__iter__()
+
+    def _pre_request(self):
+        self.kwargs.setdefault("params", {}).update(page=self.page)
+
+    def _post_request(self, meta):
+        self.page = meta.get("number", 0) + 1
+        self.last = meta.get("last", True)
+
+
 class PageNumberIterator(PageableIterator):
     """
     PageableIterator with a different key used for the page count

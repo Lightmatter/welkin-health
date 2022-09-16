@@ -44,13 +44,11 @@ class Assessment(Resource, EncounterSubResource):
         )
 
 
-class Assessments(
-    Collection,
-):
+class Assessments(Collection):
     resource = Assessment
     iterator = PageableIterator
 
-    def get(self, patient_id: str = None, encounter_id: str = None):
+    def get(self, patient_id: str = None, encounter_id: str = None, *args, **kwargs):
 
         root = f"{self._client.instance}/patients/"
         if self._parent:
@@ -67,7 +65,7 @@ class Assessments(
 
         path = f"{patient_id}/encounters/{encounter_id}/assessments"
 
-        return super().get(f"{root}{path}")
+        return super().get(f"{root}{path}", *args, **kwargs)
 
 
 class AssessmentRecordAnswers(Resource):

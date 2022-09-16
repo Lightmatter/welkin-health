@@ -43,6 +43,8 @@ class Users(Collection):
         region: str = None,
         seat_assigned: bool = None,
         user_state: str = None,
+        *args,
+        **kwargs,
     ):
         # TODO: Figure out sort arguments
         params = dict(
@@ -60,4 +62,4 @@ class Users(Collection):
             path = f"{self._client.instance}/users"
             params["region"] = region
 
-        return super().get(path, params=params)
+        return super().get(path, params=params, *args, **kwargs)
