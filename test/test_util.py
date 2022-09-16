@@ -1,7 +1,5 @@
 from datetime import date, datetime
 
-import pytest
-
 from welkin.util import (
     clean_date,
     clean_datetime,
