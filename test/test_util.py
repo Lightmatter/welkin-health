@@ -29,11 +29,6 @@ def test_clean_request_payload():
     assert cleaned["list"][0] == "2022-09-15T23:00:00.000Z"
 
 
-def test_clean_request_payload_invalid_type():
-    with pytest.raises(TypeError):
-        clean_request
-
-
 def test_clean_json_list():
     json_list = [
         datetime.fromisoformat("2022-09-15T23:00:00.000+00:00"),
