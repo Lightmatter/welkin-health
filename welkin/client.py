@@ -10,10 +10,10 @@ from requests.adapters import HTTPAdapter
 from requests.compat import urljoin
 from requests.packages.urllib3.util.retry import Retry  # type: ignore
 
-from welkin import __version__
+from welkin import __version__, models
 from welkin.authentication import WelkinAuth
 from welkin.exceptions import WelkinHTTPError
-from welkin.models import *
+from welkin.models.base import Collection, Resource
 from welkin.util import clean_request_params, clean_request_payload
 
 logger = logging.getLogger(__name__)
@@ -122,17 +122,38 @@ class Client(Session):
 
     def __build_resources(self) -> None:
         """Add each resource with a reference to this instance."""
-        for k, v in globals().items():
+        self.Assessment = models.Assessment
+        self.AssessmentRecord = models.AssessmentRecord
+        self.AssessmentRecordAnswers = models.AssessmentRecordAnswers
+        self.AssessmentRecords = models.AssessmentRecords
+        self.Assessments = models.Assessments
+        self.CalendarEvent = models.CalendarEvent
+        self.CalendarEvents = models.CalendarEvents
+        self.Schedules = models.Schedules
+        self.CarePlan = models.CarePlan
+        self.CarePlanOverview = models.CarePlanOverview
+        self.CDT = models.CDT
+        self.CDTs = models.CDTs
+        self.Chat = models.Chat
+        self.Chats = models.Chats
+        self.SearchChats = models.SearchChats
+        self.Disposition = models.Disposition
+        self.Encounter = models.Encounter
+        self.Encounters = models.Encounters
+        self.Formations = models.Formations
+        self.Patient = models.Patient
+        self.Patients = models.Patients
+        self.User = models.User
+        self.Users = models.Users
+
+        for k, v in vars(self).items():
             try:
-                for base in v.__bases__:
-                    if base.__name__ not in ["Collection", "Resource"]:
-                        continue
-
-                    v._client = self
-                    setattr(self, k, v)
-
-            except AttributeError:
+                issubclass(v, (Collection, Resource))
+            except TypeError:
+                # Failed because `issubclass` expects a class.
                 continue
+
+            getattr(self, k)._client = self
 
     def prepare_request(self, request):
         if request.json:
