@@ -1,3 +1,4 @@
+import sys
 from datetime import date, datetime, timedelta, timezone
 
 from welkin.util import (
@@ -19,6 +20,11 @@ def test_clean_request_payload():
         "date": date(2022, 9, 15),
         "dict": {"foo": "bar", "nested": {"date": date(2022, 9, 15)}},
         "list": [datetime(2022, 9, 15, 23, 0, 0, 0, UTC)],
+        "str": "Don't clean me please.",
+        "int": [-sys.maxsize, 0, sys.maxsize],
+        "float": [sys.float_info.min, 1, sys.float_info.max],
+        "bool": [True, False],
+        "none": None,
     }
     payload_copy = dict(payload)
 
@@ -40,6 +46,7 @@ def test_clean_json_list():
                 "foo": [datetime(2022, 9, 15, 23, 0, 0, 0, PST)],
             },
         ],
+        "Strings don't get cleaned",
     ]
     json_list_copy = list(json_list)
 
