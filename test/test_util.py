@@ -1,4 +1,4 @@
-from datetime import date, datetime
+from datetime import date, datetime, timedelta, timezone
 
 from welkin.util import (
     clean_date,
@@ -8,13 +8,17 @@ from welkin.util import (
     clean_request_payload,
 )
 
+UTC = timezone.utc
+PST = timezone(timedelta(hours=-8))
+EST = timezone(timedelta(hours=-5))
+
 
 def test_clean_request_payload():
     payload = {
-        "datetime": datetime.fromisoformat("2022-09-15T23:00:00.000-08:00"),
+        "datetime": datetime(2022, 9, 15, 23, 0, 0, 0, PST),
         "date": date(2022, 9, 15),
         "dict": {"foo": "bar", "nested": {"date": date(2022, 9, 15)}},
-        "list": [datetime.fromisoformat("2022-09-15T23:00:00.000+00:00")],
+        "list": [datetime(2022, 9, 15, 23, 0, 0, 0, UTC)],
     }
     payload_copy = dict(payload)
 
@@ -29,11 +33,11 @@ def test_clean_request_payload():
 
 def test_clean_json_list():
     json_list = [
-        datetime.fromisoformat("2022-09-15T23:00:00.000+00:00"),
+        datetime(2022, 9, 15, 23, 0, 0, 0, UTC),
         date(2022, 9, 15),
         [
             {
-                "foo": [datetime.fromisoformat("2022-09-15T23:00:00.000-08:00")],
+                "foo": [datetime(2022, 9, 15, 23, 0, 0, 0, PST)],
             },
         ],
     ]
@@ -49,7 +53,7 @@ def test_clean_json_list():
 
 def test_clean_request_params():
     params = {
-        "datetime": datetime.fromisoformat("2022-09-15T23:00:00.000-08:00"),
+        "datetime": datetime(2022, 9, 15, 23, 0, 0, 0, PST),
         "date": date(2022, 9, 15),
         "list": ["foo", "bar", "baz"],
     }
@@ -72,19 +76,19 @@ def test_clean_date():
 def test_clean_datetime():
     datetime_tests = {
         "utc": {
-            "dt": datetime.fromisoformat("2022-09-15T23:00:00.000+00:00"),
+            "dt": datetime(2022, 9, 15, 23, 0, 0, 0, UTC),
             "expected": "2022-09-15T23:00:00.000Z",
         },
         "pst": {
-            "dt": datetime.fromisoformat("2022-09-15T23:00:00.000-08:00"),
+            "dt": datetime(2022, 9, 15, 23, 0, 0, 0, PST),
             "expected": "2022-09-16T07:00:00.000Z",
         },
         "est": {
-            "dt": datetime.fromisoformat("2022-09-15T23:00:00.000-05:00"),
+            "dt": datetime(2022, 9, 15, 23, 0, 0, 0, EST),
             "expected": "2022-09-16T04:00:00.000Z",
         },
     }
-
+    timedelta()
     for name, data in datetime_tests.items():
         cleaned = clean_datetime(data["dt"])
         assert cleaned == data["expected"], f"Unexpected result for '{name}'"
