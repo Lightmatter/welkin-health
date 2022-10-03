@@ -55,7 +55,7 @@ def clean_request_params(params: dict) -> dict:
 
 
 def clean_date(date: date) -> str:
-    dt = datetime(date.year, date.month, date.day, 0, 0, 0)
+    dt = datetime(date.year, date.month, date.day, 0, 0, 0, tzinfo=timezone.utc)
 
     return clean_datetime(dt)
 

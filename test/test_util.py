@@ -66,7 +66,7 @@ def test_clean_request_params():
 def test_clean_date():
     cleaned = clean_date(date(2022, 9, 15))
 
-    assert cleaned == "2022-09-15T07:00:00.000Z"
+    assert cleaned == "2022-09-15T00:00:00.000Z"
 
 
 def test_clean_datetime():
