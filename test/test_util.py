@@ -22,8 +22,8 @@ def test_clean_request_payload():
     assert payload == payload_copy, "Payload was modified"
 
     assert cleaned["datetime"] == "2022-09-16T07:00:00.000Z"
-    assert cleaned["date"] == "2022-09-15T07:00:00.000Z"
-    assert cleaned["dict"]["nested"]["date"] == "2022-09-15T07:00:00.000Z"
+    assert cleaned["date"] == "2022-09-15T00:00:00.000Z"
+    assert cleaned["dict"]["nested"]["date"] == "2022-09-15T00:00:00.000Z"
     assert cleaned["list"][0] == "2022-09-15T23:00:00.000Z"
 
 
@@ -43,7 +43,7 @@ def test_clean_json_list():
     assert json_list == json_list_copy, "JSON list was modified"
 
     assert cleaned[0] == "2022-09-15T23:00:00.000Z"
-    assert cleaned[1] == "2022-09-15T07:00:00.000Z"
+    assert cleaned[1] == "2022-09-15T00:00:00.000Z"
     assert cleaned[2][0]["foo"][0] == "2022-09-16T07:00:00.000Z"
 
 
@@ -59,7 +59,7 @@ def test_clean_request_params():
     assert params == params_copy, "Parameter dict was modified"
 
     assert cleaned["datetime"] == "2022-09-16T07:00:00.000Z"
-    assert cleaned["date"] == "2022-09-15T07:00:00.000Z"
+    assert cleaned["date"] == "2022-09-15T00:00:00.000Z"
     assert cleaned["list"] == "foo,bar,baz"
 
 
