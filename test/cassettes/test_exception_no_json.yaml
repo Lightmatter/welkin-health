@@ -1,0 +1,38 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - API_TOKEN_f700bac7-69db-4c84-a1e4-1d02faea8337
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-welkin/0.0.5
+    method: GET
+    uri: https://httpbin.org/status/400
+  response:
+    body:
+      string: ''
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Origin:
+      - '*'
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      Content-Type:
+      - text/html; charset=utf-8
+      Date:
+      - Fri, 16 Sep 2022 22:22:32 GMT
+      Server:
+      - gunicorn/19.9.0
+    status:
+      code: 400
+      message: BAD REQUEST
+version: 1
