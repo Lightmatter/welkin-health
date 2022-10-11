@@ -138,6 +138,9 @@ class Client(Session):
         self.Chats = models.Chats
         self.SearchChats = models.SearchChats
         self.Disposition = models.Disposition
+        self.Documents = models.Documents
+        self.DocumentSummary = models.DocumentSummary
+        self.DocumentSummaryFiles = models.DocumentSummaryFile
         self.Encounter = models.Encounter
         self.Encounters = models.Encounters
         self.Formations = models.Formations

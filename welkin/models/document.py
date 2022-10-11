@@ -1,4 +1,4 @@
-from welkin.models.base import Resource
+from welkin.models.base import Collection, Resource
 from welkin.models.util import find_patient_id_in_parents
 from welkin.pagination import PageableIterator
 
@@ -66,7 +66,7 @@ class DocumentSummary(Resource):
         )
 
 
-class Documents(Resource):
+class Documents(Collection):
     resource = DocumentSummary
     iterator = PageableIterator
 
