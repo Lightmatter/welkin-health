@@ -30,7 +30,7 @@ project_meta = _get_project_meta()
 
 project = project_meta["name"]
 author = project_meta["authors"][0].rsplit(maxsplit=1)[0]
-copyright = f"{date.today().year} {author}"
+copyright = f"{date.today().year} Lightmatter Team"
 
 # The full version, including alpha/beta/rc tags
 release = project_meta["version"]
