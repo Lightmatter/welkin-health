@@ -11,23 +11,29 @@
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 
 import sys
+from datetime import date
 from pathlib import Path
+
+import tomli
 
 root = Path(__file__).parent.parent
 sys.path.insert(0, str(root))
 
 
 # -- Project information -----------------------------------------------------
-about = {}
-with (root / "welkin" / "__version__.py").open() as f:
-    exec(f.read(), about)
+def _get_project_meta():
+    with (root / "pyproject.toml").open(mode="rb") as f:
+        return tomli.load(f)["tool"]["poetry"]
 
-project = about["__title__"]
-copyright = about["__copyright__"]
-author = about["__author__"]
+
+project_meta = _get_project_meta()
+
+project = project_meta["name"]
+author = project_meta["authors"][0].rsplit(maxsplit=1)[0]
+copyright = f"{date.today().year} {author}"
 
 # The full version, including alpha/beta/rc tags
-release = about["__version__"]
+release = project_meta["version"]
 
 
 # -- General configuration ---------------------------------------------------
