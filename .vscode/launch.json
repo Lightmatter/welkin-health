@@ -8,7 +8,7 @@
       "request": "launch",
       "type": "python",
       "envFile": "${workspaceFolder}/.env",
-      "preLaunchTask": "build"
+      "preLaunchTask": "poetryInstall"
     },
     {
       "name": "Python: Current File, Deep Inspect",
@@ -18,7 +18,7 @@
       "request": "launch",
       "type": "python",
       "envFile": "${workspaceFolder}/.env",
-      "preLaunchTask": "build"
+      "preLaunchTask": "poetryInstall"
     },
     {
       "name": "Python: Debug Tests",
@@ -27,7 +27,8 @@
       "program": "${file}",
       "purpose": ["debug-test"],
       "console": "integratedTerminal",
-      "justMyCode": false
+      "justMyCode": false,
+      "preLaunchTask": "poetryInstall"
     }
   ]
 }
