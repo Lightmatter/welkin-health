@@ -29,9 +29,6 @@ class DocumentSummaryFile(Resource):
 
 class DocumentSummary(Resource):
     subresources = [DocumentSummaryFile]
-    nested_objects = {
-        "files": "DocumentSummaryFile",
-    }
 
     def get(self, patient_id: str = None):
         if not patient_id:
