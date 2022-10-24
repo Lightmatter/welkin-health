@@ -1,0 +1,69 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - API_TOKEN_1c3ebc17-8db9-490f-9a66-bf195547e3f8
+      Connection:
+      - keep-alive
+      Cookie:
+      - AWSALB=B8Hrxpn43yJPi9pb6Zcp4D3xPoqfmV5teUV8rfs3zMe0t2raYkoh612uo3kVnjK1PYQLm8PsYqty+U5f5fencaQX81REgPY4w/RC7loW5ajp/sgbm04nL0WXNRI+;
+        AWSALBCORS=B8Hrxpn43yJPi9pb6Zcp4D3xPoqfmV5teUV8rfs3zMe0t2raYkoh612uo3kVnjK1PYQLm8PsYqty+U5f5fencaQX81REgPY4w/RC7loW5ajp/sgbm04nL0WXNRI+
+      User-Agent:
+      - python-welkin/0.0.5
+    method: GET
+    uri: https://api.live.welkincloud.io/tenant_REDACTED/instance_REDACTED/patients/28fd23be-7530-4257-8adb-927e07af9d5d/document-summary/a7ca862d-44c9-494a-a2b9-9490c0305bbd
+  response:
+    body:
+      string: '{"id": "a7ca862d-44c9-494a-a2b9-9490c0305bbd", "patientId": "28fd23be-7530-4257-8adb-927e07af9d5d",
+        "cdtId": "fc0ef04f-31da-4be2-b347-e5b1e4c8e3c6", "version": 138, "jsonBody":
+        {"external_guid": null, "created_at": "2022-10-10T14:06:40.564Z", "source_type":
+        null, "external_id": null, "type": "doc-type-others", "created_by_name": "API_CLIENT:VJUQLSRUUIMR",
+        "created_by": "41860744-eeed-4cac-bb76-9f500030d55c", "updated_by_name": "API_CLIENT:VJUQLSRUUIMR",
+        "updated_at": "2022-10-10T14:06:46.088Z", "updated_by": "41860744-eeed-4cac-bb76-9f500030d55c",
+        "files": [{"id": "f371e071-dc66-418d-8b2b-2df1adb2d758", "size": 5840, "storageKey":
+        "upliv/upliv-dev/patients/28fd23be-7530-4257-8adb-927e07af9d5d/documents/5e7f8faf-c554-4c67-b3d8-5d9aba53678a",
+        "contentType": "image/jpeg", "originalName": "test-image.jpeg"}], "id": "a7ca862d-44c9-494a-a2b9-9490c0305bbd",
+        "source_id": null, "source_name": null}, "cdtName": "_document_summary"}'
+    headers:
+      Access-Control-Allow-Headers:
+      - authorization, content-type, xsrf-token, security-role
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, PATCH, OPTIONS
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - xsrf-token
+      Access-Control-Max-Age:
+      - '3600'
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Thu, 20 Oct 2022 20:55:57 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Set-Cookie:
+      - AWSALB=U+bTRslWIz6/SKKPWPXr+R32405fA1zR3caM3kuo9ivOYvKTWxtcKZVS7PWYo70XfRWD5Ush3ex3PgWXubz5vAdJv+1btDX5EC5ZDCwPbuMXLcsbCWYwpyXFIQC3;
+        Expires=Thu, 27 Oct 2022 20:55:57 GMT; Path=/
+      - AWSALBCORS=U+bTRslWIz6/SKKPWPXr+R32405fA1zR3caM3kuo9ivOYvKTWxtcKZVS7PWYo70XfRWD5Ush3ex3PgWXubz5vAdJv+1btDX5EC5ZDCwPbuMXLcsbCWYwpyXFIQC3;
+        Expires=Thu, 27 Oct 2022 20:55:57 GMT; Path=/; SameSite=None; Secure
+      Transfer-Encoding:
+      - chunked
+      X-Content-Type-Options:
+      - nosniff
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: ''
+version: 1

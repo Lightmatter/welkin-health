@@ -1,0 +1,121 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - API_TOKEN_a7f2b21f-e1bc-4be9-a07a-6b42aa87adb0
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      Cookie:
+      - AWSALB=U+bTRslWIz6/SKKPWPXr+R32405fA1zR3caM3kuo9ivOYvKTWxtcKZVS7PWYo70XfRWD5Ush3ex3PgWXubz5vAdJv+1btDX5EC5ZDCwPbuMXLcsbCWYwpyXFIQC3;
+        AWSALBCORS=U+bTRslWIz6/SKKPWPXr+R32405fA1zR3caM3kuo9ivOYvKTWxtcKZVS7PWYo70XfRWD5Ush3ex3PgWXubz5vAdJv+1btDX5EC5ZDCwPbuMXLcsbCWYwpyXFIQC3
+      User-Agent:
+      - python-welkin/0.0.5
+    method: DELETE
+    uri: https://api.live.welkincloud.io/tenant_REDACTED/instance_REDACTED/patients/28fd23be-7530-4257-8adb-927e07af9d5d/document-summary/a7ca862d-44c9-494a-a2b9-9490c0305bbd
+  response:
+    body:
+      string: ''
+    headers:
+      Access-Control-Allow-Headers:
+      - authorization, content-type, xsrf-token, security-role
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, PATCH, OPTIONS
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - xsrf-token
+      Access-Control-Max-Age:
+      - '3600'
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      Date:
+      - Thu, 20 Oct 2022 21:17:40 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Set-Cookie:
+      - AWSALB=Mgko6ZfqpudeWtXZsx0cQwTbZsbV6uvx6hNJiKq/d/Hkd1s5vAhgAFnTYJhuYRLjoZ7+1vn1kKcqoAVhett9JY///7Gf5MGrlP8z7YzEVU5D8sT+hCl9xlLJVOJQ;
+        Expires=Thu, 27 Oct 2022 21:17:39 GMT; Path=/
+      - AWSALBCORS=Mgko6ZfqpudeWtXZsx0cQwTbZsbV6uvx6hNJiKq/d/Hkd1s5vAhgAFnTYJhuYRLjoZ7+1vn1kKcqoAVhett9JY///7Gf5MGrlP8z7YzEVU5D8sT+hCl9xlLJVOJQ;
+        Expires=Thu, 27 Oct 2022 21:17:39 GMT; Path=/; SameSite=None; Secure
+      X-Content-Type-Options:
+      - nosniff
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: ''
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - API_TOKEN_a7f2b21f-e1bc-4be9-a07a-6b42aa87adb0
+      Connection:
+      - keep-alive
+      Cookie:
+      - AWSALB=Mgko6ZfqpudeWtXZsx0cQwTbZsbV6uvx6hNJiKq/d/Hkd1s5vAhgAFnTYJhuYRLjoZ7+1vn1kKcqoAVhett9JY///7Gf5MGrlP8z7YzEVU5D8sT+hCl9xlLJVOJQ;
+        AWSALBCORS=Mgko6ZfqpudeWtXZsx0cQwTbZsbV6uvx6hNJiKq/d/Hkd1s5vAhgAFnTYJhuYRLjoZ7+1vn1kKcqoAVhett9JY///7Gf5MGrlP8z7YzEVU5D8sT+hCl9xlLJVOJQ
+      User-Agent:
+      - python-welkin/0.0.5
+    method: GET
+    uri: https://api.live.welkincloud.io/tenant_REDACTED/instance_REDACTED/patients/28fd23be-7530-4257-8adb-927e07af9d5d/document-summary/a7ca862d-44c9-494a-a2b9-9490c0305bbd
+  response:
+    body:
+      string: '[{"errorCode": "DT_RECORD_NOT_FOUND", "componentType": "CDT", "message":
+        "DT record not found", "details": {"patientId": "28fd23be-7530-4257-8adb-927e07af9d5d",
+        "cdtRecordId": "a7ca862d-44c9-494a-a2b9-9490c0305bbd", "cdtName": "_document_summary"},
+        "date": "2022-10-20T21:17:40.159Z"}]'
+    headers:
+      Access-Control-Allow-Headers:
+      - authorization, content-type, xsrf-token, security-role
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, PATCH, OPTIONS
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - xsrf-token
+      Access-Control-Max-Age:
+      - '3600'
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Thu, 20 Oct 2022 21:17:40 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Set-Cookie:
+      - AWSALB=Zlb9hmnkPosHraXaSBR92TXBq0kJGkz4546JiKy8Ok5PelPWaVdQo2edOnBcJp9buCqRdvACxkwtIO4tZM4dxlYVqNfUIIRehHIXDfsc7wGWKnIDZc7JZAA3X9uo;
+        Expires=Thu, 27 Oct 2022 21:17:40 GMT; Path=/
+      - AWSALBCORS=Zlb9hmnkPosHraXaSBR92TXBq0kJGkz4546JiKy8Ok5PelPWaVdQo2edOnBcJp9buCqRdvACxkwtIO4tZM4dxlYVqNfUIIRehHIXDfsc7wGWKnIDZc7JZAA3X9uo;
+        Expires=Thu, 27 Oct 2022 21:17:40 GMT; Path=/; SameSite=None; Secure
+      Transfer-Encoding:
+      - chunked
+      X-Content-Type-Options:
+      - nosniff
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 404
+      message: ''
+version: 1
