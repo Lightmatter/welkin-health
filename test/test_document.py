@@ -76,7 +76,9 @@ def test_document_summary_create(client, vcr_cassette):
 
 
 @pytest.mark.vcr()
-@pytest.mark.xfail("https://github.com/kevin1024/vcrpy/issues/660")
+@pytest.mark.skip(
+    reason="the bytes upload hits this issue in vcr: https://github.com/kevin1024/vcrpy/issues/660 but this test shows the correct implementation"
+)
 def test_document_summary_files_create(client, vcr_cassette):
 
     with open("test/walrus_uJGKbRm.jpeg", "rb") as f:
