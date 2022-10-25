@@ -76,10 +76,10 @@ def test_document_summary_create(client, vcr_cassette):
 
 
 @pytest.mark.vcr()
-@pytest.mark.skip("vcr doesnt like files")
+@pytest.mark.xfail("https://github.com/kevin1024/vcrpy/issues/660")
 def test_document_summary_files_create(client, vcr_cassette):
 
-    with open("test/ffcheatsheet_beginner_ZNH9Q8h.pdf", "rb") as f:
+    with open("test/walrus_uJGKbRm.jpeg", "rb") as f:
         files = client.DocumentSummaryFiles().create(
             patient_id="28fd23be-7530-4257-8adb-927e07af9d5d",
             document_summary_id="909c7488-7a5e-4e87-b6f2-606e8306b4b6",
@@ -87,9 +87,9 @@ def test_document_summary_files_create(client, vcr_cassette):
                 (
                     "files",
                     (
-                        "sheet.pdf",
+                        "picture.jpeg",
                         f,
-                        "application/pdf",
+                        "image/jpeg",
                     ),
                 )
             ],
@@ -98,7 +98,7 @@ def test_document_summary_files_create(client, vcr_cassette):
     assert isinstance(files, DocumentSummaryFiles)
     assert isinstance(files[0], DocumentSummaryFile)
     assert hasattr(files[0], "id")
-    assert files[0].originalName == "sheet.pdf"
+    assert files[0].originalName == "picture.jpeg"
     assert len(vcr_cassette) == 1
 
 
