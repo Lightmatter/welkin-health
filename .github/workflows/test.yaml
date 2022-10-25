@@ -12,7 +12,7 @@ jobs:
     outputs:
       python-matrix: ${{ steps.get-python-versions-action.outputs.latest-python-versions }}
     steps:
-      - uses: samamorgan/latest-python-versions@main
+      - uses: snok/latest-python-versions@v1
         id: get-python-versions-action
         with:
           min-version: 3.7
@@ -22,7 +22,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: ${{ needs.get-python-versions.outputs.python-matrix && fromJson(needs.get-python-versions.outputs.python-matrix) }}
+        python-version: ${{ needs.get-python-versions.outputs.python-matrix }}
 
     steps:
       - name: Check out repository
