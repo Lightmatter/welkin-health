@@ -14,7 +14,7 @@ from welkin.models.document import (
 @pytest.mark.vcr()
 def test_documents_get_patient_id(client, vcr_cassette):
     documents = client.Documents().get(
-        patient_id="28fd23be-7530-4257-8adb-927e07af9d5d"
+        patient_id="283f50d3-0840-426f-b07b-bd8e4ab76401"
     )
 
     assert isinstance(documents, Documents)
@@ -25,7 +25,7 @@ def test_documents_get_patient_id(client, vcr_cassette):
 @pytest.mark.vcr()
 def test_documents_subresource(client, vcr_cassette):
     documents = (
-        client.Patient(id="28fd23be-7530-4257-8adb-927e07af9d5d").Documents().get()
+        client.Patient(id="283f50d3-0840-426f-b07b-bd8e4ab76401").Documents().get()
     )
 
     assert isinstance(documents, Documents)
@@ -36,21 +36,21 @@ def test_documents_subresource(client, vcr_cassette):
 @pytest.mark.vcr()
 def test_document_summary_get(client, vcr_cassette):
     document = (
-        client.Patient(id="28fd23be-7530-4257-8adb-927e07af9d5d")
-        .DocumentSummary(id="a7ca862d-44c9-494a-a2b9-9490c0305bbd")
+        client.Patient(id="283f50d3-0840-426f-b07b-bd8e4ab76401")
+        .DocumentSummary(id="5106ec9d-da83-4ce6-89d0-6a9b7fde0138")
         .get()
     )
 
     assert isinstance(document, DocumentSummary)
-    assert document.id == "a7ca862d-44c9-494a-a2b9-9490c0305bbd"
+    assert document.id == "5106ec9d-da83-4ce6-89d0-6a9b7fde0138"
     assert len(vcr_cassette) == 1
 
 
 @pytest.mark.vcr()
 def test_document_summary_delete(client, vcr_cassette):
     document = client.Patient(
-        id="28fd23be-7530-4257-8adb-927e07af9d5d"
-    ).DocumentSummary(id="a7ca862d-44c9-494a-a2b9-9490c0305bbd")
+        id="283f50d3-0840-426f-b07b-bd8e4ab76401"
+    ).DocumentSummary(id="5106ec9d-da83-4ce6-89d0-6a9b7fde0138")
 
     document.delete()
 
@@ -65,7 +65,7 @@ def test_document_summary_delete(client, vcr_cassette):
 @pytest.mark.vcr()
 def test_document_summary_create(client, vcr_cassette):
     document = (
-        client.Patient(id="28fd23be-7530-4257-8adb-927e07af9d5d")
+        client.Patient(id="283f50d3-0840-426f-b07b-bd8e4ab76401")
         .DocumentSummary(type="doc-type-others")
         .create()
     )
@@ -83,8 +83,8 @@ def test_document_summary_files_create(client, vcr_cassette):
 
     with open("test/walrus_uJGKbRm.jpeg", "rb") as f:
         files = client.DocumentSummaryFiles().create(
-            patient_id="28fd23be-7530-4257-8adb-927e07af9d5d",
-            document_summary_id="909c7488-7a5e-4e87-b6f2-606e8306b4b6",
+            patient_id="283f50d3-0840-426f-b07b-bd8e4ab76401",
+            document_summary_id="b3934cac-72dc-4a1e-9141-9b9f7c16eacd",
             files=[
                 (
                     "files",
@@ -107,9 +107,9 @@ def test_document_summary_files_create(client, vcr_cassette):
 @pytest.mark.vcr()
 def test_document_summary_file_get(client, vcr_cassette):
     doc_summary = (
-        client.Patient(id="28fd23be-7530-4257-8adb-927e07af9d5d")
-        .DocumentSummary(id="909c7488-7a5e-4e87-b6f2-606e8306b4b6")
-        .DocumentSummaryFile(id="3c689f3b-abd3-4b15-81a0-50507a45340d")
+        client.Patient(id="283f50d3-0840-426f-b07b-bd8e4ab76401")
+        .DocumentSummary(id="b3934cac-72dc-4a1e-9141-9b9f7c16eacd")
+        .DocumentSummaryFile(id="c5998e85-9f4b-41ad-9c97-d23981fd6c61")
     )
     file = doc_summary.get()
 

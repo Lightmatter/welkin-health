@@ -7,16 +7,16 @@ interactions:
       Accept-Encoding:
       - gzip, deflate
       Authorization:
-      - API_TOKEN_5e586ecf-9199-4e7a-9807-f80176a4982b
+      - API_TOKEN_490c9dab-b712-4f3f-b6b5-10b7c4fd718f
       Connection:
       - keep-alive
       Cookie:
-      - AWSALB=zTT5inh77DgjncIetMxaPKlX+Pkq1Da2wkPnTKeXSJfPnzntO/rZdE2QBY67YmacxZhrW+lioSK/0EsA6PtdqXDSSCZZ48f6krC9ut9dJAxGtlxMRc3sGvibpWfE;
-        AWSALBCORS=zTT5inh77DgjncIetMxaPKlX+Pkq1Da2wkPnTKeXSJfPnzntO/rZdE2QBY67YmacxZhrW+lioSK/0EsA6PtdqXDSSCZZ48f6krC9ut9dJAxGtlxMRc3sGvibpWfE
+      - AWSALB=eWP7k62cp0tGgKdQ1u8nZp5wXltxMTbNnbZij8WECjdyVXu7J1GxJNHfuG2ZfpetrT/erqLhpKjW4oWurIq18Le7k/IwMMVd9k7K/ojf8LSel2UNqgKrewx/AjBZ;
+        AWSALBCORS=eWP7k62cp0tGgKdQ1u8nZp5wXltxMTbNnbZij8WECjdyVXu7J1GxJNHfuG2ZfpetrT/erqLhpKjW4oWurIq18Le7k/IwMMVd9k7K/ojf8LSel2UNqgKrewx/AjBZ
       User-Agent:
       - python-welkin/0.0.5
     method: GET
-    uri: https://api.live.welkincloud.io/tenant_REDACTED/instance_REDACTED/patients/28fd23be-7530-4257-8adb-927e07af9d5d/document-summary/909c7488-7a5e-4e87-b6f2-606e8306b4b6/files/3c689f3b-abd3-4b15-81a0-50507a45340d
+    uri: https://api.live.welkincloud.io/tenant_REDACTED/instance_REDACTED/patients/283f50d3-0840-426f-b07b-bd8e4ab76401/document-summary/b3934cac-72dc-4a1e-9141-9b9f7c16eacd/files/c5998e85-9f4b-41ad-9c97-d23981fd6c61
   response:
     body:
       string: !!binary |
@@ -145,16 +145,16 @@ interactions:
       Content-Type:
       - image/jpeg
       Date:
-      - Fri, 21 Oct 2022 19:55:51 GMT
+      - Tue, 25 Oct 2022 18:25:40 GMT
       Expires:
       - '0'
       Pragma:
       - no-cache
       Set-Cookie:
-      - AWSALB=B64GYwInNL40gIcj8snhyC6Zk3sAE1mBjQaNjqqHTnbUAoAGTB13/8QHuA3eqUiY6Q26b00QXZeVMI0SQ57dBa82KWqWpb6+I8YepZcGyUkRA7yaMwwS9kOa02Kg;
-        Expires=Fri, 28 Oct 2022 19:55:51 GMT; Path=/
-      - AWSALBCORS=B64GYwInNL40gIcj8snhyC6Zk3sAE1mBjQaNjqqHTnbUAoAGTB13/8QHuA3eqUiY6Q26b00QXZeVMI0SQ57dBa82KWqWpb6+I8YepZcGyUkRA7yaMwwS9kOa02Kg;
-        Expires=Fri, 28 Oct 2022 19:55:51 GMT; Path=/; SameSite=None; Secure
+      - AWSALB=TBmv41gcqmJaYBEEngy61idLXLaWWPcBQTaMToUFyPOO5P6Swb5CXucwdMmxhCbrUYMhxP08YHrIgdWUBHTyVSN6xg9rrZzZ1smqRwQJFUme3EBaAK1Ga7jK8BJv;
+        Expires=Tue, 01 Nov 2022 18:25:40 GMT; Path=/
+      - AWSALBCORS=TBmv41gcqmJaYBEEngy61idLXLaWWPcBQTaMToUFyPOO5P6Swb5CXucwdMmxhCbrUYMhxP08YHrIgdWUBHTyVSN6xg9rrZzZ1smqRwQJFUme3EBaAK1Ga7jK8BJv;
+        Expires=Tue, 01 Nov 2022 18:25:40 GMT; Path=/; SameSite=None; Secure
       X-Content-Type-Options:
       - nosniff
       X-XSS-Protection:
