@@ -22,7 +22,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: ${{ needs.get-python-versions.outputs.python-matrix }}
+        python-version: ${{ fromJson(needs.get-python-versions.outputs.python-matrix) }}
 
     steps:
       - name: Check out repository
