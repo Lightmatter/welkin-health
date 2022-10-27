@@ -6,9 +6,7 @@ from welkin.pagination import PageableIterator
 
 
 class DocumentSummaryFile(Resource):
-    file: BytesIO
-
-    def get(self, patient_id: str = None, document_summary_id: str = None):
+    def get(self, patient_id: str = None, document_summary_id: str = None) -> BytesIO:
         if not patient_id:
             patient_id = find_patient_id_in_parents(self)
 
@@ -18,9 +16,8 @@ class DocumentSummaryFile(Resource):
         content = self._client.get(
             f"{self._client.instance}/patients/{patient_id}/document-summary/{document_summary_id}/files/{self.id}"
         )
-        self.file = BytesIO(content)
 
-        return self.file
+        return BytesIO(content)
 
 
 class DocumentSummaryFiles(Collection):
