@@ -138,6 +138,10 @@ class Client(Session):
         self.Chats = models.Chats
         self.SearchChats = models.SearchChats
         self.Disposition = models.Disposition
+        self.Documents = models.Documents
+        self.DocumentSummary = models.DocumentSummary
+        self.DocumentSummaryFile = models.DocumentSummaryFile
+        self.DocumentSummaryFiles = models.DocumentSummaryFiles
         self.Encounter = models.Encounter
         self.Encounters = models.Encounters
         self.Formations = models.Formations
@@ -210,6 +214,9 @@ class Client(Session):
         except JSONDecodeError:
             if not response.content:
                 return {}
+
+            if isinstance(response.content, bytes):
+                return response.content
 
             raise
 

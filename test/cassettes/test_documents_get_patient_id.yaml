@@ -1,0 +1,71 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - API_TOKEN_26216883-c11e-43dd-a204-0860f2ebdc78
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-welkin/0.0.5
+    method: GET
+    uri: https://api.live.welkincloud.io/tenant_REDACTED/instance_REDACTED/patients/283f50d3-0840-426f-b07b-bd8e4ab76401/document-summary?page=0
+  response:
+    body:
+      string: '{"name": "_document_summary", "data": {"content": [{"id": "5106ec9d-da83-4ce6-89d0-6a9b7fde0138",
+        "patientId": "283f50d3-0840-426f-b07b-bd8e4ab76401", "cdtId": "f12bff88-36b2-4ade-8300-64967bf9f562",
+        "version": 10, "jsonBody": {"external_guid": null, "created_at": "2022-10-25T18:08:19.999Z",
+        "source_type": null, "external_id": null, "type": "doc-type-others", "created_by_name":
+        "Eddie Cohen", "created_by": "379298b5-1b4e-48cb-a60f-e6d9cb9a5e65", "updated_by_name":
+        "Eddie Cohen", "updated_at": "2022-10-25T18:08:20.342Z", "updated_by": "379298b5-1b4e-48cb-a60f-e6d9cb9a5e65",
+        "files": [{"id": "67f1913f-5e4a-4dcd-a319-33a798c968b5", "size": 11590, "storageKey":
+        "lightmatter/sandbox/patients/283f50d3-0840-426f-b07b-bd8e4ab76401/documents/9ff508c7-2387-41b8-9a08-25398c4b0e76",
+        "contentType": "application/pdf", "originalName": "HandOut.pdf"}], "id": "5106ec9d-da83-4ce6-89d0-6a9b7fde0138",
+        "source_id": null, "source_name": null}, "cdtName": "_document_summary"}],
+        "pageable": {"sort": {"sorted": false, "unsorted": true, "empty": true}, "pageNumber":
+        0, "pageSize": 20, "offset": 0, "unpaged": false, "paged": true}, "last":
+        true, "totalElements": 1, "totalPages": 1, "sort": {"sorted": false, "unsorted":
+        true, "empty": true}, "number": 0, "first": true, "numberOfElements": 1, "size":
+        20, "empty": false}}'
+    headers:
+      Access-Control-Allow-Headers:
+      - authorization, content-type, xsrf-token, security-role
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, PATCH, OPTIONS
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - xsrf-token
+      Access-Control-Max-Age:
+      - '3600'
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 25 Oct 2022 18:21:28 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Set-Cookie:
+      - AWSALB=ox9LJ7ZPYNeEm90cejSg+Xi1Us+z0z/UnUDpugjeRWRcLSUgWC0dwaPsQhPbhuGI08gh9QcQPbZdqCnlVDnbVTncJdHX100W0PKqzsGqPpmwN5jt83Z505WWemjR;
+        Expires=Tue, 01 Nov 2022 18:21:28 GMT; Path=/
+      - AWSALBCORS=ox9LJ7ZPYNeEm90cejSg+Xi1Us+z0z/UnUDpugjeRWRcLSUgWC0dwaPsQhPbhuGI08gh9QcQPbZdqCnlVDnbVTncJdHX100W0PKqzsGqPpmwN5jt83Z505WWemjR;
+        Expires=Tue, 01 Nov 2022 18:21:28 GMT; Path=/; SameSite=None; Secure
+      Transfer-Encoding:
+      - chunked
+      X-Content-Type-Options:
+      - nosniff
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: ''
+version: 1

@@ -3,6 +3,7 @@ from welkin.models.base import Collection, Resource
 from welkin.models.care_plan import CarePlan
 from welkin.models.cdt import CDT, CDTs
 from welkin.models.chat import Chat, Chats, SearchChats
+from welkin.models.document import Documents, DocumentSummary, DocumentSummaryFile
 from welkin.models.encounter import Encounter, Encounters
 from welkin.pagination import PageableIterator
 
@@ -17,6 +18,9 @@ class Patient(Resource):
         Chat,
         Chats,
         SearchChats,
+        Documents,
+        DocumentSummary,
+        DocumentSummaryFile,
         Encounter,
         Encounters,
     ]

@@ -9,6 +9,12 @@ from welkin.models.calendar import CalendarEvent, CalendarEvents, Schedules
 from welkin.models.care_plan import CarePlan, CarePlanOverview
 from welkin.models.cdt import CDT, CDTs
 from welkin.models.chat import Chat, Chats, SearchChats
+from welkin.models.document import (
+    Documents,
+    DocumentSummary,
+    DocumentSummaryFile,
+    DocumentSummaryFiles,
+)
 from welkin.models.encounter import Disposition, Encounter, Encounters
 from welkin.models.formation import Formations
 from welkin.models.patient import Patient, Patients
@@ -32,6 +38,10 @@ __all__ = [
     "Disposition",
     "Encounter",
     "Encounters",
+    "Documents",
+    "DocumentSummary",
+    "DocumentSummaryFile",
+    "DocumentSummaryFiles",
     "Patient",
     "Patients",
     "Schedules",
