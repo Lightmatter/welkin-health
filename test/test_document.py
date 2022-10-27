@@ -115,5 +115,5 @@ def test_document_summary_file_get(client, vcr_cassette):
 
     assert isinstance(file, BytesIO)
     assert isinstance(doc_summary, DocumentSummaryFile)
-    assert doc_summary.file == file
+    assert doc_summary.id == "c5998e85-9f4b-41ad-9c97-d23981fd6c61"
     assert len(vcr_cassette) == 1
