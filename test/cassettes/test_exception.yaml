@@ -1,0 +1,58 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - API_TOKEN_752685dc-679c-4ac5-b117-063ede39f931
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-welkin/0.0.5
+    method: GET
+    uri: https://api.live.welkincloud.io/tenant_REDACTED/admin/users/me
+  response:
+    body:
+      string: '[{"errorCode": "USER_NOT_FOUND", "componentType": "USER", "message":
+        "User doesn''t exist", "details": {}, "date": "2022-09-16T22:22:39.437Z"}]'
+    headers:
+      Access-Control-Allow-Headers:
+      - authorization, content-type, xsrf-token, security-role
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, PATCH, OPTIONS
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - xsrf-token
+      Access-Control-Max-Age:
+      - '3600'
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 16 Sep 2022 22:22:39 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Set-Cookie:
+      - AWSALB=+x9R4DkRsJT6cNBrIWMs7Ynnq98L8ABw9esO072EZs21NsAgweoL3da/PnnsSwn3E2fE34ahU5ymyTXkfDxZvQrscrascof+yAbdrXRsjV9jW1HpSmyvVsvoDRvR;
+        Expires=Fri, 23 Sep 2022 22:22:39 GMT; Path=/
+      - AWSALBCORS=+x9R4DkRsJT6cNBrIWMs7Ynnq98L8ABw9esO072EZs21NsAgweoL3da/PnnsSwn3E2fE34ahU5ymyTXkfDxZvQrscrascof+yAbdrXRsjV9jW1HpSmyvVsvoDRvR;
+        Expires=Fri, 23 Sep 2022 22:22:39 GMT; Path=/; SameSite=None; Secure
+      Transfer-Encoding:
+      - chunked
+      X-Content-Type-Options:
+      - nosniff
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 404
+      message: ''
+version: 1
