@@ -1,5 +1,6 @@
 import logging
 import shelve
+import tempfile
 from pathlib import Path
 from typing import Callable
 
@@ -9,7 +10,7 @@ from requests.auth import AuthBase
 logger = logging.getLogger(__name__)
 
 
-DB_PATH = str(Path(__file__).parent / ".welkin.db")
+DB_PATH = str(Path(tempfile.gettempdir(), ".welkin.db"))
 
 
 class WelkinAuth(AuthBase):

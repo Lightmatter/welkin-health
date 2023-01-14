@@ -10,10 +10,10 @@ from requests.adapters import HTTPAdapter
 from requests.compat import urljoin
 from requests.packages.urllib3.util.retry import Retry  # type: ignore
 
-from welkin import __version__
+from welkin import __version__, models
 from welkin.authentication import WelkinAuth
 from welkin.exceptions import WelkinHTTPError
-from welkin.models import *
+from welkin.models.base import Collection, Resource
 from welkin.util import clean_request_params, clean_request_payload
 
 logger = logging.getLogger(__name__)
@@ -32,8 +32,8 @@ class Client(Session):
         secret_key (str): API client secret key.
         timeout (int, optional): :obj:`TimeoutHTTPAdapter` timeout value. Defaults to 5.
         total (int, optional): :obj:`Retry` total value. Defaults to 5.
-        backoff_factor (int, optional): :obj:`Retry` backoff_factor value.
-            Defaults to 30.
+        backoff_factor (float, optional): :obj:`Retry` backoff_factor value.
+            Defaults to 0.5.
 
     Usage::
 
@@ -77,7 +77,7 @@ class Client(Session):
         secret_key,
         timeout=5,
         total=5,
-        backoff_factor=30,
+        backoff_factor=0.5,
     ):
         """Welkin Health client constructor.
 
@@ -91,8 +91,8 @@ class Client(Session):
             secret_key (str): API client secret key.
             timeout (int, optional): :obj:`TimeoutHTTPAdapter` timeout value. Defaults to 5.
             total (int, optional): :obj:`Retry` total value. Defaults to 5.
-            backoff_factor (int, optional): :obj:`Retry` backoff_factor value.
-                Defaults to 30.
+            backoff_factor (float, optional): :obj:`Retry` backoff_factor value.
+                Defaults to 0.5.
         """
         super().__init__()
 
@@ -122,17 +122,42 @@ class Client(Session):
 
     def __build_resources(self) -> None:
         """Add each resource with a reference to this instance."""
-        for k, v in globals().items():
+        self.Assessment = models.Assessment
+        self.AssessmentRecord = models.AssessmentRecord
+        self.AssessmentRecordAnswers = models.AssessmentRecordAnswers
+        self.AssessmentRecords = models.AssessmentRecords
+        self.Assessments = models.Assessments
+        self.CalendarEvent = models.CalendarEvent
+        self.CalendarEvents = models.CalendarEvents
+        self.Schedules = models.Schedules
+        self.CarePlan = models.CarePlan
+        self.CarePlanOverview = models.CarePlanOverview
+        self.CDT = models.CDT
+        self.CDTs = models.CDTs
+        self.Chat = models.Chat
+        self.Chats = models.Chats
+        self.SearchChats = models.SearchChats
+        self.Disposition = models.Disposition
+        self.Documents = models.Documents
+        self.DocumentSummary = models.DocumentSummary
+        self.DocumentSummaryFile = models.DocumentSummaryFile
+        self.DocumentSummaryFiles = models.DocumentSummaryFiles
+        self.Encounter = models.Encounter
+        self.Encounters = models.Encounters
+        self.Formations = models.Formations
+        self.Patient = models.Patient
+        self.Patients = models.Patients
+        self.User = models.User
+        self.Users = models.Users
+
+        for k, v in vars(self).items():
             try:
-                for base in v.__bases__:
-                    if base.__name__ not in ["Collection", "Resource"]:
-                        continue
-
-                    v._client = self
-                    setattr(self, k, v)
-
-            except AttributeError:
+                issubclass(v, (Collection, Resource))
+            except TypeError:
+                # Failed because `issubclass` expects a class.
                 continue
+
+            getattr(self, k)._client = self
 
     def prepare_request(self, request):
         if request.json:
@@ -142,7 +167,15 @@ class Client(Session):
 
         return super().prepare_request(request)
 
-    def request(self, method: str, path: str, *args, **kwargs):
+    def request(
+        self,
+        method: str,
+        path: str,
+        meta_key: str = None,
+        meta_dict: dict = {},
+        *args,
+        **kwargs,
+    ):
         """Override :obj:`Session` request method to add retries and output JSON.
 
         Args:
@@ -182,26 +215,49 @@ class Client(Session):
             if not response.content:
                 return {}
 
+            if isinstance(response.content, bytes):
+                return response.content
+
             raise
 
         if isinstance(json, list):
             json = {
                 "content": json,
-                "metaInfo": {"totalPages": 1, "page": 0, "last": True},
+                meta_key: meta_dict,
+            }
+        elif "rows" in json:
+            json = {
+                "content": json.pop("rows"),
+                meta_key: meta_dict,
             }
 
         # Pull out the resource
+        resource = json
         if "content" in json:
             resource = json.pop("content", None)
-        else:
+        elif "data" in json:
             resource = json.pop("data", None)
 
-        # Response metadata for pagination
-        meta = json.pop("pageable", {}) or json.pop("metaInfo", {})
-        meta.update(json)
+        meta = None
 
-        if "totalPages" in meta:
+        # specifically with cdts the resource and metadata are both in the data dict
+        if isinstance(resource, dict) and "content" in resource:
+            new_resource = resource.pop("content", None)
+            meta = resource.pop(meta_key, {})
+            meta.update(json)
+            meta.update(resource)
+            resource = new_resource
+        # encounter disposition formation comes as just a dictionary
+        elif isinstance(resource, dict) and "formations" in path:
+            resource = [resource]
+
+        # Response metadata for pagination
+        if meta_key:
+            if not meta:
+                meta = json.pop(meta_key, {})
+            meta.update(json)
             return resource, meta
+
         return resource or json
 
     def get_token(self) -> dict:

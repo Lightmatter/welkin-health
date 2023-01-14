@@ -1,7 +1,30 @@
+from welkin.models.assessment import AssessmentRecord, AssessmentRecords
 from welkin.models.base import Collection, Resource
+from welkin.models.care_plan import CarePlan
+from welkin.models.cdt import CDT, CDTs
+from welkin.models.chat import Chat, Chats, SearchChats
+from welkin.models.document import Documents, DocumentSummary, DocumentSummaryFile
+from welkin.models.encounter import Encounter, Encounters
+from welkin.pagination import PageableIterator
 
 
 class Patient(Resource):
+    subresources = [
+        AssessmentRecord,
+        AssessmentRecords,
+        CarePlan,
+        CDT,
+        CDTs,
+        Chat,
+        Chats,
+        SearchChats,
+        Documents,
+        DocumentSummary,
+        DocumentSummaryFile,
+        Encounter,
+        Encounters,
+    ]
+
     def create(self):
         return super().post(f"{self._client.instance}/patients")
 
@@ -20,6 +43,7 @@ class Patient(Resource):
 
 class Patients(Collection):
     resource = Patient
+    iterator = PageableIterator
 
     def get(self, filter={}, *args, **kwargs):
         # TODO: Add sort and query arguments.

@@ -2,6 +2,7 @@ from datetime import datetime, timezone
 from enum import Enum
 
 from welkin.models.base import Collection, Resource
+from welkin.pagination import PageableIterator
 
 
 class EventType(Enum):
@@ -53,6 +54,7 @@ class CalendarEvent(Resource):
 
 class CalendarEvents(Collection):
     resource = CalendarEvent
+    iterator = PageableIterator
 
     def get(
         self,
@@ -65,6 +67,8 @@ class CalendarEvents(Collection):
         include_encounter_info: bool = None,
         exclude_assigned_to_encounter_events: bool = None,
         viewer_timezone: str = None,
+        *args,
+        **kwargs,
     ):
         # Validation
         if event_type:
@@ -83,7 +87,9 @@ class CalendarEvents(Collection):
             "viewerTimezone": viewer_timezone,
         }
 
-        return super().get(f"{self._client.instance}/calendar/events", params=params)
+        return super().get(
+            f"{self._client.instance}/calendar/events", params=params, *args, **kwargs
+        )
 
 
 class Schedule(Resource):
@@ -92,6 +98,7 @@ class Schedule(Resource):
 
 class Schedules(Collection):
     resource = Schedule
+    iterator = PageableIterator
 
     def get(
         self,
@@ -101,6 +108,8 @@ class Schedules(Collection):
         include_cancelled: bool = None,
         available: bool = False,
         full: bool = False,
+        *args,
+        **kwargs,
     ):
         route = "psm-schedules"
         if available:
@@ -115,7 +124,9 @@ class Schedules(Collection):
             "includeCancelled": include_cancelled,
         }
 
-        return super().get(f"{self._client.instance}/calendar/{route}", params=params)
+        return super().get(
+            f"{self._client.instance}/calendar/{route}", params=params, *args, **kwargs
+        )
 
 
 class WorkHours(Resource):
