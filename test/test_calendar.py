@@ -3,7 +3,13 @@ from datetime import datetime, timedelta, timezone
 import pytest
 
 from welkin.exceptions import WelkinHTTPError
-from welkin.models.calendar import CalendarEvent, CalendarEvents, Schedule, Schedules
+from welkin.models.calendar import (
+    CalendarEvent,
+    CalendarEvents,
+    Schedule,
+    Schedules,
+    WorkHours,
+)
 
 UTC = timezone.utc
 
@@ -101,3 +107,17 @@ def test_schedule_read_all(client, vcr_cassette):
     assert isinstance(schedules[0], Schedule)
 
     assert len(vcr_cassette) == 1
+
+@pytest.mark.vcr()
+def test_get_all_work_hours(client, vcr_cassette):
+    start = datetime(2022, 3, 1, tzinfo=timezone.utc)
+    end = datetime(2024, 3, 1, tzinfo=timezone.utc)
+
+    whs = client.WorkHours().get_all(
+    from_date=start,
+    to_date=end,
+    )
+
+    assert isinstance(whs, WorkHours)
+
+    assert len(vcr_cassette) == 2

@@ -120,11 +120,7 @@ class Schedules(Collection):
 
 class WorkHours(Resource):
     @property
-    def id(self):
-        return self.details[0]["workHoursId"]
-
-    @id.setter
-    def id(self, value):
+    def id(self, value=None):
         if not hasattr(self, "details"):
             self.details = [{}]
 
@@ -139,8 +135,24 @@ class WorkHours(Resource):
 
         return super().post(f"{self._client.instance}/calendar/work-hours")
 
-    def get(self):
-        return super().get(f"{self._client.instance}/calendar/work-hours/{self.id}")
+    def get_all(
+        self,
+        from_date: datetime,
+        to_date: datetime,
+    ):
+
+        params = {
+            "from": from_date,
+            "to": to_date,
+        }
+
+        response = self._client.get(
+            f"{self._client.instance}/calendar/work-hours/", params=params)
+        
+        dict_version = {index: wh for index, wh in enumerate(response[0:-1])}
+        super().update(dict_version)
+        return self
+
 
     def update(self, **kwargs):
         return super().put(

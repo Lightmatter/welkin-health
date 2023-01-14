@@ -1,0 +1,132 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - API_TOKEN_58af2606-0991-4b1b-ac5e-1b1fb07158fa
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-welkin/0.0.4
+    method: GET
+    uri: https://api.live.welkincloud.io/tenant_REDACTED/instance_REDACTED/calendar/work-hours?from=2022-03-01T00%3A00%3A00.000Z&to=2024-03-01T00%3A00%3A00.000Z
+  response:
+    body:
+      string: '[{"errorCode": "NOT_VALID_JSON_WEB_TOKEN", "componentType": "AUTH",
+        "message": "Not valid JWT", "details": {}, "date": "2023-01-14T03:17:01.945Z"}]'
+    headers:
+      Access-Control-Allow-Headers:
+      - authorization, content-type, xsrf-token, security-role
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, PATCH, OPTIONS
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - xsrf-token
+      Access-Control-Max-Age:
+      - '3600'
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Sat, 14 Jan 2023 03:17:01 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Set-Cookie:
+      - AWSALB=N6rURZATYpN3kjIHaJ8DlUxqxYW9cvDCOXdZMrLv0LHA9rmv5mm03giwqXXodpdYdIUbTTzmXG5VOUbHx5Yqy/U/eE8uOkL9ncBviqMBF40rt60yhO3aSlg3NCoe;
+        Expires=Sat, 21 Jan 2023 03:17:01 GMT; Path=/
+      - AWSALBCORS=N6rURZATYpN3kjIHaJ8DlUxqxYW9cvDCOXdZMrLv0LHA9rmv5mm03giwqXXodpdYdIUbTTzmXG5VOUbHx5Yqy/U/eE8uOkL9ncBviqMBF40rt60yhO3aSlg3NCoe;
+        Expires=Sat, 21 Jan 2023 03:17:01 GMT; Path=/; SameSite=None; Secure
+      Transfer-Encoding:
+      - chunked
+      X-Content-Type-Options:
+      - nosniff
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 401
+      message: ''
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - API_TOKEN_58af2606-0991-4b1b-ac5e-1b1fb07158fa
+      Connection:
+      - keep-alive
+      Cookie:
+      - AWSALB=hxpo2VxXMkA23/b6yfVxqkiJ8Bg+7vNmRPw9lyy49FI7Q8w95ctekADCE2ShGTUXTkONqBfKwgDWIixt6RatZy2pg8g1UPk6MC8WLaB6Hegb4qVpm9YmF6qN50zi;
+        AWSALBCORS=hxpo2VxXMkA23/b6yfVxqkiJ8Bg+7vNmRPw9lyy49FI7Q8w95ctekADCE2ShGTUXTkONqBfKwgDWIixt6RatZy2pg8g1UPk6MC8WLaB6Hegb4qVpm9YmF6qN50zi
+      User-Agent:
+      - python-welkin/0.0.4
+    method: GET
+    uri: https://api.live.welkincloud.io/tenant_REDACTED/instance_REDACTED/calendar/work-hours?from=2022-03-01T00%3A00%3A00.000Z&to=2024-03-01T00%3A00%3A00.000Z
+  response:
+    body:
+      string: '[{"psmId": "43afc43c-c77b-4014-8224-54e17f59ee03", "details": [{"createdBy":
+        "createdBy_REDACTED_56121bac-4eaa-4365-b8e5-96bd2a65006c", "updatedBy": "updatedBy_REDACTED_c06728d1-0ac0-49ae-bb53-db42d8a6a596",
+        "createdAt": "2023-01-14T02:30:06.653Z", "updatedAt": "2023-01-14T03:03:17.275Z",
+        "workHoursId": "99004510-db8a-4f10-b6af-8c5aab8ec543", "startDateTime": "2023-01-14T03:03:16.583Z",
+        "endDateTime": "2073-01-14T03:03:16.583Z", "localStartDateTime": "2023-01-13T19:03:16.583-08:00",
+        "localEndDateTime": "2073-01-13T19:03:16.583-08:00", "daysInfo": [{"daysInfoId":
+        "0bccc1ce-5346-4f37-99f4-3997d3a73247", "startTime": "09:00:00", "endTime":
+        "17:00:00", "day": 7}, {"daysInfoId": "bd7f2322-4f88-4d3a-8377-1a4d9a0e08f7",
+        "startTime": "02:30:00", "endTime": "15:00:00", "day": 1}, {"daysInfoId":
+        "bf2a7c9d-ac9f-44a9-ad61-1f4c97339e2e", "startTime": "09:00:00", "endTime":
+        "17:00:00", "day": 2}, {"daysInfoId": "d7cd30be-3791-4a94-b618-207091ffc443",
+        "startTime": "09:00:00", "endTime": "17:00:00", "day": 3}, {"daysInfoId":
+        "9b06cfc9-cfdd-4650-92c7-12e7f12e1d87", "startTime": "09:00:00", "endTime":
+        "17:00:00", "day": 4}, {"daysInfoId": "914985cc-013d-412f-b185-c11d3ba995db",
+        "startTime": "09:00:00", "endTime": "17:00:00", "day": 5}, {"daysInfoId":
+        "d0c7a7f1-db39-455f-afc0-8e7ed1cce59d", "startTime": "09:00:00", "endTime":
+        "17:00:00", "day": 6}]}]}]'
+    headers:
+      Access-Control-Allow-Headers:
+      - authorization, content-type, xsrf-token, security-role
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, PATCH, OPTIONS
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - xsrf-token
+      Access-Control-Max-Age:
+      - '3600'
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Sat, 14 Jan 2023 03:17:03 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Set-Cookie:
+      - AWSALB=C2gASE3od8RUF1jq+6E93v50PKIa1pm8sCeZWN4o8I5wt3XxwfEYiGa2gFGlC4cE3BzSXiCBVfuk3KUIZRS4KN/pfMIUuMncqARYx52EpbCTUL60sf5b5lmlAn57;
+        Expires=Sat, 21 Jan 2023 03:17:03 GMT; Path=/
+      - AWSALBCORS=C2gASE3od8RUF1jq+6E93v50PKIa1pm8sCeZWN4o8I5wt3XxwfEYiGa2gFGlC4cE3BzSXiCBVfuk3KUIZRS4KN/pfMIUuMncqARYx52EpbCTUL60sf5b5lmlAn57;
+        Expires=Sat, 21 Jan 2023 03:17:03 GMT; Path=/; SameSite=None; Secure
+      Transfer-Encoding:
+      - chunked
+      X-Content-Type-Options:
+      - nosniff
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: ''
+version: 1
