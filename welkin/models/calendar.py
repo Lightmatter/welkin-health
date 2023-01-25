@@ -25,16 +25,6 @@ class EventMode(Enum):
     VIDEO = "VIDEO"
 
 
-class Days(Enum):
-    MONDAY = 1
-    TUESDAY = 2
-    WEDNESDAY = 3
-    THURSDAY = 4
-    FRIDAY = 5
-    SATURDAY = 6
-    SUNDAY = 7
-
-
 class CalendarEvent(Resource):
     def create(self):
         # TODO: Accept User and Patient instances as participants
@@ -137,14 +127,10 @@ class WorkHours(Resource):
 
         self.details[0]["workHoursId"] = value
 
-    def create(self, repeating=True):
-        self.startDateTime = datetime.now(tz=timezone.utc)
-        if repeating:
-            self.endDateTime = self.startDateTime.replace(
-                year=self.startDateTime.year + 50
-            )
-
-        return super().post(f"{self._client.instance}/calendar/work-hours")
+    def create(self, *args, **kwargs):
+        return super().post(
+            f"{self._client.instance}/calendar/work-hours", *args, **kwargs
+        )
 
     def get_all(
         self,
@@ -174,20 +160,7 @@ class WorkHours(Resource):
 class WorkerHours(Collection):
     resource = WorkHours
 
-    def get(
-        self,
-        from_date: datetime,
-        to_date: datetime,
-        ids: list = None,
-        timezone: str = None,
-    ):
-        params = {
-            "psmIds": ids,
-            "from": from_date,
-            "to": to_date,
-            "timezone": timezone,
-        }
-
+    def get(self, *args, **kwargs):
         return super().get(
-            f"{self._client.instance}/calendar/work-hours", params=params
+            f"{self._client.instance}/calendar/work-hours", *args, **kwargs
         )

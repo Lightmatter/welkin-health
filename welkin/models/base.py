@@ -82,10 +82,10 @@ class Resource(dict, SchemaBase):
 
         return self
 
-    def put(self, resource, data, *args, **kwargs):
+    def put(self, resource, *args, **kwargs):
         response = self._client.put(
             resource,
-            json=data,
+            json=self,
             *args,
             **kwargs,
         )
