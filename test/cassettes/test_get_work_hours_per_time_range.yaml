@@ -1,0 +1,83 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - API_TOKEN_059fbe0e-874e-47f2-87cd-86b2edd3e73d
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-welkin/0.0.5
+    method: GET
+    uri: https://api.live.welkincloud.io/tenant_REDACTED/instance_REDACTED/calendar/work-hours?from=2022-03-01T00%3A00%3A00.000Z&to=2024-03-01T00%3A00%3A00.000Z
+  response:
+    body:
+      string: '[{"psmId": "960b39f0-1404-45a4-a33e-5f9fdea34ff9", "details": [{"createdBy":
+        "createdBy_REDACTED_e44441d6-baa0-4d0a-a3af-30f6d63c7cfb", "updatedBy": "updatedBy_REDACTED_0805b0f7-c453-42f5-b470-62fba0ff73dd",
+        "createdAt": "2023-01-27T20:08:13.509Z", "updatedAt": "2023-01-27T20:08:13.509Z",
+        "workHoursId": "5afdbec1-cac6-4538-ae4a-e82b48d22a7b", "startDateTime": "2023-01-27T20:08:12.897Z",
+        "endDateTime": "2073-01-27T20:08:12.897Z", "localStartDateTime": "2023-01-27T14:08:12.897-06:00",
+        "localEndDateTime": "2073-01-27T14:08:12.897-06:00", "daysInfo": [{"daysInfoId":
+        "2f4b8411-d875-4e4d-8398-252c6c898f6d", "startTime": "09:00:00", "endTime":
+        "17:00:00", "day": 2}, {"daysInfoId": "b1342d06-a346-42d9-9d9b-d63ad14c4816",
+        "startTime": "09:00:00", "endTime": "16:00:00", "day": 3}]}]}, {"psmId": "43afc43c-c77b-4014-8224-54e17f59ee03",
+        "details": [{"createdBy": "createdBy_REDACTED_9fe0853a-8d18-48a9-abf0-84d5ff5cbeed",
+        "updatedBy": "updatedBy_REDACTED_a90aa93c-ab83-44c3-b8fa-a0ef50eb7ce0", "createdAt":
+        "2023-01-14T02:30:06.653Z", "updatedAt": "2023-01-27T20:01:59.039Z", "workHoursId":
+        "99004510-db8a-4f10-b6af-8c5aab8ec543", "startDateTime": "2023-01-27T20:01:58.680Z",
+        "endDateTime": "2073-01-27T20:01:58.680Z", "localStartDateTime": "2023-01-27T12:01:58.680-08:00",
+        "localEndDateTime": "2073-01-27T12:01:58.680-08:00", "daysInfo": [{"daysInfoId":
+        "9e94fa36-8704-425e-b3a2-ecc8f1fd97a3", "startTime": "09:00:00", "endTime":
+        "17:00:00", "day": 7}, {"daysInfoId": "6d914318-eb41-418e-ac63-43fc291d17cc",
+        "startTime": "02:30:00", "endTime": "15:00:00", "day": 1}, {"daysInfoId":
+        "f42d484e-9a13-4212-b3f9-820422fbc4ce", "startTime": "09:00:00", "endTime":
+        "17:00:00", "day": 2}, {"daysInfoId": "d4f9feb2-e2e4-452f-b1e4-8ec6beb6cf58",
+        "startTime": "09:00:00", "endTime": "17:00:00", "day": 3}, {"daysInfoId":
+        "16e43b4d-d991-44bd-b61c-91f365eda07f", "startTime": "09:00:00", "endTime":
+        "17:00:00", "day": 3}, {"daysInfoId": "f36f22a0-2fe5-4a76-8e77-2bc931a3f482",
+        "startTime": "09:00:00", "endTime": "17:00:00", "day": 4}, {"daysInfoId":
+        "6182e6e3-5a59-42cb-8b51-760428ca50db", "startTime": "09:00:00", "endTime":
+        "17:00:00", "day": 5}, {"daysInfoId": "452d6cd2-a071-454c-8a3b-1a18d9687902",
+        "startTime": "09:00:00", "endTime": "17:00:00", "day": 6}]}]}]'
+    headers:
+      Access-Control-Allow-Headers:
+      - authorization, content-type, xsrf-token, security-role
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, PATCH, OPTIONS
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - xsrf-token
+      Access-Control-Max-Age:
+      - '3600'
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 30 Jan 2023 01:02:14 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Set-Cookie:
+      - AWSALB=i5CTpmedOXGuurAvLFAplXefYCnYZzTwtpfxcQuapurLwUeeOvUxNe2eVSgD8mrDOtsMzKYBrKZJdby5x0ekAONA++AjA3gAZzTAIqfQHNygGr/poLIA2Phz5hlB;
+        Expires=Mon, 06 Feb 2023 01:02:14 GMT; Path=/
+      - AWSALBCORS=i5CTpmedOXGuurAvLFAplXefYCnYZzTwtpfxcQuapurLwUeeOvUxNe2eVSgD8mrDOtsMzKYBrKZJdby5x0ekAONA++AjA3gAZzTAIqfQHNygGr/poLIA2Phz5hlB;
+        Expires=Mon, 06 Feb 2023 01:02:14 GMT; Path=/; SameSite=None; Secure
+      Transfer-Encoding:
+      - chunked
+      X-Content-Type-Options:
+      - nosniff
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: ''
+version: 1

@@ -1,0 +1,57 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - API_TOKEN_150abbe1-a561-49b1-b606-94a956b3daba
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-welkin/0.0.5
+    method: GET
+    uri: https://api.live.welkincloud.io/tenant_REDACTED/instance_REDACTED/calendar/work-hours?from=2100-01-01T00%3A00%3A00.000Z&to=2100-01-02T00%3A00%3A00.000Z
+  response:
+    body:
+      string: '[]'
+    headers:
+      Access-Control-Allow-Headers:
+      - authorization, content-type, xsrf-token, security-role
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, PATCH, OPTIONS
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - xsrf-token
+      Access-Control-Max-Age:
+      - '3600'
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 30 Jan 2023 00:59:59 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Set-Cookie:
+      - AWSALB=m9P1E40PCtp6unkzcVHeQkZUbe+8/YmTMS1zVXofyjBLnsXqGarw+AAqoT6Vh9NqV7S974UwPZRVwac4HWeSiz0PunuU8VYlzTihkHPkhN48VpbdAMMXXIzxKRY2;
+        Expires=Mon, 06 Feb 2023 00:59:59 GMT; Path=/
+      - AWSALBCORS=m9P1E40PCtp6unkzcVHeQkZUbe+8/YmTMS1zVXofyjBLnsXqGarw+AAqoT6Vh9NqV7S974UwPZRVwac4HWeSiz0PunuU8VYlzTihkHPkhN48VpbdAMMXXIzxKRY2;
+        Expires=Mon, 06 Feb 2023 00:59:59 GMT; Path=/; SameSite=None; Secure
+      Transfer-Encoding:
+      - chunked
+      X-Content-Type-Options:
+      - nosniff
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: ''
+version: 1

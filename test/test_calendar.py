@@ -109,15 +109,48 @@ def test_schedule_read_all(client, vcr_cassette):
     assert len(vcr_cassette) == 1
 
 @pytest.mark.vcr()
-def test_get_all_work_hours(client, vcr_cassette):
+def test_get_work_hours_per_psm_ids(client, vcr_cassette):
+    start = datetime(2022, 3, 1, tzinfo=timezone.utc)
+    end = datetime(2024, 3, 1, tzinfo=timezone.utc)
+    psm_ids = [
+        '960b39f0-1404-45a4-a33e-5f9fdea34ff9', 
+        '43afc43c-c77b-4014-8...e17f59ee03',
+        ]
+
+    whs = client.WorkHours().get(
+        from_date=start,
+        to_date=end,
+        psm_ids=psm_ids
+    )
+
+    assert isinstance(whs, list)
+    assert len(whs) == 2
+    assert len(vcr_cassette) == 1
+
+@pytest.mark.vcr()
+def test_get_work_hours_per_time_range(client, vcr_cassette):
     start = datetime(2022, 3, 1, tzinfo=timezone.utc)
     end = datetime(2024, 3, 1, tzinfo=timezone.utc)
 
-    whs = client.WorkHours().get_all(
-    from_date=start,
-    to_date=end,
+    whs = client.WorkHours().get(
+        from_date=start,
+        to_date=end,
     )
 
-    assert isinstance(whs, WorkHours)
+    assert isinstance(whs, list)
+    assert len(vcr_cassette) == 1
 
-    assert len(vcr_cassette) == 2
+@pytest.mark.vcr()
+def test_get_work_hours_empty(client, vcr_cassette):
+    start = datetime(2100, 1, 1, tzinfo=timezone.utc)
+    end = datetime(2100, 1, 2, tzinfo=timezone.utc)
+
+    whs = client.WorkHours().get(
+        from_date=start,
+        to_date=end,
+    )
+
+    assert whs is None
+    assert len(vcr_cassette) == 1
+
+

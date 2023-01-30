@@ -119,48 +119,26 @@ class Schedules(Collection):
         )
 
 
-class WorkHours(Resource):
-    @property
-    def id(self, value=None):
-        if not hasattr(self, "details"):
-            self.details = [{}]
-
-        self.details[0]["workHoursId"] = value
-
-    def create(self, *args, **kwargs):
-        return super().post(
-            f"{self._client.instance}/calendar/work-hours", *args, **kwargs
-        )
-
-    def get_all(
+class WorkHours(Collection):
+    def get(
         self,
         from_date: datetime,
         to_date: datetime,
+        psm_ids: list = None,
+        timezone: str = None,
     ):
 
         params = {
             "from": from_date,
             "to": to_date,
+            "psm-ids": psm_ids,
+            "viewerTimezone": timezone,
         }
 
         response = self._client.get(
             f"{self._client.instance}/calendar/work-hours/", params=params)
         
-        dict_version = {index: wh for index, wh in enumerate(response[0:-1])}
-        super().update(dict_version)
-        return self
+        if isinstance(response, dict) and None in response.keys():
+            return None
 
-
-    def update(self, **kwargs):
-        return super().put(
-            f"{self._client.instance}/calendar/work-hours/{self.id}", kwargs
-        )
-
-
-class WorkerHours(Collection):
-    resource = WorkHours
-
-    def get(self, *args, **kwargs):
-        return super().get(
-            f"{self._client.instance}/calendar/work-hours", *args, **kwargs
-        )
+        return response
