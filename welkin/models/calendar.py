@@ -120,12 +120,16 @@ class Schedules(Collection):
 
 
 class WorkHours(Collection):
+    iterator = PageableIterator
+
     def get(
         self,
         from_date: datetime,
         to_date: datetime,
         psm_ids: list = None,
         timezone: str = None,
+        *args,
+        **kwargs,
     ):
 
         params = {
@@ -136,9 +140,13 @@ class WorkHours(Collection):
         }
 
         response = self._client.get(
-            f"{self._client.instance}/calendar/work-hours/", params=params)
+            f"{self._client.instance}/calendar/work-hours/", 
+            *args,
+            params=params,
+            **kwargs)
         
+        # When no work hours are found Welkin returns an {None: []} dictionary
         if isinstance(response, dict) and None in response.keys():
-            return None
+            return WorkHours([])
 
         return response

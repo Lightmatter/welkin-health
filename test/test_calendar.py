@@ -150,7 +150,7 @@ def test_get_work_hours_empty(client, vcr_cassette):
         to_date=end,
     )
 
-    assert whs is None
+    assert len(whs) == 0
     assert len(vcr_cassette) == 1
 
 
