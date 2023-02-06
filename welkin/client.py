@@ -149,6 +149,7 @@ class Client(Session):
         self.Patients = models.Patients
         self.User = models.User
         self.Users = models.Users
+        self.WorkHours = models.WorkHours
 
         for k, v in vars(self).items():
             try:

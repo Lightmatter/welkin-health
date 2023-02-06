@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import datetime, timezone
 from enum import Enum
 
 from welkin.models.base import Collection, Resource
@@ -117,3 +117,36 @@ class Schedules(Collection):
         return super().get(
             f"{self._client.instance}/calendar/{route}", params=params, *args, **kwargs
         )
+
+
+class WorkHours(Collection):
+    iterator = PageableIterator
+
+    def get(
+        self,
+        from_date: datetime,
+        to_date: datetime,
+        psm_ids: list = None,
+        timezone: str = None,
+        *args,
+        **kwargs,
+    ):
+
+        params = {
+            "from": from_date,
+            "to": to_date,
+            "psm-ids": psm_ids,
+            "viewerTimezone": timezone,
+        }
+
+        response = self._client.get(
+            f"{self._client.instance}/calendar/work-hours/", 
+            *args,
+            params=params,
+            **kwargs)
+        
+        # When no work hours are found Welkin returns an {None: []} dictionary
+        if isinstance(response, dict) and None in response.keys():
+            return WorkHours([])
+
+        return response
