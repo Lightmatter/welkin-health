@@ -5,7 +5,7 @@ from welkin.models.assessment import (
     AssessmentRecords,
     Assessments,
 )
-from welkin.models.calendar import CalendarEvent, CalendarEvents, Schedules
+from welkin.models.calendar import CalendarEvent, CalendarEvents, Schedules, WorkHours
 from welkin.models.care_plan import CarePlan, CarePlanOverview
 from welkin.models.cdt import CDT, CDTs
 from welkin.models.chat import Chat, Chats, SearchChats
@@ -48,4 +48,5 @@ __all__ = [
     "User",
     "Users",
     "Formations",
+    "WorkHours",
 ]

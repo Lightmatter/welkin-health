@@ -1,0 +1,83 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - API_TOKEN_05ba5471-8f3a-47ad-af47-a2a5ba8ac21a
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-welkin/0.0.5
+    method: GET
+    uri: https://api.live.welkincloud.io/tenant_REDACTED/instance_REDACTED/calendar/work-hours?from=2022-03-01T00%3A00%3A00.000Z&to=2024-03-01T00%3A00%3A00.000Z&psm-ids=960b39f0-1404-45a4-a33e-5f9fdea34ff9%2C43afc43c-c77b-4014-8...e17f59ee03
+  response:
+    body:
+      string: '[{"psmId": "960b39f0-1404-45a4-a33e-5f9fdea34ff9", "details": [{"createdBy":
+        "createdBy_REDACTED_69bb7262-8585-4953-ba26-945324fc63b3", "updatedBy": "updatedBy_REDACTED_2c2dec24-53dd-4013-bf84-73a049a78114",
+        "createdAt": "2023-01-27T20:08:13.509Z", "updatedAt": "2023-01-27T20:08:13.509Z",
+        "workHoursId": "5afdbec1-cac6-4538-ae4a-e82b48d22a7b", "startDateTime": "2023-01-27T20:08:12.897Z",
+        "endDateTime": "2073-01-27T20:08:12.897Z", "localStartDateTime": "2023-01-27T14:08:12.897-06:00",
+        "localEndDateTime": "2073-01-27T14:08:12.897-06:00", "daysInfo": [{"daysInfoId":
+        "2f4b8411-d875-4e4d-8398-252c6c898f6d", "startTime": "09:00:00", "endTime":
+        "17:00:00", "day": 2}, {"daysInfoId": "b1342d06-a346-42d9-9d9b-d63ad14c4816",
+        "startTime": "09:00:00", "endTime": "16:00:00", "day": 3}]}]}, {"psmId": "43afc43c-c77b-4014-8224-54e17f59ee03",
+        "details": [{"createdBy": "createdBy_REDACTED_b50b1318-145f-4caa-af47-8cf488345050",
+        "updatedBy": "updatedBy_REDACTED_b5f901eb-5489-4943-8b45-00c04d5ad452", "createdAt":
+        "2023-01-14T02:30:06.653Z", "updatedAt": "2023-01-27T20:01:59.039Z", "workHoursId":
+        "99004510-db8a-4f10-b6af-8c5aab8ec543", "startDateTime": "2023-01-27T20:01:58.680Z",
+        "endDateTime": "2073-01-27T20:01:58.680Z", "localStartDateTime": "2023-01-27T12:01:58.680-08:00",
+        "localEndDateTime": "2073-01-27T12:01:58.680-08:00", "daysInfo": [{"daysInfoId":
+        "9e94fa36-8704-425e-b3a2-ecc8f1fd97a3", "startTime": "09:00:00", "endTime":
+        "17:00:00", "day": 7}, {"daysInfoId": "6d914318-eb41-418e-ac63-43fc291d17cc",
+        "startTime": "02:30:00", "endTime": "15:00:00", "day": 1}, {"daysInfoId":
+        "f42d484e-9a13-4212-b3f9-820422fbc4ce", "startTime": "09:00:00", "endTime":
+        "17:00:00", "day": 2}, {"daysInfoId": "d4f9feb2-e2e4-452f-b1e4-8ec6beb6cf58",
+        "startTime": "09:00:00", "endTime": "17:00:00", "day": 3}, {"daysInfoId":
+        "16e43b4d-d991-44bd-b61c-91f365eda07f", "startTime": "09:00:00", "endTime":
+        "17:00:00", "day": 3}, {"daysInfoId": "f36f22a0-2fe5-4a76-8e77-2bc931a3f482",
+        "startTime": "09:00:00", "endTime": "17:00:00", "day": 4}, {"daysInfoId":
+        "6182e6e3-5a59-42cb-8b51-760428ca50db", "startTime": "09:00:00", "endTime":
+        "17:00:00", "day": 5}, {"daysInfoId": "452d6cd2-a071-454c-8a3b-1a18d9687902",
+        "startTime": "09:00:00", "endTime": "17:00:00", "day": 6}]}]}]'
+    headers:
+      Access-Control-Allow-Headers:
+      - authorization, content-type, xsrf-token, security-role
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, PATCH, OPTIONS
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - xsrf-token
+      Access-Control-Max-Age:
+      - '3600'
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 30 Jan 2023 00:58:50 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Set-Cookie:
+      - AWSALB=56o5wWfFt1Tsu9AYXcYBHPBs5T4V9GopoTNZR3y92tgONqEH4X9+g8xMu0oiDRWHOSs0PAVDWHD55hA72HH6cbq4Wn7+yQJZLivFobMLhT/pauC4njSNKtjdP5RS;
+        Expires=Mon, 06 Feb 2023 00:58:50 GMT; Path=/
+      - AWSALBCORS=56o5wWfFt1Tsu9AYXcYBHPBs5T4V9GopoTNZR3y92tgONqEH4X9+g8xMu0oiDRWHOSs0PAVDWHD55hA72HH6cbq4Wn7+yQJZLivFobMLhT/pauC4njSNKtjdP5RS;
+        Expires=Mon, 06 Feb 2023 00:58:50 GMT; Path=/; SameSite=None; Secure
+      Transfer-Encoding:
+      - chunked
+      X-Content-Type-Options:
+      - nosniff
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: ''
+version: 1
