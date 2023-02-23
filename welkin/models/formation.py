@@ -5,19 +5,20 @@ from welkin.pagination import FormationIterator
 
 
 class FormationDataType(Enum):
-    CDTS = "cdts"
-    ASSESSMENTS = "assessments"
-    ENCOUNTERS = "encounters"
-    ENCOUNTER_DISPOSITION = "encounter-disposition"
-    CARE_PLAN = "goal-templates"
+    cdts = "cdts"
+    assessments = "assessments"
+    encounters = "encounters"
+    encounter_disposition = "encounter-disposition"
+    care_plan = "goal-templates"
+    document_types = "document-types"
 
 
 class Formations(Collection):
     iterator = FormationIterator
 
-    def get(self, data_type: FormationDataType, *args, **kwargs):
+    def get(self, data_type: str, *args, **kwargs):
         return super().get(
-            f"{self._client.instance}/formations/current/{data_type.value}",
+            f"{self._client.instance}/formations/current/{FormationDataType[data_type].value}",
             *args,
             **kwargs,
         )
