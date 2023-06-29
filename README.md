@@ -116,7 +116,7 @@ welkin but hasn't been properly wrapped by it's parent. This is common when pull
 and then trying to perform operations on an object in that list.
 
 The easiest workaround is to initialize a new value in memory that is associated with the parent.
-For exmaple, change this:
+For example, change this:
 
 ```python
 cdt = patient.CDTs(name="Initial Checkup").get()[0]
