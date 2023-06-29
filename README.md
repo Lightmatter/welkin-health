@@ -1,6 +1,4 @@
-# welkin-health
-
-## A Python wrapper of the Welkin Health API
+# welkin-health: A Wrapper For The Welkin Health API
 
 [![Version](https://img.shields.io/pypi/v/welkin?style=for-the-badge&logo=pypi&logoColor=fff)](https://pypi.org/project/welkin/)
 [![Python](https://img.shields.io/pypi/pyversions/welkin?style=for-the-badge&logo=python&logoColor=fff)](https://pypi.org/project/welkin/)
