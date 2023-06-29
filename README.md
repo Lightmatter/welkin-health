@@ -12,13 +12,13 @@ This package allows Python developers to write software that makes use of the We
 
 [Welkin Health API Documentation](https://developers.welkinhealth.com/)
 
-### Installing
+## Installing
 
 ```
 pip install welkin
 ```
 
-### Quick Start
+## Quick Start
 
 ```python
 from welkin import Client
@@ -35,9 +35,9 @@ patient = client.Patient(
 ).create()
 ```
 
-### Examples
+## Examples
 
-## Create a Patient
+### Create a Patient
 
 ```python
 patient = client.Patient(
@@ -46,7 +46,7 @@ patient = client.Patient(
 ).create()
 ```
 
-## Get and Update an existing Patient
+### Get and Update an existing Patient
 
 ```python
 # single patient
@@ -61,7 +61,7 @@ patient.delete()
 patients = client.Patients(filters=**filter_kwargs).get()
 ```
 
-## Update the CDT fields on an existing Patient
+### Update the CDT fields on an existing Patient
 
 ```python
 patient = client.Patient(id=patient_id).get()
@@ -76,13 +76,13 @@ cdt.update(**{
 })
 ```
 
-## Create a User
+### Create a User
 
 ```python
 user = client.User(username="bar", email="bar@foo.com").create()  # Create
 ```
 
-## Get or search for a user
+### Get or search for a user
 
 ```python
 
@@ -101,7 +101,7 @@ uasers = client.Users().get(
 )
 ```
 
-## Update or delete a user
+### Update or delete a user
 
 ```
 user.update(firstName="Spiddy")
