@@ -110,7 +110,7 @@ user.delete()
 
 ## Common Issues
 
-1. I keep getting errors about `self` not having an id, or `self._parent` being `None`. Help!
+1. I keep getting errors about `self` not having an `id`, or `self._parent` being `None`. Help!
 This generally means you are trying to perform an action on an object which was pulled from
 welkin but hasn't been properly wrapped by it's parent. This is common when pulling a list of objects
 and then trying to perform operations on an object in that list.
