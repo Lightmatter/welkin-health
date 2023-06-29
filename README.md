@@ -41,7 +41,7 @@ patient = client.Patient(
 
 ```python
 patient = client.Patient(
-  firstName="Petter",
+  firstName="Peter",
   lastName="Parker"
 ).create()
 ```
