@@ -23,32 +23,88 @@ pip install welkin
 ```python
 from welkin import Client
 
-welkin = Client(
+client = Client(
     tenant="gh",
     instance="sb-demo",
     api_client="VBOPNRYRWJIP",
     secret_key="+}B{KGTG6#zG%P;tQm0C",
 )
-
-
-### Patient methods
-patient = welkin.Patient(firstName="Foo", lastName="Bar").create()  # Create
-
-patient = welkin.Patient(id="6801d498-26f4-4aee-961b-5daffcf193c8").get()  # Read
-patients = welkin.Patients().get()  # Read all/list
-
-patient.update(firstName="Baz")  # Update
-patient.delete()  # Delete
-
-### User methods
-user = client.User(username="bar", email="bar@foo.com").create()  # Create
-
-user = welkin.User(id="301b2895-cbf0-4cac-b4cf-1d082faee95c").get()  # Read
-users = welkin.Users().get()  # Read all/list
-uasers = welkin.Users().get(
-    search="lightmatter", region="east-coast", seat_assigned=True, user_state="ACTIVE"
-)  # Filtered read all/list
-
-user.update(firstName="Baz")  # Update
-user.delete()  # Delete
+patient = client.Patient(
+  firstName="Foo",
+  lastName="Bar",
+).create()
 ```
+
+### Examples
+
+## Create a Patient
+
+```python
+patient = client.Patient(
+  firstName="Petter",
+  lastName="Parker"
+).create()
+```
+
+## Get and Update an existing Patient
+
+```python
+# single patient
+patient = client.Patient(
+  id=patient_id
+).get()
+
+patient.update(firstName="Miles")
+patient.delete()
+
+# list of patients
+patients = client.Patients(filters=**filter_kwargs).get()
+```
+
+## Update the CDT fields on an existing Patient
+
+```python
+patient = client.Patient(id=patient_id).get()
+possible_cdts = patient.CDTS(name="Initial Checkup").get()
+found_cdt = possible_cdts[0]
+
+# associate the cdt with the patient in memory
+# and pull any additional details from welkin
+cdt = patient.CDT(**found_cdt).get()
+cdt.update(**{
+    "cdtf-weight": 190.2,
+})
+```
+
+## Create a User
+
+```python
+user = client.User(username="bar", email="bar@foo.com").create()  # Create
+```
+
+## Get or search for a user
+
+```python
+
+# get a single user
+user = client.User(id=user_id).get()
+
+# get a list of users
+users = client.Users().get()  # Read all/list
+
+# filter/search for a specific subset of user(s)
+uasers = client.Users().get(
+    search="lightmatter",
+    region="east-coast",
+    seat_assigned=True,
+    user_state="ACTIVE"
+)
+```
+
+## Update or delete a user
+
+```
+user.update(firstName="Spiddy")
+user.delete()
+```
+

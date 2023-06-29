@@ -1,3 +1,12 @@
+'''
+=================
+   Description
+=================
+These base models can be rather opaque, but in general the two most important
+functions to read through here are the `__getattr__` in both SchemaBase and Resource.
+As well as the `__setattr__` in Resource.
+''' # noqa
+
 import sys
 
 from welkin.pagination import PageIterator
@@ -9,6 +18,33 @@ class SchemaBase:
     subresources = []
 
     def __getattr__(self, name):
+        ''' Enables the subresources to be bootstrapped
+        However do note that there is a subtleness about `r._parent`. For anyone
+        who is an expert in python you may have already noticed, but for those who havent:
+        `r` in this context is going to be a Class object, not a Class instance.
+        What this means is that the `self` is being attached to the Class directly.
+        If this doesnt make sense, or you are otherwise not familiar with how
+        python handles class definitions, class objects, and class instances then
+        dont worry about it too much. Just note that if you try to run:
+
+        ```
+        patient = ...
+        my_cdt._parent = patient
+
+        ```
+
+        this will not set the same variable. You should instead prefer:
+
+        ```
+        patient = ...
+        CDT._parent = patient
+        ```
+
+        Further due to how the `__setattr__` is setup in Resource, the first
+        example will produce what seems like unexpected results: treating the
+        assignment like a dict key-value assignment. Resulting in
+        `my_cdt` having a new `my_cdt['_parent']` key
+        ''' # noqa
         try:
             for r in self.subresources:
                 if r.__name__ == name:
