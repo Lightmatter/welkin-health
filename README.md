@@ -65,7 +65,7 @@ patients = client.Patients(filter=**filter_kwargs).get()
 
 ```python
 patient = client.Patient(id=patient_id).get()
-possible_cdts = patient.CDTS(name="Initial Checkup").get()
+possible_cdts = patient.CDTs(name="Initial Checkup").get()
 found_cdt = possible_cdts[0]
 
 # associate the cdt with the patient in memory
@@ -107,4 +107,29 @@ uasers = client.Users().get(
 user.update(firstName="Spiddy")
 user.delete()
 ```
+
+## Common Issues
+
+1. I keep getting errors about `self` not having an id, or `self._parent` being `None`. Help!
+This generally means you are trying to perform an action on an object which was pulled from
+welkin but hasn't been properly wrapped by it's parent. This is common when pulling a list of objects
+and then trying to perform operations on an object in that list.
+
+The easiest workaround is to initialize a new value in memory that is associated with the parent.
+For exmaple, change this:
+
+```python
+cdt = patient.CDTs(name="Initial Checkup").get()[0]
+cdt.update(**fields)
+```
+
+Into this:
+
+```python
+found_cdt = patient.CDTs(name="Initial Checkup").get()[0]
+cdt = patient.CDT(**found_cdt).get()
+cdt.update(**fields)
+```
+To understand why this happens ref: [`SchemaBase`](https://github.com/Lightmatter/welkin-health/blob/main/welkin/models/base.py)
+
 
