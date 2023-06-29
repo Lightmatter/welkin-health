@@ -58,7 +58,7 @@ patient.update(firstName="Miles")
 patient.delete()
 
 # list of patients
-patients = client.Patients(filters=**filter_kwargs).get()
+patients = client.Patients(filter=**filter_kwargs).get()
 ```
 
 ### Update the CDT fields on an existing Patient
