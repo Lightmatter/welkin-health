@@ -5,6 +5,26 @@ from welkin.models.util import find_patient_id_in_parents
 from welkin.pagination import PageableIterator
 
 
+class DocumentType(Resource):
+    def get(self, *args, **kwargs):
+        return super().get(
+            f"{self._client.instance}/formations/current/document-types/{self.name}",
+            *args,
+            **kwargs,
+        )
+
+
+class DocumentTypes(Collection):
+    resource = DocumentType
+
+    def get(self, *args, **kwargs):
+        return super().get(
+            f"{self._client.instance}/formations/current/document-types",
+            *args,
+            **kwargs,
+        )
+
+
 class DocumentSummaryFile(Resource):
     def get(self, patient_id: str = None, document_summary_id: str = None) -> BytesIO:
         if not patient_id:
@@ -74,7 +94,7 @@ class DocumentSummary(Resource):
         )
 
 
-class Documents(Collection):
+class DocumentSummaries(Collection):
     resource = DocumentSummary
     iterator = PageableIterator
 
