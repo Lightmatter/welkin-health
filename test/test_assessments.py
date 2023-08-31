@@ -4,7 +4,7 @@ from welkin.exceptions import WelkinHTTPError
 from welkin.models.assessment import AssessmentRecord, AssessmentRecords
 
 
-@pytest.mark.vcr()
+@pytest.mark.vcr
 def test_assessment_record_answers_update(client, vcr_cassette):
     patient = client.Patient(id="371dd15c-cedc-4425-a394-d666c8d3fc01")
 
@@ -22,7 +22,7 @@ def test_assessment_record_answers_update(client, vcr_cassette):
     assert len(vcr_cassette) == 3
 
 
-@pytest.mark.vcr()
+@pytest.mark.vcr
 def test_assessment_record_get(client, vcr_cassette):
     patient = client.Patient(id="371dd15c-cedc-4425-a394-d666c8d3fc01")
 
@@ -35,7 +35,7 @@ def test_assessment_record_get(client, vcr_cassette):
     assert len(vcr_cassette) == 1
 
 
-@pytest.mark.vcr()
+@pytest.mark.vcr
 def test_assessment_record_get_w_patient_id(client, vcr_cassette):
     assmt_record = client.AssessmentRecord(
         id="c8764b19-ffa3-406a-b446-c971036a7a1d"
@@ -46,7 +46,7 @@ def test_assessment_record_get_w_patient_id(client, vcr_cassette):
     assert len(vcr_cassette) == 1
 
 
-@pytest.mark.vcr()
+@pytest.mark.vcr
 def test_assessment_record_update(client, vcr_cassette):
     patient = client.Patient(id="371dd15c-cedc-4425-a394-d666c8d3fc01")
 
@@ -63,7 +63,7 @@ def test_assessment_record_update(client, vcr_cassette):
     assert len(vcr_cassette) == 2
 
 
-@pytest.mark.vcr()
+@pytest.mark.vcr
 def test_assessment_record_create(client, vcr_cassette):
     patient = client.Patient(id="371dd15c-cedc-4425-a394-d666c8d3fc01")
     assmt_record = patient.AssessmentRecord(assessmentName="asm-hello-form2").create()
@@ -73,7 +73,7 @@ def test_assessment_record_create(client, vcr_cassette):
     assert len(vcr_cassette) == 1
 
 
-@pytest.mark.vcr()
+@pytest.mark.vcr
 def test_assessment_record_delete(client, vcr_cassette):
     patient = client.Patient(id="371dd15c-cedc-4425-a394-d666c8d3fc01")
 
@@ -89,7 +89,7 @@ def test_assessment_record_delete(client, vcr_cassette):
     assert len(vcr_cassette) == 2
 
 
-@pytest.mark.vcr()
+@pytest.mark.vcr
 def test_assessment_records_get(client, vcr_cassette):
     patient = client.Patient(id="371dd15c-cedc-4425-a394-d666c8d3fc01")
 

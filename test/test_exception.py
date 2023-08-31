@@ -5,7 +5,7 @@ import pytest
 from welkin.exceptions import WelkinHTTPError
 
 
-@pytest.mark.vcr()
+@pytest.mark.vcr
 def test_exception(client):
     url = "admin/users/me"
     with pytest.raises(WelkinHTTPError) as exc_info:
@@ -15,7 +15,7 @@ def test_exception(client):
     assert str(exc).endswith(json.dumps(exc.response.json(), indent=2))
 
 
-@pytest.mark.vcr()
+@pytest.mark.vcr
 def test_exception_no_json(client):
     url = "https://httpbin.org/status/400"
     with pytest.raises(WelkinHTTPError) as exc_info:

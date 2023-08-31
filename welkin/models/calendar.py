@@ -140,11 +140,12 @@ class WorkHours(Collection):
         }
 
         response = self._client.get(
-            f"{self._client.instance}/calendar/work-hours/", 
+            f"{self._client.instance}/calendar/work-hours/",
             *args,
             params=params,
-            **kwargs)
-        
+            **kwargs,
+        )
+
         # When no work hours are found Welkin returns an {None: []} dictionary
         if isinstance(response, dict) and None in response.keys():
             return WorkHours([])

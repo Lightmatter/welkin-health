@@ -10,7 +10,7 @@ from welkin.models.user import User
 UTC = timezone.utc
 
 
-@pytest.mark.vcr()
+@pytest.mark.vcr
 def test_encounter_create(client, vcr_cassette):
     patient = client.Patient(id="371dd15c-cedc-4425-a394-d666c8d3fc01")
     start = datetime.now(tz=UTC) + timedelta(hours=6)
@@ -45,7 +45,7 @@ def test_encounter_create(client, vcr_cassette):
     assert len(vcr_cassette) == 1
 
 
-@pytest.mark.vcr()
+@pytest.mark.vcr
 def test_all_encounters_patient_read(client, vcr_cassette):
     patient = client.Patient(id="371dd15c-cedc-4425-a394-d666c8d3fc01")
     encounters = patient.Encounters().get()
@@ -59,7 +59,7 @@ def test_all_encounters_patient_read(client, vcr_cassette):
         assert len(vcr_cassette) == 1, "Unexpected pagination"
 
 
-@pytest.mark.vcr()
+@pytest.mark.vcr
 def test_all_encounters_user_read(client, vcr_cassette):
     user = client.User(id="c08af975-8afc-49cb-84ac-7189b727148c")
     encounters = user.Encounters().get(with_care_team=False)
@@ -73,7 +73,7 @@ def test_all_encounters_user_read(client, vcr_cassette):
         assert len(vcr_cassette) == 1, "Unexpected pagination"
 
 
-@pytest.mark.vcr()
+@pytest.mark.vcr
 def test_encounter_patient_read(client, vcr_cassette):
     patient = client.Patient(id="371dd15c-cedc-4425-a394-d666c8d3fc01")
 
@@ -84,7 +84,7 @@ def test_encounter_patient_read(client, vcr_cassette):
     assert len(vcr_cassette) == 1
 
 
-@pytest.mark.vcr()
+@pytest.mark.vcr
 def test_encounter_patient_read_related_data(client, vcr_cassette):
     patient = client.Patient(id="371dd15c-cedc-4425-a394-d666c8d3fc01")
 
@@ -97,7 +97,7 @@ def test_encounter_patient_read_related_data(client, vcr_cassette):
     assert len(vcr_cassette) == 1
 
 
-@pytest.mark.vcr()
+@pytest.mark.vcr
 def test_encounter_update(client, vcr_cassette):
     patient = client.Patient(id="371dd15c-cedc-4425-a394-d666c8d3fc01")
 
@@ -110,7 +110,7 @@ def test_encounter_update(client, vcr_cassette):
     assert len(vcr_cassette) == 2
 
 
-@pytest.mark.vcr()
+@pytest.mark.vcr
 def test_encounter_delete(client, vcr_cassette):
     patient = client.Patient(id="371dd15c-cedc-4425-a394-d666c8d3fc01")
 
@@ -126,7 +126,7 @@ def test_encounter_delete(client, vcr_cassette):
     assert len(vcr_cassette) == 3
 
 
-@pytest.mark.vcr()
+@pytest.mark.vcr
 def test_encounter_assessments(client, vcr_cassette):
     patient = client.Patient(id="371dd15c-cedc-4425-a394-d666c8d3fc01")
 
@@ -140,7 +140,7 @@ def test_encounter_assessments(client, vcr_cassette):
     assert len(vcr_cassette) == 1
 
 
-@pytest.mark.vcr()
+@pytest.mark.vcr
 def test_encounter_assessments_get(client, vcr_cassette):
     patient = client.Patient(id="371dd15c-cedc-4425-a394-d666c8d3fc01")
 
@@ -153,7 +153,7 @@ def test_encounter_assessments_get(client, vcr_cassette):
 
 
 # these tests show all of the ways one could get an Encounter Assessment
-@pytest.mark.vcr()
+@pytest.mark.vcr
 def test_encounter_assessment_get(client, vcr_cassette):
     patient = client.Patient(id="371dd15c-cedc-4425-a394-d666c8d3fc01")
 
@@ -165,7 +165,7 @@ def test_encounter_assessment_get(client, vcr_cassette):
     assert len(vcr_cassette) == 1
 
 
-@pytest.mark.vcr()
+@pytest.mark.vcr
 def test_encounter_get_assessment_get(client, vcr_cassette):
     patient = client.Patient(id="371dd15c-cedc-4425-a394-d666c8d3fc01")
 
@@ -177,7 +177,7 @@ def test_encounter_get_assessment_get(client, vcr_cassette):
     assert len(vcr_cassette) == 2
 
 
-@pytest.mark.vcr()
+@pytest.mark.vcr
 def test_assessment_get(client, vcr_cassette):
     assessment = client.Assessment(id="10c6481b-f25b-49cf-9761-33aeced25f46").get(
         patient_id="371dd15c-cedc-4425-a394-d666c8d3fc01",
@@ -188,7 +188,7 @@ def test_assessment_get(client, vcr_cassette):
     assert len(vcr_cassette) == 1
 
 
-@pytest.mark.vcr()
+@pytest.mark.vcr
 def test_encounter_related_data_assessment_get(client, vcr_cassette):
     patient = client.Patient(id="371dd15c-cedc-4425-a394-d666c8d3fc01")
 
@@ -202,7 +202,7 @@ def test_encounter_related_data_assessment_get(client, vcr_cassette):
     assert len(vcr_cassette) == 2
 
 
-@pytest.mark.vcr()
+@pytest.mark.vcr
 def test_encounter_assessment_create(client, vcr_cassette):
     patient = client.Patient(id="371dd15c-cedc-4425-a394-d666c8d3fc01")
 
@@ -214,7 +214,7 @@ def test_encounter_assessment_create(client, vcr_cassette):
     assert len(vcr_cassette) == 1
 
 
-@pytest.mark.vcr()
+@pytest.mark.vcr
 def test_encounter_assessment_update(client, vcr_cassette):
     patient = client.Patient(id="371dd15c-cedc-4425-a394-d666c8d3fc01")
 
@@ -230,7 +230,7 @@ def test_encounter_assessment_update(client, vcr_cassette):
     assert len(vcr_cassette) == 2
 
 
-@pytest.mark.vcr()
+@pytest.mark.vcr
 def test_encounter_assessment_delete(client, vcr_cassette):
     patient = client.Patient(id="371dd15c-cedc-4425-a394-d666c8d3fc01")
 
@@ -246,7 +246,7 @@ def test_encounter_assessment_delete(client, vcr_cassette):
     assert len(vcr_cassette) == 2
 
 
-@pytest.mark.vcr()
+@pytest.mark.vcr
 def test_encounter_disposition_get_nested(client, vcr_cassette):
     patient = client.Patient(id="173a8adf-92e8-4832-8900-027c71b0d768")
     encounter = patient.Encounter(id="d6f4b66e-1be6-403a-ae47-1bbcee264c5e").get(
@@ -259,7 +259,7 @@ def test_encounter_disposition_get_nested(client, vcr_cassette):
     assert len(vcr_cassette) == 1
 
 
-@pytest.mark.vcr()
+@pytest.mark.vcr
 def test_encounter_disposition_get(client, vcr_cassette):
     patient = client.Patient(id="173a8adf-92e8-4832-8900-027c71b0d768")
     encounter = patient.Encounter(id="d6f4b66e-1be6-403a-ae47-1bbcee264c5e")
@@ -270,7 +270,7 @@ def test_encounter_disposition_get(client, vcr_cassette):
     assert len(vcr_cassette) == 1
 
 
-@pytest.mark.vcr()
+@pytest.mark.vcr
 def test_encounter_disposition_get_patient_id_encounter_id(client, vcr_cassette):
     disposition = client.Disposition().get(
         patient_id="173a8adf-92e8-4832-8900-027c71b0d768",
@@ -281,7 +281,7 @@ def test_encounter_disposition_get_patient_id_encounter_id(client, vcr_cassette)
     assert len(vcr_cassette) == 1
 
 
-@pytest.mark.vcr()
+@pytest.mark.vcr
 def test_encounter_disposition_update(client, vcr_cassette):
     patient = client.Patient(id="173a8adf-92e8-4832-8900-027c71b0d768")
     encounter = patient.Encounter(id="d6f4b66e-1be6-403a-ae47-1bbcee264c5e")

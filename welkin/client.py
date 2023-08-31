@@ -3,6 +3,7 @@
 This module provides a Client object to interface with the Welkin Health API.
 """
 import logging
+from http import HTTPStatus
 from json import JSONDecodeError
 
 from requests import HTTPError, Session
@@ -103,7 +104,13 @@ class Client(Session):
             timeout=timeout,
             max_retries=Retry(
                 total=total,
-                status_forcelist=[429, 500, 502, 503, 504],
+                status_forcelist=[
+                    HTTPStatus.TOO_MANY_REQUESTS,
+                    HTTPStatus.INTERNAL_SERVER_ERROR,
+                    HTTPStatus.BAD_GATEWAY,
+                    HTTPStatus.SERVICE_UNAVAILABLE,
+                    HTTPStatus.GATEWAY_TIMEOUT,
+                ],
                 backoff_factor=backoff_factor,
             ),
         )
@@ -203,7 +210,7 @@ class Client(Session):
             except HTTPError as exc:
                 code = exc.response.status_code
 
-                if code in [401]:
+                if code in [HTTPStatus.UNAUTHORIZED]:
                     msg = response.json()
                     codes = ["NOT_VALID_JSON_WEB_TOKEN", "TOKEN_EXPIRED"]
                     if any(i.get("errorCode") in codes for i in msg):

@@ -4,7 +4,7 @@ from welkin.models.base import Resource
 from welkin.models.formation import FormationDataType, Formations
 
 
-@pytest.mark.vcr()
+@pytest.mark.vcr
 def test_formation_get(client, vcr_cassette):
     for data_type in FormationDataType:
         formation_info = client.Formations().get(data_type.name)
