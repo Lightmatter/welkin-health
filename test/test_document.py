@@ -8,13 +8,11 @@ from welkin.models import (
     DocumentSummary,
     DocumentSummaryFile,
     DocumentSummaryFiles,
-    DocumentType,
-    DocumentTypes,
 )
 
 
 @pytest.mark.vcr
-def test_documents_get_patient_id(client, vcr_cassette):
+def test_document_summaries_get_patient_id(client, vcr_cassette):
     documents = client.DocumentSummaries().get(
         patient_id="283f50d3-0840-426f-b07b-bd8e4ab76401"
     )
@@ -25,7 +23,7 @@ def test_documents_get_patient_id(client, vcr_cassette):
 
 
 @pytest.mark.vcr
-def test_documents_subresource(client, vcr_cassette):
+def test_document_summaries_subresource(client, vcr_cassette):
     documents = (
         client.Patient(id="283f50d3-0840-426f-b07b-bd8e4ab76401")
         .DocumentSummaries()
@@ -80,6 +78,9 @@ def test_document_summary_create(client, vcr_cassette):
 
 
 @pytest.mark.vcr
+@pytest.mark.skip(
+    reason="the bytes upload hits this issue in vcr: https://github.com/kevin1024/vcrpy/issues/660 but this test shows the correct implementation"
+)
 def test_document_summary_files_create(client, vcr_cassette):
 
     with open("test/walrus_uJGKbRm.jpeg", "rb") as f:

@@ -48,6 +48,7 @@ def vcr(vcr):
     vcr.filter_post_data_parameters = POST_DATA_BLACKLIST
     vcr.before_record_request = scrub_request(CLIENT_INIT)
     vcr.before_record_response = scrub_response(RESPONSE_BLACKLIST)
+    vcr.decode_compressed_response = True
 
     return vcr
 

@@ -4,7 +4,7 @@ import pytest
 
 from welkin.exceptions import WelkinHTTPError
 from welkin.models.assessment import Assessment, Assessments
-from welkin.models.encounter import Disposition, Encounter, Encounters
+from welkin.models.encounter import Encounter, EncounterDisposition, Encounters
 from welkin.models.user import User
 
 UTC = timezone.utc
@@ -254,7 +254,7 @@ def test_encounter_disposition_get_nested(client, vcr_cassette):
     )
     disposition = encounter.disposition
 
-    assert isinstance(disposition, Disposition)
+    assert isinstance(disposition, EncounterDisposition)
     assert hasattr(disposition, "id")
     assert len(vcr_cassette) == 1
 
@@ -263,20 +263,20 @@ def test_encounter_disposition_get_nested(client, vcr_cassette):
 def test_encounter_disposition_get(client, vcr_cassette):
     patient = client.Patient(id="173a8adf-92e8-4832-8900-027c71b0d768")
     encounter = patient.Encounter(id="d6f4b66e-1be6-403a-ae47-1bbcee264c5e")
-    disposition = encounter.Disposition().get()
+    disposition = encounter.EncounterDisposition().get()
 
-    assert isinstance(disposition, Disposition)
+    assert isinstance(disposition, EncounterDisposition)
     assert disposition.id == "8cd87974-b1cb-4a6f-8873-71d5d188c4aa"
     assert len(vcr_cassette) == 1
 
 
 @pytest.mark.vcr
 def test_encounter_disposition_get_patient_id_encounter_id(client, vcr_cassette):
-    disposition = client.Disposition().get(
+    disposition = client.EncounterDisposition().get(
         patient_id="173a8adf-92e8-4832-8900-027c71b0d768",
         encounter_id="d6f4b66e-1be6-403a-ae47-1bbcee264c5e",
     )
-    assert isinstance(disposition, Disposition)
+    assert isinstance(disposition, EncounterDisposition)
     assert disposition.id == "8cd87974-b1cb-4a6f-8873-71d5d188c4aa"
     assert len(vcr_cassette) == 1
 
@@ -285,7 +285,9 @@ def test_encounter_disposition_get_patient_id_encounter_id(client, vcr_cassette)
 def test_encounter_disposition_update(client, vcr_cassette):
     patient = client.Patient(id="173a8adf-92e8-4832-8900-027c71b0d768")
     encounter = patient.Encounter(id="d6f4b66e-1be6-403a-ae47-1bbcee264c5e")
-    disposition = encounter.Disposition(id="8cd87974-b1cb-4a6f-8873-71d5d188c4aa").get()
+    disposition = encounter.EncounterDisposition(
+        id="8cd87974-b1cb-4a6f-8873-71d5d188c4aa"
+    ).get()
 
     review = disposition.jsonBody["uicedf-review"]
 

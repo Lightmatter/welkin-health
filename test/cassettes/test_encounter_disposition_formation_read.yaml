@@ -1,0 +1,145 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - API_TOKEN_cff86b44-e229-44da-823c-57f4a9307c31
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-welkin/0.0.7
+    method: GET
+    uri: https://api.live.welkincloud.io/tenant_REDACTED/instance_REDACTED/formations/current/encounter-disposition
+  response:
+    body:
+      string: '{"id": "3ea2d3da-0d25-427e-a379-8d4d13b2d244", "name": "__encounter_disposition__",
+        "title": null, "label": null, "version": 74, "internal": true, "readable":
+        true, "updatable": true, "type": "MULTI_RECORD", "relation": "ENCOUNTER_DISPOSITION",
+        "fields": [{"name": "disposition-code", "type": "select", "formula": null,
+        "dictionary": null, "profileDataType": null, "editable": true, "searchable":
+        false, "bulkEdit": false, "phi": false, "disable": false, "injectedSource":
+        false, "displayType": "SELECT", "valueType": "STRING", "meta": {"required":
+        true, "options": [{"label": "Completed", "value": "Completed", "refCdtName":
+        null}, {"label": "Rescheduled", "value": "Rescheduled", "refCdtName": null},
+        {"label": "No Show", "value": "No Show", "refCdtName": null}, {"label": "Referred
+        Out", "value": "Referred Out", "refCdtName": null}, {"label": "Not Eligible",
+        "value": "Not Eligible", "refCdtName": null}]}}, {"name": "note", "type":
+        "textarea", "formula": null, "dictionary": null, "profileDataType": null,
+        "editable": true, "searchable": false, "bulkEdit": false, "phi": false, "disable":
+        false, "injectedSource": false, "displayType": null, "valueType": null, "meta":
+        {"required": false}}, {"name": "uicedf-follow-up-scheduled", "type": "select",
+        "formula": null, "dictionary": null, "profileDataType": null, "editable":
+        true, "searchable": false, "bulkEdit": false, "phi": false, "disable": false,
+        "injectedSource": false, "displayType": "SELECT", "valueType": "STRING", "meta":
+        {"required": true, "options": [{"label": "Yes", "value": "Yes", "refCdtName":
+        null}, {"label": "No", "value": "No", "refCdtName": null}]}}, {"name": "uicedf-followup-timeframe",
+        "type": "select", "formula": null, "dictionary": null, "profileDataType":
+        null, "editable": true, "searchable": false, "bulkEdit": false, "phi": false,
+        "disable": false, "injectedSource": false, "displayType": "SELECT", "valueType":
+        "STRING", "meta": {"required": true, "options": [{"label": "1 week", "value":
+        "1 week", "refCdtName": null}, {"label": "2 weeks", "value": "2 weeks", "refCdtName":
+        null}, {"label": "3 weeks", "value": "3 weeks", "refCdtName": null}, {"label":
+        "4 weeks", "value": "4 weeks", "refCdtName": null}, {"label": "6 weeks", "value":
+        "6 weeks", "refCdtName": null}, {"label": "2 months", "value": "2 months",
+        "refCdtName": null}, {"label": "3 months", "value": "3 months", "refCdtName":
+        null}, {"label": "6 months", "value": "6 months", "refCdtName": null}, {"label":
+        "1 year", "value": "1 year", "refCdtName": null}, {"label": "None", "value":
+        "None", "refCdtName": null}]}}, {"name": "uicedf-followup-type", "type": "select",
+        "formula": null, "dictionary": null, "profileDataType": null, "editable":
+        true, "searchable": false, "bulkEdit": false, "phi": false, "disable": false,
+        "injectedSource": false, "displayType": "SELECT", "valueType": "STRING", "meta":
+        {"required": true, "options": [{"label": "Schedule Visit", "value": "Schedule
+        Visit", "refCdtName": null}, {"label": "Chat - Member Support", "value": "Chat
+        - Member Support", "refCdtName": null}, {"label": "Chat - Dermatologist",
+        "value": "Chat - Dermatologist", "refCdtName": null}, {"label": "None", "value":
+        "None", "refCdtName": null}]}}, {"name": "uicedf-prior-auth-probable", "type":
+        "select", "formula": null, "dictionary": null, "profileDataType": null, "editable":
+        true, "searchable": false, "bulkEdit": false, "phi": false, "disable": false,
+        "injectedSource": false, "displayType": "SELECT", "valueType": "STRING", "meta":
+        {"required": true, "options": [{"label": "Yes", "value": "Yes", "refCdtName":
+        null}, {"label": "No", "value": "No", "refCdtName": null}]}}, {"name": "id",
+        "type": "text", "formula": null, "dictionary": null, "profileDataType": null,
+        "editable": false, "searchable": false, "bulkEdit": false, "phi": false, "disable":
+        false, "injectedSource": false, "displayType": null, "valueType": null, "meta":
+        {"required": false}}, {"name": "created_at", "type": "datetime", "formula":
+        null, "dictionary": null, "profileDataType": null, "editable": false, "searchable":
+        false, "bulkEdit": false, "phi": false, "disable": false, "injectedSource":
+        false, "displayType": null, "valueType": null, "meta": {"required": false}},
+        {"name": "created_by", "type": "text", "formula": null, "dictionary": null,
+        "profileDataType": null, "editable": false, "searchable": false, "bulkEdit":
+        false, "phi": false, "disable": false, "injectedSource": false, "displayType":
+        null, "valueType": null, "meta": {"required": false}}, {"name": "created_by_name",
+        "type": "text", "formula": null, "dictionary": null, "profileDataType": null,
+        "editable": false, "searchable": false, "bulkEdit": false, "phi": false, "disable":
+        false, "injectedSource": false, "displayType": null, "valueType": null, "meta":
+        {"required": false}}, {"name": "updated_at", "type": "datetime", "formula":
+        null, "dictionary": null, "profileDataType": null, "editable": false, "searchable":
+        false, "bulkEdit": false, "phi": false, "disable": false, "injectedSource":
+        false, "displayType": null, "valueType": null, "meta": {"required": false}},
+        {"name": "updated_by", "type": "text", "formula": null, "dictionary": null,
+        "profileDataType": null, "editable": false, "searchable": false, "bulkEdit":
+        false, "phi": false, "disable": false, "injectedSource": false, "displayType":
+        null, "valueType": null, "meta": {"required": false}}, {"name": "updated_by_name",
+        "type": "text", "formula": null, "dictionary": null, "profileDataType": null,
+        "editable": false, "searchable": false, "bulkEdit": false, "phi": false, "disable":
+        false, "injectedSource": false, "displayType": null, "valueType": null, "meta":
+        {"required": false}}, {"name": "source_name", "type": "text", "formula": null,
+        "dictionary": null, "profileDataType": null, "editable": false, "searchable":
+        false, "bulkEdit": false, "phi": false, "disable": false, "injectedSource":
+        false, "displayType": null, "valueType": null, "meta": {"required": false}},
+        {"name": "source_type", "type": "text", "formula": null, "dictionary": null,
+        "profileDataType": null, "editable": false, "searchable": false, "bulkEdit":
+        false, "phi": false, "disable": false, "injectedSource": false, "displayType":
+        null, "valueType": null, "meta": {"required": false}}, {"name": "source_id",
+        "type": "text", "formula": null, "dictionary": null, "profileDataType": null,
+        "editable": false, "searchable": false, "bulkEdit": false, "phi": false, "disable":
+        false, "injectedSource": false, "displayType": null, "valueType": null, "meta":
+        {"required": false}}, {"name": "external_id", "type": "text", "formula": null,
+        "dictionary": null, "profileDataType": null, "editable": true, "searchable":
+        false, "bulkEdit": false, "phi": false, "disable": false, "injectedSource":
+        false, "displayType": null, "valueType": null, "meta": {"required": false}},
+        {"name": "external_guid", "type": "text", "formula": null, "dictionary": null,
+        "profileDataType": null, "editable": true, "searchable": false, "bulkEdit":
+        false, "phi": false, "disable": false, "injectedSource": false, "displayType":
+        null, "valueType": null, "meta": {"required": false}}], "_containsPHI": false}'
+    headers:
+      Access-Control-Allow-Headers:
+      - authorization, content-type, xsrf-token, security-role
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, PATCH, OPTIONS
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - xsrf-token
+      Access-Control-Max-Age:
+      - '3600'
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Thu, 31 Aug 2023 23:44:19 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Strict-Transport-Security:
+      - max-age=31536000 ; includeSubDomains
+      Transfer-Encoding:
+      - chunked
+      X-Content-Type-Options:
+      - nosniff
+      X-XSS-Protection:
+      - 1; mode=block
+      content-length:
+      - '6416'
+    status:
+      code: 200
+      message: OK
+version: 1

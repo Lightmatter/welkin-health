@@ -130,6 +130,8 @@ class Client(Session):
     def __build_resources(self) -> None:
         """Add each resource with a reference to this instance."""
         self.Assessment = models.Assessment
+        self.AssessmentFormation = models.AssessmentFormation
+        self.AssessmentFormations = models.AssessmentFormations
         self.AssessmentRecord = models.AssessmentRecord
         self.AssessmentRecordAnswers = models.AssessmentRecordAnswers
         self.AssessmentRecords = models.AssessmentRecords
@@ -139,19 +141,25 @@ class Client(Session):
         self.CarePlan = models.CarePlan
         self.CarePlanOverview = models.CarePlanOverview
         self.CDT = models.CDT
+        self.CDTFormation = models.CDTFormation
+        self.CDTFormations = models.CDTFormations
         self.CDTs = models.CDTs
         self.Chat = models.Chat
         self.Chats = models.Chats
-        self.Disposition = models.Disposition
         self.DocumentSummaries = models.DocumentSummaries
         self.DocumentSummary = models.DocumentSummary
         self.DocumentSummaryFile = models.DocumentSummaryFile
         self.DocumentSummaryFiles = models.DocumentSummaryFiles
-        self.DocumentType = models.DocumentType
-        self.DocumentTypes = models.DocumentTypes
+        self.DocumentTypeFormation = models.DocumentTypeFormation
+        self.DocumentTypeFormations = models.DocumentTypeFormations
         self.Encounter = models.Encounter
+        self.EncounterDisposition = models.EncounterDisposition
+        self.EncounterDispositionFormation = models.EncounterDispositionFormation
+        self.EncounterFormation = models.EncounterFormation
+        self.EncounterFormations = models.EncounterFormations
         self.Encounters = models.Encounters
-        self.Formations = models.Formations
+        self.GoalFormation = models.GoalFormation
+        self.GoalFormations = models.GoalFormations
         self.Patient = models.Patient
         self.Patients = models.Patients
         self.Schedules = models.Schedules
@@ -229,6 +237,9 @@ class Client(Session):
                 return response.content
 
             raise
+
+        if "formations" in path:
+            return json
 
         if isinstance(json, list):
             json = {

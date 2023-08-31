@@ -6,7 +6,7 @@ from welkin.models.util import EncounterSubResource, patient_id
 from welkin.pagination import MetaInfoIterator
 
 
-class Disposition(Resource, EncounterSubResource):
+class EncounterDisposition(Resource, EncounterSubResource):
     def get(self, patient_id: str = None, encounter_id: str = None):
         patient_id, encounter_id = self.get_patient_encounter_id(
             patient_id, encounter_id
@@ -33,11 +33,11 @@ class EncounterStatus(Enum):
 
 
 class Encounter(Resource):
-    subresources = [Assessment, Assessments, Disposition]
+    subresources = [Assessment, Assessments, EncounterDisposition]
     nested_objects = {
         "assessmentLinks": "Assessments",
         "userRelatedToCalendarEvent": "User",
-        "disposition": "Disposition",
+        "disposition": "EncounterDisposition",
     }
 
     @patient_id

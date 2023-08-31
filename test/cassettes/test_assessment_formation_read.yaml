@@ -1,0 +1,72 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - API_TOKEN_cff86b44-e229-44da-823c-57f4a9307c31
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-welkin/0.0.7
+    method: GET
+    uri: https://api.live.welkincloud.io/tenant_REDACTED/instance_REDACTED/formations/current/assessments/asm-coaching-notes
+  response:
+    body:
+      string: '{"id": "e9f28ffe-fb61-453f-b14f-f59fad9afaa0", "title": "Coaching Notes",
+        "name": "asm-coaching-notes", "version": 74, "sections": [{"title": "Coaching
+        Notes", "name": "section-1", "order": 0, "fields": [{"label": "Internal Member
+        Overview - General information about patient such as important relationships,
+        current issues, etc. ", "name": "", "refCdtName": "cdt-coaching-notes", "refCdtFieldName":
+        "cdtf-patient-overview", "order": 0, "viewType": "question", "meta": {"type":
+        "textarea", "required": false}, "prePopulatedValue": {"type": "PREVIOUS_ASSESSMENT"},
+        "attachments": []}, {"label": "Internal Session Notes", "name": "", "refCdtName":
+        "cdt-coaching-notes", "refCdtFieldName": "cdtf-focus-today", "order": 1, "viewType":
+        "question", "meta": {"type": "textarea", "required": false}, "prePopulatedValue":
+        null, "attachments": []}, {"label": "External Notes for Patient", "name":
+        "", "refCdtName": "cdt-soap-notes", "refCdtFieldName": "cdtf-visit-summary",
+        "order": 2, "viewType": "question", "meta": {"type": "textarea", "required":
+        false}, "prePopulatedValue": null, "attachments": []}]}], "scoring": {"formula":
+        "SUM", "groups": []}, "programs": [], "template": null, "conditionSettings":
+        {"elements": [], "events": []}, "displayType": "SECTIONS", "autoCompleted":
+        false, "_containsPHI": true}'
+    headers:
+      Access-Control-Allow-Headers:
+      - authorization, content-type, xsrf-token, security-role
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, PATCH, OPTIONS
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - xsrf-token
+      Access-Control-Max-Age:
+      - '3600'
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Thu, 31 Aug 2023 23:44:16 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Strict-Transport-Security:
+      - max-age=31536000 ; includeSubDomains
+      Transfer-Encoding:
+      - chunked
+      X-Content-Type-Options:
+      - nosniff
+      X-XSS-Protection:
+      - 1; mode=block
+      content-length:
+      - '1204'
+    status:
+      code: 200
+      message: OK
+version: 1
