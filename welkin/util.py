@@ -1,8 +1,41 @@
 from datetime import date, datetime, timezone
 
+from welkin.models.base import SchemaBase
+
 # NOTE: `clean_request_payload` and `clean_request_params` are intentionally DRY
 # violations. The code may be the same, but they represent different knowledge.
 # the same goes for `clean_request_payload` and `clean_json_list`
+
+
+class Target:
+    _client = None
+
+    def __init__(self):
+        self._base_path = ""
+        _build_resources(self, "_client", self._client)
+
+
+def _build_resources(instance: type, attribute_name: str, value: type = None) -> None:
+    """Add an attribute pointing to an instance for each resource.
+
+    Args:
+        instance (type): _description_
+        attribute_name (str): _description_
+        value (type, optional): _description_. Defaults to None.
+    """
+    if not value:
+        value = instance
+
+    for attribute in dir(instance):
+        val = getattr(instance, attribute)
+
+        try:
+            if not issubclass(val, (SchemaBase, Target)):
+                continue
+        except TypeError:
+            continue  # Failed because `issubclass` expects a class.
+
+        setattr(val, attribute_name, value)
 
 
 def clean_request_payload(payload: dict) -> dict:

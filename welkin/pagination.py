@@ -98,6 +98,31 @@ class FormationIterator(PageIterator):
         self.page = 0
         return super().__iter__()
 
+    def __next__(self):
+        if self.resources:
+            return self.resources.pop(0)
+
+        if not self.last:
+            self._pre_request()
+
+            data = self.method(
+                self.resource,
+                meta_key=self.meta_key,
+                meta_dict=self.meta_dict,
+                *self.args,
+                **self.kwargs,
+            )
+            if isinstance(data, dict):
+                data = [data]
+
+            self.resources = data
+
+            self._post_request({})
+
+            return next(self)
+
+        raise StopIteration
+
     def _pre_request(self):
         self.kwargs.setdefault("params", {}).update(page=self.page)
 

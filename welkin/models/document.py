@@ -74,7 +74,7 @@ class DocumentSummary(Resource):
         )
 
 
-class Documents(Collection):
+class DocumentSummaries(Collection):
     resource = DocumentSummary
     iterator = PageableIterator
 

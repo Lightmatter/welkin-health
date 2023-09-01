@@ -1,0 +1,933 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - API_TOKEN_1ace5dbe-fdec-4410-bd39-3e972fb4eea6
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-welkin/0.1.0
+    method: GET
+    uri: https://api.live.welkincloud.io/tenant_REDACTED/instance_REDACTED/formations/current/assessments?page=0
+  response:
+    body:
+      string: '[{"id": "7898f4c6-4eb2-472b-b14d-871591496688", "title": "Coaching
+        Notes", "name": "asm-coaching-notes", "version": 75, "sections": [{"title":
+        "Coaching Notes", "name": "section-1", "order": 0, "fields": [{"label": "Internal
+        Member Overview - General information about patient such as important relationships,
+        current issues, etc. ", "name": "", "refCdtName": "cdt-coaching-notes", "refCdtFieldName":
+        "cdtf-patient-overview", "order": 0, "viewType": "question", "meta": {"type":
+        "textarea", "required": false}, "prePopulatedValue": {"type": "PREVIOUS_ASSESSMENT"},
+        "attachments": []}, {"label": "Internal Session Notes", "name": "", "refCdtName":
+        "cdt-coaching-notes", "refCdtFieldName": "cdtf-focus-today", "order": 1, "viewType":
+        "question", "meta": {"type": "textarea", "required": false}, "prePopulatedValue":
+        null, "attachments": []}, {"label": "External Notes for Patient", "name":
+        "", "refCdtName": "cdt-soap-notes", "refCdtFieldName": "cdtf-visit-summary",
+        "order": 2, "viewType": "question", "meta": {"type": "textarea", "required":
+        false}, "prePopulatedValue": null, "attachments": []}]}], "scoring": {"formula":
+        "SUM", "groups": []}, "programs": [], "template": null, "conditionSettings":
+        {"elements": [], "events": []}, "displayType": "SECTIONS", "autoCompleted":
+        false, "_containsPHI": true}, {"id": "9628cea8-cf25-467c-9051-a18866f9aaf1",
+        "title": "Onboarding", "name": "asm-onboarding", "version": 75, "sections":
+        [{"title": "Patient Answers", "name": "section-1", "order": 0, "fields": [{"label":
+        "What brings you to Zest?", "name": "", "refCdtName": "cdt-onboarding-form",
+        "refCdtFieldName": "cdtf-rationale", "order": 0, "viewType": "question", "meta":
+        {"type": "text", "required": false}, "prePopulatedValue": null, "attachments":
+        []}, {"label": "Are you 18 or over?", "name": "", "refCdtName": "cdt-onboarding-form",
+        "refCdtFieldName": "cdtf-over-eighteen", "order": 1, "viewType": "question",
+        "meta": {"type": "checkbox", "required": false}, "prePopulatedValue": null,
+        "attachments": []}, {"label": "Have you been diagnosed with eczema or psoriasis?",
+        "name": "", "refCdtName": "cdt-onboarding-form", "refCdtFieldName": "cdtf-diagnosis",
+        "order": 2, "viewType": "question", "meta": {"type": "text", "required": false},
+        "prePopulatedValue": null, "attachments": []}, {"label": "How often does your
+        skin impact your ability to enjoy daily activities?", "name": "", "refCdtName":
+        "cdt-onboarding-form", "refCdtFieldName": "cdtf-impact-frequency", "order":
+        3, "viewType": "question", "meta": {"type": "integer", "required": false},
+        "prePopulatedValue": null, "attachments": []}, {"label": "What activities
+        are most impacted by your condition?", "name": "", "refCdtName": "cdt-onboarding-form",
+        "refCdtFieldName": "cdtf-impacted-activities", "order": 4, "viewType": "question",
+        "meta": {"type": "text", "required": false}, "prePopulatedValue": null, "attachments":
+        []}, {"label": "Have you ever been prescribed medication by your doctor?",
+        "name": "", "refCdtName": "cdt-onboarding-form", "refCdtFieldName": "cdtf-rx-history",
+        "order": 5, "viewType": "question", "meta": {"type": "text", "required": false},
+        "prePopulatedValue": null, "attachments": []}, {"label": "Which medication
+        were you prescribed?", "name": "", "refCdtName": "cdt-onboarding-form", "refCdtFieldName":
+        "cdtf-rx-prior-type", "order": 6, "viewType": "question", "meta": {"type":
+        "text", "required": false}, "prePopulatedValue": null, "attachments": []},
+        {"label": "Why did you stop taking the medication?", "name": "", "refCdtName":
+        "cdt-onboarding-form", "refCdtFieldName": "cdtf-rx-stop-rationale", "order":
+        7, "viewType": "question", "meta": {"type": "text", "required": false}, "prePopulatedValue":
+        null, "attachments": []}, {"label": "Which medication are you currently prescribed?",
+        "name": "", "refCdtName": "cdt-onboarding-form", "refCdtFieldName": "cdtf-rx-current-type",
+        "order": 8, "viewType": "question", "meta": {"type": "text", "required": false},
+        "prePopulatedValue": null, "attachments": []}, {"label": "Do you know the
+        name of the topical treatment you take?", "name": "", "refCdtName": "cdt-onboarding-form",
+        "refCdtFieldName": "cdtf-rx-current-topical", "order": 9, "viewType": "question",
+        "meta": {"type": "text", "required": false}, "prePopulatedValue": null, "attachments":
+        []}, {"label": "Do you know the name of the oral medication you take?", "name":
+        "", "refCdtName": "cdt-onboarding-form", "refCdtFieldName": "cdtf-rx-current-oral",
+        "order": 10, "viewType": "question", "meta": {"type": "text", "required":
+        false}, "prePopulatedValue": null, "attachments": []}, {"label": "Do you know
+        the name of the injection you take?", "name": "", "refCdtName": "cdt-onboarding-form",
+        "refCdtFieldName": "cdtf-rx-current-injection", "order": 11, "viewType": "question",
+        "meta": {"type": "text", "required": false}, "prePopulatedValue": null, "attachments":
+        []}, {"label": "Do you know the name of the IV Infusion you receive?", "name":
+        "", "refCdtName": "cdt-onboarding-form", "refCdtFieldName": "cdtf-rx-current-infusion",
+        "order": 12, "viewType": "question", "meta": {"type": "text", "required":
+        false}, "prePopulatedValue": null, "attachments": []}, {"label": "In what
+        state do you currently reside?", "name": "", "refCdtName": "cdt-onboarding-form",
+        "refCdtFieldName": "cdtf-region", "order": 13, "viewType": "question", "meta":
+        {"type": "text", "required": false}, "prePopulatedValue": null, "attachments":
+        []}, {"label": "Are you interesting in exploring new/different treatment options?",
+        "name": "", "refCdtName": "cdt-onboarding-form", "refCdtFieldName": "cdtf-new-treatment-intent",
+        "order": 14, "viewType": "question", "meta": {"type": "text", "required":
+        false}, "prePopulatedValue": null, "attachments": []}, {"label": "Please enter
+        your phone number below.", "name": "", "refCdtName": "cdt-onboarding-form",
+        "refCdtFieldName": "cdtf-phone-number", "order": 15, "viewType": "question",
+        "meta": {"type": "phone", "required": false}, "prePopulatedValue": null, "attachments":
+        []}, {"label": "What type of insurance do you have?", "name": "", "refCdtName":
+        "cdt-onboarding-form", "refCdtFieldName": "cdtf-insurance-type", "order":
+        16, "viewType": "question", "meta": {"type": "text", "required": false}, "prePopulatedValue":
+        null, "attachments": []}]}], "scoring": {"formula": "SUM", "groups": []},
+        "programs": [], "template": null, "conditionSettings": {"elements": [], "events":
+        []}, "displayType": "SECTIONS", "autoCompleted": false, "_containsPHI": true},
+        {"id": "24d273e9-99cd-47fc-9693-ac3c2367f1ec", "title": "Provider Notes",
+        "name": "asm-provider-notes", "version": 75, "sections": [{"title": "Provider
+        Notes", "name": "section-1", "order": 0, "fields": [{"label": "History & Findings
+        (Internal)", "name": "", "refCdtName": "cdt-soap-notes", "refCdtFieldName":
+        "cdtf-soap-subjective", "order": 0, "viewType": "question", "meta": {"type":
+        "textarea", "required": true}, "prePopulatedValue": null, "attachments": []},
+        {"label": "Percent BSA", "name": "", "refCdtName": "cdt-severity", "refCdtFieldName":
+        "cdtf-body-surface-area", "order": 1, "viewType": "question", "meta": {"type":
+        "select", "required": false}, "prePopulatedValue": null, "attachments": []},
+        {"label": "Assessment & Recommendations (Internal)", "name": "", "refCdtName":
+        "cdt-soap-notes", "refCdtFieldName": "cdtf-soap-plan", "order": 2, "viewType":
+        "question", "meta": {"type": "textarea", "required": true}, "prePopulatedValue":
+        null, "attachments": []}, {"label": "Patient Notes (External)", "name": "",
+        "refCdtName": "cdt-soap-notes", "refCdtFieldName": "cdtf-visit-summary", "order":
+        3, "viewType": "question", "meta": {"type": "textarea", "required": true},
+        "prePopulatedValue": null, "attachments": []}, {"label": "FIRST VISIT -Verify
+        the patient''s information: \n\nPhone: {{USER_PHONE}}\nAddress: \n\nPharmacy:
+        \n{{CDT.cdt-pharmacy.name.LAST_RECORD}}\n{{CDT.cdt-pharmacy.address.LAST_RECORD}}\n{{CDT.cdt-pharmacy.cdtf-phone.LAST_RECORD}}\n\nInsurance:
+        \n{{CDT.insurance.insured-by.LAST_RECORD}}\n{{CDT.insurance.insurance-phone.LAST_RECORD}}\n",
+        "name": "", "refCdtName": "cdt-general-note", "refCdtFieldName": "general_note",
+        "order": 4, "viewType": "question", "meta": {"type": "textarea", "required":
+        false}, "prePopulatedValue": {"type": "PREVIOUS_ASSESSMENT"}, "attachments":
+        []}, {"label": "<p><span style=\"font-size: 16px;\">Don''t forget to start
+        the \"Treatment Recommendations\" assessment where you will select OTC, Nutrition,
+        and Lifestyle recommendations when applicable. </span></p>\n", "name": "section-0-field-0",
+        "refCdtName": "", "refCdtFieldName": "", "order": 5, "viewType": "readOnly",
+        "meta": {"type": "", "required": false}, "prePopulatedValue": null, "attachments":
+        []}, {"label": "Encounter Status?", "name": "", "refCdtName": "cdt-encounter-status",
+        "refCdtFieldName": "cdtf-encounter-notes-status", "order": 6, "viewType":
+        "question", "meta": {"type": "select", "required": false}, "prePopulatedValue":
+        null, "attachments": []}]}], "scoring": {"formula": "SUM", "groups": []},
+        "programs": [], "template": null, "conditionSettings": {"elements": [], "events":
+        []}, "displayType": "SECTIONS", "autoCompleted": false, "_containsPHI": true},
+        {"id": "1f77e29e-375b-4fa8-bdf3-455f32c08af4", "title": "Treatment Recommendations",
+        "name": "asm-treatment-recommendations", "version": 75, "sections": [{"title":
+        "Treatment Recommendations", "name": "section-1", "order": 0, "fields": [{"label":
+        "Optional:  Select an OTC treatment and copy the text into the OTC Recommendations
+        field. ", "name": "", "refCdtName": "cdt-treatments", "refCdtFieldName": "cdtf-otc-treatment-list",
+        "order": 0, "viewType": "question", "meta": {"type": "select", "required":
+        false}, "prePopulatedValue": null, "attachments": []}, {"label": "<p># Petroleum
+        Jelly</p>\n<p></p>\n<p><a class=\"wysiwyg-hashtag\" href=\"##\">##</a> About</p>\n<p>Although
+        it can be sticky, petroleum jelly helps to hydrate dry skin and reduce symptoms
+        like irritation and itchiness.</p>\n<p><a class=\"wysiwyg-hashtag\" href=\"##\">##</a>
+        Directions for Use</p>\n<p>As needed, apply the jelly to affected areas, especially
+        after showers or over moisturizers to lock in hydration.</p>\n<p></p>\n<p></p>\n",
+        "name": "section-0-field-0", "refCdtName": "", "refCdtFieldName": "", "order":
+        1, "viewType": "readOnly", "meta": {"type": "", "required": false}, "prePopulatedValue":
+        null, "attachments": []}, {"label": "<p># Hydrocortisone 1%</p>\n<p></p>\n<p><a
+        class=\"wysiwyg-hashtag\" href=\"##\">##</a> About</p>\n<p>Topical corticosteroids
+        are a mainstay in the treatment of auto-immune dermatologic conditions given
+        their anti-inflammatory, anti-proliferative, and immunosuppressive capabilities.</p>\n<p><a
+        class=\"wysiwyg-hashtag\" href=\"##\">##</a> Directions for Use</p>\n<p>This
+        ointment should be applied twice daily to affected areas. *Stop using this
+        medication after 2 weeks* as long-term use can carry certain side effects.</p>\n",
+        "name": "section-0-field-1", "refCdtName": "", "refCdtFieldName": "", "order":
+        2, "viewType": "readOnly", "meta": {"type": "", "required": false}, "prePopulatedValue":
+        null, "attachments": []}, {"label": "<p># Tar Shampoo</p>\n<p></p>\n<p><a
+        class=\"wysiwyg-hashtag\" href=\"##\">##</a> About</p>\n<p>Coal tar has been
+        used for over 100 years to treat skin conditions by slowing cell growth and
+        relieving inflammation.</p>\n<p><a class=\"wysiwyg-hashtag\" href=\"##\">##</a>
+        Directions for Use</p>\n<p>Use the shampoo as you would your normal shampoo.
+        Effectiveness can be increased by letting it sit on your scalp for 5 to 10
+        minutes before rinsing.</p>\n", "name": "section-0-field-2", "refCdtName":
+        "", "refCdtFieldName": "", "order": 3, "viewType": "readOnly", "meta": {"type":
+        "", "required": false}, "prePopulatedValue": null, "attachments": []}, {"label":
+        "<p># Tar Lotion / Ointment</p>\n<p></p>\n<p><a class=\"wysiwyg-hashtag\"
+        href=\"##\">##</a> About</p>\n<p>Coal tar can relieve skin inflammation improving
+        redness, flaking and itching symptoms.</p>\n<p><a class=\"wysiwyg-hashtag\"
+        href=\"##\">##</a> Directions for Use</p>\n<p>Apply once daily to affected
+        areas.  Avoid application to sensitive areas as this may cause stinging or
+        discomfort. Discuss any concerns with your care team prior to starting.</p>\n",
+        "name": "section-0-field-7", "refCdtName": "", "refCdtFieldName": "", "order":
+        4, "viewType": "readOnly", "meta": {"type": "", "required": false}, "prePopulatedValue":
+        null, "attachments": []}, {"label": "<p># Moisturizer</p>\n<p></p>\n<p><a
+        class=\"wysiwyg-hashtag\" href=\"##\">##</a> About</p>\n<p>Moisturizers help
+        lock in the skin''s hydration and support effective skin barrier function.
+        When the skin barrier is well maintained it reduces symptoms like itch or
+        skin sensitivity decreasing the likelihood of flares related to external triggers
+        of inflammation.</p>\n<p><a class=\"wysiwyg-hashtag\" href=\"##\">##</a> Directions
+        for Use</p>\n<p>Daily application of moisturizer is recommended to maintain
+        a healthy skin barrier. The most important time to moisturize is within the
+        first three minutes after a bath or shower as this seals water into the skin.
+        We recommend using products that are fragrance-free and hypoallergenic.</p>\n<p></p>\n",
+        "name": "section-0-field-8", "refCdtName": "", "refCdtFieldName": "", "order":
+        5, "viewType": "readOnly", "meta": {"type": "", "required": false}, "prePopulatedValue":
+        null, "attachments": []}, {"label": "<p># Salicylic Acid</p>\n<p></p>\n<p><a
+        class=\"wysiwyg-hashtag\" href=\"##\">##</a> About</p>\n<p>Salicylic acid
+        helps gently exfoliate the skin which improves penetration of topical medications.
+        It can be found in a variety of products, including cleansers, creams, ointments,
+        and shampoos.</p>\n<p><a class=\"wysiwyg-hashtag\" href=\"##\">##</a> Directions
+        for Use</p>\n<p>Apply the product to affected areas 1-2 times daily. It may
+        take a few weeks to see an improvement in areas where there is significant
+        skin build up.</p>\n", "name": "section-0-field-9", "refCdtName": "", "refCdtFieldName":
+        "", "order": 6, "viewType": "readOnly", "meta": {"type": "", "required": false},
+        "prePopulatedValue": null, "attachments": []}, {"label": "<p># Fragrance-free
+        Laundry Products</p>\n<p></p>\n<p><a class=\"wysiwyg-hashtag\" href=\"##\">##</a>
+        About</p>\n<p>As needed, use gentle, fragrance-free laundry products. We recommend
+        Tide Free and Gentle.</p>\n<p><a class=\"wysiwyg-hashtag\" href=\"##\">##</a>
+        Directions for Use</p>\n<p>Selecting fragrance-free, hypoallergenic laundry
+        products help prevent allergens from irritating sensitive skin.</p>\n", "name":
+        "section-0-field-10", "refCdtName": "", "refCdtFieldName": "", "order": 7,
+        "viewType": "readOnly", "meta": {"type": "", "required": false}, "prePopulatedValue":
+        null, "attachments": []}, {"label": "<p># Antihistamines</p>\n<p></p>\n<p><a
+        target=\"_self\" href=\"##\">##</a><a class=\"wysiwyg-hashtag\" href=\"##\">##</a>
+        About</p>\n<p>In many individuals, eczema is linked to allergies and asthma.
+        If you experience hives or urticaria, over-the-counter antihistamines can
+        help curb inflammation and reduce itch symptoms. Take care to select a non-drowsy
+        antihistamine for daily use such as loratadine (Claritin) or fexofenadine
+        (Allegra).</p>\n<p></p>\n<p><a target=\"_self\" href=\"##\">##</a><a class=\"wysiwyg-hashtag\"
+        href=\"##\">##</a> Directions for Use</p>\n<p>Dosing as directed on product
+        label. We recommend non-sedating options such as loratadine (Claritin) or
+        fexofenadine (Allegra) in the morning and cetirizine (Zyrtec) diphenhydramine
+        (Benadryl) in the evening.</p>\n", "name": "section-0-field-11", "refCdtName":
+        "", "refCdtFieldName": "", "order": 8, "viewType": "readOnly", "meta": {"type":
+        "", "required": false}, "prePopulatedValue": null, "attachments": []}, {"label":
+        "Optional: OTC Recommendations (Patient Facing)", "name": "", "refCdtName":
+        "cdt-soap-notes", "refCdtFieldName": "cdtf-otc-rec", "order": 9, "viewType":
+        "question", "meta": {"type": "textarea", "required": false}, "prePopulatedValue":
+        {"type": "PREVIOUS_ASSESSMENT"}, "attachments": []}, {"label": "Optional:  Select
+        a Nutrition option and copy the text into the Nutrition Recommendations field.
+        ", "name": "", "refCdtName": "cdt-treatments", "refCdtFieldName": "cdtf-diet-treatment-list",
+        "order": 10, "viewType": "question", "meta": {"type": "select", "required":
+        false}, "prePopulatedValue": null, "attachments": []}, {"label": "<p># Food
+        Diary</p>\n<p></p>\n<p><a class=\"wysiwyg-hashtag\" href=\"##\">##</a> About</p>\n<p>Food
+        diaries allow us to see trends in your eating habits and if there is a relationship
+        between certain foods and your flares. Identifying any food triggers will
+        improve control over your condition and could reduce the frequency of flares.</p>\n<p></p>\n<p><a
+        class=\"wysiwyg-hashtag\" href=\"##\">##</a> Directions for Use</p>\n<p>Please
+        keep a list of everything you eat and drink for 2 days. You can do so using
+        pen and paper, in a note on your phone, through photos, or in your favorite
+        food tracking apps. See this link for some of our favorites:   [Best Nutrition
+        Tracking Apps](https://www.healthline.com/nutrition/top-iphone-android-apps)</p>\n",
+        "name": "section-0-field-3", "refCdtName": "", "refCdtFieldName": "", "order":
+        11, "viewType": "readOnly", "meta": {"type": "", "required": false}, "prePopulatedValue":
+        null, "attachments": []}, {"label": "<p># Elimination Diet</p>\n<p></p>\n<p><a
+        class=\"wysiwyg-hashtag\" href=\"##\">##</a> About</p>\n<p>Elimination diets
+        allow us to identify foods that may be triggering flares or symptoms of your
+        condition such as itch. By removing certain food types in a systematic way,
+        we can get valuable information on how a particular food (or groups of food)
+        are affecting your skin disease.</p>\n<p></p>\n<p><a class=\"wysiwyg-hashtag\"
+        href=\"##\">##</a> Directions for Use</p>\n<p>We will start by eliminating
+        the list of known and universally accepted food triggers. One at a time, we
+        will re-introduce foods. Please send a chat message if you start to experience
+        any symptoms throughout the process. Here is the list of known foods that
+        will be eliminated: [Typical Food Allergens](https://zest-public-patient-docs.s3.us-west-2.amazonaws.com/Food+Allergens.pdf)</p>\n",
+        "name": "section-0-field-4", "refCdtName": "", "refCdtFieldName": "", "order":
+        12, "viewType": "readOnly", "meta": {"type": "", "required": false}, "prePopulatedValue":
+        null, "attachments": []}, {"label": "<p># Water Intake Log</p>\n<p></p>\n<p><a
+        class=\"wysiwyg-hashtag\" href=\"##\">##</a> About</p>\n<p>Staying adequately
+        hydrated is an important part of maintaining healthy skin. Active skin inflammation
+        weakens the skin barrier making it less effective at maintaining moisturize
+        in the skin. Drinking enough water helps to support the skin''s moisture and
+        ability to self-repair.</p>\n<p></p>\n<p><a class=\"wysiwyg-hashtag\" href=\"##\">##</a>
+        Directions for Use</p>\n<p>Please keep a log of your water intake. You can
+        do so using pen and paper, in a note on your phone, through photos, or in
+        your favorite food tracking apps. See this link for some of our favorites:
+        [Best Water Tracker Apps](https://www.nesswell.com/water-tracker-apps/)</p>\n",
+        "name": "section-0-field-12", "refCdtName": "", "refCdtFieldName": "", "order":
+        13, "viewType": "readOnly", "meta": {"type": "", "required": false}, "prePopulatedValue":
+        null, "attachments": []}, {"label": "<p># The \"Itchy Dozen\" Log</p>\n<p></p>\n<p><a
+        class=\"wysiwyg-hashtag\" href=\"##\">##</a> About</p>\n<p>In eczema, certain
+        foods can be allergic triggers worsening skin symptoms such as itching. Notice
+        how your body responds to these foods by tracking your intake and symptoms.
+        Systematically eliminating them from your diet if they are causing symptoms
+        may help better control your skin condition.</p>\n<p></p>\n<p><a class=\"wysiwyg-hashtag\"
+        href=\"##\">##</a> Directions for Use</p>\n<p>Start by reviewing the list
+        of common \"itchy\" foods and track how often you eat these foods in a given
+        week. What do you notice about your skin after eating these foods?</p>\n<p></p>\n<p>[The
+        Itchy Dozen Foods](https://zest-public-patient-docs.s3.us-west-2.amazonaws.com/The+%E2%80%9CItchy+Dozen%E2%80%9D+Foods.pdf)</p>\n",
+        "name": "section-0-field-13", "refCdtName": "", "refCdtFieldName": "", "order":
+        14, "viewType": "readOnly", "meta": {"type": "", "required": false}, "prePopulatedValue":
+        null, "attachments": []}, {"label": "<p># Visualize Portion Sizes</p>\n<p><br>##
+        About</p>\n<p>Every body is different and has different nutritional needs.
+        It is helpful to use portion sizes to guide your nutrition planning. Maintaining
+        a healthy weight range will improve the control you have over your skin condition
+        and overall health.</p>\n<p></p>\n<p><a class=\"wysiwyg-hashtag\" href=\"##\">##</a>
+        Directions for Use</p>\n<p>Please review the portion size visuals below and
+        see how your current eating habits compare. Notice if there are areas where
+        you could use some support to make better nutritional choices and share these
+        with your Zest coach.</p>\n<p></p>\n<p>[Guide to Serving Sizes](https://wellness.sfsu.edu/sites/default/files/documents/Serving%20Size%20Hand%20Guide%20Condensed.pdf)</p>\n<p>*Credit
+        SFSU Wellness Center</p>\n<p></p>\n", "name": "section-0-field-14", "refCdtName":
+        "", "refCdtFieldName": "", "order": 15, "viewType": "readOnly", "meta": {"type":
+        "", "required": false}, "prePopulatedValue": null, "attachments": []}, {"label":
+        "<p># Mindful Eating Tips</p>\n<p></p>\n<p><a class=\"wysiwyg-hashtag\" href=\"##\">##</a>
+        About</p>\n<p>Eating quickly prevents proper digestion and absorption of nutrients.
+        By slowing down your eating pace, you can improve digestion, eat less and
+        still feel satiated after your meals.</p>\n<p></p>\n<p><a class=\"wysiwyg-hashtag\"
+        href=\"##\">##</a> Directions for Use</p>\n<p>Please review the [mindful eating
+        recommendations](https://zest-public-patient-docs.s3.us-west-2.amazonaws.com/Mindful+Eating+Tips.pdf).
+        Over the course of a week, log if you were able to apply these principles
+        and where you faced challenges.</p>\n", "name": "section-0-field-15", "refCdtName":
+        "", "refCdtFieldName": "", "order": 16, "viewType": "readOnly", "meta": {"type":
+        "", "required": false}, "prePopulatedValue": null, "attachments": []}, {"label":
+        "<p># \"Watery\" Foods</p>\n<p></p>\n<p><a class=\"wysiwyg-hashtag\" href=\"##\">##</a>
+        About</p>\n<p>Drinking water and staying properly hydrated can help keep the
+        skin hydrated and may reduce the number and severity of flare-ups. Adding
+        \"watery\" foods to your diet will also help combat dehydration.</p>\n<p></p>\n<p><a
+        class=\"wysiwyg-hashtag\" href=\"##\">##</a> Directions for Use</p>\n<p>Please
+        review the [\"watery\" foods](https://zest-public-patient-docs.s3.us-west-2.amazonaws.com/%E2%80%9CWatery%E2%80%9D+Foods.pdf)
+        list. Over the course of a week, log which watery foods you were able to add
+        to your meals and where you faced challenges.</p>\n", "name": "section-0-field-16",
+        "refCdtName": "", "refCdtFieldName": "", "order": 17, "viewType": "readOnly",
+        "meta": {"type": "", "required": false}, "prePopulatedValue": null, "attachments":
+        []}, {"label": "<p># Make Water More Interesting</p>\n<p></p>\n<p><a class=\"wysiwyg-hashtag\"
+        href=\"##\">##</a> About</p>\n<p>Drinking water and staying properly hydrated
+        can help keep the skin hydrated and may reduce the number and severity of
+        flare-ups. Take a look at [these tips](https://zest-public-patient-docs.s3.us-west-2.amazonaws.com/Ways+to+Make+Your+Water+More+Interesting.pdf)
+        for how to make drinking water more fun and enjoyable!</p>\n<p></p>\n<p></p>\n",
+        "name": "section-0-field-17", "refCdtName": "", "refCdtFieldName": "", "order":
+        18, "viewType": "readOnly", "meta": {"type": "", "required": false}, "prePopulatedValue":
+        null, "attachments": []}, {"label": "<p># Anti-inflammatory Foods</p>\n<p></p>\n<p><a
+        class=\"wysiwyg-hashtag\" href=\"##\">##</a> About</p>\n<p>Incorporating anti-inflammatory
+        foods regularly into your diet can help reduce flare severity and number of
+        flare days you experience with your skin condition. You can help heal your
+        skin from the inside out through day-to-day food decisions.</p>\n<p></p>\n<p>Check
+        out these two articles from Harvard Health Publishing at Harvard Medical School:</p>\n<p>[Foods
+        that Fight Inflammation](https://www.health.harvard.edu/staying-healthy/foods-that-fight-inflammation)</p>\n<p>[The
+        Best Anti-inflammatory Diets](https://www.health.harvard.edu/staying-healthy/the-best-anti-inflammatory-diets)</p>\n<p></p>\n<p></p>\n",
+        "name": "section-0-field-18", "refCdtName": "", "refCdtFieldName": "", "order":
+        19, "viewType": "readOnly", "meta": {"type": "", "required": false}, "prePopulatedValue":
+        null, "attachments": []}, {"label": "Optional: Nutrition Recommendations (Patient
+        Facing)", "name": "", "refCdtName": "cdt-soap-notes", "refCdtFieldName": "cdtf-nutrition-rec",
+        "order": 20, "viewType": "question", "meta": {"type": "textarea", "required":
+        false}, "prePopulatedValue": {"type": "PREVIOUS_ASSESSMENT"}, "attachments":
+        []}, {"label": "Optional:  Select a Lifestyle treatment and copy the text
+        into the Lifestyle Recommendations field. ", "name": "", "refCdtName": "cdt-treatments",
+        "refCdtFieldName": "cdtf-lifestyle-treatment-list", "order": 21, "viewType":
+        "question", "meta": {"type": "select", "required": false}, "prePopulatedValue":
+        null, "attachments": []}, {"label": "<p># Sleep Diary</p>\n<p></p>\n<p><a
+        class=\"wysiwyg-hashtag\" href=\"##\">##</a> About</p>\n<p>Sleep and autoimmune
+        disease are deeply intertwined. Getting less sleep can affect inflammation,
+        cognition, energy, motivation, and hunger levels such that you are more likely
+        to flare or have worse flares.</p>\n<p></p>\n<p><a class=\"wysiwyg-hashtag\"
+        href=\"##\">##</a> Directions for Use</p>\n<p>Log your sleeping hours each
+        night. You can do so via pen and paper, on your phone, or using your favorite
+        tracking application. See here for more information on how and why to keep
+        a [Sleep Diary](https://www.sleepfoundation.org/sleep-diary).</p>\n", "name":
+        "section-0-field-5", "refCdtName": "", "refCdtFieldName": "", "order": 22,
+        "viewType": "readOnly", "meta": {"type": "", "required": false}, "prePopulatedValue":
+        null, "attachments": []}, {"label": "<p># Sleep Hygiene</p>\n<p></p>\n<p><a
+        class=\"wysiwyg-hashtag\" href=\"##\">##</a> About<a target=\"_self\" href=\"##Abou\">
+        </a></p>\n<p>Sleep and autoimmune disease are deeply intertwined. Not getting
+        enough sleep promotes inflammation, slow cognition, low energy, decreased
+        motivation, and stimulates hunger. These effects contribute to increased frequency
+        and severity of flares.</p>\n<p></p>\n<p><a class=\"wysiwyg-hashtag\" href=\"##\">##</a>
+        Directions</p>\n<p>Make note of your evening wind-down routine - this includes
+        all the steps you take to prepare your mind and body for sleep. We will work
+        with you to improve upon this routine, getting you better nights of rest.</p>\n<p></p>\n<p>[Nighttime
+        Wind-Down Rituals](https://zest-public-patient-docs.s3.us-west-2.amazonaws.com/Nighttime+Wind-Down+Rituals.pdf)</p>\n<p>[Tips
+        to Sleep Better at Night](https://zest-public-patient-docs.s3.us-west-2.amazonaws.com/Tips+to+Sleep+Better+at+Night.pdf)</p>\n",
+        "name": "section-0-field-6", "refCdtName": "", "refCdtFieldName": "", "order":
+        23, "viewType": "readOnly", "meta": {"type": "", "required": false}, "prePopulatedValue":
+        null, "attachments": []}, {"label": "<p># Walking Step Counts</p>\n<p></p>\n<p><a
+        class=\"wysiwyg-hashtag\" href=\"##\">##</a> About</p>\n<p>Step counts are
+        fantastic indicators of overall health, both physical and mental health. High
+        step counts are associated with lower rates of death from heart disease and
+        cancer, and movement promotes emotional well-being.</p>\n<p></p>\n<p><a class=\"wysiwyg-hashtag\"
+        href=\"##\">##</a> Directions for Use</p>\n<p>Please use your favorite tracking
+        application or a pedometer to track daily step counts. Here are our recommendations
+        for the [10 Best Pedometers](https://www.verywellfit.com/best-pedometers-4159148).</p>\n",
+        "name": "section-0-field-19", "refCdtName": "", "refCdtFieldName": "", "order":
+        24, "viewType": "readOnly", "meta": {"type": "", "required": false}, "prePopulatedValue":
+        null, "attachments": []}, {"label": "<p># Meditation</p>\n<p></p>\n<p>Meditation
+        manages stress, increases self-awareness, reduces negative emotions, increases
+        creativity, develops resourcefulness, and increases patience. These skills
+        are all important to sustainably managing chronic disease.</p>\n<p></p>\n<p>Meditation
+        can wipe away the day''s stress, bringing with it inner peace. Learn how you
+        can practice meditation whenever you need it most: [Meditation Benefits and
+        Examples](https://www.mayoclinic.org/tests-procedures/meditation/in-depth/meditation/art-20045858).</p>\n",
+        "name": "section-0-field-20", "refCdtName": "", "refCdtFieldName": "", "order":
+        25, "viewType": "readOnly", "meta": {"type": "", "required": false}, "prePopulatedValue":
+        null, "attachments": []}, {"label": "<p># Visualization Exercises</p>\n<p></p>\n<p>Visualization
+        allows you to use the power of your mind and imagination to create a happier,
+        healthier, and more joyful life for yourself. Since chronic disease management
+        takes time and purpose, you can use visualization for goal-setting or to get
+        your body into a more relaxed state.</p>\n<p></p>\n<p>These [Visualization
+        Exercises](https://zest-public-patient-docs.s3.us-west-2.amazonaws.com/Visualization.pdf)
+        are a great place to start!</p>\n<p></p>\n<p></p>\n", "name": "section-0-field-21",
+        "refCdtName": "", "refCdtFieldName": "", "order": 26, "viewType": "readOnly",
+        "meta": {"type": "", "required": false}, "prePopulatedValue": null, "attachments":
+        []}, {"label": "<p># Breathing Exercises</p>\n<p></p>\n<p>Stress and flares
+        are often intertwined. Breathing exercises reduce stress and anxiety, improve
+        lung function, detox the body, improve digestion, sharpen cognitive function,
+        and improve the quality of your sleep.</p>\n<p></p>\n<p>Breath work can be
+        done easily from anywhere! Use these techniques to get started:</p>\n<p>[Box
+        Breathing Benefits and Technique](https://health.clevelandclinic.org/box-breathing-benefits/)</p>\n<p>[Breathing
+        Exercises for Stress Relief](https://www.webmd.com/balance/stress-management/stress-relief-breathing-techniques)</p>\n",
+        "name": "section-0-field-22", "refCdtName": "", "refCdtFieldName": "", "order":
+        27, "viewType": "readOnly", "meta": {"type": "", "required": false}, "prePopulatedValue":
+        null, "attachments": []}, {"label": "<p># Yoga</p>\n<p></p>\n<p>Yoga provides
+        a variety of benefits to your body and mind:</p>\n<p>* Improves flexibility,
+        posture, and circulation</p>\n<p>* Increases blood flow to the skin providing
+        more nutrients and hydration</p>\n<p>* Slows the heart rate and decreases
+        muscle tension helping to manage symptoms of stress.</p>\n<p>* Helps control
+        your own thoughts and relaxes your nervous system</p>\n<p></p>\n<p>Whether
+        you''re a beginner, a pro, or just enjoy [savasana](https://insighttimer.com/blog/savasana-meaning/),
+        here''s a [Yoga Video Series](https://www.healthline.com/health/fitness/fit-it-in-yoga-videos)
+        to get your blood flowing and stress levels lowered.</p>\n", "name": "section-0-field-23",
+        "refCdtName": "", "refCdtFieldName": "", "order": 28, "viewType": "readOnly",
+        "meta": {"type": "", "required": false}, "prePopulatedValue": null, "attachments":
+        []}, {"label": "<p># Qigong</p>\n<p></p>\n<p>Qigong is a mind-body practice
+        that involves simple postures and deep breathing patterns. This practice lowers
+        blood pressure, relieves chronic pain by increasing circulation, strengthens
+        the immune system by circulating lymph fluids, and reduces anxiety and depression.</p>\n<p></p>\n<p>You
+        can learn more about this ancient Chinese healing practice and the benefits
+        it has to every day life here: [Qigong Benefits and How-To](https://www.healthline.com/nutrition/qigong-meditation#benefits)</p>\n",
+        "name": "section-0-field-24", "refCdtName": "", "refCdtFieldName": "", "order":
+        29, "viewType": "readOnly", "meta": {"type": "", "required": false}, "prePopulatedValue":
+        null, "attachments": []}, {"label": "<p># Strength Training</p>\n<p></p>\n<p>Building
+        muscle protects your joints from injury, contributes to better balance, and
+        reduces risk of falls. This enhances confidence in your body movements and
+        your quality of life - ultimately helping to maintain your independence as
+        you age.</p>\n<p></p>\n<p>Strength training is an important part of an overall
+        fitness program. Here''s what strength training can do for you and how to
+        easily get started:</p>\n<p></p>\n<p>[Strength Training-Getting Started](https://www.mayoclinic.org/healthy-lifestyle/fitness/in-depth/strength-training/art-20046670)</p>\n<p>[Benefits
+        of Strength Training](https://www.healthline.com/health/fitness/benefits-of-strength-training)</p>\n",
+        "name": "section-0-field-25", "refCdtName": "", "refCdtFieldName": "", "order":
+        30, "viewType": "readOnly", "meta": {"type": "", "required": false}, "prePopulatedValue":
+        null, "attachments": []}, {"label": "<p># Eczema Journal</p>\n<p></p>\n<p>Journaling
+        helps us track patterns and understand what triggers your symptoms - leading
+        to a broader range of treatment options.</p>\n<p></p>\n<p><a class=\"wysiwyg-hashtag\"
+        href=\"##\">##</a> Directions for Use</p>\n<p>Document your journey with Eczema
+        by writing in journal using [our template](https://zest-public-patient-docs.s3.us-west-2.amazonaws.com/Eczema+Journal.pdf)
+        as a guide.  After a couple weeks, we''ll review your findings together.</p>\n",
+        "name": "section-0-field-26", "refCdtName": "", "refCdtFieldName": "", "order":
+        31, "viewType": "readOnly", "meta": {"type": "", "required": false}, "prePopulatedValue":
+        null, "attachments": []}, {"label": "<p># Gratitude Journal</p>\n<p></p>\n<p>Gratitude
+        is pausing to notice and appreciate the things we have that are often taken
+        for granted like food, clean water, friends, or  a favorite TV show. Gratitude
+        has been shown to improve physical health, mental well being, stress, self-esteem,
+        and relationships.</p>\n<p></p>\n<p>Gratitude Journals are a tool to help
+        you document your appreciation and switch the focus away from things that
+        may be out of your control - and causing anxiety or stress.</p>\n<p></p>\n<p><a
+        class=\"wysiwyg-hashtag\" href=\"##\">##</a> Directions for Use</p>\n<p>Every
+        day, write down three (3) things you are grateful for in your life. Here are
+        [some ideas](https://positivepsychology.com/gratitude-journal/) to get started!</p>\n",
+        "name": "section-0-field-27", "refCdtName": "", "refCdtFieldName": "", "order":
+        32, "viewType": "readOnly", "meta": {"type": "", "required": false}, "prePopulatedValue":
+        null, "attachments": []}, {"label": "<p># Mood Journal</p>\n<p></p>\n<p>Recognition
+        of what triggers your moods will help you to take action - reducing anxiety
+        and increasing positivity, hopefulness, and joy.</p>\n<p></p>\n<p><a class=\"wysiwyg-hashtag\"
+        href=\"##\">##</a> Directions for Use</p>\n<p>Take some time each day to record
+        how you are feeling and what you are thinking.  This helps you notice people
+        or places that are triggers for you.  Here are some tips for creating your
+        [Mood Journal](https://zest-public-patient-docs.s3.us-west-2.amazonaws.com/Mood+Journal.pdf).</p>\n",
+        "name": "section-0-field-28", "refCdtName": "", "refCdtFieldName": "", "order":
+        33, "viewType": "readOnly", "meta": {"type": "", "required": false}, "prePopulatedValue":
+        null, "attachments": []}, {"label": "<p># Thought Monitoring Journal</p>\n<p></p>\n<p>Automatic
+        thoughts are ones that pop into our heads in response to a trigger and can
+        make us feel like we are not in control. This can lead to anxiety, guilt,
+        and other discouraging thoughts. Monitoring and journaling your thoughts can
+        help you regain control and then identify and replace unhelpful, distressing
+        thoughts with more productive and rational ones.</p>\n<p></p>\n<p>Thought
+        Monitoring is an excellent tool to release stress and manage anxiety in every
+        day situations.</p>\n<p></p>\n<p>Here are [some exercises](https://zest-public-patient-docs.s3.us-west-2.amazonaws.com/Thought-Monitoring+Exercise.pdf)
+        to practice anytime.</p>\n", "name": "section-0-field-29", "refCdtName": "",
+        "refCdtFieldName": "", "order": 34, "viewType": "readOnly", "meta": {"type":
+        "", "required": false}, "prePopulatedValue": null, "attachments": []}, {"label":
+        "<p># Affirmations</p>\n<p></p>\n<p>Affirmations help us to celebrate ourselves,
+        overcome self-sabotage, and minimize discouraging thinking. They help to relieve
+        stress and open our minds to new beliefs and ways of thinking and feeling.</p>\n<p></p>\n<p>Teaching
+        yourself to give and receive daily affirmations is a challenging yet rewarding
+        experience.</p>\n<p></p>\n<p><a class=\"wysiwyg-hashtag\" href=\"##\">##</a>
+        Examples of Affirmations</p>\n<p></p>\n<p>\"I trust the healing process.\"</p>\n<p>\"My
+        skin is resilient and strong.\"</p>\n<p>\"I am capable and enough.\"</p>\n<p>\"I
+        am beautiful just the way I am.\"</p>\n<p></p>\n<p>Here''s a [list of affirmations](https://zest-public-patient-docs.s3.us-west-2.amazonaws.com/Affirmations.pdf)
+        that can be printed or saved for when you need them most.</p>\n", "name":
+        "section-0-field-30", "refCdtName": "", "refCdtFieldName": "", "order": 35,
+        "viewType": "readOnly", "meta": {"type": "", "required": false}, "prePopulatedValue":
+        null, "attachments": []}, {"label": "<p># Morning Pages</p>\n<p></p>\n<p>Morning
+        pages help you start your day with focus, clarity, and direction.  It is a
+        journaling exercise that helps you appreciate what brings you happiness in
+        your life and switch your mind''s focus onto idea-generating, creative thoughts.</p>\n<p></p>\n<p>Here
+        are some ideas for your Morning Pages: <br></p>\n<p>- What are 3 things you
+        are grateful for at this moment?</p>\n<p>- What are 3 things that would make
+        today great?</p>\n<p>- Write down 2 affirmations that you want to live by
+        today</p>\n<p>- Write down any memories you may have of your dreams</p>\n<p>-
+        Write down 10 things you are grateful for from yesterday</p>\n<p>- Stream
+        of consciousness writing: write 1-2 pages of whatever crosses your mind</p>\n",
+        "name": "section-0-field-31", "refCdtName": "", "refCdtFieldName": "", "order":
+        36, "viewType": "readOnly", "meta": {"type": "", "required": false}, "prePopulatedValue":
+        null, "attachments": []}, {"label": "<p># Habit Stacking</p>\n<p></p>\n<p>Habit
+        stacking involves identifying a current habit you already do each day and
+        stacking a new behavior on top of it. This can help you pair an action that
+        you want to do with an action you need to do. Start small and create simple
+        and repeatable routines of linked habits that allow you to get more done in
+        less time. As you perform these stacked actions every day, they become a habitual
+        part of your daily routine.</p>\n<p></p>\n<p>If you are trying to start your
+        day with more hydration, tell yourself \u201cAfter brushing my teeth in the
+        morning, I\u2019m going to drink a glass of water.\u201d Every morning those
+        two actions will be stacked together and you begin to create small changes
+        that add up over time.</p>\n<p></p>\n<p>Tip: Do something you enjoy immediately
+        before a difficult habit you are trying to implement.</p>\n<p></p>\n<p><a
+        class=\"wysiwyg-hashtag\" href=\"##\">##</a> Additional examples of Habit
+        Stacking:</p>\n<p></p>\n<p>**Add more meditation to your life**</p>\n<p>While
+        your morning coffee is brewing, meditate for 5-10 minutes.</p>\n<p></p>\n<p>**Start
+        your day with more gratitude**</p>\n<p>Before opening your work email in the
+        morning, write down 3 things you\u2019re grateful for.</p>\n<p></p>\n<p>**Start
+        a morning exercise routine**</p>\n<p>After you wash your face at night before
+        bed, set out your workout clothes for the next morning\u2019s workout.</p>\n<p></p>\n<p>**Start
+        a breathing practice**</p>\n<p>While your tea is steeping, do a few minutes
+        of mindful deep breathing.</p>\n<p></p>\n<p></p>\n", "name": "section-0-field-32",
+        "refCdtName": "", "refCdtFieldName": "", "order": 37, "viewType": "readOnly",
+        "meta": {"type": "", "required": false}, "prePopulatedValue": null, "attachments":
+        []}, {"label": "<p># Mindfulness Exercise</p>\n<p></p>\n<p>Mindfulness reduces
+        anxiety and improves brain health and focus. It also increases our ability
+        to relate to ourselves and others with kindness, compassion, and acceptance.</p>\n<p></p>\n<p>A
+        common and effective mindfulness exercise is the 5x5 Mindfulness Exercise.
+        Give this exercise a try and share your thoughts with your coach.</p>\n<p></p>\n<p><a
+        class=\"wysiwyg-hashtag\" href=\"##\">##</a> 5x5 Mindfulness Exercise</p>\n<p></p>\n<p>A
+        simple mindfulness exercise is to notice what you are experiencing right now,
+        at this moment, through any or all of your five senses: sight, sound, smell,
+        taste, and touch.</p>\n<p></p>\n<p>**What can you see?**</p>\n<p>List 5 things
+        you don''t usually notice in your environment</p>\n<p></p>\n<p>**What can
+        you hear?**</p>\n<p>List 5 things you hear\u2026a car driving oast? Music
+        being played nearby?</p>\n<p></p>\n<p>**What can you smell?**</p>\n<p>List
+        5 things you smell\u2026food cooking? Candles being burned? Soap on your hands?</p>\n<p></p>\n<p>**What
+        can you taste?**</p>\n<p>List 5 things\u2026take a sip of a drink, chew gum,
+        or eat a cracker or a piece of fruit and</p>\n<p>notice your experience with
+        the flavors.</p>\n<p></p>\n<p>**What can you feel?**</p>\n<p>List 5 things\u2026the
+        texture of your clothing, the chair you''re sitting on, etc.</p>\n", "name":
+        "section-0-field-33", "refCdtName": "", "refCdtFieldName": "", "order": 38,
+        "viewType": "readOnly", "meta": {"type": "", "required": false}, "prePopulatedValue":
+        null, "attachments": []}, {"label": "<p># Body Scan Meditation</p>\n<p></p>\n<p>Body
+        scan is a meditation exercise that helps you tap into your body sensations
+        and focus on the here and now. Being in the present moment helps to reduce
+        anxiety and unproductive thoughts. This relaxation exercise helps to lower
+        blood pressure and decrease muscle tension and inflammation.</p>\n<p></p>\n<p>As
+        with all forms of meditation, doing a body scan is meant to be simple. Here
+        are some instructions to get you started: [Body Scan Meditation](https://www.verywellmind.com/body-scan-meditation-why-and-how-3144782)</p>\n",
+        "name": "section-0-field-34", "refCdtName": "", "refCdtFieldName": "", "order":
+        39, "viewType": "readOnly", "meta": {"type": "", "required": false}, "prePopulatedValue":
+        null, "attachments": []}, {"label": "<p># Progressive Muscle Relaxation</p>\n<p></p>\n<p>Progressive
+        muscle relaxation is an exercise that helps you tap into your body sensations
+        and focus on the here and now. Being in the present moment helps to reduce
+        anxiety. This relaxation exercise helps to lower blood pressure and decrease
+        muscle tension and inflammation.</p>\n<p></p>\n<p>There\u2019s plenty of evidence
+        behind the health benefits of PMR. Take a look at the research behind this
+        technique and how to do it: [Progressive Muscle Relaxation](https://www.healthline.com/health/progressive-muscle-relaxation#about-pmr)</p>\n",
+        "name": "section-0-field-35", "refCdtName": "", "refCdtFieldName": "", "order":
+        40, "viewType": "readOnly", "meta": {"type": "", "required": false}, "prePopulatedValue":
+        null, "attachments": []}, {"label": "<p># Identifying an Anxious State</p>\n<p></p>\n<p>Learning
+        to identify signs of anxiety is an important tool for managing your mental
+        health. Use this exercise to increase mindfulness and body awareness when
+        you feel anxious. This allows you to take action and feel more in control
+        of your thoughts.</p>\n<p></p>\n<p>You can use these tips to get started:
+        [Identifying an Anxious State](https://zest-public-patient-docs.s3.us-west-2.amazonaws.com/Identifying+an+Anxious+State.pdf)</p>\n<p></p>\n<p></p>\n<p></p>\n",
+        "name": "section-0-field-36", "refCdtName": "", "refCdtFieldName": "", "order":
+        41, "viewType": "readOnly", "meta": {"type": "", "required": false}, "prePopulatedValue":
+        null, "attachments": []}, {"label": "<p># Alternative Therapies for Eczema
+        and Psoriasis</p>\n<p></p>\n<p>In addition to medicinal interventions and
+        treatments, there are lifestyle behaviors and tools you can utilize in order
+        to feel better and more in control of your skin condition.  Conventional treatments
+        are very helpful for the vast majority of patients; however, trying alternative
+        therapies can also aid in the healing process. Work with your coach to systematically
+        explore these [Alternative Therapies for Eczema & Psoriasis](https://zest-public-patient-docs.s3.us-west-2.amazonaws.com/Alternative+Therapies+for+Eczema+and+Psoriasis.pdf)</p>\n",
+        "name": "section-0-field-37", "refCdtName": "", "refCdtFieldName": "", "order":
+        42, "viewType": "readOnly", "meta": {"type": "", "required": false}, "prePopulatedValue":
+        null, "attachments": []}, {"label": "<p># Guided Imagery Exercises</p>\n<p></p>\n<p>Guided
+        imagery is a relaxation technique that helps to lower the stress hormone cortisol
+        in your body. If you can envision your pain leaving your body, your brain
+        may be able to achieve that pain relief for you.</p>\n<p></p>\n<p>Guided imagery
+        can be done anytime and anywhere, and it doesn\u2019t require any special
+        equipment. Get started here: [Guided Imagery](https://www.healthline.com/health/guided-imagery)
+        and [Guided Imagery for Relaxation](https://www.verywellmind.com/use-guided-imagery-for-relaxation-3144606)</p>\n",
+        "name": "section-0-field-38", "refCdtName": "", "refCdtFieldName": "", "order":
+        43, "viewType": "readOnly", "meta": {"type": "", "required": false}, "prePopulatedValue":
+        null, "attachments": []}, {"label": "<p># Grade Exposure</p>\n<p></p>\n<p>Graded
+        exposure is to gradually exposing a person to situations that cause them distress
+        and anxiety. This exercise is used to create a safe environment in which a
+        person can reduce anxiety and decrease avoidance of stressful situations.</p>\n<p></p>\n<p>Graded
+        exposure therapy helps you face your fears in a gradual way. Take a look at
+        [this exercise](https://zest-public-patient-docs.s3.us-west-2.amazonaws.com/Graded+Exposure+Exercise.pdf)
+        to see if this practice is right for you.</p>\n<p></p>\n<p></p>\n", "name":
+        "section-0-field-39", "refCdtName": "", "refCdtFieldName": "", "order": 44,
+        "viewType": "readOnly", "meta": {"type": "", "required": false}, "prePopulatedValue":
+        null, "attachments": []}, {"label": "<p># Procrastination Busters</p>\n<p></p>\n<p>Break
+        through procrastination to achieve more of your goals, reach your potential,
+        miss fewer opportunities, avoid regret, and increase control and influence
+        over your life!</p>\n<p></p>\n<p>While starting or finishing a task can seem
+        daunting, [try these tips](https://zest-public-patient-docs.s3.us-west-2.amazonaws.com/Procrastination+Busters.pdf)
+        help with focus to combat procrastination.</p>\n", "name": "section-0-field-40",
+        "refCdtName": "", "refCdtFieldName": "", "order": 45, "viewType": "readOnly",
+        "meta": {"type": "", "required": false}, "prePopulatedValue": null, "attachments":
+        []}, {"label": "<p># Tips for Being Active</p>\n<p></p>\n<p>Exercise has been
+        proven to positively impact physical and mental health. People who exercise
+        regularly have a lower risk of developing heart disease and Type 2 diabetes,
+        suffering from stroke, and developing different forms of cancer. Exercise
+        can also boost self-esteem, mood, sleep quality, energy, and balance.</p>\n<p></p>\n<p>The
+        most difficult part of adopting an active lifestyle is starting it. The second
+        most difficult part is sticking with it.</p>\n<p></p>\n<p>Check out these
+        [tips for starting and sticking with exercise](https://zest-public-patient-docs.s3.us-west-2.amazonaws.com/Tips+for+Starting+and+Sticking+with+Exercise.pdf)
+        to discover ways to change your behavior and mindset around maintaining a
+        healthy, active lifestyle.</p>\n", "name": "section-0-field-41", "refCdtName":
+        "", "refCdtFieldName": "", "order": 46, "viewType": "readOnly", "meta": {"type":
+        "", "required": false}, "prePopulatedValue": null, "attachments": []}, {"label":
+        "<p># Getting Unstuck</p>\n<p></p>\n<p>Getting stuck is common and can happen
+        in any area of life, at any time, but it doesn''t need to last forever. Journaling
+        is an effective method for helping get unstuck and back on your path.  Use
+        these journaling prompts when you''re reluctant to take a risk, have to make
+        a difficult choice, or face something that makes you uncomfortable.</p>\n<p></p>\n<p>What
+        am I waiting for?</p>\n<p></p>\n<p>What would I do if I wasn''t scared?</p>\n<p></p>\n<p>Can
+        I break this process down into manageable steps?</p>\n<p></p>\n<p>What would
+        I do if I had all the time and money in the world?</p>\n<p></p>\n<p>Looking
+        back on this decision five years from now, wha will I wish I had done?</p>\n",
+        "name": "section-0-field-42", "refCdtName": "", "refCdtFieldName": "", "order":
+        47, "viewType": "readOnly", "meta": {"type": "", "required": false}, "prePopulatedValue":
+        null, "attachments": []}, {"label": "<p># Emotions and Responses</p>\n<p></p>\n<p>Emotions
+        shed light on what we need in order to feel whole and satisfied. Knowing how
+        to recognize and name these emotions is a key to developing emotional health
+        and managing stress. [Use this exercise](https://zest-public-patient-docs.s3.us-west-2.amazonaws.com/Emotions+and+Responses+Guide.pdf)
+        to identify your emotions and take specific actions to help you manage them.</p>\n<p></p>\n<p><a
+        class=\"wysiwyg-hashtag\" href=\"##\">##</a> For all emotions, remember:</p>\n<p></p>\n<p>Feelings
+        will not hurt you, even if they are uncomfortable. They are not dangerous,
+        they</p>\n<p>are simply messengers.</p>\n<p></p>\n<p>Feelings are always temporary.
+        They pass just like the weather.</p>\n<p></p>\n<p>It\u2019s okay to feel the
+        way you do. You don\u2019t need a reason.</p>\n<p></p>\n<p>It\u2019s safe
+        for other people to have feelings, too.</p>\n<p></p>\n<p></p>\n", "name":
+        "section-0-field-43", "refCdtName": "", "refCdtFieldName": "", "order": 48,
+        "viewType": "readOnly", "meta": {"type": "", "required": false}, "prePopulatedValue":
+        null, "attachments": []}, {"label": "<p># Breathwork for Better Sleep</p>\n<p></p>\n<p>Breathing
+        exercises help you to reduce stress and anxiety, improve lung function, detox
+        your body, improve your digestion, sharpen cognitive function, and improve
+        the quality of your sleep.</p>\n<p></p>\n<p>Learn how to use your breath to
+        get better sleep and improve your overall well being with this guide:  [Breathwork
+        for Better Sleep](https://zest-public-patient-docs.s3.us-west-2.amazonaws.com/Breathwork+for+Better+Sleep.pdf)</p>\n",
+        "name": "section-0-field-44", "refCdtName": "", "refCdtFieldName": "", "order":
+        49, "viewType": "readOnly", "meta": {"type": "", "required": false}, "prePopulatedValue":
+        null, "attachments": []}, {"label": "<p># Ways to Counteract a Bad Mood</p>\n<p></p>\n<p>Negative
+        moods can be subtle indications that we need more energy or a change in perspective.  Here
+        are some ways to help address bad moods, which you can review and work on
+        with your coach: [How to Counteract a Bad Mood](https://zest-public-patient-docs.s3.us-west-2.amazonaws.com/Exercises+to+Alleviate+Anxiety.pdf)</p>\n",
+        "name": "section-0-field-45", "refCdtName": "", "refCdtFieldName": "", "order":
+        50, "viewType": "readOnly", "meta": {"type": "", "required": false}, "prePopulatedValue":
+        null, "attachments": []}, {"label": "<p># Exercises to Alleviate Anxiety</p>\n<p></p>\n<p>Reducing
+        anxiety in your life can lead to reduced muscle tension and inflammation,
+        lower blood pressure, better sleep, improved digestion, and a boosted immune
+        system.</p>\n<p></p>\n<p>If you\u2019re feeling fidgety and anxious, take
+        a break and engage in a calm and repetitive</p>\n<p>movement with your hands.
+        This can help calm the restlessness in your brain.</p>\n<p></p>\n<p>Try one
+        of these 5 repetitive movements you can do with your hands that occupy your
+        mind:</p>\n<p></p>\n<p>Shuffle a deck of cards.</p>\n<p></p>\n<p>Methodically
+        rub lotion onto your hands, arms, or legs.</p>\n<p></p>\n<p>Chop zucchini,
+        eggplant, or other vegetables into small pieces that are the same size.</p>\n<p></p>\n<p>Squeeze
+        a stress ball or ball of playdoh</p>\n<p></p>\n<p>Knit or crochet a simple
+        pattern</p>\n", "name": "section-0-field-47", "refCdtName": "", "refCdtFieldName":
+        "", "order": 51, "viewType": "readOnly", "meta": {"type": "", "required":
+        false}, "prePopulatedValue": null, "attachments": []}, {"label": "<p># Positivity
+        Journaling</p>\n<p></p>\n<p>Use a positivity journal to switch the focus off
+        negative or anxiety-producing thoughts that may be out of your control. Positivity
+        has been shown to improve physical health, mental well-being, reduce stress,
+        increase self-esteem, and improve relationships.</p>\n<p></p>\n<p>A positivity
+        journal is just like a regular journal except the pages are devoted to positive
+        thoughts and events. Use these tips to get started on your own positivity
+        journal: [Positivity Journaling](https://zest-public-patient-docs.s3.us-west-2.amazonaws.com/Positivity+Journaling.pdf)</p>\n",
+        "name": "section-0-field-46", "refCdtName": "", "refCdtFieldName": "", "order":
+        52, "viewType": "readOnly", "meta": {"type": "", "required": false}, "prePopulatedValue":
+        null, "attachments": []}, {"label": "<p># Mantras</p>\n<p></p>\n<p>Mantras
+        can provide peace of mind and can be highly beneficial for brain health. Research
+        has shown that certain parts of our brain are activated when we recite mantras,
+        increasing positivity.</p>\n<p></p>\n<p>Use [these examples](<a target=\"_blank\"
+        href=\"https://zest-public-patient-docs.s3.us-west-2.amazonaws.com/Mantras.pdf\">https://zest-public-patient-docs.s3.us-west-2.amazonaws.com/Mantras.pdf</a>)
+        to find a mantra that resonates with you.</p>\n", "name": "section-0-field-48",
+        "refCdtName": "", "refCdtFieldName": "", "order": 53, "viewType": "readOnly",
+        "meta": {"type": "", "required": false}, "prePopulatedValue": null, "attachments":
+        []}, {"label": "<p># Blue Light and Sleep</p>\n<p></p>\n<p>The light emitted
+        from our electronic devices can negatively impact our overall health, alertness,
+        and our circadian clock which coordinates our daily sleep and wake cycles.
+        Poor quality sleep has shown to increase the risk of heart disease, diabetes,
+        and obesity.</p>\n<p></p>\n<p>Limiting blue light before bed can have a positive
+        effect on your sleep cycle and overall health.</p>\n<p></p>\n<p>Learn more
+        about this here: [How Blue Light Affects Sleep and What To Do](https://zest-public-patient-docs.s3.us-west-2.amazonaws.com/How+Blue+Light+Affects+Sleep.pdf)</p>\n",
+        "name": "section-0-field-49", "refCdtName": "", "refCdtFieldName": "", "order":
+        54, "viewType": "readOnly", "meta": {"type": "", "required": false}, "prePopulatedValue":
+        null, "attachments": []}, {"label": "<p># Growth vs. Fixed Mindset</p>\n<p></p>\n<p>A
+        growth mindset means you believe your talents can be developed through hard
+        work, good strategies, and input from others - basically, you put energy into
+        learning!*</p>\n<p></p>\n<p>Having a growth mindset can improve your health
+        and help you grow. It can also improve your self-awareness and self-esteem,
+        strengthen your confidence, increase resilience, improve your relationships,
+        and help you take responsibility for your life and happiness.</p>\n<p></p>\n<p>Research
+        shows that mindsets play a significant role in determining life\u2019s outcomes.
+        Learn to hone the skill of controlling your mindset by following these tips:
+        [Power of Mindset](https://news.stanford.edu/report/2021/09/15/mindsets-clearing-lens-life/)</p>\n<p></p>\n<p>*From
+        Carol Dweck, the Lewis & Virginia Eaton Professor of Psychology at Stanford
+        University and the author of \"Mindset: The New Psychology of Success\"</p>\n",
+        "name": "section-0-field-50", "refCdtName": "", "refCdtFieldName": "", "order":
+        55, "viewType": "readOnly", "meta": {"type": "", "required": false}, "prePopulatedValue":
+        null, "attachments": []}, {"label": "<p># AM & PM Journaling</p>\n<p></p>\n<p>Journaling
+        can help reduce stress and anxiety, strengthen memory, boost health and well-being,
+        help you organize your goals and next steps, and facilitate personal growth.</p>\n<p></p>\n<p>Reflecting
+        on daily experiences, relationships, and personal values can help you get
+        in better touch with your thoughts and feelings. We''ve selected some prompts
+        to get you started:  [AM & PM Self-Reflection Journal Exercise](https://zest-public-patient-docs.s3.us-west-2.amazonaws.com/Morning+and+Evening+Self-Reflection+Journaling+Exercise.pdf)</p>\n",
+        "name": "section-0-field-51", "refCdtName": "", "refCdtFieldName": "", "order":
+        56, "viewType": "readOnly", "meta": {"type": "", "required": false}, "prePopulatedValue":
+        null, "attachments": []}, {"label": "<p># Core Beliefs Journaling</p>\n<p></p>\n<p>Core
+        beliefs are deeply held beliefs that inform how people see themselves and
+        the world. Tracking your beliefs in a journal is an easy source of reflection.</p>\n<p></p>\n<p>This
+        exercise helps you define your values and reframe your outlook, especially
+        as they relate to your skin condition. Follow this link for some core belief
+        journal prompts: [Core Beliefs Journaling](https://zest-public-patient-docs.s3.us-west-2.amazonaws.com/Core+Beliefs+Journaling+Exercise.pdf)</p>\n",
+        "name": "section-0-field-52", "refCdtName": "", "refCdtFieldName": "", "order":
+        57, "viewType": "readOnly", "meta": {"type": "", "required": false}, "prePopulatedValue":
+        null, "attachments": []}, {"label": "<p># AEIOU Activity Log</p>\n<p></p>\n<p>The
+        way we invest our time and attention is critical to whether or not we feel
+        energized. High levels of engagement often coincide with high levels of energy.
+        Monitoring and recording your activities, environments, interactions, objects
+        (eg electonic devices), and users (people) can help shed light on energy restoring
+        versus draining sitiuations. With this awareness you can make informed choices
+        about how you spend your time to maintain adequate energy levels.</p>\n<p></p>\n<p>Try
+        this journaling exercise to see patterns of high energy and engagement and
+        what was in place to make it happen: [AEIOU Activity Log](https://zest-public-patient-docs.s3.us-west-2.amazonaws.com/AEIOU+Activity+Log.pdf)</p>\n",
+        "name": "section-0-field-53", "refCdtName": "", "refCdtFieldName": "", "order":
+        58, "viewType": "readOnly", "meta": {"type": "", "required": false}, "prePopulatedValue":
+        null, "attachments": []}, {"label": "<p># Blue Zones Healthy Habits</p>\n<p></p>\n<p>Blue
+        Zones are areas in the world where people live the longest while also maintaining
+        high levels of health and function into their 90s. These communities share
+        common values including, enriching social circles, high consumption of nutrient
+        rich plants, daily. moderate activity and joy. Incorporating these accessible
+        lifestyle choices into your routine will create a happier, healthier life
+        with greater longevity.</p>\n<p></p>\n<p>Review this list of lifestyle choices:
+        [Blue Zones Healthy Habits](https://www.bluezones.com/2018/01/20-habits-healthier-happier-life/)</p>\n",
+        "name": "section-0-field-54", "refCdtName": "", "refCdtFieldName": "", "order":
+        59, "viewType": "readOnly", "meta": {"type": "", "required": false}, "prePopulatedValue":
+        null, "attachments": []}, {"label": "Optional: Lifestyle Recommendations (Patient
+        Facing)", "name": "", "refCdtName": "cdt-soap-notes", "refCdtFieldName": "cdtf-lifestyle-rec",
+        "order": 60, "viewType": "question", "meta": {"type": "textarea", "required":
+        false}, "prePopulatedValue": {"type": "PREVIOUS_ASSESSMENT"}, "attachments":
+        []}]}, {"title": "Encounter Status", "name": "section-2", "order": 1, "fields":
+        [{"label": "Status?", "name": "", "refCdtName": "cdt-encounter-status", "refCdtFieldName":
+        "cdtf-encounter-notes-status", "order": 0, "viewType": "question", "meta":
+        {"type": "select", "required": false}, "prePopulatedValue": {"type": "DEFAULT_VALUE",
+        "defaultValue": "Completed"}, "attachments": []}]}], "scoring": {"formula":
+        "SUM", "groups": []}, "programs": [], "template": null, "conditionSettings":
+        {"elements": [{"type": "READ_ONLY", "action": "SHOW", "operation": "AND",
+        "conditions": [{"type": "EQUAL", "refCdtName": "cdt-treatments", "refCdtFieldName":
+        "cdtf-otc-treatment-list", "value": "Petroleum Jelly"}], "name": "section-0-field-0"},
+        {"type": "READ_ONLY", "action": "SHOW", "operation": "AND", "conditions":
+        [{"type": "EQUAL", "refCdtName": "cdt-treatments", "refCdtFieldName": "cdtf-otc-treatment-list",
+        "value": "Hydrocortisone 1%"}], "name": "section-0-field-1"}, {"type": "READ_ONLY",
+        "action": "SHOW", "operation": "AND", "conditions": [{"type": "EQUAL", "refCdtName":
+        "cdt-treatments", "refCdtFieldName": "cdtf-otc-treatment-list", "value": "Tar
+        Shampoo"}], "name": "section-0-field-2"}, {"type": "READ_ONLY", "action":
+        "SHOW", "operation": "AND", "conditions": [{"type": "EQUAL", "refCdtName":
+        "cdt-treatments", "refCdtFieldName": "cdtf-diet-treatment-list", "value":
+        "Food Diary"}], "name": "section-0-field-3"}, {"type": "READ_ONLY", "action":
+        "SHOW", "operation": "AND", "conditions": [{"type": "EQUAL", "refCdtName":
+        "cdt-treatments", "refCdtFieldName": "cdtf-diet-treatment-list", "value":
+        "Elimination Diet"}], "name": "section-0-field-4"}, {"type": "READ_ONLY",
+        "action": "SHOW", "operation": "AND", "conditions": [{"type": "EQUAL", "refCdtName":
+        "cdt-treatments", "refCdtFieldName": "cdtf-lifestyle-treatment-list", "value":
+        "Sleep Diary"}], "name": "section-0-field-5"}, {"type": "READ_ONLY", "action":
+        "SHOW", "operation": "AND", "conditions": [{"type": "EQUAL", "refCdtName":
+        "cdt-treatments", "refCdtFieldName": "cdtf-lifestyle-treatment-list", "value":
+        "Sleep Hygiene"}], "name": "section-0-field-6"}, {"type": "READ_ONLY", "action":
+        "SHOW", "operation": "AND", "conditions": [{"type": "EQUAL", "refCdtName":
+        "cdt-treatments", "refCdtFieldName": "cdtf-otc-treatment-list", "value": "Moisturizer"}],
+        "name": "section-0-field-8"}, {"type": "READ_ONLY", "action": "SHOW", "operation":
+        "AND", "conditions": [{"type": "EQUAL", "refCdtName": "cdt-treatments", "refCdtFieldName":
+        "cdtf-otc-treatment-list", "value": "Tar Lotion/Ointment"}], "name": "section-0-field-7"},
+        {"type": "READ_ONLY", "action": "SHOW", "operation": "AND", "conditions":
+        [{"type": "EQUAL", "refCdtName": "cdt-treatments", "refCdtFieldName": "cdtf-otc-treatment-list",
+        "value": "Salicylic Acid"}], "name": "section-0-field-9"}, {"type": "READ_ONLY",
+        "action": "SHOW", "operation": "AND", "conditions": [{"type": "EQUAL", "refCdtName":
+        "cdt-treatments", "refCdtFieldName": "cdtf-otc-treatment-list", "value": "Fragrance-free
+        Laundry Products"}], "name": "section-0-field-10"}, {"type": "READ_ONLY",
+        "action": "SHOW", "operation": "AND", "conditions": [{"type": "EQUAL", "refCdtName":
+        "cdt-treatments", "refCdtFieldName": "cdtf-otc-treatment-list", "value": "Anti-histamines"}],
+        "name": "section-0-field-11"}, {"type": "READ_ONLY", "action": "SHOW", "operation":
+        "AND", "conditions": [{"type": "EQUAL", "refCdtName": "cdt-treatments", "refCdtFieldName":
+        "cdtf-diet-treatment-list", "value": "Water Intake Log"}], "name": "section-0-field-12"},
+        {"type": "READ_ONLY", "action": "SHOW", "operation": "AND", "conditions":
+        [{"type": "EQUAL", "refCdtName": "cdt-treatments", "refCdtFieldName": "cdtf-diet-treatment-list",
+        "value": "Itchy Dozen Log"}], "name": "section-0-field-13"}, {"type": "READ_ONLY",
+        "action": "SHOW", "operation": "AND", "conditions": [{"type": "EQUAL", "refCdtName":
+        "cdt-treatments", "refCdtFieldName": "cdtf-diet-treatment-list", "value":
+        "Portion Size Visuals"}], "name": "section-0-field-14"}, {"type": "READ_ONLY",
+        "action": "SHOW", "operation": "AND", "conditions": [{"type": "EQUAL", "refCdtName":
+        "cdt-treatments", "refCdtFieldName": "cdtf-diet-treatment-list", "value":
+        "Mindful Eating"}], "name": "section-0-field-15"}, {"type": "READ_ONLY", "action":
+        "SHOW", "operation": "AND", "conditions": [{"type": "EQUAL", "refCdtName":
+        "cdt-treatments", "refCdtFieldName": "cdtf-diet-treatment-list", "value":
+        "Watery Foods"}], "name": "section-0-field-16"}, {"type": "READ_ONLY", "action":
+        "SHOW", "operation": "AND", "conditions": [{"type": "EQUAL", "refCdtName":
+        "cdt-treatments", "refCdtFieldName": "cdtf-diet-treatment-list", "value":
+        "Make Water Interesting"}], "name": "section-0-field-17"}, {"type": "READ_ONLY",
+        "action": "SHOW", "operation": "AND", "conditions": [{"type": "EQUAL", "refCdtName":
+        "cdt-treatments", "refCdtFieldName": "cdtf-diet-treatment-list", "value":
+        "Anti-inflammatory Foods"}], "name": "section-0-field-18"}, {"type": "READ_ONLY",
+        "action": "SHOW", "operation": "AND", "conditions": [{"type": "EQUAL", "refCdtName":
+        "cdt-treatments", "refCdtFieldName": "cdtf-lifestyle-treatment-list", "value":
+        "Walking Step Count"}], "name": "section-0-field-19"}, {"type": "READ_ONLY",
+        "action": "SHOW", "operation": "AND", "conditions": [{"type": "EQUAL", "refCdtName":
+        "cdt-treatments", "refCdtFieldName": "cdtf-lifestyle-treatment-list", "value":
+        "Meditation"}], "name": "section-0-field-20"}, {"type": "READ_ONLY", "action":
+        "SHOW", "operation": "AND", "conditions": [{"type": "EQUAL", "refCdtName":
+        "cdt-treatments", "refCdtFieldName": "cdtf-lifestyle-treatment-list", "value":
+        "Visualization"}], "name": "section-0-field-21"}, {"type": "READ_ONLY", "action":
+        "SHOW", "operation": "AND", "conditions": [{"type": "EQUAL", "refCdtName":
+        "cdt-treatments", "refCdtFieldName": "cdtf-lifestyle-treatment-list", "value":
+        "Breathing Exercises"}], "name": "section-0-field-22"}, {"type": "READ_ONLY",
+        "action": "SHOW", "operation": "AND", "conditions": [{"type": "EQUAL", "refCdtName":
+        "cdt-treatments", "refCdtFieldName": "cdtf-lifestyle-treatment-list", "value":
+        "Yoga"}], "name": "section-0-field-23"}, {"type": "READ_ONLY", "action": "SHOW",
+        "operation": "AND", "conditions": [{"type": "EQUAL", "refCdtName": "cdt-treatments",
+        "refCdtFieldName": "cdtf-lifestyle-treatment-list", "value": "Qigong"}], "name":
+        "section-0-field-24"}, {"type": "READ_ONLY", "action": "SHOW", "operation":
+        "AND", "conditions": [{"type": "EQUAL", "refCdtName": "cdt-treatments", "refCdtFieldName":
+        "cdtf-lifestyle-treatment-list", "value": "Strength Training"}], "name": "section-0-field-25"},
+        {"type": "READ_ONLY", "action": "SHOW", "operation": "AND", "conditions":
+        [{"type": "EQUAL", "refCdtName": "cdt-treatments", "refCdtFieldName": "cdtf-lifestyle-treatment-list",
+        "value": "Eczema Journal"}], "name": "section-0-field-26"}, {"type": "READ_ONLY",
+        "action": "SHOW", "operation": "AND", "conditions": [{"type": "EQUAL", "refCdtName":
+        "cdt-treatments", "refCdtFieldName": "cdtf-lifestyle-treatment-list", "value":
+        "Gratitude Journal"}], "name": "section-0-field-27"}, {"type": "READ_ONLY",
+        "action": "SHOW", "operation": "AND", "conditions": [{"type": "EQUAL", "refCdtName":
+        "cdt-treatments", "refCdtFieldName": "cdtf-lifestyle-treatment-list", "value":
+        "Mood Journal"}], "name": "section-0-field-28"}, {"type": "READ_ONLY", "action":
+        "SHOW", "operation": "AND", "conditions": [{"type": "EQUAL", "refCdtName":
+        "cdt-treatments", "refCdtFieldName": "cdtf-lifestyle-treatment-list", "value":
+        "Thought Monitoring Journal"}], "name": "section-0-field-29"}, {"type": "READ_ONLY",
+        "action": "SHOW", "operation": "AND", "conditions": [{"type": "EQUAL", "refCdtName":
+        "cdt-treatments", "refCdtFieldName": "cdtf-lifestyle-treatment-list", "value":
+        "Affirmations"}], "name": "section-0-field-30"}, {"type": "READ_ONLY", "action":
+        "SHOW", "operation": "AND", "conditions": [{"type": "EQUAL", "refCdtName":
+        "cdt-treatments", "refCdtFieldName": "cdtf-lifestyle-treatment-list", "value":
+        "Morning Pages"}], "name": "section-0-field-31"}, {"type": "READ_ONLY", "action":
+        "SHOW", "operation": "AND", "conditions": [{"type": "EQUAL", "refCdtName":
+        "cdt-treatments", "refCdtFieldName": "cdtf-lifestyle-treatment-list", "value":
+        "Habit Stacking"}], "name": "section-0-field-32"}, {"type": "READ_ONLY", "action":
+        "SHOW", "operation": "AND", "conditions": [{"type": "EQUAL", "refCdtName":
+        "cdt-treatments", "refCdtFieldName": "cdtf-lifestyle-treatment-list", "value":
+        "Mindfulness Exercise"}], "name": "section-0-field-33"}, {"type": "READ_ONLY",
+        "action": "SHOW", "operation": "AND", "conditions": [{"type": "EQUAL", "refCdtName":
+        "cdt-treatments", "refCdtFieldName": "cdtf-lifestyle-treatment-list", "value":
+        "Body Scan"}], "name": "section-0-field-34"}, {"type": "READ_ONLY", "action":
+        "SHOW", "operation": "AND", "conditions": [{"type": "EQUAL", "refCdtName":
+        "cdt-treatments", "refCdtFieldName": "cdtf-lifestyle-treatment-list", "value":
+        "Progressive Muscle Relaxation"}], "name": "section-0-field-35"}, {"type":
+        "READ_ONLY", "action": "SHOW", "operation": "AND", "conditions": [{"type":
+        "EQUAL", "refCdtName": "cdt-treatments", "refCdtFieldName": "cdtf-lifestyle-treatment-list",
+        "value": "Identifying an Anxious State"}], "name": "section-0-field-36"},
+        {"type": "READ_ONLY", "action": "SHOW", "operation": "AND", "conditions":
+        [{"type": "EQUAL", "refCdtName": "cdt-treatments", "refCdtFieldName": "cdtf-lifestyle-treatment-list",
+        "value": "Alternative Therapies"}], "name": "section-0-field-37"}, {"type":
+        "READ_ONLY", "action": "SHOW", "operation": "AND", "conditions": [{"type":
+        "EQUAL", "refCdtName": "cdt-treatments", "refCdtFieldName": "cdtf-lifestyle-treatment-list",
+        "value": "Guided Imagery Exercises"}], "name": "section-0-field-38"}, {"type":
+        "READ_ONLY", "action": "SHOW", "operation": "AND", "conditions": [{"type":
+        "EQUAL", "refCdtName": "cdt-treatments", "refCdtFieldName": "cdtf-lifestyle-treatment-list",
+        "value": "Grade Exposure"}], "name": "section-0-field-39"}, {"type": "READ_ONLY",
+        "action": "SHOW", "operation": "AND", "conditions": [{"type": "EQUAL", "refCdtName":
+        "cdt-treatments", "refCdtFieldName": "cdtf-lifestyle-treatment-list", "value":
+        "Procrastination Busters"}], "name": "section-0-field-40"}, {"type": "READ_ONLY",
+        "action": "SHOW", "operation": "AND", "conditions": [{"type": "EQUAL", "refCdtName":
+        "cdt-treatments", "refCdtFieldName": "cdtf-lifestyle-treatment-list", "value":
+        "Tips for Being Active"}], "name": "section-0-field-41"}, {"type": "READ_ONLY",
+        "action": "SHOW", "operation": "AND", "conditions": [{"type": "EQUAL", "refCdtName":
+        "cdt-treatments", "refCdtFieldName": "cdtf-lifestyle-treatment-list", "value":
+        "Getting Unstuck"}], "name": "section-0-field-42"}, {"type": "READ_ONLY",
+        "action": "SHOW", "operation": "AND", "conditions": [{"type": "EQUAL", "refCdtName":
+        "cdt-treatments", "refCdtFieldName": "cdtf-lifestyle-treatment-list", "value":
+        "Emotions and Reponses"}], "name": "section-0-field-43"}, {"type": "READ_ONLY",
+        "action": "SHOW", "operation": "AND", "conditions": [{"type": "EQUAL", "refCdtName":
+        "cdt-treatments", "refCdtFieldName": "cdtf-lifestyle-treatment-list", "value":
+        "Breathwork for Better Sleep"}], "name": "section-0-field-44"}, {"type": "READ_ONLY",
+        "action": "SHOW", "operation": "AND", "conditions": [{"type": "EQUAL", "refCdtName":
+        "cdt-treatments", "refCdtFieldName": "cdtf-lifestyle-treatment-list", "value":
+        "Ways to Counteract a Bad Mood"}], "name": "section-0-field-45"}, {"type":
+        "READ_ONLY", "action": "SHOW", "operation": "AND", "conditions": [{"type":
+        "EQUAL", "refCdtName": "cdt-treatments", "refCdtFieldName": "cdtf-lifestyle-treatment-list",
+        "value": "Exercises to Alleviate Anxiety"}], "name": "section-0-field-47"},
+        {"type": "READ_ONLY", "action": "SHOW", "operation": "AND", "conditions":
+        [{"type": "EQUAL", "refCdtName": "cdt-treatments", "refCdtFieldName": "cdtf-lifestyle-treatment-list",
+        "value": "Positivity Journaling"}], "name": "section-0-field-46"}, {"type":
+        "READ_ONLY", "action": "SHOW", "operation": "AND", "conditions": [{"type":
+        "EQUAL", "refCdtName": "cdt-treatments", "refCdtFieldName": "cdtf-lifestyle-treatment-list",
+        "value": "Mantras"}], "name": "section-0-field-48"}, {"type": "READ_ONLY",
+        "action": "SHOW", "operation": "AND", "conditions": [{"type": "EQUAL", "refCdtName":
+        "cdt-treatments", "refCdtFieldName": "cdtf-lifestyle-treatment-list", "value":
+        "Blue Light and Sleep"}], "name": "section-0-field-49"}, {"type": "READ_ONLY",
+        "action": "SHOW", "operation": "AND", "conditions": [{"type": "EQUAL", "refCdtName":
+        "cdt-treatments", "refCdtFieldName": "cdtf-lifestyle-treatment-list", "value":
+        "Growth vs Fixed Mindset"}], "name": "section-0-field-50"}, {"type": "READ_ONLY",
+        "action": "SHOW", "operation": "AND", "conditions": [{"type": "EQUAL", "refCdtName":
+        "cdt-treatments", "refCdtFieldName": "cdtf-lifestyle-treatment-list", "value":
+        "AM & PM Journaling"}], "name": "section-0-field-51"}, {"type": "READ_ONLY",
+        "action": "SHOW", "operation": "AND", "conditions": [{"type": "EQUAL", "refCdtName":
+        "cdt-treatments", "refCdtFieldName": "cdtf-lifestyle-treatment-list", "value":
+        "Core Beliefs Journaling"}], "name": "section-0-field-52"}, {"type": "READ_ONLY",
+        "action": "SHOW", "operation": "AND", "conditions": [{"type": "EQUAL", "refCdtName":
+        "cdt-treatments", "refCdtFieldName": "cdtf-lifestyle-treatment-list", "value":
+        "AEIOU Activity Log"}], "name": "section-0-field-53"}, {"type": "READ_ONLY",
+        "action": "SHOW", "operation": "AND", "conditions": [{"type": "EQUAL", "refCdtName":
+        "cdt-treatments", "refCdtFieldName": "cdtf-lifestyle-treatment-list", "value":
+        "Blue Zone Health Habits"}], "name": "section-0-field-54"}], "events": []},
+        "displayType": "SECTIONS", "autoCompleted": false, "_containsPHI": true}]'
+    headers:
+      Access-Control-Allow-Headers:
+      - authorization, content-type, xsrf-token, security-role
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, PATCH, OPTIONS
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - xsrf-token
+      Access-Control-Max-Age:
+      - '3600'
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 01 Sep 2023 22:24:40 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Strict-Transport-Security:
+      - max-age=31536000 ; includeSubDomains
+      Transfer-Encoding:
+      - chunked
+      X-Content-Type-Options:
+      - nosniff
+      X-XSS-Protection:
+      - 1; mode=block
+      content-length:
+      - '70246'
+    status:
+      code: 200
+      message: OK
+version: 1

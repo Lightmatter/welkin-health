@@ -10,13 +10,13 @@ from welkin.models.care_plan import CarePlan, CarePlanOverview
 from welkin.models.cdt import CDT, CDTs
 from welkin.models.chat import Chat, Chats, SearchChats
 from welkin.models.document import (
-    Documents,
+    DocumentSummaries,
     DocumentSummary,
     DocumentSummaryFile,
     DocumentSummaryFiles,
 )
-from welkin.models.encounter import Disposition, Encounter, Encounters
-from welkin.models.formation import Formations
+from welkin.models.encounter import Encounter, EncounterDisposition, Encounters
+from welkin.models.formation import Formation
 from welkin.models.patient import Patient, Patients
 from welkin.models.user import User, Users
 
@@ -34,19 +34,19 @@ __all__ = [
     "CDTs",
     "Chat",
     "Chats",
-    "SearchChats",
-    "Disposition",
-    "Encounter",
-    "Encounters",
-    "Documents",
+    "DocumentSummaries",
     "DocumentSummary",
     "DocumentSummaryFile",
     "DocumentSummaryFiles",
+    "Encounter",
+    "EncounterDisposition",
+    "Encounters",
+    "Formation",
     "Patient",
     "Patients",
     "Schedules",
+    "SearchChats",
     "User",
     "Users",
-    "Formations",
     "WorkHours",
 ]

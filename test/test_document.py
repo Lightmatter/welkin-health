@@ -3,37 +3,39 @@ from io import BytesIO
 import pytest
 
 from welkin.exceptions import WelkinHTTPError
-from welkin.models.document import (
-    Documents,
+from welkin.models import (
+    DocumentSummaries,
     DocumentSummary,
     DocumentSummaryFile,
     DocumentSummaryFiles,
 )
 
 
-@pytest.mark.vcr()
-def test_documents_get_patient_id(client, vcr_cassette):
-    documents = client.Documents().get(
+@pytest.mark.vcr
+def test_document_summaries_get_patient_id(client, vcr_cassette):
+    documents = client.DocumentSummaries().get(
         patient_id="283f50d3-0840-426f-b07b-bd8e4ab76401"
     )
 
-    assert isinstance(documents, Documents)
+    assert isinstance(documents, DocumentSummaries)
     assert isinstance(documents[0], DocumentSummary)
     assert len(vcr_cassette) == 1
 
 
-@pytest.mark.vcr()
-def test_documents_subresource(client, vcr_cassette):
+@pytest.mark.vcr
+def test_document_summaries_subresource(client, vcr_cassette):
     documents = (
-        client.Patient(id="283f50d3-0840-426f-b07b-bd8e4ab76401").Documents().get()
+        client.Patient(id="283f50d3-0840-426f-b07b-bd8e4ab76401")
+        .DocumentSummaries()
+        .get()
     )
 
-    assert isinstance(documents, Documents)
+    assert isinstance(documents, DocumentSummaries)
     assert isinstance(documents[0], DocumentSummary)
     assert len(vcr_cassette) == 1
 
 
-@pytest.mark.vcr()
+@pytest.mark.vcr
 def test_document_summary_get(client, vcr_cassette):
     document = (
         client.Patient(id="283f50d3-0840-426f-b07b-bd8e4ab76401")
@@ -46,7 +48,7 @@ def test_document_summary_get(client, vcr_cassette):
     assert len(vcr_cassette) == 1
 
 
-@pytest.mark.vcr()
+@pytest.mark.vcr
 def test_document_summary_delete(client, vcr_cassette):
     document = client.Patient(
         id="283f50d3-0840-426f-b07b-bd8e4ab76401"
@@ -62,7 +64,7 @@ def test_document_summary_delete(client, vcr_cassette):
     assert len(vcr_cassette) == 2
 
 
-@pytest.mark.vcr()
+@pytest.mark.vcr
 def test_document_summary_create(client, vcr_cassette):
     document = (
         client.Patient(id="283f50d3-0840-426f-b07b-bd8e4ab76401")
@@ -75,7 +77,7 @@ def test_document_summary_create(client, vcr_cassette):
     assert len(vcr_cassette) == 1
 
 
-@pytest.mark.vcr()
+@pytest.mark.vcr
 @pytest.mark.skip(
     reason="the bytes upload hits this issue in vcr: https://github.com/kevin1024/vcrpy/issues/660 but this test shows the correct implementation"
 )
@@ -104,7 +106,7 @@ def test_document_summary_files_create(client, vcr_cassette):
     assert len(vcr_cassette) == 1
 
 
-@pytest.mark.vcr()
+@pytest.mark.vcr
 def test_document_summary_file_get(client, vcr_cassette):
     doc_summary = (
         client.Patient(id="283f50d3-0840-426f-b07b-bd8e4ab76401")

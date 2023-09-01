@@ -4,7 +4,7 @@ from welkin.exceptions import WelkinHTTPError
 from welkin.models.user import User, Users
 
 
-@pytest.mark.vcr()
+@pytest.mark.vcr
 def test_user_create(client, vcr_cassette):
     user = client.User(username="bar", email="bar@foo.com").create()
 
@@ -13,7 +13,7 @@ def test_user_create(client, vcr_cassette):
     assert len(vcr_cassette) == 1
 
 
-@pytest.mark.vcr()
+@pytest.mark.vcr
 def test_user_read(client, vcr_cassette):
     user = client.User(id="658f3b36-a12a-4bce-aad6-1e4930948b7d")
 
@@ -26,7 +26,7 @@ def test_user_read(client, vcr_cassette):
     assert len(vcr_cassette) == 1
 
 
-@pytest.mark.vcr()
+@pytest.mark.vcr
 def test_user_read_all(client, vcr_cassette):
     users = client.Users().get()
 
@@ -39,7 +39,7 @@ def test_user_read_all(client, vcr_cassette):
         assert len(vcr_cassette) == 1, "Unexpected pagination"
 
 
-@pytest.mark.vcr()
+@pytest.mark.vcr
 def test_user_update(client, vcr_cassette):
     user = client.User(id="92cc5811-ff71-4101-915d-a419383db168").get()
     name = user.firstName
@@ -50,7 +50,7 @@ def test_user_update(client, vcr_cassette):
     assert len(vcr_cassette) == 2
 
 
-@pytest.mark.vcr()
+@pytest.mark.vcr
 def test_user_delete(client, vcr_cassette):
     user = client.User(id="658f3b36-a12a-4bce-aad6-1e4930948b7d")
 

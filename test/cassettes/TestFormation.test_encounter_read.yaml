@@ -1,0 +1,63 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - API_TOKEN_88dcbaa4-92cd-4102-a9c1-68a0cc2b2f4f
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-welkin/0.1.0
+    method: GET
+    uri: https://api.live.welkincloud.io/tenant_REDACTED/instance_REDACTED/formations/current/encounters/etmp-coaching-introduction
+  response:
+    body:
+      string: '{"id": "0521bc9f-51e1-4d6b-9453-e12f6666aa99", "name": "etmp-coaching-introduction",
+        "title": "Coaching Introduction", "encounterDescription": "", "encounterInstruction":
+        "<ol>\n<li>Review the patient''s summary, encounters, and past assessments
+        as needed.</li>\n<li>Change Encounter status to In Progress when session begins.</li>\n<li>Add
+        notes for the patient</li>\n<li>Add Nutrition and Lifestyle treatments for
+        the patient</li>\n<li>Close the Encounter</li>\n</ol>\n", "encounterColor":
+        "#e67b2d", "type": "Async", "deliveryMethod": "VIDEO", "defaultDuration":
+        15, "assessmentNames": ["asm-coaching-notes", "asm-treatment-recommendations"]}'
+    headers:
+      Access-Control-Allow-Headers:
+      - authorization, content-type, xsrf-token, security-role
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, PATCH, OPTIONS
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - xsrf-token
+      Access-Control-Max-Age:
+      - '3600'
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 01 Sep 2023 22:24:40 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Strict-Transport-Security:
+      - max-age=31536000 ; includeSubDomains
+      Transfer-Encoding:
+      - chunked
+      X-Content-Type-Options:
+      - nosniff
+      X-XSS-Protection:
+      - 1; mode=block
+      content-length:
+      - '624'
+    status:
+      code: 200
+      message: OK
+version: 1

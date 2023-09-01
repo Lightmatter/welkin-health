@@ -6,7 +6,7 @@ from welkin.exceptions import WelkinHTTPError
 from welkin.models.patient import Patient, Patients
 
 
-@pytest.mark.vcr()
+@pytest.mark.vcr
 def test_patient_create(client, vcr_cassette):
     patient = client.Patient(firstName="Foo", lastName="Bar").create()
 
@@ -15,7 +15,7 @@ def test_patient_create(client, vcr_cassette):
     assert len(vcr_cassette) == 1
 
 
-@pytest.mark.vcr()
+@pytest.mark.vcr
 def test_patient_create_birthdate(client, vcr_cassette):
     patient = client.Patient(
         firstName="happy", lastName="borf", birthDate=date.today()
@@ -26,7 +26,7 @@ def test_patient_create_birthdate(client, vcr_cassette):
     assert len(vcr_cassette) == 1
 
 
-@pytest.mark.vcr()
+@pytest.mark.vcr
 def test_patient_read(client, vcr_cassette):
     patient_id = "092ae416-1c0d-4e14-be22-9cc8dafacdbd"
     patient = client.Patient(id=patient_id).get()
@@ -36,7 +36,7 @@ def test_patient_read(client, vcr_cassette):
     assert len(vcr_cassette) == 1
 
 
-@pytest.mark.vcr()
+@pytest.mark.vcr
 def test_patient_read_all(client, vcr_cassette):
     patients = client.Patients().get()
 
@@ -49,7 +49,7 @@ def test_patient_read_all(client, vcr_cassette):
         assert len(vcr_cassette) == 1, "Unexpected pagination"
 
 
-@pytest.mark.vcr()
+@pytest.mark.vcr
 def test_patient_update(client, vcr_cassette):
     patient = client.Patient(id="092ae416-1c0d-4e14-be22-9cc8dafacdbd").get()
     name = patient.firstName
@@ -60,7 +60,7 @@ def test_patient_update(client, vcr_cassette):
     assert len(vcr_cassette) == 2
 
 
-@pytest.mark.vcr()
+@pytest.mark.vcr
 def test_patient_delete(client, vcr_cassette):
     patient = client.Patient(id="092ae416-1c0d-4e14-be22-9cc8dafacdbd")
 
