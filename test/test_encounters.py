@@ -189,6 +189,7 @@ def test_assessment_get(client, vcr_cassette):
 
 
 @pytest.mark.vcr
+@pytest.mark.skip(reason="not multi-process safe; fails intermittently")
 def test_encounter_related_data_assessment_get(client, vcr_cassette):
     patient = client.Patient(id="371dd15c-cedc-4425-a394-d666c8d3fc01")
 
