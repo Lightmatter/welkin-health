@@ -7,17 +7,17 @@ interactions:
       Accept-Encoding:
       - gzip, deflate
       Authorization:
-      - API_TOKEN_cff86b44-e229-44da-823c-57f4a9307c31
+      - API_TOKEN_85889acd-d01d-4d70-9d17-77f4deee08f9
       Connection:
       - keep-alive
       User-Agent:
-      - python-welkin/0.0.7
+      - python-welkin/0.1.0
     method: GET
     uri: https://api.live.welkincloud.io/tenant_REDACTED/instance_REDACTED/formations/current/document-types/doc-type-others
   response:
     body:
-      string: '{"id": "fde8d6ff-0f2b-473e-9a97-bc8cdfac0622", "name": "doc-type-others",
-        "title": "Others", "label": "Others", "version": 74, "internal": true, "readable":
+      string: '{"id": "19b62276-8b19-4662-aa95-a1c65ce8dfe6", "name": "doc-type-others",
+        "title": "Others", "label": "Others", "version": 75, "internal": true, "readable":
         true, "updatable": true, "type": "MULTI_RECORD", "relation": "DOCUMENT_TYPE",
         "fields": [{"name": "notes", "type": "text", "formula": null, "dictionary":
         null, "profileDataType": null, "editable": true, "searchable": false, "bulkEdit":
@@ -85,7 +85,7 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Thu, 31 Aug 2023 23:44:18 GMT
+      - Fri, 01 Sep 2023 22:24:40 GMT
       Expires:
       - '0'
       Pragma:

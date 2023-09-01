@@ -16,26 +16,12 @@ from welkin.models.document import (
     DocumentSummaryFiles,
 )
 from welkin.models.encounter import Encounter, EncounterDisposition, Encounters
-from welkin.models.formation import (
-    AssessmentFormation,
-    AssessmentFormations,
-    CDTFormation,
-    CDTFormations,
-    DocumentTypeFormation,
-    DocumentTypeFormations,
-    EncounterDispositionFormation,
-    EncounterFormation,
-    EncounterFormations,
-    GoalFormation,
-    GoalFormations,
-)
+from welkin.models.formation import Formation
 from welkin.models.patient import Patient, Patients
 from welkin.models.user import User, Users
 
 __all__ = [
     "Assessment",
-    "AssessmentFormation",
-    "AssessmentFormations",
     "AssessmentRecord",
     "AssessmentRecordAnswers",
     "AssessmentRecords",
@@ -45,8 +31,6 @@ __all__ = [
     "CarePlan",
     "CarePlanOverview",
     "CDT",
-    "CDTFormation",
-    "CDTFormations",
     "CDTs",
     "Chat",
     "Chats",
@@ -54,16 +38,10 @@ __all__ = [
     "DocumentSummary",
     "DocumentSummaryFile",
     "DocumentSummaryFiles",
-    "DocumentTypeFormation",
-    "DocumentTypeFormations",
     "Encounter",
     "EncounterDisposition",
-    "EncounterDispositionFormation",
-    "EncounterFormation",
-    "EncounterFormations",
     "Encounters",
-    "GoalFormation",
-    "GoalFormations",
+    "Formation",
     "Patient",
     "Patients",
     "Schedules",

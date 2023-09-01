@@ -7,20 +7,18 @@ interactions:
       Accept-Encoding:
       - gzip, deflate
       Authorization:
-      - API_TOKEN_cff86b44-e229-44da-823c-57f4a9307c31
+      - API_TOKEN_1ace5dbe-fdec-4410-bd39-3e972fb4eea6
       Connection:
       - keep-alive
       User-Agent:
-      - python-welkin/0.0.7
+      - python-welkin/0.1.0
     method: GET
-    uri: https://api.live.welkincloud.io/tenant_REDACTED/instance_REDACTED/formations/current/goal-templates?page=0
+    uri: https://api.live.welkincloud.io/tenant_REDACTED/instance_REDACTED/formations/current/goal-templates/eat-fruit
   response:
     body:
-      string: '[{"name": "eat-fruit", "goalName": "Eat Fruit", "type": "dietary",
-        "priority": "LOW", "taskTemplates": [{"name": "check-in-on-goal-progress",
-        "subjectConfig": {"type": "ROLE", "roleName": "health-coach"}}]}, {"name":
-        "pushups", "goalName": "Pushups", "type": "exercise", "priority": "LOW", "taskTemplates":
-        [{"name": "check-in-on-goal-progress", "subjectConfig": {"type": "POINT_OF_CONTACT"}}]}]'
+      string: '{"name": "eat-fruit", "goalName": "Eat Fruit", "type": "dietary", "priority":
+        "LOW", "taskTemplates": [{"name": "check-in-on-goal-progress", "subjectConfig":
+        {"type": "ROLE", "roleName": "health-coach"}}]}'
     headers:
       Access-Control-Allow-Headers:
       - authorization, content-type, xsrf-token, security-role
@@ -39,7 +37,7 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Thu, 31 Aug 2023 23:44:20 GMT
+      - Fri, 01 Sep 2023 22:24:41 GMT
       Expires:
       - '0'
       Pragma:
@@ -53,7 +51,7 @@ interactions:
       X-XSS-Protection:
       - 1; mode=block
       content-length:
-      - '366'
+      - '190'
     status:
       code: 200
       message: OK

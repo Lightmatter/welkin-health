@@ -14,8 +14,7 @@ from requests.packages.urllib3.util.retry import Retry  # type: ignore
 from welkin import __version__, models
 from welkin.authentication import WelkinAuth
 from welkin.exceptions import WelkinHTTPError
-from welkin.models.base import Collection, Resource
-from welkin.util import clean_request_params, clean_request_payload
+from welkin.util import _build_resources, clean_request_params, clean_request_payload
 
 logger = logging.getLogger(__name__)
 
@@ -69,6 +68,35 @@ class Client(Session):
         user.update(firstName="Baz")  # Update
         user.delete()  # Delete
     """
+
+    Assessment = models.Assessment
+    AssessmentRecord = models.AssessmentRecord
+    AssessmentRecordAnswers = models.AssessmentRecordAnswers
+    AssessmentRecords = models.AssessmentRecords
+    Assessments = models.Assessments
+    CalendarEvent = models.CalendarEvent
+    CalendarEvents = models.CalendarEvents
+    CarePlan = models.CarePlan
+    CarePlanOverview = models.CarePlanOverview
+    CDT = models.CDT
+    CDTs = models.CDTs
+    Chat = models.Chat
+    Chats = models.Chats
+    DocumentSummaries = models.DocumentSummaries
+    DocumentSummary = models.DocumentSummary
+    DocumentSummaryFile = models.DocumentSummaryFile
+    DocumentSummaryFiles = models.DocumentSummaryFiles
+    Encounter = models.Encounter
+    EncounterDisposition = models.EncounterDisposition
+    Encounters = models.Encounters
+    Formation = models.Formation
+    Patient = models.Patient
+    Patients = models.Patients
+    Schedules = models.Schedules
+    SearchChats = models.SearchChats
+    User = models.User
+    Users = models.Users
+    WorkHours = models.WorkHours
 
     def __init__(
         self,
@@ -125,57 +153,7 @@ class Client(Session):
         )
 
         self.instance = instance
-        self.__build_resources()
-
-    def __build_resources(self) -> None:
-        """Add each resource with a reference to this instance."""
-        self.Assessment = models.Assessment
-        self.AssessmentFormation = models.AssessmentFormation
-        self.AssessmentFormations = models.AssessmentFormations
-        self.AssessmentRecord = models.AssessmentRecord
-        self.AssessmentRecordAnswers = models.AssessmentRecordAnswers
-        self.AssessmentRecords = models.AssessmentRecords
-        self.Assessments = models.Assessments
-        self.CalendarEvent = models.CalendarEvent
-        self.CalendarEvents = models.CalendarEvents
-        self.CarePlan = models.CarePlan
-        self.CarePlanOverview = models.CarePlanOverview
-        self.CDT = models.CDT
-        self.CDTFormation = models.CDTFormation
-        self.CDTFormations = models.CDTFormations
-        self.CDTs = models.CDTs
-        self.Chat = models.Chat
-        self.Chats = models.Chats
-        self.DocumentSummaries = models.DocumentSummaries
-        self.DocumentSummary = models.DocumentSummary
-        self.DocumentSummaryFile = models.DocumentSummaryFile
-        self.DocumentSummaryFiles = models.DocumentSummaryFiles
-        self.DocumentTypeFormation = models.DocumentTypeFormation
-        self.DocumentTypeFormations = models.DocumentTypeFormations
-        self.Encounter = models.Encounter
-        self.EncounterDisposition = models.EncounterDisposition
-        self.EncounterDispositionFormation = models.EncounterDispositionFormation
-        self.EncounterFormation = models.EncounterFormation
-        self.EncounterFormations = models.EncounterFormations
-        self.Encounters = models.Encounters
-        self.GoalFormation = models.GoalFormation
-        self.GoalFormations = models.GoalFormations
-        self.Patient = models.Patient
-        self.Patients = models.Patients
-        self.Schedules = models.Schedules
-        self.SearchChats = models.SearchChats
-        self.User = models.User
-        self.Users = models.Users
-        self.WorkHours = models.WorkHours
-
-        for k, v in vars(self).items():
-            try:
-                issubclass(v, (Collection, Resource))
-            except TypeError:
-                # Failed because `issubclass` expects a class.
-                continue
-
-            getattr(self, k)._client = self
+        _build_resources(self, "_client")
 
     def prepare_request(self, request):
         if request.json:

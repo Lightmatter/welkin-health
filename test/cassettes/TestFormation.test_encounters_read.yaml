@@ -7,16 +7,16 @@ interactions:
       Accept-Encoding:
       - gzip, deflate
       Authorization:
-      - API_TOKEN_cff86b44-e229-44da-823c-57f4a9307c31
+      - API_TOKEN_a654176b-30d4-4b21-9bc2-81d54fd92578
       Connection:
       - keep-alive
       User-Agent:
-      - python-welkin/0.0.7
+      - python-welkin/0.1.0
     method: GET
     uri: https://api.live.welkincloud.io/tenant_REDACTED/instance_REDACTED/formations/current/encounters?page=0
   response:
     body:
-      string: '[{"id": "18f625e5-1520-40c3-925f-40e533200e87", "name": "etmp-coaching-introduction",
+      string: '[{"id": "0521bc9f-51e1-4d6b-9453-e12f6666aa99", "name": "etmp-coaching-introduction",
         "title": "Coaching Introduction", "encounterDescription": "", "encounterInstruction":
         "<ol>\n<li>Review the patient''s summary, encounters, and past assessments
         as needed.</li>\n<li>Change Encounter status to In Progress when session begins.</li>\n<li>Add
@@ -24,7 +24,7 @@ interactions:
         the patient</li>\n<li>Close the Encounter</li>\n</ol>\n", "encounterColor":
         "#e67b2d", "type": "Async", "deliveryMethod": "VIDEO", "defaultDuration":
         15, "assessmentNames": ["asm-coaching-notes", "asm-treatment-recommendations"]},
-        {"id": "b734cb0f-99c0-463c-bece-7a6453b50f37", "name": "etmp-coaching-notes",
+        {"id": "17d6101a-bfda-4167-84bf-08f4a3728c82", "name": "etmp-coaching-notes",
         "title": "Coaching Session", "encounterDescription": "", "encounterInstruction":
         "<ol>\n<li>1. Review the patient''s summary, encounters, and past assessments
         as needed.</li>\n<li>Change Encounter status to In Progress when session begins.</li>\n<li>Add
@@ -32,20 +32,20 @@ interactions:
         the patient</li>\n<li>Close the Encounter</li>\n</ol>\n", "encounterColor":
         "#e67b2d", "type": "Async", "deliveryMethod": "VIDEO", "defaultDuration":
         15, "assessmentNames": ["asm-coaching-notes", "asm-treatment-recommendations"]},
-        {"id": "53fb1f46-dc65-4100-bf26-4238b81101d5", "name": "etmp-dermatologist-consult",
+        {"id": "3cb86ccb-ffa8-4bed-bce4-8e14fb22f124", "name": "etmp-dermatologist-consult",
         "title": "Dermatologist Consult", "encounterDescription": "", "encounterInstruction":
         "<ol>\n<li>Review Patient Summary and Prescriptions</li>\n<li>Complete Zoom
         call</li>\n<li>Record notes</li>\n<li>Select treatments for patient</li>\n<li>Record
         prescriptions in Dr. First</li>\n<li>Close encounter</li>\n</ol>\n", "encounterColor":
         "#00a7be", "type": "Async", "deliveryMethod": "VIDEO", "defaultDuration":
         15, "assessmentNames": ["asm-provider-notes", "asm-treatment-recommendations"]},
-        {"id": "77148455-e74e-4df8-9ea8-242545147ac4", "name": "new-patient-call",
+        {"id": "296018d9-e23c-4f39-b9d6-fd12e78db239", "name": "new-patient-call",
         "title": "New Member Visit", "encounterDescription": "", "encounterInstruction":
         "<ol>\n<li>Review Patient Summary and Prescriptions</li>\n<li>Complete Zoom
         call</li>\n<li>Record notes</li>\n<li>Select treatments for patient</li>\n<li>Record
         prescriptions in Dr. First</li>\n<li>Close encounter</li>\n</ol>\n", "encounterColor":
         "#00a7be", "type": "Async", "deliveryMethod": "VIDEO", "defaultDuration":
-        15, "assessmentNames": ["asm-treatment-recommendations", "asm-coaching-notes"]}]'
+        15, "assessmentNames": ["asm-treatment-recommendations", "asm-provider-notes"]}]'
     headers:
       Access-Control-Allow-Headers:
       - authorization, content-type, xsrf-token, security-role
@@ -64,7 +64,7 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Thu, 31 Aug 2023 23:44:18 GMT
+      - Fri, 01 Sep 2023 22:24:41 GMT
       Expires:
       - '0'
       Pragma:

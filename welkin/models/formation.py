@@ -2,117 +2,112 @@ from typing import Union
 
 from welkin.models.base import Collection, Resource
 from welkin.pagination import FormationIterator
+from welkin.util import Target, _build_resources
 
 
-class AssessmentFormation(Resource):
+class FormationBase:
+    endpoint: str = None
+
+    def __new__(cls, *args, **kwargs):
+        if not cls.endpoint:
+            raise AttributeError(
+                f"The `endpoint` attribute must be set on {cls.__name__}"
+            )
+
+        return super().__new__(cls)
+
+
+class FormationResource(FormationBase, Resource):
     def get(self, *args, **kwargs):
         return super().get(
-            f"{self._client.instance}/formations/current/assessments/{self.name}",
+            f"{self._formation._base_path}/{self.endpoint}/{self.name}",
             *args,
             **kwargs,
         )
 
 
-class AssessmentFormations(Collection):
-    resource = AssessmentFormation
+class FormationCollection(FormationBase, Collection):
+    resource = FormationResource
     iterator = FormationIterator
 
     def get(self, *args, **kwargs):
         return super().get(
-            f"{self._client.instance}/formations/current/assessments",
+            f"{self._formation._base_path}/{self.endpoint}",
             *args,
             **kwargs,
         )
 
 
-class CDTFormation(Resource):
-    def get(self, *args, **kwargs):
-        return super().get(
-            f"{self._client.instance}/formations/current/cdts/{self.name}",
-            *args,
-            **kwargs,
-        )
+class Assessment(FormationResource):
+    endpoint = "assessments"
 
 
-class CDTFormations(Collection):
-    resource = CDTFormation
-    iterator = FormationIterator
-
-    def get(self, *args, **kwargs):
-        return super().get(
-            f"{self._client.instance}/formations/current/cdts",
-            *args,
-            **kwargs,
-        )
+class Assessments(FormationCollection):
+    resource = Assessment
+    endpoint = "assessments"
 
 
-class DocumentTypeFormation(Resource):
-    def get(self, *args, **kwargs):
-        return super().get(
-            f"{self._client.instance}/formations/current/document-types/{self.name}",
-            *args,
-            **kwargs,
-        )
+class CDT(FormationResource):
+    endpoint = "cdts"
 
 
-class DocumentTypeFormations(Collection):
-    resource = DocumentTypeFormation
-    iterator = FormationIterator
-
-    def get(self, *args, **kwargs):
-        return super().get(
-            f"{self._client.instance}/formations/current/document-types",
-            *args,
-            **kwargs,
-        )
+class CDTs(FormationCollection):
+    resource = CDT
+    endpoint = "cdts"
 
 
-class EncounterDispositionFormation(Resource):
-    def get(self, version: Union[int, str] = "current", *args, **kwargs):
-        return super().get(
-            f"{self._client.instance}/formations/{version}/encounter-disposition/",
-            *args,
-            **kwargs,
-        )
+class DocumentType(FormationResource):
+    endpoint = "document-types"
 
 
-class EncounterFormation(Resource):
-    def get(self, version: Union[int, str] = "current", *args, **kwargs):
-        return super().get(
-            f"{self._client.instance}/formations/{version}/encounters/{self.name}",
-            *args,
-            **kwargs,
-        )
+class DocumentTypes(FormationCollection):
+    resource = DocumentType
+    endpoint = "document-types"
 
 
-class EncounterFormations(Collection):
-    iterator = FormationIterator
-    resource = EncounterFormation
+class EncounterDisposition(FormationResource):
+    endpoint = "encounter-disposition"
 
-    def get(self, version: Union[int, str] = "current", *args, **kwargs):
-        return super().get(
-            f"{self._client.instance}/formations/{version}/encounters",
-            *args,
-            **kwargs,
-        )
+    def __init__(self):
+        super().__init__()
+
+        self.name = ""
 
 
-class GoalFormation(Resource):
-    def get(self, *args, **kwargs):
-        return super().get(
-            f"{self._client.instance}/formations/current/goal-templates/{self.name}",
-            *args,
-            **kwargs,
-        )
+class Encounter(FormationResource):
+    endpoint = "encounters"
 
 
-class GoalFormations(Collection):
-    resource = GoalFormation
-    iterator = FormationIterator
+class Encounters(FormationCollection):
+    resource = Encounter
+    endpoint = "encounters"
 
-    def get(self, *args, **kwargs):
-        return super().get(
-            f"{self._client.instance}/formations/current/goal-templates",
-            *args,
-            **kwargs,
-        )
+
+class Goal(FormationResource):
+    endpoint = "goal-templates"
+
+
+class Goals(FormationCollection):
+    resource = Goal
+    endpoint = "goal-templates"
+
+
+class Formation(Target):
+    Assessment = Assessment
+    Assessments = Assessments
+    CDT = CDT
+    CDTs = CDTs
+    DocumentType = DocumentType
+    DocumentTypes = DocumentTypes
+    Encounter = Encounter
+    EncounterDisposition = EncounterDisposition
+    Encounters = Encounters
+    Goal = Goal
+    Goals = Goals
+
+    def __init__(self, version: Union[int, str] = "current"):
+        super().__init__()
+
+        self._base_path = f"{self._client.instance}/formations/{version}"
+
+        _build_resources(self, "_formation")

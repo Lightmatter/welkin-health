@@ -7,17 +7,17 @@ interactions:
       Accept-Encoding:
       - gzip, deflate
       Authorization:
-      - API_TOKEN_cff86b44-e229-44da-823c-57f4a9307c31
+      - API_TOKEN_2401a0af-3af9-4928-9d46-bbccd56314af
       Connection:
       - keep-alive
       User-Agent:
-      - python-welkin/0.0.7
+      - python-welkin/0.1.0
     method: GET
     uri: https://api.live.welkincloud.io/tenant_REDACTED/instance_REDACTED/formations/current/cdts/allergies
   response:
     body:
-      string: '{"id": "6f288a07-15c6-4e9d-b5b5-d1d04f6259d0", "name": "allergies",
-        "title": null, "label": null, "version": 74, "internal": false, "readable":
+      string: '{"id": "be69c457-3dcc-44ad-8aba-667b14ef11a5", "name": "allergies",
+        "title": null, "label": null, "version": 75, "internal": false, "readable":
         true, "updatable": true, "type": "MULTI_RECORD", "relation": "COMMON", "fields":
         [{"name": "allergy", "type": "text", "formula": null, "dictionary": null,
         "profileDataType": null, "editable": true, "searchable": false, "bulkEdit":
@@ -97,7 +97,7 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Thu, 31 Aug 2023 23:44:17 GMT
+      - Fri, 01 Sep 2023 22:24:41 GMT
       Expires:
       - '0'
       Pragma:

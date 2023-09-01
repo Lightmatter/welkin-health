@@ -7,16 +7,16 @@ interactions:
       Accept-Encoding:
       - gzip, deflate
       Authorization:
-      - API_TOKEN_cff86b44-e229-44da-823c-57f4a9307c31
+      - API_TOKEN_88dcbaa4-92cd-4102-a9c1-68a0cc2b2f4f
       Connection:
       - keep-alive
       User-Agent:
-      - python-welkin/0.0.7
+      - python-welkin/0.1.0
     method: GET
     uri: https://api.live.welkincloud.io/tenant_REDACTED/instance_REDACTED/formations/current/encounters/etmp-coaching-introduction
   response:
     body:
-      string: '{"id": "18f625e5-1520-40c3-925f-40e533200e87", "name": "etmp-coaching-introduction",
+      string: '{"id": "0521bc9f-51e1-4d6b-9453-e12f6666aa99", "name": "etmp-coaching-introduction",
         "title": "Coaching Introduction", "encounterDescription": "", "encounterInstruction":
         "<ol>\n<li>Review the patient''s summary, encounters, and past assessments
         as needed.</li>\n<li>Change Encounter status to In Progress when session begins.</li>\n<li>Add
@@ -42,7 +42,7 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Thu, 31 Aug 2023 23:44:19 GMT
+      - Fri, 01 Sep 2023 22:24:40 GMT
       Expires:
       - '0'
       Pragma:

@@ -7,17 +7,17 @@ interactions:
       Accept-Encoding:
       - gzip, deflate
       Authorization:
-      - API_TOKEN_cff86b44-e229-44da-823c-57f4a9307c31
+      - API_TOKEN_12af1fd5-eb3a-45f8-888f-9e3ea26cfc5d
       Connection:
       - keep-alive
       User-Agent:
-      - python-welkin/0.0.7
+      - python-welkin/0.1.0
     method: GET
     uri: https://api.live.welkincloud.io/tenant_REDACTED/instance_REDACTED/formations/current/encounter-disposition
   response:
     body:
-      string: '{"id": "3ea2d3da-0d25-427e-a379-8d4d13b2d244", "name": "__encounter_disposition__",
-        "title": null, "label": null, "version": 74, "internal": true, "readable":
+      string: '{"id": "9175c8e7-1efb-4a9e-8c99-e5f1e97fe861", "name": "__encounter_disposition__",
+        "title": null, "label": null, "version": 75, "internal": true, "readable":
         true, "updatable": true, "type": "MULTI_RECORD", "relation": "ENCOUNTER_DISPOSITION",
         "fields": [{"name": "disposition-code", "type": "select", "formula": null,
         "dictionary": null, "profileDataType": null, "editable": true, "searchable":
@@ -124,7 +124,7 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Thu, 31 Aug 2023 23:44:19 GMT
+      - Fri, 01 Sep 2023 22:24:41 GMT
       Expires:
       - '0'
       Pragma:
