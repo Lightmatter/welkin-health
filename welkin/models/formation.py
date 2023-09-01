@@ -1,4 +1,4 @@
-from enum import Enum
+from typing import Union
 
 from welkin.models.base import Collection, Resource
 from welkin.pagination import FormationIterator
@@ -68,7 +68,7 @@ class DocumentTypeFormations(Collection):
 
 
 class EncounterDispositionFormation(Resource):
-    def get(self, version: int | str = "current", *args, **kwargs):
+    def get(self, version: Union[int, str] = "current", *args, **kwargs):
         return super().get(
             f"{self._client.instance}/formations/{version}/encounter-disposition/",
             *args,
@@ -77,7 +77,7 @@ class EncounterDispositionFormation(Resource):
 
 
 class EncounterFormation(Resource):
-    def get(self, version: int | str = "current", *args, **kwargs):
+    def get(self, version: Union[int, str] = "current", *args, **kwargs):
         return super().get(
             f"{self._client.instance}/formations/{version}/encounters/{self.name}",
             *args,
@@ -89,7 +89,7 @@ class EncounterFormations(Collection):
     iterator = FormationIterator
     resource = EncounterFormation
 
-    def get(self, version: int | str = "current", *args, **kwargs):
+    def get(self, version: Union[int, str] = "current", *args, **kwargs):
         return super().get(
             f"{self._client.instance}/formations/{version}/encounters",
             *args,
