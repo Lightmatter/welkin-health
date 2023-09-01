@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "welkin"
-version = "0.0.8"
+version = "0.1.0"
 description = "Python Welkin Health API Wrapper."
 authors = ["Sam Morgan <sam@lightmatter.com>"]
 license = "GPL-3.0-or-later"
