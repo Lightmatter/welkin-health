@@ -4,7 +4,7 @@ from welkin.exceptions import WelkinHTTPError
 from welkin.models.cdt import CDT, CDTs
 
 
-@pytest.mark.vcr()
+@pytest.mark.vcr
 def test_cdt_create(client, vcr_cassette):
     patient = client.Patient(id="3ff322fd-b504-4784-9798-0c7c8a4fdfb8")
 
@@ -15,7 +15,7 @@ def test_cdt_create(client, vcr_cassette):
     assert len(vcr_cassette) == 1
 
 
-@pytest.mark.vcr()
+@pytest.mark.vcr
 def test_all_cdts_patient_read(client, vcr_cassette):
     patient = client.Patient(id="3ff322fd-b504-4784-9798-0c7c8a4fdfb8")
     cdts = patient.CDTs().get(cdt_name="cdt-self-care")
@@ -29,7 +29,7 @@ def test_all_cdts_patient_read(client, vcr_cassette):
         assert len(vcr_cassette) == 1, "Unexpected pagination"
 
 
-@pytest.mark.vcr()
+@pytest.mark.vcr
 def test_cdt_patient_read(client, vcr_cassette):
     patient = client.Patient(id="3ff322fd-b504-4784-9798-0c7c8a4fdfb8")
 
@@ -42,7 +42,7 @@ def test_cdt_patient_read(client, vcr_cassette):
     assert len(vcr_cassette) == 1
 
 
-@pytest.mark.vcr()
+@pytest.mark.vcr
 def test_cdt_update(client, vcr_cassette):
     patient = client.Patient(id="3ff322fd-b504-4784-9798-0c7c8a4fdfb8")
     cdt = patient.CDT(
@@ -54,7 +54,7 @@ def test_cdt_update(client, vcr_cassette):
     assert len(vcr_cassette) == 2
 
 
-@pytest.mark.vcr()
+@pytest.mark.vcr
 def test_cdt_bulk_update(client, vcr_cassette):
     patient = client.Patient(id="3ff322fd-b504-4784-9798-0c7c8a4fdfb8")
     cdt_1 = patient.CDT(
@@ -88,7 +88,7 @@ def test_cdt_bulk_update(client, vcr_cassette):
     assert len(vcr_cassette) == 3
 
 
-@pytest.mark.vcr()
+@pytest.mark.vcr
 def test_cdt_delete(client, vcr_cassette):
     patient = client.Patient(id="3ff322fd-b504-4784-9798-0c7c8a4fdfb8")
     cdt = patient.CDT(

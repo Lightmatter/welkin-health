@@ -3,7 +3,7 @@ import pytest
 from welkin.models.chat import Chat, Chats, ChatSearchResult, SearchChats
 
 
-@pytest.mark.vcr()
+@pytest.mark.vcr
 def test_create_chat(client, vcr_cassette):
     patient_id = "17450e44-c2c8-46c4-9486-0d9bfa16d3aa"
     message = "Foo Baz."
@@ -15,7 +15,7 @@ def test_create_chat(client, vcr_cassette):
     assert len(vcr_cassette) == 1
 
 
-@pytest.mark.vcr()
+@pytest.mark.vcr
 def test_read_chat(client, vcr_cassette):
     patient_id = "17450e44-c2c8-46c4-9486-0d9bfa16d3aa"
     patient = client.Patient(id=patient_id)
@@ -29,7 +29,7 @@ def test_read_chat(client, vcr_cassette):
     assert len(vcr_cassette) == 1
 
 
-@pytest.mark.vcr()
+@pytest.mark.vcr
 def test_search_chat(client, vcr_cassette):
     patient_id = "17450e44-c2c8-46c4-9486-0d9bfa16d3aa"
     query = "Test"

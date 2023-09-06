@@ -3,7 +3,7 @@ import pytest
 from welkin.models import CarePlan
 
 
-@pytest.mark.vcr()
+@pytest.mark.vcr
 def test_care_plan_create(client, vcr_cassette):
     patient = client.Patient(id="173a8adf-92e8-4832-8900-027c71b0d768")
 
@@ -17,7 +17,7 @@ def test_care_plan_create(client, vcr_cassette):
     assert len(vcr_cassette) == 1
 
 
-@pytest.mark.vcr()
+@pytest.mark.vcr
 def test_care_plan_create_passing_patient_id(client, vcr_cassette):
     patient_id = "331678c1-0ec9-4e4a-a947-8147a1d067a5"
     overview_message = "This is a message for the overview."
@@ -28,7 +28,7 @@ def test_care_plan_create_passing_patient_id(client, vcr_cassette):
     assert len(vcr_cassette) == 1
 
 
-@pytest.mark.vcr()
+@pytest.mark.vcr
 def test_care_plan_read(client, vcr_cassette):
     patient = client.Patient(id="173a8adf-92e8-4832-8900-027c71b0d768")
     care_plan = patient.CarePlan().get()
@@ -38,7 +38,7 @@ def test_care_plan_read(client, vcr_cassette):
     assert len(vcr_cassette) == 1
 
 
-@pytest.mark.vcr()
+@pytest.mark.vcr
 def test_care_plan_read_passing_patient_id(client, vcr_cassette):
     patient_id = "331678c1-0ec9-4e4a-a947-8147a1d067a5"
     care_plan = client.CarePlan().get(patient_id=patient_id)
@@ -48,7 +48,7 @@ def test_care_plan_read_passing_patient_id(client, vcr_cassette):
     assert len(vcr_cassette) == 1
 
 
-@pytest.mark.vcr()
+@pytest.mark.vcr
 def test_care_plan_update(client, vcr_cassette):
     patient = client.Patient(id="173a8adf-92e8-4832-8900-027c71b0d768")
     care_plan = patient.CarePlan().get()
@@ -62,7 +62,7 @@ def test_care_plan_update(client, vcr_cassette):
     assert len(vcr_cassette) == 3
 
 
-@pytest.mark.vcr()
+@pytest.mark.vcr
 def test_care_plan_update_passing_patient_id(client, vcr_cassette):
     patient_id = "173a8adf-92e8-4832-8900-027c71b0d768"
     care_plan = client.CarePlan().get(patient_id=patient_id)

@@ -1,0 +1,522 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - API_TOKEN_7a18ec10-2230-4efa-a6ff-c4dce93b580b
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-welkin/0.1.0
+    method: GET
+    uri: https://api.live.welkincloud.io/tenant_REDACTED/instance_REDACTED/formations/current/document-types?page=0
+  response:
+    body:
+      string: '[{"id": "19b62276-8b19-4662-aa95-a1c65ce8dfe6", "name": "doc-type-others",
+        "title": "Others", "label": "Others", "version": 75, "internal": true, "readable":
+        true, "updatable": true, "type": "MULTI_RECORD", "relation": "DOCUMENT_TYPE",
+        "fields": [{"name": "notes", "type": "text", "formula": null, "dictionary":
+        null, "profileDataType": null, "editable": true, "searchable": false, "bulkEdit":
+        false, "phi": true, "disable": false, "injectedSource": false, "displayType":
+        null, "valueType": null, "meta": {"required": false}}, {"name": "id", "type":
+        "text", "formula": null, "dictionary": null, "profileDataType": null, "editable":
+        false, "searchable": false, "bulkEdit": false, "phi": false, "disable": false,
+        "injectedSource": false, "displayType": null, "valueType": null, "meta": {"required":
+        false}}, {"name": "created_at", "type": "datetime", "formula": null, "dictionary":
+        null, "profileDataType": null, "editable": false, "searchable": false, "bulkEdit":
+        false, "phi": false, "disable": false, "injectedSource": false, "displayType":
+        null, "valueType": null, "meta": {"required": false}}, {"name": "created_by",
+        "type": "text", "formula": null, "dictionary": null, "profileDataType": null,
+        "editable": false, "searchable": false, "bulkEdit": false, "phi": false, "disable":
+        false, "injectedSource": false, "displayType": null, "valueType": null, "meta":
+        {"required": false}}, {"name": "created_by_name", "type": "text", "formula":
+        null, "dictionary": null, "profileDataType": null, "editable": false, "searchable":
+        false, "bulkEdit": false, "phi": false, "disable": false, "injectedSource":
+        false, "displayType": null, "valueType": null, "meta": {"required": false}},
+        {"name": "updated_at", "type": "datetime", "formula": null, "dictionary":
+        null, "profileDataType": null, "editable": false, "searchable": false, "bulkEdit":
+        false, "phi": false, "disable": false, "injectedSource": false, "displayType":
+        null, "valueType": null, "meta": {"required": false}}, {"name": "updated_by",
+        "type": "text", "formula": null, "dictionary": null, "profileDataType": null,
+        "editable": false, "searchable": false, "bulkEdit": false, "phi": false, "disable":
+        false, "injectedSource": false, "displayType": null, "valueType": null, "meta":
+        {"required": false}}, {"name": "updated_by_name", "type": "text", "formula":
+        null, "dictionary": null, "profileDataType": null, "editable": false, "searchable":
+        false, "bulkEdit": false, "phi": false, "disable": false, "injectedSource":
+        false, "displayType": null, "valueType": null, "meta": {"required": false}},
+        {"name": "source_name", "type": "text", "formula": null, "dictionary": null,
+        "profileDataType": null, "editable": false, "searchable": false, "bulkEdit":
+        false, "phi": false, "disable": false, "injectedSource": false, "displayType":
+        null, "valueType": null, "meta": {"required": false}}, {"name": "source_type",
+        "type": "text", "formula": null, "dictionary": null, "profileDataType": null,
+        "editable": false, "searchable": false, "bulkEdit": false, "phi": false, "disable":
+        false, "injectedSource": false, "displayType": null, "valueType": null, "meta":
+        {"required": false}}, {"name": "source_id", "type": "text", "formula": null,
+        "dictionary": null, "profileDataType": null, "editable": false, "searchable":
+        false, "bulkEdit": false, "phi": false, "disable": false, "injectedSource":
+        false, "displayType": null, "valueType": null, "meta": {"required": false}},
+        {"name": "external_id", "type": "text", "formula": null, "dictionary": null,
+        "profileDataType": null, "editable": true, "searchable": false, "bulkEdit":
+        false, "phi": false, "disable": false, "injectedSource": false, "displayType":
+        null, "valueType": null, "meta": {"required": false}}, {"name": "external_guid",
+        "type": "text", "formula": null, "dictionary": null, "profileDataType": null,
+        "editable": true, "searchable": false, "bulkEdit": false, "phi": false, "disable":
+        false, "injectedSource": false, "displayType": null, "valueType": null, "meta":
+        {"required": false}}], "_containsPHI": true}, {"id": "b356ecb8-31f6-4f73-9e01-f671c02536d5",
+        "name": "doc-type-assessment", "title": "Assessment", "label": "Assessment",
+        "version": 75, "internal": true, "readable": true, "updatable": true, "type":
+        "MULTI_RECORD", "relation": "DOCUMENT_TYPE", "fields": [{"name": "notes",
+        "type": "text", "formula": null, "dictionary": null, "profileDataType": null,
+        "editable": true, "searchable": false, "bulkEdit": false, "phi": true, "disable":
+        false, "injectedSource": false, "displayType": null, "valueType": null, "meta":
+        {"required": false}}, {"name": "id", "type": "text", "formula": null, "dictionary":
+        null, "profileDataType": null, "editable": false, "searchable": false, "bulkEdit":
+        false, "phi": false, "disable": false, "injectedSource": false, "displayType":
+        null, "valueType": null, "meta": {"required": false}}, {"name": "created_at",
+        "type": "datetime", "formula": null, "dictionary": null, "profileDataType":
+        null, "editable": false, "searchable": false, "bulkEdit": false, "phi": false,
+        "disable": false, "injectedSource": false, "displayType": null, "valueType":
+        null, "meta": {"required": false}}, {"name": "created_by", "type": "text",
+        "formula": null, "dictionary": null, "profileDataType": null, "editable":
+        false, "searchable": false, "bulkEdit": false, "phi": false, "disable": false,
+        "injectedSource": false, "displayType": null, "valueType": null, "meta": {"required":
+        false}}, {"name": "created_by_name", "type": "text", "formula": null, "dictionary":
+        null, "profileDataType": null, "editable": false, "searchable": false, "bulkEdit":
+        false, "phi": false, "disable": false, "injectedSource": false, "displayType":
+        null, "valueType": null, "meta": {"required": false}}, {"name": "updated_at",
+        "type": "datetime", "formula": null, "dictionary": null, "profileDataType":
+        null, "editable": false, "searchable": false, "bulkEdit": false, "phi": false,
+        "disable": false, "injectedSource": false, "displayType": null, "valueType":
+        null, "meta": {"required": false}}, {"name": "updated_by", "type": "text",
+        "formula": null, "dictionary": null, "profileDataType": null, "editable":
+        false, "searchable": false, "bulkEdit": false, "phi": false, "disable": false,
+        "injectedSource": false, "displayType": null, "valueType": null, "meta": {"required":
+        false}}, {"name": "updated_by_name", "type": "text", "formula": null, "dictionary":
+        null, "profileDataType": null, "editable": false, "searchable": false, "bulkEdit":
+        false, "phi": false, "disable": false, "injectedSource": false, "displayType":
+        null, "valueType": null, "meta": {"required": false}}, {"name": "source_name",
+        "type": "text", "formula": null, "dictionary": null, "profileDataType": null,
+        "editable": false, "searchable": false, "bulkEdit": false, "phi": false, "disable":
+        false, "injectedSource": false, "displayType": null, "valueType": null, "meta":
+        {"required": false}}, {"name": "source_type", "type": "text", "formula": null,
+        "dictionary": null, "profileDataType": null, "editable": false, "searchable":
+        false, "bulkEdit": false, "phi": false, "disable": false, "injectedSource":
+        false, "displayType": null, "valueType": null, "meta": {"required": false}},
+        {"name": "source_id", "type": "text", "formula": null, "dictionary": null,
+        "profileDataType": null, "editable": false, "searchable": false, "bulkEdit":
+        false, "phi": false, "disable": false, "injectedSource": false, "displayType":
+        null, "valueType": null, "meta": {"required": false}}, {"name": "external_id",
+        "type": "text", "formula": null, "dictionary": null, "profileDataType": null,
+        "editable": true, "searchable": false, "bulkEdit": false, "phi": false, "disable":
+        false, "injectedSource": false, "displayType": null, "valueType": null, "meta":
+        {"required": false}}, {"name": "external_guid", "type": "text", "formula":
+        null, "dictionary": null, "profileDataType": null, "editable": true, "searchable":
+        false, "bulkEdit": false, "phi": false, "disable": false, "injectedSource":
+        false, "displayType": null, "valueType": null, "meta": {"required": false}}],
+        "_containsPHI": true}, {"id": "0c1fbcbb-152f-4613-ac22-48efdfaf6a98", "name":
+        "doc-type-docusign", "title": "Docusign", "label": "Docusign", "version":
+        75, "internal": true, "readable": true, "updatable": true, "type": "MULTI_RECORD",
+        "relation": "DOCUMENT_TYPE", "fields": [{"name": "notes", "type": "text",
+        "formula": null, "dictionary": null, "profileDataType": null, "editable":
+        true, "searchable": false, "bulkEdit": false, "phi": true, "disable": false,
+        "injectedSource": false, "displayType": null, "valueType": null, "meta": {"required":
+        false}}, {"name": "id", "type": "text", "formula": null, "dictionary": null,
+        "profileDataType": null, "editable": false, "searchable": false, "bulkEdit":
+        false, "phi": false, "disable": false, "injectedSource": false, "displayType":
+        null, "valueType": null, "meta": {"required": false}}, {"name": "created_at",
+        "type": "datetime", "formula": null, "dictionary": null, "profileDataType":
+        null, "editable": false, "searchable": false, "bulkEdit": false, "phi": false,
+        "disable": false, "injectedSource": false, "displayType": null, "valueType":
+        null, "meta": {"required": false}}, {"name": "created_by", "type": "text",
+        "formula": null, "dictionary": null, "profileDataType": null, "editable":
+        false, "searchable": false, "bulkEdit": false, "phi": false, "disable": false,
+        "injectedSource": false, "displayType": null, "valueType": null, "meta": {"required":
+        false}}, {"name": "created_by_name", "type": "text", "formula": null, "dictionary":
+        null, "profileDataType": null, "editable": false, "searchable": false, "bulkEdit":
+        false, "phi": false, "disable": false, "injectedSource": false, "displayType":
+        null, "valueType": null, "meta": {"required": false}}, {"name": "updated_at",
+        "type": "datetime", "formula": null, "dictionary": null, "profileDataType":
+        null, "editable": false, "searchable": false, "bulkEdit": false, "phi": false,
+        "disable": false, "injectedSource": false, "displayType": null, "valueType":
+        null, "meta": {"required": false}}, {"name": "updated_by", "type": "text",
+        "formula": null, "dictionary": null, "profileDataType": null, "editable":
+        false, "searchable": false, "bulkEdit": false, "phi": false, "disable": false,
+        "injectedSource": false, "displayType": null, "valueType": null, "meta": {"required":
+        false}}, {"name": "updated_by_name", "type": "text", "formula": null, "dictionary":
+        null, "profileDataType": null, "editable": false, "searchable": false, "bulkEdit":
+        false, "phi": false, "disable": false, "injectedSource": false, "displayType":
+        null, "valueType": null, "meta": {"required": false}}, {"name": "source_name",
+        "type": "text", "formula": null, "dictionary": null, "profileDataType": null,
+        "editable": false, "searchable": false, "bulkEdit": false, "phi": false, "disable":
+        false, "injectedSource": false, "displayType": null, "valueType": null, "meta":
+        {"required": false}}, {"name": "source_type", "type": "text", "formula": null,
+        "dictionary": null, "profileDataType": null, "editable": false, "searchable":
+        false, "bulkEdit": false, "phi": false, "disable": false, "injectedSource":
+        false, "displayType": null, "valueType": null, "meta": {"required": false}},
+        {"name": "source_id", "type": "text", "formula": null, "dictionary": null,
+        "profileDataType": null, "editable": false, "searchable": false, "bulkEdit":
+        false, "phi": false, "disable": false, "injectedSource": false, "displayType":
+        null, "valueType": null, "meta": {"required": false}}, {"name": "external_id",
+        "type": "text", "formula": null, "dictionary": null, "profileDataType": null,
+        "editable": true, "searchable": false, "bulkEdit": false, "phi": false, "disable":
+        false, "injectedSource": false, "displayType": null, "valueType": null, "meta":
+        {"required": false}}, {"name": "external_guid", "type": "text", "formula":
+        null, "dictionary": null, "profileDataType": null, "editable": true, "searchable":
+        false, "bulkEdit": false, "phi": false, "disable": false, "injectedSource":
+        false, "displayType": null, "valueType": null, "meta": {"required": false}}],
+        "_containsPHI": true}, {"id": "7e257d38-adf5-4b12-9976-f630c6ca13b1", "name":
+        "dt-driver-s-license", "title": "Driver''s License", "label": null, "version":
+        75, "internal": true, "readable": true, "updatable": true, "type": "MULTI_RECORD",
+        "relation": "DOCUMENT_TYPE", "fields": [{"name": "dtf-notes", "type": "textarea",
+        "formula": null, "dictionary": null, "profileDataType": null, "editable":
+        true, "searchable": false, "bulkEdit": false, "phi": true, "disable": false,
+        "injectedSource": false, "displayType": null, "valueType": null, "meta": {"required":
+        false}}, {"name": "id", "type": "text", "formula": null, "dictionary": null,
+        "profileDataType": null, "editable": false, "searchable": false, "bulkEdit":
+        false, "phi": false, "disable": false, "injectedSource": false, "displayType":
+        null, "valueType": null, "meta": {"required": false}}, {"name": "created_at",
+        "type": "datetime", "formula": null, "dictionary": null, "profileDataType":
+        null, "editable": false, "searchable": false, "bulkEdit": false, "phi": false,
+        "disable": false, "injectedSource": false, "displayType": null, "valueType":
+        null, "meta": {"required": false}}, {"name": "created_by", "type": "text",
+        "formula": null, "dictionary": null, "profileDataType": null, "editable":
+        false, "searchable": false, "bulkEdit": false, "phi": false, "disable": false,
+        "injectedSource": false, "displayType": null, "valueType": null, "meta": {"required":
+        false}}, {"name": "created_by_name", "type": "text", "formula": null, "dictionary":
+        null, "profileDataType": null, "editable": false, "searchable": false, "bulkEdit":
+        false, "phi": false, "disable": false, "injectedSource": false, "displayType":
+        null, "valueType": null, "meta": {"required": false}}, {"name": "updated_at",
+        "type": "datetime", "formula": null, "dictionary": null, "profileDataType":
+        null, "editable": false, "searchable": false, "bulkEdit": false, "phi": false,
+        "disable": false, "injectedSource": false, "displayType": null, "valueType":
+        null, "meta": {"required": false}}, {"name": "updated_by", "type": "text",
+        "formula": null, "dictionary": null, "profileDataType": null, "editable":
+        false, "searchable": false, "bulkEdit": false, "phi": false, "disable": false,
+        "injectedSource": false, "displayType": null, "valueType": null, "meta": {"required":
+        false}}, {"name": "updated_by_name", "type": "text", "formula": null, "dictionary":
+        null, "profileDataType": null, "editable": false, "searchable": false, "bulkEdit":
+        false, "phi": false, "disable": false, "injectedSource": false, "displayType":
+        null, "valueType": null, "meta": {"required": false}}, {"name": "source_name",
+        "type": "text", "formula": null, "dictionary": null, "profileDataType": null,
+        "editable": false, "searchable": false, "bulkEdit": false, "phi": false, "disable":
+        false, "injectedSource": false, "displayType": null, "valueType": null, "meta":
+        {"required": false}}, {"name": "source_type", "type": "text", "formula": null,
+        "dictionary": null, "profileDataType": null, "editable": false, "searchable":
+        false, "bulkEdit": false, "phi": false, "disable": false, "injectedSource":
+        false, "displayType": null, "valueType": null, "meta": {"required": false}},
+        {"name": "source_id", "type": "text", "formula": null, "dictionary": null,
+        "profileDataType": null, "editable": false, "searchable": false, "bulkEdit":
+        false, "phi": false, "disable": false, "injectedSource": false, "displayType":
+        null, "valueType": null, "meta": {"required": false}}, {"name": "external_id",
+        "type": "text", "formula": null, "dictionary": null, "profileDataType": null,
+        "editable": true, "searchable": false, "bulkEdit": false, "phi": false, "disable":
+        false, "injectedSource": false, "displayType": null, "valueType": null, "meta":
+        {"required": false}}, {"name": "external_guid", "type": "text", "formula":
+        null, "dictionary": null, "profileDataType": null, "editable": true, "searchable":
+        false, "bulkEdit": false, "phi": false, "disable": false, "injectedSource":
+        false, "displayType": null, "valueType": null, "meta": {"required": false}}],
+        "_containsPHI": true}, {"id": "a4fef951-8c65-4114-a0cb-785ad4061396", "name":
+        "dt-insurance-card", "title": "Insurance Card", "label": null, "version":
+        75, "internal": true, "readable": true, "updatable": true, "type": "MULTI_RECORD",
+        "relation": "DOCUMENT_TYPE", "fields": [{"name": "dtf-notes", "type": "textarea",
+        "formula": null, "dictionary": null, "profileDataType": null, "editable":
+        true, "searchable": false, "bulkEdit": false, "phi": true, "disable": false,
+        "injectedSource": false, "displayType": null, "valueType": null, "meta": {"required":
+        false}}, {"name": "id", "type": "text", "formula": null, "dictionary": null,
+        "profileDataType": null, "editable": false, "searchable": false, "bulkEdit":
+        false, "phi": false, "disable": false, "injectedSource": false, "displayType":
+        null, "valueType": null, "meta": {"required": false}}, {"name": "created_at",
+        "type": "datetime", "formula": null, "dictionary": null, "profileDataType":
+        null, "editable": false, "searchable": false, "bulkEdit": false, "phi": false,
+        "disable": false, "injectedSource": false, "displayType": null, "valueType":
+        null, "meta": {"required": false}}, {"name": "created_by", "type": "text",
+        "formula": null, "dictionary": null, "profileDataType": null, "editable":
+        false, "searchable": false, "bulkEdit": false, "phi": false, "disable": false,
+        "injectedSource": false, "displayType": null, "valueType": null, "meta": {"required":
+        false}}, {"name": "created_by_name", "type": "text", "formula": null, "dictionary":
+        null, "profileDataType": null, "editable": false, "searchable": false, "bulkEdit":
+        false, "phi": false, "disable": false, "injectedSource": false, "displayType":
+        null, "valueType": null, "meta": {"required": false}}, {"name": "updated_at",
+        "type": "datetime", "formula": null, "dictionary": null, "profileDataType":
+        null, "editable": false, "searchable": false, "bulkEdit": false, "phi": false,
+        "disable": false, "injectedSource": false, "displayType": null, "valueType":
+        null, "meta": {"required": false}}, {"name": "updated_by", "type": "text",
+        "formula": null, "dictionary": null, "profileDataType": null, "editable":
+        false, "searchable": false, "bulkEdit": false, "phi": false, "disable": false,
+        "injectedSource": false, "displayType": null, "valueType": null, "meta": {"required":
+        false}}, {"name": "updated_by_name", "type": "text", "formula": null, "dictionary":
+        null, "profileDataType": null, "editable": false, "searchable": false, "bulkEdit":
+        false, "phi": false, "disable": false, "injectedSource": false, "displayType":
+        null, "valueType": null, "meta": {"required": false}}, {"name": "source_name",
+        "type": "text", "formula": null, "dictionary": null, "profileDataType": null,
+        "editable": false, "searchable": false, "bulkEdit": false, "phi": false, "disable":
+        false, "injectedSource": false, "displayType": null, "valueType": null, "meta":
+        {"required": false}}, {"name": "source_type", "type": "text", "formula": null,
+        "dictionary": null, "profileDataType": null, "editable": false, "searchable":
+        false, "bulkEdit": false, "phi": false, "disable": false, "injectedSource":
+        false, "displayType": null, "valueType": null, "meta": {"required": false}},
+        {"name": "source_id", "type": "text", "formula": null, "dictionary": null,
+        "profileDataType": null, "editable": false, "searchable": false, "bulkEdit":
+        false, "phi": false, "disable": false, "injectedSource": false, "displayType":
+        null, "valueType": null, "meta": {"required": false}}, {"name": "external_id",
+        "type": "text", "formula": null, "dictionary": null, "profileDataType": null,
+        "editable": true, "searchable": false, "bulkEdit": false, "phi": false, "disable":
+        false, "injectedSource": false, "displayType": null, "valueType": null, "meta":
+        {"required": false}}, {"name": "external_guid", "type": "text", "formula":
+        null, "dictionary": null, "profileDataType": null, "editable": true, "searchable":
+        false, "bulkEdit": false, "phi": false, "disable": false, "injectedSource":
+        false, "displayType": null, "valueType": null, "meta": {"required": false}}],
+        "_containsPHI": true}, {"id": "e0084895-4e16-407b-afe0-ac7cc9668d77", "name":
+        "dt-intake-images", "title": "Intake Images", "label": null, "version": 75,
+        "internal": true, "readable": true, "updatable": true, "type": "MULTI_RECORD",
+        "relation": "DOCUMENT_TYPE", "fields": [{"name": "dtf-notes", "type": "textarea",
+        "formula": null, "dictionary": null, "profileDataType": null, "editable":
+        true, "searchable": false, "bulkEdit": false, "phi": true, "disable": false,
+        "injectedSource": false, "displayType": null, "valueType": null, "meta": {"required":
+        false}}, {"name": "id", "type": "text", "formula": null, "dictionary": null,
+        "profileDataType": null, "editable": false, "searchable": false, "bulkEdit":
+        false, "phi": false, "disable": false, "injectedSource": false, "displayType":
+        null, "valueType": null, "meta": {"required": false}}, {"name": "created_at",
+        "type": "datetime", "formula": null, "dictionary": null, "profileDataType":
+        null, "editable": false, "searchable": false, "bulkEdit": false, "phi": false,
+        "disable": false, "injectedSource": false, "displayType": null, "valueType":
+        null, "meta": {"required": false}}, {"name": "created_by", "type": "text",
+        "formula": null, "dictionary": null, "profileDataType": null, "editable":
+        false, "searchable": false, "bulkEdit": false, "phi": false, "disable": false,
+        "injectedSource": false, "displayType": null, "valueType": null, "meta": {"required":
+        false}}, {"name": "created_by_name", "type": "text", "formula": null, "dictionary":
+        null, "profileDataType": null, "editable": false, "searchable": false, "bulkEdit":
+        false, "phi": false, "disable": false, "injectedSource": false, "displayType":
+        null, "valueType": null, "meta": {"required": false}}, {"name": "updated_at",
+        "type": "datetime", "formula": null, "dictionary": null, "profileDataType":
+        null, "editable": false, "searchable": false, "bulkEdit": false, "phi": false,
+        "disable": false, "injectedSource": false, "displayType": null, "valueType":
+        null, "meta": {"required": false}}, {"name": "updated_by", "type": "text",
+        "formula": null, "dictionary": null, "profileDataType": null, "editable":
+        false, "searchable": false, "bulkEdit": false, "phi": false, "disable": false,
+        "injectedSource": false, "displayType": null, "valueType": null, "meta": {"required":
+        false}}, {"name": "updated_by_name", "type": "text", "formula": null, "dictionary":
+        null, "profileDataType": null, "editable": false, "searchable": false, "bulkEdit":
+        false, "phi": false, "disable": false, "injectedSource": false, "displayType":
+        null, "valueType": null, "meta": {"required": false}}, {"name": "source_name",
+        "type": "text", "formula": null, "dictionary": null, "profileDataType": null,
+        "editable": false, "searchable": false, "bulkEdit": false, "phi": false, "disable":
+        false, "injectedSource": false, "displayType": null, "valueType": null, "meta":
+        {"required": false}}, {"name": "source_type", "type": "text", "formula": null,
+        "dictionary": null, "profileDataType": null, "editable": false, "searchable":
+        false, "bulkEdit": false, "phi": false, "disable": false, "injectedSource":
+        false, "displayType": null, "valueType": null, "meta": {"required": false}},
+        {"name": "source_id", "type": "text", "formula": null, "dictionary": null,
+        "profileDataType": null, "editable": false, "searchable": false, "bulkEdit":
+        false, "phi": false, "disable": false, "injectedSource": false, "displayType":
+        null, "valueType": null, "meta": {"required": false}}, {"name": "external_id",
+        "type": "text", "formula": null, "dictionary": null, "profileDataType": null,
+        "editable": true, "searchable": false, "bulkEdit": false, "phi": false, "disable":
+        false, "injectedSource": false, "displayType": null, "valueType": null, "meta":
+        {"required": false}}, {"name": "external_guid", "type": "text", "formula":
+        null, "dictionary": null, "profileDataType": null, "editable": true, "searchable":
+        false, "bulkEdit": false, "phi": false, "disable": false, "injectedSource":
+        false, "displayType": null, "valueType": null, "meta": {"required": false}}],
+        "_containsPHI": true}, {"id": "6172405d-8580-4a0b-8cf9-cae31fd6727c", "name":
+        "dt-patient-images", "title": "Patient Images", "label": null, "version":
+        75, "internal": true, "readable": true, "updatable": true, "type": "MULTI_RECORD",
+        "relation": "DOCUMENT_TYPE", "fields": [{"name": "dtf-pi-notes", "type": "textarea",
+        "formula": null, "dictionary": null, "profileDataType": null, "editable":
+        true, "searchable": false, "bulkEdit": false, "phi": true, "disable": false,
+        "injectedSource": false, "displayType": null, "valueType": null, "meta": {"required":
+        false}}, {"name": "id", "type": "text", "formula": null, "dictionary": null,
+        "profileDataType": null, "editable": false, "searchable": false, "bulkEdit":
+        false, "phi": false, "disable": false, "injectedSource": false, "displayType":
+        null, "valueType": null, "meta": {"required": false}}, {"name": "created_at",
+        "type": "datetime", "formula": null, "dictionary": null, "profileDataType":
+        null, "editable": false, "searchable": false, "bulkEdit": false, "phi": false,
+        "disable": false, "injectedSource": false, "displayType": null, "valueType":
+        null, "meta": {"required": false}}, {"name": "created_by", "type": "text",
+        "formula": null, "dictionary": null, "profileDataType": null, "editable":
+        false, "searchable": false, "bulkEdit": false, "phi": false, "disable": false,
+        "injectedSource": false, "displayType": null, "valueType": null, "meta": {"required":
+        false}}, {"name": "created_by_name", "type": "text", "formula": null, "dictionary":
+        null, "profileDataType": null, "editable": false, "searchable": false, "bulkEdit":
+        false, "phi": false, "disable": false, "injectedSource": false, "displayType":
+        null, "valueType": null, "meta": {"required": false}}, {"name": "updated_at",
+        "type": "datetime", "formula": null, "dictionary": null, "profileDataType":
+        null, "editable": false, "searchable": false, "bulkEdit": false, "phi": false,
+        "disable": false, "injectedSource": false, "displayType": null, "valueType":
+        null, "meta": {"required": false}}, {"name": "updated_by", "type": "text",
+        "formula": null, "dictionary": null, "profileDataType": null, "editable":
+        false, "searchable": false, "bulkEdit": false, "phi": false, "disable": false,
+        "injectedSource": false, "displayType": null, "valueType": null, "meta": {"required":
+        false}}, {"name": "updated_by_name", "type": "text", "formula": null, "dictionary":
+        null, "profileDataType": null, "editable": false, "searchable": false, "bulkEdit":
+        false, "phi": false, "disable": false, "injectedSource": false, "displayType":
+        null, "valueType": null, "meta": {"required": false}}, {"name": "source_name",
+        "type": "text", "formula": null, "dictionary": null, "profileDataType": null,
+        "editable": false, "searchable": false, "bulkEdit": false, "phi": false, "disable":
+        false, "injectedSource": false, "displayType": null, "valueType": null, "meta":
+        {"required": false}}, {"name": "source_type", "type": "text", "formula": null,
+        "dictionary": null, "profileDataType": null, "editable": false, "searchable":
+        false, "bulkEdit": false, "phi": false, "disable": false, "injectedSource":
+        false, "displayType": null, "valueType": null, "meta": {"required": false}},
+        {"name": "source_id", "type": "text", "formula": null, "dictionary": null,
+        "profileDataType": null, "editable": false, "searchable": false, "bulkEdit":
+        false, "phi": false, "disable": false, "injectedSource": false, "displayType":
+        null, "valueType": null, "meta": {"required": false}}, {"name": "external_id",
+        "type": "text", "formula": null, "dictionary": null, "profileDataType": null,
+        "editable": true, "searchable": false, "bulkEdit": false, "phi": false, "disable":
+        false, "injectedSource": false, "displayType": null, "valueType": null, "meta":
+        {"required": false}}, {"name": "external_guid", "type": "text", "formula":
+        null, "dictionary": null, "profileDataType": null, "editable": true, "searchable":
+        false, "bulkEdit": false, "phi": false, "disable": false, "injectedSource":
+        false, "displayType": null, "valueType": null, "meta": {"required": false}}],
+        "_containsPHI": true}, {"id": "3233161c-32fb-4986-98aa-a66ece6a6a03", "name":
+        "dt-prior-authorization", "title": "Prior Authorization", "label": null, "version":
+        75, "internal": true, "readable": true, "updatable": true, "type": "MULTI_RECORD",
+        "relation": "DOCUMENT_TYPE", "fields": [{"name": "dtf-pa-notes", "type": "textarea",
+        "formula": null, "dictionary": null, "profileDataType": null, "editable":
+        true, "searchable": false, "bulkEdit": false, "phi": true, "disable": false,
+        "injectedSource": false, "displayType": null, "valueType": null, "meta": {"required":
+        false}}, {"name": "id", "type": "text", "formula": null, "dictionary": null,
+        "profileDataType": null, "editable": false, "searchable": false, "bulkEdit":
+        false, "phi": false, "disable": false, "injectedSource": false, "displayType":
+        null, "valueType": null, "meta": {"required": false}}, {"name": "created_at",
+        "type": "datetime", "formula": null, "dictionary": null, "profileDataType":
+        null, "editable": false, "searchable": false, "bulkEdit": false, "phi": false,
+        "disable": false, "injectedSource": false, "displayType": null, "valueType":
+        null, "meta": {"required": false}}, {"name": "created_by", "type": "text",
+        "formula": null, "dictionary": null, "profileDataType": null, "editable":
+        false, "searchable": false, "bulkEdit": false, "phi": false, "disable": false,
+        "injectedSource": false, "displayType": null, "valueType": null, "meta": {"required":
+        false}}, {"name": "created_by_name", "type": "text", "formula": null, "dictionary":
+        null, "profileDataType": null, "editable": false, "searchable": false, "bulkEdit":
+        false, "phi": false, "disable": false, "injectedSource": false, "displayType":
+        null, "valueType": null, "meta": {"required": false}}, {"name": "updated_at",
+        "type": "datetime", "formula": null, "dictionary": null, "profileDataType":
+        null, "editable": false, "searchable": false, "bulkEdit": false, "phi": false,
+        "disable": false, "injectedSource": false, "displayType": null, "valueType":
+        null, "meta": {"required": false}}, {"name": "updated_by", "type": "text",
+        "formula": null, "dictionary": null, "profileDataType": null, "editable":
+        false, "searchable": false, "bulkEdit": false, "phi": false, "disable": false,
+        "injectedSource": false, "displayType": null, "valueType": null, "meta": {"required":
+        false}}, {"name": "updated_by_name", "type": "text", "formula": null, "dictionary":
+        null, "profileDataType": null, "editable": false, "searchable": false, "bulkEdit":
+        false, "phi": false, "disable": false, "injectedSource": false, "displayType":
+        null, "valueType": null, "meta": {"required": false}}, {"name": "source_name",
+        "type": "text", "formula": null, "dictionary": null, "profileDataType": null,
+        "editable": false, "searchable": false, "bulkEdit": false, "phi": false, "disable":
+        false, "injectedSource": false, "displayType": null, "valueType": null, "meta":
+        {"required": false}}, {"name": "source_type", "type": "text", "formula": null,
+        "dictionary": null, "profileDataType": null, "editable": false, "searchable":
+        false, "bulkEdit": false, "phi": false, "disable": false, "injectedSource":
+        false, "displayType": null, "valueType": null, "meta": {"required": false}},
+        {"name": "source_id", "type": "text", "formula": null, "dictionary": null,
+        "profileDataType": null, "editable": false, "searchable": false, "bulkEdit":
+        false, "phi": false, "disable": false, "injectedSource": false, "displayType":
+        null, "valueType": null, "meta": {"required": false}}, {"name": "external_id",
+        "type": "text", "formula": null, "dictionary": null, "profileDataType": null,
+        "editable": true, "searchable": false, "bulkEdit": false, "phi": false, "disable":
+        false, "injectedSource": false, "displayType": null, "valueType": null, "meta":
+        {"required": false}}, {"name": "external_guid", "type": "text", "formula":
+        null, "dictionary": null, "profileDataType": null, "editable": true, "searchable":
+        false, "bulkEdit": false, "phi": false, "disable": false, "injectedSource":
+        false, "displayType": null, "valueType": null, "meta": {"required": false}}],
+        "_containsPHI": true}, {"id": "20189d3a-79ed-4d67-aada-aae40f58697d", "name":
+        "medical-records", "title": "Medical Records", "label": null, "version": 75,
+        "internal": true, "readable": true, "updatable": true, "type": "MULTI_RECORD",
+        "relation": "DOCUMENT_TYPE", "fields": [{"name": "date", "type": "date", "formula":
+        null, "dictionary": null, "profileDataType": null, "editable": true, "searchable":
+        false, "bulkEdit": false, "phi": true, "disable": false, "injectedSource":
+        false, "displayType": null, "valueType": null, "meta": {"required": false}},
+        {"name": "visit-type", "type": "select", "formula": null, "dictionary": null,
+        "profileDataType": null, "editable": true, "searchable": true, "bulkEdit":
+        false, "phi": true, "disable": false, "injectedSource": false, "displayType":
+        "SELECT", "valueType": "STRING", "meta": {"required": false, "options": [{"label":
+        "ER", "value": "ER", "refCdtName": null}, {"label": "Urgent Care", "value":
+        "Urgent Care", "refCdtName": null}, {"label": "PCP", "value": "PCP", "refCdtName":
+        null}, {"label": "Dermatologist", "value": "Dermatologist", "refCdtName":
+        null}, {"label": "Other", "value": "Other", "refCdtName": null}], "multiple":
+        false}}, {"name": "id", "type": "text", "formula": null, "dictionary": null,
+        "profileDataType": null, "editable": false, "searchable": false, "bulkEdit":
+        false, "phi": false, "disable": false, "injectedSource": false, "displayType":
+        null, "valueType": null, "meta": {"required": false}}, {"name": "created_at",
+        "type": "datetime", "formula": null, "dictionary": null, "profileDataType":
+        null, "editable": false, "searchable": false, "bulkEdit": false, "phi": false,
+        "disable": false, "injectedSource": false, "displayType": null, "valueType":
+        null, "meta": {"required": false}}, {"name": "created_by", "type": "text",
+        "formula": null, "dictionary": null, "profileDataType": null, "editable":
+        false, "searchable": false, "bulkEdit": false, "phi": false, "disable": false,
+        "injectedSource": false, "displayType": null, "valueType": null, "meta": {"required":
+        false}}, {"name": "created_by_name", "type": "text", "formula": null, "dictionary":
+        null, "profileDataType": null, "editable": false, "searchable": false, "bulkEdit":
+        false, "phi": false, "disable": false, "injectedSource": false, "displayType":
+        null, "valueType": null, "meta": {"required": false}}, {"name": "updated_at",
+        "type": "datetime", "formula": null, "dictionary": null, "profileDataType":
+        null, "editable": false, "searchable": false, "bulkEdit": false, "phi": false,
+        "disable": false, "injectedSource": false, "displayType": null, "valueType":
+        null, "meta": {"required": false}}, {"name": "updated_by", "type": "text",
+        "formula": null, "dictionary": null, "profileDataType": null, "editable":
+        false, "searchable": false, "bulkEdit": false, "phi": false, "disable": false,
+        "injectedSource": false, "displayType": null, "valueType": null, "meta": {"required":
+        false}}, {"name": "updated_by_name", "type": "text", "formula": null, "dictionary":
+        null, "profileDataType": null, "editable": false, "searchable": false, "bulkEdit":
+        false, "phi": false, "disable": false, "injectedSource": false, "displayType":
+        null, "valueType": null, "meta": {"required": false}}, {"name": "source_name",
+        "type": "text", "formula": null, "dictionary": null, "profileDataType": null,
+        "editable": false, "searchable": false, "bulkEdit": false, "phi": false, "disable":
+        false, "injectedSource": false, "displayType": null, "valueType": null, "meta":
+        {"required": false}}, {"name": "source_type", "type": "text", "formula": null,
+        "dictionary": null, "profileDataType": null, "editable": false, "searchable":
+        false, "bulkEdit": false, "phi": false, "disable": false, "injectedSource":
+        false, "displayType": null, "valueType": null, "meta": {"required": false}},
+        {"name": "source_id", "type": "text", "formula": null, "dictionary": null,
+        "profileDataType": null, "editable": false, "searchable": false, "bulkEdit":
+        false, "phi": false, "disable": false, "injectedSource": false, "displayType":
+        null, "valueType": null, "meta": {"required": false}}, {"name": "external_id",
+        "type": "text", "formula": null, "dictionary": null, "profileDataType": null,
+        "editable": true, "searchable": false, "bulkEdit": false, "phi": false, "disable":
+        false, "injectedSource": false, "displayType": null, "valueType": null, "meta":
+        {"required": false}}, {"name": "external_guid", "type": "text", "formula":
+        null, "dictionary": null, "profileDataType": null, "editable": true, "searchable":
+        false, "bulkEdit": false, "phi": false, "disable": false, "injectedSource":
+        false, "displayType": null, "valueType": null, "meta": {"required": false}}],
+        "_containsPHI": true}]'
+    headers:
+      Access-Control-Allow-Headers:
+      - authorization, content-type, xsrf-token, security-role
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, PATCH, OPTIONS
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - xsrf-token
+      Access-Control-Max-Age:
+      - '3600'
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 01 Sep 2023 22:24:41 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Strict-Transport-Security:
+      - max-age=31536000 ; includeSubDomains
+      Transfer-Encoding:
+      - chunked
+      X-Content-Type-Options:
+      - nosniff
+      X-XSS-Protection:
+      - 1; mode=block
+      content-length:
+      - '33146'
+    status:
+      code: 200
+      message: OK
+version: 1

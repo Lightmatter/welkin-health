@@ -3,6 +3,7 @@
 This module provides a Client object to interface with the Welkin Health API.
 """
 import logging
+from http import HTTPStatus
 from json import JSONDecodeError
 
 from requests import HTTPError, Session
@@ -13,8 +14,7 @@ from requests.packages.urllib3.util.retry import Retry  # type: ignore
 from welkin import __version__, models
 from welkin.authentication import WelkinAuth
 from welkin.exceptions import WelkinHTTPError
-from welkin.models.base import Collection, Resource
-from welkin.util import clean_request_params, clean_request_payload
+from welkin.util import _build_resources, clean_request_params, clean_request_payload
 
 logger = logging.getLogger(__name__)
 
@@ -69,6 +69,35 @@ class Client(Session):
         user.delete()  # Delete
     """
 
+    Assessment = models.Assessment
+    AssessmentRecord = models.AssessmentRecord
+    AssessmentRecordAnswers = models.AssessmentRecordAnswers
+    AssessmentRecords = models.AssessmentRecords
+    Assessments = models.Assessments
+    CalendarEvent = models.CalendarEvent
+    CalendarEvents = models.CalendarEvents
+    CarePlan = models.CarePlan
+    CarePlanOverview = models.CarePlanOverview
+    CDT = models.CDT
+    CDTs = models.CDTs
+    Chat = models.Chat
+    Chats = models.Chats
+    DocumentSummaries = models.DocumentSummaries
+    DocumentSummary = models.DocumentSummary
+    DocumentSummaryFile = models.DocumentSummaryFile
+    DocumentSummaryFiles = models.DocumentSummaryFiles
+    Encounter = models.Encounter
+    EncounterDisposition = models.EncounterDisposition
+    Encounters = models.Encounters
+    Formation = models.Formation
+    Patient = models.Patient
+    Patients = models.Patients
+    Schedules = models.Schedules
+    SearchChats = models.SearchChats
+    User = models.User
+    Users = models.Users
+    WorkHours = models.WorkHours
+
     def __init__(
         self,
         tenant,
@@ -103,7 +132,13 @@ class Client(Session):
             timeout=timeout,
             max_retries=Retry(
                 total=total,
-                status_forcelist=[429, 500, 502, 503, 504],
+                status_forcelist=[
+                    HTTPStatus.TOO_MANY_REQUESTS,
+                    HTTPStatus.INTERNAL_SERVER_ERROR,
+                    HTTPStatus.BAD_GATEWAY,
+                    HTTPStatus.SERVICE_UNAVAILABLE,
+                    HTTPStatus.GATEWAY_TIMEOUT,
+                ],
                 backoff_factor=backoff_factor,
             ),
         )
@@ -118,47 +153,7 @@ class Client(Session):
         )
 
         self.instance = instance
-        self.__build_resources()
-
-    def __build_resources(self) -> None:
-        """Add each resource with a reference to this instance."""
-        self.Assessment = models.Assessment
-        self.AssessmentRecord = models.AssessmentRecord
-        self.AssessmentRecordAnswers = models.AssessmentRecordAnswers
-        self.AssessmentRecords = models.AssessmentRecords
-        self.Assessments = models.Assessments
-        self.CalendarEvent = models.CalendarEvent
-        self.CalendarEvents = models.CalendarEvents
-        self.Schedules = models.Schedules
-        self.CarePlan = models.CarePlan
-        self.CarePlanOverview = models.CarePlanOverview
-        self.CDT = models.CDT
-        self.CDTs = models.CDTs
-        self.Chat = models.Chat
-        self.Chats = models.Chats
-        self.SearchChats = models.SearchChats
-        self.Disposition = models.Disposition
-        self.Documents = models.Documents
-        self.DocumentSummary = models.DocumentSummary
-        self.DocumentSummaryFile = models.DocumentSummaryFile
-        self.DocumentSummaryFiles = models.DocumentSummaryFiles
-        self.Encounter = models.Encounter
-        self.Encounters = models.Encounters
-        self.Formations = models.Formations
-        self.Patient = models.Patient
-        self.Patients = models.Patients
-        self.User = models.User
-        self.Users = models.Users
-        self.WorkHours = models.WorkHours
-
-        for k, v in vars(self).items():
-            try:
-                issubclass(v, (Collection, Resource))
-            except TypeError:
-                # Failed because `issubclass` expects a class.
-                continue
-
-            getattr(self, k)._client = self
+        _build_resources(self, "_client")
 
     def prepare_request(self, request):
         if request.json:
@@ -201,7 +196,7 @@ class Client(Session):
             except HTTPError as exc:
                 code = exc.response.status_code
 
-                if code in [401]:
+                if code in [HTTPStatus.UNAUTHORIZED]:
                     msg = response.json()
                     codes = ["NOT_VALID_JSON_WEB_TOKEN", "TOKEN_EXPIRED"]
                     if any(i.get("errorCode") in codes for i in msg):
@@ -220,6 +215,9 @@ class Client(Session):
                 return response.content
 
             raise
+
+        if "formations" in path:
+            return json
 
         if isinstance(json, list):
             json = {

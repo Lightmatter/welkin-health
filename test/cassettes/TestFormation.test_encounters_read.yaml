@@ -1,0 +1,85 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - API_TOKEN_a654176b-30d4-4b21-9bc2-81d54fd92578
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-welkin/0.1.0
+    method: GET
+    uri: https://api.live.welkincloud.io/tenant_REDACTED/instance_REDACTED/formations/current/encounters?page=0
+  response:
+    body:
+      string: '[{"id": "0521bc9f-51e1-4d6b-9453-e12f6666aa99", "name": "etmp-coaching-introduction",
+        "title": "Coaching Introduction", "encounterDescription": "", "encounterInstruction":
+        "<ol>\n<li>Review the patient''s summary, encounters, and past assessments
+        as needed.</li>\n<li>Change Encounter status to In Progress when session begins.</li>\n<li>Add
+        notes for the patient</li>\n<li>Add Nutrition and Lifestyle treatments for
+        the patient</li>\n<li>Close the Encounter</li>\n</ol>\n", "encounterColor":
+        "#e67b2d", "type": "Async", "deliveryMethod": "VIDEO", "defaultDuration":
+        15, "assessmentNames": ["asm-coaching-notes", "asm-treatment-recommendations"]},
+        {"id": "17d6101a-bfda-4167-84bf-08f4a3728c82", "name": "etmp-coaching-notes",
+        "title": "Coaching Session", "encounterDescription": "", "encounterInstruction":
+        "<ol>\n<li>1. Review the patient''s summary, encounters, and past assessments
+        as needed.</li>\n<li>Change Encounter status to In Progress when session begins.</li>\n<li>Add
+        notes for the patient</li>\n<li>Add Nutrition and Lifestyle treatments for
+        the patient</li>\n<li>Close the Encounter</li>\n</ol>\n", "encounterColor":
+        "#e67b2d", "type": "Async", "deliveryMethod": "VIDEO", "defaultDuration":
+        15, "assessmentNames": ["asm-coaching-notes", "asm-treatment-recommendations"]},
+        {"id": "3cb86ccb-ffa8-4bed-bce4-8e14fb22f124", "name": "etmp-dermatologist-consult",
+        "title": "Dermatologist Consult", "encounterDescription": "", "encounterInstruction":
+        "<ol>\n<li>Review Patient Summary and Prescriptions</li>\n<li>Complete Zoom
+        call</li>\n<li>Record notes</li>\n<li>Select treatments for patient</li>\n<li>Record
+        prescriptions in Dr. First</li>\n<li>Close encounter</li>\n</ol>\n", "encounterColor":
+        "#00a7be", "type": "Async", "deliveryMethod": "VIDEO", "defaultDuration":
+        15, "assessmentNames": ["asm-provider-notes", "asm-treatment-recommendations"]},
+        {"id": "296018d9-e23c-4f39-b9d6-fd12e78db239", "name": "new-patient-call",
+        "title": "New Member Visit", "encounterDescription": "", "encounterInstruction":
+        "<ol>\n<li>Review Patient Summary and Prescriptions</li>\n<li>Complete Zoom
+        call</li>\n<li>Record notes</li>\n<li>Select treatments for patient</li>\n<li>Record
+        prescriptions in Dr. First</li>\n<li>Close encounter</li>\n</ol>\n", "encounterColor":
+        "#00a7be", "type": "Async", "deliveryMethod": "VIDEO", "defaultDuration":
+        15, "assessmentNames": ["asm-treatment-recommendations", "asm-provider-notes"]}]'
+    headers:
+      Access-Control-Allow-Headers:
+      - authorization, content-type, xsrf-token, security-role
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, PATCH, OPTIONS
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - xsrf-token
+      Access-Control-Max-Age:
+      - '3600'
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 01 Sep 2023 22:24:41 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Strict-Transport-Security:
+      - max-age=31536000 ; includeSubDomains
+      Transfer-Encoding:
+      - chunked
+      X-Content-Type-Options:
+      - nosniff
+      X-XSS-Protection:
+      - 1; mode=block
+      content-length:
+      - '2333'
+    status:
+      code: 200
+      message: OK
+version: 1
