@@ -5,7 +5,8 @@
 [![Version](https://img.shields.io/pypi/v/welkin?style=for-the-badge&logo=pypi&logoColor=fff)](https://pypi.org/project/welkin/)
 [![Python](https://img.shields.io/pypi/pyversions/welkin?style=for-the-badge&logo=python&logoColor=fff)](https://pypi.org/project/welkin/)
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg?style=for-the-badge&logo=gnu&logoColor=fff)](https://www.gnu.org/licenses/gpl-3.0)
-[![Tests](https://img.shields.io/github/workflow/status/lightmatter/welkin-health/Python%20%F0%9F%90%8D%20package%20%F0%9F%93%A6%20test?style=for-the-badge&logo=githubactions&logoColor=fff&label=Tests)](https://github.com/Lightmatter/welkin-health/actions)
+[![Tests](https://img.shields.io/github/actions/workflow/status/lightmatter/welkin-health/test.yaml?branch=main?style=for-the-badge&logo=githubactions&logoColor=fff&label=Tests)](https://github.com/Lightmatter/welkin-health/actions)
+
 [![codecov](https://img.shields.io/codecov/c/gh/Lightmatter/welkin-health?logo=codecov&logoColor=fff&style=for-the-badge)](https://codecov.io/gh/Lightmatter/welkin-health)
 
 This package allows Python developers to write software that makes use of the Welkin Health API. Functions available in the API are mirrored in this package as closely as possible, translating JSON responses to Python objects. You can find the current documentation for the Welkin Health API here:
