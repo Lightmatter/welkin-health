@@ -1,7 +1,7 @@
 from sys import modules
 
 from welkin.models.base import Collection, Resource
-from welkin.models.util import EncounterSubResource
+from welkin.models.util import EncounterSubResource, patient_id
 from welkin.pagination import PageableIterator
 
 
@@ -80,22 +80,6 @@ class AssessmentRecordAnswers(Resource):
             f"{self._client.instance}/patients/{patient_id}/"
             f"assessment-records/{assessment_record_id}/answers"
         )
-
-
-def patient_id(func):
-    def wrapper(cls, *args, **kwargs):
-        if "patient_id" not in kwargs:
-            try:
-                kwargs["patient_id"] = cls._parent.id
-            except AttributeError:
-                raise TypeError(
-                    f"{func.__name__} is missing 1 required positional argument: "
-                    "'patient_id"
-                ) from None
-
-        return func(cls, *args, **kwargs)
-
-    return wrapper
 
 
 class AssessmentRecord(Resource):

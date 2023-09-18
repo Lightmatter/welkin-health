@@ -8,7 +8,9 @@ from welkin.models.document import (
     DocumentSummary,
     DocumentSummaryFile,
 )
+from welkin.models.email import Email, Emails
 from welkin.models.encounter import Encounter, Encounters
+from welkin.models.sms import SMS, SMSes
 from welkin.pagination import PageableIterator
 
 
@@ -21,12 +23,16 @@ class Patient(Resource):
         CDTs,
         Chat,
         Chats,
-        SearchChats,
         DocumentSummaries,
         DocumentSummary,
         DocumentSummaryFile,
+        Email,
+        Emails,
         Encounter,
         Encounters,
+        SearchChats,
+        SMS,
+        SMSes,
     ]
 
     def create(self):
