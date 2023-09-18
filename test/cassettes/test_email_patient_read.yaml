@@ -1,0 +1,58 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - API_TOKEN_7cea65aa-767c-431f-85ed-867522e9c63a
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-welkin/0.1.0
+    method: GET
+    uri: https://api.live.welkincloud.io/tenant_REDACTED/instance_REDACTED/patients/371dd15c-cedc-4425-a394-d666c8d3fc01/emails/2a8ac491-19bf-4812-9197-dffc2d42cfcf
+  response:
+    body:
+      string: '[{"errorCode": "EMAIL_NOT_FOUND", "componentType": "EMAIL", "message":
+        "Email is not found", "details": {"patientId": "371dd15c-cedc-4425-a394-d666c8d3fc01",
+        "id": "2a8ac491-19bf-4812-9197-dffc2d42cfcf"}, "date": "2023-09-18T18:36:15.807Z"}]'
+    headers:
+      Access-Control-Allow-Headers:
+      - authorization, content-type, xsrf-token, security-role
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, PATCH, OPTIONS
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - xsrf-token
+      Access-Control-Max-Age:
+      - '3600'
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 18 Sep 2023 18:36:15 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Strict-Transport-Security:
+      - max-age=31536000 ; includeSubDomains
+      Transfer-Encoding:
+      - chunked
+      X-Content-Type-Options:
+      - nosniff
+      X-XSS-Protection:
+      - 1; mode=block
+      content-length:
+      - '229'
+    status:
+      code: 404
+      message: Not Found
+version: 1

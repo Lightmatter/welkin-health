@@ -1,0 +1,60 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - API_TOKEN_abf6f448-9a38-40cc-bbf6-7be067a95914
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-welkin/0.1.0
+    method: GET
+    uri: https://api.live.welkincloud.io/tenant_REDACTED/instance_REDACTED/patients/371dd15c-cedc-4425-a394-d666c8d3fc01/sms?page=0
+  response:
+    body:
+      string: '{"content": [], "pageable": {"sort": {"sorted": false, "unsorted":
+        true, "empty": true}, "pageNumber": 0, "pageSize": 20, "offset": 0, "unpaged":
+        false, "paged": true}, "last": true, "totalPages": 0, "totalElements": 0,
+        "first": true, "number": 0, "sort": {"sorted": false, "unsorted": true, "empty":
+        true}, "numberOfElements": 0, "size": 20, "empty": true}'
+    headers:
+      Access-Control-Allow-Headers:
+      - authorization, content-type, xsrf-token, security-role
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, PATCH, OPTIONS
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - xsrf-token
+      Access-Control-Max-Age:
+      - '3600'
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 18 Sep 2023 18:10:28 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Strict-Transport-Security:
+      - max-age=31536000 ; includeSubDomains
+      Transfer-Encoding:
+      - chunked
+      X-Content-Type-Options:
+      - nosniff
+      X-XSS-Protection:
+      - 1; mode=block
+      content-length:
+      - '315'
+    status:
+      code: 200
+      message: OK
+version: 1

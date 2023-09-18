@@ -86,6 +86,8 @@ class Client(Session):
     DocumentSummary = models.DocumentSummary
     DocumentSummaryFile = models.DocumentSummaryFile
     DocumentSummaryFiles = models.DocumentSummaryFiles
+    Email = models.Email
+    Emails = models.Emails
     Encounter = models.Encounter
     EncounterDisposition = models.EncounterDisposition
     Encounters = models.Encounters
@@ -94,6 +96,8 @@ class Client(Session):
     Patients = models.Patients
     Schedules = models.Schedules
     SearchChats = models.SearchChats
+    SMS = models.SMS
+    SMSes = models.SMSes
     User = models.User
     Users = models.Users
     WorkHours = models.WorkHours

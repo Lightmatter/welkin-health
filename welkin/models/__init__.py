@@ -15,9 +15,11 @@ from welkin.models.document import (
     DocumentSummaryFile,
     DocumentSummaryFiles,
 )
+from welkin.models.email import Email, Emails
 from welkin.models.encounter import Encounter, EncounterDisposition, Encounters
 from welkin.models.formation import Formation
 from welkin.models.patient import Patient, Patients
+from welkin.models.sms import SMS, SMSes
 from welkin.models.user import User, Users
 
 __all__ = [
@@ -38,6 +40,8 @@ __all__ = [
     "DocumentSummary",
     "DocumentSummaryFile",
     "DocumentSummaryFiles",
+    "Email",
+    "Emails",
     "Encounter",
     "EncounterDisposition",
     "Encounters",
@@ -46,6 +50,8 @@ __all__ = [
     "Patients",
     "Schedules",
     "SearchChats",
+    "SMS",
+    "SMSes",
     "User",
     "Users",
     "WorkHours",
