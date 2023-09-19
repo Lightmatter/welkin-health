@@ -1,4 +1,5 @@
 import sys
+import uuid
 from datetime import date, datetime, timedelta, timezone
 
 from welkin.util import (
@@ -24,6 +25,7 @@ def test_clean_request_payload():
         "int": [-sys.maxsize, 0, sys.maxsize],
         "float": [sys.float_info.min, 1, sys.float_info.max],
         "bool": [True, False],
+        "uuid4": uuid.uuid4(),
         "none": None,
     }
     payload_copy = dict(payload)
@@ -35,6 +37,7 @@ def test_clean_request_payload():
     assert cleaned["date"] == "2022-09-15T00:00:00.000Z"
     assert cleaned["dict"]["nested"]["date"] == "2022-09-15T00:00:00.000Z"
     assert cleaned["list"][0] == "2022-09-15T23:00:00.000Z"
+    assert isinstance(cleaned["uuid4"], str)
 
 
 def test_clean_json_list():
