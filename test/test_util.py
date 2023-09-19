@@ -1,5 +1,7 @@
+import copy
 import sys
-from datetime import date, datetime, timedelta, timezone
+
+import pytest
 
 from welkin.util import (
     clean_date,
@@ -9,93 +11,106 @@ from welkin.util import (
     clean_request_payload,
 )
 
-UTC = timezone.utc
-PST = timezone(timedelta(hours=-8))
-EST = timezone(timedelta(hours=-5))
 
-
-def test_clean_request_payload():
-    payload = {
-        "datetime": datetime(2022, 9, 15, 23, 0, 0, 0, PST),
-        "date": date(2022, 9, 15),
-        "dict": {"foo": "bar", "nested": {"date": date(2022, 9, 15)}},
-        "list": [datetime(2022, 9, 15, 23, 0, 0, 0, UTC)],
-        "str": "Don't clean me please.",
-        "int": [-sys.maxsize, 0, sys.maxsize],
-        "float": [sys.float_info.min, 1, sys.float_info.max],
-        "bool": [True, False],
-        "none": None,
-    }
-    payload_copy = dict(payload)
-
-    cleaned = clean_request_payload(payload)
-    assert payload == payload_copy, "Payload was modified"
-
-    assert cleaned["datetime"] == "2022-09-16T07:00:00.000Z"
-    assert cleaned["date"] == "2022-09-15T00:00:00.000Z"
-    assert cleaned["dict"]["nested"]["date"] == "2022-09-15T00:00:00.000Z"
-    assert cleaned["list"][0] == "2022-09-15T23:00:00.000Z"
-
-
-def test_clean_json_list():
-    json_list = [
-        datetime(2022, 9, 15, 23, 0, 0, 0, UTC),
-        date(2022, 9, 15),
-        [
-            {
-                "foo": [datetime(2022, 9, 15, 23, 0, 0, 0, PST)],
+class TestCleanRequestPayload:
+    @pytest.fixture
+    def payload(self, _uuid, base_date, utc_datetime, pst_datetime):
+        return {
+            "datetime": pst_datetime,
+            "date": base_date,
+            "dict": {
+                "foo": "bar",
+                "nested": {"date": base_date},
             },
-        ],
-        "Strings don't get cleaned",
-    ]
-    json_list_copy = list(json_list)
+            "list": [utc_datetime],
+            "str": "Don't clean me please.",
+            "int": [-sys.maxsize, 0, sys.maxsize],
+            "float": [sys.float_info.min, 1, sys.float_info.max],
+            "bool": [True, False],
+            "_uuid4": _uuid,
+            "none": None,
+        }
 
-    cleaned = clean_json_list(json_list)
-    assert json_list == json_list_copy, "JSON list was modified"
+    def test_clean_request_payload(
+        self, payload, _uuid, pst_datetime_str, base_date_str, utc_datetime_str
+    ):
+        payload_copy = copy.deepcopy(payload)
+        cleaned = clean_request_payload(payload)
+        assert payload == payload_copy, "Payload was modified"
 
-    assert cleaned[0] == "2022-09-15T23:00:00.000Z"
-    assert cleaned[1] == "2022-09-15T00:00:00.000Z"
-    assert cleaned[2][0]["foo"][0] == "2022-09-16T07:00:00.000Z"
-
-
-def test_clean_request_params():
-    params = {
-        "datetime": datetime(2022, 9, 15, 23, 0, 0, 0, PST),
-        "date": date(2022, 9, 15),
-        "list": ["foo", "bar", "baz"],
-    }
-    params_copy = dict(params)
-    cleaned = clean_request_params(params)
-
-    assert params == params_copy, "Parameter dict was modified"
-
-    assert cleaned["datetime"] == "2022-09-16T07:00:00.000Z"
-    assert cleaned["date"] == "2022-09-15T00:00:00.000Z"
-    assert cleaned["list"] == "foo,bar,baz"
+        assert cleaned["datetime"] == pst_datetime_str
+        assert cleaned["date"] == base_date_str
+        assert cleaned["dict"]["nested"]["date"] == base_date_str
+        assert cleaned["list"][0] == utc_datetime_str
+        assert cleaned["_uuid4"] == str(_uuid)
 
 
-def test_clean_date():
-    cleaned = clean_date(date(2022, 9, 15))
+class TestCleanJsonList:
+    @pytest.fixture
+    def json_list(self, utc_datetime, base_date, pst_datetime):
+        return [
+            utc_datetime,
+            base_date,
+            [
+                {
+                    "foo": [pst_datetime],
+                },
+            ],
+            "Strings don't get cleaned",
+        ]
 
-    assert cleaned == "2022-09-15T00:00:00.000Z"
+    def test_clean_json_list(
+        self, json_list, utc_datetime_str, base_date_str, pst_datetime_str
+    ):
+        json_list_copy = copy.deepcopy(json_list)
+        cleaned = clean_json_list(json_list)
+        assert json_list == json_list_copy, "JSON list was modified"
+
+        assert cleaned[0] == utc_datetime_str
+        assert cleaned[1] == base_date_str
+        assert cleaned[2][0]["foo"][0] == pst_datetime_str
 
 
-def test_clean_datetime():
-    datetime_tests = {
-        "utc": {
-            "dt": datetime(2022, 9, 15, 23, 0, 0, 0, UTC),
-            "expected": "2022-09-15T23:00:00.000Z",
-        },
-        "pst": {
-            "dt": datetime(2022, 9, 15, 23, 0, 0, 0, PST),
-            "expected": "2022-09-16T07:00:00.000Z",
-        },
-        "est": {
-            "dt": datetime(2022, 9, 15, 23, 0, 0, 0, EST),
-            "expected": "2022-09-16T04:00:00.000Z",
-        },
-    }
-    timedelta()
-    for name, data in datetime_tests.items():
-        cleaned = clean_datetime(data["dt"])
-        assert cleaned == data["expected"], f"Unexpected result for '{name}'"
+class TestCleanRequestParams:
+    @pytest.fixture
+    def params(self, pst_datetime, base_date):
+        return {
+            "datetime": pst_datetime,
+            "date": base_date,
+            "list": ["foo", "bar", "baz"],
+        }
+
+    def test_clean_request_params(self, params, pst_datetime_str, base_date_str):
+        params_copy = copy.deepcopy(params)
+        cleaned = clean_request_params(params)
+        assert params == params_copy, "Parameter dict was modified"
+
+        assert cleaned["datetime"] == pst_datetime_str
+        assert cleaned["date"] == base_date_str
+        assert cleaned["list"] == "foo,bar,baz"
+
+
+def test_clean_date(base_date, base_date_str):
+    assert clean_date(base_date) == base_date_str
+
+
+@pytest.mark.parametrize(
+    "dt,expected",
+    [
+        (
+            "utc_datetime",
+            "utc_datetime_str",
+        ),
+        (
+            "pst_datetime",
+            "pst_datetime_str",
+        ),
+        (
+            "est_datetime",
+            "est_datetime_str",
+        ),
+    ],
+)
+def test_clean_datetime(dt, expected, request):
+    cleaned = clean_datetime(request.getfixturevalue(dt))
+    assert cleaned == request.getfixturevalue(expected)

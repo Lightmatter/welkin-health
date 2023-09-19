@@ -1,4 +1,6 @@
 from datetime import date, datetime, timezone
+from typing import Any
+from uuid import UUID
 
 from welkin.models.base import SchemaBase
 
@@ -38,19 +40,34 @@ def _build_resources(instance: type, attribute_name: str, value: type = None) ->
         setattr(val, attribute_name, value)
 
 
+def clean_data(value: Any) -> Any:
+    """Clean data for JSON serialization.
+
+    Args:
+        value (Any): The value to clean.
+
+    Returns:
+        Any: The cleaned value.
+    """
+    if isinstance(value, datetime):
+        return clean_datetime(value)
+    elif isinstance(value, date):
+        return clean_date(value)
+    elif isinstance(value, dict):
+        return clean_request_payload(value)
+    elif isinstance(value, list):
+        return clean_json_list(value)
+    elif isinstance(value, UUID):
+        return str(value)
+
+    # No cleaning needed
+    return value
+
+
 def clean_request_payload(payload: dict) -> dict:
     result = {}
     for k, v in payload.items():
-        if isinstance(v, datetime):
-            result[k] = clean_datetime(v)
-        elif isinstance(v, date):
-            result[k] = clean_date(v)
-        elif isinstance(v, dict):
-            result[k] = clean_request_payload(v)
-        elif isinstance(v, list):
-            result[k] = clean_json_list(v)
-        else:
-            result[k] = v
+        result[k] = clean_data(v)
 
     return result
 
@@ -58,16 +75,7 @@ def clean_request_payload(payload: dict) -> dict:
 def clean_json_list(data: list) -> list:
     result = []
     for item in data:
-        if isinstance(item, datetime):
-            result.append(clean_datetime(item))
-        elif isinstance(item, date):
-            result.append(clean_date(item))
-        elif isinstance(item, dict):
-            result.append(clean_request_payload(item))
-        elif isinstance(item, list):
-            result.append(clean_json_list(item))
-        else:
-            result.append(item)
+        result.append(clean_data(item))
 
     return result
 
