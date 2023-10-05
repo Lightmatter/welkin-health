@@ -1,0 +1,89 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - API_TOKEN_5c7de3d2-1fe1-4a28-9a14-c1fe9fd0be66
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-welkin/0.1.1
+    method: GET
+    uri: https://api.live.welkincloud.io/tenant_REDACTED/instance_REDACTED/formations/current/programs?page=0
+  response:
+    body:
+      string: '[{"name": "prog-target-patient", "title": "Target Patient", "description":
+        "Moderate to severe patients, either on biologics or oral treatment.", "phases":
+        [{"name": "start", "title": "Start", "type": "START", "description": "", "autoFinishProgram":
+        false, "navigateTo": [{"name": "finish"}]}, {"name": "finish", "title": "Finish",
+        "type": "FINISH", "description": "", "autoFinishProgram": false, "navigateTo":
+        []}], "nodes": [{"id": "start", "data": {"type": "START", "label": "Start"},
+        "type": "graphNode", "position": {"x": 340, "y": 20}}, {"id": "finish", "data":
+        {"type": "FINISH", "label": "Finish"}, "type": "graphNode", "position": {"x":
+        680, "y": 20}}, {"id": "reactflow__edge-startHandleSrcRight_025adb09-c24a-45f9-b5a5-d1a44450ff43-finishHandleTargetLeft_5f5f5e64-5959-46b2-8e36-c85a86e60456",
+        "type": "smoothstep", "source": "start", "target": "finish", "animated": true,
+        "sourceHandle": "HandleSrcRight_start", "targetHandle": "HandleTargetLeft_finish",
+        "arrowHeadType": "arrowclosed"}]}, {"name": "prog-target-2-patient", "title":
+        "Target 2 Patient", "description": "Delayers - en route to top of treatment.",
+        "phases": [{"name": "start", "title": "Start", "type": "START", "description":
+        "", "autoFinishProgram": false, "navigateTo": [{"name": "finish"}]}, {"name":
+        "finish", "title": "Finish", "type": "FINISH", "description": "", "autoFinishProgram":
+        false, "navigateTo": []}], "nodes": [{"id": "start", "data": {"label": "Start"},
+        "type": "graphNode", "position": {"x": 20, "y": 20}}, {"id": "finish", "data":
+        {"type": "FINISH", "label": "Finish"}, "type": "graphNode", "position": {"x":
+        300, "y": 20}}, {"id": "reactflow__edge-startHandleSrcRight_713b0fea-09cb-4c09-98da-bcb71c6cc9e5-finishHandleTargetLeft_d0fe8672-eafd-4b25-98b8-8845e89953a8",
+        "type": "smoothstep", "source": "start", "target": "finish", "animated": true,
+        "sourceHandle": "HandleSrcRight_start", "targetHandle": "HandleTargetLeft_finish",
+        "arrowHeadType": "arrowclosed"}]}, {"name": "prog-non-target-patient", "title":
+        "Non-Target Patient", "description": "All other non-target patients that do
+        not meet the criteria for other care plans.", "phases": [{"name": "start",
+        "title": "Start", "type": "START", "description": "", "autoFinishProgram":
+        false, "navigateTo": [{"name": "finish"}]}, {"name": "finish", "title": "Finish",
+        "type": "FINISH", "description": "", "autoFinishProgram": false, "navigateTo":
+        []}], "nodes": [{"id": "start", "data": {"label": "Start"}, "type": "graphNode",
+        "position": {"x": 20, "y": 20}}, {"id": "finish", "data": {"label": "Finish"},
+        "type": "graphNode", "position": {"x": 1520, "y": 20}}, {"id": "reactflow__edge-startHandleSrcRight_34f0e25d-bb67-4d65-9dd2-b7bca6e1bd73-finishHandleTargetLeft_4c1007b4-98fa-45fc-b64b-678f7fbc880a",
+        "type": "smoothstep", "source": "start", "target": "finish", "animated": true,
+        "sourceHandle": "HandleSrcRight_start", "targetHandle": "HandleTargetLeft_finish",
+        "arrowHeadType": "arrowclosed"}]}]'
+    headers:
+      Access-Control-Allow-Headers:
+      - authorization, content-type, xsrf-token, security-role
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, PATCH, OPTIONS
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - xsrf-token
+      Access-Control-Max-Age:
+      - '3600'
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Thu, 05 Oct 2023 00:05:14 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Strict-Transport-Security:
+      - max-age=31536000 ; includeSubDomains
+      Transfer-Encoding:
+      - chunked
+      X-Content-Type-Options:
+      - nosniff
+      X-XSS-Protection:
+      - 1; mode=block
+      content-length:
+      - '2725'
+    status:
+      code: 200
+      message: OK
+version: 1

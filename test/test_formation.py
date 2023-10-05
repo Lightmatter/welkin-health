@@ -13,6 +13,8 @@ from welkin.models.formation import (
     Formation,
     Goal,
     Goals,
+    Program,
+    Programs,
 )
 
 
@@ -119,5 +121,23 @@ class TestFormation:
 
         assert isinstance(goal_template, Goal)
         assert goal_template.name == "eat-fruit"
+
+        assert len(vcr_cassette) == 1
+
+    @pytest.mark.vcr
+    def test_programs_read(self, formation, vcr_cassette):
+        programs = formation.Programs().get()
+
+        assert isinstance(programs, Programs)
+        assert isinstance(programs[0], Program)
+
+        assert len(vcr_cassette) == 1
+
+    @pytest.mark.vcr
+    def test_program_read(self, formation, vcr_cassette):
+        programs = formation.Program(name="prog-non-target-patient").get()
+
+        assert isinstance(programs, Program)
+        assert programs.name == "prog-non-target-patient"
 
         assert len(vcr_cassette) == 1

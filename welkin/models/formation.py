@@ -92,6 +92,15 @@ class Goals(FormationCollection):
     endpoint = "goal-templates"
 
 
+class Program(FormationResource):
+    endpoint = "programs"
+
+
+class Programs(FormationCollection):
+    resource = Program
+    endpoint = "programs"
+
+
 class Formation(Target):
     Assessment = Assessment
     Assessments = Assessments
@@ -104,6 +113,8 @@ class Formation(Target):
     Encounters = Encounters
     Goal = Goal
     Goals = Goals
+    Program = Program
+    Programs = Programs
 
     def __init__(self, version: Union[int, str] = "current"):
         super().__init__()
