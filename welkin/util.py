@@ -159,8 +159,11 @@ def model_id(*models: Tuple[str]) -> Callable:
                 if not args and key not in kwargs:
                     try:
                         kwargs[key] = find_model_id(self, model)
-                    except AttributeError as exc:
-                        outer_exc = exc
+                    except AttributeError as e:
+                        try:
+                            raise e from outer_exc
+                        except AttributeError as exc:
+                            outer_exc = exc
 
             try:
                 return f(self, *args, **kwargs)
