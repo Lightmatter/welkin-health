@@ -1,108 +1,65 @@
 from welkin.models.base import Collection, Resource
-from welkin.models.util import find_patient_id_in_parents
 from welkin.pagination import PageIterator
+from welkin.util import model_id
 
 
-class ProgramPhases(Resource):
-    def _url(self, patient_id: str = None, program_name: str = None):
-        if not patient_id:
-            patient_id = find_patient_id_in_parents(self)
-
-        if not program_name:
-            program_name = self._parent.name
-
-        return f"{self._client.instance}/patients/{patient_id}/programs/{program_name}/phases"
-
-    def update(self, phase_name: str, patient_id: str = None, program_name: str = None):
+class ProgramPhase(Resource):
+    @model_id("Patient")
+    def update(self, patient_id: str, program_name: str = None, **kwargs):
+        program_name = program_name or self._parent.name
         return super().patch(
-            self._url(patient_id, program_name), {"phaseName": phase_name}
+            f"{self._client.instance}/patients/{patient_id}/programs/"
+            f"{program_name or self._parent.name}/phases",
+            kwargs,
         )
 
 
 class Program(Resource):
-    subresources = [ProgramPhases]
+    subresources = [ProgramPhase]
 
-    def _url(self, patient_id: str = None, program_name: str = None):
-        if not patient_id:
-            patient_id = find_patient_id_in_parents(self)
+    @model_id("Patient")
+    def delete(self, patient_id: str):
+        return super().delete(
+            f"{self._client.instance}/patients/{patient_id}/programs/{self.name}"
+        )
 
-        if not program_name:
-            program_name = self.name
-
-        return f"{self._client.instance}/patients/{patient_id}/programs/{program_name}"
-
-    def delete(self, patient_id: str = None, program_name: str = None):
-        return super().delete(self._url(patient_id, program_name))
-
-    def update(
-        self,
-        patient_id: str = None,
-        program_name: str = None,
-    ):
+    @model_id("Patient")
+    def update(self, patient_id: str, **kwargs):
         return super().patch(
-            self._url(patient_id, program_name),
-            {"assigned": True, "status": "IN_PROGRESS"},
+            f"{self._client.instance}/patients/{patient_id}/programs/{self.name}",
+            kwargs,
         )
 
 
-class CurrentPrograms(Collection):
+class Programs(Collection):
     resource = Program
     iterator = PageIterator
 
-    def _url(self, patient_id: str = None, program_name: str = None):
-        if not patient_id:
-            patient_id = find_patient_id_in_parents(self)
-
-        if not program_name:
-            raise ValueError("A program name must be provided.")
-
-        return f"{self._client.instance}/patients/{patient_id}/programs/current/{program_name}"
-
+    @model_id("Patient")
     def get(
         self,
-        patient_id: str = None,
-        program_name: str = None,
+        patient_id: str,
         assigned_programs: bool = None,
         sort: str = None,
+        *args,
         **kwargs,
     ):
-        return super().get(
-            self._url(patient_id, program_name),
-            params={
-                "assignedPrograms": assigned_programs,
-                "sort": sort,
-            },
-        )
-
-
-class ProgramHistory(Resource):
-    resource = Program
-    iterator = PageIterator
-
-    def _url(self, patient_id: str = None, program_id: str = None):
-        if not patient_id:
-            patient_id = find_patient_id_in_parents(self)
-
-        if not program_id:
-            raise ValueError("A program ID must be provided.")
-
-        return f"{self._client.instance}/patients/{patient_id}/programs/history/{program_id}"
-
-    def get(
-        self,
-        patient_id: str = None,
-        program_id: str = None,
-        assigned_programs: bool = None,
-        sort: str = None,
-    ):
-        if not patient_id:
-            patient_id = find_patient_id_in_parents(self)
-
         params = {
             "assignedPrograms": assigned_programs,
             "sort": sort,
         }
+
+        path = f"{self._client.instance}/patients/{patient_id}/programs"
+        if hasattr(self, "programName"):
+            path = f"{path}/current/{self.programName}"
+        elif hasattr(self, "id"):
+            path = f"{path}/history/{self.id}"
+        else:
+            raise AttributeError
+
         return super().get(
-            self._url(patient_id, program_id),
+            path,
             params=params,
+            *args,
+            **kwargs,
         )
