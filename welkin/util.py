@@ -1,7 +1,7 @@
 from datetime import date, datetime, timezone
 from functools import cache, wraps
 from types import FunctionType
-from typing import Any
+from typing import Any, Union
 from uuid import UUID
 
 import inflection
@@ -113,7 +113,7 @@ def clean_datetime(dt: datetime) -> str:
     )
 
 
-def find_model_id(instance: Collection | Resource, model_name: str) -> str:
+def find_model_id(instance: Union[Collection, Resource], model_name: str) -> str:
     """Recursively traverse the `_parent` chain searching for a model id.
 
     Args:
