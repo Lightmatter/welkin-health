@@ -1,5 +1,5 @@
 from datetime import date, datetime, timezone
-from functools import cache, wraps
+from functools import lru_cache, wraps
 from types import FunctionType
 from typing import Any, Union
 from uuid import UUID
@@ -174,7 +174,7 @@ def model_id(*models: tuple[str]) -> FunctionType:
     return decorator
 
 
-@cache
+@lru_cache(maxsize=None)
 def to_camel_case(s: str) -> str:
     """Convert a string to camelCase.
 
@@ -187,7 +187,7 @@ def to_camel_case(s: str) -> str:
     return inflection.camelize(to_snake_case(s), uppercase_first_letter=False)
 
 
-@cache
+@lru_cache(maxsize=None)
 def to_snake_case(s: str) -> str:
     """Convert a string to snake_case.
 
