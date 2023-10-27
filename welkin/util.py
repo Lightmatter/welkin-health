@@ -131,7 +131,7 @@ def find_model_id(instance: Union[Collection, Resource], model_name: str) -> str
         return instance.id
     elif hasattr(instance, body_id_key):
         return getattr(instance, body_id_key)
-    elif instance._parent:
+    elif instance._parent is not None:
         return find_model_id(instance._parent, model_name)
 
     raise AttributeError(
