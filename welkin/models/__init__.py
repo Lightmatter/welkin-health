@@ -37,7 +37,6 @@ __all__ = [
     "CDTs",
     "Chat",
     "Chats",
-    "CurrentPrograms",
     "DocumentSummaries",
     "DocumentSummary",
     "DocumentSummaryFile",

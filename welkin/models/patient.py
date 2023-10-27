@@ -41,8 +41,28 @@ class Patient(Resource):
     def create(self):
         return super().post(f"{self._client.instance}/patients")
 
-    def get(self):
-        return super().get(f"{self._client.instance}/patients/{self.id}")
+    def get(self, expand: bool = None):
+        _id = None
+        if hasattr(self, "id"):
+            type = None
+            _id = self.id
+        elif hasattr(self, "externalId"):
+            type = "EID"
+            _id = self.externalId
+        elif hasattr(self, "externalGuid"):
+            type = "EGUID"
+            _id = self.externalGuid
+        elif hasattr(self, "mrn"):
+            type = "MRN"
+            _id = self.mrn
+
+        return super().get(
+            f"{self._client.instance}/patients/{_id}",
+            params={
+                "type": type,
+                expand: expand,
+            },
+        )
 
     def update(self, **kwargs):
         return super().patch(f"{self._client.instance}/patients/{self.id}", kwargs)

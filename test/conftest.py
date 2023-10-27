@@ -2,11 +2,13 @@ import json
 import os
 import uuid
 from datetime import date, datetime, time, timedelta, timezone
+from http import HTTPStatus
 from uuid import uuid4
 
 import pytest
 
 from welkin import Client
+from welkin.exceptions import WelkinHTTPError
 
 
 def pytest_collection_modifyitems(items):
@@ -105,6 +107,24 @@ def body_hook(blacklist, replacement):
         return dct
 
     return hook
+
+
+@pytest.fixture
+def patient(client):
+    patient = client.Patient(
+        firstName="Test",
+        lastName="Patient",
+        email="test.patient@example.com",
+        externalGuid=uuid.UUID("12345678-1234-1234-1234-1234567890ab"),
+    )
+
+    try:
+        return patient.get()
+    except WelkinHTTPError as exc:
+        if exc.response.status_code != HTTPStatus.NOT_FOUND:
+            raise
+
+        return patient.create()
 
 
 @pytest.fixture
