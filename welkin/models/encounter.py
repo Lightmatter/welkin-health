@@ -80,24 +80,17 @@ class Encounters(Collection):
         *args,
         **kwargs,
     ):
-        root = ""
+        path = f"{self._client.instance}/"
         if patient_id:
-            root = f"patients/{patient_id}"
+            path += f"patients/{patient_id}/"
         elif user_id:
-            root = f"users/{user_id}"
-        elif self._parent:
-            if self._parent.__class__.__name__ == "Patient":
-                root = f"patients/{self._parent.id}"
-            elif self._parent.__class__.__name__ == "User":
-                root = f"users/{self._parent.id}"
+            path += f"users/{user_id}/"
+        elif self._parent.__class__.__name__ == "Patient":
+            path += f"patients/{self._parent.id}/"
+        elif self._parent.__class__.__name__ == "User":
+            path += f"users/{self._parent.id}/"
 
-        encounters = "encounters"
-        if related_data:
-            encounters = "full-encounters"
-
-        path = f"{self._client.instance}/{encounters}"
-        if root:
-            path = f"{self._client.instance}/{root}/{encounters}"
+        path += "full-encounters" if related_data else "encounters"
 
         params = {
             "withCareTeam": with_care_team,

@@ -94,6 +94,7 @@ class AssessmentRecords(Collection):
 
     @model_id("Patient")
     def get(self, patient_id: str, **kwargs):
-        path = f"{self._client.instance}/patients/{patient_id}/assessment-records"
-
-        return super().get(path, **kwargs)
+        return super().get(
+            f"{self._client.instance}/patients/{patient_id}/assessment-records",
+            **kwargs,
+        )
