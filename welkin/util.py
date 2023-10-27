@@ -1,7 +1,6 @@
 from datetime import date, datetime, timezone
 from functools import lru_cache, wraps
-from types import FunctionType
-from typing import Any, Union
+from typing import Any, Callable, Union
 from uuid import UUID
 
 import inflection
@@ -140,7 +139,7 @@ def find_model_id(instance: Union[Collection, Resource], model_name: str) -> str
     )
 
 
-def model_id(*models: tuple[str]) -> FunctionType:
+def model_id(*models: tuple[str]) -> Callable:
     """Insert values for `model_id` arguments if not provided.
 
     Args:
@@ -150,9 +149,9 @@ def model_id(*models: tuple[str]) -> FunctionType:
         TypeError: If no ID is found and no arguments are provided.
     """
 
-    def decorator(f: FunctionType):
+    def decorator(f: Callable):
         @wraps(f)
-        def wrapper(self, *args, **kwargs) -> FunctionType:
+        def wrapper(self, *args, **kwargs) -> Callable:
             outer_exc = None
             for model in models:
                 key = f"{to_snake_case(model)}_id"
