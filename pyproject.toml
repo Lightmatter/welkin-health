@@ -20,6 +20,7 @@ classifiers = [
 python = "^3.7"
 requests = "^2.28.1"
 portalocker = "^2.7.0"
+inflection = "^0.5.1"
 
 [tool.poetry.group.dev]
 optional = true

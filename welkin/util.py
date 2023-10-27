@@ -1,10 +1,12 @@
-import functools
-import re
 from datetime import date, datetime, timezone
+from functools import cache, wraps
+from types import FunctionType
 from typing import Any
 from uuid import UUID
 
-from welkin.models.base import SchemaBase
+import inflection
+
+from welkin.models.base import Collection, Resource, SchemaBase
 
 # NOTE: `clean_request_payload` and `clean_request_params` are intentionally DRY
 # violations. The code may be the same, but they represent different knowledge.
@@ -111,21 +113,46 @@ def clean_datetime(dt: datetime) -> str:
     )
 
 
-def find_model_id(obj, model: str):
-    if obj.__class__.__name__ == model:
-        return obj.id
-    elif hasattr(obj, f"{to_snake_case(model)}Id"):
-        return obj.patientId
-    elif obj._parent:
-        return find_model_id(obj._parent, model)
+def find_model_id(instance: Collection | Resource, model_name: str) -> str:
+    """Recursively traverse the `_parent` chain searching for a model id.
 
-    raise AttributeError(f"Cannot find {model} id. Model._parent chain ends in {obj}")
+    Args:
+        instance (Collection | Resource): The instanceect instance to inspect.
+        model_name (str): The class name of the model to find.
+
+    Raises:
+        AttributeError: If recursion ends without finding the model id.
+
+    Returns:
+        str: The model id.
+    """
+    body_id_key = f"{to_camel_case(model_name)}Id"
+
+    if instance.__class__.__name__ == model_name:
+        return instance.id
+    elif hasattr(instance, body_id_key):
+        return getattr(instance, body_id_key)
+    elif instance._parent:
+        return find_model_id(instance._parent, model_name)
+
+    raise AttributeError(
+        f"Cannot find {model_name} id. Model._parent chain ends in {instance}"
+    )
 
 
-def model_id(*models):
-    def decorator(f):
-        @functools.wraps(f)
-        def wrapper(self, *args, **kwargs):
+def model_id(*models: tuple[str]) -> FunctionType:
+    """Insert values for `model_id` arguments if not provided.
+
+    Args:
+        *models (tuple[str]): The model names to search for.
+
+    Raises:
+        TypeError: If no ID is found and no arguments are provided.
+    """
+
+    def decorator(f: FunctionType):
+        @wraps(f)
+        def wrapper(self, *args, **kwargs) -> FunctionType:
             outer_exc = None
             for model in models:
                 key = f"{to_snake_case(model)}_id"
@@ -139,6 +166,7 @@ def model_id(*models):
             try:
                 return f(self, *args, **kwargs)
             except TypeError as exc:
+                # Raise from the outer `AttributeError` so we don't lose context.
                 raise exc from outer_exc
 
         return wrapper
@@ -146,9 +174,27 @@ def model_id(*models):
     return decorator
 
 
-def to_snake_case(s):
-    first = re.compile(r"(.)([A-Z][a-z]+)")
-    second = re.compile(r"([a-z0-9])([A-Z])")
-    repl = r"\1_\2"
+@cache
+def to_camel_case(s: str) -> str:
+    """Convert a string to camelCase.
 
-    return second.sub(repl, first.sub(repl, s)).lower()
+    Args:
+        s (str): The string to convert.
+
+    Returns:
+        str: The converted camelCase string.
+    """
+    return inflection.camelize(to_snake_case(s), uppercase_first_letter=False)
+
+
+@cache
+def to_snake_case(s: str) -> str:
+    """Convert a string to snake_case.
+
+    Args:
+        s (str): The string to convert.
+
+    Returns:
+        str: The converted snake_case string.
+    """
+    return inflection.underscore(s)

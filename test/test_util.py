@@ -10,6 +10,7 @@ from welkin.util import (
     clean_request_params,
     clean_request_payload,
     find_model_id,
+    to_camel_case,
     to_snake_case,
 )
 
@@ -129,7 +130,8 @@ def test_clean_datetime(dt, expected, request):
         "FOOBar",
     ],
 )
-def test_to_snake_case(input):
+def test_case_converters(input):
+    assert to_camel_case(input) == "fooBar"
     assert to_snake_case(input) == "foo_bar"
 
 
