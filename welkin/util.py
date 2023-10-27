@@ -1,3 +1,5 @@
+import functools
+import re
 from datetime import date, datetime, timezone
 from typing import Any
 from uuid import UUID
@@ -107,3 +109,46 @@ def clean_datetime(dt: datetime) -> str:
         .isoformat(timespec="milliseconds")
         .replace("+00:00", "Z")
     )
+
+
+def find_model_id(obj, model: str):
+    if obj.__class__.__name__ == model:
+        return obj.id
+    elif hasattr(obj, f"{to_snake_case(model)}Id"):
+        return obj.patientId
+    elif obj._parent:
+        return find_model_id(obj._parent, model)
+
+    raise AttributeError(f"Cannot find {model} id. Model._parent chain ends in {obj}")
+
+
+def model_id(*models):
+    def decorator(f):
+        @functools.wraps(f)
+        def wrapper(self, *args, **kwargs):
+            outer_exc = None
+            for model in models:
+                key = f"{to_snake_case(model)}_id"
+
+                if not args and key not in kwargs:
+                    try:
+                        kwargs[key] = find_model_id(self, model)
+                    except AttributeError as exc:
+                        outer_exc = exc
+
+            try:
+                return f(self, *args, **kwargs)
+            except TypeError as exc:
+                raise exc from outer_exc
+
+        return wrapper
+
+    return decorator
+
+
+def to_snake_case(s):
+    first = re.compile(r"(.)([A-Z][a-z]+)")
+    second = re.compile(r"([a-z0-9])([A-Z])")
+    repl = r"\1_\2"
+
+    return second.sub(repl, first.sub(repl, s)).lower()

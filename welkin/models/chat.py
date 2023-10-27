@@ -1,11 +1,13 @@
 from welkin.models.base import Collection, Resource
 from welkin.pagination import MetaIterator
+from welkin.util import model_id
 
 
 class Chat(Resource):
-    def create(self):
+    @model_id("Patient")
+    def create(self, patient_id: str):
         return super().post(
-            f"{self._client.instance}/patients/{self._parent.id}/chat/inbound"
+            f"{self._client.instance}/patients/{patient_id}/chat/inbound"
         )
 
     def __str__(self):
@@ -16,13 +18,14 @@ class Chats(Collection):
     resource = Chat
     iterator = MetaIterator
 
-    def get(self, include_archived: bool = False, *args, **kwargs):
+    @model_id("Patient")
+    def get(self, patient_id: str, include_archived: bool = False, *args, **kwargs):
         params = {
             "includeArchived": include_archived,
         }
 
         return super().get(
-            f"{self._client.instance}/patients/{self._parent.id}/chat",
+            f"{self._client.instance}/patients/{patient_id}/chat",
             params=params,
             *args,
             **kwargs,
@@ -37,8 +40,10 @@ class SearchChats(Collection):
     resource = ChatSearchResult
     iterator = MetaIterator
 
+    @model_id("Patient")
     def get(
         self,
+        patient_id: str,
         query: str,
         content_page_size: int = 20,
         include_archived: bool = False,
@@ -52,7 +57,7 @@ class SearchChats(Collection):
         }
 
         return super().get(
-            f"{self._client.instance}/patients/{self._parent.id}/chat/search",
+            f"{self._client.instance}/patients/{patient_id}/chat/search",
             params=params,
             *args,
             **kwargs,
