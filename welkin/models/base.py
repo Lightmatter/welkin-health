@@ -45,6 +45,9 @@ class Resource(dict, SchemaBase):
     def __setattr__(self, name, value):
         super().__setitem__(name, value)
 
+    def __delattr__(self, name):
+        super().__delitem__(name)
+
     def __str__(self):
         id = getattr(self, "id", "")
 

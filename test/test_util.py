@@ -144,7 +144,7 @@ def test_find_model_id(client):
     assert find_model_id(patient, "Patient") == patient.id
     assert find_model_id(encounter, "Patient") == patient.id
 
-    patient.pop("id")
+    del patient.id
     encounter.patientId = "456"
     assert find_model_id(encounter, "Patient") == encounter.patientId
 
