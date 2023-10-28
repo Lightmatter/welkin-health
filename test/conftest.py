@@ -3,6 +3,7 @@ import os
 import uuid
 from datetime import date, datetime, time, timedelta, timezone
 from http import HTTPStatus
+from pathlib import Path
 from uuid import uuid4
 
 import pytest
@@ -110,21 +111,24 @@ def body_hook(blacklist, replacement):
 
 
 @pytest.fixture
-def patient(client):
+def patient(client, vcr, vcr_cassette_dir, request):
     patient = client.Patient(
         firstName="Test",
         lastName="Patient",
         email="test.patient@example.com",
         externalGuid=uuid.UUID("12345678-1234-1234-1234-1234567890ab"),
     )
+    cassette_name = f"patient__{request.node.name}"
+    fixture_path = str(Path(vcr_cassette_dir, "fixtures"))
 
-    try:
-        return patient.get()
-    except WelkinHTTPError as exc:
-        if exc.response.status_code != HTTPStatus.NOT_FOUND:
-            raise
+    with vcr.use_cassette(cassette_name, cassette_library_dir=fixture_path):
+        try:
+            return patient.get()
+        except WelkinHTTPError as exc:
+            if exc.response.status_code != HTTPStatus.NOT_FOUND:
+                raise
 
-        return patient.create()
+            return patient.create()
 
 
 @pytest.fixture

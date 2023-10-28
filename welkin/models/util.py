@@ -9,7 +9,7 @@ def find_patient_id_in_parents(model_instance):
         return model_instance.id
     elif hasattr(model_instance, "patientId"):
         return model_instance.patientId
-    elif model_instance._parent:
+    elif model_instance._parent is not None:
         return find_patient_id_in_parents(model_instance._parent)
     else:
         raise Exception(
