@@ -111,14 +111,14 @@ def body_hook(blacklist, replacement):
 
 
 @pytest.fixture
-def patient(client, vcr, vcr_cassette_dir, request):
+def patient(client, vcr, vcr_cassette_dir, vcr_cassette_name):
     patient = client.Patient(
         firstName="Test",
         lastName="Patient",
         email="test.patient@example.com",
         externalGuid=uuid.UUID("12345678-1234-1234-1234-1234567890ab"),
     )
-    cassette_name = f"patient__{request.node.name}"
+    cassette_name = f"patient__{vcr_cassette_name}"
     fixture_path = str(Path(vcr_cassette_dir, "fixtures"))
 
     with vcr.use_cassette(cassette_name, cassette_library_dir=fixture_path):
