@@ -7,7 +7,7 @@ interactions:
       Accept-Encoding:
       - gzip, deflate
       Authorization:
-      - API_TOKEN_70b27fc9-755a-40e6-ba68-ca1f5f7c629d
+      - API_TOKEN_9a3dfce4-1178-4f45-8e58-f683604bd00f
       Connection:
       - keep-alive
       User-Agent:
@@ -181,7 +181,7 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Sat, 28 Oct 2023 00:11:13 GMT
+      - Tue, 31 Oct 2023 02:11:02 GMT
       Expires:
       - '0'
       Pragma:
@@ -200,18 +200,18 @@ interactions:
       code: 200
       message: OK
 - request:
-    body: '{"assigned": true, "phaseName": "start"}'
+    body: '{"phaseName": "finish"}'
     headers:
       Accept:
       - '*/*'
       Accept-Encoding:
       - gzip, deflate
       Authorization:
-      - API_TOKEN_70b27fc9-755a-40e6-ba68-ca1f5f7c629d
+      - API_TOKEN_9a3dfce4-1178-4f45-8e58-f683604bd00f
       Connection:
       - keep-alive
       Content-Length:
-      - '40'
+      - '23'
       Content-Type:
       - application/json
       User-Agent:
@@ -220,20 +220,23 @@ interactions:
     uri: https://api.live.welkincloud.io/tenant_REDACTED/instance_REDACTED/patients/de5e1a93-70b0-4ed4-868f-3854becc383c/programs/prog-target-patient
   response:
     body:
-      string: '{"id": "a636bccc-d554-46c2-a7e5-c37f9520db31", "createdByName": "createdByName_REDACTED_edaa62a4-9920-4e38-bff2-54d254b898e0",
-        "createdAt": "2023-10-28T00:11:13.310Z", "updatedByName": "updatedByName_REDACTED_47021932-3f78-498e-96ce-45d8fa83e24d",
-        "updatedAt": "2023-10-28T00:11:13.316Z", "programName": "prog-target-patient",
+      string: '{"id": "77d60b23-6d23-4292-b007-836a0b14be8f", "createdByName": "createdByName_REDACTED_46a14ef7-aa16-4286-9a44-d1a4e91a5cfe",
+        "createdAt": "2023-10-31T02:10:16.204Z", "updatedByName": "updatedByName_REDACTED_0ed30a91-f19c-4882-9aa9-2d333d4e0acd",
+        "updatedAt": "2023-10-31T02:11:02.904Z", "programName": "prog-target-patient",
         "programTitle": "Target Patient", "programDescription": "Moderate to severe
         patients, either on biologics or oral treatment.", "assigned": true, "patientId":
-        "de5e1a93-70b0-4ed4-868f-3854becc383c", "currentPhase": {"timestamp": "2023-10-28T00:11:13.314Z",
-        "createdBy": "createdBy_REDACTED_4fb78d5c-4778-420c-9710-8faa4e16e511", "createdByName":
-        "createdByName_REDACTED_c8fbe78a-ce5d-4070-b6e4-9210d9d029ce", "name": "start",
-        "title": "Start", "description": "", "currentVersion": "92", "deleted": false},
+        "de5e1a93-70b0-4ed4-868f-3854becc383c", "currentPhase": {"timestamp": "2023-10-31T02:11:02.903Z",
+        "createdBy": "createdBy_REDACTED_0f85b917-5b1d-4baf-be56-c39501eebc5d", "createdByName":
+        "createdByName_REDACTED_157ef5b7-2ab8-48c8-8b02-582334267edf", "name": "finish",
+        "title": "Finish", "description": "", "currentVersion": "92", "deleted": false},
         "status": "IN_PROGRESS", "compatibleWithCurrentVersion": true, "pathHistory":
-        [{"timestamp": "2023-10-28T00:11:13.314Z", "createdBy": "createdBy_REDACTED_b4389270-8e1a-423d-bb5d-f199dcb18029",
-        "createdByName": "createdByName_REDACTED_d4be070f-9819-49b1-b4ca-534192068678",
+        [{"timestamp": "2023-10-31T02:10:16.209Z", "createdBy": "createdBy_REDACTED_cfea345f-fa4a-4a4e-a6c4-2b920196b401",
+        "createdByName": "createdByName_REDACTED_a2abcbc0-89b2-4593-8d30-2d865fc40141",
         "name": "start", "title": "Start", "description": "", "currentVersion": "92",
-        "deleted": false}]}'
+        "deleted": false}, {"timestamp": "2023-10-31T02:11:02.903Z", "createdBy":
+        "createdBy_REDACTED_cd508893-1e9b-42d1-9496-255dea703f21", "createdByName":
+        "createdByName_REDACTED_a585ae59-ef98-40d8-8b41-2040869dcd65", "name": "finish",
+        "title": "Finish", "description": "", "currentVersion": "92", "deleted": false}]}'
     headers:
       Access-Control-Allow-Headers:
       - authorization, content-type, xsrf-token, security-role
@@ -252,7 +255,7 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Sat, 28 Oct 2023 00:11:13 GMT
+      - Tue, 31 Oct 2023 02:11:02 GMT
       Expires:
       - '0'
       Pragma:
@@ -266,141 +269,7 @@ interactions:
       X-XSS-Protection:
       - 1; mode=block
       content-length:
-      - '963'
-    status:
-      code: 200
-      message: OK
-- request:
-    body: null
-    headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
-      Authorization:
-      - API_TOKEN_70b27fc9-755a-40e6-ba68-ca1f5f7c629d
-      Connection:
-      - keep-alive
-      User-Agent:
-      - python-welkin/0.1.1
-    method: GET
-    uri: https://api.live.welkincloud.io/tenant_REDACTED/instance_REDACTED/patients/de5e1a93-70b0-4ed4-868f-3854becc383c/programs/current/prog-target-patient
-  response:
-    body:
-      string: '{"id": "a636bccc-d554-46c2-a7e5-c37f9520db31", "createdByName": "createdByName_REDACTED_f1bbe71c-211d-4a02-83ba-a39bb1afdf03",
-        "createdAt": "2023-10-28T00:11:13.310Z", "updatedByName": "updatedByName_REDACTED_bbffc38b-aa65-403d-90cd-8847830d81eb",
-        "updatedAt": "2023-10-28T00:11:13.316Z", "programName": "prog-target-patient",
-        "programTitle": "Target Patient", "programDescription": "Moderate to severe
-        patients, either on biologics or oral treatment.", "assigned": true, "patientId":
-        "de5e1a93-70b0-4ed4-868f-3854becc383c", "currentPhase": {"timestamp": "2023-10-28T00:11:13.314Z",
-        "createdBy": "createdBy_REDACTED_1a5bc1c7-c703-4fae-9124-b15bc8ffad9b", "createdByName":
-        "createdByName_REDACTED_6cfe47b8-9e3e-414a-92b8-6ecc0ac4ae53", "name": "start",
-        "title": "Start", "description": "", "currentVersion": "92", "deleted": false},
-        "status": "IN_PROGRESS", "compatibleWithCurrentVersion": true, "pathHistory":
-        [{"timestamp": "2023-10-28T00:11:13.314Z", "createdBy": "createdBy_REDACTED_8902d24e-8de5-4836-9a49-d96d80dbe121",
-        "createdByName": "createdByName_REDACTED_310d4c31-40ba-495c-8f89-76e40d9e7c73",
-        "name": "start", "title": "Start", "description": "", "currentVersion": "92",
-        "deleted": false}]}'
-    headers:
-      Access-Control-Allow-Headers:
-      - authorization, content-type, xsrf-token, security-role
-      Access-Control-Allow-Methods:
-      - GET, POST, PUT, DELETE, PATCH, OPTIONS
-      Access-Control-Allow-Origin:
-      - '*'
-      Access-Control-Expose-Headers:
-      - xsrf-token
-      Access-Control-Max-Age:
-      - '3600'
-      Cache-Control:
-      - no-cache, no-store, max-age=0, must-revalidate
-      Connection:
-      - keep-alive
-      Content-Type:
-      - application/json
-      Date:
-      - Sat, 28 Oct 2023 00:11:39 GMT
-      Expires:
-      - '0'
-      Pragma:
-      - no-cache
-      Strict-Transport-Security:
-      - max-age=31536000 ; includeSubDomains
-      Transfer-Encoding:
-      - chunked
-      X-Content-Type-Options:
-      - nosniff
-      X-XSS-Protection:
-      - 1; mode=block
-      content-length:
-      - '963'
-    status:
-      code: 200
-      message: OK
-- request:
-    body: null
-    headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
-      Authorization:
-      - API_TOKEN_70b27fc9-755a-40e6-ba68-ca1f5f7c629d
-      Connection:
-      - keep-alive
-      User-Agent:
-      - python-welkin/0.1.1
-    method: GET
-    uri: https://api.live.welkincloud.io/tenant_REDACTED/instance_REDACTED/patients/de5e1a93-70b0-4ed4-868f-3854becc383c/programs/current/prog-target-patient
-  response:
-    body:
-      string: '{"id": "a636bccc-d554-46c2-a7e5-c37f9520db31", "createdByName": "createdByName_REDACTED_1270b5a2-b661-4cc5-954f-23c467001188",
-        "createdAt": "2023-10-28T00:11:13.310Z", "updatedByName": "updatedByName_REDACTED_49f73c8d-b565-4fb1-bf9e-f1b79ff7d37e",
-        "updatedAt": "2023-10-28T00:11:13.316Z", "programName": "prog-target-patient",
-        "programTitle": "Target Patient", "programDescription": "Moderate to severe
-        patients, either on biologics or oral treatment.", "assigned": true, "patientId":
-        "de5e1a93-70b0-4ed4-868f-3854becc383c", "currentPhase": {"timestamp": "2023-10-28T00:11:13.314Z",
-        "createdBy": "createdBy_REDACTED_412bf14f-f5eb-4ff1-85d4-d309d40dcc44", "createdByName":
-        "createdByName_REDACTED_4713923d-cf5b-4458-94f4-df2206c7d1d4", "name": "start",
-        "title": "Start", "description": "", "currentVersion": "92", "deleted": false},
-        "status": "IN_PROGRESS", "compatibleWithCurrentVersion": true, "pathHistory":
-        [{"timestamp": "2023-10-28T00:11:13.314Z", "createdBy": "createdBy_REDACTED_2a352fe1-dde4-414e-88bb-eb57063e06cd",
-        "createdByName": "createdByName_REDACTED_badedad0-d666-46e2-a043-19fb4fe587e3",
-        "name": "start", "title": "Start", "description": "", "currentVersion": "92",
-        "deleted": false}]}'
-    headers:
-      Access-Control-Allow-Headers:
-      - authorization, content-type, xsrf-token, security-role
-      Access-Control-Allow-Methods:
-      - GET, POST, PUT, DELETE, PATCH, OPTIONS
-      Access-Control-Allow-Origin:
-      - '*'
-      Access-Control-Expose-Headers:
-      - xsrf-token
-      Access-Control-Max-Age:
-      - '3600'
-      Cache-Control:
-      - no-cache, no-store, max-age=0, must-revalidate
-      Connection:
-      - keep-alive
-      Content-Type:
-      - application/json
-      Date:
-      - Sat, 28 Oct 2023 00:13:21 GMT
-      Expires:
-      - '0'
-      Pragma:
-      - no-cache
-      Strict-Transport-Security:
-      - max-age=31536000 ; includeSubDomains
-      Transfer-Encoding:
-      - chunked
-      X-Content-Type-Options:
-      - nosniff
-      X-XSS-Protection:
-      - 1; mode=block
-      content-length:
-      - '963'
+      - '1187'
     status:
       code: 200
       message: OK

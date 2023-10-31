@@ -1,0 +1,75 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - API_TOKEN_cdbf8879-481a-4cdd-af08-c5a0fc54f3b1
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-welkin/0.1.1
+    method: GET
+    uri: https://api.live.welkincloud.io/tenant_REDACTED/instance_REDACTED/patients/de5e1a93-70b0-4ed4-868f-3854becc383c/programs?page=0
+  response:
+    body:
+      string: '{"data": [{"id": null, "createdByName": "createdByName_REDACTED_81a5b561-afc0-4fb3-804b-9baee07b6a8c",
+        "createdAt": null, "updatedByName": "updatedByName_REDACTED_02620078-7370-4899-852b-61b8f855a48d",
+        "updatedAt": null, "programName": "prog-target-2-patient", "programTitle":
+        "Target 2 Patient", "programDescription": "Delayers - en route to top of treatment.",
+        "assigned": false, "patientId": null, "currentPhase": null, "status": null,
+        "compatibleWithCurrentVersion": false, "pathHistory": []}, {"id": null, "createdByName":
+        "createdByName_REDACTED_6be765b8-0e18-425e-ae4e-88092280c9fe", "createdAt":
+        null, "updatedByName": "updatedByName_REDACTED_85563121-fbcc-4f10-912e-cfc75bc595e1",
+        "updatedAt": null, "programName": "prog-non-target-patient", "programTitle":
+        "Non-Target Patient", "programDescription": "All other non-target patients
+        that do not meet the criteria for other care plans.", "assigned": false, "patientId":
+        null, "currentPhase": null, "status": null, "compatibleWithCurrentVersion":
+        false, "pathHistory": []}, {"id": null, "createdByName": "createdByName_REDACTED_6ed5abd3-74fd-4071-b732-c204b1243731",
+        "createdAt": null, "updatedByName": "updatedByName_REDACTED_932a65a7-1273-4d8b-9cbe-4068dddc95ed",
+        "updatedAt": null, "programName": "prog-target-patient", "programTitle": "Target
+        Patient", "programDescription": "Moderate to severe patients, either on biologics
+        or oral treatment.", "assigned": false, "patientId": null, "currentPhase":
+        null, "status": null, "compatibleWithCurrentVersion": false, "pathHistory":
+        []}], "metaInfo": {"page": 0, "pageSize": 20, "totalElements": 3, "numberOfElements":
+        3, "lastPage": true, "firstPage": true, "totalPages": 1}}'
+    headers:
+      Access-Control-Allow-Headers:
+      - authorization, content-type, xsrf-token, security-role
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, PATCH, OPTIONS
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - xsrf-token
+      Access-Control-Max-Age:
+      - '3600'
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 31 Oct 2023 02:10:15 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Strict-Transport-Security:
+      - max-age=31536000 ; includeSubDomains
+      Transfer-Encoding:
+      - chunked
+      X-Content-Type-Options:
+      - nosniff
+      X-XSS-Protection:
+      - 1; mode=block
+      content-length:
+      - '1239'
+    status:
+      code: 200
+      message: OK
+version: 1

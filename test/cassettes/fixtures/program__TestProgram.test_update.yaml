@@ -1,0 +1,69 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - API_TOKEN_9a3dfce4-1178-4f45-8e58-f683604bd00f
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-welkin/0.1.1
+    method: GET
+    uri: https://api.live.welkincloud.io/tenant_REDACTED/instance_REDACTED/patients/de5e1a93-70b0-4ed4-868f-3854becc383c/programs/current/prog-target-patient
+  response:
+    body:
+      string: '{"id": "77d60b23-6d23-4292-b007-836a0b14be8f", "createdByName": "createdByName_REDACTED_c39f6ee2-2030-4109-9e94-7469bdd4e8ae",
+        "createdAt": "2023-10-31T02:10:16.204Z", "updatedByName": "updatedByName_REDACTED_0477b685-93eb-4bae-b2a6-cd50bd8379ed",
+        "updatedAt": "2023-10-31T02:10:16.210Z", "programName": "prog-target-patient",
+        "programTitle": "Target Patient", "programDescription": "Moderate to severe
+        patients, either on biologics or oral treatment.", "assigned": true, "patientId":
+        "de5e1a93-70b0-4ed4-868f-3854becc383c", "currentPhase": {"timestamp": "2023-10-31T02:10:16.209Z",
+        "createdBy": "createdBy_REDACTED_9a567b17-258b-4e31-b497-c94fc64d3113", "createdByName":
+        "createdByName_REDACTED_3f03e301-06af-47b9-8659-4e759277ea87", "name": "start",
+        "title": "Start", "description": "", "currentVersion": "92", "deleted": false},
+        "status": "IN_PROGRESS", "compatibleWithCurrentVersion": true, "pathHistory":
+        [{"timestamp": "2023-10-31T02:10:16.209Z", "createdBy": "createdBy_REDACTED_90df99b1-b748-490c-b7f5-42d6faa3d93e",
+        "createdByName": "createdByName_REDACTED_5aab39e6-d160-4fe8-afc9-951ec6919339",
+        "name": "start", "title": "Start", "description": "", "currentVersion": "92",
+        "deleted": false}]}'
+    headers:
+      Access-Control-Allow-Headers:
+      - authorization, content-type, xsrf-token, security-role
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, PATCH, OPTIONS
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - xsrf-token
+      Access-Control-Max-Age:
+      - '3600'
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 31 Oct 2023 02:11:02 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Strict-Transport-Security:
+      - max-age=31536000 ; includeSubDomains
+      Transfer-Encoding:
+      - chunked
+      X-Content-Type-Options:
+      - nosniff
+      X-XSS-Protection:
+      - 1; mode=block
+      content-length:
+      - '963'
+    status:
+      code: 200
+      message: OK
+version: 1

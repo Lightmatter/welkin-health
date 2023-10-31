@@ -1,3 +1,4 @@
+import inspect
 import json
 import os
 import uuid
@@ -111,17 +112,27 @@ def body_hook(blacklist, replacement):
 
 
 @pytest.fixture
-def patient(client, vcr, vcr_cassette_dir, vcr_cassette_name):
+def fixture_cassette(vcr, vcr_cassette_dir, vcr_cassette_name):
+    def _cassette():
+        caller_function_name = inspect.stack()[1].function
+        cassette_name = f"{caller_function_name}__{vcr_cassette_name}"
+        fixture_path = str(Path(vcr_cassette_dir, "fixtures"))
+
+        return vcr.use_cassette(cassette_name, cassette_library_dir=fixture_path)
+
+    return _cassette
+
+
+@pytest.fixture
+def patient(client, fixture_cassette):
     patient = client.Patient(
         firstName="Test",
         lastName="Patient",
         email="test.patient@example.com",
         externalGuid=uuid.UUID("12345678-1234-1234-1234-1234567890ab"),
     )
-    cassette_name = f"patient__{vcr_cassette_name}"
-    fixture_path = str(Path(vcr_cassette_dir, "fixtures"))
 
-    with vcr.use_cassette(cassette_name, cassette_library_dir=fixture_path):
+    with fixture_cassette():
         try:
             return patient.get()
         except WelkinHTTPError as exc:

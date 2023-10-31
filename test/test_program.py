@@ -8,68 +8,82 @@ from welkin.models import Patient, Program, ProgramPhase, ProgramPhases, Program
 from welkin.models.formation import Program as FormationProgram
 
 
-@pytest.fixture
-def formation(client: Client) -> FormationProgram:
-    return client.Formation().Programs().get()[0]
-
-
-@pytest.fixture
-def first_phase(formation) -> str:
-    return formation.phases[0]["name"]
-
-
-@pytest.fixture
-def second_phase(formation) -> str:
-    return formation.phases[1]["name"]
-
-
-@pytest.fixture
-def model(patient: Patient, formation: FormationProgram, first_phase: str) -> Program:
-    model = patient.Program(programName=formation.name)
-    try:
-        model = model.get()
-    except WelkinHTTPError as exc:
-        if exc.response.status_code != HTTPStatus.NOT_FOUND:
-            raise
-
-        return model.update(assigned=True, phaseName=first_phase)
-
-    if len(model.pathHistory) > 1:
-        model.delete()
-        model = model.update(assigned=True, phaseName=first_phase)
-
-    return model
-
-
 @pytest.mark.vcr
 class TestProgram:
-    @pytest.mark.parametrize("identifier", ["id", "programName"])
-    def test_read(self, patient: Patient, model: Program, identifier: str):
-        program = patient.Program(**{identifier: getattr(model, identifier)}).get()
+    @pytest.fixture
+    def formation(self, client: Client) -> FormationProgram:
+        return client.Formation().Programs().get()[0]
 
-        assert isinstance(program, Program)
-        assert isinstance(program.currentPhase, ProgramPhase)
-        assert isinstance(program.pathHistory, ProgramPhases)
+    @pytest.fixture
+    def first_phase(self, formation) -> str:
+        return formation.phases[0]["name"]
 
-        assert program.id == model.id
+    @pytest.fixture
+    def second_phase(self, formation) -> str:
+        return formation.phases[1]["name"]
 
-    def test_update(self, patient: Patient, model: Program, second_phase: str):
-        assert model.currentPhase.name != second_phase
-        assert len(model.pathHistory) == 1
+    @pytest.fixture
+    def program(
+        self,
+        patient: Patient,
+        formation: FormationProgram,
+        first_phase: str,
+        fixture_cassette,
+    ) -> Program:
+        program = patient.Program(programName=formation.name)
 
-        program = patient.Program(programName=model.programName).update(
+        with fixture_cassette():
+            try:
+                program = program.get()
+            except WelkinHTTPError as exc:
+                if exc.response.status_code != HTTPStatus.NOT_FOUND:
+                    raise
+
+                return program.update(assigned=True, phaseName=first_phase)
+
+            if len(program.pathHistory) > 1:
+                program.delete()
+                program = program.update(assigned=True, phaseName=first_phase)
+
+            return program
+
+    @pytest.mark.parametrize(
+        "identifier",
+        [
+            "id",
+            "programName",
+        ],
+    )
+    def test_read(self, patient: Patient, program: Program, identifier: str):
+        prog = patient.Program(**{identifier: getattr(program, identifier)}).get()
+
+        assert isinstance(prog, Program)
+        assert isinstance(prog.currentPhase, ProgramPhase)
+        assert isinstance(prog.pathHistory, ProgramPhases)
+
+        assert prog.id == program.id
+
+    def test_read_no_id(self, client):
+        with pytest.raises(ValueError):
+            client.Patient(id="notarealid").Program().get()
+
+    def test_update(self, patient: Patient, program: Program, second_phase: str):
+        assert program.currentPhase.name != second_phase
+        assert len(program.pathHistory) == 1
+
+        prog = patient.Program(programName=program.programName).update(
             phaseName=second_phase
         )
-        assert program.currentPhase.name == second_phase
-        assert program.currentPhase.name != model.currentPhase.name
-        assert len(program.pathHistory) == 2
+        assert prog.currentPhase.name == second_phase
+        assert prog.currentPhase.name != program.currentPhase.name
+        assert len(prog.pathHistory) == 2
 
-    def test_delete(self, patient: Patient, model: Program):
-        program = patient.Program(id=model.id)
-        program.delete()
+    def test_delete(self, patient: Patient, program: Program):
+        prog = patient.Program(id=program.id)
+        prog.delete()
 
         with pytest.raises(WelkinHTTPError) as excinfo:
-            program.get()
+            prog.get()
 
         assert excinfo.value.response.status_code == 404
 

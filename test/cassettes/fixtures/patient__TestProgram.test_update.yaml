@@ -1,0 +1,84 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - API_TOKEN_7a764bd7-4131-4ef6-a102-6efd9c869a1c
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-welkin/0.1.1
+    method: GET
+    uri: https://api.live.welkincloud.io/tenant_REDACTED/instance_REDACTED/patients/12345678-1234-1234-1234-1234567890ab?type=EGUID
+  response:
+    body:
+      string: '{"createdByName": "createdByName_REDACTED_1db820cc-08a1-4598-aaa7-0bfa05012815",
+        "lastName": "Patient", "country": null, "secondaryEmail": null, "gender":
+        "UNKNOWN", "city": null, "timezone": null, "careTeamMembers": [], "secondaryPhoneCapabilities":
+        [], "createdAt": "2023-10-27T23:19:20.506Z", "accessCode": null, "addressLine1":
+        null, "addressLine2": null, "id": "de5e1a93-70b0-4ed4-868f-3854becc383c",
+        "state": null, "secondaryLanguage": null, "email": "test.patient@example.com",
+        "careTeam": [], "updatedAt": "2023-10-27T23:19:20.506Z", "primaryPhoneCapabilities":
+        [], "pointOfContact": null, "zip": null, "updatedBy": "updatedBy_REDACTED_22721fb2-a223-4c09-9563-e55254785a20",
+        "preferableInstancePhoneId": null, "updatedByName": "updatedByName_REDACTED_ebc09ed9-3d69-4e31-9486-db8f946a796a",
+        "mrn": null, "externalId": null, "externalGuid": "12345678-1234-1234-1234-1234567890ab",
+        "patientPrograms": [{"id": "53e7f5de-67d7-475f-9443-6b4dedf14848", "createdByName":
+        "createdByName_REDACTED_3e8a4c70-1021-4181-8314-c1cd5d24d2dd", "createdAt":
+        "2023-10-31T02:05:28.717Z", "updatedByName": "updatedByName_REDACTED_7675da11-62df-4823-b6dc-c4947ce9f238",
+        "updatedAt": "2023-10-31T02:05:28.721Z", "programName": "prog-target-patient",
+        "programTitle": "Target Patient", "programDescription": "Moderate to severe
+        patients, either on biologics or oral treatment.", "assigned": true, "patientId":
+        "de5e1a93-70b0-4ed4-868f-3854becc383c", "currentPhase": {"timestamp": "2023-10-31T02:05:28.720Z",
+        "createdBy": "createdBy_REDACTED_883b3c82-d17a-4384-85b6-e8d386667f46", "createdByName":
+        "createdByName_REDACTED_01addf2b-7b5e-47c2-821a-3e82ae4fd4a6", "name": "start",
+        "title": "Start", "description": "", "currentVersion": "92", "deleted": false},
+        "status": "IN_PROGRESS", "compatibleWithCurrentVersion": true, "pathHistory":
+        [{"timestamp": "2023-10-31T02:05:28.720Z", "createdBy": "createdBy_REDACTED_5914e5a6-0720-4195-8616-1eea59d66b39",
+        "createdByName": "createdByName_REDACTED_bfcca769-ca87-40f4-b8af-ed65555e9f93",
+        "name": "start", "title": "Start", "description": "", "currentVersion": "92",
+        "deleted": false}]}], "nric": null, "birthDate": null, "cadence": [], "firstName":
+        "Test", "patientRegionTitle": null, "createdBy": "createdBy_REDACTED_d10ef850-31ef-4505-a7c8-05b5a48447b0",
+        "phone": null, "middleName": null, "patientTerritories": [], "patientRegion":
+        null, "maritalStatus": "UKN", "primaryLanguage": "ENGLISH", "secondaryPhone":
+        null, "patientTerritory": null}'
+    headers:
+      Access-Control-Allow-Headers:
+      - authorization, content-type, xsrf-token, security-role
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, PATCH, OPTIONS
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - xsrf-token
+      Access-Control-Max-Age:
+      - '3600'
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 31 Oct 2023 02:10:14 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Strict-Transport-Security:
+      - max-age=31536000 ; includeSubDomains
+      Transfer-Encoding:
+      - chunked
+      X-Content-Type-Options:
+      - nosniff
+      X-XSS-Protection:
+      - 1; mode=block
+      content-length:
+      - '2034'
+    status:
+      code: 200
+      message: OK
+version: 1
