@@ -11,10 +11,10 @@ from requests.adapters import HTTPAdapter
 from requests.compat import urljoin
 from requests.packages.urllib3.util.retry import Retry  # type: ignore
 
-from welkin import __version__, models
-from welkin.authentication import WelkinAuth
-from welkin.exceptions import WelkinHTTPError
-from welkin.util import _build_resources, clean_request_params, clean_request_payload
+from . import __version__, models
+from .authentication import WelkinAuth
+from .exceptions import WelkinHTTPError
+from .util import _build_resources, clean_request_params, clean_request_payload
 
 logger = logging.getLogger(__name__)
 
@@ -96,6 +96,8 @@ class Client(Session):
     Patients = models.Patients
     Program = models.Program
     ProgramPhase = models.ProgramPhase
+    ProgramPhases = models.ProgramPhases
+    Programs = models.Programs
     Schedules = models.Schedules
     SearchChats = models.SearchChats
     SMS = models.SMS
