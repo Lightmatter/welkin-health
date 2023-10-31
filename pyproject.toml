@@ -56,6 +56,9 @@ build-backend = "poetry.core.masonry.api"
 [tool.isort]
 profile = "black"
 
+[tool.coverage.run]
+omit = ["test/*"]
+
 [tool.pytest.ini_options]
 addopts = ["-n=auto"]
 env_files = [".env", ".env.example"]
