@@ -11,10 +11,10 @@ from requests.adapters import HTTPAdapter
 from requests.compat import urljoin
 from requests.packages.urllib3.util.retry import Retry  # type: ignore
 
-from . import __version__, models
-from .authentication import WelkinAuth
-from .exceptions import WelkinHTTPError
-from .util import _build_resources, clean_request_params, clean_request_payload
+from welkin import __version__, models
+from welkin.authentication import WelkinAuth
+from welkin.exceptions import WelkinHTTPError
+from welkin.util import _build_resources, clean_request_params, clean_request_payload
 
 logger = logging.getLogger(__name__)
 
