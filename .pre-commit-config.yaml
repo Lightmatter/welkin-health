@@ -7,13 +7,6 @@ repos:
       - id: debug-statements
       - id: mixed-line-ending
 
-  - repo: https://github.com/pycqa/doc8
-    rev: v1.1.1
-    hooks:
-      - id: doc8
-        entry: ./scripts/run_hook.py apps/rind python -m doc8
-        exclude: ^(?!(apps/rind)).*$
-
   ## Python
   - repo: https://github.com/pycqa/isort
     rev: 5.12.0
