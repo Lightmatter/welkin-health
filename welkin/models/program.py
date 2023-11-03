@@ -11,7 +11,7 @@ class ProgramPhases(Collection):
     resource = ProgramPhase
 
 
-class Program(Resource):
+class PatientProgram(Resource):
     subresources = [ProgramPhase]
     nested_objects = {
         "phases": "ProgramPhase",
@@ -64,8 +64,8 @@ class Program(Resource):
         )
 
 
-class Programs(Collection):
-    resource = Program
+class PatientPrograms(Collection):
+    resource = PatientProgram
     iterator = MetaInfoIterator
 
     def get(

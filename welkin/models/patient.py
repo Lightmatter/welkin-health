@@ -10,7 +10,7 @@ from welkin.models.document import (
 )
 from welkin.models.email import Email, Emails
 from welkin.models.encounter import Encounter, Encounters
-from welkin.models.program import Program, Programs
+from welkin.models.program import PatientProgram, PatientPrograms
 from welkin.models.sms import SMS, SMSes
 from welkin.pagination import PageableIterator
 
@@ -31,8 +31,8 @@ class Patient(Resource):
         Emails,
         Encounter,
         Encounters,
-        Program,
-        Programs,
+        PatientProgram,
+        PatientPrograms,
         SearchChats,
         SMS,
         SMSes,
