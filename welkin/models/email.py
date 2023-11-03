@@ -19,7 +19,6 @@ class Emails(Collection):
 
     @patient_id
     def get(self, patient_id: str = None, sort: str = None, *args, **kwargs):
-
         params = {
             "sort": sort,
         }

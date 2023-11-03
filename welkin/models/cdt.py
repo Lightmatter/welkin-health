@@ -43,7 +43,6 @@ class CDTs(Collection):
         *args,
         **kwargs,
     ):
-
         root = ""
         if patient_id:
             root = f"patients/{patient_id}"

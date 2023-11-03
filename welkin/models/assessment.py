@@ -49,7 +49,6 @@ class Assessments(Collection):
     iterator = PageableIterator
 
     def get(self, patient_id: str = None, encounter_id: str = None, *args, **kwargs):
-
         root = f"{self._client.instance}/patients/"
         if self._parent:
             encounter_id = self._parent.id
