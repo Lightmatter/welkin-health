@@ -1,4 +1,5 @@
 import dbm
+from pathlib import Path
 
 from requests import Request
 
@@ -10,6 +11,12 @@ def auth_class(client):
     if auth.tenant != "gh":
         auth.tenant = "test_tenant"
     auth.token_method = lambda: {"token": "API_TOKEN"}
+
+    try:
+        auth.token
+    except dbm.error:
+        Path(DB_PATH).unlink()
+        return auth_class(client)
 
     return auth
 
