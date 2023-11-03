@@ -18,7 +18,8 @@ jobs:
           min-version: 3.8
 
   test:
-    permissions: write-all
+    permissions:
+      pull-requests: write
     needs: [get-python-versions]
     runs-on: ubuntu-latest
     strategy:
