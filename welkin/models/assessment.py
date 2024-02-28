@@ -42,7 +42,7 @@ class Assessments(Collection):
     def get(self, patient_id: str, encounter_id: str, *args, **kwargs):
         return super().get(
             f"{self._client.instance}/patients/{patient_id}/encounters/{encounter_id}/"
-            f"assessments",
+            "assessments",
             *args,
             **kwargs,
         )

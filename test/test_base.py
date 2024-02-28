@@ -40,6 +40,6 @@ def test_method_args(client, class_name: str):
 
         if cls in Patient.subresources:
             try:
-                assert args.args.index("patient_id") == 1, f"patient_id must be first"
+                assert args.args.index("patient_id") == 1, "patient_id must be first"
             except ValueError:
                 pytest.fail(f"{method} must accept patient_id")
