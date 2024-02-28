@@ -7,11 +7,10 @@ https://www.sphinx-doc.org/en/master/usage/configuration.html
 import sys
 from pathlib import Path
 
-import welkin
-
 root = Path(__file__).parent.parent
 sys.path.insert(0, str(root))
 
+import welkin
 
 # -- Project information -----------------------------------------------------
 project = welkin.__title__
