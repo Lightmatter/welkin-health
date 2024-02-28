@@ -9,6 +9,9 @@ from welkin.util import (
     clean_json_list,
     clean_request_params,
     clean_request_payload,
+    find_model_id,
+    to_camel_case,
+    to_snake_case,
 )
 
 
@@ -114,3 +117,49 @@ def test_clean_date(base_date, base_date_str):
 def test_clean_datetime(dt, expected, request):
     cleaned = clean_datetime(request.getfixturevalue(dt))
     assert cleaned == request.getfixturevalue(expected)
+
+
+@pytest.mark.parametrize(
+    "input",
+    [
+        "foo_bar",
+        "fooBar",
+        "FooBar",
+        "FOO_BAR",
+        "fooBAR",
+        "FOOBar",
+    ],
+)
+def test_case_converters(input):
+    assert to_camel_case(input) == "fooBar"
+    assert to_snake_case(input) == "foo_bar"
+
+
+def test_find_model_id(client):
+    patient = client.Patient()
+    encounter = patient.Encounter()
+
+    with pytest.raises(AttributeError):
+        find_model_id(encounter, "Patient")
+
+    patient.id = "123"
+    assert find_model_id(patient, "Patient") == patient.id
+    assert find_model_id(encounter, "Patient") == patient.id
+
+    del patient.id
+    encounter.patientId = "456"
+    assert find_model_id(encounter, "Patient") == encounter.patientId
+
+
+def test_model_id(client):
+    encounter = client.Patient().Encounter()
+    with pytest.raises(TypeError) as exc_info:
+        encounter.get()
+
+    assert "missing 1 required positional argument" in exc_info.value.args[0]
+
+    disposition = encounter.EncounterDisposition()
+    with pytest.raises(TypeError) as exc_info:
+        disposition.get()
+
+    assert "missing 2 required positional arguments" in exc_info.value.args[0]

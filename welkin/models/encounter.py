@@ -2,23 +2,19 @@ from enum import Enum
 
 from welkin.models.assessment import Assessment, Assessments
 from welkin.models.base import Collection, Resource
-from welkin.models.util import EncounterSubResource, patient_id
 from welkin.pagination import MetaInfoIterator
+from welkin.util import model_id
 
 
-class EncounterDisposition(Resource, EncounterSubResource):
-    def get(self, patient_id: str = None, encounter_id: str = None):
-        patient_id, encounter_id = self.get_patient_encounter_id(
-            patient_id, encounter_id
-        )
+class EncounterDisposition(Resource):
+    @model_id("Patient", "Encounter")
+    def get(self, patient_id: str, encounter_id: str):
         return super().get(
             f"{self._client.instance}/patients/{patient_id}/encounters/{encounter_id}/disposition"
         )
 
-    def update(self, patient_id: str = None, encounter_id: str = None, **kwargs):
-        patient_id, encounter_id = self.get_patient_encounter_id(
-            patient_id, encounter_id
-        )
+    @model_id("Patient", "Encounter")
+    def update(self, patient_id: str, encounter_id: str, **kwargs):
         return super().patch(
             f"{self._client.instance}/patients/{patient_id}/encounters/{encounter_id}/disposition",
             kwargs,
@@ -40,12 +36,12 @@ class Encounter(Resource):
         "disposition": "EncounterDisposition",
     }
 
-    @patient_id
-    def create(self, patient_id: str = None):
+    @model_id("Patient")
+    def create(self, patient_id: str):
         return super().post(f"{self._client.instance}/patients/{patient_id}/encounters")
 
-    @patient_id
-    def get(self, patient_id: str = None, related_data: bool = False):
+    @model_id("Patient")
+    def get(self, patient_id: str, related_data: bool = False):
         encounters = "encounters"
         if related_data:
             encounters = "full-encounters"
@@ -54,15 +50,15 @@ class Encounter(Resource):
             f"{self._client.instance}/patients/{patient_id}/{encounters}/{self.id}"
         )
 
-    @patient_id
-    def update(self, patient_id: str = None, **kwargs):
+    @model_id("Patient")
+    def update(self, patient_id: str, **kwargs):
         return super().patch(
             f"{self._client.instance}/patients/{patient_id}/encounters/{self.id}",
             kwargs,
         )
 
-    @patient_id
-    def delete(self, patient_id: str = None):
+    @model_id("Patient")
+    def delete(self, patient_id: str):
         return super().delete(
             f"{self._client.instance}/patients/{patient_id}/encounters/{self.id}"
         )
@@ -84,23 +80,17 @@ class Encounters(Collection):
         *args,
         **kwargs,
     ):
-        root = ""
+        path = f"{self._client.instance}/"
         if patient_id:
-            root = f"patients/{patient_id}"
+            path += f"patients/{patient_id}/"
         elif user_id:
-            root = f"users/{user_id}"
-        elif self._parent:
-            if self._parent.__class__.__name__ == "Patient":
-                root = f"patients/{self._parent.id}"
-            elif self._parent.__class__.__name__ == "User":
-                root = f"users/{self._parent.id}"
-        encounters = "encounters"
-        if related_data:
-            encounters = "full-encounters"
+            path += f"users/{user_id}/"
+        elif self._parent.__class__.__name__ == "Patient":
+            path += f"patients/{self._parent.id}/"
+        elif self._parent.__class__.__name__ == "User":
+            path += f"users/{self._parent.id}/"
 
-        path = f"{self._client.instance}/{encounters}"
-        if root:
-            path = f"{self._client.instance}/{root}/{encounters}"
+        path += "full-encounters" if related_data else "encounters"
 
         params = {
             "withCareTeam": with_care_team,
