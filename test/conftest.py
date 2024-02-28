@@ -1,10 +1,16 @@
+import inspect
 import json
 import os
 import uuid
+from datetime import date, datetime, time, timedelta, timezone
+from http import HTTPStatus
+from pathlib import Path
+from uuid import uuid4
 
 import pytest
 
 from welkin import Client
+from welkin.exceptions import WelkinHTTPError
 
 
 def pytest_collection_modifyitems(items):
@@ -103,3 +109,84 @@ def body_hook(blacklist, replacement):
         return dct
 
     return hook
+
+
+@pytest.fixture
+def fixture_cassette(vcr, vcr_cassette_dir, vcr_cassette_name):
+    def _cassette():
+        caller_function_name = inspect.stack()[1].function
+        cassette_name = f"{caller_function_name}__{vcr_cassette_name}"
+        fixture_path = str(Path(vcr_cassette_dir, "fixtures"))
+
+        return vcr.use_cassette(cassette_name, cassette_library_dir=fixture_path)
+
+    return _cassette
+
+
+@pytest.fixture
+def patient(client, fixture_cassette):
+    patient = client.Patient(
+        firstName="Test",
+        lastName="Patient",
+        email="test.patient@example.com",
+        externalGuid=uuid.UUID("12345678-1234-1234-1234-1234567890ab"),
+    )
+
+    with fixture_cassette():
+        try:
+            return patient.get()
+        except WelkinHTTPError as exc:
+            if exc.response.status_code != HTTPStatus.NOT_FOUND:
+                raise
+
+            return patient.create()
+
+
+@pytest.fixture
+def base_date():
+    return date(year=2022, month=9, day=15)
+
+
+@pytest.fixture
+def base_date_str():
+    return "2022-09-15T00:00:00.000Z"
+
+
+@pytest.fixture
+def base_time():
+    return time(hour=23, minute=0, second=0, microsecond=0)
+
+
+@pytest.fixture
+def utc_datetime(base_date, base_time):
+    return datetime.combine(base_date, base_time, tzinfo=timezone.utc)
+
+
+@pytest.fixture
+def utc_datetime_str():
+    return "2022-09-15T23:00:00.000Z"
+
+
+@pytest.fixture
+def pst_datetime(base_date, base_time):
+    return datetime.combine(base_date, base_time, tzinfo=timezone(timedelta(hours=-8)))
+
+
+@pytest.fixture
+def pst_datetime_str():
+    return "2022-09-16T07:00:00.000Z"
+
+
+@pytest.fixture
+def est_datetime(base_date, base_time):
+    return datetime.combine(base_date, base_time, tzinfo=timezone(timedelta(hours=-5)))
+
+
+@pytest.fixture
+def est_datetime_str():
+    return "2022-09-16T04:00:00.000Z"
+
+
+@pytest.fixture
+def _uuid():
+    return uuid4()

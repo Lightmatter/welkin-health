@@ -82,7 +82,6 @@ def test_document_summary_create(client, vcr_cassette):
     reason="the bytes upload hits this issue in vcr: https://github.com/kevin1024/vcrpy/issues/660 but this test shows the correct implementation"
 )
 def test_document_summary_files_create(client, vcr_cassette):
-
     with open("test/walrus_uJGKbRm.jpeg", "rb") as f:
         files = client.DocumentSummaryFiles().create(
             patient_id="283f50d3-0840-426f-b07b-bd8e4ab76401",

@@ -1,0 +1,269 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - API_TOKEN_81ee7581-0f2d-4ad6-a3a2-d81fcd1dd971
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-welkin/0.1.1
+    method: GET
+    uri: https://api.live.welkincloud.io/tenant_REDACTED/instance_REDACTED/formations/current/programs?page=0
+  response:
+    body:
+      string: '[{"name": "prog-target-patient", "title": "Target Patient", "description":
+        "Moderate to severe patients, either on biologics or oral treatment.", "phases":
+        [{"name": "start", "title": "Start", "type": "START", "description": "", "autoFinishProgram":
+        false, "navigateTo": [{"name": "finish"}, {"name": "continuing-old-treatment"},
+        {"name": "stopping-old-treatment"}, {"name": "consent-requested"}]}, {"name":
+        "finish", "title": "Finish", "type": "FINISH", "description": "", "autoFinishProgram":
+        false, "navigateTo": []}, {"name": "records-requested", "title": "Records
+        Requested", "type": "DEFAULT", "description": "", "autoFinishProgram": false,
+        "navigateTo": [{"name": "records-received"}]}, {"name": "records-received",
+        "title": "Records Received", "type": "DEFAULT", "description": "", "autoFinishProgram":
+        false, "navigateTo": []}, {"name": "starting-new-treatment", "title": "Starting
+        New Treatment", "type": "DEFAULT", "description": "", "autoFinishProgram":
+        false, "navigateTo": [{"name": "prior-auth-requested"}, {"name": "sent-to-pharmacy"}]},
+        {"name": "continuing-old-treatment", "title": "Continuing Old Treatment",
+        "type": "DEFAULT", "description": "", "autoFinishProgram": false, "navigateTo":
+        [{"name": "prior-auth-requested"}, {"name": "sent-to-pharmacy"}]}, {"name":
+        "prior-auth-requested", "title": "Prior Auth Requested", "type": "DEFAULT",
+        "description": "", "autoFinishProgram": false, "navigateTo": [{"name": "prior-auth-approved"},
+        {"name": "prior-auth-abandoned"}]}, {"name": "prior-auth-approved", "title":
+        "Prior Auth Approved", "type": "DEFAULT", "description": "", "autoFinishProgram":
+        false, "navigateTo": [{"name": "sent-to-pharmacy"}]}, {"name": "prior-auth-abandoned",
+        "title": "Prior Auth Abandoned", "type": "DEFAULT", "description": "", "autoFinishProgram":
+        false, "navigateTo": [{"name": "prior-auth-approved"}]}, {"name": "sent-to-pharmacy",
+        "title": "Sent to Pharmacy", "type": "DEFAULT", "description": "", "autoFinishProgram":
+        false, "navigateTo": [{"name": "confirmed-patient-filled"}]}, {"name": "confirmed-patient-filled",
+        "title": "Confirmed Patient Filled", "type": "DEFAULT", "description": "",
+        "autoFinishProgram": false, "navigateTo": []}, {"name": "stopping-old-treatment",
+        "title": "Stopping Old Treatment", "type": "DEFAULT", "description": "", "autoFinishProgram":
+        false, "navigateTo": [{"name": "starting-new-treatment"}]}, {"name": "consent-requested",
+        "title": "Consent Requested", "type": "DEFAULT", "description": "", "autoFinishProgram":
+        false, "navigateTo": [{"name": "consent-received"}]}, {"name": "consent-received",
+        "title": "Consent Received", "type": "DEFAULT", "description": "", "autoFinishProgram":
+        false, "navigateTo": [{"name": "records-requested"}]}], "nodes": [{"id": "start",
+        "data": {"type": "START", "label": "Start"}, "type": "graphNode", "position":
+        {"x": 340, "y": 20}}, {"id": "finish", "data": {"type": "FINISH", "label":
+        "Finish"}, "type": "graphNode", "position": {"x": 1120, "y": 20}}, {"id":
+        "reactflow__edge-startHandleSrcRight_025adb09-c24a-45f9-b5a5-d1a44450ff43-finishHandleTargetLeft_5f5f5e64-5959-46b2-8e36-c85a86e60456",
+        "type": "smoothstep", "source": "start", "target": "finish", "animated": true,
+        "sourceHandle": "HandleSrcRight_start", "targetHandle": "HandleTargetLeft_finish",
+        "arrowHeadType": "arrowclosed"}, {"id": "records-requested", "data": {"type":
+        "DEFAULT", "label": "Records Requested"}, "type": "graphNode", "position":
+        {"x": 800, "y": -40}}, {"id": "records-received", "data": {"type": "DEFAULT",
+        "label": "Records Received"}, "type": "graphNode", "position": {"x": 980,
+        "y": -40}}, {"id": "starting-new-treatment", "data": {"type": "DEFAULT", "label":
+        "Starting New Treatment"}, "type": "graphNode", "position": {"x": 640, "y":
+        80}}, {"id": "continuing-old-treatment", "data": {"type": "DEFAULT", "label":
+        "Continuing Old Treatment"}, "type": "graphNode", "position": {"x": 440, "y":
+        140}}, {"id": "prior-auth-requested", "data": {"type": "DEFAULT", "label":
+        "Prior Auth Requested"}, "type": "graphNode", "position": {"x": 660, "y":
+        160}}, {"id": "prior-auth-approved", "data": {"type": "DEFAULT", "label":
+        "Prior Auth Approved"}, "type": "graphNode", "position": {"x": 840, "y": 160}},
+        {"id": "prior-auth-abandoned", "data": {"type": "DEFAULT", "label": "Prior
+        Auth Abandoned"}, "type": "graphNode", "position": {"x": 760, "y": 220}},
+        {"id": "sent-to-pharmacy", "data": {"type": "DEFAULT", "label": "Sent to Pharmacy"},
+        "type": "graphNode", "position": {"x": 860, "y": 80}}, {"id": "confirmed-patient-filled",
+        "data": {"type": "DEFAULT", "label": "Confirmed Patient Filled"}, "type":
+        "graphNode", "position": {"x": 1020, "y": 80}}, {"id": "reactflow__edge-records-requestedHandleSrcRight_6672da4b-34f4-42fb-81b3-5d7e785c5e1d-records-receivedHandleTargetLeft_1c3c44da-11c5-4da6-9e79-94f1eb86a5c5",
+        "type": "smoothstep", "source": "records-requested", "target": "records-received",
+        "animated": true, "sourceHandle": "HandleSrcRight_records-requested", "targetHandle":
+        "HandleTargetLeft_records-received", "arrowHeadType": "arrowclosed"}, {"id":
+        "stopping-old-treatment", "data": {"type": "DEFAULT", "label": "Stopping Old
+        Treatment"}, "type": "graphNode", "position": {"x": 440, "y": 80}}, {"id":
+        "reactflow__edge-stopping-old-treatmentHandleSrcRight_26bbcfc7-e81d-48ac-88aa-7bdcb209dc36-starting-new-treatmentHandleTargetLeft_0fec4bd7-99f2-4f0f-b21f-7875bf7b00a6",
+        "type": "smoothstep", "source": "stopping-old-treatment", "target": "starting-new-treatment",
+        "animated": true, "sourceHandle": "HandleSrcRight_stopping-old-treatment",
+        "targetHandle": "HandleTargetLeft_starting-new-treatment", "arrowHeadType":
+        "arrowclosed"}, {"id": "reactflow__edge-starting-new-treatmentHandleSrcBottom_0fec4bd7-99f2-4f0f-b21f-7875bf7b00a6-prior-auth-requestedHandleTargetTop_d27d5d34-3c7d-4a7d-b222-25b99dbeeb10",
+        "type": "smoothstep", "source": "starting-new-treatment", "target": "prior-auth-requested",
+        "animated": true, "sourceHandle": "HandleSrcBottom_starting-new-treatment",
+        "targetHandle": "HandleTargetTop_prior-auth-requested", "arrowHeadType": "arrowclosed"},
+        {"id": "reactflow__edge-continuing-old-treatmentHandleSrcRight_40cd6e6c-c21c-45bf-b94c-62092b2b2510-prior-auth-requestedHandleTargetLeft_d27d5d34-3c7d-4a7d-b222-25b99dbeeb10",
+        "type": "smoothstep", "source": "continuing-old-treatment", "target": "prior-auth-requested",
+        "animated": true, "sourceHandle": "HandleSrcRight_continuing-old-treatment",
+        "targetHandle": "HandleTargetLeft_prior-auth-requested", "arrowHeadType":
+        "arrowclosed"}, {"id": "reactflow__edge-prior-auth-requestedHandleSrcRight_d27d5d34-3c7d-4a7d-b222-25b99dbeeb10-prior-auth-approvedHandleTargetLeft_7d04e809-9419-4673-800b-ea2c3d7c04aa",
+        "type": "smoothstep", "source": "prior-auth-requested", "target": "prior-auth-approved",
+        "animated": true, "sourceHandle": "HandleSrcRight_prior-auth-requested", "targetHandle":
+        "HandleTargetLeft_prior-auth-approved", "arrowHeadType": "arrowclosed"}, {"id":
+        "reactflow__edge-sent-to-pharmacyHandleSrcRight_e1ad3528-270a-45bf-9757-91fe3ecb9d23-confirmed-patient-filledHandleTargetLeft_2505253d-32d6-4020-8e16-722b4813a5a7",
+        "type": "smoothstep", "source": "sent-to-pharmacy", "target": "confirmed-patient-filled",
+        "animated": true, "sourceHandle": "HandleSrcRight_sent-to-pharmacy", "targetHandle":
+        "HandleTargetLeft_confirmed-patient-filled", "arrowHeadType": "arrowclosed"},
+        {"id": "reactflow__edge-starting-new-treatmentHandleSrcRight_0fec4bd7-99f2-4f0f-b21f-7875bf7b00a6-sent-to-pharmacyHandleTargetLeft_e1ad3528-270a-45bf-9757-91fe3ecb9d23",
+        "type": "smoothstep", "source": "starting-new-treatment", "target": "sent-to-pharmacy",
+        "animated": true, "sourceHandle": "HandleSrcRight_starting-new-treatment",
+        "targetHandle": "HandleTargetLeft_sent-to-pharmacy", "arrowHeadType": "arrowclosed"},
+        {"id": "reactflow__edge-prior-auth-requestedHandleSrcBottom_d27d5d34-3c7d-4a7d-b222-25b99dbeeb10-prior-auth-abandonedHandleTargetLeft_982c7e02-2cce-4202-b72c-bee08f44e11a",
+        "type": "smoothstep", "source": "prior-auth-requested", "target": "prior-auth-abandoned",
+        "animated": true, "sourceHandle": "HandleSrcBottom_prior-auth-requested",
+        "targetHandle": "HandleTargetLeft_prior-auth-abandoned", "arrowHeadType":
+        "arrowclosed"}, {"id": "reactflow__edge-prior-auth-abandonedHandleSrcTop_982c7e02-2cce-4202-b72c-bee08f44e11a-prior-auth-approvedHandleTargetBottom_7d04e809-9419-4673-800b-ea2c3d7c04aa",
+        "type": "smoothstep", "source": "prior-auth-abandoned", "target": "prior-auth-approved",
+        "animated": true, "sourceHandle": "HandleSrcTop_prior-auth-abandoned", "targetHandle":
+        "HandleTargetBottom_prior-auth-approved", "arrowHeadType": "arrowclosed"},
+        {"id": "reactflow__edge-continuing-old-treatmentHandleSrcTop_40cd6e6c-c21c-45bf-b94c-62092b2b2510-sent-to-pharmacyHandleTargetBottom_e1ad3528-270a-45bf-9757-91fe3ecb9d23",
+        "type": "smoothstep", "source": "continuing-old-treatment", "target": "sent-to-pharmacy",
+        "animated": true, "sourceHandle": "HandleSrcTop_continuing-old-treatment",
+        "targetHandle": "HandleTargetBottom_sent-to-pharmacy", "arrowHeadType": "arrowclosed"},
+        {"id": "reactflow__edge-startHandleSrcBottom_a8a336be-e2ef-4336-bb18-0dfa4b5b9727-stopping-old-treatmentHandleTargetLeft_26bbcfc7-e81d-48ac-88aa-7bdcb209dc36",
+        "type": "smoothstep", "source": "start", "target": "stopping-old-treatment",
+        "animated": true, "sourceHandle": "HandleSrcBottom_start", "targetHandle":
+        "HandleTargetLeft_stopping-old-treatment", "arrowHeadType": "arrowclosed"},
+        {"id": "reactflow__edge-startHandleSrcBottom_a8a336be-e2ef-4336-bb18-0dfa4b5b9727-continuing-old-treatmentHandleTargetLeft_40cd6e6c-c21c-45bf-b94c-62092b2b2510",
+        "type": "smoothstep", "source": "start", "target": "continuing-old-treatment",
+        "animated": true, "sourceHandle": "HandleSrcBottom_start", "targetHandle":
+        "HandleTargetLeft_continuing-old-treatment", "arrowHeadType": "arrowclosed"},
+        {"id": "reactflow__edge-prior-auth-approvedHandleSrcTop_7d04e809-9419-4673-800b-ea2c3d7c04aa-sent-to-pharmacyHandleTargetBottom_e1ad3528-270a-45bf-9757-91fe3ecb9d23",
+        "type": "smoothstep", "source": "prior-auth-approved", "target": "sent-to-pharmacy",
+        "animated": true, "sourceHandle": "HandleSrcTop_prior-auth-approved", "targetHandle":
+        "HandleTargetBottom_sent-to-pharmacy", "arrowHeadType": "arrowclosed"}, {"id":
+        "consent-requested", "data": {"type": "DEFAULT", "label": "Consent Requested"},
+        "type": "graphNode", "position": {"x": 460, "y": -40}}, {"id": "consent-received",
+        "data": {"type": "DEFAULT", "label": "Consent Received"}, "type": "graphNode",
+        "position": {"x": 640, "y": -40}}, {"id": "reactflow__edge-consent-receivedHandleSrcRight_2e7445fb-8611-43bd-b750-af720c1530c1-records-requestedHandleTargetLeft_99edae56-fbb6-4bd5-95d0-a02e8b53c097",
+        "type": "smoothstep", "source": "consent-received", "target": "records-requested",
+        "animated": true, "sourceHandle": "HandleSrcRight_consent-received", "targetHandle":
+        "HandleTargetLeft_records-requested", "arrowHeadType": "arrowclosed"}, {"id":
+        "reactflow__edge-consent-requestedHandleSrcRight_b56feb59-d9ad-46e7-8741-a20ad73112b7-consent-receivedHandleTargetLeft_2e7445fb-8611-43bd-b750-af720c1530c1",
+        "type": "smoothstep", "source": "consent-requested", "target": "consent-received",
+        "animated": true, "sourceHandle": "HandleSrcRight_consent-requested", "targetHandle":
+        "HandleTargetLeft_consent-received", "arrowHeadType": "arrowclosed"}, {"id":
+        "reactflow__edge-startHandleSrcTop_712c1b68-4ccd-4f94-8641-5721b6148ed8-consent-requestedHandleTargetLeft_b56feb59-d9ad-46e7-8741-a20ad73112b7",
+        "type": "smoothstep", "source": "start", "target": "consent-requested", "animated":
+        true, "sourceHandle": "HandleSrcTop_start", "targetHandle": "HandleTargetLeft_consent-requested",
+        "arrowHeadType": "arrowclosed"}]}, {"name": "prog-target-2-patient", "title":
+        "Target 2 Patient", "description": "Delayers - en route to top of treatment.",
+        "phases": [{"name": "start", "title": "Start", "type": "START", "description":
+        "", "autoFinishProgram": false, "navigateTo": [{"name": "finish"}]}, {"name":
+        "finish", "title": "Finish", "type": "FINISH", "description": "", "autoFinishProgram":
+        false, "navigateTo": []}], "nodes": [{"id": "start", "data": {"label": "Start"},
+        "type": "graphNode", "position": {"x": 20, "y": 20}}, {"id": "finish", "data":
+        {"type": "FINISH", "label": "Finish"}, "type": "graphNode", "position": {"x":
+        300, "y": 20}}, {"id": "reactflow__edge-startHandleSrcRight_713b0fea-09cb-4c09-98da-bcb71c6cc9e5-finishHandleTargetLeft_d0fe8672-eafd-4b25-98b8-8845e89953a8",
+        "type": "smoothstep", "source": "start", "target": "finish", "animated": true,
+        "sourceHandle": "HandleSrcRight_start", "targetHandle": "HandleTargetLeft_finish",
+        "arrowHeadType": "arrowclosed"}]}, {"name": "prog-non-target-patient", "title":
+        "Non-Target Patient", "description": "All other non-target patients that do
+        not meet the criteria for other care plans.", "phases": [{"name": "start",
+        "title": "Start", "type": "START", "description": "", "autoFinishProgram":
+        false, "navigateTo": [{"name": "finish"}]}, {"name": "finish", "title": "Finish",
+        "type": "FINISH", "description": "", "autoFinishProgram": false, "navigateTo":
+        []}], "nodes": [{"id": "start", "data": {"label": "Start"}, "type": "graphNode",
+        "position": {"x": 20, "y": 20}}, {"id": "finish", "data": {"label": "Finish"},
+        "type": "graphNode", "position": {"x": 1520, "y": 20}}, {"id": "reactflow__edge-startHandleSrcRight_34f0e25d-bb67-4d65-9dd2-b7bca6e1bd73-finishHandleTargetLeft_4c1007b4-98fa-45fc-b64b-678f7fbc880a",
+        "type": "smoothstep", "source": "start", "target": "finish", "animated": true,
+        "sourceHandle": "HandleSrcRight_start", "targetHandle": "HandleTargetLeft_finish",
+        "arrowHeadType": "arrowclosed"}]}]'
+    headers:
+      Access-Control-Allow-Headers:
+      - authorization, content-type, xsrf-token, security-role
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, PATCH, OPTIONS
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - xsrf-token
+      Access-Control-Max-Age:
+      - '3600'
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 31 Oct 2023 02:10:14 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Strict-Transport-Security:
+      - max-age=31536000 ; includeSubDomains
+      Transfer-Encoding:
+      - chunked
+      X-Content-Type-Options:
+      - nosniff
+      X-XSS-Protection:
+      - 1; mode=block
+      content-length:
+      - '12829'
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - API_TOKEN_81ee7581-0f2d-4ad6-a3a2-d81fcd1dd971
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-welkin/0.1.1
+    method: GET
+    uri: https://api.live.welkincloud.io/tenant_REDACTED/instance_REDACTED/patients/de5e1a93-70b0-4ed4-868f-3854becc383c/programs/history/53e7f5de-67d7-475f-9443-6b4dedf14848
+  response:
+    body:
+      string: '{"id": "53e7f5de-67d7-475f-9443-6b4dedf14848", "createdByName": "createdByName_REDACTED_d1f0948c-ca42-4732-b455-69627a84d64a",
+        "createdAt": "2023-10-31T02:05:28.717Z", "updatedByName": "updatedByName_REDACTED_096bd988-c5f3-496f-9e76-2b753de4c6b7",
+        "updatedAt": "2023-10-31T02:05:28.721Z", "programName": "prog-target-patient",
+        "programTitle": "Target Patient", "programDescription": "Moderate to severe
+        patients, either on biologics or oral treatment.", "assigned": true, "patientId":
+        "de5e1a93-70b0-4ed4-868f-3854becc383c", "currentPhase": {"timestamp": "2023-10-31T02:05:28.720Z",
+        "createdBy": "createdBy_REDACTED_d7ea081e-1536-4f22-964d-8ea9d9ff578b", "createdByName":
+        "createdByName_REDACTED_8509eaf7-95a2-4acb-9f51-fcc6681aad52", "name": "start",
+        "title": "Start", "description": "", "currentVersion": "92", "deleted": false},
+        "status": "IN_PROGRESS", "compatibleWithCurrentVersion": true, "pathHistory":
+        [{"timestamp": "2023-10-31T02:05:28.720Z", "createdBy": "createdBy_REDACTED_597490de-5966-4e40-ad13-bc33bd245d3e",
+        "createdByName": "createdByName_REDACTED_5730ba9f-d49a-43a8-ac61-8564d03c0ed0",
+        "name": "start", "title": "Start", "description": "", "currentVersion": "92",
+        "deleted": false}]}'
+    headers:
+      Access-Control-Allow-Headers:
+      - authorization, content-type, xsrf-token, security-role
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, PATCH, OPTIONS
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - xsrf-token
+      Access-Control-Max-Age:
+      - '3600'
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 31 Oct 2023 02:10:15 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Strict-Transport-Security:
+      - max-age=31536000 ; includeSubDomains
+      Transfer-Encoding:
+      - chunked
+      X-Content-Type-Options:
+      - nosniff
+      X-XSS-Protection:
+      - 1; mode=block
+      content-length:
+      - '963'
+    status:
+      code: 200
+      message: OK
+version: 1

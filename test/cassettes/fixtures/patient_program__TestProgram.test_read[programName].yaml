@@ -1,0 +1,130 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - API_TOKEN_81ee7581-0f2d-4ad6-a3a2-d81fcd1dd971
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-welkin/0.1.1
+    method: GET
+    uri: https://api.live.welkincloud.io/tenant_REDACTED/instance_REDACTED/patients/de5e1a93-70b0-4ed4-868f-3854becc383c/programs/current/prog-target-patient
+  response:
+    body:
+      string: '[{"errorCode": "PATIENT_PROGRAM_NOT_FOUND", "componentType": "PATIENT_PROGRAM",
+        "message": "Patient related to program doesn''t exist", "details": {"programName":
+        "prog-target-patient", "patientId": "de5e1a93-70b0-4ed4-868f-3854becc383c",
+        "notStatus": "FINISHED"}, "date": "2023-10-31T02:10:16.035Z"}]'
+    headers:
+      Access-Control-Allow-Headers:
+      - authorization, content-type, xsrf-token, security-role
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, PATCH, OPTIONS
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - xsrf-token
+      Access-Control-Max-Age:
+      - '3600'
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 31 Oct 2023 02:10:16 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Strict-Transport-Security:
+      - max-age=31536000 ; includeSubDomains
+      Transfer-Encoding:
+      - chunked
+      X-Content-Type-Options:
+      - nosniff
+      X-XSS-Protection:
+      - 1; mode=block
+      content-length:
+      - '286'
+    status:
+      code: 404
+      message: Not Found
+- request:
+    body: '{"assigned": true, "phaseName": "start"}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - API_TOKEN_81ee7581-0f2d-4ad6-a3a2-d81fcd1dd971
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '40'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-welkin/0.1.1
+    method: PATCH
+    uri: https://api.live.welkincloud.io/tenant_REDACTED/instance_REDACTED/patients/de5e1a93-70b0-4ed4-868f-3854becc383c/programs/prog-target-patient
+  response:
+    body:
+      string: '{"id": "77d60b23-6d23-4292-b007-836a0b14be8f", "createdByName": "createdByName_REDACTED_f2965ed7-e6d4-4911-9b8c-105be1f3bdc1",
+        "createdAt": "2023-10-31T02:10:16.204Z", "updatedByName": "updatedByName_REDACTED_cfe65b70-81c8-4c33-b79c-12674b135592",
+        "updatedAt": "2023-10-31T02:10:16.210Z", "programName": "prog-target-patient",
+        "programTitle": "Target Patient", "programDescription": "Moderate to severe
+        patients, either on biologics or oral treatment.", "assigned": true, "patientId":
+        "de5e1a93-70b0-4ed4-868f-3854becc383c", "currentPhase": {"timestamp": "2023-10-31T02:10:16.209Z",
+        "createdBy": "createdBy_REDACTED_c6e05235-517f-4c81-8f6f-25235fcb3ad8", "createdByName":
+        "createdByName_REDACTED_9b2881ee-0d32-420d-a6a9-99c591018ed2", "name": "start",
+        "title": "Start", "description": "", "currentVersion": "92", "deleted": false},
+        "status": "IN_PROGRESS", "compatibleWithCurrentVersion": true, "pathHistory":
+        [{"timestamp": "2023-10-31T02:10:16.209Z", "createdBy": "createdBy_REDACTED_3c4c585f-e200-4f42-8141-23716e911021",
+        "createdByName": "createdByName_REDACTED_a5e49667-4d24-4718-a656-98e96da012c5",
+        "name": "start", "title": "Start", "description": "", "currentVersion": "92",
+        "deleted": false}]}'
+    headers:
+      Access-Control-Allow-Headers:
+      - authorization, content-type, xsrf-token, security-role
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, PATCH, OPTIONS
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - xsrf-token
+      Access-Control-Max-Age:
+      - '3600'
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 31 Oct 2023 02:10:16 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Strict-Transport-Security:
+      - max-age=31536000 ; includeSubDomains
+      Transfer-Encoding:
+      - chunked
+      X-Content-Type-Options:
+      - nosniff
+      X-XSS-Protection:
+      - 1; mode=block
+      content-length:
+      - '963'
+    status:
+      code: 200
+      message: OK
+version: 1

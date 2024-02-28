@@ -1,0 +1,70 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - API_TOKEN_81ee7581-0f2d-4ad6-a3a2-d81fcd1dd971
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-welkin/0.1.1
+    method: GET
+    uri: https://api.live.welkincloud.io/tenant_REDACTED/instance_REDACTED/patients/12345678-1234-1234-1234-1234567890ab?type=EGUID
+  response:
+    body:
+      string: '{"createdByName": "createdByName_REDACTED_0c1a375e-fb29-465b-a0a3-f54e46c8d049",
+        "lastName": "Patient", "country": null, "secondaryEmail": null, "gender":
+        "UNKNOWN", "city": null, "timezone": null, "careTeamMembers": [], "secondaryPhoneCapabilities":
+        [], "createdAt": "2023-10-27T23:19:20.506Z", "accessCode": null, "addressLine1":
+        null, "addressLine2": null, "id": "de5e1a93-70b0-4ed4-868f-3854becc383c",
+        "state": null, "secondaryLanguage": null, "email": "test.patient@example.com",
+        "careTeam": [], "updatedAt": "2023-10-27T23:19:20.506Z", "primaryPhoneCapabilities":
+        [], "pointOfContact": null, "zip": null, "updatedBy": "updatedBy_REDACTED_524b5efd-76a4-4971-ba5e-6b4b7fe61ff5",
+        "preferableInstancePhoneId": null, "updatedByName": "updatedByName_REDACTED_2ba2f3e2-f75a-495d-87db-3bd55a298174",
+        "mrn": null, "externalId": null, "externalGuid": "12345678-1234-1234-1234-1234567890ab",
+        "patientPrograms": [], "nric": null, "birthDate": null, "cadence": [], "firstName":
+        "Test", "patientRegionTitle": null, "createdBy": "createdBy_REDACTED_590dd304-97a1-471b-8abc-6a046d5542e9",
+        "phone": null, "middleName": null, "patientTerritories": [], "patientRegion":
+        null, "maritalStatus": "UKN", "primaryLanguage": "ENGLISH", "secondaryPhone":
+        null, "patientTerritory": null}'
+    headers:
+      Access-Control-Allow-Headers:
+      - authorization, content-type, xsrf-token, security-role
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, PATCH, OPTIONS
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - xsrf-token
+      Access-Control-Max-Age:
+      - '3600'
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 31 Oct 2023 02:10:15 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Strict-Transport-Security:
+      - max-age=31536000 ; includeSubDomains
+      Transfer-Encoding:
+      - chunked
+      X-Content-Type-Options:
+      - nosniff
+      X-XSS-Protection:
+      - 1; mode=block
+      content-length:
+      - '1071'
+    status:
+      code: 200
+      message: OK
+version: 1

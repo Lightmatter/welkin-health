@@ -131,7 +131,6 @@ class WorkHours(Collection):
         *args,
         **kwargs,
     ):
-
         params = {
             "from": from_date,
             "to": to_date,
