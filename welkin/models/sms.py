@@ -19,7 +19,6 @@ class SMSes(Collection):
 
     @model_id("Patient")
     def get(self, patient_id: str, sort: str = None, *args, **kwargs):
-
         params = {
             "sort": sort,
         }

@@ -94,6 +94,10 @@ class Client(Session):
     Formation = models.Formation
     Patient = models.Patient
     Patients = models.Patients
+    PatientProgram = models.PatientProgram
+    ProgramPhase = models.ProgramPhase
+    ProgramPhases = models.ProgramPhases
+    PatientPrograms = models.PatientPrograms
     Schedules = models.Schedules
     SearchChats = models.SearchChats
     SMS = models.SMS

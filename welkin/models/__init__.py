@@ -19,6 +19,12 @@ from welkin.models.email import Email, Emails
 from welkin.models.encounter import Encounter, EncounterDisposition, Encounters
 from welkin.models.formation import Formation
 from welkin.models.patient import Patient, Patients
+from welkin.models.program import (
+    PatientProgram,
+    PatientPrograms,
+    ProgramPhase,
+    ProgramPhases,
+)
 from welkin.models.sms import SMS, SMSes
 from welkin.models.user import User, Users
 
@@ -48,6 +54,10 @@ __all__ = [
     "Formation",
     "Patient",
     "Patients",
+    "PatientProgram",
+    "ProgramPhase",
+    "ProgramPhases",
+    "PatientPrograms",
     "Schedules",
     "SearchChats",
     "SMS",

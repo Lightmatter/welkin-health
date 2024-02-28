@@ -1,0 +1,67 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - API_TOKEN_0c8270ba-29f2-44f3-b5cc-a804f4d9840f
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-welkin/0.1.1
+    method: GET
+    uri: https://api.live.welkincloud.io/tenant_REDACTED/instance_REDACTED/formations/current/programs/prog-non-target-patient
+  response:
+    body:
+      string: '{"name": "prog-non-target-patient", "title": "Non-Target Patient",
+        "description": "All other non-target patients that do not meet the criteria
+        for other care plans.", "phases": [{"name": "start", "title": "Start", "type":
+        "START", "description": "", "autoFinishProgram": false, "navigateTo": [{"name":
+        "finish"}]}, {"name": "finish", "title": "Finish", "type": "FINISH", "description":
+        "", "autoFinishProgram": false, "navigateTo": []}], "nodes": [{"id": "start",
+        "data": {"label": "Start"}, "type": "graphNode", "position": {"x": 20, "y":
+        20}}, {"id": "finish", "data": {"label": "Finish"}, "type": "graphNode", "position":
+        {"x": 1520, "y": 20}}, {"id": "reactflow__edge-startHandleSrcRight_34f0e25d-bb67-4d65-9dd2-b7bca6e1bd73-finishHandleTargetLeft_4c1007b4-98fa-45fc-b64b-678f7fbc880a",
+        "type": "smoothstep", "source": "start", "target": "finish", "animated": true,
+        "sourceHandle": "HandleSrcRight_start", "targetHandle": "HandleTargetLeft_finish",
+        "arrowHeadType": "arrowclosed"}]}'
+    headers:
+      Access-Control-Allow-Headers:
+      - authorization, content-type, xsrf-token, security-role
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, PATCH, OPTIONS
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - xsrf-token
+      Access-Control-Max-Age:
+      - '3600'
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Thu, 05 Oct 2023 00:06:21 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Strict-Transport-Security:
+      - max-age=31536000 ; includeSubDomains
+      Transfer-Encoding:
+      - chunked
+      X-Content-Type-Options:
+      - nosniff
+      X-XSS-Protection:
+      - 1; mode=block
+      content-length:
+      - '914'
+    status:
+      code: 200
+      message: OK
+version: 1
