@@ -5,11 +5,12 @@
 
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
+import welkin
 
-project = "foobar"
-copyright = "2024, Sam Morgan"
-author = "Sam Morgan"
-release = "1"
+project = welkin.__name__
+copyright = welkin.__copyright__
+author = welkin.__author__
+release = welkin.__version__
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
