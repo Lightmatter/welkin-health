@@ -72,6 +72,6 @@ jobs:
           pytest-coverage-path: ./pytest-coverage.txt
           junitxml-path: ./pytest.xml
           report-only-changed-files: true
-          title: Coverage Report
+          title: Coverage Report (Python ${{ matrix.python-version }})
           unique-id-for-comment: ${{ matrix.python-version }}
           remove-link-from-badge: true
