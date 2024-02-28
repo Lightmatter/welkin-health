@@ -1,39 +1,25 @@
-# Configuration file for the Sphinx documentation builder.
-#
-# This file only contains a selection of the most common options. For a full
-# list see the documentation:
-# https://www.sphinx-doc.org/en/master/usage/configuration.html
+"""Configuration file for the Sphinx documentation builder.
 
-# -- Path setup --------------------------------------------------------------
-
-# If extensions (or modules to document with autodoc) are in another directory,
-# add these directories to sys.path here. If the directory is relative to the
-# documentation root, use os.path.abspath to make it absolute, like shown here.
-
+This file only contains a selection of the most common options. For a full
+list see the documentation:
+https://www.sphinx-doc.org/en/master/usage/configuration.html
+"""
 import sys
-from datetime import date
 from pathlib import Path
 
-import tomli
+import welkin
 
 root = Path(__file__).parent.parent
 sys.path.insert(0, str(root))
 
 
 # -- Project information -----------------------------------------------------
-def _get_project_meta():
-    with (root / "pyproject.toml").open(mode="rb") as f:
-        return tomli.load(f)["tool"]["poetry"]
-
-
-project_meta = _get_project_meta()
-
-project = project_meta["name"]
-author = project_meta["authors"][0].rsplit(maxsplit=1)[0]
-copyright = f"{date.today().year} Lightmatter Team"
+project = welkin.__title__
+author = welkin.__author__
+copyright = welkin.__copyright__
 
 # The full version, including alpha/beta/rc tags
-release = project_meta["version"]
+release = welkin.__version__
 
 
 # -- General configuration ---------------------------------------------------
