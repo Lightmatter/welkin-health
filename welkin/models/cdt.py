@@ -2,28 +2,33 @@ from datetime import datetime
 
 from welkin.models.base import Collection, Resource
 from welkin.pagination import PageNumberIterator
+from welkin.util import model_id
 
 
 class CDT(Resource):
-    def create(self):
+    @model_id("Patient")
+    def create(self, patient_id: str):
         return super().post(
-            f"{self._client.instance}/patients/{self._parent.id}/cdts/{self.cdtName}"
+            f"{self._client.instance}/patients/{patient_id}/cdts/{self.cdtName}"
         )
 
-    def get(self):
+    @model_id("Patient")
+    def get(self, patient_id: str):
         return super().get(
-            f"{self._client.instance}/patients/{self._parent.id}/cdts/{self.cdtName}/{self.id}"
+            f"{self._client.instance}/patients/{patient_id}/cdts/{self.cdtName}/{self.id}"
         )
 
-    def update(self, **kwargs):
+    @model_id("Patient")
+    def update(self, patient_id: str, **kwargs):
         return super().patch(
-            f"{self._client.instance}/patients/{self._parent.id}/cdts/{self.cdtName}/{self.id}",
+            f"{self._client.instance}/patients/{patient_id}/cdts/{self.cdtName}/{self.id}",
             kwargs,
         )
 
-    def delete(self):
+    @model_id("Patient")
+    def delete(self, patient_id: str):
         return super().delete(
-            f"{self._client.instance}/patients/{self._parent.id}/cdts/{self.cdtName}/{self.id}"
+            f"{self._client.instance}/patients/{patient_id}/cdts/{self.cdtName}/{self.id}"
         )
 
 
@@ -31,10 +36,11 @@ class CDTs(Collection):
     resource = CDT
     iterator = PageNumberIterator
 
+    @model_id("Patient")
     def get(
         self,
-        patient_id: str = None,
-        cdt_name: str = None,
+        patient_id: str,
+        cdt_name: str,
         fields: list = None,
         filters: dict = None,
         date_start: datetime = None,
@@ -43,18 +49,6 @@ class CDTs(Collection):
         *args,
         **kwargs,
     ):
-        root = ""
-        if patient_id:
-            root = f"patients/{patient_id}"
-        else:
-            root = f"patients/{self._parent.id}"
-
-        cdt_path = ""
-        if cdt_name:
-            cdt_path = f"cdts/{cdt_name}"
-
-        path = f"{self._client.instance}/{root}/{cdt_path}"
-
         params = {
             "fields": fields,
             "filters": filters,
@@ -63,21 +57,17 @@ class CDTs(Collection):
             "dateEnd": date_end,
         }
 
-        return super().get(path, params=params, *args, **kwargs)
+        return super().get(
+            f"{self._client.instance}/patients/{patient_id}/cdts/{cdt_name}",
+            params=params,
+            *args,
+            **kwargs,
+        )
 
-    def update(
-        self, patient_id: str = None, cdt_name: str = None, body: dict = None, **kwargs
-    ):
-        root = ""
-        if patient_id:
-            root = f"patients/{patient_id}"
-        else:
-            root = f"patients/{self._parent.id}"
-
-        cdt_path = ""
-        if cdt_name:
-            cdt_path = f"cdts/{cdt_name}"
-
-        path = f"{self._client.instance}/{root}/{cdt_path}"
-
-        return super().patch(path, json=body, **kwargs)
+    @model_id("Patient")
+    def update(self, patient_id: str, cdt_name: str, body: dict = None, **kwargs):
+        return super().patch(
+            f"{self._client.instance}/patients/{patient_id}/cdts/{cdt_name}",
+            json=body,
+            **kwargs,
+        )

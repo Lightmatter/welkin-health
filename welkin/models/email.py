@@ -1,11 +1,11 @@
 from welkin.models.base import Collection, Resource
-from welkin.models.util import patient_id
 from welkin.pagination import PageableIterator
+from welkin.util import model_id
 
 
 class Email(Resource):
-    @patient_id
-    def get(self, patient_id: str = None, *args, **kwargs):
+    @model_id("Patient")
+    def get(self, patient_id: str, *args, **kwargs):
         return super().get(
             f"{self._client.instance}/patients/{patient_id}/emails/{self.id}",
             *args,
@@ -17,8 +17,8 @@ class Emails(Collection):
     resource = Email
     iterator = PageableIterator
 
-    @patient_id
-    def get(self, patient_id: str = None, sort: str = None, *args, **kwargs):
+    @model_id("Patient")
+    def get(self, patient_id: str, sort: str = None, *args, **kwargs):
         params = {
             "sort": sort,
         }
