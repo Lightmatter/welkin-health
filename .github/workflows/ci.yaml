@@ -46,7 +46,7 @@ jobs:
           installer-parallel: true
 
       - name: Load cached environment
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: .venv
           key: venv-${{ runner.os }}-${{ steps.setup-python.outputs.python-version }}-${{ hashFiles('**/poetry.lock') }}

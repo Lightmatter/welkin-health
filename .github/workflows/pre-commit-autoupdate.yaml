@@ -11,16 +11,45 @@ jobs:
   auto-update:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout ${{ github.repository }}
+        uses: actions/checkout@v4
+        with:
+          ref: develop
 
-      - uses: actions/setup-python@v2
+      - name: Setup Python
+        id: setup-python
+        uses: actions/setup-python@v5
+        with:
+          python-version: 3.8
 
-      - uses: browniebroke/pre-commit-autoupdate-action@main
+      - name: Install Poetry
+        uses: snok/install-poetry@v1
+        with:
+          virtualenvs-create: true
+          virtualenvs-in-project: true
+          installer-parallel: true
 
-      - uses: peter-evans/create-pull-request@v3
+      - name: Load cached environment
+        uses: actions/cache@v4
+        with:
+          path: .venv
+          key: venv-${{ runner.os }}-${{ steps.setup-python.outputs.python-version }}-${{ hashFiles('**/poetry.lock') }}
+
+      - name: Install dependencies
+        id: poetry-install
+        run: poetry install --no-interaction --no-root
+
+      - name: Update pre-commit hooks
+        run: poetry run pre-commit autoupdate --color=always
+
+      - name: Run pre-commit
+        run: poetry run pre-commit run --all-files
+        continue-on-error: true
+
+      - uses: peter-evans/create-pull-request@v6
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           branch: update/pre-commit-hooks
           title: Update pre-commit hooks
-          commit-message: "chore: update pre-commit hooks"
+          commit-message: "update pre-commit hooks"
           body: Update versions of pre-commit hooks to latest version.
