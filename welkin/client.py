@@ -2,6 +2,7 @@
 
 This module provides a Client object to interface with the Welkin Health API.
 """
+
 import logging
 from http import HTTPStatus
 from json import JSONDecodeError
