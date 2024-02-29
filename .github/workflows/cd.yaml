@@ -1,4 +1,4 @@
-name: Publish Python 🐍 package 📦 to PyPI
+name: CD
 
 on:
   push:
