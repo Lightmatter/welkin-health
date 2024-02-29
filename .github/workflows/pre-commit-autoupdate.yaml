@@ -13,6 +13,8 @@ jobs:
     steps:
       - name: Checkout ${{ github.repository }}
         uses: actions/checkout@v4
+        with:
+          ref: develop
 
       - name: Setup Python
         id: setup-python
