@@ -28,7 +28,7 @@ jobs:
           installer-parallel: true
 
       - name: Load cached environment
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: .venv
           key: venv-${{ runner.os }}-${{ steps.setup-python.outputs.python-version }}-${{ hashFiles('**/poetry.lock') }}
@@ -37,8 +37,12 @@ jobs:
         id: poetry-install
         run: poetry install --no-interaction --no-root
 
-      - name: Run pre-commit
+      - name: Update pre-commit hooks
         run: poetry run pre-commit autoupdate --color=always
+
+      - name: Run pre-commit
+        run: poetry run pre-commit run --all-files
+        continue-on-error: true
 
       - uses: peter-evans/create-pull-request@v6
         with:
