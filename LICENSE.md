@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://www.gnu.org/graphics/gplv3-with-text-136x68.png"/>
+  <img src="https://www.gnu.org/graphics/gplv3-or-later.svg" width="200" height="84"/>
 </p>
 
 # <p align="center">GNU GENERAL PUBLIC LICENSE</p>
