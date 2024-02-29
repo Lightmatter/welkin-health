@@ -1,4 +1,5 @@
 """Package version information."""
+
 from datetime import date
 from importlib.metadata import distribution
 

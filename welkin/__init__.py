@@ -45,6 +45,7 @@ Admin
 For this example we will assume Client Name is VBOPNRYRWJIP and Secret Key is
 +}B{KGTG6#zG%P;tQm0C
 """
+
 from welkin.__version__ import (
     __author__,
     __author_email__,
