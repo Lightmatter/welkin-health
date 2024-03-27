@@ -23,7 +23,7 @@ portalocker = "^2.8.2"
 inflection = "^0.5.1"
 
 [tool.poetry.group.dev.dependencies]
-black = "^22.10.0"
+black = ">=22.10,<25.0"
 isort = "^5.10.1"
 pre-commit = "^3.5.0"
 
