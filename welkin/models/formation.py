@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 from welkin.models.base import Collection, Resource
 from welkin.pagination import FormationIterator
 from welkin.util import Target, _build_resources

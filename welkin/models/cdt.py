@@ -1,8 +1,13 @@
-from datetime import datetime
+from __future__ import annotations
+
+from typing import TYPE_CHECKING
 
 from welkin.models.base import Collection, Resource
 from welkin.pagination import PageNumberIterator
 from welkin.util import model_id
+
+if TYPE_CHECKING:
+    from datetime import datetime
 
 
 class CDT(Resource):

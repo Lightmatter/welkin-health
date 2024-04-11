@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 from enum import Enum
 
 from welkin.models.base import Collection, Resource

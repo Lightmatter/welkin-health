@@ -1,12 +1,17 @@
+from __future__ import annotations
+
 import logging
 import shelve
 import tempfile
 from pathlib import Path
-from typing import Callable
+from typing import TYPE_CHECKING, Callable
 
 from portalocker import Lock
-from requests import PreparedRequest
 from requests.auth import AuthBase
+
+if TYPE_CHECKING:
+    from requests import PreparedRequest
+
 
 logger = logging.getLogger(__name__)
 

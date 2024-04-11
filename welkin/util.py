@@ -1,6 +1,8 @@
+from __future__ import annotations
+
 from datetime import date, datetime, timezone
 from functools import lru_cache, wraps
-from typing import Any, Callable, Tuple, Union
+from typing import Any, Callable
 from uuid import UUID
 
 import inflection
@@ -114,7 +116,7 @@ def clean_datetime(dt: datetime) -> str:
     )
 
 
-def find_model_id(instance: Union[Collection, Resource], model_name: str) -> str:
+def find_model_id(instance: Collection | Resource, model_name: str) -> str:
     """Recursively traverse the `_parent` chain searching for a model id.
 
     Args:
@@ -141,11 +143,11 @@ def find_model_id(instance: Union[Collection, Resource], model_name: str) -> str
     )
 
 
-def model_id(*models: Tuple[str]) -> Callable:
+def model_id(*models: tuple[str]) -> Callable:
     """Insert values for `model_id` arguments if not provided.
 
     Args:
-        *models (Tuple[str]): The model names to search for.
+        *models (tuple[str]): The model names to search for.
 
     Raises:
         TypeError: If no ID is found and no arguments are provided.

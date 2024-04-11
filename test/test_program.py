@@ -1,8 +1,10 @@
+from __future__ import annotations
+
 from http import HTTPStatus
+from typing import TYPE_CHECKING
 
 import pytest
 
-from welkin import Client
 from welkin.exceptions import WelkinHTTPError
 from welkin.models import (
     Patient,
@@ -11,7 +13,10 @@ from welkin.models import (
     ProgramPhase,
     ProgramPhases,
 )
-from welkin.models.formation import Program
+
+if TYPE_CHECKING:
+    from welkin import Client
+    from welkin.models.formation import Program
 
 
 @pytest.mark.vcr

@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 from welkin.models.assessment import AssessmentRecord, AssessmentRecords
 from welkin.models.base import Collection, Resource
 from welkin.models.care_plan import CarePlan

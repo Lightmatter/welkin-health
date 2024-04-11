@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 from welkin.models.base import Collection, Resource
 from welkin.pagination import PageableIterator
 from welkin.util import model_id

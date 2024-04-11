@@ -1,8 +1,13 @@
-from datetime import datetime
+from __future__ import annotations
+
 from enum import Enum
+from typing import TYPE_CHECKING
 
 from welkin.models.base import Collection, Resource
 from welkin.pagination import PageableIterator
+
+if TYPE_CHECKING:
+    from datetime import datetime
 
 
 class EventType(Enum):

@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 from welkin.models.base import Resource
 from welkin.util import model_id
 
