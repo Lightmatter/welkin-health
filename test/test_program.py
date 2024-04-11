@@ -60,9 +60,7 @@ class TestProgram:
             "programName",
         ],
     )
-    def test_read(
-        self, patient: Patient, patient_program: PatientProgram, identifier: str
-    ):
+    def test_read(self, patient: Patient, patient_program: PatientProgram, identifier: str):
         prog = patient.PatientProgram(
             **{identifier: getattr(patient_program, identifier)}
         ).get()
@@ -74,7 +72,7 @@ class TestProgram:
         assert prog.id == patient_program.id
 
     def test_read_no_id(self, client):
-        with pytest.raises(ValueError):
+        with pytest.raises(ValueError, match="Program must have"):
             client.Patient(id="notarealid").PatientProgram().get()
 
     def test_update(

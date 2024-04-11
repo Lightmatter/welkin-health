@@ -50,12 +50,11 @@ class WelkinAuth(AuthBase):
 
     @property
     def token(self) -> str:
-        with Lock(DB_LOCK):
-            with shelve.open(DB_PATH) as db:
-                try:
-                    return db[self.tenant]["token"]
-                except KeyError:
-                    pass
+        with Lock(DB_LOCK), shelve.open(DB_PATH) as db:  # noqa: S301
+            try:
+                return db[self.tenant]["token"]
+            except KeyError:
+                pass
 
         self.refresh_token()
 
@@ -63,9 +62,8 @@ class WelkinAuth(AuthBase):
 
     @token.setter
     def token(self, value: dict) -> None:
-        with Lock(DB_LOCK):
-            with shelve.open(DB_PATH) as db:
-                db[self.tenant] = value
+        with Lock(DB_LOCK), shelve.open(DB_PATH) as db:  # noqa: S301
+            db[self.tenant] = value
 
     def refresh_token(self) -> None:
         self.token = self.token_method()

@@ -1,4 +1,4 @@
-"""Welkin Health API wrapper
+"""Welkin Health API wrapper.
 
 https://developers.welkinhealth.com/
 
@@ -45,6 +45,8 @@ Admin
 For this example we will assume Client Name is VBOPNRYRWJIP and Secret Key is
 +}B{KGTG6#zG%P;tQm0C
 """
+
+# ruff: noqa: F401
 
 from welkin.__version__ import (
     __author__,

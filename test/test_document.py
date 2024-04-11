@@ -25,9 +25,7 @@ def test_document_summaries_get_patient_id(client, vcr_cassette):
 @pytest.mark.vcr
 def test_document_summaries_subresource(client, vcr_cassette):
     documents = (
-        client.Patient(id="283f50d3-0840-426f-b07b-bd8e4ab76401")
-        .DocumentSummaries()
-        .get()
+        client.Patient(id="283f50d3-0840-426f-b07b-bd8e4ab76401").DocumentSummaries().get()
     )
 
     assert isinstance(documents, DocumentSummaries)
@@ -50,17 +48,16 @@ def test_document_summary_get(client, vcr_cassette):
 
 @pytest.mark.vcr
 def test_document_summary_delete(client, vcr_cassette):
-    document = client.Patient(
-        id="283f50d3-0840-426f-b07b-bd8e4ab76401"
-    ).DocumentSummary(id="5106ec9d-da83-4ce6-89d0-6a9b7fde0138")
+    document = client.Patient(id="283f50d3-0840-426f-b07b-bd8e4ab76401").DocumentSummary(
+        id="5106ec9d-da83-4ce6-89d0-6a9b7fde0138"
+    )
 
     document.delete()
 
     with pytest.raises(WelkinHTTPError) as excinfo:
         document.get()
 
-        assert excinfo.value.response.status_code == 404
-
+    assert excinfo.value.response.status_code == 404
     assert len(vcr_cassette) == 2
 
 
@@ -79,7 +76,11 @@ def test_document_summary_create(client, vcr_cassette):
 
 @pytest.mark.vcr
 @pytest.mark.skip(
-    reason="the bytes upload hits this issue in vcr: https://github.com/kevin1024/vcrpy/issues/660 but this test shows the correct implementation"
+    reason=(
+        "the bytes upload hits this issue in vcr: "
+        "https://github.com/kevin1024/vcrpy/issues/660 "
+        "but this test shows the correct implementation"
+    )
 )
 def test_document_summary_files_create(client, vcr_cassette):
     with open("test/walrus_uJGKbRm.jpeg", "rb") as f:

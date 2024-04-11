@@ -58,7 +58,7 @@ class AssessmentRecordAnswers(Resource):
 
 
 class AssessmentRecord(Resource):
-    subresources = [AssessmentRecordAnswers]
+    subresources = (AssessmentRecordAnswers,)
 
     @model_id("Patient")
     def create(self, patient_id: str):

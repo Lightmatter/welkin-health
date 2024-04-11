@@ -1,5 +1,3 @@
-from typing import Union
-
 from welkin.models.base import Collection, Resource
 from welkin.pagination import FormationIterator
 from welkin.util import Target, _build_resources
@@ -10,9 +8,7 @@ class FormationBase:
 
     def __new__(cls, *args, **kwargs):
         if not cls.endpoint:
-            raise AttributeError(
-                f"The `endpoint` attribute must be set on {cls.__name__}"
-            )
+            raise AttributeError(f"The `endpoint` attribute must be set on {cls.__name__}")
 
         return super().__new__(cls)
 
@@ -116,7 +112,7 @@ class Formation(Target):
     Program = Program
     Programs = Programs
 
-    def __init__(self, version: Union[int, str] = "current"):
+    def __init__(self, version: int | str = "current"):
         super().__init__()
 
         self._base_path = f"{self._client.instance}/formations/{version}"

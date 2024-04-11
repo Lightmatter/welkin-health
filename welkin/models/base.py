@@ -1,4 +1,5 @@
 import sys
+from types import MappingProxyType
 
 from welkin.pagination import PageIterator
 
@@ -6,7 +7,7 @@ from welkin.pagination import PageIterator
 class SchemaBase:
     _client = None
     _parent = None
-    subresources = []
+    subresources = ()
 
     def __getattr__(self, name):
         try:
@@ -25,7 +26,7 @@ class SchemaBase:
 
 
 class Resource(dict, SchemaBase):
-    nested_objects = {}
+    nested_objects = MappingProxyType({})
 
     def __getattr__(self, name):
         try:
@@ -49,7 +50,7 @@ class Resource(dict, SchemaBase):
         super().__delitem__(name)
 
     def __str__(self):
-        id = getattr(self, "id", "")
+        id = getattr(self, "id", "")  # noqa: A001
 
         return f"{self.__class__.__name__} #{id}" if id else self.__class__.__name__
 
@@ -65,8 +66,8 @@ class Resource(dict, SchemaBase):
     def patch(self, resource, data, *args, **kwargs):
         response = self._client.patch(
             resource,
-            json=data,
             *args,
+            json=data,
             **kwargs,
         )
 
@@ -77,8 +78,8 @@ class Resource(dict, SchemaBase):
     def post(self, resource, *args, **kwargs):
         response = self._client.post(
             resource,
-            json=self,
             *args,
+            json=self,
             **kwargs,
         )
         super().update(response)
@@ -88,8 +89,8 @@ class Resource(dict, SchemaBase):
     def put(self, resource, *args, **kwargs):
         response = self._client.put(
             resource,
-            json=self,
             *args,
+            json=self,
             **kwargs,
         )
 

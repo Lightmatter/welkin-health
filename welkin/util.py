@@ -20,7 +20,9 @@ class Target:
         _build_resources(self, "_client", self._client)
 
 
-def _build_resources(instance: type, attribute_name: str, value: type = None) -> None:
+def _build_resources(
+    instance: type, attribute_name: str, value: type | None = None
+) -> None:
     """Add an attribute pointing to an instance for each resource.
 
     Args:
@@ -54,13 +56,13 @@ def clean_data(value: Any) -> Any:
     """
     if isinstance(value, datetime):
         return clean_datetime(value)
-    elif isinstance(value, date):
+    if isinstance(value, date):
         return clean_date(value)
-    elif isinstance(value, dict):
+    if isinstance(value, dict):
         return clean_request_payload(value)
-    elif isinstance(value, list):
+    if isinstance(value, list):
         return clean_json_list(value)
-    elif isinstance(value, UUID):
+    if isinstance(value, UUID):
         return str(value)
 
     # No cleaning needed
@@ -129,9 +131,9 @@ def find_model_id(instance: Union[Collection, Resource], model_name: str) -> str
 
     if instance.__class__.__name__ == model_name:
         return instance.id
-    elif hasattr(instance, body_id_key):
+    if hasattr(instance, body_id_key):
         return getattr(instance, body_id_key)
-    elif instance._parent is not None:
+    if instance._parent is not None:
         return find_model_id(instance._parent, model_name)
 
     raise AttributeError(

@@ -16,7 +16,7 @@ from welkin.pagination import PageableIterator
 
 
 class Patient(Resource):
-    subresources = [
+    subresources = (
         AssessmentRecord,
         AssessmentRecords,
         CarePlan,
@@ -36,30 +36,30 @@ class Patient(Resource):
         SearchChats,
         SMS,
         SMSes,
-    ]
+    )
 
     def create(self):
         return super().post(f"{self._client.instance}/patients")
 
-    def get(self, expand: bool = None):
+    def get(self, expand: bool | None = None):
         _id = None
         if hasattr(self, "id"):
-            type = None
+            _type = None
             _id = self.id
         elif hasattr(self, "externalId"):
-            type = "EID"
+            _type = "EID"
             _id = self.externalId
         elif hasattr(self, "externalGuid"):
-            type = "EGUID"
+            _type = "EGUID"
             _id = self.externalGuid
         elif hasattr(self, "mrn"):
-            type = "MRN"
+            _type = "MRN"
             _id = self.mrn
 
         return super().get(
             f"{self._client.instance}/patients/{_id}",
             params={
-                "type": type,
+                "type": _type,
                 expand: expand,
             },
         )
@@ -78,8 +78,8 @@ class Patients(Collection):
     resource = Patient
     iterator = PageableIterator
 
-    def get(self, filter={}, *args, **kwargs):
+    def get(self, filter: dict | None = None, *args, **kwargs):  # noqa: A002
         # TODO: Add sort and query arguments.
         return super().post(
-            f"{self._client.instance}/by-filter/patients", json=filter, *args, **kwargs
+            f"{self._client.instance}/by-filter/patients", *args, json=filter, **kwargs
         )

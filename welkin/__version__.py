@@ -12,4 +12,4 @@ __version__ = _dist_metadata["version"]
 __author__ = _dist_metadata["author"]
 __author_email__ = _dist_metadata["author_email"]
 __license__ = _dist_metadata["license"]
-__copyright__ = f"{date.today().year} Lightmatter"
+__copyright__ = f"{date.today().year} Lightmatter"  # noqa: DTZ011

@@ -1,4 +1,5 @@
 from enum import Enum
+from types import MappingProxyType
 
 from welkin.models.assessment import Assessment, Assessments
 from welkin.models.base import Collection, Resource
@@ -29,12 +30,14 @@ class EncounterStatus(Enum):
 
 
 class Encounter(Resource):
-    subresources = [Assessment, Assessments, EncounterDisposition]
-    nested_objects = {
-        "assessmentLinks": "Assessments",
-        "userRelatedToCalendarEvent": "User",
-        "disposition": "EncounterDisposition",
-    }
+    subresources = (Assessment, Assessments, EncounterDisposition)
+    nested_objects = MappingProxyType(
+        {
+            "assessmentLinks": "Assessments",
+            "userRelatedToCalendarEvent": "User",
+            "disposition": "EncounterDisposition",
+        }
+    )
 
     @model_id("Patient")
     def create(self, patient_id: str):
@@ -68,15 +71,15 @@ class Encounters(Collection):
     resource = Encounter
     iterator = MetaInfoIterator
 
-    def get(
+    def get(  # noqa: PLR0913
         self,
-        patient_id: str = None,
-        user_id: str = None,
-        related_data: bool = None,
-        with_care_team: bool = None,
-        only_with_calendar_event: bool = None,
-        statuses: list = None,
-        sort: str = None,
+        patient_id: str | None = None,
+        user_id: str | None = None,
+        related_data: bool | None = None,
+        with_care_team: bool | None = None,
+        only_with_calendar_event: bool | None = None,
+        statuses: list | None = None,
+        sort: str | None = None,
         *args,
         **kwargs,
     ):
@@ -99,4 +102,4 @@ class Encounters(Collection):
             "onlyWithCalendarEvent": only_with_calendar_event,
         }
 
-        return super().get(path, params=params, *args, **kwargs)
+        return super().get(path, *args, params=params, **kwargs)

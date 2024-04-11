@@ -121,8 +121,7 @@ def test_encounter_delete(client, vcr_cassette):
     with pytest.raises(WelkinHTTPError) as excinfo:
         encounter.get()
 
-        assert excinfo.value.response.status_code == 404
-
+    assert excinfo.value.response.status_code == 404
     assert len(vcr_cassette) == 3
 
 
@@ -242,8 +241,7 @@ def test_encounter_assessment_delete(client, vcr_cassette):
     with pytest.raises(WelkinHTTPError) as excinfo:
         assessment.get()
 
-        assert excinfo.value.response.status_code == 404
-
+    assert excinfo.value.response.status_code == 404
     assert len(vcr_cassette) == 2
 
 

@@ -1,4 +1,4 @@
-"""Client
+"""Client.
 
 This module provides a Client object to interface with the Welkin Health API.
 """
@@ -63,7 +63,7 @@ class Client(Session):
         user = welkin.User(id="301b2895-cbf0-4cac-b4cf-1d082faee95c").get()  # Read
         users = welkin.Users().get()  # Read all/list
         uasers = welkin.Users().get(
-            search="lightmatter", region="east-coast", seat_assigned=True, user_state="ACTIVE"
+            search="foo", region="east-coast", seat_assigned=True, user_state="ACTIVE"
         )  # Filtered read all/list
 
         user.update(firstName="Baz")  # Update
@@ -107,7 +107,7 @@ class Client(Session):
     Users = models.Users
     WorkHours = models.WorkHours
 
-    def __init__(
+    def __init__(  # noqa: PLR0913
         self,
         tenant,
         instance,
@@ -172,12 +172,12 @@ class Client(Session):
 
         return super().prepare_request(request)
 
-    def request(
+    def request(  # noqa: C901, PLR0912
         self,
         method: str,
         path: str,
-        meta_key: str = None,
-        meta_dict: dict = {},
+        meta_key: str | None = None,
+        meta_dict: dict | None = None,
         *args,
         **kwargs,
     ):
@@ -186,17 +186,23 @@ class Client(Session):
         Args:
             method (str): Method for the new Request object.
             path (str): Path from host for the new Request object.
+            meta_key (str | None, optional): Key for metadata in the response JSON.
+                Defaults to None.
+            meta_dict (dict | None, optional): Metadata dictionary for the response JSON.
+                Defaults to None.
+            *args: Arguments to pass to `Session.request`.
+            **kwargs: Keyword arguments to pass to `Session.request`.
 
         Returns:
             dict: Response JSON
         """
         if not isinstance(path, str):
-            path = "/".join((str(s) for s in path if s))
+            path = "/".join(str(s) for s in path if s)
         path = path.rstrip("/")
 
         for _ in range(2):
             response = super().request(
-                method=method, url=urljoin(self.host, path), *args, **kwargs
+                *args, method=method, url=urljoin(self.host, path), **kwargs
             )
 
             try:
@@ -269,10 +275,10 @@ class Client(Session):
         return resource or json
 
     def get_token(self) -> dict:
-        data = {"secret": self.auth.secret_key}
-        response = self.post(f"admin/api_clients/{self.auth.api_client}", json=data)
-
-        return response
+        return self.post(
+            f"admin/api_clients/{self.auth.api_client}",
+            json={"secret": self.auth.secret_key},
+        )
 
 
 class TimeoutHTTPAdapter(HTTPAdapter):
@@ -282,6 +288,8 @@ class TimeoutHTTPAdapter(HTTPAdapter):
         Args:
             timeout (int): How many seconds to wait for the server to send data before
                 giving up.
+            *args: Arguments to pass to `HTTPAdapter`.
+            **kwargs: Keyword arguments to pass to `HTTPAdapter`.
         """
         self.timeout = timeout
         super().__init__(*args, **kwargs)

@@ -1,4 +1,4 @@
-from datetime import datetime, timezone
+from datetime import datetime
 from enum import Enum
 
 from welkin.models.base import Collection, Resource
@@ -34,9 +34,7 @@ class CalendarEvent(Resource):
         return super().get(f"{self._client.instance}/calendar/events/{self.id}")
 
     def update(self, **kwargs):
-        return super().patch(
-            f"{self._client.instance}/calendar/events/{self.id}", kwargs
-        )
+        return super().patch(f"{self._client.instance}/calendar/events/{self.id}", kwargs)
 
     def delete(self):
         return super().delete(f"{self._client.instance}/calendar/events/{self.id}")
@@ -46,17 +44,17 @@ class CalendarEvents(Collection):
     resource = CalendarEvent
     iterator = PageableIterator
 
-    def get(
+    def get(  # noqa: PLR0913
         self,
         from_date: datetime,
         to_date: datetime,
-        participant_ids: list = None,
-        event_type: str = None,
-        sort: str = None,
-        include_cancelled: bool = None,
-        include_encounter_info: bool = None,
-        exclude_assigned_to_encounter_events: bool = None,
-        viewer_timezone: str = None,
+        participant_ids: list | None = None,
+        event_type: str | None = None,
+        sort: str | None = None,
+        include_cancelled: bool | None = None,
+        include_encounter_info: bool | None = None,
+        exclude_assigned_to_encounter_events: bool | None = None,
+        viewer_timezone: str | None = None,
         *args,
         **kwargs,
     ):
@@ -78,7 +76,7 @@ class CalendarEvents(Collection):
         }
 
         return super().get(
-            f"{self._client.instance}/calendar/events", params=params, *args, **kwargs
+            f"{self._client.instance}/calendar/events", *args, params=params, **kwargs
         )
 
 
@@ -90,12 +88,12 @@ class Schedules(Collection):
     resource = Schedule
     iterator = PageableIterator
 
-    def get(
+    def get(  # noqa: PLR0913
         self,
         ids: list,
         from_date: datetime,
         to_date: datetime,
-        include_cancelled: bool = None,
+        include_cancelled: bool | None = None,
         available: bool = False,
         full: bool = False,
         *args,
@@ -115,7 +113,7 @@ class Schedules(Collection):
         }
 
         return super().get(
-            f"{self._client.instance}/calendar/{route}", params=params, *args, **kwargs
+            f"{self._client.instance}/calendar/{route}", *args, params=params, **kwargs
         )
 
 
@@ -126,8 +124,8 @@ class WorkHours(Collection):
         self,
         from_date: datetime,
         to_date: datetime,
-        psm_ids: list = None,
-        timezone: str = None,
+        psm_ids: list | None = None,
+        timezone: str | None = None,
         *args,
         **kwargs,
     ):
@@ -146,7 +144,7 @@ class WorkHours(Collection):
         )
 
         # When no work hours are found Welkin returns an {None: []} dictionary
-        if isinstance(response, dict) and None in response.keys():
+        if isinstance(response, dict) and None in response:
             return WorkHours([])
 
         return response

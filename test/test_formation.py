@@ -88,9 +88,7 @@ class TestFormation:
 
     @pytest.mark.vcr
     def test_encounter_read(self, formation, vcr_cassette):
-        encounter_template = formation.Encounter(
-            name="etmp-coaching-introduction"
-        ).get()
+        encounter_template = formation.Encounter(name="etmp-coaching-introduction").get()
 
         assert isinstance(encounter_template, Encounter)
         assert encounter_template.name == "etmp-coaching-introduction"

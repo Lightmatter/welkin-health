@@ -5,7 +5,6 @@ import uuid
 from datetime import date, datetime, time, timedelta, timezone
 from http import HTTPStatus
 from pathlib import Path
-from uuid import uuid4
 
 import pytest
 
@@ -15,7 +14,7 @@ from welkin.exceptions import WelkinHTTPError
 
 def pytest_collection_modifyitems(items):
     # Ensure auth tests execute first, otherwise all other tests will fail.
-    items.sort(key=lambda x: True if "authentication" not in x.nodeid else False)
+    items.sort(key=lambda x: "authentication" not in x.nodeid)
 
 
 def redact(field_name, extra=""):
@@ -34,12 +33,12 @@ RESPONSE_BLACKLIST = [
     "updatedBy",
     "updatedByName",
 ]
-CLIENT_INIT = dict(
-    tenant=os.environ["WELKIN_TENANT"],
-    instance=os.environ["WELKIN_INSTANCE"],
-    api_client=os.environ["WELKIN_API_CLIENT"],
-    secret_key=os.environ["WELKIN_SECRET"],
-)
+CLIENT_INIT = {
+    "tenant": os.environ["WELKIN_TENANT"],
+    "instance": os.environ["WELKIN_INSTANCE"],
+    "api_client": os.environ["WELKIN_API_CLIENT"],
+    "secret_key": os.environ["WELKIN_SECRET"],
+}
 
 
 @pytest.fixture(scope="module")
@@ -61,7 +60,6 @@ def vcr(vcr):
 
 def scrub_request(blacklist, replacement="REDACTED"):
     def before_record_request(request):
-        # request.body = filter_body(request.body, blacklist, replacement)
         if "api_clients" in request.path:
             return None
         uri_comps = request.uri.split("/")
@@ -188,5 +186,5 @@ def est_datetime_str():
 
 
 @pytest.fixture
-def _uuid():
-    return uuid4()
+def uuid4():
+    return uuid.uuid4()

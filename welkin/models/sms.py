@@ -18,14 +18,14 @@ class SMSes(Collection):
     iterator = PageableIterator
 
     @model_id("Patient")
-    def get(self, patient_id: str, sort: str = None, *args, **kwargs):
+    def get(self, patient_id: str, sort: str | None = None, *args, **kwargs):
         params = {
             "sort": sort,
         }
 
         return super().get(
             f"{self._client.instance}/patients/{patient_id}/sms",
-            params=params,
             *args,
+            params=params,
             **kwargs,
         )

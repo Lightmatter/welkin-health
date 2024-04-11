@@ -18,7 +18,9 @@ def test_patient_create(client, vcr_cassette):
 @pytest.mark.vcr
 def test_patient_create_birthdate(client, vcr_cassette):
     patient = client.Patient(
-        firstName="happy", lastName="borf", birthDate=date.today()
+        firstName="happy",
+        lastName="borf",
+        birthDate=date.today(),  # noqa: DTZ011
     ).create()
 
     assert isinstance(patient, Patient)

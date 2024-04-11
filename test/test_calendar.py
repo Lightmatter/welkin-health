@@ -8,7 +8,6 @@ from welkin.models.calendar import (
     CalendarEvents,
     Schedule,
     Schedules,
-    WorkHours,
 )
 
 UTC = timezone.utc

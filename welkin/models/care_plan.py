@@ -11,7 +11,7 @@ class CarePlanOverview(Resource):
 
 
 class CarePlan(Resource):
-    subresources = [CarePlanOverview]
+    subresources = (CarePlanOverview,)
 
     @model_id("Patient")
     def create(self, patient_id: str):

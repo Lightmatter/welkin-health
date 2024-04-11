@@ -25,21 +25,21 @@ class DocumentSummaryFiles(Collection):
         self,
         patient_id: str,
         document_summary_id: str,
-        files: list = None,
+        files: list | None = None,
         *args,
         **kwargs,
     ):
         return super().post(
             f"{self._client.instance}/patients/{patient_id}/document-summary/"
             f"{document_summary_id}/files",
-            files=files,
             *args,
+            files=files,
             **kwargs,
         )
 
 
 class DocumentSummary(Resource):
-    subresources = [DocumentSummaryFile, DocumentSummaryFiles]
+    subresources = (DocumentSummaryFile, DocumentSummaryFiles)
 
     @model_id("Patient")
     def get(self, patient_id: str):
