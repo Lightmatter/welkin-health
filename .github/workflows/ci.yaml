@@ -59,6 +59,7 @@ jobs:
         run: poetry run pre-commit run --all-files
 
       - name: Run Tests
+        shell: bash
         run: |
           poetry run pytest \
           --junitxml=pytest.xml \
