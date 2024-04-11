@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 import pytest
 
 from welkin.exceptions import WelkinHTTPError
@@ -100,6 +102,5 @@ def test_cdt_delete(client, vcr_cassette):
     with pytest.raises(WelkinHTTPError) as excinfo:
         cdt.get()
 
-        assert excinfo.value.response.status_code == 404
-
+    assert excinfo.value.response.status_code == 404
     assert len(vcr_cassette) == 3

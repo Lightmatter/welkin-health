@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 from welkin.models.base import Collection, Resource
 from welkin.pagination import MetaIterator
 from welkin.util import model_id
@@ -6,9 +8,7 @@ from welkin.util import model_id
 class Chat(Resource):
     @model_id("Patient")
     def create(self, patient_id: str):
-        return super().post(
-            f"{self._client.instance}/patients/{patient_id}/chat/inbound"
-        )
+        return super().post(f"{self._client.instance}/patients/{patient_id}/chat/inbound")
 
     def __str__(self):
         return f"{self.sender['clientType']} {self.message}"
@@ -26,8 +26,8 @@ class Chats(Collection):
 
         return super().get(
             f"{self._client.instance}/patients/{patient_id}/chat",
-            params=params,
             *args,
+            params=params,
             **kwargs,
         )
 
@@ -58,7 +58,7 @@ class SearchChats(Collection):
 
         return super().get(
             f"{self._client.instance}/patients/{patient_id}/chat/search",
-            params=params,
             *args,
+            params=params,
             **kwargs,
         )

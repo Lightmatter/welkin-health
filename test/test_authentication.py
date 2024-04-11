@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 import dbm
 from pathlib import Path
 
@@ -13,7 +15,7 @@ def auth_class(client):
     auth.token_method = lambda: {"token": "API_TOKEN"}
 
     try:
-        auth.token
+        auth.token  # noqa: B018
     except dbm.error:
         Path(DB_PATH).unlink()
         return auth_class(client)

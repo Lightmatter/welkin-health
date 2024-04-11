@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 from welkin.models.base import Resource
 from welkin.util import model_id
 
@@ -11,7 +13,7 @@ class CarePlanOverview(Resource):
 
 
 class CarePlan(Resource):
-    subresources = [CarePlanOverview]
+    subresources = (CarePlanOverview,)
 
     @model_id("Patient")
     def create(self, patient_id: str):

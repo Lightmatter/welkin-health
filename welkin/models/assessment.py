@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 from welkin.models.base import Collection, Resource
 from welkin.pagination import PageableIterator
 from welkin.util import model_id
@@ -58,7 +60,7 @@ class AssessmentRecordAnswers(Resource):
 
 
 class AssessmentRecord(Resource):
-    subresources = [AssessmentRecordAnswers]
+    subresources = (AssessmentRecordAnswers,)
 
     @model_id("Patient")
     def create(self, patient_id: str):

@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 import inspect
 
 import pytest
@@ -31,7 +33,8 @@ def test_method_args(client, class_name: str):
             continue  # skip dunder methods
 
         if hasattr(method, "__wrapped__"):
-            method = method.__wrapped__  # unwrap decorated functions
+            # unwrap decorated functions
+            method = method.__wrapped__  # noqa: PLW2901
 
         if method.__qualname__ != f"{class_name}.{method_name}":
             continue  # skip methods from parent classes
