@@ -43,6 +43,17 @@ myst-parser = "^2.0.0"
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
+[tool.coverage.report]
+# Regexes for lines to exclude from consideration
+exclude_also = ["if TYPE_CHECKING:"]
+
+[tool.coverage.run]
+omit = ["test/*"]
+
+[tool.pytest.ini_options]
+addopts = ["-n=auto"]
+env_files = [".env", ".env.example"]
+
 [tool.ruff]
 cache-dir = "~/.cache/ruff"
 extend-exclude = ["*migrations/*"]
@@ -100,10 +111,3 @@ combine-as-imports = true
 
 [tool.ruff.lint.pydocstyle]
 convention = "google"
-
-[tool.coverage.run]
-omit = ["test/*"]
-
-[tool.pytest.ini_options]
-addopts = ["-n=auto"]
-env_files = [".env", ".env.example"]
