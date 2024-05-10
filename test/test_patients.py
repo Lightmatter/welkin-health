@@ -22,7 +22,7 @@ def test_patient_create_birthdate(client, vcr_cassette):
     patient = client.Patient(
         firstName="happy",
         lastName="borf",
-        birthDate=date.today(),  # noqa: DTZ011
+        birthDate=date(2022, 8, 9),
     ).create()
 
     assert isinstance(patient, Patient)

@@ -31,9 +31,13 @@ REQUEST_BLACKLIST = ["secret"]
 RESPONSE_BLACKLIST = [
     "token",
     "createdBy",
+    "created_by",
     "createdByName",
+    "created_by_name",
     "updatedBy",
+    "updated_by",
     "updatedByName",
+    "updated_by_name",
 ]
 CLIENT_INIT = {
     "tenant": os.environ["WELKIN_TENANT"],
@@ -50,14 +54,15 @@ def client():
 
 
 @pytest.fixture(scope="module")
-def vcr(vcr):
-    vcr.filter_headers = HEADER_BLACKLIST
-    vcr.filter_post_data_parameters = POST_DATA_BLACKLIST
-    vcr.before_record_request = scrub_request(CLIENT_INIT)
-    vcr.before_record_response = scrub_response(RESPONSE_BLACKLIST)
-    vcr.decode_compressed_response = True
-
-    return vcr
+def vcr_config():
+    return {
+        "filter_headers": HEADER_BLACKLIST,
+        "filter_post_data_parameters": POST_DATA_BLACKLIST,
+        "before_record_request": scrub_request(CLIENT_INIT),
+        "before_record_response": scrub_response(RESPONSE_BLACKLIST),
+        "decode_compressed_response": True,
+        "match_on": ("method", "scheme", "host", "port", "path", "query", "body"),
+    }
 
 
 def scrub_request(blacklist, replacement="REDACTED"):
@@ -102,7 +107,9 @@ def filter_body(body, blacklist, replacement):
 
 def body_hook(blacklist, replacement):
     def hook(dct):
-        for k in dct:
+        for k, v in dct.items():
+            if isinstance(v, dict):
+                dct[k] = hook(v)
             if k in blacklist:
                 dct[k] = redact(k, replacement)
 

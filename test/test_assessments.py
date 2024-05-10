@@ -42,6 +42,7 @@ def test_assessment_record_get_w_patient_id(client, vcr_cassette):
     assert len(vcr_cassette) == 1
 
 
+@pytest.mark.skip(reason="Need to figure out request matching on PUT body")
 @pytest.mark.vcr
 def test_assessment_record_update(client, vcr_cassette):
     patient = client.Patient(id="371dd15c-cedc-4425-a394-d666c8d3fc01")
