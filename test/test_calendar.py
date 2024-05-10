@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 from datetime import datetime, timedelta, timezone
 
 import pytest
@@ -8,7 +10,6 @@ from welkin.models.calendar import (
     CalendarEvents,
     Schedule,
     Schedules,
-    WorkHours,
 )
 
 UTC = timezone.utc

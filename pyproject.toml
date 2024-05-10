@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "welkin"
-version = "0.1.2"
+version = "0.1.3"
 description = "Python Welkin Health API Wrapper."
 authors = ["Sam Morgan <sama4mail@gmail.com>"]
 license = "GPL-3.0-or-later"
@@ -23,9 +23,8 @@ portalocker = "^2.8.2"
 inflection = "^0.5.1"
 
 [tool.poetry.group.dev.dependencies]
-black = ">=22.10,<25.0"
-isort = "^5.10.1"
 pre-commit = "^3.5.0"
+ruff = "^0.3.6"
 
 [tool.poetry.group.test.dependencies]
 pytest = "^8.0.2"
@@ -44,8 +43,9 @@ myst-parser = "^2.0.0"
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
-[tool.isort]
-profile = "black"
+[tool.coverage.report]
+# Regexes for lines to exclude from consideration
+exclude_also = ["if TYPE_CHECKING:"]
 
 [tool.coverage.run]
 omit = ["test/*"]
@@ -53,3 +53,61 @@ omit = ["test/*"]
 [tool.pytest.ini_options]
 addopts = ["-n=auto"]
 env_files = [".env", ".env.example"]
+
+[tool.ruff]
+cache-dir = "~/.cache/ruff"
+extend-exclude = ["*migrations/*"]
+line-length = 92
+target-version = "py38"
+show-fixes = true
+
+[tool.ruff.lint]
+ignore = [
+    "D1",   # Missing docstrings
+    "D205", # 1 blank line required between summary line and description (does not allow wrapping of summary lines)
+    "D407", # Dashed underline after doc section (not compatible with google style)
+]
+select = [ # https://docs.astral.sh/ruff/rules
+    "F",   # pyflakes
+    "E",   # pycodestyle
+    "W",   # pycodestyle
+    "C90", # mccabe
+    "I",   # isort
+    "N",   # pep8-naming
+    "D",   # pydocstyle
+    "UP",  # pyupgrade
+    "B",   # flake8-bugbear
+    "S",   # flake8-bandit
+    "A",   # flake8-builtins
+    "C4",  # flake8-comprehensions
+    "DTZ", # flake8-datetimez
+    "ISC", # flake8-implicit-str-concat
+    "EXE", # flake8-executable
+    "PT",  # flake8-pytest-style
+    "Q",   # flake8-quotes
+    "RET", # flake8-return
+    "TCH", # flake8-type-checking
+    "SIM", # flake8-simplify
+    "T20", # flake8-print
+    "TID", # flake8-tidy-imports
+    "ERA", # eradicate
+    "PL",  # pylint
+    "RUF", # ruff
+]
+unfixable = ["D407"]
+
+[tool.ruff.lint.flake8-pytest-style]
+fixture-parentheses = false
+mark-parentheses = false
+
+[tool.ruff.lint.isort]
+combine-as-imports = true
+
+[tool.ruff.lint.per-file-ignores]
+"__init__.py" = ["E402"]
+"**/{tests,docs}/*" = ["S", "PLR2004", "PLR0913"]
+"**/conftest.py" = ["S", "PLR2004", "PLR0913"]
+"**/test*.py" = ["S", "PLR2004", "PLR0913"]
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"

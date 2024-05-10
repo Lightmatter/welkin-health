@@ -1,8 +1,10 @@
+from __future__ import annotations
+
 from http import HTTPStatus
+from typing import TYPE_CHECKING
 
 import pytest
 
-from welkin import Client
 from welkin.exceptions import WelkinHTTPError
 from welkin.models import (
     Patient,
@@ -11,7 +13,10 @@ from welkin.models import (
     ProgramPhase,
     ProgramPhases,
 )
-from welkin.models.formation import Program
+
+if TYPE_CHECKING:
+    from welkin import Client
+    from welkin.models.formation import Program
 
 
 @pytest.mark.vcr
@@ -60,9 +65,7 @@ class TestProgram:
             "programName",
         ],
     )
-    def test_read(
-        self, patient: Patient, patient_program: PatientProgram, identifier: str
-    ):
+    def test_read(self, patient: Patient, patient_program: PatientProgram, identifier: str):
         prog = patient.PatientProgram(
             **{identifier: getattr(patient_program, identifier)}
         ).get()
@@ -74,7 +77,7 @@ class TestProgram:
         assert prog.id == patient_program.id
 
     def test_read_no_id(self, client):
-        with pytest.raises(ValueError):
+        with pytest.raises(ValueError, match="Program must have"):
             client.Patient(id="notarealid").PatientProgram().get()
 
     def test_update(

@@ -1,14 +1,21 @@
 """Package version information."""
-from datetime import date
+
+from __future__ import annotations
+
+from datetime import datetime, timezone
 from importlib.metadata import distribution
+from typing import TYPE_CHECKING
 
-_dist_metadata: dict = distribution("welkin").metadata.json
+if TYPE_CHECKING:
+    from importlib.metadata._adapters import Message
 
-__title__ = _dist_metadata["name"]
-__description__ = _dist_metadata["summary"]
-__url__ = _dist_metadata["home_page"]
-__version__ = _dist_metadata["version"]
-__author__ = _dist_metadata["author"]
-__author_email__ = _dist_metadata["author_email"]
-__license__ = _dist_metadata["license"]
-__copyright__ = f"{date.today().year} Lightmatter"
+_metadata: Message = distribution("welkin").metadata
+
+__title__ = _metadata.get("Name")
+__description__ = _metadata.get("Summary")
+__url__ = _metadata.get("Home-page")
+__version__ = _metadata.get("Version")
+__author__ = _metadata.get("Author")
+__author_email__ = _metadata.get("Author-email")
+__license__ = _metadata.get("License")
+__copyright__ = f"{datetime.now(tz=timezone.utc):%Y} Lightmatter"

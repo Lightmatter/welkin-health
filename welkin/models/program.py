@@ -1,3 +1,7 @@
+from __future__ import annotations
+
+from types import MappingProxyType
+
 from welkin.models.base import Collection, Resource
 from welkin.pagination import MetaInfoIterator
 from welkin.util import model_id
@@ -12,19 +16,21 @@ class ProgramPhases(Collection):
 
 
 class PatientProgram(Resource):
-    subresources = [ProgramPhase]
-    nested_objects = {
-        "phases": "ProgramPhase",
-        "currentPhase": "ProgramPhase",
-        "pathHistory": "ProgramPhases",
-    }
+    subresources = (ProgramPhase,)
+    nested_objects = MappingProxyType(
+        {
+            "phases": "ProgramPhase",
+            "currentPhase": "ProgramPhase",
+            "pathHistory": "ProgramPhases",
+        }
+    )
 
     @model_id("Patient")
     def get(
         self,
         patient_id: str,
-        assigned_programs: bool = None,
-        sort: str = None,
+        assigned_programs: bool | None = None,
+        sort: str | None = None,
         *args,
         **kwargs,
     ):
@@ -38,11 +44,11 @@ class PatientProgram(Resource):
 
         return super().get(
             path,
+            *args,
             params={
                 "assignedPrograms": assigned_programs,
                 "sort": sort,
             },
-            *args,
             **kwargs,
         )
 
@@ -69,17 +75,17 @@ class PatientPrograms(Collection):
     def get(
         self,
         patient_id: str,
-        assigned_programs: bool = None,
-        sort: str = None,
+        assigned_programs: bool | None = None,
+        sort: str | None = None,
         *args,
         **kwargs,
     ):
         return super().get(
             f"{self._client.instance}/patients/{patient_id}/programs",
+            *args,
             params={
                 "assignedPrograms": assigned_programs,
                 "sort": sort,
             },
-            *args,
             **kwargs,
         )

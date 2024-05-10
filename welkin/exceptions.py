@@ -1,3 +1,6 @@
+from __future__ import annotations
+
+import contextlib
 import json
 
 from requests import HTTPError
@@ -22,9 +25,7 @@ class WelkinHTTPError(HTTPError):
         response = exc.response
         msg = exc.args[0]
 
-        try:
+        with contextlib.suppress(json.JSONDecodeError):
             msg = f"{msg}\n{json.dumps(response.json(), indent=2)}"
-        except json.JSONDecodeError:
-            pass
 
         super(HTTPError, self).__init__(msg, request=request, response=response)

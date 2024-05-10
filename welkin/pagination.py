@@ -1,5 +1,12 @@
+from __future__ import annotations
+
+DEFAULT_PAGE_SIZE = 20
+
+
 class PageIterator:
-    def __init__(self, collection, resource, method, size=20, *args, **kwargs):
+    def __init__(
+        self, collection, resource, method, size=DEFAULT_PAGE_SIZE, *args, **kwargs
+    ):
         self.collection = collection
         self.resource = resource
         self.method = method
@@ -7,7 +14,7 @@ class PageIterator:
         self.meta_key = None
         self.meta_dict = {"totalPages": 1, "number": 0, "last": True}
 
-        if size != 20:
+        if size != DEFAULT_PAGE_SIZE:
             kwargs.setdefault("params", {}).update(size=size)
 
         self.args = args
@@ -28,9 +35,9 @@ class PageIterator:
 
             self.resources, meta = self.method(
                 self.resource,
+                *self.args,
                 meta_key=self.meta_key,
                 meta_dict=self.meta_dict,
-                *self.args,
                 **self.kwargs,
             )
 
@@ -41,15 +48,11 @@ class PageIterator:
         raise StopIteration
 
     def _pre_request(self):
-        """
-        Function to execute before making the next request, e.g. update paging params
-        """
+        """Function to execute before making the next request, e.g. update paging params."""
         self.kwargs.setdefault("params", {})
 
     def _post_request(self, meta):
-        """
-        Function to execute after making the next request, e.g. updating page tracking
-        """
+        """Function to execute after making the next request, e.g. update page tracking."""
         self.last = True
 
     @property
@@ -63,9 +66,7 @@ class PageIterator:
 
 
 class PageableIterator(PageIterator):
-    """
-    Most common paging class
-    """
+    """Most common paging class."""
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -84,10 +85,10 @@ class PageableIterator(PageIterator):
 
 
 class FormationIterator(PageIterator):
-    """
-    Specifically for paginating formations responses
-    Similar to PageableIterator but includes special behavior for
-    single item formations, e.g. encounter disposition
+    """Specifically for paginating formations responses.
+
+    Similar to PageableIterator but includes special behavior for single item formations,
+    e.g. encounter disposition
     """
 
     def __init__(self, *args, **kwargs):
@@ -107,9 +108,9 @@ class FormationIterator(PageIterator):
 
             data = self.method(
                 self.resource,
+                *self.args,
                 meta_key=self.meta_key,
                 meta_dict=self.meta_dict,
-                *self.args,
                 **self.kwargs,
             )
             if isinstance(data, dict):
@@ -132,9 +133,7 @@ class FormationIterator(PageIterator):
 
 
 class PageNumberIterator(PageableIterator):
-    """
-    PageableIterator with a different key used for the page count
-    """
+    """PageableIterator with a different key used for the page count."""
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -147,9 +146,7 @@ class PageNumberIterator(PageableIterator):
 
 
 class MetaInfoIterator(PageIterator):
-    """
-    Functionally identical to PageableIterator with various renamed keys
-    """
+    """Functionally identical to PageableIterator with various renamed keys."""
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -170,9 +167,7 @@ class MetaInfoIterator(PageIterator):
 
 
 class MetaIterator(PageIterator):
-    """
-    Paging class for token based paging
-    """
+    """Paging class for token based paging."""
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)

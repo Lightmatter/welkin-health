@@ -8,7 +8,7 @@
 import welkin
 
 project = welkin.__name__
-copyright = welkin.__copyright__
+copyright = welkin.__copyright__  # noqa: A001
 author = welkin.__author__
 release = welkin.__version__
 

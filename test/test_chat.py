@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 import pytest
 
 from welkin.models.chat import Chat, Chats, ChatSearchResult, SearchChats

@@ -1,32 +1,19 @@
 name: CI
 
-on: [pull_request, workflow_dispatch]
+on: [pull_request, workflow_dispatch, workflow_call]
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
-  get-python-versions:
-    name: Get Python versions
-    runs-on: ubuntu-latest
-    outputs:
-      python-matrix: ${{ steps.get-python-versions-action.outputs.latest-python-versions }}
-    steps:
-      - name: Get Python version matrix
-        uses: snok/latest-python-versions@v1
-        id: get-python-versions-action
-        with:
-          min-version: 3.8
-
   ci:
     name: CI
-    needs: [get-python-versions]
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
       matrix:
-        python-version: ${{ fromJson(needs.get-python-versions.outputs.python-matrix) }}
+        python-version: ["3.8", "3.9", "3.10", "3.11", "3.12"]
 
     steps:
       - name: Checkout ${{ github.repository }}
@@ -53,12 +40,13 @@ jobs:
 
       - name: Install dependencies
         id: poetry-install
-        run: poetry install --no-interaction --no-root
+        run: poetry install --no-interaction
 
       - name: Run pre-commit
         run: poetry run pre-commit run --all-files
 
       - name: Run Tests
+        shell: bash
         run: |
           poetry run pytest \
           --junitxml=pytest.xml \
