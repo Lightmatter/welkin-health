@@ -83,5 +83,8 @@ class Patients(Collection):
     def get(self, filter: dict | None = None, *args, **kwargs):  # noqa: A002
         # TODO: Add sort and query arguments.
         return super().post(
-            f"{self._client.instance}/by-filter/patients", *args, json=filter, **kwargs
+            f"{self._client.instance}/by-filter/patients",
+            *args,
+            json=filter or {},
+            **kwargs,
         )
