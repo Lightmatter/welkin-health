@@ -17,6 +17,7 @@ from welkin.models.document import (
 )
 from welkin.models.email import Email, Emails
 from welkin.models.encounter import Encounter, EncounterDisposition, Encounters
+from welkin.models.export import CDTRecordsExport
 from welkin.models.formation import Formation
 from welkin.models.patient import Patient, Patients
 from welkin.models.program import (
@@ -39,6 +40,7 @@ __all__ = [
     "CarePlan",
     "CarePlanOverview",
     "CDT",
+    "CDTRecordsExport",
     "CDTs",
     "Chat",
     "Chats",
@@ -53,11 +55,11 @@ __all__ = [
     "Encounters",
     "Formation",
     "Patient",
-    "Patients",
     "PatientProgram",
+    "PatientPrograms",
+    "Patients",
     "ProgramPhase",
     "ProgramPhases",
-    "PatientPrograms",
     "Schedules",
     "SearchChats",
     "SMS",

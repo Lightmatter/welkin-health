@@ -82,6 +82,7 @@ class Client(Session):
     CarePlan = models.CarePlan
     CarePlanOverview = models.CarePlanOverview
     CDT = models.CDT
+    CDTRecordsExport = models.CDTRecordsExport
     CDTs = models.CDTs
     Chat = models.Chat
     Chats = models.Chats
@@ -96,11 +97,11 @@ class Client(Session):
     Encounters = models.Encounters
     Formation = models.Formation
     Patient = models.Patient
-    Patients = models.Patients
     PatientProgram = models.PatientProgram
+    PatientPrograms = models.PatientPrograms
+    Patients = models.Patients
     ProgramPhase = models.ProgramPhase
     ProgramPhases = models.ProgramPhases
-    PatientPrograms = models.PatientPrograms
     Schedules = models.Schedules
     SearchChats = models.SearchChats
     SMS = models.SMS
