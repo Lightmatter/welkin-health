@@ -194,3 +194,19 @@ class MetaIterator(PageIterator):
     def _post_request(self, meta):
         self.page_token = meta["nextPageToken"]
         self.last = not meta.get("nextPageToken")
+
+
+class CursorIterator(PageIterator):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.meta_key = "cursor"
+        self.meta_dict = {
+            "start": None,
+            "end": None,
+            "pageSize": self.size,
+        }
+        self.kwargs.setdefault("params", {}).update(pageSize=self.size)
+
+    def _post_request(self, meta):
+        self.kwargs.setdefault("params", {}).update(start=meta.get("end"))
+        self.last = not meta.get("hasNext")
