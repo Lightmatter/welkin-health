@@ -2,8 +2,10 @@ from __future__ import annotations
 
 import copy
 import sys
+from io import BytesIO
 
 import pytest
+from requests import Request
 
 from welkin.util import (
     clean_date,
@@ -12,6 +14,7 @@ from welkin.util import (
     clean_request_params,
     clean_request_payload,
     find_model_id,
+    reset_file_offsets,
     to_camel_case,
     to_snake_case,
 )
@@ -93,6 +96,50 @@ class TestCleanRequestParams:
         assert cleaned["datetime"] == pst_datetime_str
         assert cleaned["date"] == base_date_str
         assert cleaned["list"] == "foo,bar,baz"
+
+
+class TestResetFileOffsets:
+    @pytest.fixture
+    def file(self) -> BytesIO:
+        file = BytesIO(b"foo\nbar\nbaz")
+        file.seek(1)
+
+        return file
+
+    @pytest.fixture
+    def file_info(self, file):
+        return {"files": file}
+
+    @pytest.fixture
+    def file_info_with_name(self, file: BytesIO):
+        return [("files", ("file.txt", file))]
+
+    @pytest.fixture
+    def file_info_with_content_type(self, file: BytesIO):
+        return [("files", ("file.txt", file, "text/plain"))]
+
+    @pytest.fixture
+    def file_info_with_content_type_and_headers(self, file: BytesIO):
+        return [("files", ("file.txt", file, "text/plain", {"Expires": "0"}))]
+
+    @pytest.fixture(
+        params=[
+            "file_info",
+            "file_info_with_name",
+            "file_info_with_content_type",
+            "file_info_with_content_type_and_headers",
+        ]
+    )
+    def mock_request(self, request: pytest.FixtureRequest) -> Request:
+        return Request(
+            "POST", "https://example.com", files=request.getfixturevalue(request.param)
+        )
+
+    def test_reset_file_offsets(self, file, mock_request: Request):
+        assert file.tell() == 1
+
+        reset_file_offsets(mock_request.files)
+        assert file.tell() == 0
 
 
 def test_clean_date(base_date, base_date_str):
