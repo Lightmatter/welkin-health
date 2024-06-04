@@ -17,7 +17,12 @@ from requests.packages.urllib3.util.retry import Retry  # type: ignore
 from welkin import __version__, models
 from welkin.authentication import WelkinAuth
 from welkin.exceptions import WelkinHTTPError
-from welkin.util import _build_resources, clean_request_params, clean_request_payload
+from welkin.util import (
+    _build_resources,
+    clean_request_params,
+    clean_request_payload,
+    rewind_files,
+)
 
 logger = logging.getLogger(__name__)
 
@@ -172,6 +177,8 @@ class Client(Session):
             request.json = clean_request_payload(request.json)
         if request.params:
             request.params = clean_request_params(request.params)
+        if request.files:
+            rewind_files(request.files)
 
         return super().prepare_request(request)
 

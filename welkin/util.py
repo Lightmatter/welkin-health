@@ -6,6 +6,7 @@ from typing import Any, Callable
 from uuid import UUID
 
 import inflection
+from requests.utils import to_key_val_list
 
 from welkin.models.base import Collection, Resource, SchemaBase
 
@@ -178,6 +179,31 @@ def model_id(*models: tuple[str]) -> Callable:
         return wrapper
 
     return decorator
+
+
+def rewind_files(files: list) -> None:
+    """Rewind file-like objects to the beginning.
+
+    Args:
+        files (list): The list of files from the request.
+    """
+    file_info_with_name = 2
+    file_info_with_content_type = 3
+
+    # Similar to requests.models.RequestEncodingMixin._encode_files
+    for _, file_info in to_key_val_list(files):
+        if isinstance(file_info, (tuple, list)):
+            if len(file_info) == file_info_with_name:
+                fn, fp = file_info
+            elif len(file_info) == file_info_with_content_type:
+                fn, fp, ft = file_info
+            else:
+                fn, fp, ft, fh = file_info
+        else:
+            fp = file_info
+
+        if hasattr(fp, "seek"):
+            fp.seek(0)
 
 
 @lru_cache(maxsize=None)
