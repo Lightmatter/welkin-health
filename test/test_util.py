@@ -14,7 +14,7 @@ from welkin.util import (
     clean_request_params,
     clean_request_payload,
     find_model_id,
-    rewind_files,
+    reset_file_offsets,
     to_camel_case,
     to_snake_case,
 )
@@ -98,7 +98,7 @@ class TestCleanRequestParams:
         assert cleaned["list"] == "foo,bar,baz"
 
 
-class TestRewindFiles:
+class TestResetFileOffsets:
     @pytest.fixture
     def file(self) -> BytesIO:
         file = BytesIO(b"foo\nbar\nbaz")
@@ -135,10 +135,10 @@ class TestRewindFiles:
             "POST", "https://example.com", files=request.getfixturevalue(request.param)
         )
 
-    def test_rewind_files(self, file, mock_request: Request):
+    def test_reset_file_offsets(self, file, mock_request: Request):
         assert file.tell() == 1
 
-        rewind_files(mock_request.files)
+        reset_file_offsets(mock_request.files)
         assert file.tell() == 0
 
 

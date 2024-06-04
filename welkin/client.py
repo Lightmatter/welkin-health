@@ -21,7 +21,7 @@ from welkin.util import (
     _build_resources,
     clean_request_params,
     clean_request_payload,
-    rewind_files,
+    reset_file_offsets,
 )
 
 logger = logging.getLogger(__name__)
@@ -178,7 +178,7 @@ class Client(Session):
         if request.params:
             request.params = clean_request_params(request.params)
         if request.files:
-            rewind_files(request.files)
+            reset_file_offsets(request.files)
 
         return super().prepare_request(request)
 

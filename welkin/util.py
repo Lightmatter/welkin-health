@@ -181,8 +181,8 @@ def model_id(*models: tuple[str]) -> Callable:
     return decorator
 
 
-def rewind_files(files: list) -> None:
-    """Rewind file-like objects to the beginning.
+def reset_file_offsets(files: list) -> None:
+    """Reset file-like objects to the beginning of the file.
 
     Args:
         files (list): The list of files from the request.
