@@ -206,7 +206,7 @@ def reset_file_offsets(files: list) -> None:
             fp.seek(0)
 
 
-@lru_cache(maxsize=None)
+@lru_cache
 def to_camel_case(s: str) -> str:
     """Convert a string to camelCase.
 
@@ -219,7 +219,7 @@ def to_camel_case(s: str) -> str:
     return inflection.camelize(to_snake_case(s), uppercase_first_letter=False)
 
 
-@lru_cache(maxsize=None)
+@lru_cache
 def to_snake_case(s: str) -> str:
     """Convert a string to snake_case.
 

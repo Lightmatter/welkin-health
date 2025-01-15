@@ -17,27 +17,27 @@ classifiers = [
 "Bug Tracker" = "https://github.com/lightmatter/welkin-health/issues"
 
 [tool.poetry.dependencies]
-python = "^3.8"
-requests = "^2.31.0"
-portalocker = "^2.8.2"
+python = "^3.9"
 inflection = "^0.5.1"
+portalocker = "^2.8.2"
+requests = "^2.31.0"
 
 [tool.poetry.group.dev.dependencies]
-pre-commit = "^3.5.0"
-ruff = "^0.3.6"
+pre-commit = "^4.0.1"
+ruff = "^0.9.1"
 
 [tool.poetry.group.test.dependencies]
-pytest = "^8.0.2"
-pytest-cov = "^4.1.0"
+pytest = "^8.3.4"
+pytest-cov = "^6.0.0"
 pytest-dotenv = "^0.5.2"
 pytest-vcr = "^1.0.2"
-pytest-xdist = "^3.5.0"
+pytest-xdist = "^3.6.1"
 
 [tool.poetry.group.docs.dependencies]
-Sphinx = "7.1.2"
-sphinx-autoapi = "^3.0.0"
-sphinx-rtd-theme = "^2.0.0"
-myst-parser = "^2.0.0"
+myst-parser = "^3.0.1"
+Sphinx = "^7.4.7"
+sphinx-autoapi = "^3.4.0"
+sphinx-rtd-theme = "^3.0.2"
 
 [build-system]
 requires = ["poetry-core"]
@@ -58,7 +58,7 @@ env_files = [".env", ".env.example"]
 cache-dir = "~/.cache/ruff"
 extend-exclude = ["*migrations/*"]
 line-length = 92
-target-version = "py38"
+target-version = "py39"
 show-fixes = true
 
 [tool.ruff.lint]

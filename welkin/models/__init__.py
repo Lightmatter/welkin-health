@@ -1,3 +1,4 @@
+# ruff: noqa: RUF022
 from welkin.models.assessment import (
     Assessment,
     AssessmentRecord,
