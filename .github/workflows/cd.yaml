@@ -60,7 +60,7 @@ jobs:
 
     steps:
       - name: Checkout ${{ github.repository }}
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Build and publish to PyPI
         uses: JRubics/poetry-publish@v1.13
