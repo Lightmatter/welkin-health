@@ -55,8 +55,7 @@ class PatientProgram(Resource):
     @model_id("Patient")
     def update(self, patient_id: str, **kwargs):
         return super().patch(
-            f"{self._client.instance}/patients/{patient_id}/programs/"
-            f"{self.programName}",
+            f"{self._client.instance}/patients/{patient_id}/programs/{self.programName}",
             kwargs,
         )
 
