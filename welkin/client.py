@@ -77,6 +77,8 @@ class Client(Session):
         user.delete()  # Delete
     """
 
+    Audit = models.Audit
+    Audits = models.Audits
     Assessment = models.Assessment
     AssessmentRecord = models.AssessmentRecord
     AssessmentRecordAnswers = models.AssessmentRecordAnswers
