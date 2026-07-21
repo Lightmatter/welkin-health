@@ -1,14 +1,34 @@
+from __future__ import annotations
+
 from welkin.models.base import Collection, Resource
 from welkin.pagination import MetaInfoIterator
 
 
-class Audit(Resource):
+class WebhookAudit(Resource):
     pass
 
 
-class Audits(Collection):
-    resource = Audit
+class WebhookAudits(Collection):
+    resource = WebhookAudit
     iterator = MetaInfoIterator
 
-    def get(self, **kwargs):
-        return super().get("admin/audit-webhook", params=kwargs)
+    def get(self, params: dict | None = None, *args, **kwargs):
+        if params is None:
+            params = {}
+
+        return super().get("admin/audit-webhook", *args, params=params, **kwargs)
+
+
+class DataAudit(Resource):
+    pass
+
+
+class DataAudits(Collection):
+    resource = DataAudit
+    iterator = MetaInfoIterator
+
+    def get(self, params: dict | None = None, *args, **kwargs):
+        if params is None:
+            params = {}
+
+        return super().get("admin/audit-data", *args, params=params, **kwargs)
