@@ -77,8 +77,6 @@ class Client(Session):
         user.delete()  # Delete
     """
 
-    Audit = models.Audit
-    Audits = models.Audits
     Assessment = models.Assessment
     AssessmentRecord = models.AssessmentRecord
     AssessmentRecordAnswers = models.AssessmentRecordAnswers
@@ -93,6 +91,8 @@ class Client(Session):
     CDTs = models.CDTs
     Chat = models.Chat
     Chats = models.Chats
+    DataAudit = models.DataAudit
+    DataAudits = models.DataAudits
     DocumentSummaries = models.DocumentSummaries
     DocumentSummary = models.DocumentSummary
     DocumentSummaryFile = models.DocumentSummaryFile
@@ -115,6 +115,8 @@ class Client(Session):
     SMSes = models.SMSes
     User = models.User
     Users = models.Users
+    WebhookAudit = models.WebhookAudit
+    WebhookAudits = models.WebhookAudits
     WorkHours = models.WorkHours
 
     def __init__(  # noqa: PLR0913
