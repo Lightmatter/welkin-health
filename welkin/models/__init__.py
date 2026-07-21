@@ -6,6 +6,7 @@ from welkin.models.assessment import (
     AssessmentRecords,
     Assessments,
 )
+from welkin.models.audit import Audit, Audits
 from welkin.models.calendar import CalendarEvent, CalendarEvents, Schedules, WorkHours
 from welkin.models.care_plan import CarePlan, CarePlanOverview
 from welkin.models.cdt import CDT, CDTs
@@ -31,6 +32,8 @@ from welkin.models.sms import SMS, SMSes
 from welkin.models.user import User, Users
 
 __all__ = [
+    "Audit",
+    "Audits",
     "Assessment",
     "AssessmentRecord",
     "AssessmentRecordAnswers",
