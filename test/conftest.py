@@ -156,7 +156,7 @@ def patient(client, fixture_cassette):
 @pytest.fixture
 def users(client, fixture_cassette) -> Users:
     with fixture_cassette():
-        return client.Users().get()
+        return list(client.Users().get(size=1000, paginate=True))
 
 
 @pytest.fixture
