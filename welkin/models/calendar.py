@@ -129,7 +129,7 @@ class WorkHours(Collection):
         self,
         from_date: datetime,
         to_date: datetime,
-        psm_ids: list | None = None,
+        psm_ids: list,
         timezone: str | None = None,
         *args,
         **kwargs,
@@ -137,7 +137,7 @@ class WorkHours(Collection):
         params = {
             "from": from_date,
             "to": to_date,
-            "psm-ids": psm_ids,
+            "psmIds": psm_ids,
             "viewerTimezone": timezone,
         }
 
