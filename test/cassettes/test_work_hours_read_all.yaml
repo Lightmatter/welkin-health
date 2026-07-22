@@ -1,0 +1,212 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - API_TOKEN_8c30b443-e12e-4d0a-a6ff-340c36f26844
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-welkin/0.1.6
+    method: GET
+    uri: https://api.live.welkincloud.io/tenant_REDACTED/instance_REDACTED/calendar/work-hours?from=2026-01-01T00%3A00%3A00.000Z&to=2026-12-31T00%3A00%3A00.000Z&psmIds=fe45e62d-41af-4b26-b16d-ee51d850c730%2C27c4c4ab-c329-49f6-9656-4d68d7cdbe1d%2C36a8c719-40f8-4864-a349-4b65aec9f8a2%2C42b97ea2-c73a-47fe-b4f6-45cc45fc5200%2C2fc3b7b6-5375-4f1d-be9b-9441ddcf8f2f%2C20d76970-2a95-40b6-8a1c-b64b9f3dac1d%2C6e899f8f-fd20-4827-a815-6a2625a4f2b4%2C9f52488d-1a81-4d87-a3ab-13d1772102c1%2Cd988796a-765b-48b3-b163-d1e71fa73c32%2C3a30ed8e-dc14-4106-85ac-c667f402d4b4%2C6c6976c2-341c-4eb2-a646-dc45fdcc54dd%2Ccfed4fb4-9987-40b0-98bd-e3a45750789d%2Cdddbfe2f-9b84-45f5-b003-e63952a07856%2C1d081d8f-1b21-4202-9fed-b860faa2c302%2Cde5330a2-6793-41e0-a52e-c8bcb4ed13c7%2Cfd8362db-08d6-409c-95e8-6ca940189b31%2Cf277b45b-725a-4a7e-ad61-119e77c35b00%2C43afc43c-c77b-4014-8224-54e17f59ee03%2Cdcd52c26-0a30-4ca1-8da0-683a733dce2a%2Ce082ec24-cb18-4c69-a5bb-212381f40d0b%2Ce92a63b4-6a8f-410c-9e99-1f1b57d7bf3c%2Cca3508a7-0a12-4f9f-b0d4-f010a4b59fe0%2C9796c974-3cbf-48a6-a06f-47f380500149%2C60b4d377-1cc0-494e-bf8e-7b5998b223d4%2Cdf6479d2-9506-45c0-a4ec-1a1ac780751f%2C87a66196-697d-4d1e-9f1e-5c0383cd8fc4%2C0949004e-96e1-4395-86b3-d01958f3426a%2Cd2b3d940-01ec-44f3-a2cd-b5298823ec9f%2C83566b0d-8f7c-4274-94e1-4deaff49968f%2C5c017aea-7a28-48b2-81f3-17c2f596798c%2C2e598d18-8630-4b8a-ae66-c593a30645e7%2C8b608c1c-99a4-4819-ab76-02053dfc23a9%2C168641c1-cfac-4fec-929f-58ce18987e8c%2C0f03632c-849b-4a54-9edf-0e06fc96df71%2C960b39f0-1404-45a4-a33e-5f9fdea34ff9%2C4ecad6af-39c1-46d8-9436-a1a16246ce2e%2Cbc937a4b-f794-4a43-bcca-1c8d82d481d3%2C3253faba-a2bb-4657-9104-af796a4547bc%2C5e27914c-0bad-4ef9-baae-a35d1e823dee%2C5a40b4d0-c891-468a-94ea-a1cbed163ed5%2Cd1757e77-94f4-45f6-8afe-debcf702a1f6%2C0c16c7fa-3072-40f8-9ff2-109a5fbdb8cc%2Ce8ac33da-90d0-4c9a-9ef8-a0a70958de3c%2C119b8e98-dc22-475e-a434-5b27bbaff81d%2C8b319f05-43a8-4c3d-aeb7-7d968150b733%2C1ddb822c-644d-4a3d-8063-11c34edca9c3%2C6695ea3b-35aa-4aa9-a21a-42b9ba85f389%2C334ee69f-86d9-482a-b89b-c521eece3048%2Cd29e48b0-5ca1-479d-89b6-27c7c13c05fc%2C1418d3d6-be26-4ffe-b18a-2ad5f1c2c922%2Ce6ea69c6-d802-4cbd-9bc8-f2ded1a87a58%2C23f69d15-3256-444e-a464-8e8d033bf46e
+  response:
+    body:
+      string: '[{"psmId": "960b39f0-1404-45a4-a33e-5f9fdea34ff9", "details": [{"createdAt":
+        "2023-01-27T20:08:13.509Z", "updatedAt": "2023-01-27T20:08:13.509Z", "createdBy":
+        "createdBy_REDACTED_ae619f94-5d12-47e8-8657-7b97970c75d8", "updatedBy": "updatedBy_REDACTED_4eaed5b8-e83b-4b3d-9d83-e540a8f63d91",
+        "name": null, "type": "WORKING_HOURS", "ruleType": "DEFAULT", "startDateTime":
+        "2023-01-27T00:00:00.000Z", "endDateTime": "2073-01-27T23:59:59.999Z", "localStartDateTime":
+        "2023-01-26T19:00:00.000-05:00", "localEndDateTime": "2073-01-27T18:59:59.999-05:00",
+        "daysInfo": [{"startTime": "09:00:00", "endTime": "17:00:00", "day": 2, "daysInfoId":
+        "2f4b8411-d875-4e4d-8398-252c6c898f6d"}, {"startTime": "09:00:00", "endTime":
+        "16:00:00", "day": 3, "daysInfoId": "b1342d06-a346-42d9-9d9b-d63ad14c4816"}],
+        "workHoursId": "5afdbec1-cac6-4538-ae4a-e82b48d22a7b"}]}, {"psmId": "3253faba-a2bb-4657-9104-af796a4547bc",
+        "details": [{"createdAt": "2023-08-30T02:56:14.734Z", "updatedAt": "2026-07-09T17:25:28.902Z",
+        "createdBy": "createdBy_REDACTED_a79da087-e452-4456-a1a7-633d1148bde5", "updatedBy":
+        "updatedBy_REDACTED_c5e3b7ba-b910-4d08-ae4c-4bf3d7520504", "name": null, "type":
+        "WORKING_HOURS", "ruleType": "DEFAULT", "startDateTime": "2025-05-27T00:00:00.000Z",
+        "endDateTime": "2026-07-08T23:59:59.999Z", "localStartDateTime": "2025-05-26T17:00:00.000-07:00",
+        "localEndDateTime": "2026-07-08T16:59:59.999-07:00", "daysInfo": [{"startTime":
+        "09:00:00", "endTime": "12:00:00", "day": 1, "daysInfoId": "e5d8395d-0d10-4c55-bbe3-1ea3fd38c928"},
+        {"startTime": "12:30:00", "endTime": "17:00:00", "day": 1, "daysInfoId": "fd9df833-7a3c-4373-8ab4-746c4d576b9d"},
+        {"startTime": "09:00:00", "endTime": "17:00:00", "day": 2, "daysInfoId": "48e8ea5f-f73e-4135-90bf-4195f5b835e1"},
+        {"startTime": "18:00:00", "endTime": "19:00:00", "day": 2, "daysInfoId": "df9d24d5-dd5b-43e8-9795-a8a3abdaa905"},
+        {"startTime": "09:00:00", "endTime": "17:00:00", "day": 3, "daysInfoId": "3b880763-8147-4a9a-9022-bd238c50de30"},
+        {"startTime": "09:00:00", "endTime": "17:00:00", "day": 4, "daysInfoId": "647b66f6-491d-47c7-b0eb-68708b66877b"},
+        {"startTime": "09:00:00", "endTime": "23:59:00", "day": 5, "daysInfoId": "3cad3e0d-9a26-4e42-8ff6-c72a7fee6588"},
+        {"startTime": "09:00:00", "endTime": "17:00:00", "day": 7, "daysInfoId": "5c5ae32f-1a06-4b29-813b-5a4b369059c7"}],
+        "workHoursId": "06fbb6c4-fe6a-4d52-beef-783c977cadf1"}, {"createdAt": "2025-05-23T20:42:12.851Z",
+        "updatedAt": "2026-07-09T17:25:28.956Z", "createdBy": "createdBy_REDACTED_1cf95df8-bd9c-4799-8b8e-3bda9bcfee0e",
+        "updatedBy": "updatedBy_REDACTED_2a4ed79a-bb6c-4c22-9bb4-9dac7b6aa40f", "name":
+        null, "type": "AVAILABILITY", "ruleType": "DEFAULT", "startDateTime": "2025-05-23T00:00:00.000Z",
+        "endDateTime": "2026-07-08T23:59:59.999Z", "localStartDateTime": "2025-05-22T17:00:00.000-07:00",
+        "localEndDateTime": "2026-07-08T16:59:59.999-07:00", "daysInfo": [{"startTime":
+        "09:00:00", "endTime": "17:00:00", "day": 2, "daysInfoId": "c52d5656-49e9-4ad7-9d6d-558dc37f1d66"},
+        {"startTime": "09:00:00", "endTime": "17:00:00", "day": 3, "daysInfoId": "90cd7e41-a3c9-4f5b-aff1-bcd1c9c4c472"},
+        {"startTime": "09:00:00", "endTime": "17:00:00", "day": 4, "daysInfoId": "dd142a68-d840-4a83-8c5d-5b931eaeb688"},
+        {"startTime": "09:00:00", "endTime": "17:00:00", "day": 5, "daysInfoId": "4e5a0a04-092e-46bb-822e-bc40503185a6"},
+        {"startTime": "09:00:00", "endTime": "17:00:00", "day": 6, "daysInfoId": "a4740afd-73e7-4b3c-899d-0cccb73107c0"},
+        {"startTime": "09:00:00", "endTime": "17:00:00", "day": 7, "daysInfoId": "aebbb5a1-8ca7-44a8-8d11-0edb18960353"}],
+        "encounters": ["new-patient-call", "etmp-dermatologist-consult"], "workHoursId":
+        "87117b33-47d0-45f6-affc-b4da47e2e03b"}, {"createdAt": "2026-07-09T17:25:28.968Z",
+        "updatedAt": "2026-07-09T17:25:28.968Z", "createdBy": "createdBy_REDACTED_79cf5c44-d43c-4d87-a243-19581c94392f",
+        "updatedBy": "updatedBy_REDACTED_6735375d-b46a-48cc-9a0d-1745ee8b9902", "name":
+        null, "type": "WORKING_HOURS", "ruleType": "OVERRIDE", "startDateTime": "2026-07-11T00:00:00.000Z",
+        "endDateTime": "2026-07-13T23:59:59.999Z", "localStartDateTime": "2026-07-10T17:00:00.000-07:00",
+        "localEndDateTime": "2026-07-13T16:59:59.999-07:00", "daysInfo": [{"startTime":
+        "08:00:00", "endTime": "17:00:00", "day": 1, "daysInfoId": "c30f36fa-88a4-4cb7-8dad-fc50606e0d22"},
+        {"startTime": "08:00:00", "endTime": "17:00:00", "day": 6, "daysInfoId": "32d66df7-1a9e-4881-8b55-110d2b0eb0bd"},
+        {"startTime": "08:00:00", "endTime": "17:00:00", "day": 7, "daysInfoId": "c4760653-ca88-4831-b698-931d3d5950f4"}],
+        "workHoursId": "fd4be514-389c-44b7-ac21-660d1a6faaf7"}, {"createdAt": "2026-07-09T17:25:28.890Z",
+        "updatedAt": "2026-07-14T15:50:35.017Z", "createdBy": "createdBy_REDACTED_7b5bc8b5-e9d4-4052-8692-18d85ab00a2a",
+        "updatedBy": "updatedBy_REDACTED_c44ba01e-cf6d-4295-99c9-cdd0b2d4e1c6", "name":
+        null, "type": "WORKING_HOURS", "ruleType": "DEFAULT", "startDateTime": "2026-07-09T00:00:00.000Z",
+        "endDateTime": "2026-07-13T23:59:59.999Z", "localStartDateTime": "2026-07-08T17:00:00.000-07:00",
+        "localEndDateTime": "2026-07-13T16:59:59.999-07:00", "daysInfo": [{"startTime":
+        "09:00:00", "endTime": "12:00:00", "day": 1, "daysInfoId": "854979d7-27b4-40b9-b697-57eb146c5249"},
+        {"startTime": "12:30:00", "endTime": "17:00:00", "day": 1, "daysInfoId": "e7541608-4204-4d1b-824b-3067463afa98"},
+        {"startTime": "09:00:00", "endTime": "17:00:00", "day": 2, "daysInfoId": "5e0bfdd7-3f19-44cc-9b7b-5258fe84476a"},
+        {"startTime": "18:00:00", "endTime": "19:00:00", "day": 2, "daysInfoId": "19eb2b5f-01df-4278-a15c-2d43e263bae5"},
+        {"startTime": "09:00:00", "endTime": "17:00:00", "day": 3, "daysInfoId": "8593d880-f562-4b9a-a836-80f886afd4d9"},
+        {"startTime": "09:00:00", "endTime": "17:00:00", "day": 4, "daysInfoId": "f44cbae9-5abc-4686-ab76-c8bec4456f12"},
+        {"startTime": "09:00:00", "endTime": "23:59:00", "day": 5, "daysInfoId": "d3b7bf91-e129-4511-ad81-6cb5330567ad"},
+        {"startTime": null, "endTime": null, "day": 6, "daysInfoId": "6f57abb1-9d0e-49c9-b667-df3da8e5a481"},
+        {"startTime": "09:00:00", "endTime": "17:00:00", "day": 7, "daysInfoId": "c4131625-a440-4403-a957-1cd0f1bf2fc0"}],
+        "workHoursId": "4ae6198f-0c96-432e-96fe-9c72293fd705"}, {"createdAt": "2026-07-09T17:25:28.951Z",
+        "updatedAt": "2026-07-14T18:55:08.027Z", "createdBy": "createdBy_REDACTED_59797bda-ea05-4cc0-b92a-86e98b5db801",
+        "updatedBy": "updatedBy_REDACTED_e5a57bf4-d841-4e32-8dba-80b4ea656ff6", "name":
+        null, "type": "AVAILABILITY", "ruleType": "DEFAULT", "startDateTime": "2026-07-09T00:00:00.000Z",
+        "endDateTime": "2026-07-13T23:59:59.999Z", "localStartDateTime": "2026-07-08T17:00:00.000-07:00",
+        "localEndDateTime": "2026-07-13T16:59:59.999-07:00", "daysInfo": [{"startTime":
+        null, "endTime": null, "day": 1, "daysInfoId": "bc525f5e-a652-4c37-9d7a-1675042c6a94"},
+        {"startTime": "09:00:00", "endTime": "17:00:00", "day": 2, "daysInfoId": "1a1cc605-14c0-4fb5-aeaa-a4b36f575e13"},
+        {"startTime": "09:00:00", "endTime": "17:00:00", "day": 3, "daysInfoId": "63526f55-c6e2-470b-9508-fd0f708aa972"},
+        {"startTime": "09:00:00", "endTime": "17:00:00", "day": 4, "daysInfoId": "01f9c249-1616-429a-9dca-0a9244e26946"},
+        {"startTime": "09:00:00", "endTime": "17:00:00", "day": 5, "daysInfoId": "f0a8570b-6579-45e8-aaab-c0d9e70c79fa"},
+        {"startTime": "09:00:00", "endTime": "17:00:00", "day": 6, "daysInfoId": "9eb78e12-8630-4426-9dc7-0fc5683d5284"},
+        {"startTime": "09:00:00", "endTime": "17:00:00", "day": 7, "daysInfoId": "84ee00d3-332e-4dca-996b-53f3efacb22b"}],
+        "encounters": ["new-patient-call", "etmp-dermatologist-consult"], "workHoursId":
+        "ec7c2cce-b1e0-43be-8bfe-c863fadb7936"}, {"createdAt": "2026-07-14T15:50:35.005Z",
+        "updatedAt": "2026-07-14T19:01:21.636Z", "createdBy": "createdBy_REDACTED_69c3e595-652a-4e7c-8bc2-a9e14f8f9628",
+        "updatedBy": "updatedBy_REDACTED_876c8989-9f62-4427-9b56-c471a1c182ba", "name":
+        null, "type": "WORKING_HOURS", "ruleType": "DEFAULT", "startDateTime": "2026-07-14T00:00:00.000Z",
+        "endDateTime": null, "localStartDateTime": "2026-07-13T17:00:00.000-07:00",
+        "localEndDateTime": null, "daysInfo": [{"startTime": "09:00:00", "endTime":
+        "17:00:00", "day": 1, "daysInfoId": "644bcbaa-cc7f-4975-8986-3fc6a8eca953"},
+        {"startTime": "09:00:00", "endTime": "17:00:00", "day": 2, "daysInfoId": "39565bf3-9037-4eee-b6c0-9187a4492066"},
+        {"startTime": "09:00:00", "endTime": "17:00:00", "day": 3, "daysInfoId": "388c1951-c614-4553-b7e2-6b1e981ec040"},
+        {"startTime": "09:00:00", "endTime": "17:00:00", "day": 4, "daysInfoId": "38e703dc-4179-4d3d-9b95-57ebfde37599"},
+        {"startTime": "09:00:00", "endTime": "17:00:00", "day": 5, "daysInfoId": "121d5b24-eb05-48df-a336-909fc65f205f"},
+        {"startTime": null, "endTime": null, "day": 6, "daysInfoId": "c11a3598-36f0-4a84-a2c7-170d9ce930df"},
+        {"startTime": null, "endTime": null, "day": 7, "daysInfoId": "94ee9c89-62c5-4203-b98b-2e9e4c64c554"}],
+        "workHoursId": "e9706961-73c7-47f6-8b8b-7a331a8135ef"}, {"createdAt": "2026-07-14T19:01:21.640Z",
+        "updatedAt": "2026-07-14T19:01:21.640Z", "createdBy": "createdBy_REDACTED_213ef009-64ed-4bed-b5ff-4893b40c91f9",
+        "updatedBy": "updatedBy_REDACTED_431e1e32-ad67-451e-8ed8-bd7b5c224825", "name":
+        null, "type": "WORKING_HOURS", "ruleType": "OVERRIDE", "startDateTime": "2026-07-15T00:00:00.000Z",
+        "endDateTime": "2026-07-17T23:59:59.999Z", "localStartDateTime": "2026-07-14T17:00:00.000-07:00",
+        "localEndDateTime": "2026-07-17T16:59:59.999-07:00", "daysInfo": [{"startTime":
+        "09:00:00", "endTime": "17:00:00", "day": 3, "daysInfoId": "aefdb7af-633b-453d-9237-bc4b678f723a"},
+        {"startTime": "09:00:00", "endTime": "17:00:00", "day": 4, "daysInfoId": "555910ca-fe2c-4c15-b2f0-41bb7601f6c8"},
+        {"startTime": "09:00:00", "endTime": "17:00:00", "day": 5, "daysInfoId": "50913995-847a-494e-adfb-7697c1e735c2"}],
+        "workHoursId": "d7062a45-3ce3-4275-b984-ceebc0fd6d5f"}, {"createdAt": "2026-07-14T19:04:27.539Z",
+        "updatedAt": "2026-07-14T19:04:27.539Z", "createdBy": "createdBy_REDACTED_b73c775a-49c5-49df-9e3a-1fdd7c199ba1",
+        "updatedBy": "updatedBy_REDACTED_f8ae48fb-c8b5-46ed-a8ba-181d1b55a665", "name":
+        "PTO", "type": "WORKING_HOURS", "ruleType": "OVERRIDE", "startDateTime": "2026-07-29T00:00:00.000Z",
+        "endDateTime": "2026-07-30T23:59:59.999Z", "localStartDateTime": "2026-07-28T17:00:00.000-07:00",
+        "localEndDateTime": "2026-07-30T16:59:59.999-07:00", "daysInfo": [{"startTime":
+        null, "endTime": null, "day": 3, "daysInfoId": "0078418d-36cb-4cee-a244-340e91ab84ca"},
+        {"startTime": null, "endTime": null, "day": 4, "daysInfoId": "1a5313bd-37d5-4698-aa60-627c6cc07297"}],
+        "workHoursId": "be9f7d2e-24bc-4bc0-84fb-d7b0ff1eabcb"}]}, {"psmId": "43afc43c-c77b-4014-8224-54e17f59ee03",
+        "details": [{"createdAt": "2023-01-14T02:30:06.653Z", "updatedAt": "2023-01-30T01:56:49.169Z",
+        "createdBy": "createdBy_REDACTED_04fa0072-54a8-4aec-b42a-b83db39800cb", "updatedBy":
+        "updatedBy_REDACTED_b2881c29-deb7-44cd-8222-b841dbf83eb2", "name": null, "type":
+        "WORKING_HOURS", "ruleType": "DEFAULT", "startDateTime": "2023-01-30T00:00:00.000Z",
+        "endDateTime": "2073-01-30T23:59:59.999Z", "localStartDateTime": "2023-01-29T16:00:00.000-08:00",
+        "localEndDateTime": "2073-01-30T15:59:59.999-08:00", "daysInfo": [{"startTime":
+        "02:30:00", "endTime": "15:00:00", "day": 1, "daysInfoId": "f499ec7a-e78c-4dc6-90df-60c92140908e"},
+        {"startTime": "09:00:00", "endTime": "23:30:00", "day": 2, "daysInfoId": "8036de9f-3344-481c-8c90-50ffc15c2405"},
+        {"startTime": "09:00:00", "endTime": "17:00:00", "day": 3, "daysInfoId": "1f8a1fc2-a58f-48bf-89f9-befc73acdc3f"},
+        {"startTime": "09:00:00", "endTime": "17:00:00", "day": 3, "daysInfoId": "4e740c2a-27c0-4149-8e39-c972976f8564"},
+        {"startTime": "09:00:00", "endTime": "17:00:00", "day": 4, "daysInfoId": "a4b02c5e-dd00-482a-9100-6cdca955f112"},
+        {"startTime": "09:00:00", "endTime": "17:00:00", "day": 5, "daysInfoId": "bd5afe6a-cf3a-427c-926f-16eba266e5d1"},
+        {"startTime": "09:00:00", "endTime": "17:00:00", "day": 6, "daysInfoId": "d292c874-dbfc-4743-8898-866fdb7f9265"},
+        {"startTime": "09:00:00", "endTime": "17:00:00", "day": 7, "daysInfoId": "a5de85d6-ea0b-4846-a68e-5be270ae8cc3"}],
+        "workHoursId": "99004510-db8a-4f10-b6af-8c5aab8ec543"}]}, {"psmId": "d1757e77-94f4-45f6-8afe-debcf702a1f6",
+        "details": [{"createdAt": "2023-04-14T01:30:11.534Z", "updatedAt": "2023-04-14T01:30:11.534Z",
+        "createdBy": "createdBy_REDACTED_d985a2c3-1933-4d53-abcd-aca856b68309", "updatedBy":
+        "updatedBy_REDACTED_b4b3b077-b49a-4800-afe6-bb3f7bf052a4", "name": null, "type":
+        "WORKING_HOURS", "ruleType": "DEFAULT", "startDateTime": "2023-04-14T00:00:00.000Z",
+        "endDateTime": "2073-04-14T23:59:59.999Z", "localStartDateTime": "2023-04-13T14:00:00.000-10:00",
+        "localEndDateTime": "2073-04-14T13:59:59.999-10:00", "daysInfo": [{"startTime":
+        "09:00:00", "endTime": "17:00:00", "day": 1, "daysInfoId": "16ed43d8-091d-4d0f-b57b-35b56818e15e"},
+        {"startTime": "09:00:00", "endTime": "17:00:00", "day": 2, "daysInfoId": "1625ae1d-325b-438a-9792-f96cb979e189"},
+        {"startTime": "09:00:00", "endTime": "17:00:00", "day": 3, "daysInfoId": "00b1ac99-63db-428a-897c-51d21061ca75"},
+        {"startTime": "09:00:00", "endTime": "17:00:00", "day": 4, "daysInfoId": "e7af93d1-f648-4d8e-9e13-7cd5f1a32c26"},
+        {"startTime": "09:00:00", "endTime": "17:00:00", "day": 5, "daysInfoId": "5d4a107e-4012-40a1-9210-defec6c891c1"},
+        {"startTime": "09:00:00", "endTime": "17:00:00", "day": 6, "daysInfoId": "dc5a1bf7-c6d3-4041-8a0b-0e6eac931650"},
+        {"startTime": "09:00:00", "endTime": "17:00:00", "day": 7, "daysInfoId": "87bf57ee-006a-4599-9bb0-6a297bbbb18b"}],
+        "workHoursId": "bb14650d-660f-4072-873e-9e90e8413798"}]}, {"psmId": "0f03632c-849b-4a54-9edf-0e06fc96df71",
+        "details": [{"createdAt": "2023-04-04T15:49:11.382Z", "updatedAt": "2023-04-04T15:58:06.223Z",
+        "createdBy": "createdBy_REDACTED_99d37437-42a5-4970-a15f-b6c701f3ad44", "updatedBy":
+        "updatedBy_REDACTED_f054ed15-f6b8-4895-9a2c-25d37eac63aa", "name": null, "type":
+        "WORKING_HOURS", "ruleType": "DEFAULT", "startDateTime": "2023-04-04T00:00:00.000Z",
+        "endDateTime": "2073-04-04T23:59:59.999Z", "localStartDateTime": "2023-04-03T20:00:00.000-04:00",
+        "localEndDateTime": "2073-04-04T19:59:59.999-04:00", "daysInfo": [{"startTime":
+        "09:00:00", "endTime": "17:00:00", "day": 1, "daysInfoId": "a3435d17-477e-4105-a756-1189a060b8be"},
+        {"startTime": "09:00:00", "endTime": "17:00:00", "day": 2, "daysInfoId": "2e2a6220-3151-4f08-8683-a2557bb1d3fb"},
+        {"startTime": "09:00:00", "endTime": "17:00:00", "day": 3, "daysInfoId": "1f6128c8-20c5-4273-8c9e-ce37d5771b3c"},
+        {"startTime": "09:00:00", "endTime": "17:00:00", "day": 4, "daysInfoId": "712464f0-7fbc-469a-a921-416ead97c432"},
+        {"startTime": "09:00:00", "endTime": "17:00:00", "day": 5, "daysInfoId": "f44c0697-daf4-4a03-8638-8563d36f6a85"}],
+        "workHoursId": "24328d59-8935-4c17-8491-b145a943b8f2"}]}, {"psmId": "bc937a4b-f794-4a43-bcca-1c8d82d481d3",
+        "details": [{"createdAt": "2023-05-16T15:34:22.398Z", "updatedAt": "2023-05-16T15:34:22.398Z",
+        "createdBy": "createdBy_REDACTED_75fb02ef-8dcf-4c1a-ba61-860660abd1b7", "updatedBy":
+        "updatedBy_REDACTED_ec597756-b26e-4963-a18c-787e54de5542", "name": null, "type":
+        "WORKING_HOURS", "ruleType": "DEFAULT", "startDateTime": "2023-05-16T00:00:00.000Z",
+        "endDateTime": "2073-05-16T23:59:59.999Z", "localStartDateTime": "2023-05-15T19:00:00.000-05:00",
+        "localEndDateTime": "2073-05-16T18:59:59.999-05:00", "daysInfo": [{"startTime":
+        "09:00:00", "endTime": "17:00:00", "day": 1, "daysInfoId": "4866f5a6-6838-4ec9-ac06-8d86f93264bb"},
+        {"startTime": "09:00:00", "endTime": "17:00:00", "day": 3, "daysInfoId": "59f32084-fbc9-4dc5-910c-8f3a21218303"},
+        {"startTime": "09:00:00", "endTime": "17:00:00", "day": 5, "daysInfoId": "8f81e98b-63fe-46aa-8bb6-12692544e558"}],
+        "workHoursId": "ca693d96-3366-4805-a028-85a2d3e16a15"}]}]'
+    headers:
+      Access-Control-Allow-Headers:
+      - Authorization,Content-Type,XSRF-Token,Security-Role
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, PATCH, OPTIONS
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - Content-Disposition,XSRF-Token,Unresolved-Variables
+      Access-Control-Max-Age:
+      - '3600'
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 22 Jul 2026 18:34:33 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Strict-Transport-Security:
+      - max-age=31536000 ; includeSubDomains
+      Transfer-Encoding:
+      - chunked
+      X-Content-Type-Options:
+      - nosniff
+      X-XSS-Protection:
+      - 1; mode=block
+      content-length:
+      - '14122'
+    status:
+      code: 200
+      message: OK
+version: 1

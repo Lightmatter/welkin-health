@@ -7,11 +7,15 @@ import uuid
 from datetime import date, datetime, time, timedelta, timezone
 from http import HTTPStatus
 from pathlib import Path
+from typing import TYPE_CHECKING
 
 import pytest
 
 from welkin import Client
 from welkin.exceptions import WelkinHTTPError
+
+if TYPE_CHECKING:
+    from welkin.models import Users
 
 
 def pytest_collection_modifyitems(items):
@@ -147,6 +151,12 @@ def patient(client, fixture_cassette):
                 raise
 
             return patient.create()
+
+
+@pytest.fixture
+def users(client, fixture_cassette) -> Users:
+    with fixture_cassette():
+        return list(client.Users().get(size=1000, paginate=True))
 
 
 @pytest.fixture
