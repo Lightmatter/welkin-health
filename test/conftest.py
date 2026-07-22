@@ -15,7 +15,7 @@ from welkin import Client
 from welkin.exceptions import WelkinHTTPError
 
 if TYPE_CHECKING:
-    from welkin.models import User, Users
+    from welkin.models import Users
 
 
 def pytest_collection_modifyitems(items):
