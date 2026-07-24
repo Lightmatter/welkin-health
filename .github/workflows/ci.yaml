@@ -13,42 +13,37 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        python-version: ["3.10", "3.11", "3.12", "3.13", "3.14"]
+        python-version:
+          - "3.10"
+          - "3.11"
+          - "3.12"
+          - "3.13"
+          - "3.14"
 
     steps:
       - name: Checkout ${{ github.repository }}
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
-      - name: Setup Python ${{ matrix.python-version }}
-        id: setup-python
-        uses: actions/setup-python@v5
+      - name: Install uv
+        uses: astral-sh/setup-uv@08807647e7069bb48b6ef5acd8ec9567f424441b # v8.1.0
         with:
+          enable-cache: true
           python-version: ${{ matrix.python-version }}
 
-      - name: Install Poetry
-        uses: snok/install-poetry@v1
-        with:
-          virtualenvs-create: true
-          virtualenvs-in-project: true
-          installer-parallel: true
-
-      - name: Load cached environment
-        uses: actions/cache@v4
-        with:
-          path: .venv
-          key: venv-${{ runner.os }}-${{ steps.setup-python.outputs.python-version }}-${{ hashFiles('**/poetry.lock') }}
+      - name: Setup Python ${{ matrix.python-version }}
+        run: uv python install
 
       - name: Install dependencies
-        id: poetry-install
-        run: poetry install --no-interaction
+        id: uv-sync
+        run: uv sync --locked --all-extras --dev
 
       - name: Run pre-commit
-        run: poetry run pre-commit run --all-files
+        run: uv run pre-commit run --all-files
 
       - name: Run Tests
         shell: bash
         run: |
-          poetry run pytest \
+          uv run pytest \
           --junitxml=pytest.xml \
           --cov-report=term-missing:skip-covered \
           --cov=welkin | tee pytest-coverage.txt
