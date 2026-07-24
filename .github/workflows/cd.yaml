@@ -15,21 +15,19 @@ jobs:
       version-compairson: ${{ steps.semver.outputs.comparison-result}}
     steps:
       - name: Checkout ${{ github.repository }}
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@08807647e7069bb48b6ef5acd8ec9567f424441b # v8.1.0
+        with:
+          enable-cache: true
 
       - name: Setup Python
-        uses: actions/setup-python@v5
-
-      - name: Install Poetry
-        uses: snok/install-poetry@v1
-        with:
-          virtualenvs-create: true
-          virtualenvs-in-project: true
-          installer-parallel: true
+        run: uv python install
 
       - name: Get package version
         id: package-version
-        run: echo "package-version=v$(poetry version --short)" >> $GITHUB_OUTPUT
+        run: echo "package-version=v$(uv version --short)" >> $GITHUB_OUTPUT
 
       - name: Get release version
         id: release-version
@@ -60,12 +58,18 @@ jobs:
 
     steps:
       - name: Checkout ${{ github.repository }}
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@08807647e7069bb48b6ef5acd8ec9567f424441b # v8.1.0
+        with:
+          enable-cache: true
+
+      - name: Setup Python
+        run: uv python install
 
       - name: Build and publish to PyPI
-        uses: JRubics/poetry-publish@v2.0
-        with:
-          pypi_token: ${{ secrets.PYPI_API_TOKEN }}
+        run: uv publish --token ${{ secrets.PYPI_API_TOKEN }}
 
       - name: Create release ${{ needs.get-package-version.outputs.package-version }}
         uses: ncipollo/release-action@v1
