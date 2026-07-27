@@ -119,7 +119,7 @@ class Client(Session):
     WebhookAudits = models.WebhookAudits
     WorkHours = models.WorkHours
 
-    def __init__(  # noqa: PLR0913
+    def __init__(  # noqa: PLR0913, PLR0917
         self,
         tenant,
         instance,
