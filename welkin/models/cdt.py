@@ -42,7 +42,7 @@ class CDTs(Collection):
     iterator = PageNumberIterator
 
     @model_id("Patient")
-    def get(  # noqa: PLR0913
+    def get(  # noqa: PLR0913, PLR0917
         self,
         patient_id: str,
         cdt_name: str,
