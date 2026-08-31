@@ -90,6 +90,15 @@ class Goals(FormationCollection):
     endpoint = "goal-templates"
 
 
+class PDT(FormationResource):
+    endpoint = "pdts"
+
+
+class PDTs(FormationCollection):
+    resource = PDT
+    endpoint = "pdts"
+
+
 class Program(FormationResource):
     endpoint = "programs"
 
@@ -111,6 +120,8 @@ class Formation(Target):
     Encounters = Encounters
     Goal = Goal
     Goals = Goals
+    PDT = PDT
+    PDTs = PDTs
     Program = Program
     Programs = Programs
 

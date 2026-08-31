@@ -4,6 +4,7 @@ import pytest
 
 from welkin.models.formation import (
     CDT,
+    PDT,
     Assessment,
     Assessments,
     CDTs,
@@ -15,6 +16,7 @@ from welkin.models.formation import (
     Formation,
     Goal,
     Goals,
+    PDTs,
     Program,
     Programs,
 )
@@ -121,6 +123,24 @@ class TestFormation:
 
         assert isinstance(goal_template, Goal)
         assert goal_template.name == "eat-fruit"
+
+        assert len(vcr_cassette) == 1
+
+    @pytest.mark.vcr
+    def test_pdts_read(self, formation, vcr_cassette):
+        pdts = formation.PDTs().get()
+
+        assert isinstance(pdts, PDTs)
+        assert isinstance(pdts[0], PDT)
+
+        assert len(vcr_cassette) == 1
+
+    @pytest.mark.vcr
+    def test_pdt_read(self, formation, vcr_cassette):
+        pdt = formation.PDT(name="pdt-billing-org").get()
+
+        assert isinstance(pdt, PDT)
+        assert pdt.name == "pdt-billing-org"
 
         assert len(vcr_cassette) == 1
 

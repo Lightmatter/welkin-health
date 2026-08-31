@@ -1,0 +1,180 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - API_TOKEN_d877a88a-8039-49d4-84bb-8c4027c58d1a
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-welkin/0.1.9
+    method: GET
+    uri: https://api.live.welkincloud.io/tenant_REDACTED/instance_REDACTED/formations/current/pdts/pdt-billing-org
+  response:
+    body:
+      string: '{"id": null, "name": "pdt-billing-org", "title": null, "constant":
+        false, "internal": false, "readable": true, "updatable": true, "contactable":
+        false, "type": "MULTI_RECORD", "sourceType": "INTERNAL", "externalSourceType":
+        null, "fields": [{"name": "pdtf-organization-name", "type": "text", "formula":
+        null, "dictionary": null, "profileDataType": null, "editable": true, "searchable":
+        false, "bulkEdit": false, "phi": false, "injectedSource": false, "displayType":
+        null, "valueType": null, "meta": {"required": true}, "richTextEnabled": false,
+        "disable": false}, {"name": "pdtf-address", "type": "text", "formula": null,
+        "dictionary": null, "profileDataType": null, "editable": true, "searchable":
+        false, "bulkEdit": false, "phi": false, "injectedSource": false, "displayType":
+        null, "valueType": null, "meta": {"required": true}, "richTextEnabled": false,
+        "disable": false}, {"name": "pdtf-city", "type": "text", "formula": null,
+        "dictionary": null, "profileDataType": null, "editable": true, "searchable":
+        false, "bulkEdit": false, "phi": false, "injectedSource": false, "displayType":
+        null, "valueType": null, "meta": {"required": true}, "richTextEnabled": false,
+        "disable": false}, {"name": "pdtf-zip", "type": "text", "formula": null, "dictionary":
+        null, "profileDataType": null, "editable": true, "searchable": false, "bulkEdit":
+        false, "phi": false, "injectedSource": false, "displayType": null, "valueType":
+        null, "meta": {"minLength": 5, "maxLength": 5, "required": true, "patterns":
+        ["NUMBERS_ONLY"]}, "richTextEnabled": false, "disable": false}, {"name": "pdtf-zip4",
+        "type": "text", "formula": null, "dictionary": null, "profileDataType": null,
+        "editable": true, "searchable": false, "bulkEdit": false, "phi": false, "injectedSource":
+        false, "displayType": null, "valueType": null, "meta": {"minLength": 4, "maxLength":
+        4, "required": true, "patterns": ["NUMBERS_ONLY"]}, "richTextEnabled": false,
+        "disable": false}, {"name": "pdtf-tax-id", "type": "text", "formula": null,
+        "dictionary": null, "profileDataType": null, "editable": true, "searchable":
+        false, "bulkEdit": false, "phi": false, "injectedSource": false, "displayType":
+        null, "valueType": null, "meta": {"required": true}, "richTextEnabled": false,
+        "disable": false}, {"name": "pdtf-npi", "type": "text", "formula": null, "dictionary":
+        null, "profileDataType": null, "editable": true, "searchable": false, "bulkEdit":
+        false, "phi": false, "injectedSource": false, "displayType": null, "valueType":
+        null, "meta": {"required": true}, "richTextEnabled": false, "disable": false},
+        {"name": "pdtf-state", "type": "select", "formula": null, "dictionary": null,
+        "profileDataType": null, "editable": true, "searchable": false, "bulkEdit":
+        false, "phi": false, "injectedSource": false, "displayType": "SELECT", "valueType":
+        "STRING", "meta": {"required": true, "options": [{"label": "AA", "value":
+        "AA", "refCdtName": null}, {"label": "AE", "value": "AE", "refCdtName": null},
+        {"label": "AP", "value": "AP", "refCdtName": null}, {"label": "AL", "value":
+        "AL", "refCdtName": null}, {"label": "AK", "value": "AK", "refCdtName": null},
+        {"label": "AS", "value": "AS", "refCdtName": null}, {"label": "AZ", "value":
+        "AZ", "refCdtName": null}, {"label": "AR", "value": "AR", "refCdtName": null},
+        {"label": "CA", "value": "CA", "refCdtName": null}, {"label": "CO", "value":
+        "CO", "refCdtName": null}, {"label": "CT", "value": "CT", "refCdtName": null},
+        {"label": "DC", "value": "DC", "refCdtName": null}, {"label": "DE", "value":
+        "DE", "refCdtName": null}, {"label": "FL", "value": "FL", "refCdtName": null},
+        {"label": "FM", "value": "FM", "refCdtName": null}, {"label": "GA", "value":
+        "GA", "refCdtName": null}, {"label": "GU", "value": "GU", "refCdtName": null},
+        {"label": "HI", "value": "HI", "refCdtName": null}, {"label": "ID", "value":
+        "ID", "refCdtName": null}, {"label": "IL", "value": "IL", "refCdtName": null},
+        {"label": "IN", "value": "IN", "refCdtName": null}, {"label": "IA", "value":
+        "IA", "refCdtName": null}, {"label": "KS", "value": "KS", "refCdtName": null},
+        {"label": "KY", "value": "KY", "refCdtName": null}, {"label": "LA", "value":
+        "LA", "refCdtName": null}, {"label": "ME", "value": "ME", "refCdtName": null},
+        {"label": "MD", "value": "MD", "refCdtName": null}, {"label": "MA", "value":
+        "MA", "refCdtName": null}, {"label": "MH", "value": "MH", "refCdtName": null},
+        {"label": "MI", "value": "MI", "refCdtName": null}, {"label": "MN", "value":
+        "MN", "refCdtName": null}, {"label": "MP", "value": "MP", "refCdtName": null},
+        {"label": "MS", "value": "MS", "refCdtName": null}, {"label": "MO", "value":
+        "MO", "refCdtName": null}, {"label": "MT", "value": "MT", "refCdtName": null},
+        {"label": "NE", "value": "NE", "refCdtName": null}, {"label": "NV", "value":
+        "NV", "refCdtName": null}, {"label": "NH", "value": "NH", "refCdtName": null},
+        {"label": "NJ", "value": "NJ", "refCdtName": null}, {"label": "NM", "value":
+        "NM", "refCdtName": null}, {"label": "NY", "value": "NY", "refCdtName": null},
+        {"label": "NC", "value": "NC", "refCdtName": null}, {"label": "ND", "value":
+        "ND", "refCdtName": null}, {"label": "OH", "value": "OH", "refCdtName": null},
+        {"label": "OK", "value": "OK", "refCdtName": null}, {"label": "OR", "value":
+        "OR", "refCdtName": null}, {"label": "PA", "value": "PA", "refCdtName": null},
+        {"label": "PR", "value": "PR", "refCdtName": null}, {"label": "PW", "value":
+        "PW", "refCdtName": null}, {"label": "RI", "value": "RI", "refCdtName": null},
+        {"label": "SC", "value": "SC", "refCdtName": null}, {"label": "SD", "value":
+        "SD", "refCdtName": null}, {"label": "TN", "value": "TN", "refCdtName": null},
+        {"label": "TX", "value": "TX", "refCdtName": null}, {"label": "UT", "value":
+        "UT", "refCdtName": null}, {"label": "VI", "value": "VI", "refCdtName": null},
+        {"label": "VA", "value": "VA", "refCdtName": null}, {"label": "WA", "value":
+        "WA", "refCdtName": null}, {"label": "WV", "value": "WV", "refCdtName": null},
+        {"label": "WI", "value": "WI", "refCdtName": null}, {"label": "WY", "value":
+        "WY", "refCdtName": null}]}, "richTextEnabled": false, "disable": false},
+        {"name": "id", "type": "text", "formula": null, "dictionary": null, "profileDataType":
+        null, "editable": false, "searchable": false, "bulkEdit": false, "phi": false,
+        "injectedSource": false, "displayType": null, "valueType": null, "meta": {"required":
+        false}, "richTextEnabled": false, "disable": false}, {"name": "created_at",
+        "type": "datetime", "formula": null, "dictionary": null, "profileDataType":
+        null, "editable": false, "searchable": false, "bulkEdit": false, "phi": false,
+        "injectedSource": false, "displayType": null, "valueType": null, "meta": {"required":
+        false}, "richTextEnabled": false, "disable": false}, {"name": "created_by",
+        "type": "text", "formula": null, "dictionary": null, "profileDataType": null,
+        "editable": false, "searchable": false, "bulkEdit": false, "phi": false, "injectedSource":
+        false, "displayType": null, "valueType": null, "meta": {"required": false},
+        "richTextEnabled": false, "disable": false}, {"name": "created_by_name", "type":
+        "text", "formula": null, "dictionary": null, "profileDataType": null, "editable":
+        false, "searchable": false, "bulkEdit": false, "phi": false, "injectedSource":
+        false, "displayType": null, "valueType": null, "meta": {"required": false},
+        "richTextEnabled": false, "disable": false}, {"name": "updated_at", "type":
+        "datetime", "formula": null, "dictionary": null, "profileDataType": null,
+        "editable": false, "searchable": false, "bulkEdit": false, "phi": false, "injectedSource":
+        false, "displayType": null, "valueType": null, "meta": {"required": false},
+        "richTextEnabled": false, "disable": false}, {"name": "updated_by", "type":
+        "text", "formula": null, "dictionary": null, "profileDataType": null, "editable":
+        false, "searchable": false, "bulkEdit": false, "phi": false, "injectedSource":
+        false, "displayType": null, "valueType": null, "meta": {"required": false},
+        "richTextEnabled": false, "disable": false}, {"name": "updated_by_name", "type":
+        "text", "formula": null, "dictionary": null, "profileDataType": null, "editable":
+        false, "searchable": false, "bulkEdit": false, "phi": false, "injectedSource":
+        false, "displayType": null, "valueType": null, "meta": {"required": false},
+        "richTextEnabled": false, "disable": false}, {"name": "source_name", "type":
+        "text", "formula": null, "dictionary": null, "profileDataType": null, "editable":
+        false, "searchable": false, "bulkEdit": false, "phi": false, "injectedSource":
+        false, "displayType": null, "valueType": null, "meta": {"required": false},
+        "richTextEnabled": false, "disable": false}, {"name": "source_type", "type":
+        "text", "formula": null, "dictionary": null, "profileDataType": null, "editable":
+        false, "searchable": false, "bulkEdit": false, "phi": false, "injectedSource":
+        false, "displayType": null, "valueType": null, "meta": {"required": false},
+        "richTextEnabled": false, "disable": false}, {"name": "source_id", "type":
+        "text", "formula": null, "dictionary": null, "profileDataType": null, "editable":
+        false, "searchable": false, "bulkEdit": false, "phi": false, "injectedSource":
+        false, "displayType": null, "valueType": null, "meta": {"required": false},
+        "richTextEnabled": false, "disable": false}, {"name": "external_id", "type":
+        "text", "formula": null, "dictionary": null, "profileDataType": null, "editable":
+        true, "searchable": false, "bulkEdit": false, "phi": false, "injectedSource":
+        false, "displayType": null, "valueType": null, "meta": {"required": false},
+        "richTextEnabled": false, "disable": false}, {"name": "external_guid", "type":
+        "text", "formula": null, "dictionary": null, "profileDataType": null, "editable":
+        true, "searchable": false, "bulkEdit": false, "phi": false, "injectedSource":
+        false, "displayType": null, "valueType": null, "meta": {"required": false},
+        "richTextEnabled": false, "disable": false}], "_containsPHI": false}'
+    headers:
+      Access-Control-Allow-Headers:
+      - Authorization,Content-Type,XSRF-Token,Security-Role
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, PATCH, OPTIONS
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - Content-Disposition,XSRF-Token,Unresolved-Variables
+      Access-Control-Max-Age:
+      - '3600'
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 31 Aug 2026 16:53:43 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Strict-Transport-Security:
+      - max-age=31536000 ; includeSubDomains
+      Transfer-Encoding:
+      - chunked
+      X-Content-Type-Options:
+      - nosniff
+      X-XSS-Protection:
+      - 1; mode=block
+      content-length:
+      - '8826'
+    status:
+      code: 200
+      message: OK
+version: 1
