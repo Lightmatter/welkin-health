@@ -1,0 +1,65 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - API_TOKEN_4e5777d1-edc3-4d95-9321-291fc66e6a69
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-welkin/0.1.9
+    method: GET
+    uri: https://api.live.welkincloud.io/tenant_REDACTED/instance_REDACTED/pdts/pdt-hospitals/213ddaef-7914-4f46-8327-e2a343a4e7f6
+  response:
+    body:
+      string: '{"id": "213ddaef-7914-4f46-8327-e2a343a4e7f6", "createdAt": "2026-09-14T22:16:00.231Z",
+        "updatedAt": "2026-09-14T22:16:00.231Z", "fullValue": "Test Name", "deleted":
+        false, "jsonBody": {"pdtf-phone": null, "external_guid": null, "pdtf-name":
+        "Test Name", "created_at": "2026-09-14T22:16:00.231Z", "source_type": null,
+        "external_id": null, "pdtf-address": null, "created_by_name": "created_by_name_REDACTED_7af34ee1-746b-43d6-8146-c9148cf26b1c",
+        "created_by": "created_by_REDACTED_d6d37d07-a4c0-48e6-a96f-936b3f590894",
+        "updated_by_name": "updated_by_name_REDACTED_622b05fe-bf52-4164-9e81-778bc171cd3d",
+        "updated_at": "2026-09-14T22:16:00.231Z", "updated_by": "updated_by_REDACTED_db1688ee-4a92-4b38-bd65-7674b34b1f54",
+        "id": "213ddaef-7914-4f46-8327-e2a343a4e7f6", "source_id": null, "source_name":
+        null}, "pdtName": "pdt-hospitals"}'
+    headers:
+      Access-Control-Allow-Headers:
+      - Authorization,Content-Type,XSRF-Token,Security-Role
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, PATCH, OPTIONS
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - Content-Disposition,XSRF-Token,Unresolved-Variables
+      Access-Control-Max-Age:
+      - '3600'
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 14 Sep 2026 22:17:42 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Strict-Transport-Security:
+      - max-age=31536000 ; includeSubDomains
+      Transfer-Encoding:
+      - chunked
+      X-Content-Type-Options:
+      - nosniff
+      X-XSS-Protection:
+      - 1; mode=block
+      content-length:
+      - '675'
+    status:
+      code: 200
+      message: OK
+version: 1
