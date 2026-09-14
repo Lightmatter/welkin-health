@@ -107,6 +107,8 @@ class Client(Session):
     PatientProgram = models.PatientProgram
     PatientPrograms = models.PatientPrograms
     Patients = models.Patients
+    PDT = models.PDT
+    PDTs = models.PDTs
     ProgramPhase = models.ProgramPhase
     ProgramPhases = models.ProgramPhases
     Schedules = models.Schedules
