@@ -1,7 +1,6 @@
 from __future__ import annotations
 
-from welkin.models.base import Collection, Resource
-from welkin.pagination import MetaInfoIterator
+from welkin.models.base import Resource
 
 
 class PDT(Resource):
