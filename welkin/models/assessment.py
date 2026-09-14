@@ -71,22 +71,19 @@ class AssessmentRecord(Resource):
     @model_id("Patient")
     def get(self, patient_id: str):
         return super().get(
-            f"{self._client.instance}/patients/"
-            f"{patient_id}/assessment-records/{self.id}"
+            f"{self._client.instance}/patients/{patient_id}/assessment-records/{self.id}"
         )
 
     @model_id("Patient")
     def update(self, patient_id: str):
         return super().put(
-            f"{self._client.instance}/patients/"
-            f"{patient_id}/assessment-records/{self.id}"
+            f"{self._client.instance}/patients/{patient_id}/assessment-records/{self.id}"
         )
 
     @model_id("Patient")
     def delete(self, patient_id: str):
         return super().delete(
-            f"{self._client.instance}/patients/"
-            f"{patient_id}/assessment-records/{self.id}",
+            f"{self._client.instance}/patients/{patient_id}/assessment-records/{self.id}",
         )
 
 

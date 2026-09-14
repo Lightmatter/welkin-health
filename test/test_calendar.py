@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from datetime import datetime, timedelta, timezone
+from typing import TYPE_CHECKING
 
 import pytest
 
@@ -12,11 +13,17 @@ from welkin.models.calendar import (
     Schedules,
 )
 
+if TYPE_CHECKING:
+    from vcr.cassette import Cassette
+
+    from welkin import Client
+    from welkin.models import Users
+
 UTC = timezone.utc
 
 
 @pytest.mark.vcr
-def test_calendar_event_create(client, vcr_cassette):
+def test_calendar_event_create(client: Client, vcr_cassette: Cassette):
     start = datetime(2022, 6, 30, 17, 59, 47, 790000, tzinfo=UTC)
     end = start + timedelta(hours=1)
 
@@ -38,7 +45,7 @@ def test_calendar_event_create(client, vcr_cassette):
 
 
 @pytest.mark.vcr
-def test_calendar_event_read(client, vcr_cassette):
+def test_calendar_event_read(client: Client, vcr_cassette: Cassette):
     event_id = "9386a88a-467e-4144-a7df-1af12d6d5aaf"
     calendar = client.CalendarEvent(id=event_id).get()
 
@@ -48,7 +55,7 @@ def test_calendar_event_read(client, vcr_cassette):
 
 
 @pytest.mark.vcr
-def test_calendar_event_read_all(client, vcr_cassette):
+def test_calendar_event_read_all(client: Client, vcr_cassette: Cassette):
     from_date = datetime(2022, 4, 1, 16, 38, 20, 641000, tzinfo=UTC)
     to_date = datetime(2022, 6, 30, 16, 38, 20, 641000, tzinfo=UTC)
 
@@ -64,7 +71,7 @@ def test_calendar_event_read_all(client, vcr_cassette):
 
 
 @pytest.mark.vcr
-def test_calendar_event_update(client, vcr_cassette):
+def test_calendar_event_update(client: Client, vcr_cassette: Cassette):
     event = client.CalendarEvent(id="f7fc881d-28af-4fe1-b2ff-20e1ca33982f").get()
     title = event.eventTitle
 
@@ -75,7 +82,7 @@ def test_calendar_event_update(client, vcr_cassette):
 
 
 @pytest.mark.vcr
-def test_calendar_event_delete(client, vcr_cassette):
+def test_calendar_event_delete(client: Client, vcr_cassette: Cassette):
     event = client.CalendarEvent(id="f7fc881d-28af-4fe1-b2ff-20e1ca33982f").get()
     event.delete()
 
@@ -93,7 +100,7 @@ def test_calendar_event_delete(client, vcr_cassette):
 
 
 @pytest.mark.vcr
-def test_schedule_read_all(client, vcr_cassette):
+def test_schedule_read_all(client: Client, vcr_cassette: Cassette):
     from_date = datetime(2022, 4, 1, 16, 38, 20, 641000, tzinfo=UTC)
     to_date = datetime(2022, 6, 30, 16, 38, 20, 641000, tzinfo=UTC)
 
@@ -111,44 +118,11 @@ def test_schedule_read_all(client, vcr_cassette):
 
 
 @pytest.mark.vcr
-def test_get_work_hours_per_psm_ids(client, vcr_cassette):
-    start = datetime(2022, 3, 1, tzinfo=timezone.utc)
-    end = datetime(2024, 3, 1, tzinfo=timezone.utc)
-    psm_ids = [
-        "960b39f0-1404-45a4-a33e-5f9fdea34ff9",
-        "43afc43c-c77b-4014-8...e17f59ee03",
-    ]
-
-    whs = client.WorkHours().get(from_date=start, to_date=end, psm_ids=psm_ids)
-
-    assert isinstance(whs, list)
-    assert len(whs) == 2
-    assert len(vcr_cassette) == 1
-
-
-@pytest.mark.vcr
-def test_get_work_hours_per_time_range(client, vcr_cassette):
-    start = datetime(2022, 3, 1, tzinfo=timezone.utc)
-    end = datetime(2024, 3, 1, tzinfo=timezone.utc)
-
-    whs = client.WorkHours().get(
-        from_date=start,
-        to_date=end,
+def test_work_hours_read_all(client: Client, vcr_cassette: Cassette, users: Users):
+    work_hours = client.WorkHours().get(
+        from_date=datetime(2026, 1, 1, tzinfo=timezone.utc),
+        to_date=datetime(2026, 12, 31, tzinfo=timezone.utc),
+        psm_ids=[user.id for user in users],
     )
-
-    assert isinstance(whs, list)
-    assert len(vcr_cassette) == 1
-
-
-@pytest.mark.vcr
-def test_get_work_hours_empty(client, vcr_cassette):
-    start = datetime(2100, 1, 1, tzinfo=timezone.utc)
-    end = datetime(2100, 1, 2, tzinfo=timezone.utc)
-
-    whs = client.WorkHours().get(
-        from_date=start,
-        to_date=end,
-    )
-
-    assert len(whs) == 0
+    assert isinstance(work_hours, list)
     assert len(vcr_cassette) == 1

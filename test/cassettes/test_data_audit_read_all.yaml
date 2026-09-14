@@ -1,0 +1,334 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - API_TOKEN_4f791525-9c64-49e6-b905-eca6b5d31e4d
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-welkin/0.1.6
+    method: GET
+    uri: https://api.live.welkincloud.io/tenant_REDACTED/admin/audit-data?page=0
+  response:
+    body:
+      string: '{"data": [{"eventId": "858123632499595409", "eventEntity": "CDT", "subjectUsername":
+        "JQVFAOWQGJFQ", "subjectUserId": "14de4837-0344-4799-9553-3c404fffda54", "subjectActor":
+        "API_CLIENT", "subjectFullName": "API_CLIENT:JQVFAOWQGJFQ", "patientFullName":
+        "Holly Smith", "patientId": "6a041f26-9c87-409c-981c-90152676b119", "instance":
+        "test", "cdtName": "__encounter_disposition__", "cdtRelation": "ENCOUNTER_DISPOSITION",
+        "eventSubtype": "CDT_CREATED", "sentAt": "2026-06-25T23:16:57.154Z", "record":
+        {"patientId": "6a041f26-9c87-409c-981c-90152676b119", "jsonBody": {"id": "ce83a8c3-9d1e-4250-837f-0fdb3a27c7aa",
+        "note": null, "source_id": "cf361af1-7744-43bd-bcd9-d1a20e381421", "created_at":
+        "2026-06-25T23:16:57.146Z", "created_by": "created_by_REDACTED_923301b6-34d3-4800-ab88-1be83256ebd3",
+        "updated_at": "2026-06-25T23:16:57.146Z", "updated_by": "updated_by_REDACTED_4b96b606-34df-4bcb-937f-e033c3ab4a64",
+        "external_id": null, "source_name": "__encounter__", "source_type": "ENCOUNTER",
+        "external_guid": null, "created_by_name": "created_by_name_REDACTED_fa2d3afc-6157-4b2c-afa9-83469018094b",
+        "uicedf-cpt-code": null, "updated_by_name": "updated_by_name_REDACTED_bdf4e206-2b6e-4f97-a535-1b52c056894d",
+        "disposition-code": null, "uicedf-followup-type": null, "uicedf-followup-timeframe":
+        null, "uicedf-follow-up-scheduled": null, "uicedf-prior-auth-probable": null},
+        "id": "ce83a8c3-9d1e-4250-837f-0fdb3a27c7aa", "cdtName": "__encounter_disposition__",
+        "cdtId": "43fb9080-c1c3-4f3f-a8c2-a7b079d47241", "version": 259}}, {"eventEntity":
+        "CDT", "subjectUsername": "JQVFAOWQGJFQ", "subjectUserId": "14de4837-0344-4799-9553-3c404fffda54",
+        "subjectActor": "API_CLIENT", "subjectFullName": "API_CLIENT:JQVFAOWQGJFQ",
+        "patientFullName": "Samantha Maxwell", "patientId": "e8d39056-0f69-443f-8630-4dea7539c095",
+        "instance": "test", "cdtName": "__encounter_disposition__", "cdtRelation":
+        "ENCOUNTER_DISPOSITION", "eventSubtype": "CDT_CREATED", "sentAt": "2023-06-23T23:05:13.339Z",
+        "record": {"patientId": "e8d39056-0f69-443f-8630-4dea7539c095", "jsonBody":
+        {"id": "02e43e56-e4ac-4a45-b4df-e7a11b592dae", "note": null, "source_id":
+        "1a2381e3-0100-4682-8924-ed627524cd2e", "created_at": "2023-06-23T23:05:13.330Z",
+        "created_by": "created_by_REDACTED_b7214126-4461-489f-9c5a-2ff1a09fe6aa",
+        "updated_at": "2023-06-23T23:05:13.330Z", "updated_by": "updated_by_REDACTED_70a49470-02fe-4695-9051-41f260eba69b",
+        "external_id": null, "source_name": "__encounter__", "source_type": "ENCOUNTER",
+        "external_guid": null, "created_by_name": "created_by_name_REDACTED_1e526991-bf3d-4a0f-b525-df599e925739",
+        "updated_by_name": "updated_by_name_REDACTED_5d1640ea-922c-4854-ad75-677a5e59f7ff",
+        "disposition-code": null, "uicedf-followup-type": null, "uicedf-followup-timeframe":
+        null, "uicedf-follow-up-scheduled": null, "uicedf-prior-auth-probable": null},
+        "id": "02e43e56-e4ac-4a45-b4df-e7a11b592dae", "cdtName": "__encounter_disposition__",
+        "cdtId": "b4520153-b237-4673-b960-6c053387195e", "version": 49}}, {"eventEntity":
+        "CDT", "subjectUsername": "JQVFAOWQGJFQ", "subjectUserId": "14de4837-0344-4799-9553-3c404fffda54",
+        "subjectActor": "API_CLIENT", "subjectFullName": "API_CLIENT:JQVFAOWQGJFQ",
+        "patientFullName": "Happy Tester", "patientId": "0ecba8a6-7daf-49de-b81c-f5e0e9e2dad0",
+        "instance": "test", "cdtName": "__encounter_disposition__", "cdtRelation":
+        "ENCOUNTER_DISPOSITION", "eventSubtype": "CDT_UPDATED", "sentAt": "2023-05-25T22:18:08.554Z",
+        "record": {"patientId": "0ecba8a6-7daf-49de-b81c-f5e0e9e2dad0", "jsonBody":
+        {"id": "c4a12391-7a69-4d4b-b0a2-0c228befe7ab", "note": null, "source_id":
+        "d0fbf360-a5a4-41a6-911b-9343990e8fff", "created_at": "2023-05-25T22:18:01.391Z",
+        "created_by": "created_by_REDACTED_1b6c21a3-58bf-45dc-b4bd-1c11602c17de",
+        "updated_at": "2023-05-25T22:18:08.548Z", "updated_by": "updated_by_REDACTED_c378016a-6c8e-48ba-9c17-f06a16c8a391",
+        "external_id": null, "source_name": "__encounter__", "source_type": "ENCOUNTER",
+        "external_guid": null, "created_by_name": "created_by_name_REDACTED_44ef68df-1897-4400-8f76-03dd4dcf4f80",
+        "updated_by_name": "updated_by_name_REDACTED_e4b22652-2888-4e30-8e2a-a29e03c079ba",
+        "disposition-code": "Completed", "uicedf-followup-type": "None", "uicedf-followup-timeframe":
+        "None", "uicedf-follow-up-scheduled": "No", "uicedf-prior-auth-probable":
+        "No"}, "id": "c4a12391-7a69-4d4b-b0a2-0c228befe7ab", "cdtName": "__encounter_disposition__",
+        "cdtId": "ef32718b-5abf-4372-bd51-50d5a25a1ca8", "version": 44}}, {"eventEntity":
+        "CDT", "subjectUsername": "JQVFAOWQGJFQ", "subjectUserId": "14de4837-0344-4799-9553-3c404fffda54",
+        "subjectActor": "API_CLIENT", "subjectFullName": "API_CLIENT:JQVFAOWQGJFQ",
+        "patientFullName": "Happy Tester", "patientId": "10d40506-6241-437b-9069-6b38a5fe8d00",
+        "instance": "test", "cdtName": "__encounter_disposition__", "cdtRelation":
+        "ENCOUNTER_DISPOSITION", "eventSubtype": "CDT_CREATED", "sentAt": "2023-05-25T23:13:40.529Z",
+        "record": {"patientId": "10d40506-6241-437b-9069-6b38a5fe8d00", "jsonBody":
+        {"id": "440ab82c-374f-4d5f-b3ee-35aabf48310b", "note": null, "source_id":
+        "88d8a3fb-e98d-4fa4-93f7-2c574b9a6858", "created_at": "2023-05-25T23:13:40.520Z",
+        "created_by": "created_by_REDACTED_45f6cfd0-b455-4d11-b392-7f98f9aced3a",
+        "updated_at": "2023-05-25T23:13:40.520Z", "updated_by": "updated_by_REDACTED_0789a73f-fd3e-46ad-83ab-f81dd92166ca",
+        "external_id": null, "source_name": "__encounter__", "source_type": "ENCOUNTER",
+        "external_guid": null, "created_by_name": "created_by_name_REDACTED_c2df0180-43f0-4ca0-b749-2188eb1a345c",
+        "updated_by_name": "updated_by_name_REDACTED_412c175b-26bf-432b-85f7-ae58e9d593ed",
+        "disposition-code": null, "uicedf-followup-type": null, "uicedf-followup-timeframe":
+        null, "uicedf-follow-up-scheduled": null, "uicedf-prior-auth-probable": null},
+        "id": "440ab82c-374f-4d5f-b3ee-35aabf48310b", "cdtName": "__encounter_disposition__",
+        "cdtId": "ef32718b-5abf-4372-bd51-50d5a25a1ca8", "version": 44}}, {"eventEntity":
+        "CDT", "subjectUsername": "JQVFAOWQGJFQ", "subjectUserId": "14de4837-0344-4799-9553-3c404fffda54",
+        "subjectActor": "API_CLIENT", "subjectFullName": "API_CLIENT:JQVFAOWQGJFQ",
+        "patientFullName": "Happy Tester", "patientId": "10d40506-6241-437b-9069-6b38a5fe8d00",
+        "instance": "test", "cdtName": "__encounter_disposition__", "cdtRelation":
+        "ENCOUNTER_DISPOSITION", "eventSubtype": "CDT_UPDATED", "sentAt": "2023-05-25T23:13:48.206Z",
+        "record": {"patientId": "10d40506-6241-437b-9069-6b38a5fe8d00", "jsonBody":
+        {"id": "440ab82c-374f-4d5f-b3ee-35aabf48310b", "note": null, "source_id":
+        "88d8a3fb-e98d-4fa4-93f7-2c574b9a6858", "created_at": "2023-05-25T23:13:40.520Z",
+        "created_by": "created_by_REDACTED_360c0e96-bbd3-4ba7-9b49-9f70416c89b9",
+        "updated_at": "2023-05-25T23:13:48.201Z", "updated_by": "updated_by_REDACTED_825b6615-0823-469a-b095-6a6aba5b7011",
+        "external_id": null, "source_name": "__encounter__", "source_type": "ENCOUNTER",
+        "external_guid": null, "created_by_name": "created_by_name_REDACTED_f4abd084-69b2-46e6-81dc-956e54202109",
+        "updated_by_name": "updated_by_name_REDACTED_b2bd9c92-2982-4d9a-a816-c59d5c79e756",
+        "disposition-code": "Completed", "uicedf-followup-type": "None", "uicedf-followup-timeframe":
+        "None", "uicedf-follow-up-scheduled": "No", "uicedf-prior-auth-probable":
+        "No"}, "id": "440ab82c-374f-4d5f-b3ee-35aabf48310b", "cdtName": "__encounter_disposition__",
+        "cdtId": "ef32718b-5abf-4372-bd51-50d5a25a1ca8", "version": 44}}, {"eventEntity":
+        "CDT", "subjectUsername": "okta_julian.d@joinzest.com", "subjectUserId": "2fc3b7b6-5375-4f1d-be9b-9441ddcf8f2f",
+        "subjectActor": "USER", "subjectFullName": "Julian Diaz", "patientFullName":
+        "Kristin Alexander", "patientId": "1472fbc4-c863-4553-9ab9-fd9046335fc1",
+        "instance": "test", "cdtName": "asm-patient-interview", "cdtRelation": "COMMON",
+        "eventSubtype": "CDT_DELETED", "sentAt": "2023-07-07T19:58:01.149Z", "record":
+        {"patientId": "1472fbc4-c863-4553-9ab9-fd9046335fc1", "jsonBody": null, "id":
+        "69cc7d49-6930-474e-996b-bc384b850901", "cdtName": null, "cdtId": null, "version":
+        null}}, {"eventEntity": "CDT", "subjectUsername": "okta_julian.d@joinzest.com",
+        "subjectUserId": "2fc3b7b6-5375-4f1d-be9b-9441ddcf8f2f", "subjectActor": "USER",
+        "subjectFullName": "Julian Diaz", "patientFullName": "Jennifer Allen", "patientId":
+        "08716448-859c-48d6-a2a2-f1cdebd6067c", "instance": "test", "cdtName": "_patient_info",
+        "cdtRelation": "PATIENT_INFO", "eventSubtype": "CDT_DELETED", "sentAt": "2023-07-07T19:58:05.152Z",
+        "record": {"patientId": "08716448-859c-48d6-a2a2-f1cdebd6067c", "jsonBody":
+        null, "id": "6f4f9cf9-eccb-4fad-ae7c-482ee9e3bd75", "cdtName": null, "cdtId":
+        null, "version": null}}, {"eventEntity": "CDT", "subjectUsername": "okta_julian.d@joinzest.com",
+        "subjectUserId": "2fc3b7b6-5375-4f1d-be9b-9441ddcf8f2f", "subjectActor": "USER",
+        "subjectFullName": "Julian Diaz", "patientFullName": "Alicia Adkins", "patientId":
+        "bdfd4af5-c8a5-4e4b-9eb8-d5a16dc6c481", "instance": "test", "cdtName": "asm-patient-interview",
+        "cdtRelation": "COMMON", "eventSubtype": "CDT_DELETED", "sentAt": "2023-07-07T19:57:57.181Z",
+        "record": {"patientId": "bdfd4af5-c8a5-4e4b-9eb8-d5a16dc6c481", "jsonBody":
+        null, "id": "cc24d793-f046-47a9-b726-3f78d3e70e8b", "cdtName": null, "cdtId":
+        null, "version": null}}, {"eventEntity": "CDT", "subjectUsername": "okta_julian.d@joinzest.com",
+        "subjectUserId": "2fc3b7b6-5375-4f1d-be9b-9441ddcf8f2f", "subjectActor": "USER",
+        "subjectFullName": "Julian Diaz", "patientFullName": "Thomas Allen", "patientId":
+        "21d1c004-b6be-4177-82c8-7a0a99026b2e", "instance": "test", "cdtName": "_patient_info",
+        "cdtRelation": "PATIENT_INFO", "eventSubtype": "CDT_DELETED", "sentAt": "2023-07-07T19:58:09.733Z",
+        "record": {"patientId": "21d1c004-b6be-4177-82c8-7a0a99026b2e", "jsonBody":
+        null, "id": "d643b770-86db-4c59-9a25-9d8e024e24a1", "cdtName": null, "cdtId":
+        null, "version": null}}, {"eventEntity": "CDT", "subjectUsername": "okta_julian.d@joinzest.com",
+        "subjectUserId": "2fc3b7b6-5375-4f1d-be9b-9441ddcf8f2f", "subjectActor": "USER",
+        "subjectFullName": "Julian Diaz", "patientFullName": "Thomas Allen", "patientId":
+        "21d1c004-b6be-4177-82c8-7a0a99026b2e", "instance": "test", "cdtName": "asm-patient-interview",
+        "cdtRelation": "COMMON", "eventSubtype": "CDT_DELETED", "sentAt": "2023-07-07T19:58:09.738Z",
+        "record": {"patientId": "21d1c004-b6be-4177-82c8-7a0a99026b2e", "jsonBody":
+        null, "id": "f23b92ca-75b6-4951-8ed6-882a8ca0c12d", "cdtName": null, "cdtId":
+        null, "version": null}}, {"eventEntity": "CDT", "subjectUsername": "JQVFAOWQGJFQ",
+        "subjectUserId": "14de4837-0344-4799-9553-3c404fffda54", "subjectActor": "API_CLIENT",
+        "subjectFullName": "API_CLIENT:JQVFAOWQGJFQ", "patientFullName": "Nicholas
+        Wu", "patientId": "55183e8b-d900-447a-b807-619d184d2f91", "instance": "test",
+        "cdtName": "__encounter_disposition__", "cdtRelation": "ENCOUNTER_DISPOSITION",
+        "eventSubtype": "CDT_CREATED", "sentAt": "2023-07-07T20:29:06.043Z", "record":
+        {"patientId": "55183e8b-d900-447a-b807-619d184d2f91", "jsonBody": {"id": "feee0663-a532-4969-96b4-1ca5b056d70b",
+        "note": null, "source_id": "6def8fd4-2c23-43eb-82b5-8aab797c3c03", "created_at":
+        "2023-07-07T20:29:06.036Z", "created_by": "created_by_REDACTED_4f58a1e3-27fa-4aad-a679-e482b6c268a7",
+        "updated_at": "2023-07-07T20:29:06.036Z", "updated_by": "updated_by_REDACTED_5acec0cd-d19f-4716-8460-6f56ff69d614",
+        "external_id": null, "source_name": "__encounter__", "source_type": "ENCOUNTER",
+        "external_guid": null, "created_by_name": "created_by_name_REDACTED_ad44d67e-bc44-44f1-a4b0-8d94c9fad9be",
+        "updated_by_name": "updated_by_name_REDACTED_3c3d1fc5-4350-457d-8234-3f3c5940d770",
+        "disposition-code": null, "uicedf-followup-type": null, "uicedf-followup-timeframe":
+        null, "uicedf-follow-up-scheduled": null, "uicedf-prior-auth-probable": null},
+        "id": "feee0663-a532-4969-96b4-1ca5b056d70b", "cdtName": "__encounter_disposition__",
+        "cdtId": "750b12ec-76bd-4ffc-869e-bea4162a2d9e", "version": 51}}, {"eventEntity":
+        "CDT", "subjectUsername": "okta_julian.d@joinzest.com", "subjectUserId": "2fc3b7b6-5375-4f1d-be9b-9441ddcf8f2f",
+        "subjectActor": "USER", "subjectFullName": "Julian Diaz", "patientFullName":
+        "Thomas Allen", "patientId": "21d1c004-b6be-4177-82c8-7a0a99026b2e", "instance":
+        "test", "cdtName": "asm-patient-interview", "cdtRelation": "COMMON", "eventSubtype":
+        "CDT_DELETED", "sentAt": "2023-07-07T19:58:09.744Z", "record": {"patientId":
+        "21d1c004-b6be-4177-82c8-7a0a99026b2e", "jsonBody": null, "id": "c840df31-d608-4a30-8535-54f383047c22",
+        "cdtName": null, "cdtId": null, "version": null}}, {"eventEntity": "CDT",
+        "subjectUsername": "JQVFAOWQGJFQ", "subjectUserId": "14de4837-0344-4799-9553-3c404fffda54",
+        "subjectActor": "API_CLIENT", "subjectFullName": "API_CLIENT:JQVFAOWQGJFQ",
+        "patientFullName": "Anna Medina", "patientId": "9e4dd334-0224-4528-a3a2-4b9ec3ba3e30",
+        "instance": "test", "cdtName": "__encounter_disposition__", "cdtRelation":
+        "ENCOUNTER_DISPOSITION", "eventSubtype": "CDT_CREATED", "sentAt": "2023-07-07T21:12:35.214Z",
+        "record": {"patientId": "9e4dd334-0224-4528-a3a2-4b9ec3ba3e30", "jsonBody":
+        {"id": "9f18ae8e-add4-4425-8cd2-873a09de3ea6", "note": null, "source_id":
+        "749e5bcd-cf40-445f-ac96-d3cd01d40b98", "created_at": "2023-07-07T21:12:35.206Z",
+        "created_by": "created_by_REDACTED_187180b2-3800-45ae-b122-bf94c160d3cb",
+        "updated_at": "2023-07-07T21:12:35.206Z", "updated_by": "updated_by_REDACTED_a017c82f-260a-4b1c-ab20-a1b6f1f3d3d4",
+        "external_id": null, "source_name": "__encounter__", "source_type": "ENCOUNTER",
+        "external_guid": null, "created_by_name": "created_by_name_REDACTED_9d8a6787-1f55-4772-86e5-5f46b801f17d",
+        "updated_by_name": "updated_by_name_REDACTED_8943880c-f627-40dc-8bc9-28066613736e",
+        "disposition-code": null, "uicedf-followup-type": null, "uicedf-followup-timeframe":
+        null, "uicedf-follow-up-scheduled": null, "uicedf-prior-auth-probable": null},
+        "id": "9f18ae8e-add4-4425-8cd2-873a09de3ea6", "cdtName": "__encounter_disposition__",
+        "cdtId": "750b12ec-76bd-4ffc-869e-bea4162a2d9e", "version": 51}}, {"eventEntity":
+        "TASK", "subjectActor": "SYSTEM", "subjectFullName": "New Patient Created",
+        "patientFullName": "Nicholas Wu", "patientId": "55183e8b-d900-447a-b807-619d184d2f91",
+        "instance": "test", "eventSubtype": "TASK_CREATED", "sentAt": "2023-07-07T20:27:58.937Z",
+        "record": {"createdByName": "createdByName_REDACTED_6d13e472-56cb-45d4-9781-ed5c43fd25e3",
+        "comments": [], "updatedBy": "updatedBy_REDACTED_7be48326-dc65-4e35-9e4b-68ae09655798",
+        "dueDate": null, "updatedByName": "updatedByName_REDACTED_70212ab5-f6fa-4a00-92cb-fd6eea5c631c",
+        "watchers": [{"id": "d1757e77-94f4-45f6-8afe-debcf702a1f6", "name": "Scheduler
+        Test", "enabled": true}], "description": "", "priority": "HIGH", "createdType":
+        "AUTOMATION", "createdAt": "2023-07-07T20:27:58.926Z", "createdBy": "createdBy_REDACTED_c3137d34-b506-4fe8-9be6-ddeb41a75c8f",
+        "templateName": "ttmp-new-patient-created---update-account", "patient": {"id":
+        "55183e8b-d900-447a-b807-619d184d2f91", "name": "Nicholas Wu"}, "name": "New
+        Patient Created - Update Account", "id": "d6637f4d-045d-45e7-ad23-3996b0019077",
+        "assignee": {"id": "d1757e77-94f4-45f6-8afe-debcf702a1f6", "name": "Scheduler
+        Test", "enabled": true}, "status": "TODO", "updatedAt": "2023-07-07T20:27:58.926Z",
+        "watchersType": "POINT_OF_CONTACT"}}, {"eventEntity": "CDT", "subjectUsername":
+        "JQVFAOWQGJFQ", "subjectUserId": "14de4837-0344-4799-9553-3c404fffda54", "subjectActor":
+        "API_CLIENT", "subjectFullName": "API_CLIENT:JQVFAOWQGJFQ", "patientFullName":
+        "Gustavo105 Cejas", "patientId": "84ebd958-5acb-4d57-b9e8-98438a270fd4", "instance":
+        "test", "cdtName": "__encounter_disposition__", "cdtRelation": "ENCOUNTER_DISPOSITION",
+        "eventSubtype": "CDT_CREATED", "sentAt": "2023-02-10T21:03:58.091Z", "record":
+        {"patientId": "84ebd958-5acb-4d57-b9e8-98438a270fd4", "jsonBody": {"id": "fe0f6022-5683-4d60-9c7d-6e4e00459d27",
+        "note": null, "source_id": "c2f3ecd2-0b58-4991-be88-252e441416d0", "created_at":
+        "2023-02-10T21:03:58.085Z", "created_by": "created_by_REDACTED_4727c634-1c0d-4492-92c1-8ae9dc43c143",
+        "updated_at": "2023-02-10T21:03:58.085Z", "updated_by": "updated_by_REDACTED_8c93f0b5-3e74-497c-99c3-274cb8123e1d",
+        "external_id": null, "source_name": "__encounter__", "source_type": "ENCOUNTER",
+        "external_guid": null, "created_by_name": "created_by_name_REDACTED_7e6ff1b1-0b20-4b2a-9bb7-129ac8bedb31",
+        "updated_by_name": "updated_by_name_REDACTED_7c7c8ff0-a5dc-425f-8d08-67e89efe93be",
+        "disposition-code": null, "uicedf-followup-type": null, "uicedf-followup-timeframe":
+        null, "uicedf-follow-up-scheduled": null, "uicedf-prior-auth-probable": null},
+        "id": "fe0f6022-5683-4d60-9c7d-6e4e00459d27", "cdtName": "__encounter_disposition__",
+        "cdtId": "46266c0c-bfca-4e27-8985-37da886f2e7d", "version": 23}}, {"eventEntity":
+        "CDT", "subjectUsername": "JQVFAOWQGJFQ", "subjectUserId": "14de4837-0344-4799-9553-3c404fffda54",
+        "subjectActor": "API_CLIENT", "subjectFullName": "API_CLIENT:JQVFAOWQGJFQ",
+        "patientFullName": "Jonathan Dixon", "patientId": "42ed6409-593a-42f2-b7fe-b52dc1de791b",
+        "instance": "test", "cdtName": "__encounter_disposition__", "cdtRelation":
+        "ENCOUNTER_DISPOSITION", "eventSubtype": "CDT_CREATED", "sentAt": "2023-07-10T20:03:03.806Z",
+        "record": {"patientId": "42ed6409-593a-42f2-b7fe-b52dc1de791b", "jsonBody":
+        {"id": "db3a5b3c-26e7-4a9f-b330-7e617d2ea183", "note": null, "source_id":
+        "462c5d8c-1784-4416-b1d0-a275b9337650", "created_at": "2023-07-10T20:03:03.793Z",
+        "created_by": "created_by_REDACTED_3df648e2-58ba-4eab-a2dc-7003d7eea12b",
+        "updated_at": "2023-07-10T20:03:03.793Z", "updated_by": "updated_by_REDACTED_89540bb1-20a6-43d1-bd97-ba922072e981",
+        "external_id": null, "source_name": "__encounter__", "source_type": "ENCOUNTER",
+        "external_guid": null, "created_by_name": "created_by_name_REDACTED_08980907-f3a6-4587-85f9-f718afcc4274",
+        "updated_by_name": "updated_by_name_REDACTED_63ce8fab-a2e1-44d7-bdde-c7719f7cf275",
+        "disposition-code": null, "uicedf-followup-type": null, "uicedf-followup-timeframe":
+        null, "uicedf-follow-up-scheduled": null, "uicedf-prior-auth-probable": null},
+        "id": "db3a5b3c-26e7-4a9f-b330-7e617d2ea183", "cdtName": "__encounter_disposition__",
+        "cdtId": "750b12ec-76bd-4ffc-869e-bea4162a2d9e", "version": 51}}, {"eventEntity":
+        "CDT", "subjectUsername": "JQVFAOWQGJFQ", "subjectUserId": "14de4837-0344-4799-9553-3c404fffda54",
+        "subjectActor": "API_CLIENT", "subjectFullName": "API_CLIENT:JQVFAOWQGJFQ",
+        "patientFullName": "Jonathan Dixon", "patientId": "42ed6409-593a-42f2-b7fe-b52dc1de791b",
+        "instance": "test", "cdtName": "__encounter_disposition__", "cdtRelation":
+        "ENCOUNTER_DISPOSITION", "eventSubtype": "CDT_CREATED", "sentAt": "2023-07-10T21:22:42.067Z",
+        "record": {"patientId": "42ed6409-593a-42f2-b7fe-b52dc1de791b", "jsonBody":
+        {"id": "f3336b04-112d-44e9-9b13-e556abd546c9", "note": null, "source_id":
+        "1eec1f90-ae60-401f-addb-999649c414b4", "created_at": "2023-07-10T21:22:42.059Z",
+        "created_by": "created_by_REDACTED_83927770-eb2f-49a2-afba-086664a38373",
+        "updated_at": "2023-07-10T21:22:42.059Z", "updated_by": "updated_by_REDACTED_5f82024a-f8e0-43cc-9293-8b4cdfa27464",
+        "external_id": null, "source_name": "__encounter__", "source_type": "ENCOUNTER",
+        "external_guid": null, "created_by_name": "created_by_name_REDACTED_b0052029-bb10-4e70-893e-9d0c899a2b3e",
+        "updated_by_name": "updated_by_name_REDACTED_fdf84bfe-6a6a-4ae3-a20b-632cac630534",
+        "disposition-code": null, "uicedf-followup-type": null, "uicedf-followup-timeframe":
+        null, "uicedf-follow-up-scheduled": null, "uicedf-prior-auth-probable": null},
+        "id": "f3336b04-112d-44e9-9b13-e556abd546c9", "cdtName": "__encounter_disposition__",
+        "cdtId": "750b12ec-76bd-4ffc-869e-bea4162a2d9e", "version": 51}}, {"eventEntity":
+        "CDT", "subjectUsername": "JQVFAOWQGJFQ", "subjectUserId": "14de4837-0344-4799-9553-3c404fffda54",
+        "subjectActor": "API_CLIENT", "subjectFullName": "API_CLIENT:JQVFAOWQGJFQ",
+        "patientFullName": "Jonathan Dixon", "patientId": "42ed6409-593a-42f2-b7fe-b52dc1de791b",
+        "instance": "test", "cdtName": "__encounter_disposition__", "cdtRelation":
+        "ENCOUNTER_DISPOSITION", "eventSubtype": "CDT_CREATED", "sentAt": "2023-07-10T21:23:14.263Z",
+        "record": {"patientId": "42ed6409-593a-42f2-b7fe-b52dc1de791b", "jsonBody":
+        {"id": "713a624d-0dbe-4692-9b41-1446ffd65805", "note": null, "source_id":
+        "42acd560-694f-4260-8801-274e546e39b8", "created_at": "2023-07-10T21:23:14.255Z",
+        "created_by": "created_by_REDACTED_3d074f24-6a26-4b9d-a402-0629227d9e91",
+        "updated_at": "2023-07-10T21:23:14.255Z", "updated_by": "updated_by_REDACTED_cc5f7acd-043e-43b8-a6e4-d1013a94d197",
+        "external_id": null, "source_name": "__encounter__", "source_type": "ENCOUNTER",
+        "external_guid": null, "created_by_name": "created_by_name_REDACTED_1363c207-9bc1-444b-9d2c-2058c893480a",
+        "updated_by_name": "updated_by_name_REDACTED_5a4346ed-1851-4a5f-8622-98d0a76fc99a",
+        "disposition-code": null, "uicedf-followup-type": null, "uicedf-followup-timeframe":
+        null, "uicedf-follow-up-scheduled": null, "uicedf-prior-auth-probable": null},
+        "id": "713a624d-0dbe-4692-9b41-1446ffd65805", "cdtName": "__encounter_disposition__",
+        "cdtId": "750b12ec-76bd-4ffc-869e-bea4162a2d9e", "version": 51}}, {"eventEntity":
+        "CDT", "subjectUsername": "JQVFAOWQGJFQ", "subjectUserId": "14de4837-0344-4799-9553-3c404fffda54",
+        "subjectActor": "API_CLIENT", "subjectFullName": "API_CLIENT:JQVFAOWQGJFQ",
+        "patientFullName": "Happy Tester", "patientId": "c56dd24f-87b6-430a-8c39-fb873b0870fa",
+        "instance": "test", "cdtName": "__encounter_disposition__", "cdtRelation":
+        "ENCOUNTER_DISPOSITION", "eventSubtype": "CDT_CREATED", "sentAt": "2023-07-11T18:21:52.840Z",
+        "record": {"patientId": "c56dd24f-87b6-430a-8c39-fb873b0870fa", "jsonBody":
+        {"id": "48c67b0f-ad32-4ff6-9993-c188620b390d", "note": null, "source_id":
+        "8756c238-3eaf-469a-93d9-477f35c60c21", "created_at": "2023-07-11T18:21:52.830Z",
+        "created_by": "created_by_REDACTED_03d22075-3450-4e17-ad98-ca5384c81b3d",
+        "updated_at": "2023-07-11T18:21:52.830Z", "updated_by": "updated_by_REDACTED_9a368e0d-d3ce-47a4-9a29-a478b8155f29",
+        "external_id": null, "source_name": "__encounter__", "source_type": "ENCOUNTER",
+        "external_guid": null, "created_by_name": "created_by_name_REDACTED_702a6d82-1ced-4b04-82ac-146355ecce57",
+        "updated_by_name": "updated_by_name_REDACTED_81175655-0f39-4623-bd18-77e78516c468",
+        "disposition-code": null, "uicedf-followup-type": null, "uicedf-followup-timeframe":
+        null, "uicedf-follow-up-scheduled": null, "uicedf-prior-auth-probable": null},
+        "id": "48c67b0f-ad32-4ff6-9993-c188620b390d", "cdtName": "__encounter_disposition__",
+        "cdtId": "750b12ec-76bd-4ffc-869e-bea4162a2d9e", "version": 51}}, {"eventEntity":
+        "CDT", "subjectUsername": "JQVFAOWQGJFQ", "subjectUserId": "14de4837-0344-4799-9553-3c404fffda54",
+        "subjectActor": "API_CLIENT", "subjectFullName": "API_CLIENT:JQVFAOWQGJFQ",
+        "patientFullName": "Happy Tester", "patientId": "c56dd24f-87b6-430a-8c39-fb873b0870fa",
+        "instance": "test", "cdtName": "__encounter_disposition__", "cdtRelation":
+        "ENCOUNTER_DISPOSITION", "eventSubtype": "CDT_UPDATED", "sentAt": "2023-07-11T18:22:19.044Z",
+        "record": {"patientId": "c56dd24f-87b6-430a-8c39-fb873b0870fa", "jsonBody":
+        {"id": "48c67b0f-ad32-4ff6-9993-c188620b390d", "note": null, "source_id":
+        "8756c238-3eaf-469a-93d9-477f35c60c21", "created_at": "2023-07-11T18:21:52.830Z",
+        "created_by": "created_by_REDACTED_d75871d9-a9a0-4833-a85d-dd41aa91078b",
+        "updated_at": "2023-07-11T18:22:19.038Z", "updated_by": "updated_by_REDACTED_3717f583-88f5-47e9-b27e-acee6bdea8b1",
+        "external_id": null, "source_name": "__encounter__", "source_type": "ENCOUNTER",
+        "external_guid": null, "created_by_name": "created_by_name_REDACTED_aff2ab11-fbfd-4ad2-9747-d123fce28eb2",
+        "updated_by_name": "updated_by_name_REDACTED_f7278a51-bf71-4654-92da-98e78ffc0023",
+        "disposition-code": "Completed", "uicedf-followup-type": "None", "uicedf-followup-timeframe":
+        "None", "uicedf-follow-up-scheduled": "No", "uicedf-prior-auth-probable":
+        "No"}, "id": "48c67b0f-ad32-4ff6-9993-c188620b390d", "cdtName": "__encounter_disposition__",
+        "cdtId": "750b12ec-76bd-4ffc-869e-bea4162a2d9e", "version": 51}}], "metaInfo":
+        {"page": 0, "pageSize": 20, "totalElements": 86988, "numberOfElements": 20,
+        "firstPage": true, "lastPage": false, "totalPages": 4350}}'
+    headers:
+      Access-Control-Allow-Headers:
+      - Authorization,Content-Type,XSRF-Token,Security-Role
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, PATCH, OPTIONS
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - Content-Disposition,XSRF-Token,Unresolved-Variables
+      Access-Control-Max-Age:
+      - '3600'
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 21 Jul 2026 23:11:57 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Strict-Transport-Security:
+      - max-age=31536000 ; includeSubDomains
+      Transfer-Encoding:
+      - chunked
+      X-Content-Type-Options:
+      - nosniff
+      X-XSS-Protection:
+      - 1; mode=block
+      content-length:
+      - '21239'
+    status:
+      code: 200
+      message: OK
+version: 1

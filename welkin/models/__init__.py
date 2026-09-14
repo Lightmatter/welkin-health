@@ -6,6 +6,7 @@ from welkin.models.assessment import (
     AssessmentRecords,
     Assessments,
 )
+from welkin.models.audit import DataAudit, DataAudits, WebhookAudit, WebhookAudits
 from welkin.models.calendar import CalendarEvent, CalendarEvents, Schedules, WorkHours
 from welkin.models.care_plan import CarePlan, CarePlanOverview
 from welkin.models.cdt import CDT, CDTs
@@ -45,6 +46,8 @@ __all__ = [
     "CDTs",
     "Chat",
     "Chats",
+    "DataAudit",
+    "DataAudits",
     "DocumentSummaries",
     "DocumentSummary",
     "DocumentSummaryFile",
@@ -67,5 +70,7 @@ __all__ = [
     "SMSes",
     "User",
     "Users",
+    "WebhookAudit",
+    "WebhookAudits",
     "WorkHours",
 ]
