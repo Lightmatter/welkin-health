@@ -194,11 +194,11 @@ def reset_file_offsets(files: list) -> None:
     for _, file_info in to_key_val_list(files):
         if isinstance(file_info, (tuple, list)):
             if len(file_info) == file_info_with_name:
-                fn, fp = file_info
+                _fn, fp = file_info
             elif len(file_info) == file_info_with_content_type:
-                fn, fp, ft = file_info
+                _fn, fp, _ft = file_info
             else:
-                fn, fp, ft, fh = file_info
+                _fn, fp, _ft, _fh = file_info
         else:
             fp = file_info
 

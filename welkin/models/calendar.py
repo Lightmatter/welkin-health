@@ -49,7 +49,7 @@ class CalendarEvents(Collection):
     resource = CalendarEvent
     iterator = PageableIterator
 
-    def get(  # noqa: PLR0913
+    def get(  # noqa: PLR0913, PLR0917
         self,
         from_date: datetime,
         to_date: datetime,
@@ -93,7 +93,7 @@ class Schedules(Collection):
     resource = Schedule
     iterator = PageableIterator
 
-    def get(  # noqa: PLR0913
+    def get(  # noqa: PLR0913, PLR0917
         self,
         ids: list,
         from_date: datetime,

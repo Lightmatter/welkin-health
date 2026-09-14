@@ -73,7 +73,7 @@ class Encounters(Collection):
     resource = Encounter
     iterator = MetaInfoIterator
 
-    def get(  # noqa: PLR0913
+    def get(  # noqa: PLR0913, PLR0917
         self,
         patient_id: str | None = None,
         user_id: str | None = None,

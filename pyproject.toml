@@ -1,6 +1,6 @@
 [project]
 name = "welkin"
-version = "0.1.9"
+version = "0.1.10"
 dependencies = ["inflection>=0.5.1", "portalocker>=3.2.0", "requests>=2.34.2"]
 requires-python = ">=3.10"
 authors = [{ name = "Sam Morgan", email = "sama4mail@gmail.com" }]
@@ -24,7 +24,7 @@ Issues = "https://github.com/lightmatter/welkin-health/issues"
 Changelog = "https://github.com/Lightmatter/welkin-health/releases"
 
 [build-system]
-requires = ["uv_build>=0.11.31,<0.12"]
+requires = ["uv_build>=0.11.31,<0.13"]
 build-backend = "uv_build"
 
 [tool.uv]

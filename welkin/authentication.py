@@ -45,6 +45,9 @@ class WelkinAuth(AuthBase):
             getattr(other, "secret_key", None),
         )
 
+    def __hash__(self) -> int:
+        return hash((self.tenant, self.api_client, self.secret_key))
+
     def __call__(self, r: PreparedRequest) -> PreparedRequest:
         logger.info(f"{r.method} {r.url}")
 

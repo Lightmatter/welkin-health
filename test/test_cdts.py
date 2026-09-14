@@ -66,8 +66,8 @@ def test_cdt_bulk_update(client, vcr_cassette):
         cdtName="cdt-self-care", id="28f59572-efec-4ac1-bbfe-660b1abbd9e5"
     ).get()
 
-    resp_1 = "Yes" if cdt_1.jsonBody["cdtf-alone-time"] == "No" else "Yes"
-    resp_2 = "Yes" if cdt_2.jsonBody["cdtf-alone-time"] == "No" else "Yes"
+    resp_1 = "Yes" if cdt_1.jsonBody["cdtf-alone-time"] == "No" else "No"
+    resp_2 = "Yes" if cdt_2.jsonBody["cdtf-alone-time"] == "No" else "No"
 
     data = {
         "rows": [
