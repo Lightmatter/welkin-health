@@ -10,8 +10,3 @@ class PDT(Resource):
 
     def get(self):
         return super().get(f"{self._client.instance}/pdts/{self.pdtName}/{self.id}")
-
-
-class PDTs(Collection):
-    resource = PDT
-    iterator = MetaInfoIterator

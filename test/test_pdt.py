@@ -2,8 +2,7 @@ from __future__ import annotations
 
 import pytest
 
-from welkin.exceptions import WelkinHTTPError
-from welkin.models import PDT, PDTs
+from welkin.models import PDT
 
 
 @pytest.mark.vcr
