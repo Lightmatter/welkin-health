@@ -1,0 +1,69 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - API_TOKEN_137f409d-9133-46de-a14a-7abd40ea0f57
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-welkin/0.1.9
+    method: GET
+    uri: https://api.live.welkincloud.io/tenant_REDACTED/instance_REDACTED/pdts/pdt-hospitals?size=1&page=0
+  response:
+    body:
+      string: '{"pdtName": "pdt-hospitals", "lastUpdatedAt": "2026-08-31T18:22:36.077Z",
+        "records": {"data": [{"id": "5af5cd13-9afe-49da-8e8c-a76f3637e83a", "createdAt":
+        "2026-08-31T18:22:36.077Z", "updatedAt": "2026-08-31T18:22:36.077Z", "fullValue":
+        "Test Name", "deleted": false, "jsonBody": {"pdtf-phone": null, "external_guid":
+        null, "pdtf-name": "Test Name", "created_at": "2026-08-31T18:22:36.077Z",
+        "source_type": null, "external_id": null, "pdtf-address": null, "created_by_name":
+        "created_by_name_REDACTED_64cf1180-bb92-40f3-8942-5a087a6a6af1", "created_by":
+        "created_by_REDACTED_ee3f34e5-4ccd-430e-b9f7-d3250d2207dd", "updated_by_name":
+        "updated_by_name_REDACTED_9a8bd53e-e845-4ade-97da-5c8e996faa25", "updated_at":
+        "2026-08-31T18:22:36.077Z", "updated_by": "updated_by_REDACTED_40d1cf7c-9f47-47f1-acdd-7094419c38fe",
+        "id": "5af5cd13-9afe-49da-8e8c-a76f3637e83a", "source_id": null, "source_name":
+        null}, "pdtName": "pdt-hospitals"}], "metaInfo": {"page": 0, "pageSize": 1,
+        "totalElements": 2, "numberOfElements": 1, "totalPages": 2, "firstPage": true,
+        "lastPage": false}}}'
+    headers:
+      Access-Control-Allow-Headers:
+      - Authorization,Content-Type,XSRF-Token,Security-Role
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, PATCH, OPTIONS
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - Content-Disposition,XSRF-Token,Unresolved-Variables
+      Access-Control-Max-Age:
+      - '3600'
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 31 Aug 2026 18:29:35 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Strict-Transport-Security:
+      - max-age=31536000 ; includeSubDomains
+      Transfer-Encoding:
+      - chunked
+      X-Content-Type-Options:
+      - nosniff
+      X-XSS-Protection:
+      - 1; mode=block
+      content-length:
+      - '890'
+    status:
+      code: 200
+      message: OK
+version: 1

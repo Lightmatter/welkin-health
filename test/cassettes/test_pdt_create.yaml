@@ -1,0 +1,69 @@
+interactions:
+- request:
+    body: '{"pdtf-name": "Test Name"}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - API_TOKEN_92858ded-bc84-486d-aa5b-2bb3408c5ab5
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '26'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-welkin/0.1.9
+    method: POST
+    uri: https://api.live.welkincloud.io/tenant_REDACTED/instance_REDACTED/pdts/pdt-hospitals
+  response:
+    body:
+      string: '{"id": "5af5cd13-9afe-49da-8e8c-a76f3637e83a", "createdAt": "2026-08-31T18:22:36.077Z",
+        "updatedAt": "2026-08-31T18:22:36.077Z", "fullValue": "Test Name", "deleted":
+        false, "jsonBody": {"pdtf-phone": null, "external_guid": null, "pdtf-name":
+        "Test Name", "created_at": "2026-08-31T18:22:36.077Z", "source_type": null,
+        "external_id": null, "pdtf-address": null, "created_by_name": "created_by_name_REDACTED_a78eb904-05d2-4cb1-8f72-091a4767e312",
+        "created_by": "created_by_REDACTED_36e09c50-5ba9-4e13-9bf8-1e870502341e",
+        "updated_by_name": "updated_by_name_REDACTED_9c3d164e-c02d-4295-82e6-4cebe714b2c7",
+        "updated_at": "2026-08-31T18:22:36.077Z", "updated_by": "updated_by_REDACTED_acb81f33-83b3-4fdc-a1e9-d0b43aeb50f4",
+        "id": "5af5cd13-9afe-49da-8e8c-a76f3637e83a", "source_id": null, "source_name":
+        null}, "pdtName": "pdt-hospitals"}'
+    headers:
+      Access-Control-Allow-Headers:
+      - Authorization,Content-Type,XSRF-Token,Security-Role
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, PATCH, OPTIONS
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - Content-Disposition,XSRF-Token,Unresolved-Variables
+      Access-Control-Max-Age:
+      - '3600'
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 31 Aug 2026 18:22:36 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Strict-Transport-Security:
+      - max-age=31536000 ; includeSubDomains
+      Transfer-Encoding:
+      - chunked
+      X-Content-Type-Options:
+      - nosniff
+      X-XSS-Protection:
+      - 1; mode=block
+      content-length:
+      - '675'
+    status:
+      code: 201
+      message: Created
+version: 1

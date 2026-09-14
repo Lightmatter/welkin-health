@@ -1,35 +1,36 @@
 # ruff: noqa: RUF022
-from welkin.models.assessment import (
+from .assessment import (
     Assessment,
     AssessmentRecord,
     AssessmentRecordAnswers,
     AssessmentRecords,
     Assessments,
 )
-from welkin.models.audit import DataAudit, DataAudits, WebhookAudit, WebhookAudits
-from welkin.models.calendar import CalendarEvent, CalendarEvents, Schedules, WorkHours
-from welkin.models.care_plan import CarePlan, CarePlanOverview
-from welkin.models.cdt import CDT, CDTs
-from welkin.models.chat import Chat, Chats, SearchChats
-from welkin.models.document import (
+from .audit import DataAudit, DataAudits, WebhookAudit, WebhookAudits
+from .calendar import CalendarEvent, CalendarEvents, Schedules, WorkHours
+from .care_plan import CarePlan, CarePlanOverview
+from .cdt import CDT, CDTs
+from .chat import Chat, Chats, SearchChats
+from .document import (
     DocumentSummaries,
     DocumentSummary,
     DocumentSummaryFile,
     DocumentSummaryFiles,
 )
-from welkin.models.email import Email, Emails
-from welkin.models.encounter import Encounter, EncounterDisposition, Encounters
-from welkin.models.export import CDTRecordsExport
-from welkin.models.formation import Formation
-from welkin.models.patient import Patient, Patients
-from welkin.models.program import (
+from .email import Email, Emails
+from .encounter import Encounter, EncounterDisposition, Encounters
+from .export import CDTRecordsExport
+from .formation import Formation
+from .patient import Patient, Patients
+from .pdt import PDT, PDTs
+from .program import (
     PatientProgram,
     PatientPrograms,
     ProgramPhase,
     ProgramPhases,
 )
-from welkin.models.sms import SMS, SMSes
-from welkin.models.user import User, Users
+from .sms import SMS, SMSes
+from .user import User, Users
 
 __all__ = [
     "Assessment",
@@ -62,6 +63,8 @@ __all__ = [
     "PatientProgram",
     "PatientPrograms",
     "Patients",
+    "PDT",
+    "PDTs",
     "ProgramPhase",
     "ProgramPhases",
     "Schedules",
