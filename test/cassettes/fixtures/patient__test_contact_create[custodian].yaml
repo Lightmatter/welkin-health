@@ -1,0 +1,108 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - API_TOKEN_8930ecd1-4780-44ec-9f25-27da0646af3b
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-welkin/0.1.10
+    method: GET
+    uri: https://api.live.welkincloud.io/tenant_REDACTED/instance_REDACTED/patients/12345678-1234-1234-1234-1234567890ab?type=EGUID
+  response:
+    body:
+      string: '{"createdByName": "createdByName_REDACTED_05ef4a8f-4526-47d9-bc1e-6cceec881732",
+        "country": "US", "notes": null, "patientType": null, "secondaryPhoneCapabilities":
+        [], "createdAt": "2023-10-27T23:19:20.506Z", "last_engaged_at": "2024-05-09T21:55:12.000Z",
+        "accessCode": null, "addressLine1": "625 ELMIRA RD", "addressLine2": null,
+        "id": "de5e1a93-70b0-4ed4-868f-3854becc383c", "state": "California", "secondaryLanguage":
+        null, "careTeam": [{"id": "d1757e77-94f4-45f6-8afe-debcf702a1f6", "username":
+        "scheduler.test", "firstName": "Scheduler", "lastName": "Test", "email": "welkin-scheduler-test@joinzest.com",
+        "roles": [{"name": "clinical", "primaryRole": true}, {"name": "medical-provider",
+        "primaryRole": false}], "pointOfContact": true, "enabled": true}], "updatedAt":
+        "2024-05-09T21:55:14.347Z", "primaryPhoneCapabilities": ["VOICE_CALL", "SMS"],
+        "pointOfContact": {"id": "d1757e77-94f4-45f6-8afe-debcf702a1f6", "pointOfContact":
+        true}, "goals": [], "zip": "95687", "updatedBy": "updatedBy_REDACTED_ed2bbf26-670e-4b6d-93e9-c7fd342a7cb5",
+        "preferableInstancePhoneId": null, "last_login": "2024-05-09T21:55:12.000Z",
+        "externalGuid": "12345678-1234-1234-1234-1234567890ab", "patientPrograms":
+        [{"id": "cc265e2d-738d-413a-a527-b9b606cc6e15", "createdByName": "createdByName_REDACTED_52150902-7137-490b-97f5-69952f94398e",
+        "createdAt": "2024-02-12T15:09:44.722Z", "updatedByName": "updatedByName_REDACTED_031e7646-41c2-48ba-9d48-928e1eface16",
+        "updatedAt": "2024-02-12T15:09:44.722Z", "programName": "prog-non-target-patient",
+        "programTitle": "Non-Target Patient", "programDescription": "All other non-target
+        patients that do not meet the criteria for other care plans.", "assigned":
+        true, "patientId": "de5e1a93-70b0-4ed4-868f-3854becc383c", "currentPhase":
+        null, "status": "NOT_STARTED", "compatibleWithCurrentVersion": true, "pathHistory":
+        []}, {"id": "c87fad01-dbe7-40d1-9334-5bf303d63685", "createdByName": "createdByName_REDACTED_402d388d-b01f-4460-9494-e1a450cf0310",
+        "createdAt": "2024-02-12T15:09:48.336Z", "updatedByName": "updatedByName_REDACTED_abe73ea1-d191-40a7-8e03-d20857ecc5c9",
+        "updatedAt": "2024-02-12T15:09:48.336Z", "programName": "prog-target-2-patient",
+        "programTitle": "Target 2 Patient", "programDescription": "Delayers - en route
+        to top of treatment.", "assigned": true, "patientId": "de5e1a93-70b0-4ed4-868f-3854becc383c",
+        "currentPhase": null, "status": "NOT_STARTED", "compatibleWithCurrentVersion":
+        true, "pathHistory": []}, {"id": "3094aef8-9a17-4033-b158-d379a532c6a5", "createdByName":
+        "createdByName_REDACTED_a97db0cd-9c85-406c-848b-63170ec341de", "createdAt":
+        "2024-05-20T19:07:47.239Z", "updatedByName": "updatedByName_REDACTED_5f3707d0-0a87-4001-86b1-224e8d1f8818",
+        "updatedAt": "2024-05-20T19:07:47.243Z", "programName": "prog-target-patient",
+        "programTitle": "Target Patient", "programDescription": "Moderate to severe
+        patients, either on biologics or oral treatment.", "assigned": true, "patientId":
+        "de5e1a93-70b0-4ed4-868f-3854becc383c", "currentPhase": {"timestamp": "2024-05-20T19:07:47.242Z",
+        "createdBy": "createdBy_REDACTED_77c13a77-4fcb-457d-a390-6e797b7606ae", "createdByName":
+        "createdByName_REDACTED_455d4b4f-5579-4997-a3b5-19b54e18c446", "name": "start",
+        "title": "Start", "description": "", "currentVersion": "146", "deleted": false},
+        "status": "IN_PROGRESS", "compatibleWithCurrentVersion": true, "pathHistory":
+        [{"timestamp": "2024-05-20T19:07:47.242Z", "createdBy": "createdBy_REDACTED_3d929d2f-e9b5-4709-aa05-e9f6044bb1b4",
+        "createdByName": "createdByName_REDACTED_48abca63-3b7d-4213-8e00-9766cf592fdc",
+        "name": "start", "title": "Start", "description": "", "currentVersion": "146",
+        "deleted": false}]}], "cadence": [], "firstName": "Jonathan", "phone": "+12015550123",
+        "maritalStatus": "UKN", "secondaryPhone": null, "patientTerritory": "All Territories",
+        "lastName": "Dixon", "secondaryEmail": null, "gender": "UNKNOWN", "city":
+        "VACAVILLE", "timezone": null, "careTeamMembers": [{"id": "d1757e77-94f4-45f6-8afe-debcf702a1f6",
+        "pointOfContact": true}], "zest-time-zone": "America/Los_Angeles", "ppf-assigned-coach":
+        null, "email": "achang@example.org", "updatedByName": "updatedByName_REDACTED_eeb202c6-e57d-4f22-8132-1db808b2ce77",
+        "mrn": "u~jz1TinPhQsa/yExZZsDjNg", "externalId": "u~jz1TinPhQsa/yExZZsDjNg",
+        "nric": null, "birthDate": null, "patientRegionTitle": "All Regions", "stage":
+        "Subscribed", "clinical_segment": "disqualified", "createdBy": "createdBy_REDACTED_cd8a5ff2-d388-446c-867c-23ad808fc6b5",
+        "middleName": null, "patientTerritories": [{"name": "rgt-all-regions", "territories":
+        ["All Territories"]}], "patientRegion": "rgt-all-regions", "in-network": null,
+        "primaryLanguage": "ENGLISH"}'
+    headers:
+      Access-Control-Allow-Headers:
+      - Authorization,Content-Type,XSRF-Token,Security-Role
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, PATCH, OPTIONS
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - Content-Disposition,XSRF-Token,Unresolved-Variables
+      Access-Control-Max-Age:
+      - '3600'
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 15 Sep 2026 19:07:59 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Strict-Transport-Security:
+      - max-age=31536000 ; includeSubDomains
+      Transfer-Encoding:
+      - chunked
+      X-Content-Type-Options:
+      - nosniff
+      X-XSS-Protection:
+      - 1; mode=block
+      content-length:
+      - '3977'
+    status:
+      code: 200
+      message: OK
+version: 1

@@ -11,6 +11,7 @@ from welkin.models.calendar import CalendarEvent, CalendarEvents, Schedules, Wor
 from welkin.models.care_plan import CarePlan, CarePlanOverview
 from welkin.models.cdt import CDT, CDTs
 from welkin.models.chat import Chat, Chats, SearchChats
+from welkin.models.contact import Contact
 from welkin.models.document import (
     DocumentSummaries,
     DocumentSummary,

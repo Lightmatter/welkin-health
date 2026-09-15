@@ -5,6 +5,7 @@ from welkin.models.base import Collection, Resource
 from welkin.models.care_plan import CarePlan
 from welkin.models.cdt import CDT, CDTs
 from welkin.models.chat import Chat, Chats, SearchChats
+from welkin.models.contact import Contact
 from welkin.models.document import (
     DocumentSummaries,
     DocumentSummary,
@@ -26,6 +27,7 @@ class Patient(Resource):
         CDTs,
         Chat,
         Chats,
+        Contact,
         DocumentSummaries,
         DocumentSummary,
         DocumentSummaryFile,

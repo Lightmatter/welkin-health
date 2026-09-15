@@ -1,0 +1,67 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - API_TOKEN_30372f20-d5c5-4762-ac9e-8bac7837bfe1
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-welkin/0.1.10
+    method: GET
+    uri: https://api.live.welkincloud.io/tenant_REDACTED/instance_REDACTED/pdts/pdt-custodian/fefa6f5f-176a-46be-b1ce-3184dab3233f
+  response:
+    body:
+      string: '{"id": "fefa6f5f-176a-46be-b1ce-3184dab3233f", "createdAt": "2026-09-15T19:05:20.651Z",
+        "updatedAt": "2026-09-15T19:05:20.651Z", "fullValue": "test.contact.two@example.com
+        Test Contact Two +15005550007", "deleted": false, "jsonBody": {"pdtf-last-name":
+        "Contact Two", "external_guid": null, "pdtf-phone-number": "+15005550007",
+        "created_at": "2026-09-15T19:05:20.651Z", "source_type": null, "external_id":
+        null, "created_by_name": "created_by_name_REDACTED_a2a20d61-eec0-4512-8473-4e31de8629d6",
+        "pdtf-first-name": "Test", "created_by": "created_by_REDACTED_c9335f43-268c-4165-ba47-9295153deb5b",
+        "updated_by_name": "updated_by_name_REDACTED_15a21bda-3ae7-4381-91d0-a515e64d2f16",
+        "updated_at": "2026-09-15T19:05:20.651Z", "pdtf-email": "test.contact.two@example.com",
+        "updated_by": "updated_by_REDACTED_b530b21b-7000-4280-a67b-506132c62e61",
+        "id": "fefa6f5f-176a-46be-b1ce-3184dab3233f", "source_id": null, "source_name":
+        null}, "pdtName": "pdt-custodian"}'
+    headers:
+      Access-Control-Allow-Headers:
+      - Authorization,Content-Type,XSRF-Token,Security-Role
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, PATCH, OPTIONS
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - Content-Disposition,XSRF-Token,Unresolved-Variables
+      Access-Control-Max-Age:
+      - '3600'
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 15 Sep 2026 19:07:59 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Strict-Transport-Security:
+      - max-age=31536000 ; includeSubDomains
+      Transfer-Encoding:
+      - chunked
+      X-Content-Type-Options:
+      - nosniff
+      X-XSS-Protection:
+      - 1; mode=block
+      content-length:
+      - '797'
+    status:
+      code: 200
+      message: OK
+version: 1
