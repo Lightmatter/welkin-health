@@ -1,6 +1,6 @@
 [project]
 name = "welkin"
-version = "0.1.10"
+version = "0.1.11"
 dependencies = ["inflection>=0.5.1", "portalocker>=3.2.0", "requests>=2.34.2"]
 requires-python = ">=3.10"
 authors = [{ name = "Sam Morgan", email = "sama4mail@gmail.com" }]

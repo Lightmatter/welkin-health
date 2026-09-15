@@ -91,6 +91,7 @@ class Client(Session):
     CDTs = models.CDTs
     Chat = models.Chat
     Chats = models.Chats
+    Contact = models.Contact
     DataAudit = models.DataAudit
     DataAudits = models.DataAudits
     DocumentSummaries = models.DocumentSummaries

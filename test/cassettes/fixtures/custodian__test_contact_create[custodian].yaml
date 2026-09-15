@@ -1,0 +1,67 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - API_TOKEN_8930ecd1-4780-44ec-9f25-27da0646af3b
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-welkin/0.1.10
+    method: GET
+    uri: https://api.live.welkincloud.io/tenant_REDACTED/instance_REDACTED/pdts/pdt-custodian/dd5403c8-3fec-4335-8f5c-66cc6f91e1a1
+  response:
+    body:
+      string: '{"id": "dd5403c8-3fec-4335-8f5c-66cc6f91e1a1", "createdAt": "2026-09-15T19:07:27.645Z",
+        "updatedAt": "2026-09-15T19:07:27.645Z", "fullValue": "test.contact.three@example.com
+        Test Contact Three +15005550008", "deleted": false, "jsonBody": {"pdtf-last-name":
+        "Contact Three", "external_guid": null, "pdtf-phone-number": "+15005550008",
+        "created_at": "2026-09-15T19:07:27.645Z", "source_type": null, "external_id":
+        null, "created_by_name": "created_by_name_REDACTED_84e19a03-e25d-48a3-bf5c-b45dea0a57e0",
+        "pdtf-first-name": "Test", "created_by": "created_by_REDACTED_65012105-ad53-4aac-8c2d-08f17ab62446",
+        "updated_by_name": "updated_by_name_REDACTED_6f051b81-c40c-40b5-9ef5-f76c7dbe8093",
+        "updated_at": "2026-09-15T19:07:27.645Z", "pdtf-email": "test.contact.three@example.com",
+        "updated_by": "updated_by_REDACTED_dc51711c-bc2b-4327-9dea-2da17296bda9",
+        "id": "dd5403c8-3fec-4335-8f5c-66cc6f91e1a1", "source_id": null, "source_name":
+        null}, "pdtName": "pdt-custodian"}'
+    headers:
+      Access-Control-Allow-Headers:
+      - Authorization,Content-Type,XSRF-Token,Security-Role
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, PATCH, OPTIONS
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - Content-Disposition,XSRF-Token,Unresolved-Variables
+      Access-Control-Max-Age:
+      - '3600'
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 15 Sep 2026 19:07:59 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Strict-Transport-Security:
+      - max-age=31536000 ; includeSubDomains
+      Transfer-Encoding:
+      - chunked
+      X-Content-Type-Options:
+      - nosniff
+      X-XSS-Protection:
+      - 1; mode=block
+      content-length:
+      - '805'
+    status:
+      code: 200
+      message: OK
+version: 1
