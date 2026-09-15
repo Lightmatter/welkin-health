@@ -22,6 +22,7 @@ from welkin.models.encounter import Encounter, EncounterDisposition, Encounters
 from welkin.models.export import CDTRecordsExport
 from welkin.models.formation import Formation
 from welkin.models.patient import Patient, Patients
+from welkin.models.pdt import PDT
 from welkin.models.program import (
     PatientProgram,
     PatientPrograms,
@@ -62,6 +63,7 @@ __all__ = [
     "PatientProgram",
     "PatientPrograms",
     "Patients",
+    "PDT",
     "ProgramPhase",
     "ProgramPhases",
     "Schedules",
