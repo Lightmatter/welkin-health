@@ -1,0 +1,72 @@
+interactions:
+- request:
+    body: '{"name": "Test Contact", "relation": "Parent", "pdtRecordId": "dd5403c8-3fec-4335-8f5c-66cc6f91e1a1",
+      "email": "test.contact.three@example.com", "emailPdtFieldName": "pdtf-email",
+      "phone": "+15005550008", "phonePdtFieldName": "pdtf-phone-number"}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - API_TOKEN_2bb066c8-50c0-4546-b60c-508c1a7d24c8
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '246'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-welkin/0.1.10
+    method: POST
+    uri: https://api.live.welkincloud.io/tenant_REDACTED/instance_REDACTED/patients/de5e1a93-70b0-4ed4-868f-3854becc383c/contacts
+  response:
+    body:
+      string: '{"id": "4457c6be-b2f3-4fe6-92f9-ab9912a5a50a", "createdAt": "2026-09-15T19:08:35.986Z",
+        "updatedAt": "2026-09-15T19:08:35.986Z", "createdBy": "createdBy_REDACTED_77e584b7-2abc-46a7-90e9-e538b84e5178",
+        "updatedBy": "updatedBy_REDACTED_e3d1fbf7-1a8f-44ba-a4a4-bebb646bc67b", "createdByName":
+        "createdByName_REDACTED_1afa33cd-7eb4-44b7-b883-23d8bc49e96b", "updatedByName":
+        "updatedByName_REDACTED_33d64b71-ec99-42e1-8631-c6155678d3bc", "name": "Test
+        Contact", "email": "test.contact.three@example.com", "emailLabel": null, "emailPdtFieldName":
+        "pdtf-email", "phone": "+15005550008", "phoneLabel": null, "phonePdtFieldName":
+        "pdtf-phone-number", "secondaryPhone": null, "secondaryPhoneLabel": null,
+        "secondaryPhonePdtFieldName": null, "patientId": "de5e1a93-70b0-4ed4-868f-3854becc383c",
+        "pdtRecordId": "dd5403c8-3fec-4335-8f5c-66cc6f91e1a1", "relation": "Parent",
+        "active": true}'
+    headers:
+      Access-Control-Allow-Headers:
+      - Authorization,Content-Type,XSRF-Token,Security-Role
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, PATCH, OPTIONS
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - Content-Disposition,XSRF-Token,Unresolved-Variables
+      Access-Control-Max-Age:
+      - '3600'
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 15 Sep 2026 19:08:35 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Strict-Transport-Security:
+      - max-age=31536000 ; includeSubDomains
+      Transfer-Encoding:
+      - chunked
+      X-Content-Type-Options:
+      - nosniff
+      X-XSS-Protection:
+      - 1; mode=block
+      content-length:
+      - '725'
+    status:
+      code: 200
+      message: OK
+version: 1
