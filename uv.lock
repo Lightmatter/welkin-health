@@ -1159,7 +1159,7 @@ wheels = [
 
 [[package]]
 name = "welkin"
-version = "0.1.10"
+version = "0.1.11"
 source = { editable = "." }
 dependencies = [
     { name = "inflection" },
