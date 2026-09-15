@@ -47,6 +47,7 @@ __all__ = [
     "CDTs",
     "Chat",
     "Chats",
+    "Contact",
     "DataAudit",
     "DataAudits",
     "DocumentSummaries",
