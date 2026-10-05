@@ -116,6 +116,7 @@ class Client(Session):
     SMS = models.SMS
     SMSes = models.SMSes
     Task = models.Task
+    Tasks = models.Tasks
     User = models.User
     Users = models.Users
     WebhookAudit = models.WebhookAudit

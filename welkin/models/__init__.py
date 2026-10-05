@@ -31,7 +31,7 @@ from welkin.models.program import (
     ProgramPhases,
 )
 from welkin.models.sms import SMS, SMSes
-from welkin.models.task import Task
+from welkin.models.task import Task, Tasks
 from welkin.models.user import User, Users
 
 __all__ = [
@@ -74,6 +74,7 @@ __all__ = [
     "SMS",
     "SMSes",
     "Task",
+    "Tasks",
     "User",
     "Users",
     "WebhookAudit",
