@@ -1,0 +1,75 @@
+interactions:
+- request:
+    body: '{"name": "Test Task", "description": "Created by the welkin test suite",
+      "priority": "HIGH", "status": "TODO", "dueDate": "2022-09-15T23:00:00.000Z",
+      "assignee": {"id": "d1757e77-94f4-45f6-8afe-debcf702a1f6"}, "patient": {"id":
+      "de5e1a93-70b0-4ed4-868f-3854becc383c"}}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - API_TOKEN_ffe7584d-85b9-46b2-8229-22bfa1894b79
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '268'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-welkin/0.1.9
+    method: POST
+    uri: https://api.live.welkincloud.io/tenant_REDACTED/instance_REDACTED/tasks
+  response:
+    body:
+      string: '{"id": "df470d0b-0ee5-4885-ab38-ecca2d21240a", "createdBy": "createdBy_REDACTED_5ff48ea4-ffa4-43f9-a899-6b865c9f7aae",
+        "updatedBy": "updatedBy_REDACTED_18e41109-566d-4b8e-9994-78f77d8f43dd", "createdByName":
+        "createdByName_REDACTED_fb4e1513-b8e9-4342-9338-8854074d32f9", "updatedByName":
+        "updatedByName_REDACTED_867f0801-dc0b-49ca-b42d-6755e62c660f", "createdAt":
+        "2026-10-13T22:35:59.482Z", "updatedAt": "2026-10-13T22:35:59.482Z", "name":
+        "Test Task", "description": "Created by the welkin test suite", "dueDate":
+        "2022-09-15T23:00:00.000Z", "status": "TODO", "priority": "HIGH", "patient":
+        {"id": "de5e1a93-70b0-4ed4-868f-3854becc383c", "name": "Jonathan Dixon"},
+        "assignee": {"id": "d1757e77-94f4-45f6-8afe-debcf702a1f6", "name": "Scheduler
+        Test", "enabled": true}, "watchers": [{"id": "d1757e77-94f4-45f6-8afe-debcf702a1f6",
+        "name": "Scheduler Test", "enabled": true}], "comments": [], "templateName":
+        null, "watchersType": "POINT_OF_CONTACT", "createdType": "USER", "sourceId":
+        null, "sourceType": null, "hiddenPhi": false}'
+    headers:
+      Access-Control-Allow-Headers:
+      - Authorization,Content-Type,XSRF-Token,Security-Role
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, PATCH, OPTIONS
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - Content-Disposition,XSRF-Token,Unresolved-Variables
+      Access-Control-Max-Age:
+      - '3600'
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 13 Oct 2026 22:35:59 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Strict-Transport-Security:
+      - max-age=31536000 ; includeSubDomains
+      Transfer-Encoding:
+      - chunked
+      X-Content-Type-Options:
+      - nosniff
+      X-XSS-Protection:
+      - 1; mode=block
+      content-length:
+      - '863'
+    status:
+      code: 201
+      message: Created
+version: 1

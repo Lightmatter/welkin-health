@@ -115,6 +115,8 @@ class Client(Session):
     SearchChats = models.SearchChats
     SMS = models.SMS
     SMSes = models.SMSes
+    Task = models.Task
+    Tasks = models.Tasks
     User = models.User
     Users = models.Users
     WebhookAudit = models.WebhookAudit
