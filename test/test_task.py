@@ -7,20 +7,29 @@ import pytest
 from welkin.models import Task, Tasks
 
 if TYPE_CHECKING:
-    from welkin.models import Patient
+    from datetime import datetime
 
-ASSIGNEE_ID = "d9925247-7505-464a-b42c-25ac71408494"
+    from vcr.cassette import Cassette
+
+    from welkin import Client
+    from welkin.models import Patient, User
 
 
 @pytest.mark.vcr
-def test_task_create(client, patient: Patient, utc_datetime, vcr_cassette):
+def test_task_create(
+    client: Client,
+    patient: Patient,
+    user: User,
+    utc_datetime: datetime,
+    vcr_cassette: Cassette,
+):
     task = client.Task(
         name="Test Task",
         description="Created by the welkin test suite",
         priority="HIGH",
         status="TODO",
         dueDate=utc_datetime,
-        assignee={"id": ASSIGNEE_ID},
+        assignee={"id": user.id},
         patient={"id": patient.id},
     ).create()
 
@@ -29,14 +38,15 @@ def test_task_create(client, patient: Patient, utc_datetime, vcr_cassette):
     assert task.name == "Test Task"
     assert task.priority == "HIGH"
     assert task.status == "TODO"
-    assert task.assignee["id"] == ASSIGNEE_ID
+    assert task.assignee["id"] == user.id
     assert task.patient["id"] == patient.id
     assert len(vcr_cassette) == 1
 
 
 @pytest.mark.vcr
-def test_task_read(client, vcr_cassette):
-    task = client.Tasks().get(params={"size": 1})[0]
+def test_task_read(client: Client, vcr_cassette: Cassette):
+    tasks = client.Tasks().get()
+    task = tasks[0]
     fetched = client.Task(id=task.id).get()
 
     assert isinstance(fetched, Task)
@@ -46,10 +56,10 @@ def test_task_read(client, vcr_cassette):
 
 
 @pytest.mark.vcr
-def test_tasks_read(client, vcr_cassette):
-    tasks = client.Tasks().get(params={"assigneeIds": [ASSIGNEE_ID]})
+def test_task_read_all(client: Client, user: User, vcr_cassette: Cassette):
+    tasks = client.Tasks().get(params={"assigneeIds": [user.id]})
 
     assert isinstance(tasks, Tasks)
     assert all(isinstance(t, Task) for t in tasks)
-    assert all(t.assignee["id"] == ASSIGNEE_ID for t in tasks)
+    assert all(t.assignee["id"] == user.id for t in tasks)
     assert len(vcr_cassette) == 1
