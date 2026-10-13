@@ -17,7 +17,7 @@ if TYPE_CHECKING:
     from vcr.cassette import Cassette
 
     from welkin import Client
-    from welkin.models import Users
+    from welkin.models import User
 
 UTC = timezone.utc
 
@@ -118,11 +118,11 @@ def test_schedule_read_all(client: Client, vcr_cassette: Cassette):
 
 
 @pytest.mark.vcr
-def test_work_hours_read_all(client: Client, vcr_cassette: Cassette, users: Users):
+def test_work_hours_read_all(client: Client, vcr_cassette: Cassette, user: User):
     work_hours = client.WorkHours().get(
         from_date=datetime(2026, 1, 1, tzinfo=timezone.utc),
         to_date=datetime(2026, 12, 31, tzinfo=timezone.utc),
-        psm_ids=[user.id for user in users],
+        psm_ids=[user.id],
     )
     assert isinstance(work_hours, list)
     assert len(vcr_cassette) == 1
