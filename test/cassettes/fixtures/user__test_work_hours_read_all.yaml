@@ -1,0 +1,96 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - API_TOKEN_ffe7584d-85b9-46b2-8229-22bfa1894b79
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-welkin/0.1.9
+    method: GET
+    uri: https://api.live.welkincloud.io/tenant_REDACTED/admin/users/d1757e77-94f4-45f6-8afe-debcf702a1f6?type=ID
+  response:
+    body:
+      string: '{"territories": [{"createdAt": "2022-10-14T00:31:17.629Z", "updatedAt":
+        "2025-06-12T18:01:16.158Z", "createdBy": "createdBy_REDACTED_0e144dd2-3efc-4b4f-92c3-0a0954260495",
+        "updatedBy": "updatedBy_REDACTED_13016b9e-067c-4604-babf-cc1c6dbe8975", "name":
+        "rgt-all-regions", "territories": ["All Territories"], "instanceName": "sandbox"},
+        {"createdAt": "2022-10-14T00:31:17.629Z", "updatedAt": "2025-06-12T18:01:16.158Z",
+        "createdBy": "createdBy_REDACTED_1f1e38de-053b-4b08-9e44-5c2071e03289", "updatedBy":
+        "updatedBy_REDACTED_595b951b-66a9-463d-bb91-88e3501c54ee", "name": "rgt-all-regions",
+        "territories": ["All Territories"], "instanceName": "test"}], "roles": [{"createdAt":
+        "2022-10-14T00:31:17.648Z", "updatedAt": "2025-11-17T17:56:23.303Z", "permissionName":
+        "clinical", "instanceName": "sandbox", "type": "SECURITY_ROLE", "primaryRole":
+        false}, {"createdAt": "2022-10-14T00:31:17.648Z", "updatedAt": "2025-11-17T17:56:23.303Z",
+        "permissionName": "medical-provider", "instanceName": "sandbox", "type": "SECURITY_ROLE",
+        "primaryRole": true}, {"createdAt": "2022-10-14T00:31:17.648Z", "updatedAt":
+        "2025-11-17T17:56:23.303Z", "permissionName": "clinical", "instanceName":
+        "test", "type": "SECURITY_ROLE", "primaryRole": true}, {"createdAt": "2022-10-14T00:31:17.648Z",
+        "updatedAt": "2025-11-17T17:56:23.303Z", "permissionName": "medical-provider",
+        "instanceName": "test", "type": "SECURITY_ROLE", "primaryRole": false}], "policies":
+        [], "seats": ["GENERAL"], "seatAssignAllowed": true, "applicationAccess":
+        {"id": "9a388933-11e1-4ea3-82b5-05dd3377fc71", "createdAt": "2022-10-14T00:20:07.130Z",
+        "updatedAt": "2022-11-07T23:39:52.319Z", "userId": "d1757e77-94f4-45f6-8afe-debcf702a1f6",
+        "adminAccessEnabled": false, "auditSecurityAccessEnabled": false, "instanceAccesses":
+        [{"instanceId": "c6b632ee-2762-4837-8fd5-dfedafef8511", "instanceName": "sandbox",
+        "instanceDescription": "Sandbox for product and engineering development",
+        "userEmailWithInstanceDomain": null, "workshopAccessEnabled": false, "auditDataAccessEnabled":
+        false, "enabledTakenPersonally": true}, {"instanceId": "23aba99a-df89-4ea2-a8f0-2f8c2e8eb789",
+        "instanceName": "test", "instanceDescription": "For test automation purposes
+        only!", "userEmailWithInstanceDomain": null, "workshopAccessEnabled": false,
+        "auditDataAccessEnabled": false, "enabledTakenPersonally": true}]}, "createdByName":
+        "createdByName_REDACTED_084ca146-80e6-46d1-ae85-67d40d3b3afe", "updatedByName":
+        "updatedByName_REDACTED_13bb6195-e3ba-4267-9ee2-8948de0b6165", "id": "d1757e77-94f4-45f6-8afe-debcf702a1f6",
+        "username": "scheduler.test", "email": "welkin-scheduler-test@joinzest.com",
+        "timezone": "US/Hawaii", "locale": "en-US", "firstName": "Scheduler", "lastName":
+        "Test", "credentials": "Test Automation", "enabled": true, "mfaEnabled": false,
+        "statusType": null, "createdAt": "2022-10-14T00:20:07.123Z", "updatedAt":
+        "2026-10-06T18:15:47.270Z", "ssoAccess": false, "passwordAccess": true, "terminologyName":
+        "english", "userState": "ACTIVE", "customUserAttributes": {"zoomId": "9250210233",
+        "licensure_states": ["NM", "CA", "MD", "PA", "OH", "WA", "AL", "AZ", "AR",
+        "CO", "CT", "DC", "DE", "FL", "GA", "ID", "IL", "IN", "IA", "KS", "KY", "LA",
+        "ME", "MA", "MI", "MN", "WV", "VA", "VT", "UT", "TX", "TN", "SC", "RI", "OR",
+        "OK", "ND", "NC", "NJ", "NH", "NV", "NE", "MT", "MO", "MS"], "pediatrics":
+        true}, "allowedToReceiveCalls": false, "_root_user": false}'
+    headers:
+      Access-Control-Allow-Headers:
+      - Authorization,Content-Type,XSRF-Token,Security-Role
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, PATCH, OPTIONS
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - Content-Disposition,XSRF-Token,Unresolved-Variables
+      Access-Control-Max-Age:
+      - '3600'
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 13 Oct 2026 22:35:58 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Strict-Transport-Security:
+      - max-age=31536000 ; includeSubDomains
+      Transfer-Encoding:
+      - chunked
+      X-Content-Type-Options:
+      - nosniff
+      X-XSS-Protection:
+      - 1; mode=block
+      content-length:
+      - '3009'
+    status:
+      code: 200
+      message: OK
+version: 1
