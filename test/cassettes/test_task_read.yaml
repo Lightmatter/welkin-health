@@ -1,0 +1,363 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - API_TOKEN_2799c0b1-0135-47f7-84d9-6f545f6be77c
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-welkin/0.1.9
+    method: GET
+    uri: https://api.live.welkincloud.io/tenant_REDACTED/instance_REDACTED/tasks?page=0
+  response:
+    body:
+      string: '{"data": [{"id": "872ad55d-5ca4-4882-a5f2-8bb675830e67", "createdBy":
+        "createdBy_REDACTED_809bb48b-2e7f-430d-bcab-7b925889c188", "updatedBy": "updatedBy_REDACTED_7634551d-1a26-4197-99b5-bf7153dc75af",
+        "createdByName": "createdByName_REDACTED_e167954c-91be-4db6-a45c-d145fb03ac1d",
+        "updatedByName": "updatedByName_REDACTED_02890d2e-cb8a-41fc-8ae3-9f682be835a3",
+        "createdAt": "2023-07-18T23:25:36.238Z", "updatedAt": "2023-07-18T23:25:36.238Z",
+        "name": "New Patient Created - Update Account", "description": "", "dueDate":
+        null, "status": "TODO", "priority": "HIGH", "patient": {"id": "df8edaae-7aac-43e1-88c6-d9f904e718dd",
+        "name": "Jonathan Perry"}, "assignee": {"id": "d1757e77-94f4-45f6-8afe-debcf702a1f6",
+        "name": "Scheduler Test", "enabled": true}, "watchers": [{"id": "d1757e77-94f4-45f6-8afe-debcf702a1f6",
+        "name": "Scheduler Test", "enabled": true}], "comments": [], "templateName":
+        "ttmp-new-patient-created---update-account", "watchersType": "POINT_OF_CONTACT",
+        "createdType": "AUTOMATION", "sourceId": null, "sourceType": null, "hiddenPhi":
+        false}, {"id": "74c1684f-ecd4-48aa-b2b0-be66f9a235c9", "createdBy": "createdBy_REDACTED_4230c748-c190-4575-8742-084b35270740",
+        "updatedBy": "updatedBy_REDACTED_f7971a50-15e9-4c7e-9db1-d9cdeedb1957", "createdByName":
+        "createdByName_REDACTED_d1fa9bb7-5c3e-42f6-a132-5ac40481b73a", "updatedByName":
+        "updatedByName_REDACTED_158daf09-fbde-4a73-8d7f-5a758e13106b", "createdAt":
+        "2023-07-19T05:59:26.326Z", "updatedAt": "2023-07-19T05:59:26.326Z", "name":
+        "New Patient Created - Update Account", "description": "", "dueDate": null,
+        "status": "TODO", "priority": "HIGH", "patient": {"id": "82d09365-c85d-472e-a477-081c779f7ea2",
+        "name": "Jonathan Dixon"}, "assignee": {"id": "d1757e77-94f4-45f6-8afe-debcf702a1f6",
+        "name": "Scheduler Test", "enabled": true}, "watchers": [{"id": "d1757e77-94f4-45f6-8afe-debcf702a1f6",
+        "name": "Scheduler Test", "enabled": true}], "comments": [], "templateName":
+        "ttmp-new-patient-created---update-account", "watchersType": "POINT_OF_CONTACT",
+        "createdType": "AUTOMATION", "sourceId": null, "sourceType": null, "hiddenPhi":
+        false}, {"id": "69ac19fd-92b6-4690-b038-9499cd908759", "createdBy": "createdBy_REDACTED_f4f1cf11-ae12-44f2-a3d1-c8022552e684",
+        "updatedBy": "updatedBy_REDACTED_20747d59-b098-41a6-af32-694ddebbfa04", "createdByName":
+        "createdByName_REDACTED_9b2f08a8-75f4-4882-a2c8-4182b1b270b6", "updatedByName":
+        "updatedByName_REDACTED_440fb9c1-f9d4-4ad5-8432-5c0638c1c924", "createdAt":
+        "2023-07-19T05:59:26.510Z", "updatedAt": "2023-07-19T05:59:26.510Z", "name":
+        "New Patient Created - Update Account", "description": "", "dueDate": null,
+        "status": "TODO", "priority": "HIGH", "patient": {"id": "a7de048c-2db5-41e8-9e4d-32a0d11b81de",
+        "name": "Jonathan Dixon"}, "assignee": {"id": "d1757e77-94f4-45f6-8afe-debcf702a1f6",
+        "name": "Scheduler Test", "enabled": true}, "watchers": [{"id": "d1757e77-94f4-45f6-8afe-debcf702a1f6",
+        "name": "Scheduler Test", "enabled": true}], "comments": [], "templateName":
+        "ttmp-new-patient-created---update-account", "watchersType": "POINT_OF_CONTACT",
+        "createdType": "AUTOMATION", "sourceId": null, "sourceType": null, "hiddenPhi":
+        false}, {"id": "9b47c7d6-84ad-463a-b094-9edc1eff8344", "createdBy": "createdBy_REDACTED_416ac664-d7ef-4ca9-a36f-275744aaeef4",
+        "updatedBy": "updatedBy_REDACTED_7c83a581-acca-4c41-a132-340653713cc9", "createdByName":
+        "createdByName_REDACTED_071f4f92-18fa-4927-b75a-f780841fefe0", "updatedByName":
+        "updatedByName_REDACTED_9c1dcd30-79dd-4312-9233-19ac1ff3445f", "createdAt":
+        "2023-07-19T06:02:52.024Z", "updatedAt": "2023-07-19T06:02:52.024Z", "name":
+        "New Patient Created - Update Account", "description": "", "dueDate": null,
+        "status": "TODO", "priority": "HIGH", "patient": {"id": "46948826-16e8-490b-9b44-6d500df4cc52",
+        "name": "Jonathan Dixon"}, "assignee": {"id": "d1757e77-94f4-45f6-8afe-debcf702a1f6",
+        "name": "Scheduler Test", "enabled": true}, "watchers": [{"id": "d1757e77-94f4-45f6-8afe-debcf702a1f6",
+        "name": "Scheduler Test", "enabled": true}], "comments": [], "templateName":
+        "ttmp-new-patient-created---update-account", "watchersType": "POINT_OF_CONTACT",
+        "createdType": "AUTOMATION", "sourceId": null, "sourceType": null, "hiddenPhi":
+        false}, {"id": "cdc0252b-faa1-4b5d-8036-e2d605db15a9", "createdBy": "createdBy_REDACTED_21f2cceb-0629-4b72-a92c-00e7b19190ed",
+        "updatedBy": "updatedBy_REDACTED_4b25d76c-227b-49d5-b648-89b17003df18", "createdByName":
+        "createdByName_REDACTED_52cdebdc-f449-45fb-bc7d-55cd2f28d8a0", "updatedByName":
+        "updatedByName_REDACTED_b8c8d6bc-f4fb-43e9-9737-2b4a535e1e55", "createdAt":
+        "2025-04-24T00:02:30.021Z", "updatedAt": "2025-04-24T00:02:30.021Z", "name":
+        "New Patient Created - Update Account", "description": "", "dueDate": null,
+        "status": "TODO", "priority": "HIGH", "patient": {"id": "a0973901-ecb6-427d-9db0-e4ef7a86a8a7",
+        "name": "A Dude"}, "assignee": {"id": "d1757e77-94f4-45f6-8afe-debcf702a1f6",
+        "name": "Scheduler Test", "enabled": true}, "watchers": [{"id": "d1757e77-94f4-45f6-8afe-debcf702a1f6",
+        "name": "Scheduler Test", "enabled": true}], "comments": [], "templateName":
+        "ttmp-new-patient-created---update-account", "watchersType": "POINT_OF_CONTACT",
+        "createdType": "AUTOMATION", "sourceId": null, "sourceType": null, "hiddenPhi":
+        false}, {"id": "1f8ebc49-7153-4466-b472-d71dbc12daeb", "createdBy": "createdBy_REDACTED_53daeea7-215b-4be7-a6e6-aa338b0fcf97",
+        "updatedBy": "updatedBy_REDACTED_b52f6dee-f0c8-41fe-9065-e694fd6ca2bc", "createdByName":
+        "createdByName_REDACTED_c8c2b426-938d-4a00-ae3d-60b9adf984f0", "updatedByName":
+        "updatedByName_REDACTED_727eaee5-6bb5-4b38-8f57-b046188f177b", "createdAt":
+        "2023-07-19T06:02:56.432Z", "updatedAt": "2023-07-19T06:02:56.432Z", "name":
+        "New Patient Created - Update Account", "description": "", "dueDate": null,
+        "status": "TODO", "priority": "HIGH", "patient": {"id": "a0531cbc-f212-4285-a52a-24a84cd1ef44",
+        "name": "Skippy Tester"}, "assignee": {"id": "d1757e77-94f4-45f6-8afe-debcf702a1f6",
+        "name": "Scheduler Test", "enabled": true}, "watchers": [{"id": "d1757e77-94f4-45f6-8afe-debcf702a1f6",
+        "name": "Scheduler Test", "enabled": true}], "comments": [], "templateName":
+        "ttmp-new-patient-created---update-account", "watchersType": "POINT_OF_CONTACT",
+        "createdType": "AUTOMATION", "sourceId": null, "sourceType": null, "hiddenPhi":
+        false}, {"id": "634db9f2-f39d-4c1e-aea7-8b9f059d385c", "createdBy": "createdBy_REDACTED_ecad3ff1-fdbc-4ab7-ba3b-cec004f18b2c",
+        "updatedBy": "updatedBy_REDACTED_5d76a858-5e33-48d9-a3cc-04f41c1815df", "createdByName":
+        "createdByName_REDACTED_0174f3d1-13f9-4b04-9bf9-d0e74dc62765", "updatedByName":
+        "updatedByName_REDACTED_9873f5eb-f20f-4696-96ad-76e52ba4b5c2", "createdAt":
+        "2023-07-19T06:02:57.554Z", "updatedAt": "2023-07-19T06:02:57.554Z", "name":
+        "New Patient Created - Update Account", "description": "", "dueDate": null,
+        "status": "TODO", "priority": "HIGH", "patient": {"id": "e9f363aa-8dbd-4333-862e-c65df4cb3154",
+        "name": "Happy Tester"}, "assignee": {"id": "d1757e77-94f4-45f6-8afe-debcf702a1f6",
+        "name": "Scheduler Test", "enabled": true}, "watchers": [{"id": "d1757e77-94f4-45f6-8afe-debcf702a1f6",
+        "name": "Scheduler Test", "enabled": true}], "comments": [], "templateName":
+        "ttmp-new-patient-created---update-account", "watchersType": "POINT_OF_CONTACT",
+        "createdType": "AUTOMATION", "sourceId": null, "sourceType": null, "hiddenPhi":
+        false}, {"id": "af439f0e-65de-44e6-aaa4-33a51f37a0b5", "createdBy": "createdBy_REDACTED_f164f46b-8c3e-4daa-8f24-3f7663dd723f",
+        "updatedBy": "updatedBy_REDACTED_cd2f20d9-8b48-4126-b7b1-7b4304673a2b", "createdByName":
+        "createdByName_REDACTED_cb875d06-3487-405c-9803-d181de84d875", "updatedByName":
+        "updatedByName_REDACTED_97bf19e0-8fd7-4368-ac1b-1d339675e081", "createdAt":
+        "2023-07-19T06:02:59.949Z", "updatedAt": "2023-07-19T06:02:59.949Z", "name":
+        "New Patient Created - Update Account", "description": "", "dueDate": null,
+        "status": "TODO", "priority": "HIGH", "patient": {"id": "735e7802-ad48-4c35-8a56-28a7f615a489",
+        "name": "Happy Tester"}, "assignee": {"id": "d1757e77-94f4-45f6-8afe-debcf702a1f6",
+        "name": "Scheduler Test", "enabled": true}, "watchers": [{"id": "d1757e77-94f4-45f6-8afe-debcf702a1f6",
+        "name": "Scheduler Test", "enabled": true}], "comments": [], "templateName":
+        "ttmp-new-patient-created---update-account", "watchersType": "POINT_OF_CONTACT",
+        "createdType": "AUTOMATION", "sourceId": null, "sourceType": null, "hiddenPhi":
+        false}, {"id": "095acd59-5022-4659-aa7c-10e9ff4f5b91", "createdBy": "createdBy_REDACTED_ca77015b-da18-468d-90d6-5f24738bce31",
+        "updatedBy": "updatedBy_REDACTED_12261731-c979-4ba3-8ccf-01e9fdd9bc3b", "createdByName":
+        "createdByName_REDACTED_10ec6707-cac6-4274-9cbf-06450622e65e", "updatedByName":
+        "updatedByName_REDACTED_7a568e30-69cd-4944-ba4b-3a96b8ddcecf", "createdAt":
+        "2023-07-19T06:03:14.502Z", "updatedAt": "2023-07-19T06:03:14.502Z", "name":
+        "New Patient Created - Update Account", "description": "", "dueDate": null,
+        "status": "TODO", "priority": "HIGH", "patient": {"id": "ffbe7c0f-3601-4a5a-a433-4f0da920e0ba",
+        "name": "Jonathan Dixon"}, "assignee": {"id": "d1757e77-94f4-45f6-8afe-debcf702a1f6",
+        "name": "Scheduler Test", "enabled": true}, "watchers": [{"id": "d1757e77-94f4-45f6-8afe-debcf702a1f6",
+        "name": "Scheduler Test", "enabled": true}], "comments": [], "templateName":
+        "ttmp-new-patient-created---update-account", "watchersType": "POINT_OF_CONTACT",
+        "createdType": "AUTOMATION", "sourceId": null, "sourceType": null, "hiddenPhi":
+        false}, {"id": "18a81b78-22cb-4fdc-8d98-f2e0c6f874e7", "createdBy": "createdBy_REDACTED_b56ff3c4-b0e9-4fd6-83c1-7be4faacf5df",
+        "updatedBy": "updatedBy_REDACTED_cb8b7146-4441-475d-b38e-20b032e81919", "createdByName":
+        "createdByName_REDACTED_452cb78b-7080-4d27-9918-bb8657b42f06", "updatedByName":
+        "updatedByName_REDACTED_62a38b04-546f-4ced-bf74-d33affd2db2b", "createdAt":
+        "2023-07-19T06:03:32.962Z", "updatedAt": "2023-07-19T06:03:32.962Z", "name":
+        "New Patient Created - Update Account", "description": "", "dueDate": null,
+        "status": "TODO", "priority": "HIGH", "patient": {"id": "ff376ffa-4536-459a-a364-b6ed993bc3bf",
+        "name": "Jonathan Dixon"}, "assignee": {"id": "d1757e77-94f4-45f6-8afe-debcf702a1f6",
+        "name": "Scheduler Test", "enabled": true}, "watchers": [{"id": "d1757e77-94f4-45f6-8afe-debcf702a1f6",
+        "name": "Scheduler Test", "enabled": true}], "comments": [], "templateName":
+        "ttmp-new-patient-created---update-account", "watchersType": "POINT_OF_CONTACT",
+        "createdType": "AUTOMATION", "sourceId": null, "sourceType": null, "hiddenPhi":
+        false}, {"id": "47858cdc-c72d-4b98-95c4-a54e8304be8f", "createdBy": "createdBy_REDACTED_d477ad4b-505d-4e5a-adea-5d6cfbb00462",
+        "updatedBy": "updatedBy_REDACTED_0d47427e-b919-4bd7-bb89-a88ccb6ececa", "createdByName":
+        "createdByName_REDACTED_082d6ed9-051f-46e4-b4ca-8c06f644728b", "updatedByName":
+        "updatedByName_REDACTED_3c63fbf6-8a99-4f92-8a92-29a0224db59b", "createdAt":
+        "2023-07-19T06:17:57.599Z", "updatedAt": "2023-07-19T06:17:57.599Z", "name":
+        "New Patient Created - Update Account", "description": "", "dueDate": null,
+        "status": "TODO", "priority": "HIGH", "patient": {"id": "cdbe9f8c-2640-46cd-8f0c-afc46e56c4b0",
+        "name": "Skippy Tester"}, "assignee": {"id": "d1757e77-94f4-45f6-8afe-debcf702a1f6",
+        "name": "Scheduler Test", "enabled": true}, "watchers": [{"id": "d1757e77-94f4-45f6-8afe-debcf702a1f6",
+        "name": "Scheduler Test", "enabled": true}], "comments": [], "templateName":
+        "ttmp-new-patient-created---update-account", "watchersType": "POINT_OF_CONTACT",
+        "createdType": "AUTOMATION", "sourceId": null, "sourceType": null, "hiddenPhi":
+        false}, {"id": "b3430f56-2c22-451b-8498-2e3596bf8980", "createdBy": "createdBy_REDACTED_eaa2dba1-5f6e-4fd2-9786-0f9dd6fec282",
+        "updatedBy": "updatedBy_REDACTED_cadb1310-9e91-4226-aebb-452761734f16", "createdByName":
+        "createdByName_REDACTED_298052b1-b60d-4cde-b9d9-c29c2725b078", "updatedByName":
+        "updatedByName_REDACTED_8b8023fd-fbf1-4856-a541-5fb077bb2565", "createdAt":
+        "2023-07-19T06:17:57.690Z", "updatedAt": "2023-07-19T06:17:57.690Z", "name":
+        "New Patient Created - Update Account", "description": "", "dueDate": null,
+        "status": "TODO", "priority": "HIGH", "patient": {"id": "a10f16b9-d311-4a05-b589-b533f859e092",
+        "name": "Happy Tester"}, "assignee": {"id": "d1757e77-94f4-45f6-8afe-debcf702a1f6",
+        "name": "Scheduler Test", "enabled": true}, "watchers": [{"id": "d1757e77-94f4-45f6-8afe-debcf702a1f6",
+        "name": "Scheduler Test", "enabled": true}], "comments": [], "templateName":
+        "ttmp-new-patient-created---update-account", "watchersType": "POINT_OF_CONTACT",
+        "createdType": "AUTOMATION", "sourceId": null, "sourceType": null, "hiddenPhi":
+        false}, {"id": "a160102e-2d25-46be-b667-9169e922a2dd", "createdBy": "createdBy_REDACTED_e7d2aead-5510-4f8d-889f-085543760e08",
+        "updatedBy": "updatedBy_REDACTED_3a7d8ba6-b2e8-49b1-b67d-e3e63af4a52d", "createdByName":
+        "createdByName_REDACTED_ce735699-8ee5-48bf-a0f0-c381839a640d", "updatedByName":
+        "updatedByName_REDACTED_f5143574-dc9f-47bb-ac79-c0dd4456d469", "createdAt":
+        "2023-07-19T06:17:58.023Z", "updatedAt": "2023-07-19T06:17:58.023Z", "name":
+        "New Patient Created - Update Account", "description": "", "dueDate": null,
+        "status": "TODO", "priority": "HIGH", "patient": {"id": "f55eaa1c-3166-4562-b43f-bca8b784e3b9",
+        "name": "Happy Tester"}, "assignee": {"id": "d1757e77-94f4-45f6-8afe-debcf702a1f6",
+        "name": "Scheduler Test", "enabled": true}, "watchers": [{"id": "d1757e77-94f4-45f6-8afe-debcf702a1f6",
+        "name": "Scheduler Test", "enabled": true}], "comments": [], "templateName":
+        "ttmp-new-patient-created---update-account", "watchersType": "POINT_OF_CONTACT",
+        "createdType": "AUTOMATION", "sourceId": null, "sourceType": null, "hiddenPhi":
+        false}, {"id": "8f4eb21d-9d80-4d9b-b3b6-474c2fd2f768", "createdBy": "createdBy_REDACTED_1865423b-7060-46c4-9c3b-d8aab0949f45",
+        "updatedBy": "updatedBy_REDACTED_d81de8cd-6619-49ab-81e2-10e87a859861", "createdByName":
+        "createdByName_REDACTED_3dd45dd8-1007-4569-8108-cf08b98db87d", "updatedByName":
+        "updatedByName_REDACTED_1c8cbe4b-8731-4217-b0f7-b2f60b94f0de", "createdAt":
+        "2023-07-20T23:15:19.445Z", "updatedAt": "2023-07-20T23:15:19.445Z", "name":
+        "New Patient Created - Update Account", "description": "", "dueDate": null,
+        "status": "TODO", "priority": "HIGH", "patient": {"id": "c3cbf489-2b20-475a-95f1-954a2ea6129b",
+        "name": "Angie Palmer"}, "assignee": {"id": "d1757e77-94f4-45f6-8afe-debcf702a1f6",
+        "name": "Scheduler Test", "enabled": true}, "watchers": [{"id": "d1757e77-94f4-45f6-8afe-debcf702a1f6",
+        "name": "Scheduler Test", "enabled": true}], "comments": [], "templateName":
+        "ttmp-new-patient-created---update-account", "watchersType": "POINT_OF_CONTACT",
+        "createdType": "AUTOMATION", "sourceId": null, "sourceType": null, "hiddenPhi":
+        false}, {"id": "91c5da70-20d4-471d-bf3c-c87c70145ec9", "createdBy": "createdBy_REDACTED_fb5bee5e-255f-4bbe-bad2-2272010edfc2",
+        "updatedBy": "updatedBy_REDACTED_c7db1b79-be25-4133-9b48-f10591515252", "createdByName":
+        "createdByName_REDACTED_eed9ec32-7846-4cf4-9e03-346d33b9c39e", "updatedByName":
+        "updatedByName_REDACTED_09cc6af7-acec-4437-89aa-49748f0b2071", "createdAt":
+        "2023-07-20T23:44:42.735Z", "updatedAt": "2023-07-20T23:44:42.735Z", "name":
+        "New Patient Created - Update Account", "description": "", "dueDate": null,
+        "status": "TODO", "priority": "HIGH", "patient": {"id": "0e1fb455-d18f-40cc-afea-af491820dcb1",
+        "name": "Veronica King"}, "assignee": {"id": "0f03632c-849b-4a54-9edf-0e06fc96df71",
+        "name": "Gustavo Cejas", "enabled": true}, "watchers": [{"id": "0f03632c-849b-4a54-9edf-0e06fc96df71",
+        "name": "Gustavo Cejas", "enabled": true}], "comments": [], "templateName":
+        "ttmp-new-patient-created---update-account", "watchersType": "POINT_OF_CONTACT",
+        "createdType": "AUTOMATION", "sourceId": null, "sourceType": null, "hiddenPhi":
+        false}, {"id": "e5727506-4d48-4f84-bc91-e2def6e2d0a2", "createdBy": "createdBy_REDACTED_b0d25754-d168-4915-977f-9184c4df46a9",
+        "updatedBy": "updatedBy_REDACTED_fff27c4c-0e99-4351-be62-ff9dc728cafb", "createdByName":
+        "createdByName_REDACTED_0b5bd8f7-8d8d-459a-bd12-d947a3cef1d8", "updatedByName":
+        "updatedByName_REDACTED_b14de548-7784-4e68-b68c-338f5292d366", "createdAt":
+        "2023-07-20T23:44:45.892Z", "updatedAt": "2023-07-20T23:44:45.892Z", "name":
+        "New Patient Created - Update Account", "description": "", "dueDate": null,
+        "status": "TODO", "priority": "HIGH", "patient": {"id": "b7e77d4f-0c57-4383-8e63-8cb90bcc979e",
+        "name": "Sarah Mccoy"}, "assignee": {"id": "0f03632c-849b-4a54-9edf-0e06fc96df71",
+        "name": "Gustavo Cejas", "enabled": true}, "watchers": [{"id": "0f03632c-849b-4a54-9edf-0e06fc96df71",
+        "name": "Gustavo Cejas", "enabled": true}], "comments": [], "templateName":
+        "ttmp-new-patient-created---update-account", "watchersType": "POINT_OF_CONTACT",
+        "createdType": "AUTOMATION", "sourceId": null, "sourceType": null, "hiddenPhi":
+        false}, {"id": "7c7f86e3-7142-47b5-9875-bfe6210530be", "createdBy": "createdBy_REDACTED_3fa56c57-5901-48f6-abf4-6d654f5cc07c",
+        "updatedBy": "updatedBy_REDACTED_0171bb13-db8d-42aa-854b-e76e0e89cf7c", "createdByName":
+        "createdByName_REDACTED_5df4c4fb-f4ea-477e-8f36-1591ee35def5", "updatedByName":
+        "updatedByName_REDACTED_757a2723-0eda-4ee6-a9fc-dae0c83612fe", "createdAt":
+        "2023-07-20T23:44:49.294Z", "updatedAt": "2023-07-20T23:44:49.294Z", "name":
+        "New Patient Created - Update Account", "description": "", "dueDate": null,
+        "status": "TODO", "priority": "HIGH", "patient": {"id": "e81ff6b3-32b2-4327-829d-7c5a7a9dd1f1",
+        "name": "Anita Cooper"}, "assignee": {"id": "0f03632c-849b-4a54-9edf-0e06fc96df71",
+        "name": "Gustavo Cejas", "enabled": true}, "watchers": [{"id": "0f03632c-849b-4a54-9edf-0e06fc96df71",
+        "name": "Gustavo Cejas", "enabled": true}], "comments": [], "templateName":
+        "ttmp-new-patient-created---update-account", "watchersType": "POINT_OF_CONTACT",
+        "createdType": "AUTOMATION", "sourceId": null, "sourceType": null, "hiddenPhi":
+        false}, {"id": "39c783f7-b354-4f61-9946-df227b3535cf", "createdBy": "createdBy_REDACTED_77adefd9-d5f2-4b87-ab1a-2306ba8a5646",
+        "updatedBy": "updatedBy_REDACTED_28a69e0b-833d-4384-bc11-af7e78d93379", "createdByName":
+        "createdByName_REDACTED_2feea87a-533e-4c76-abda-72d7f5f55c6b", "updatedByName":
+        "updatedByName_REDACTED_e8ee693d-251d-4458-8412-879e6b692276", "createdAt":
+        "2023-07-19T03:11:16.860Z", "updatedAt": "2023-07-19T03:11:16.860Z", "name":
+        "New Patient Created - Update Account", "description": "", "dueDate": null,
+        "status": "TODO", "priority": "HIGH", "patient": {"id": "d8e56ba3-81f4-4e0f-83bc-14b137dcb20e",
+        "name": "Frank Neal"}, "assignee": {"id": "d1757e77-94f4-45f6-8afe-debcf702a1f6",
+        "name": "Scheduler Test", "enabled": true}, "watchers": [{"id": "d1757e77-94f4-45f6-8afe-debcf702a1f6",
+        "name": "Scheduler Test", "enabled": true}], "comments": [], "templateName":
+        "ttmp-new-patient-created---update-account", "watchersType": "POINT_OF_CONTACT",
+        "createdType": "AUTOMATION", "sourceId": null, "sourceType": null, "hiddenPhi":
+        false}, {"id": "a8c9fcd3-44d3-418a-8d3d-2c18c2947319", "createdBy": "createdBy_REDACTED_ef4daf24-6956-4a3f-a431-1a7633e2e2ed",
+        "updatedBy": "updatedBy_REDACTED_f7a7ab89-3715-42d8-921c-0a29a112fab3", "createdByName":
+        "createdByName_REDACTED_4f9ca6a2-0f9f-4031-89c6-e01a309196fa", "updatedByName":
+        "updatedByName_REDACTED_7b0f70ee-fa56-4c81-aa87-d068fea3cb75", "createdAt":
+        "2023-07-19T03:19:23.066Z", "updatedAt": "2023-07-19T03:19:23.066Z", "name":
+        "New Patient Created - Update Account", "description": "", "dueDate": null,
+        "status": "TODO", "priority": "HIGH", "patient": {"id": "316f2ee9-2a65-42cb-a3d3-37a5821b0f9b",
+        "name": "Joe Wilson"}, "assignee": {"id": "d1757e77-94f4-45f6-8afe-debcf702a1f6",
+        "name": "Scheduler Test", "enabled": true}, "watchers": [{"id": "d1757e77-94f4-45f6-8afe-debcf702a1f6",
+        "name": "Scheduler Test", "enabled": true}], "comments": [], "templateName":
+        "ttmp-new-patient-created---update-account", "watchersType": "POINT_OF_CONTACT",
+        "createdType": "AUTOMATION", "sourceId": null, "sourceType": null, "hiddenPhi":
+        false}, {"id": "3e7de541-36ad-4763-874e-a5c4ae28a1c8", "createdBy": "createdBy_REDACTED_c7371911-8af8-402b-9a34-14bbb5183e1d",
+        "updatedBy": "updatedBy_REDACTED_3d554ef3-a86f-4fb9-8320-d5dbe76104f6", "createdByName":
+        "createdByName_REDACTED_dac9eb53-a7f3-42e0-a83c-e0234a5ee0f4", "updatedByName":
+        "updatedByName_REDACTED_a33b162a-19c8-4d29-b99a-7ec14decb9b4", "createdAt":
+        "2024-05-09T17:17:30.127Z", "updatedAt": "2024-05-09T17:17:30.127Z", "name":
+        "New Patient Created - Update Account", "description": "", "dueDate": null,
+        "status": "TODO", "priority": "HIGH", "patient": {"id": "2761bd52-25df-47ae-94f7-e8aa4e455641",
+        "name": "James Gray"}, "assignee": {"id": "d1757e77-94f4-45f6-8afe-debcf702a1f6",
+        "name": "Scheduler Test", "enabled": true}, "watchers": [{"id": "d1757e77-94f4-45f6-8afe-debcf702a1f6",
+        "name": "Scheduler Test", "enabled": true}], "comments": [], "templateName":
+        "ttmp-new-patient-created---update-account", "watchersType": "POINT_OF_CONTACT",
+        "createdType": "AUTOMATION", "sourceId": null, "sourceType": null, "hiddenPhi":
+        false}], "metaInfo": {"page": 0, "pageSize": 20, "totalElements": 4010, "numberOfElements":
+        20, "totalPages": 201, "firstPage": true, "lastPage": false}}'
+    headers:
+      Access-Control-Allow-Headers:
+      - Authorization,Content-Type,XSRF-Token,Security-Role
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, PATCH, OPTIONS
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - Content-Disposition,XSRF-Token,Unresolved-Variables
+      Access-Control-Max-Age:
+      - '3600'
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 13 Oct 2026 22:34:36 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Strict-Transport-Security:
+      - max-age=31536000 ; includeSubDomains
+      Transfer-Encoding:
+      - chunked
+      X-Content-Type-Options:
+      - nosniff
+      X-XSS-Protection:
+      - 1; mode=block
+      content-length:
+      - '17576'
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - API_TOKEN_2799c0b1-0135-47f7-84d9-6f545f6be77c
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-welkin/0.1.9
+    method: GET
+    uri: https://api.live.welkincloud.io/tenant_REDACTED/instance_REDACTED/tasks/872ad55d-5ca4-4882-a5f2-8bb675830e67
+  response:
+    body:
+      string: '{"id": "872ad55d-5ca4-4882-a5f2-8bb675830e67", "createdBy": "createdBy_REDACTED_d18774e7-3ccd-40e5-9384-3c38f8eb1f49",
+        "updatedBy": "updatedBy_REDACTED_97426556-942e-4994-bbaf-b25ee01c0b37", "createdByName":
+        "createdByName_REDACTED_66933298-7af6-4395-8fc6-37a6e2d990b3", "updatedByName":
+        "updatedByName_REDACTED_caac4300-486b-4d62-b815-9b069981c7a3", "createdAt":
+        "2023-07-18T23:25:36.238Z", "updatedAt": "2023-07-18T23:25:36.238Z", "name":
+        "New Patient Created - Update Account", "description": "", "dueDate": null,
+        "status": "TODO", "priority": "HIGH", "patient": {"id": "df8edaae-7aac-43e1-88c6-d9f904e718dd",
+        "name": "Jonathan Perry"}, "assignee": {"id": "d1757e77-94f4-45f6-8afe-debcf702a1f6",
+        "name": "Scheduler Test", "enabled": true}, "watchers": [{"id": "d1757e77-94f4-45f6-8afe-debcf702a1f6",
+        "name": "Scheduler Test", "enabled": true}], "comments": [], "templateName":
+        "ttmp-new-patient-created---update-account", "watchersType": "POINT_OF_CONTACT",
+        "createdType": "AUTOMATION", "sourceId": null, "sourceType": null, "hiddenPhi":
+        false}'
+    headers:
+      Access-Control-Allow-Headers:
+      - Authorization,Content-Type,XSRF-Token,Security-Role
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, PATCH, OPTIONS
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - Content-Disposition,XSRF-Token,Unresolved-Variables
+      Access-Control-Max-Age:
+      - '3600'
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 13 Oct 2026 22:34:36 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Strict-Transport-Security:
+      - max-age=31536000 ; includeSubDomains
+      Transfer-Encoding:
+      - chunked
+      X-Content-Type-Options:
+      - nosniff
+      X-XSS-Protection:
+      - 1; mode=block
+      content-length:
+      - '873'
+    status:
+      code: 200
+      message: OK
+version: 1
